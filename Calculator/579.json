@@ -1,0 +1,338 @@
+{
+    "id": "579",
+    "title": "CHIP (CT in Head Injury Patients) Prediction Rule",
+    "desc": "The CHIP (CT in Head Injury Patients) Prediction Rule predicts intracranial traumatic CT findings in patients with minor head trauma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17371884 ",
+                "text": "Smits M, Dippel DW, Steyerberg EW, et al. Predicting intracranial traumatic findings on computed tomography in patients with minor head injury: the CHIP prediction rule. Ann Intern Med. 2007;146(6):397-405. "
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p><span>If ≥1 major criterion OR ≥2 minor criteria are present, CT head is required.</span></p> <p><strong>Major criteria:</strong></p> <ul> <li><span>Pedestrian or cyclist versus vehicle.</span></li> <li><span>Ejected from vehicle.</span></li> <li><span>Vomiting.</span></li> <li><span>Post-traumatic amnesia ≥4 hours.</span></li> <li><span>Clinical signs of skull fracture*.</span></li> <li><span>GCS &lt;15.</span></li> <li><span>GCS deterioration ≥2 points (1 hour after presentation).</span></li> <li><span>Use of anticoagulant therapy.</span></li> <li><span>Post-traumatic seizure.</span></li> <li><span>Age ≥60 years.</span></li> </ul> <p><strong>Minor criteria:</strong></p> <ul> <li><span>Fall from any elevation.</span></li> <li><span>Persistent anterograde amnesia**.</span></li> <li><span>Post-traumatic amnesia of 2 to &lt;4 hours.</span></li> <li><span>Contusion of the skull.</span></li> <li><span>Neurologic deficit.</span></li> <li><span>Loss of consciousness.</span></li> <li><span>GCS deterioration of 1 point (1 hour after presentation)</span></li> <li><span>Age 40–60 years.</span></li> </ul> <p><span>*Any injury that suggests a skull fracture, such as palpable discontinuity of the skull, leakage of cerebrospinal fluid, “raccoon eye” bruising, and bleeding from the ear.</span></p> <p><span>**Persistent anterograde amnesia is any deficit of short-term memory.</span></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Dizziness",
+            "Headache",
+            "Injury/Trauma",
+            "Head Injury"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\n\nvar ped = parseFloat(ped);\nvar eject = parseFloat(eject);\nvar vomit = parseFloat(vomit);\nvar skull = parseFloat(skull);\nvar gcs = parseFloat(gcs);\nvar gcsd = parseFloat(gcsd);\nvar anti = parseFloat(anti);\nvar seiz = parseFloat(seiz);\nvar age = parseFloat(age);\nvar fall = parseFloat(fall);\nvar per = parseFloat(per);\nvar amnesia = parseFloat(amnesia);\nvar neuro = parseFloat(neuro);\nvar loc = parseFloat(loc);\n\nvar u = ped + eject + vomit + skull + gcs + gcsd + anti + seiz + age + fall + per + amnesia + neuro + loc\n\n\n//interpretation\nvar risk = 'Low';\nvar msg = 'CT not necessary.'\nvar sens = ' 100% sensitive for neurosurgical intervention, 96% sensitive for intracranial traumatic CT findings.'\nif(u >= 2){\n\trisk = 'Not low';\n\tmsg = 'Consider CT.'\n    sens = ''\n}\n\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: 'risk',\n    message: msg\n});\ncalc_output.push({\n    name: 'Score',\n    value: risk,\n    value_text: 'risk',\n    message: msg + sens\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<40 years",
+                        "value": 0
+                    },
+                    {
+                        "label": "40-60 years",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥60 years",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='64'><abbr title='Glasgow Coma Scale'>GCS</abbr></calculator> <15",
+                "name": "gcs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "GCS deterioration at 1 hr after presentation",
+                "name": "gcsd",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "1 point",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥2 points",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Skull injury",
+                "name": "skull",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Skull contusion",
+                        "value": 1
+                    },
+                    {
+                        "label": "Any injury suggesting skull fracture, e.g. palpable discontinuity of skull, CSF leakage, raccoon eyes, bleeding from ear",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Skull contusion = clinically significant discontinuity of the skin or extensive bruising",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Post-traumatic amnesia",
+                "name": "amnesia",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "2 to <4 hr",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥4 hr",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Patient cannot recall entire traumatic event",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pedestrian or cyclist versus vehicle",
+                "name": "ped",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ejected from vehicle",
+                "name": "eject",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Vomiting",
+                "name": "vomit",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Defined as an episode of emesis after the traumatic event",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Use of anticoagulants",
+                "name": "anti",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Post-traumatic seizure",
+                "name": "seiz",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Seizure witnessed or suspected after injury",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Fall from any elevation",
+                "name": "fall",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Persistent anterograde amnesia",
+                "name": "per",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Any short-term memory deficit",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Neurologic deficit",
+                "name": "neuro",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Any abnormality on routine clinical neuro exam indicating a focal cerebral lesion",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Loss of consciousness",
+                "name": "loc",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "head trauma",
+            "trauma",
+            "head injury",
+            "CT head",
+            "trauma imaging",
+            "intracranial hemorrhage",
+            "intracranial bleed"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Radiology"
+        ]
+    }
+}

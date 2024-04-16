@@ -1,0 +1,67 @@
+{
+    "id": "339",
+    "title": "Estimated Average Glucose (eAG) From HbA1C",
+    "desc": "The Estimated Average Glucose (eAG) From HbA1C calculator estimates an average glucose level from Hemoglobin A1C value.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18540046",
+                "text": "Nathan DM, Kuenen J, Borg R, Zheng H, Schoenfeld D, Heine RJ; A1c-Derived Average Glucose Study Group. Translating the A1C assay into estimated average glucose values. Diabetes Care. 2008 Aug;31(8):1473-8. Epub 2008 Jun 7. Erratum in: Diabetes Care. 2009 Jan;32(1):207. PubMed PMID: 18540046; PubMed Central PMCID: PMC2742903."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>eAG = (28.7 X A1C<sub>US units</sub>) - 46.7</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Hemoglobin A1C",
+                "unit": "hgba1c",
+                "error_min": "1",
+                "error_max": "30",
+                "warn_min": "3",
+                "warn_max": "12",
+                "conversion": "1",
+                "normal_max_si": "5.6",
+                "normal_max_us": "5.6",
+                "normal_min_si": "4",
+                "normal_min_us": "4",
+                "units_si": "% gly Hgb",
+                "units_us": "% gly Hgb"
+            }
+        ],
+        "primary_complains": [
+            "Dizziness",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus"
+        ],
+        "logic": "var calc_output = [];\nvar v = (28.7 * parseFloat(hemoglobin_a1c)) - 46.7; // this outputs US units, so gotta make a version for SI\nvalue_text = 'mg/dL';\n\n//if (UOMSYSTEM == false) { // Cr already in right units, so we're good\nv_mmol = v * 0.0555;\nvalue_text_mmol = 'mmol/L';\n//}\n\ncalc_output.push({\n  name: 'mini',\n  value: v.toFixed(1),\n  value_text: value_text,\n  message: 'Est. Avg. Glucose From HbA1C'\n});\ncalc_output.push({\n  name: '1299_Est. Avg. Glucose from HbA1C_result',\n  value: v.toFixed(1),\n  value_text: value_text,\n  message: ' Equivalent to ' + v_mmol.toFixed(1) + ' mmol/L<br/><br/>This formula was calculated using a linear regression equation model, and did not change significantly by subgroup of age, sex, diabetes type, race/ethnicity, or smoking status.'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hemoglobin A1C",
+                "name": "hemoglobin_a1c",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hgba1c"
+            }
+        ],
+        "can_search": [
+            "dm"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Endocrinology",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatrics"
+        ]
+    }
+}

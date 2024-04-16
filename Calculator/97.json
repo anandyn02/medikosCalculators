@@ -1,0 +1,130 @@
+{
+    "id": "97",
+    "title": "Radiation Biologically Effective Dose (BED) Calculator",
+    "desc": "The Radiation Biologically Effective Dose (BED) Calculator calculates BED and equivalent dose (EQD2) for cancer radiotherapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2670032",
+                "text": "Fowler JF. The linear-quadratic formula and progress in fractionated radiotherapy. Br J Radiol. 1989;62(740):679-94."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3473681/#!po=8.3333",
+                "text": "Fowler JF. 21 years of biologically effective dose. Br J Radiol. 2010;83(991):554-68."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">BED = D x (1 + [d / (&alpha;/&beta;)])</p>\n<p dir=\"ltr\">EQD<sub>2</sub> = D x ([d + (&alpha;/&beta;)] / [2 Gy + (&alpha;/&beta;)]) &nbsp;</p>\n<p>&nbsp;</p>\n<p dir=\"ltr\">Where variables are as follows:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"93\"><col width=\"355\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Description</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">BED</p>\n</td>\n<td>\n<p dir=\"ltr\">Biologically effective dose, in Gy</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">EQD<sub>2</sub></p>\n</td>\n<td>\n<p dir=\"ltr\">Equivalent dose in 2-Gy fractions, in Gy</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">d</p>\n</td>\n<td>\n<p dir=\"ltr\">Dose per fraction, in Gy</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">D</p>\n</td>\n<td>\n<p dir=\"ltr\">Total dose (number of fractions x dose per fraction), in Gy</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&alpha;/&beta; ratio</p>\n</td>\n<td>\n<p dir=\"ltr\">Property of irradiated tissue</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Gray",
+                "unit": "gray",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "80",
+                "normal_max_us": "80",
+                "normal_min_si": "20",
+                "normal_min_us": "20",
+                "units_si": "Gy",
+                "units_us": "Gy"
+            },
+            {
+                "name": "Gy",
+                "unit": "Gy_per_frac",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "12",
+                "normal_max_us": "12",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "Gy",
+                "units_us": "Gy"
+            },
+            {
+                "name": "ab_ratio",
+                "unit": "ab_ratio",
+                "error_min": "-1",
+                "error_max": "10000000",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10",
+                "normal_max_us": "10",
+                "normal_min_si": "3",
+                "normal_min_us": "3",
+                "units_si": " ",
+                "units_us": " "
+            }
+        ],
+        "primary_complains": [
+            "Cancer",
+            "Mass"
+        ],
+        "disease_treated": [
+            "Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar d = parseFloat(d);\nvar D = parseFloat(D);\nvar ab = parseFloat(ab);\n\nvar bed = D*(1 + (d/ab));\nvar eqd = D*((d + ab) / (2 + ab));\n    \n//results\ncalc_output.push({\n    name: 'mini',\n    value: bed,\n    value_text: 'Gy',\n    message: 'BED'\n});\ncalc_output.push({\n    name: '10111_Radiation BED Calculator_result (BED)',\n    value: bed.toFixed(2),\n    value_text: 'Gy',\n    message: 'BED'   \n    });\ncalc_output.push({\n    name: '10111_Radiation BED Calculator_result (EQD2)',\n    value: eqd.toFixed(2), \n    value_text: 'Gy',\n    message: 'EQD<sub>2</sub>'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Dose per fraction",
+                "name": "d",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "Gy_per_frac"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Total dose",
+                "name": "D",
+                "optional": false,
+                "tips_en": "Number of fractions x dose per fraction",
+                "type": "textbox",
+                "unit": "gray"
+            },
+            {
+                "conditionality": "",
+                "default": 10,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "α/β ratio",
+                "name": "ab",
+                "optional": false,
+                "tips_en": "Typically 10 for early-responding tissues and tumors, 3 for late-responding tissues (normal tissue)",
+                "type": "textbox",
+                "unit": "ab_ratio"
+            }
+        ],
+        "can_search": [
+            "Gy fractions",
+            "biologically equivalent dose",
+            "tumor",
+            "2 Gy",
+            "dose fractionation",
+            "fractionation",
+            "radiation fractionation",
+            " 2Gy"
+        ],
+        "specialty": [
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Radiation Oncology",
+            "Radiology"
+        ]
+    }
+}

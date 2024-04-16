@@ -1,0 +1,219 @@
+{
+    "id": "2",
+    "title": "Rome IV Diagnostic Criteria for Functional Dyspepsia",
+    "desc": "The Rome IV Criteria for Dyspepsia provides criteria for diagnosis of dyspepsia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144617",
+                "text": "Drossman DA. Functional Gastrointestinal Disorders: History, Pathophysiology, Clinical Features and Rome IV. Gastroenterology. 2016; 150(6):1262-1279."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27147122",
+                "text": "Stanghellini V, Chan FK, Hasler WL, et al. Gastroduodenal Disorders. Gastroenterology. 2016;150(6):1380-92."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><strong>Step 1.</strong> Determine if criteria for functional dyspepsia are met. Must fulfill both the following criteria for the last 3 months with symptom onset &ge;6 months ago:</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\">&ge;1 of the following:</p>\n</li>\n<ol style=\"list-style-type: lower-latin;\">\n<li dir=\"ltr\">\n<p dir=\"ltr\">Bothersome postprandial fullness.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Bothersome early satiation.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Bothersome epigastric pain.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Bothersome epigastric burning.</p>\n</li>\n</ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\">No evidence of organic, systemic, metabolic or structural disease (including on upper endoscopy) that is likely to explain the symptoms.</p>\n</li>\n</ol>\n<p dir=\"ltr\"><strong>Step 2.</strong> If above criteria are met, then determine subtype:</p>\n<p dir=\"ltr\"><strong>Postprandial Distress Syndrome:</strong></p>\n<p dir=\"ltr\">Must include one or both of the following at least 3 days per week:</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Bothersome postprandial fullness.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Bothersome early satiation.</p>\n</li>\n</ol>\n<p dir=\"ltr\"><strong>Epigastric Pain Syndrome:</strong></p>\n<p dir=\"ltr\">Must include one or both of the following at least 1 day per week:</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Bothersome epigastric pain.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Bothersome epigastric burning.</p>\n</li>\n</ol>\n<p dir=\"ltr\">*Note: patients may be positive for both postprandial distress syndrome AND epigastric pain syndrome.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output = [];\n\nvar result, msg\nif (parseFloat(fullness) + parseFloat(satiation) + parseFloat(pain) + parseFloat(burning) >= 1 && parseFloat(ruleout) == 1) {\n  result = 'Positive'\n  msg = 'Likely functional dyspepsia'\n  }\nelse {\n  result = 'Negative'\n  msg = 'Unlikely functional dyspepsia'\n  }\n\nvar subtype, sub_msg\nif (result == 'Positive') {\n  if (day3 == 1 && day1 == 1) {\n    subtype = 'PDS/EPS'\n    sub_msg = 'Both postprandial distress and epigastric pain syndrome subtypes'\n  }\n  if (day3 == 1 && day1 == 0) {\n    subtype = 'PDS'\n    sub_msg = 'Postprandial distress syndrome subtype'\n  }\n  if (day1 == 1 && day3 == 0) {\n    subtype = 'EPS'\n    sub_msg = 'Epigastric pain syndrome subtype'\n  }\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: '',\n    message: msg\n});\ncalc_output.push({\n    name: 'Result',\n    value: result,\n    value_text: '',\n    message: msg + ' (<guideline id = \"506\">ACG guideline</guideline>)'\n});\n\nif (result == 'Positive' && day3 + day1 > 0) {\n  calc_output.push({\n    name: 'Positive',\n    value: subtype,\n    value_text: '',\n    message: sub_msg\n});\n}",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Must have ?1 of the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ?6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bothersome postprandial fullness",
+                "md_calc_info_concept": null,
+                "name": "fullness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bothersome early satiation",
+                "md_calc_info_concept": null,
+                "name": "satiation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bothersome epigastric pain",
+                "md_calc_info_concept": null,
+                "name": "pain",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bothersome epigastric burning",
+                "md_calc_info_concept": null,
+                "name": "burning",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Must also have the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No evidence of organic, systemic, metabolic or structural disease likely to explain symptoms",
+                "md_calc_info_concept": null,
+                "name": "ruleout",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Including on upper endoscopy",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Functional dyspepsia subtype",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "fullness + satiation + pain + burning >= 1 && ruleout == 1",
+                "default": 0,
+                "label_en": "Bothersome postprandial fullnesss and early satiation ≥3 days/week",
+                "md_calc_info_concept": null,
+                "name": "day3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "fullness + satiation + pain + burning >= 1 && ruleout == 1",
+                "default": 0,
+                "label_en": "Bothersome epigastric pain and burning ≥1 day/week",
+                "md_calc_info_concept": null,
+                "name": "day1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "dyspepsia",
+            "indigestion",
+            "rome",
+            "rome 4",
+            "functional dyspepsia",
+            "rome iv",
+            "Rome IV Diagnostic Criteria for Functional Dyspepsia"
+        ],
+        "specialty": [
+            "Gastroenterology"
+        ]
+    }
+}

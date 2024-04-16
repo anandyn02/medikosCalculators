@@ -1,0 +1,194 @@
+{
+    "id": "479",
+    "title": "Bishop Score for Vaginal Delivery and Induction of Labor",
+    "desc": "The Bishop Score determines likelihood of vaginal delivery versus induced labor.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14199536",
+                "text": "Bishop EH. Pelvic scoring for elective induction. Obstet Gynecol. 1964;24: 266–8. PMID 14199536."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3297470/",
+                "text": "Laughon SK, Zhang J, Troendle J, Sun L, Reddy UM. Using a Simplified Bishop Score to Predict Vaginal Delivery. Obstetrics and Gynecology 2011;117(4):805-811. doi:10.1097/AOG.0b013e3182114ad2."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>Scores &le; 5 suggest an unfavorable cervix, and that induction may be necessary for successful vaginal delivery.</li>\n<li>Scores 6-7 do not definitively predict whether or not induction will be successful. Consider induction or augmentation of labor based on clinical judgment.</li>\n<li>Scores &ge; 8 suggest spontaneous vaginal delivery is more likely and augmentation or induction may be unnecessary.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Pregnancy"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(dil) + parseFloat(eff) + parseFloat(stat) + parseFloat(pos) + parseFloat(con);\nvar msg, mini_msg;\n\n\nif (u <= 5) { mini_msg='Suggests unfavorable cervix and induction may be necessary.'; msg = 'Scores ≤ 5 suggest an unfavorable cervix, and that induction may be necessary for successful vaginal delivery.'; }\nif (u == 6 || u == 7) { mini_msg='Unable to determine success of induction and vaginal delivery.'; msg = 'Scores 6-7 do not definitively predict whether or not induction will be successful. Consider induction or augmentation of labor based on clinical judgment.'; }\nif (u >= 8) { mini_msg='Suggests successful spontaneous vaginal delivery.'; msg = 'Scores ≥ 8 suggest spontaneous vaginal delivery is more likely and augmentation or induction may be unnecessary.'; }\nmsg += '<br/><br/>Note: Success rates tend to vary based on indication for induction and weeks gestation.';\n\n\ncalc_output.push({ name: 'mini', value: u.toFixed(0), value_text: 'points', message: mini_msg });\ncalc_output.push({ name: '3320_Bishop Score_result', value: u.toFixed(0), value_text: 'points', message: msg });",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Dilation",
+                "mdcalc_info_concept": null,
+                "name": "dil",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Closed",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-2 cm",
+                        "value": 1
+                    },
+                    {
+                        "label": "3-4 cm",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥5 cm",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Effacement",
+                "mdcalc_info_concept": null,
+                "name": "eff",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0-30%",
+                        "value": 0
+                    },
+                    {
+                        "label": "40-50%",
+                        "value": 1
+                    },
+                    {
+                        "label": "60-70%",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥80%",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Station",
+                "mdcalc_info_concept": null,
+                "name": "stat",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "-3",
+                        "value": 0
+                    },
+                    {
+                        "label": "-2",
+                        "value": 1
+                    },
+                    {
+                        "label": "-1, 0",
+                        "value": 2
+                    },
+                    {
+                        "label": "+1, +2",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Position",
+                "mdcalc_info_concept": null,
+                "name": "pos",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Posterior",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mid-position",
+                        "value": 1
+                    },
+                    {
+                        "label": "Anterior",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Consistency",
+                "mdcalc_info_concept": null,
+                "name": "con",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Firm",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderately firm",
+                        "value": 1
+                    },
+                    {
+                        "label": "Soft",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "vbac",
+            "vaginal",
+            "birth",
+            "cesarian",
+            "c section",
+            "csection",
+            "csection risk calc",
+            "c section score",
+            "labor",
+            "pregnancy",
+            "induction"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "OB-Gyn",
+            "Pediatrics",
+            "Primary Care"
+        ]
+    }
+}

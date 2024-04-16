@@ -1,0 +1,143 @@
+{
+    "id": "572",
+    "title": "Transtubular Potassium Gradient (TTKG)",
+    "desc": "The Transtubular Potassium Gradient (TTKG) determines etiology of hyperkalemia or hypokalemia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2321642",
+                "text": "Ethier JH, Kamel KS, Magner PO, Lemann J, Halperin ML. The transtubular potassium concentration in patients with hypokalemia and hyperkalemia. Am J Kidney Dis. 1990;15(4):309-15."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>TTKG&nbsp;= (urine potassium /&nbsp;serum potassium) / (urine osmolality&nbsp;/&nbsp;serum osmolality)</p>",
+        "facts": "<p>Interpretation:</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">TTKG values between 8 and 9 are considered normal in patients with a normal diet.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">During hyperkalemia (K⁺ &gt;5.0 mEq/L), the TTKG should be &ge;7; lower values suggest hypoaldosteronism.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">During hypokalemia (K⁺ &lt;3.5 mEq/L), the TTKG should be &lt;3; greater values suggest renal potassium wasting.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Expected TTKG in hyperkalemia is &gt;10, which suggests&nbsp;normal renal excretion of potassium.</p>\n</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "Urine Potassium",
+                "unit": "k_urine",
+                "error_min": "-1",
+                "error_max": "300",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            },
+            {
+                "name": "Urine Osmolarity",
+                "unit": "urine_osm",
+                "error_min": "0",
+                "error_max": "2000",
+                "warn_min": "0",
+                "warn_max": "1200",
+                "conversion": "1",
+                "normal_max_si": "800",
+                "normal_max_us": "800",
+                "normal_min_si": "500",
+                "normal_min_us": "500",
+                "units_si": "mmol/kg",
+                "units_us": "mOsm/kg"
+            },
+            {
+                "name": "Osmoles (Osm)",
+                "unit": "osm",
+                "error_min": "200",
+                "error_max": "700",
+                "warn_min": "270",
+                "warn_max": "350",
+                "conversion": "1",
+                "normal_max_si": "295",
+                "normal_max_us": "295",
+                "normal_min_si": "275",
+                "normal_min_us": "275",
+                "units_si": "mmol/kg",
+                "units_us": "mOsm/kg"
+            },
+            {
+                "name": "Potassium",
+                "unit": "k",
+                "error_min": "1",
+                "error_max": "10",
+                "warn_min": "2",
+                "warn_max": "7",
+                "conversion": "1",
+                "normal_max_si": "5.2",
+                "normal_max_us": "5.2",
+                "normal_min_si": "3.5",
+                "normal_min_us": "3.5",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "Dizziness",
+            "Weakness",
+            "Oliguria"
+        ],
+        "disease_treated": [
+            "Acid-Base Disturbance",
+            "Renal Failure"
+        ],
+        "logic": "//outputs\nvar calc_output = [];\n\n//user inputs\nvar uk = parseFloat(uk);\nvar pk = parseFloat(pk);\nvar uosm = parseFloat(uosm);\nvar posm = parseFloat(posm);\n\n//calculation\nvar u = (uk / pk) / (uosm / posm);\n\nu = u.toFixed(0);\nvar msg = 'Transtubular Potassium Gradient (TTKG)';\n\nif (u >=8 && u <= 9) {\n  msg += '<br/>TTKG values between 8 and 9 are considered normal in patients with a normal diet';\n}\n \nif (pk < 3.5) {\n  if (u >= 3) {\n    msg += '<br/>TTKG ≥3 in hypokalemia suggests renal potassium wasting';\n  }\n  else if (u < 3) {\n    msg += '<br/>TTKG <3 is expected in hypokalemia';\n  }\n}\n\nif (pk > 5) {\n  if (u > 10) {\n    msg += '<br/>TTKG >10 in hyperkalemia suggests normal renal excretion of potassium';\n  }\n  else if (u >= 7) {\n    msg += '<br/>TTKG ≥7 expected in hyperkalemia';\n  }\n  else if (u < 7) {\n    msg += '<br/>TTKG <7 in hyperkalemia suggests hypoaldosteronism';\n  }\n}\n\n//result user sees\ncalc_output.push({\nname: 'mini',\nvalue: u,\nvalue_text: '',\nmessage: 'TTKG'\n});\n\ncalc_output.push({\nname: 'Output',\nvalue: u,\nvalue_text: '',\nmessage: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "Urine potassium",
+                "name": "uk",
+                "optional": false,
+                "type": "textbox",
+                "unit": "k_urine"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Serum potassium",
+                "name": "pk",
+                "optional": false,
+                "type": "textbox",
+                "unit": "k"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Urine osmolality",
+                "name": "uosm",
+                "optional": false,
+                "type": "textbox",
+                "unit": "urine_osm"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Serum osmolality",
+                "name": "posm",
+                "optional": false,
+                "type": "textbox",
+                "unit": "osm"
+            }
+        ],
+        "can_search": [
+            "Transtubular k gradient",
+            "TTKG",
+            "transtubular",
+            "potassium",
+            "hyperkalemia",
+            "hypokalemia"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Internal Medicine",
+            "Nephrology",
+            "Family Practice",
+            "Critical Care (Pediatric)",
+            "Hospitalist Medicine"
+        ]
+    }
+}

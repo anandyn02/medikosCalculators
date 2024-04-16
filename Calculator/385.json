@@ -1,0 +1,112 @@
+{
+    "id": "385",
+    "title": "Modified Rankin Scale for Neurologic Disability",
+    "desc": "The Modified Rankin Scale (mRS) measures degree of disability/dependence after a stroke.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3363593",
+                "text": "van Swieten JC, Koudstaal PJ, Visser MC, Schouten HJ, van Gijn J. Interobserver agreement for the assessment of handicap in stroke patients. Stroke. 1988 May;19(5):604-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12215594",
+                "text": "Wilson JT, Hareendran A, Grant M, Baird T, Schulz UG, Muir KW, Bone I. Improving the assessment of outcomes in stroke: use of a structured interview to assign grades on the modified Rankin Scale. Stroke. 2002 Sep;33(9):2243-6."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15718510",
+                "text": "Wilson JT, Hareendran A, Hendry A, Potter J, Bone I, Muir KW. Reliability of the modified Rankin Scale across multiple raters: benefits of a structured interview. Stroke. 2005 Apr;36(4):777-81. Epub 2005 Feb 17."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20224060",
+                "text": "Bruno A, Shah N, Lin C, Close B, Hess DC, Davis K, Baute V, Switzer JA, Waller JL, Nichols FT. Improving modified Rankin Scale assessment with a simplified questionnaire. Stroke. 2010 May;41(5):1048-50. doi: 10.1161/STROKEAHA.109.571562. Epub 2010 Mar 11."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1783914",
+                "text": "Farrell B, Godwin J, Richards S, Warlow C. The United Kingdom transient ischaemic attack (UK-TIA) aspirin trial: final results. J Neurol Neurosurg Psychiatry. 1991 Dec;54(12):1044-54. PubMed PMID: 1783914."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19679846",
+                "text": "Quinn TJ, Dawson J, Walters MR, Lees KR. Reliability of the modified Rankin Scale: a systematic review. Stroke. 2009 Oct;40(10):3393-5. doi: 10.1161/STROKEAHA.109.557256. Epub 2009 Aug 13. Review. PubMed PMID: 19679846."
+            }
+        ],
+        "evidence": "<p>Assignation of points based on severity of disability.</p>",
+        "facts": "<p><b>Standardized Interview for the mRS:</b></p>\n<p>Ask these Yes/No Questions:</p>\n<ul>\n<li>Do you have any symptoms that are bothering you?</li>\n<li>Are you able to do the same work as before?</li>\n<li>Are you able to keep up with your hobbies?</li>\n<li>Have you maintained your ties to friends and family?</li>\n<li>Do you need help making a simple meal, doing household chores, or balancing a checkbook?</li>\n<li>Do you need help with shopping or traveling close to home?</li>\n<li>Do you need another person to help you walk?</li>\n<li>Do you need help with eating, going to the toilet, or bathing?</li>\n<li>Do you stay in bed most of the day and need constant nursing care?</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output=[]; \n\ncalc_output.push({\n    name:'mini',\n    value:parseFloat(baseline_activity),\n    value_text:'points',\n    message:'Modified Rankin Scale'\n}); \ncalc_output.push({\n    name:'1890_Modified Rankin Scale_result',\n    value:parseFloat(baseline_activity),\n    value_text:'points',\n    message:'Modified Rankin Scale'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Patient's Baseline Activity",
+                "mdcalc_info_concept": null,
+                "name": "baseline_activity",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No symptoms at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "No significant disability despite symptoms; able to carry out all usual duties and activities",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slight disability; unable to carry out all previous activities, but able to look after own affairs without assistance",
+                        "value": 2
+                    },
+                    {
+                        "label": "Moderate disability; requiring some help, but able to walk without assistance",
+                        "value": 3
+                    },
+                    {
+                        "label": "Moderately severe disability; unable to walk and attend to bodily needs without assistance",
+                        "value": 4
+                    },
+                    {
+                        "label": "Severe disability; bedridden, incontinent and requiring constant nursing care and attention",
+                        "value": 5
+                    },
+                    {
+                        "label": "Dead",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Choose best fit of patient's ability",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "A standardized interview also exists to try to reduce subjectivity or variability in score assignments. See the <a href='#evidence'>Evidence</a> section for more information.",
+                "subheading_instructions": "",
+                "type": "subheading"
+            }
+        ],
+        "can_search": [
+            "disability",
+            "stroke",
+            "TIA",
+            "CVA",
+            "neuro",
+            "mRS"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Rehabilitation Medicine"
+        ]
+    }
+}

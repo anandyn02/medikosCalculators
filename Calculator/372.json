@@ -1,0 +1,72 @@
+{
+    "id": "372",
+    "title": "Simplified Motor Score (SMS)",
+    "desc": "The Simplified Motor Score/Scale (SMS) simplifies motor assessment of patients with head trauma compared to the Glasgow Coma Score.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15635308",
+                "text": "Gill M, Windemuth R, Steele R, Green SM. A comparison of the Glasgow Coma Scale score to simplified alternative scores for the prediction of traumatic brain injury outcomes. Ann Emerg Med. 2005 Jan;45(1):37-42."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the selected points; points assigned below:</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<th>\n<p style=\"text-align: left;\">Criteria</p>\n</th>\n<th style=\"text-align: left;\">Value</th>\n</tr>\n<tr>\n<td>\n<p>Obeys commands</p>\n</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>\n<p>Localizes pain</p>\n</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>\n<p>Withdrawal to pain or worse</p>\n</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Headache",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output=[]; \nvar mini_msg=''; \nvar msg='';\n\nif(parseFloat(patient_response)==2){mini_msg='Low risk'; msg='A SMS score of 2 correlates with a low risk of need for intubation, neurosurgical intervention or mortality (like a GCS of 14-15).'}else{mini_msg='Increased risk'; msg='Patients with an SMS of <2 are at significantly increased risk of having a significant traumatic brain injury and prompt evaluation and head CT imaging is indicated for these patients.'} \n\ncalc_output.push({\n    name:'mini',\n    value:parseFloat(patient_response),\n    value_text:'points',message:mini_msg\n}); \ncalc_output.push({\n    name:'1832_Simplified Motor Score_result',\n    value:parseFloat(patient_response),\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Patient response",
+                "mdcalc_info_concept": null,
+                "name": "patient_response",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Obeys commands",
+                        "value": 2
+                    },
+                    {
+                        "label": "Localizes pain",
+                        "value": 1
+                    },
+                    {
+                        "label": "Withdrawals to pain or worse",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Score best response",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "gcs",
+            "head injury",
+            "trauma"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Hospitalist Medicine",
+            "Neurology",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

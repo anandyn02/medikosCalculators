@@ -1,0 +1,292 @@
+{
+    "id": "43",
+    "title": "Ankylosing Spondylitis Disease Activity Score with CRP (ASDAS-CRP)",
+    "desc": "The Ankylosing Spondylitis Disease Activity Score with CRP (ASDAS-CRP) describes severity of ankylosing spondylitis (AS) using clinical and laboratory data, specifically CRP.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18625618",
+                "text": "Lukas C, Landewé R, Sieper J, et al. Development of an ASAS-endorsed disease activity score (ASDAS) in patients with ankylosing spondylitis. Ann Rheum Dis. 2009;68(1):18-24."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/full/10.1002/acr.20575",
+                "text": "Zochling J. Measures of symptoms and disease status in ankylosing spondylitis: Ankylosing Spondylitis Disease Activity Score (ASDAS), Ankylosing Spondylitis Quality of Life Scale (ASQoL), Bath Ankylosing Spondylitis Disease Activity Index (BASDAI), Bath Ankylosing Spondylitis Functional Index (BASFI), Bath Ankylosing Spondylitis Global Score (BAS-G), Bath Ankylosing Spondylitis Metrology Index (BASMI), Dougados Functional Index (DFI), and Health Assessment Questionnaire for the Spondylarthropathies (HAQ-S). Arthritis Care Res (Hoboken). 2011;63 Suppl 11:S47-58."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">ASDAS-CRP = (0.12 x back pain) + (0.06 x morning stiffness) + (0.11 x patient global assessment of disease activity) + (0.07 x peripheral pain/swelling) + (0.58 x ln(CRP + 1))</p>\n<p dir=\"ltr\"></p>\n<p dir=\"ltr\">Where variables are:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"133\" /><col width=\"315\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\">Back pain</p>\n</td>\n<td>\n<p dir=\"ltr\">Ask the patient: \"How would you describe the overall level of AS neck, back, or hip pain you have had?\"</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Morning stiffness</p>\n</td>\n<td>\n<p dir=\"ltr\">Ask the patient: \"How would you describe the overall level of morning stiffness you have had from the time you wake up?\"</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Patient global assessment of disease activity</p>\n</td>\n<td>\n<p dir=\"ltr\">Ask the patient: \"How active was your spondylitis, on average, during the last week?\"</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Peripheral pain/swelling</p>\n</td>\n<td>\n<p dir=\"ltr\">Ask the patient: \"How would you describe the overall level of pain/swelling in joints other than neck, back, or hips you have had?\"</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">CRP</p>\n</td>\n<td>\n<p dir=\"ltr\">C-reactive protein, mg/L</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">All variables, except CRP, should be graded on a scale of 0 (least severe) to 10 (most severe).</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>ASDAS-CRP</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Disease activity </strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;1.3</p>\n</td>\n<td>\n<p dir=\"ltr\">Inactive</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1.3-2.0</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2.1-3.5</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;3.5</p>\n</td>\n<td>\n<p dir=\"ltr\">Very high</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "crp_dl",
+                "unit": "crp_dl",
+                "error_min": "0",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "0.1",
+                "normal_max_si": "0.3",
+                "normal_max_us": "3",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mg/dL",
+                "units_us": "mg/L"
+            }
+        ],
+        "primary_complains": [
+            "Joint Pain",
+            "Pain"
+        ],
+        "disease_treated": [
+            "Rheumatoid Arthritis"
+        ],
+        "logic": "var calc_output = [];\nvar peripheral = parseFloat(peripheral);\nvar back = parseFloat(back);\nvar duration = parseFloat(duration);\nvar global = parseFloat(global);\nvar crp = parseFloat(crp);\n if (UOMSYSTEM == true) {\nvar crp = parseFloat(crp);\n}if (UOMSYSTEM == false) {\n  var crp = parseFloat(crp)*10;\n}\n\nvar index = 0.12*back + 0.06*duration + 0.11*global + 0.07*peripheral + 0.58*Math.log(crp + 1);\n\nvar index2 = index.toFixed(1)\n\nvar activity\n\nif (index2 < 1.3) {\n  activity = 'Inactive'\n}\nelse if (index2 >= 1.3 && index2 < 2.1) {\n  activity = 'Low'\n}\nelse if (index2 >= 2.1 && index2 <= 3.5) {\n    activity = 'High'\n}\n\nelse {\n    activity = 'Very high'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: index2,\n    value_text: 'points',\n    message: activity + ' disease activity'\n});\ncalc_output.push({\n    name: 'index',\n    value: index2,\n    value_text: 'points',\n    message: 'ASDAS-CRP'\n});\ncalc_output.push({\n    name: 'activity',\n    value: activity,\n    value_text: '',\n    message: 'Disease activity'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Back pain",
+                "name": "back",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0: least severe",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "6",
+                        "value": 6
+                    },
+                    {
+                        "label": "7",
+                        "value": 7
+                    },
+                    {
+                        "label": "8",
+                        "value": 8
+                    },
+                    {
+                        "label": "9",
+                        "value": 9
+                    },
+                    {
+                        "label": "10: most severe",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask the patient: \"How would you describe the overall level of AS neck, back, or hip pain you have had?\"",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Duration of morning stiffness",
+                "name": "duration",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0: least severe",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "6",
+                        "value": 6
+                    },
+                    {
+                        "label": "7",
+                        "value": 7
+                    },
+                    {
+                        "label": "8",
+                        "value": 8
+                    },
+                    {
+                        "label": "9",
+                        "value": 9
+                    },
+                    {
+                        "label": "10: most severe",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask the patient: \"How would you describe the overall level of morning stiffness you have had from the time you wake up?\"",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Patient global assessment of disease activity",
+                "name": "global",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0: least severe",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "6",
+                        "value": 6
+                    },
+                    {
+                        "label": "7",
+                        "value": 7
+                    },
+                    {
+                        "label": "8",
+                        "value": 8
+                    },
+                    {
+                        "label": "9",
+                        "value": 9
+                    },
+                    {
+                        "label": "10: most severe",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask the patient: \"How active was your spondylitis, on average, during the last week?\"",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Peripheral pain/swelling",
+                "name": "peripheral",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0: least severe",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "6",
+                        "value": 6
+                    },
+                    {
+                        "label": "7",
+                        "value": 7
+                    },
+                    {
+                        "label": "8",
+                        "value": 8
+                    },
+                    {
+                        "label": "9",
+                        "value": 9
+                    },
+                    {
+                        "label": "10: most severe",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask the patient: \"How would you describe the overall level of pain/swelling in joints other than neck, back, or hips you have had?\"",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "label_en": "<abbr title='C-reactive protein'>CRP</abbr>",
+                "name": "crp",
+                "optional": false,
+                "type": "textbox",
+                "unit": "crp_dl"
+            }
+        ],
+        "can_search": [
+            "Ankylosing spondylitis",
+            "disease activity score",
+            "AS",
+            "ASDAS",
+            "CRP",
+            "disease activity index"
+        ],
+        "specialty": [
+            "Rheumatology",
+            "Orthopedics"
+        ]
+    }
+}

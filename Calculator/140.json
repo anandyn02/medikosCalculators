@@ -1,0 +1,193 @@
+{
+    "id": "140",
+    "title": "Kinetic Estimated Glomerular Filtration Rate (keGFR)",
+    "desc": "The Kinetic Glomerular Filtration Rate (kGFR) estimates GFR in patients with acutely changing creatinine.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23704286",
+                "text": "Chen S. Retooling the creatinine clearance equation to estimate kinetic GFR when the plasma creatinine is changing acutely. J Am Soc Nephrol. 2013;24(6):877-88."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Take two serum creatinine measurements (Cr<sub>1</sub> and Cr<sub>2</sub>), at two different time points (time<sub>1</sub> and time<sub>2</sub>).</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/kegfr.png\" width=\"100%\"></p>\n<p dir=\"ltr\">where variables are as follows:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"92\"><col width=\"357\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable*</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Definition</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Cr<sub>baseline </sub></p>\n</td>\n<td>\n<p dir=\"ltr\">Baseline creatinine, mg/dL</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">CrCl</p>\n</td>\n<td>\n<p dir=\"ltr\">Initial creatinine clearance, mL/min (by MDRD equation)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Cr<sub>mean</sub></p>\n</td>\n<td>\n<p dir=\"ltr\">Average of Cr<sub>1</sub>&nbsp;and Cr<sub>2</sub></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">time<sub>2</sub> &ndash; time<sub>1</sub></p>\n</td>\n<td>\n<p dir=\"ltr\">Time between measured Cr<sub>2</sub> and Cr<sub>1</sub>, hrs</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*The second&nbsp;portion of the equation, i.e.,&nbsp;<em>1&nbsp;</em>&ndash;<em>&nbsp;[(24 x (Cr<sub>2</sub>&nbsp;</em>&ndash;<em>&nbsp;Cr<sub>1</sub>)) / ((time<sub>2</sub>&nbsp;</em>&ndash;<em>&nbsp;time<sub>1</sub>) x 1.5)]</em>,&nbsp;is a multiplier limited to 0-1.&nbsp;</p>\n<p dir=\"ltr\">Note: formula assumes US units. For SI formula, see <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/28396736\" target=\"_blank\" rel=\"noopener\">O&rsquo;Sullivan 2017</a>.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<p dir=\"ltr\">KeGFR of 30 mL/min is 90% specific (71% sensitive) for AKI, according to one small retrospective study (<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/28396736\" target=\"_blank\" rel=\"noopener\">O'Sullivan 2017</a>).</p>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Creatinine",
+                "unit": "cr",
+                "error_min": "0.01",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "88.4",
+                "normal_max_si": "115",
+                "normal_max_us": "1.3",
+                "normal_min_si": "62",
+                "normal_min_us": "0.7",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Hours",
+                "unit": "time",
+                "error_min": "0",
+                "error_max": "72",
+                "warn_min": "0.999",
+                "warn_max": "24.001",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "hours",
+                "units_us": "hours"
+            }
+        ],
+        "primary_complains": [
+            "Anuria",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Kidney Injury",
+            "Renal Failure"
+        ],
+        "logic": "var calc_output = [];\nvar Cr = parseFloat(Cr);\nvar Cr1 = parseFloat(Cr1);\nvar Cr2 = parseFloat(Cr2);\nvar t = parseFloat(t);\nvar max = 1.5;\nvar age = parseFloat(age);\nvar race = parseFloat(race) || -1;\nvar sex = parseFloat(sex);\n\nif (UOMSYSTEM == false) {\n  Cr1 = Cr1/88.4;\n  Cr2 = Cr2/88.4;\n  Cr = Cr/88.4;\n}\nif (UOMSYSTEM == true) {\n  Cr1 = Cr1;\n  Cr2 = Cr2;\n  Cr = Cr;\n}\n\nif (sex == 1) {\n  female = 0.742;\n} else {\n  female = 1;\n}\n\nif (race == 1) {\n  black = 1.212;\n} else if (race == 2) {\n  black = 1;\n} else if (race == -1) {\n  black = 1.212;\n}\n\nvar eGFR = 186*Math.pow(Cr,-1.154)*Math.pow(age,-0.203)*black*female;\n\nvar a = (Cr*eGFR) / ((Cr1 + Cr2) / 2);\nvar b = 1 - ((24*(Cr2 - Cr1)) / (t*max));\nif (b > 1) {\n  b = 1;\n} else if (b < 0) {\n  b = 0;\n}\n  \nvar kGFR = a*b;\n\nkGFR = kGFR.toFixed(1);\n\n//race changes\nif (race == -1) {\n  var eGFR_1 = 186*Math.pow(Cr,-1.154)*Math.pow(age,-0.203)*1*female;\n\n  var a_1 = (Cr*eGFR_1) / ((Cr1 + Cr2) / 2);\n  var b_1 = 1 - ((24*(Cr2 - Cr1)) / (t*max));\n  if (b_1 > 1) {\n    b_1 = 1;\n  } else if (b_1 < 0) {\n    b_1 = 0;\n  }\n\n  var kGFR_1 = a_1*b_1;\n\n  kGFR_1 = kGFR_1.toFixed(1);\n}\n\n//if (kGFR == 0){\n//  kGFR = '~0';\n//}\n\nvar msg;\n\nif (kGFR <= 30 || kGFR_1 <= 30) {\n  msg = \"KeGFR of 30 mL/min is 90% specific (71% sensitive) for AKI, according to one small retrospective study (O'Sullivan 2017)\";\n} else {\n  msg = 'KeGFR';\n}\n\n//results\nif (race == 2 || race == 1) {\ncalc_output.push({\n    name: 'mini',\n    value: kGFR,\n    value_text: 'mL/min',\n    message: 'KeGFR'\n});\ncalc_output.push({\n    name: '10191_Kinetic Estimated Glomerular Filtration Rate (keGFR)_result',\n    value: kGFR,\n    value_text: 'mL/min',\n    message: msg  \n});\n}\nif (race == -1) {\ncalc_output.push({\n    name: 'mini',\n    value: kGFR_1 + \"-\" + kGFR,\n    value_text: 'mL/min',\n    message: 'KeGFR'\n});\ncalc_output.push({\n    name: '10191_Kinetic Estimated Glomerular Filtration Rate (keGFR)_result',\n    value: kGFR_1 + \"-\" + kGFR,\n    value_text: 'mL/min',\n    message: msg + '<br/><br/>Range provided as race not selected'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 1
+                    },
+                    {
+                        "label": "Male",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Baseline creatinine",
+                "name": "Cr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "First recorded creatinine (Cr<sub>1</sub>)",
+                "name": "Cr1",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Second recorded creatinine (Cr<sub>2</sub>)",
+                "name": "Cr2",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Time between both creatinine measurements",
+                "name": "t",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "time"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Black race",
+                "md_calc_info_concept": null,
+                "name": "race",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 2
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Race may/may not provide better estimates of GFR; optional",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Kgfr",
+            "gfr",
+            "Kinetic Glomerular Filtration Rate",
+            "creatinine",
+            "rrt",
+            "renal replacement therapy",
+            "aki",
+            "kegfr"
+        ],
+        "specialty": [
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology"
+        ]
+    }
+}

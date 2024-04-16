@@ -1,0 +1,528 @@
+{
+    "id": "380",
+    "title": "APACHE II Score",
+    "desc": "The Apache II Score estimates ICU mortality based on a number of laboratory values and patient signs taking both acute and chronic disease into account.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3928249",
+                "text": "Knaus WA, Draper EA, Wagner DP, Zimmerman JE. APACHE II: a severity of disease classification system. Crit Care Med. 1985 Oct;13(10):818-29."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11271085",
+                "text": "Capuzzo M, Valpondi V, Sgarbi A, Bortolazzi S, Pavoni V, Gilli G, Candini G, Gritti G, Alvisi R. Validation of severity scoring systems SAPS II and APACHE II in a single-center population. Intensive Care Med. 2000 Dec;26(12):1779-85."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points; points assigned below:</p>",
+        "facts": "<p>The APACHE-II Score provides an estimate of ICU mortality based on a number of laboratory values and patient signs taking both acute and chronic disease into account. <b>Note</b><b>:</b> The data used should be from the initial 24 hours in the ICU, and the worst value (further from baseline/normal) should be used.</p>\n<p>The following defines &ldquo;chronic organ insufficiency&rdquo; and immunocompromise:</p>\n<ul>\n<li>Liver insufficiency\n<ul>\n<li>Biopsy proven cirrhosis</li>\n<li>Documented portal hypertension</li>\n<li>Episodes of past upper GI bleeding attributed to portal hypertension</li>\n<li>Prior episodes of hepatic</li>\n</ul>\n</li>\n<li>Cardiovascular\n<ul>\n<li>New York Heart Association Class IV Heart Failure</li>\n</ul>\n</li>\n<li>Respiratory\n<ul>\n<li>Chronic restrictive, or vascular disease resulting in severe exercice restriction, i.e. unable to climb stairs or perform household duties</li>\n<li>Documented chronic hypoxia, hypercapnia, secondary severe pulmonary hypertension (&gt;40 mmHg), or respirator dependency</li>\n</ul>\n</li>\n<li>Renal\n<ul>\n<li>Receiving chronic dialysis</li>\n</ul>\n</li>\n<li>Immunosuppression\n<ul>\n<li>The patient has received therapy that suppresses resistance to infection e.g. immuno-suppression, chemotherapy, radiation, or recent hight dose steroids, or has a disease that is sufficiently advanced to suppress resistance to infection, e.g. leukemia, lymphoma, AIDS</li>\n</ul>\n</li>\n</ul>\n<p>&nbsp;</p>\n<p><strong>Point values</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Point values</th>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Age, years</strong></td>\n</tr>\n<tr>\n<td>&le;44</td>\n<td>0</td>\n</tr>\n<tr>\n<td>45-54</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>55-64</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>65-74</td>\n<td>+5</td>\n</tr>\n<tr>\n<td>&gt;74</td>\n<td>+6</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>History of severe organ insufficiency or immunocompromised</strong></td>\n</tr>\n<tr>\n<td>Yes, and nonoperative or emergency postoperative patient</td>\n<td>+5</td>\n</tr>\n<tr>\n<td>Yes, and elective postoperative patient</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Rectal temperature, &deg;C</strong></td>\n</tr>\n<tr>\n<td>&ge;41</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>39 to &lt;41</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>38.5 to &lt;39</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>36 to &lt; 38.5</td>\n<td>0</td>\n</tr>\n<tr>\n<td>34 to &lt;36</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>32&nbsp;to &lt;34</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>30 to &lt;32</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>&lt;30</td>\n<td>+4</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Mean arterial pressure, mmHg</strong></td>\n</tr>\n<tr>\n<td>&gt;159</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>&gt;129-159</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>&gt;109-129</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&gt;69-109</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&gt;49-69</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&le;49</td>\n<td>+4</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Heart rate, beats per minute</strong></td>\n</tr>\n<tr>\n<td>&ge;180</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>140 to &lt;180</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>110 to &lt;140</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>70 to &lt;110</td>\n<td>0</td>\n</tr>\n<tr>\n<td>55 to &lt;70</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>40 to &lt;55</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>&lt;40</td>\n<td>+4</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Respiratory rate, breaths per minute</strong></td>\n</tr>\n<tr>\n<td>&ge;50</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>35 to &lt;50</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>25 to &lt;35</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>12 to &lt;25</td>\n<td>0</td>\n</tr>\n<tr>\n<td>10 to &lt;12</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>6 to &lt;10</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&lt;6</td>\n<td>+4</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Oxygenation (use PaO2 if FiO2 &lt;50%, otherwise use <calculator id=\"243\">A-a gradient</calculator>)</strong></td>\n</tr>\n<tr>\n<td><calculator id=\"243\">A-a gradient</calculator> &gt;499</td>\n<td>+4</td>\n</tr>\n<tr>\n<td><calculator id=\"243\">A-a gradient</calculator> 350-499</td>\n<td>+3</td>\n</tr>\n<tr>\n<td><calculator id=\"243\">A-a gradient</calculator> 200-349</td>\n<td>+2</td>\n</tr>\n<tr>\n<td><calculator id=\"243\">A-a gradient</calculator> &lt;200 (if FiO2 over 49%) or pO2 &gt;70 (if FiO2 less than 50%)</td>\n<td>0</td>\n</tr>\n<tr>\n<td>PaO<sub>2</sub> = 61-70</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>PaO<sub>2</sub> = 55-60</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>PaO<sub>2</sub> &lt;55</td>\n<td>+4</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Arterial pH</strong></td>\n</tr>\n<tr>\n<td>&ge;7.70</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>7.60 to &lt;7.70</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>7.50 to &lt;7.60</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>7.33 to &lt;7.50</td>\n<td>0</td>\n</tr>\n<tr>\n<td>7.25 to &lt;7.33</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>7.15 to &lt;7.25</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>&lt;7.15</td>\n<td>+4</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Serum sodium, mmol/L</strong></td>\n</tr>\n<tr>\n<td>&ge;180</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>160 to &lt;180</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>155 to &lt;160</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>150 to &lt;155</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>130 to &lt;150</td>\n<td>0</td>\n</tr>\n<tr>\n<td>120 to &lt;130</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>111 to &lt;120</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>&lt;111</td>\n<td>+4</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Serum potassium, mmol/L</strong></td>\n</tr>\n<tr>\n<td>&ge;7.0</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>6.0 to &lt;7.0</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>5.5 to &lt;6.0</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3.5 to &lt;5.5</td>\n<td>0</td>\n</tr>\n<tr>\n<td>3.0 to &lt;3.5</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>2.5 to &lt;3.0</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&lt;2.5</td>\n<td>+4</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Serum creatinine, mg/100 mL</strong></td>\n</tr>\n<tr>\n<td>&ge;3.5 and ACUTE renal failure*</td>\n<td>+8</td>\n</tr>\n<tr>\n<td>2.0 to &lt;3.5 and ACUTE renal failure</td>\n<td>+6</td>\n</tr>\n<tr>\n<td>&ge;3.5 and CHRONIC renal failure</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>1.5 to &lt;2.0 and ACUTE renal failure</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>2.0 to &lt;3.5 and CHRONIC renal failure</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>1.5 to &lt;2.0 and CHRONIC renal failure</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>0.6 to &lt;1.5</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&lt;0.6</td>\n<td>+2</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Hematocrit, %</strong></td>\n</tr>\n<tr>\n<td>&ge;60</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>50 to &lt;60</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>46 to &lt;50</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>30 to &lt;46</td>\n<td>0</td>\n</tr>\n<tr>\n<td>20 to &lt;30</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&lt;20</td>\n<td>+4</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>White blood count, total/cubic mm in </strong></td>\n</tr>\n<tr>\n<td>&ge;40</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>20 to &lt;40</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>15 to &lt;20</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3 to &lt;15</td>\n<td>0</td>\n</tr>\n<tr>\n<td>1 to &lt;3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&lt;1</td>\n<td>+4</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Glasgow Coma Scale (GCS)</strong><calculator id=\"64\"></calculator></td>\n</tr>\n<tr>\n<td>1 - 15</td>\n<td>15 - [GCS Score]</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*Note: \"acute renal failure\" was not defined in the original study. Use clinical judgment to determine whether has acute kidney injury.&nbsp;Cutoffs differ slightly from original study (by less than 0.1 mg/dL) in order to account for all possible values in this electronic calculator.</p>\n<p><strong>&nbsp;</strong></p>\n<p><strong>Approximated in-hospital mortality rates</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>APACHE II Score</th>\n<th>Nonoperative</th>\n<th>Postoperative</th>\n</tr>\n<tr>\n<td>0-4</td>\n<td>4%</td>\n<td>1%</td>\n</tr>\n<tr>\n<td>5-9</td>\n<td>8%</td>\n<td>3%</td>\n</tr>\n<tr>\n<td>10-14</td>\n<td>15%</td>\n<td>7%</td>\n</tr>\n<tr>\n<td>15-19</td>\n<td>25%</td>\n<td>12%</td>\n</tr>\n<tr>\n<td>20-24</td>\n<td>40%</td>\n<td>30%</td>\n</tr>\n<tr>\n<td>25-29</td>\n<td>55%</td>\n<td>35%</td>\n</tr>\n<tr>\n<td>30-34</td>\n<td>73%</td>\n<td>73%</td>\n</tr>\n<tr>\n<td>&gt;34</td>\n<td>85%</td>\n<td>88%</td>\n</tr>\n</tbody>\n</table>\n<p>From&nbsp;<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/3928249\" target=\"_blank\" rel=\"noopener\">Knaus et al. 1985</a>.</p>\n</div>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Creatinine",
+                "unit": "cr",
+                "error_min": "0.01",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "88.4",
+                "normal_max_si": "115",
+                "normal_max_us": "1.3",
+                "normal_min_si": "62",
+                "normal_min_us": "0.7",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Hematocrit",
+                "unit": "hct",
+                "error_min": "1",
+                "error_max": "70",
+                "warn_min": "20",
+                "warn_max": "55",
+                "conversion": "1",
+                "normal_max_si": "51",
+                "normal_max_us": "51",
+                "normal_min_si": "36",
+                "normal_min_us": "36",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Respiratory Rate",
+                "unit": "rr",
+                "error_min": "0",
+                "error_max": "90",
+                "warn_min": "5",
+                "warn_max": "70",
+                "conversion": "1",
+                "normal_max_si": "20",
+                "normal_max_us": "20",
+                "normal_min_si": "12",
+                "normal_min_us": "12",
+                "units_si": "breaths/min",
+                "units_us": "breaths/min"
+            },
+            {
+                "name": "White Blood Cell Count",
+                "unit": "wbc",
+                "error_min": "0.0001",
+                "error_max": "500",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10.7",
+                "normal_max_us": "10.7",
+                "normal_min_si": "3.7",
+                "normal_min_us": "3.7",
+                "units_si": "× 10⁹ cells/L",
+                "units_us": "× 10³ cells/µL"
+            },
+            {
+                "name": "Sodium",
+                "unit": "na",
+                "error_min": "100",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "170",
+                "conversion": "1",
+                "normal_max_si": "145",
+                "normal_max_us": "145",
+                "normal_min_si": "136",
+                "normal_min_us": "136",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            },
+            {
+                "name": "Glasgow Coma Scale",
+                "unit": "gcs",
+                "error_min": "3",
+                "error_max": "16",
+                "warn_min": "3",
+                "warn_max": "15",
+                "conversion": "1",
+                "normal_max_si": "15",
+                "normal_max_us": "15",
+                "normal_min_si": "3",
+                "normal_min_us": "3",
+                "units_si": "points",
+                "units_us": "points"
+            },
+            {
+                "name": "Heart Rate/Pulse",
+                "unit": "hr",
+                "error_min": "10",
+                "error_max": "300",
+                "warn_min": "20",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "beats/min",
+                "units_us": "beats/min"
+            },
+            {
+                "name": "pH",
+                "unit": "ph",
+                "error_min": "6.2",
+                "error_max": "8.5",
+                "warn_min": "7",
+                "warn_max": "7.6",
+                "conversion": "1",
+                "normal_max_si": "7.44",
+                "normal_max_us": "7.44",
+                "normal_min_si": "7.38",
+                "normal_min_us": "7.38",
+                "units_si": "",
+                "units_us": ""
+            },
+            {
+                "name": "Mean Arterial Pressure",
+                "unit": "map",
+                "error_min": "20",
+                "error_max": "210",
+                "warn_min": "40",
+                "warn_max": "180",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "70",
+                "normal_min_us": "70",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Temperature",
+                "unit": "temp",
+                "error_min": "70",
+                "error_max": "120",
+                "warn_min": "90",
+                "warn_max": "108",
+                "conversion": "var C, F; if (C) { (C * 9/5)+32; } else { (F -32) * 5/9; } ",
+                "normal_max_si": "37.8",
+                "normal_max_us": "100",
+                "normal_min_si": "36.1",
+                "normal_min_us": "97",
+                "units_si": "C",
+                "units_us": "F"
+            },
+            {
+                "name": "Potassium",
+                "unit": "k",
+                "error_min": "1",
+                "error_max": "10",
+                "warn_min": "2",
+                "warn_max": "7",
+                "conversion": "1",
+                "normal_max_si": "5.2",
+                "normal_max_us": "5.2",
+                "normal_min_si": "3.5",
+                "normal_min_us": "3.5",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "Fever"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Diabetes Mellitus",
+            "HIV/AIDS",
+            "Renal Failure",
+            "Sepsis"
+        ],
+        "logic": "var calc_output = [];\n\n//define inputs\nvar organ_insufficiency = parseFloat(organ_insufficiency);\nvar acute_renal_failure = parseFloat(acute_renal_failure);\nvar a = parseFloat(age);\nvar b = parseFloat(temperature); //this always spits out celsius\nvar surgery = parseFloat(surgery);\nvar l = parseFloat(mean_arterial_pressure);\nvar c = parseFloat(ph);\nvar d = parseFloat(heart_rate);\nvar e = parseFloat(respiratory_rate);\nvar na = parseFloat(sodium);\nvar potassium = parseFloat(potassium);\nvar cr = parseFloat(creatinine);\nvar hct = parseFloat(hematocrit);\nvar wbc = parseFloat(white_blood_cell_count);\nvar k = parseFloat(glasgow_coma_scale);\nvar aa_grad = parseFloat(aa_grad);\nvar pao2 = parseFloat(pao2);\nvar fio2 = parseFloat(fio2);\n\n//define result variables\nvar value = 0;\nvar msg = '';\nvar mini_msg = '';\nvar msg1 = '';\nvar msg2 = '';\nvar msg3 = '';\n\nif (fio2 == 0) { //record PaO2 is FiO2 is <0.5\n    value = pao2;\n} else if (fio2 == 1) { //record Aa-gradient is FiO2 is â¥0.5\n    value = aa_grad;\n}\n\nk = 15 - k; //GCS score = 15 - actual GCS\nvalue = value + k; //add GCS score to total score \n\nif (wbc >= 40) { //white blood cell count\n    value += 4;\n} else if (20 <= wbc && wbc < 40) {\n    value += 2;\n} else if (15 <= wbc && wbc < 20) {\n    value += 1;\n} else if (3 <= wbc && wbc < 15) {\n    value += 0;\n} else if (1 <= wbc && wbc < 3) {\n    value += 2;\n} else if (wbc < 1) {\n    value += 4;\n}\n\nif (hct >= 60) { //hematocrit (%)\n    value += 4;\n} else if (50 <= hct && hct < 60) {\n    value += 2;\n} else if (46 <= hct && hct < 50) {\n    value += 1;\n} else if (30 <= hct && hct < 46) {\n    value += 0;\n} else if (20 <= hct && hct < 30) {\n    value += 2;\n} else if (hct < 20) {\n    value += 4;\n}\n\nif (UOMSYSTEM == false) { \n    cr = cr/88.4; //convert creatinine to US\n}\nif (UOMSYSTEM == true) {\n    cr = cr;\n}\n\nif (acute_renal_failure == 1) { //if acute renal failure\n    if (cr >= 3.5) {\n        value += 8;\n    } else if (2.0 <= cr && cr < 3.5) {\n        value += 6;\n    } else if (1.5 <= cr && cr < 2) {\n        value += 4;\n    } else if (0.6 <= cr && cr < 1.5) {\n        value += 0;\n    } else if (cr < 0.6) {\n        value += 2;\n    }\n} else if (acute_renal_failure == 0) { //if no acute renal failure\n    if (cr >= 3.5) {\n        value += 4;\n    } else if (2.0 <= cr && cr < 3.5) {\n        value += 3;\n    } else if (1.5 <= cr && cr < 2) {\n        value += 2;\n    } else if (0.6 <= cr && cr < 1.5) {\n        value += 0;\n    } else if (cr < 0.6) {\n        value += 2;\n    }\n}\n\nif (potassium >= 7) { //serum potassium\n    value += 4;\n} else if (6 <= potassium && potassium < 7) {\n    value += 3;\n} else if (5.5 <= potassium && potassium < 6) {\n    value += 1;\n} else if (3.5 <= potassium && potassium < 5.5) {\n    value += 0;\n} else if (3 <= potassium && potassium < 3.5) {\n    value += 1;\n} else if (2.5 <= potassium && potassium < 3) {\n    value += 2;\n} else if (potassium < 2.5) {\n    value += 4;\n}\n\nif (na >= 180) { //serum sodium\n    value += 4;\n} else if (160 <= na && na < 180) {\n    value += 3;\n} else if (155 <= na && na < 160) {\n    value += 2;\n} else if (150 <= na && na < 155) {\n    value += 1;\n} else if (130 <= na && na < 150) {\n    value += 0;\n} else if (120 <= na && na < 130) {\n    value += 2;\n} else if (111 <= na && na < 120) {\n    value += 3;\n} else if (na < 111) {\n    value += 4;\n}\n\nif (e >= 50) { //respiratory rate\n    value += 4;\n} else if (35 <= e && e < 50) {\n    value += 3;\n} else if (25 <= e && e < 35) {\n    value += 1;\n} else if (12 <= e && e < 25) {\n    value += 0;\n} else if (10 <= e && e < 12) {\n    value += 1;\n} else if (6 <= e && e < 10) {\n    value += 2;\n} else if (e < 6) {\n    value += 4;\n}\n\nif (c >= 7.7) { //pH\n    value += 4;\n} else if (7.6 <= c && c < 7.7) {\n    value += 3;\n} else if (7.5 <= c && c < 7.6) {\n    value += 1;\n} else if (7.33 <= c && c < 7.5) {\n    value += 0;\n} else if (7.25 <= c && c < 7.33) {\n    value += 2;\n} else if (7.15 <= c && c < 7.25) {\n    value += 3;\n} else if (c < 7.15) {\n    value += 4;\n}\n\nif (b >= 41) { //temp in celsius\n    value += 4;\n} else if (39 <= b && b < 41) {\n    value += 3;\n} else if (38.5 <= b && b < 39) {\n    value += 1;\n} else if (36 <= b && b < 38.5) {\n    value += 0;\n} else if (34 <= b && b < 36) {\n    value += 1;\n} else if (32 <= b && b < 34) {\n    value += 2;\n} else if (30 <= b && b < 32) {\n    value += 3;\n} else if (b < 30) {\n    value += 4;\n}\n\nif (a <= 44) { //age\n    value += 0;\n} else if (44 < a && a <= 54) {\n    value += 2;\n} else if (54 < a && a <= 64) {\n    value += 3;\n} else if (64 < a && a <= 74) {\n    value += 5;\n} else if (a > 74) {\n    value += 6;\n}\n\nif (organ_insufficiency == 0) { //history of organ failure = no\n    value += 0;\n} else if (organ_insufficiency == 1) { //history of organ failure = yes\n    if (surgery == 0) {\n        value += 5;\n    } else if (surgery == 1) {\n        value += 2;\n    } else if (surgery == 2) {\n        value += 5;\n    }\n}\n\nif (d >= 180) { //heart rate\n    value += 4;\n} else if (140 <= d && d < 180) {\n    value += 3;\n} else if (110 <= d && d < 140) {\n    value += 2;\n} else if (70 <= d && d < 110) {\n    value += 0;\n} else if (55 <= d && d < 70) {\n    value += 2;\n} else if (40 <= d && d < 55) {\n    value += 3;\n} else if (d < 40) {\n    value += 4;\n}\n\nif (l <= 49) { //mean arterial pressure\n    value += 4;\n} else if (l > 49 && l <= 69) {\n    value += 2;\n} else if (l > 69 && l <= 109) {\n    value += 0;\n} else if (l > 109 && l <= 129) {\n    value += 2;\n} else if (l > 129 && l <= 159) {\n    value += 3;\n} else if (l > 159) {\n    value += 4;\n}\n\nvalue = value.toFixed(0); //round total score\n\nif (organ_insufficiency == 1) {\n    if (surgery == 0 || surgery == 1) {\n        if (value >= 0 && value <= 4) {\n            msg = '1';\n        } else if (value >= 5 & value <= 9) {\n            msg = '3';\n        } else if (value >= 10 & value <= 14) {\n            msg = '7';\n        } else if (value >= 15 & value <= 19) {\n            msg = '12';\n        } else if (value >= 20 & value <= 24) {\n            msg = '30';\n        } else if (value >= 25 & value <= 29) {\n            msg = '35';\n        } else if (value >= 30 & value <= 34) {\n            msg = '73';\n        } else if (value > 34) {\n            msg = '88';\n        }\n        msg1 = 'estimated postoperative mortality';\n        mini_msg = 'Est. postoperative mortality';\n\n    } else if (surgery == 2) {\n        if (value >= 0 && value <= 4) {\n            msg = '4';\n        } else if (value >= 5 & value <= 9) {\n            msg = '8';\n        } else if (value >= 10 & value <= 14) {\n            msg = '15';\n        } else if (value >= 15 & value <= 19) {\n            msg = '25';\n        } else if (value >= 20 & value <= 24) {\n            msg = '40';\n        } else if (value >= 25 & value <= 29) {\n            msg = '55';\n        } else if (value >= 30 & value <= 34) {\n            msg = '73';\n        } else if (value > 34) {\n            msg = '85';\n        }\n        msg1 = 'estimated nonoperative mortality';\n        mini_msg = 'Est. nonoperative mortality';\n    }\n} else if (organ_insufficiency == 0) {\n    if (value >= 0 && value <= 4) {\n        msg = '1';\n        msg2 = '4';\n    } else if (value >= 5 & value <= 9) {\n        msg = '3';\n        msg2 = '8';\n    } else if (value >= 10 & value <= 14) {\n        msg = '7';\n        msg2 = '15';\n    } else if (value >= 15 & value <= 19) {\n        msg = '12';\n        msg2 = '25';\n    } else if (value >= 20 & value <= 24) {\n        msg = '30';\n        msg2 = '40';\n    } else if (value >= 25 & value <= 29) {\n        msg = '35';\n        msg2 = '55';\n    } else if (value >= 30 & value <= 34) {\n        msg = '73';\n        msg2 = '73';\n    } else if (value > 34) {\n        msg = '88';\n        msg2 = '85';\n    }\n    msg1 = 'estimated postoperative mortality';\n    mini_msg = 'Est. postoperative mortality';\n    msg3 = 'estimated nonoperative mortality';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: msg,\n    value_text: '%',\n    message: mini_msg\n});\nif (organ_insufficiency == 1) {\ncalc_output.push({\n    name: '1868_APACHE II Score_result',\n    value: value,\n    value_text: 'points',\n    message: msg + '% ' + msg1  \n});\n}\nif (organ_insufficiency == 0) {\ncalc_output.push({\n    name: '1868_APACHE II Score_result',\n    value: value,\n    value_text: 'points',\n    message: msg + '% ' + msg1 +'<br/>' + msg2 + '% ' + msg3 \n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>History of severe organ failure or immunocompromise</p>",
+                "mdcalc_info_concept": null,
+                "name": "organ_insufficiency",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Heart Failure Class IV, cirrhosis, chronic lung disease, or dialysis-dependent",
+                "type": "radio"
+            },
+            {
+                "conditionality": "organ_insufficiency == 1",
+                "default": null,
+                "label_en": "<p>Type of surgery</p>",
+                "mdcalc_info_concept": null,
+                "name": "surgery",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Emergency",
+                        "value": 0
+                    },
+                    {
+                        "label": "Elective",
+                        "value": 1
+                    },
+                    {
+                        "label": "Nonoperative",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Temperature</p>",
+                "name": "temperature",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "temp"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Mean arterial pressure</p>",
+                "name": "mean_arterial_pressure",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "map"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>pH</p>",
+                "name": "ph",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ph"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Heart rate/pulse</p>",
+                "name": "heart_rate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Respiratory rate</p>",
+                "name": "respiratory_rate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "rr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Sodium</p>",
+                "name": "sodium",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Potassium</p>",
+                "name": "potassium",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "k"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Creatinine</p>",
+                "name": "creatinine",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Acute renal failure</p>",
+                "md_calc_info_concept": null,
+                "name": "acute_renal_failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Note: \"acute renal failure\" was not defined in the original study. Use clinical judgment to determine whether patient has acute kidney injury.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Hematocrit</p>",
+                "name": "hematocrit",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hct"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>White blood cell count</p>",
+                "name": "white_blood_cell_count",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wbc"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p><calculator id=\"64\">Glasgow Coma Scale</calculator></p>",
+                "name": "glasgow_coma_scale",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "gcs"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>FiO₂</p>",
+                "mdcalc_info_concept": null,
+                "name": "fio2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<50% (or non-intubated)",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥50%",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "fio2 == 0",
+                "default": null,
+                "label_en": "<p>PaO₂, mmHg</p>",
+                "mdcalc_info_concept": null,
+                "name": "pao2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">70",
+                        "value": 0
+                    },
+                    {
+                        "label": "61-70",
+                        "value": 1
+                    },
+                    {
+                        "label": "55-60",
+                        "value": 3
+                    },
+                    {
+                        "label": "<55",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "fio2 == 1",
+                "default": null,
+                "label_en": "<p>A-a gradient</p>",
+                "mdcalc_info_concept": null,
+                "name": "aa_grad",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<200",
+                        "value": 0
+                    },
+                    {
+                        "label": "200-349",
+                        "value": 2
+                    },
+                    {
+                        "label": "350-499",
+                        "value": 3
+                    },
+                    {
+                        "label": ">499",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "sepsis",
+            "covid",
+            "covid 19",
+            "covid-19",
+            "covid19",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

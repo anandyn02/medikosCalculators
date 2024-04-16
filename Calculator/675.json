@@ -1,0 +1,102 @@
+{
+    "id": "675",
+    "title": "Sodium Correction for Hyperglycemia",
+    "desc": "The Sodium Correction for Hyperglycemia Calculates the actual sodium level in patients with hyperglycemia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4763428",
+                "text": "Katz MA. Hyperglycemia-induced hyponatremia--calculation of expected serum sodium depression. N Engl J Med. 1973 Oct 18;289(16):843-4. PubMed PMID: 4763428."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Corrected Sodium (Katz, 1973) = Measured sodium + 0.016 * (Serum glucose - 100)</p>\n<p>Corrected Sodium (Hillier, 1999) = Measured sodium + 0.024 * (Serum glucose - 100)</p>\n<p>Note: Serum glucose must be in mg/dL for these formulae to work.</p>",
+        "facts": "<p>Hillier et. al (1999) evaluated 6 healthy subjects, induced hyperglycemia, and measured actual serum sodium levels, finding a sodium correction factor of 2.4mEq/L to be more accurate than the classically taught 1.6mEq/L correction factor from Katz, 1973.</p>",
+        "estimation": [
+            {
+                "name": "Glucose",
+                "unit": "glu",
+                "error_min": "1",
+                "error_max": "1600",
+                "warn_min": "50",
+                "warn_max": "1000",
+                "conversion": "0.0555",
+                "normal_max_si": "5.8",
+                "normal_max_us": "105",
+                "normal_min_si": "3.9",
+                "normal_min_us": "70",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Sodium",
+                "unit": "na",
+                "error_min": "100",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "170",
+                "conversion": "1",
+                "normal_max_si": "145",
+                "normal_max_us": "145",
+                "normal_min_si": "136",
+                "normal_min_us": "136",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Seizure",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus",
+            "Hyperglycemia",
+            "Hypernatremia",
+            "Hyponatremia"
+        ],
+        "logic": "var calc_output = [];\nvar sodium = parseFloat(sodium);\nvar glucose;\n\nif (UOMSYSTEM == true) {\n  glucose = parseFloat(glucose);\n}\n\nif (UOMSYSTEM == false) // need US units for glucose\n{\n  glucose = parseFloat(glucose) / 0.0555;\n}\n\nvar value = sodium + (0.016 * (glucose - 100)); // value in US units\nvar value2 = sodium + (0.024 * (glucose - 100)); // value2 in US units\n\nvar units = 'mEq/L'; // value in US units\n\nif (UOMSYSTEM == false) { \n  units = 'mmol/L' // value in SI units\n}\n\n  calc_output.push({\n    name: 'mini',\n    value: value.toFixed(0),\n    value_text: units,\n    message: 'Corrected Sodium'\n  });\n  calc_output.push({\n    name: '50_Na Correction for Hyperglycemia_result (Katz)',\n    value: value.toFixed(0),\n    value_text: units,\n    message: 'Corrected Sodium<br/>(Katz, 1973)'\n  });\n  calc_output.push({\n    name: '50_Na Correction for Hyperglycemia_result (Hillier)',\n    value: value2.toFixed(0),\n    value_text: units,\n    message: 'Corrected Sodium<br/>(Hillier, 1999)'\n  });\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Sodium",
+                "name": "sodium",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Glucose",
+                "name": "glucose",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "glu"
+            }
+        ],
+        "can_search": [
+            "na",
+            "glucose",
+            "dm",
+            "diabetes"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatric Subspecialty",
+            "Pediatrics"
+        ]
+    }
+}

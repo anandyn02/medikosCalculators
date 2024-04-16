@@ -1,0 +1,162 @@
+{
+    "id": "398",
+    "title": "ABC/2 Formula for Intracerebral Hemorrhage Volume",
+    "desc": "The ABC/2 Formula for Intracerebral Hemorrhage Volume predicts size of intracranial hemorrhage.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://stroke.ahajournals.org/content/27/8/1304.full",
+                "text": "Kothari RU, Brott T, Broderick JP, et. al. The ABCs of Measuring Intracerebral Hemorrhage Volumes. Stroke.1996; 27: 1304-1305. doi: 10.1161/01.STR.27.8.1304."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://stroke.ahajournals.org/content/24/7/987.full.pdf+html",
+                "text": "Broderick JP, Brott TG, et. al. Volume of intracerebral hemorrhage. A powerful and easy-to-use predictor of 30-day mortality. Stroke. 1993;24:987-93, doi:10.1161/01.STR.24.7.987."
+            }
+        ],
+        "evidence": "<p>Volume of Hemorrhage = A &times; B &times; C &times; Slices / Hemorrhage Shape</p>\n<p>A = Length<br>B = Width<br>C = Slice Width<br># Slices with Hemorrhage Present</p>\n<p><b>Hemorrhage Shape: If Round/Ellipsoid: 2; Otherwise: 3.</b> (See references below for this update to the formula.)</p>\n<p>Of note, the volume of an ellipsoid is 4/3 &times; &pi; &times; (ABC/2); when you estimate &pi; to be ~3, the volume becomes ABC/2.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Length",
+                "unit": "length_si_mm",
+                "error_min": "0",
+                "error_max": "10000",
+                "warn_min": "0.1",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mm",
+                "units_us": "mm"
+            },
+            {
+                "name": "Slices",
+                "unit": "ct_slices",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0.1",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "slices",
+                "units_us": "slices"
+            },
+            {
+                "name": "Length",
+                "unit": "length_si_cm",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "cm",
+                "units_us": "cm"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Headache",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Intracranial Hemorrhage"
+        ],
+        "logic": "var calc_output = [];\nvar u = (parseFloat(bl_length) * parseFloat(bl_width) * parseFloat(slices) * parseFloat(sl_thick) / parseFloat(hemm_shape)) / 10;\n\ncalc_output.push({ \n    name: 'mini', \n    value: u.toFixed(1), \n    value_text: 'mL (cm\\u00B3)', \n    message: 'Est. Hemorrhage Volume' \n});\ncalc_output.push({ \n    name: '2031_ABC/2 Formula_result', \n    value: u.toFixed(1), \n    value_text: 'mL (cm\\u00B3)', \n    message: 'Estimated Hemorrhage Volume' \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Hemorrhage Shape",
+                "mdcalc_info_concept": null,
+                "name": "hemm_shape",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Round or Ellipsoid",
+                        "value": 2
+                    },
+                    {
+                        "label": "Irregular, Separated, or Multinodular",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hemorrhage Length",
+                "name": "bl_length",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_cm"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hemorrhage Width",
+                "name": "bl_width",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_cm"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of CT Slices",
+                "name": "slices",
+                "optional": false,
+                "tips_en": "Slice with ≥75% Area of Hemorrhage: Counts as 1 slice; Slice with 25-75% Area of Hemorrhage: Counts as 0.5 slices; Slice with <25% Area of Hemorrhage: Counts as 0 slices",
+                "type": "textbox",
+                "unit": "ct_slices"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "CT Slice Thickness",
+                "name": "sl_thick",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            }
+        ],
+        "can_search": [
+            "ich",
+            "bleed",
+            "stroke",
+            "CT"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology",
+            "Radiology"
+        ]
+    }
+}

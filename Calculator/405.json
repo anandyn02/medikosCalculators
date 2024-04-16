@@ -1,0 +1,140 @@
+{
+    "id": "405",
+    "title": "Gleason Score for Prostate Cancer",
+    "desc": "The Gleason Score for Prostate Cancer provides prognosis based on microscopic tumor appearance.",
+    "data": {
+        "orgreference": [],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16096414",
+                "text": "Epstein JI, Allsbrook WC Jr, Amin MB, Egevad LL; ISUP Grading Committee. The 2005 International Society of Urological Pathology (ISUP) Consensus Conference on Gleason grading of prostatic carcinoma. Am J Surg Pathol 2005;29(9):1228-42."
+            }
+        ],
+        "evidence": "<p>Addition of primary, secondary and tertiary scores.</p>",
+        "facts": "<p><strong>Grading System:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Gleason Score</th>\n<th>Prognostic Grade Group</th>\n</tr>\n<tr>\n<td>Gleason score &le;6:</td>\n<td>I</td>\n</tr>\n<tr>\n<td>Gleason score 3 + 4 = 7:</td>\n<td>II</td>\n</tr>\n<tr>\n<td>Gleason score 4 + 3 = 7:</td>\n<td>III</td>\n</tr>\n<tr>\n<td>Gleason score 8:</td>\n<td>IV</td>\n</tr>\n<tr>\n<td>Gleason score 9-10:</td>\n<td>V</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><strong>See below for the Gleason Score Diagram:</strong></p>\n<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/gleason-pattern.jpeg\" class=\"alignnone size-full wp-image-1839\" alt=\"gleason score\"></div>",
+        "estimation": [],
+        "primary_complains": [
+            "Hematuria",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer"
+        ],
+        "logic": "var calc_output=[]; \nvar p=parseFloat(primary); \nvar s=parseFloat(secondary); \nvar t=parseFloat(tertiary); \nvar v=p+s; \nvar val=p + '+' + s + '=' + v; \nvar grade=''; \nvar mini_grade=''; \n\nif(v<6){\n    grade='Prognostic grade group I - Unlikely severe cancer is present. Consider close monitoring.';\n    mini_grade='Prognostic grade group I'\n} \nif(v==6){\n    grade='Prognostic grade group I - 97.1 and 98.8% remission of tumor within 2 years of diagnosis.';\n    mini_grade='Prognostic grade group I'\n} \nif(v>6 && p==3 && s==4){\n    grade='Prognostic grade group II - 90.6 and 93.6% remission of tumor within 2 years of diagnosis.';\n    mini_grade='Prognostic grade group II'\n} \nif(v>6 && p==4 && s==3){\n    grade='Prognostic grade group III -  < 90.6% remission of tumor within 2 years of diagnosis.';\n    mini_grade='Prognostic grade group III'\n}\nif(v==8){\n    grade='Prognostic grade group IV - 70.9 - 73.7% remission of tumor within 2 years of diagnosis.';\n    mini_grade='Prognostic grade group IV'\n} \nif(v>8){\n    grade='Prognostic grade group V -  66.7 - 58.5% remission of tumor within 2 years of diagnosis.';\n    mini_grade='Prognostic grade group V'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:v,\n    value_text:'Gleason Score',\n    message:mini_grade\n}); \ncalc_output.push({\n    name:'2048_Gleason Score_result',\n    value:val,\n    value_text:'Gleason Score, Tertiary Grade: '+ t,\n    message: grade\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Primary grade",
+                "mdcalc_info_concept": null,
+                "name": "primary",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Closely resembles normal prostate. Glands are small, well-formed, closely packed.",
+                        "value": 1
+                    },
+                    {
+                        "label": "Increased stroma with well-formed glands, but larger with more tissue between them.",
+                        "value": 2
+                    },
+                    {
+                        "label": "Recognizable glands, but cells are darker. Some cells have left the glands and are beginning to invade the surrounding tissue or have an infiltrative pattern.",
+                        "value": 3
+                    },
+                    {
+                        "label": "Few recognizable glands. Many cells invading the surrounding tissue in clumps.",
+                        "value": 4
+                    },
+                    {
+                        "label": "Few or no recognizable glands. Often sheets of cells throughout the surrounding tissue.",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "The dominant pattern of the tumor (>50% of total pattern seen)",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Secondary grade",
+                "mdcalc_info_concept": null,
+                "name": "secondary",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Closely resembles normal prostate. Glands are small, well-formed, closely packed.",
+                        "value": 1
+                    },
+                    {
+                        "label": "Increased stroma with well-formed glands, but larger with more tissue between them.",
+                        "value": 2
+                    },
+                    {
+                        "label": "Recognizable glands, but cells are darker. Some cells have left the glands and are beginning to invade the surrounding tissue or have an infiltrative pattern.",
+                        "value": 3
+                    },
+                    {
+                        "label": "Few recognizable glands. Many cells invading the surrounding tissue in clumps.",
+                        "value": 4
+                    },
+                    {
+                        "label": "Few or no recognizable glands. Often sheets of cells throughout the surrounding tissue.",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "The highest grade pattern seen after the primary pattern",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Tertiary grade",
+                "mdcalc_info_concept": null,
+                "name": "tertiary",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Closely resembles normal prostate. Glands are small, well-formed, closely packed.",
+                        "value": 1
+                    },
+                    {
+                        "label": "Increased stroma with well-formed glands, but larger with more tissue between them.",
+                        "value": 2
+                    },
+                    {
+                        "label": "Recognizable glands, but cells are darker. Some cells have left the glands and are beginning to invade the surrounding tissue or have an infiltrative pattern.",
+                        "value": 3
+                    },
+                    {
+                        "label": "Few recognizable glands. Many cells invading the surrounding tissue in clumps.",
+                        "value": 4
+                    },
+                    {
+                        "label": "Few or no recognizable glands. Often sheets of cells throughout the surrounding tissue.",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Small component of a third (generally more aggressive) pattern",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "prostate",
+            "male",
+            "urological",
+            "CA"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Pathology",
+            "Urology"
+        ]
+    }
+}

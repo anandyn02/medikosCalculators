@@ -1,0 +1,132 @@
+{
+    "id": "7",
+    "title": "Embolic Stroke of Undetermined Source (ESUS) Criteria",
+    "desc": "Embolic Stroke of Undetermined Source (ESUS) Criteria diagnoses embolic stroke of undetermined source.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24646875 ",
+                "text": "Hart RG, Diener HC, Coutts SB, et al. Embolic strokes of undetermined source: the case for a new clinical construct. Lancet Neurol. 2014;13(4):429-38."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Selection of the appropriate criteria (all 4 must be present):</p>\n<ol>\n<li>Ischemic stroke detected by CT or MRI that is not lacunar*.</li>\n<li>Absence of extracranial or intracranial atherosclerosis causing &ge;50% luminal stenosis in arteries supplying the area of ischemia.</li>\n<li>No major risk cardioembolic source of embolism**.</li>\n<li>No other specific cause of stroke identified (e.g. arteritis, dissection, migraine/vasospasm, drug abuse).</li>\n</ol>\n<p><strong>Note:</strong> diagnosis of ESUS requires a minimum diagnostic evaluation, including cardiac monitoring for &gt;24 hours with automated rhythm detection, in addition to the above criteria.</p>\n<p>*Lacunar = subcortical infarct &le;1.5 cm (&le;2.0 cm on MRI diffusion images) in largest dimension, including on MRI diffusion-weighted images, and in distribution of small, penetrating cerebral arteries of cerebral hemispheres and pons.</p>\n<p>**Permanent or paroxysmal atrial fibrillation, sustained atrial flutter, intracardiac thrombus, prosthetic cardiac valve, atrial myxoma or other cardiac tumors, mitral stenosis, recent (&lt;4 weeks) MI, left ventricular ejection fraction &lt;30%, valvular vegetations, or infective endocarditis.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Neurologic Deficit",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar result, msg, rec\n\nif (parseFloat(ischemic) + parseFloat(arteries) + parseFloat(embolic) + parseFloat(other) == 4) {\n\tresult = 'Positive'\n  \tmsg = 'ESUS criteria fulfilled'\n  \trec = '. Further evaluation indicated (see Next Steps for details)'\n}\nelse {\n  \tresult = 'Negative'\n   \tmsg = 'ESUS criteria not fulfilled'\n  \trec = ''\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: result,\n   value_text: '',\n   message: msg\n});\ncalc_output.push({\n   name: '10007_ESUS Criteria_result',\n   value: result,\n   value_text: '',\n   message: msg + rec\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "All 4 must be present:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Non-lacunar ischemic stroke on CT or MRI",
+                "md_calc_info_concept": null,
+                "name": "ischemic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Lacunar = subcortical infarct ≤1.5 cm (≤2.0 cm on MRI diffusion images) in largest dimension, including on MRI diffusion-weighted images, and in distribution of small, penetrating cerebral arteries of cerebral hemispheres and pons",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of atherosclerosis (extra- or intracranial) causing ≥50% luminal stenosis in arteries supplying the ischemic area",
+                "md_calc_info_concept": null,
+                "name": "arteries",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No major risk cardioembolic source",
+                "md_calc_info_concept": null,
+                "name": "embolic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Major risk source = afib (permanent or paroxysmal), sustained atrial flutter, intracardiac thrombus, prosthetic cardiac valve, cardiac tumors (e.g. atrial myxoma), mitral stenosis, recent (<4 weeks) MI, left ventricular EF <30%, valvular vegetations, or infective endocarditis",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No other specific cause of stroke identified",
+                "md_calc_info_concept": null,
+                "name": "other",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "E.g. arteritis, dissection, migraine/vasospasm, drug abuse",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "cryptogenic stroke",
+            "esus"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "id": "70",
+    "title": "Hydroxychloroquine (Plaquenil) Dosing Calculator",
+    "desc": "The Hydroxychloroquine Dosing Calculator calculates appropriate daily dose of hydroxychloroquine.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25275721",
+                "text": "Melles RB, Marmor MF. The risk of toxic retinopathy in patients on long-term hydroxychloroquine therapy. JAMA Ophthalmol. 2014;132(12):1453-60."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Maximum daily hydroxychloroquine dose = 5.0 mg/kg</p>",
+        "facts": "<p>Interpretation:</p>\n<table width=\"285\" height=\"126\">\n<tbody>\n<tr>\n<td><strong>Mean daily dose</strong></td>\n<td><strong>10-year risk of retinopathy</strong></td>\n<td><strong>20-year risk of retinopathy</strong></td>\n</tr>\n<tr>\n<td>4-5 mg/kg</td>\n<td>2%</td>\n<td>20%</td>\n</tr>\n<tr>\n<td>&gt;5 mg/kg</td>\n<td>10%</td>\n<td>40%</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [
+            {
+                "name": "Dosage",
+                "unit": "drugmg",
+                "error_min": "-1",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mg",
+                "units_us": "mg"
+            },
+            {
+                "name": "Weight, adult",
+                "unit": "wt_adult",
+                "error_min": "55",
+                "error_max": "620",
+                "warn_min": "55",
+                "warn_max": "300",
+                "conversion": "0.453592",
+                "normal_max_si": "113",
+                "normal_max_us": "250",
+                "normal_min_si": "45",
+                "normal_min_us": "100",
+                "units_si": "kg",
+                "units_us": "lbs"
+            }
+        ],
+        "primary_complains": [
+            "Joint Pain"
+        ],
+        "disease_treated": [
+            "Breast Cancer",
+            "Coronavirus",
+            "COVID-19",
+            "Rheumatoid Arthritis"
+        ],
+        "logic": "var calc_output = [];\nvar weight;\n\nif (UOMSYSTEM == false) {\n\tweight = parseFloat(weight);\n}\nif (UOMSYSTEM == true) {\n\tweight = parseFloat(weight)*0.453592;\n}\n\ndose = parseFloat(dose) || 0;\n\nvar max_dose = weight * 5;\n\nvar dose_by_weight = dose / weight;\n\ndose_by_weight = dose_by_weight.toFixed(1);\n\nvar msg\nif (dose_by_weight > 5) {\n  msg = 'Warning: this is greater than the recommended daily dose of ≤5 mg/kg. Consider lowering dose.'\n}\nelse {\n  msg = 'Dose is within recommended daily dose of ≤5 mg/kg.';\n}\n\nvar risk1;\nvar risk2;\n\nif(dose_by_weight >= 4 && dose_by_weight <= 5){\n  risk1 = 2;\n  risk2 = '20%';\n}\nelse if(dose_by_weight > 5){\n  risk1 = 10;\n  risk2 = '40%';\n}\n//results\ncalc_output.push({\n    name: 'mini',\n    value: max_dose.toFixed(0),\n    value_text: 'mg',\n    message: 'Max daily hydroxychloroquine dose'\n});\ncalc_output.push({\n    name: '10080_Hydroxychloroquine (Plaquenil) Dosing_result (max)',\n    value: max_dose.toFixed(0),\n    value_text: 'mg daily dose',\n    message: 'Maximum daily dose of hydroxychloroquine'\n});\n\nif (dose != 0) {\ncalc_output.push({\n    name: '10080_Hydroxychloroquine (Plaquenil) Dosing_result (dose/weight)',\n    value: dose_by_weight,\n    value_text: 'mg/kg',\n    message: msg\n});}\nif (dose_by_weight >= 4){\ncalc_output.push({\n    name: '10080_Hydroxychloroquine (Plaquenil) Dosing_result (risk)',\n    value: risk1,\n    value_text: '%',\n    message: '10-year risk of retinopathy ('+ risk2 + ' risk at 20 years)'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Weight</p>",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt_adult"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Current daily dose</p>",
+                "name": "dose",
+                "optional": true,
+                "tips_en": "Optional: enter current daily dose of hydroxychloroquine to determine if dose is too high ",
+                "type": "textbox",
+                "unit": "drugmg"
+            }
+        ],
+        "can_search": [
+            "plaquenil",
+            "covid19",
+            "covid",
+            "covid-19",
+            "covid 19",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Ophthalmology",
+            "Pharmacy",
+            "Rheumatology"
+        ]
+    }
+}

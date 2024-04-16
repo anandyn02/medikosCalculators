@@ -1,0 +1,127 @@
+{
+    "id": "689",
+    "title": "TIMI Risk Index",
+    "desc": "The TIMI Risk Index provides mortality estimate in patients with ACS using only blood pressure, heart rate, and age.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16630990",
+                "text": "Wiviott SD, Morrow DA, Frederick PD, Antman EM, Braunwald E; National Registry of Myocardial Infarction. Application of the Thrombolysis in Myocardial Infarction risk index in non-ST-segment elevation myocardial infarction: evaluation of patients in the National Registry of Myocardial Infarction. J Am Coll Cardiol. 2006 Apr 18;47(8):1553-8. Epub 2006 Mar 29. PubMed PMID: 16630990."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>TIMI Risk Index = Heart Rate*(Age/10)<sup>2</sup>/Systolic BP</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Heart Rate/Pulse",
+                "unit": "hr",
+                "error_min": "10",
+                "error_max": "300",
+                "warn_min": "20",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "beats/min",
+                "units_us": "beats/min"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Arrhythmia",
+            "Dyslipidemia",
+            "Hypertension",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output=[]; \n\nvar age=parseFloat(age)/10;\nvar v=parseFloat(heart_rate)*(age*age)/parseFloat(systolic_blood_pressure);\n\nvar msg=''; \nvar mini_msg=''; \nif(v<30){\n    msg='Classified as \\u201clow TRI\\u201d by the study, which denoted an in-hospital mortality ~10% or less.';\n    mini_msg='Low TIMI Risk Index'\n} \nif(v>29){\n    msg='Classified as \\u201cintermediate/high TRI\\u201d by the study, which denoted an in-hospital mortality > 10%.';\n    mini_msg='Intermediate/High TIMI Risk Index'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:v.toFixed(0),\n    value_text:' ',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'665_TIMI Risk Index_result',\n    value:v.toFixed(0),\n    value_text:' ',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Heart rate/pulse",
+                "name": "heart_rate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hr"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Systolic BP",
+                "name": "systolic_blood_pressure",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            }
+        ],
+        "can_search": [
+            "acs",
+            "cad",
+            "mi",
+            "myocardial infarction",
+            "heart disease"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

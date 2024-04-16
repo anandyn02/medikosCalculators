@@ -1,0 +1,135 @@
+{
+    "id": "212",
+    "title": "Rome IV Diagnostic Criteria for Infant Functional Diarrhea",
+    "desc": "The Rome IV Criteria for Infant Functional Diarrhea provides criteria for the diagnosis of infant functional diarrhea. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27144631/",
+                "text": "Benninga MA, Faure C, Hyman PE, St james roberts I, Schechter NL, Nurko S. Childhood Functional Gastrointestinal Disorders: Neonate/Toddler. Gastroenterology. 2016; 1443-1455."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/8580619/",
+                "text": "Hoekstra J, van den Aker J, Hartemink R, Kneepkens C. Fruit juice malabsorption: not only fructose. Acta Paediatrica. 1995;84(11):1241-1244."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/8614606/",
+                "text": "Kneepkens CMF, Hoekstra JH. Chronic nonspecific diarrhea of childhood. Pediatric Clinics of North America. 1996;43(2):375-390."
+            },
+            {
+                "href": "",
+                "text": "Drossman DA, Chang L, Rome Foundation (Raleigh). Rome IV Pediatric Functional Gastrointestinal Disorders: Disorders of Gut-Brain Interaction. Rome Foundation; 2016."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for infant functional diarrhea, patient must have the following:</p>\n<ol>\n<li>Daily, painless, recurrent passage of &ge;4 large, unformed stools.</li>\n<li>Symptoms last &gt;4 weeks.</li>\n<li>Onset between 6 and 60 months of age.</li>\n<li>No failure to thrive if caloric intake is adequate.</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Neonate/Toddler Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "\nvar calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four);\n\nvar diag;\n\nvar msg= 'Diagnosis for infant diarrhea as per Rome IV criteria';\nvar minimsg= 'Diagnosis for infant diarrhea';\n\nif (criteria==4) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Infant Diarrhea',\n    value: diag,\n    value_text:'',\n    message:msg\n});\n",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Daily, painless, recurrent passage of ≥4 large, unformed stools",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Symptoms last >4 weeks",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Onset between 6 and 60 months of age",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No failure to thrive if caloric intake is adequate",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Infant Functional Diarrhea, Rome IV for Infant Diarrhea, rome iv diarrhea, rome iv for functional diarrhea, rome iv infant diarrhea, rome iv infant functional diarrhea, rome 4, rome 4 diarrhea, rome 4 infant diarrhea, rome 4 infant functional diarrhea, rome 4 for infant functional diarrhea"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

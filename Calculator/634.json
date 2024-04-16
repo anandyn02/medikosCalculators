@@ -1,0 +1,72 @@
+{
+    "id": "634",
+    "title": "Naloxone Drip Dosing",
+    "desc": "Naloxone Drip Dosing doses naloxone for acute opioid overdose.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3963538",
+                "text": "Goldfrank L, Weisman RS, Errick JK, Lo MW. A dosing nomogram for continuous infusion intravenous naloxone. Ann Emerg Med. 1986;15(5):566-70."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://www.nejm.org/doi/full/10.1056/NEJMra1202561",
+                "text": "Boyer EW. Management of opioid analgesic overdose. N Engl J Med. 2012;367(2):146-55."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1726910/pdf/v022p00612.pdf",
+                "text": "Clarke S, Dargan P, Jones A. Naloxone in opioid poisoning: walking the tightrope. Emergency Medicine Journal : EMJ. 2005;22(9):612-616. doi:10.1136/emj.2003.009613."
+            }
+        ],
+        "evidence": "<p>Continuous IV infusion starting rate (mg/hr) = (⅔× bolus dose mg) per hour. Half of the bolus dose may be administered 15 minutes after starting drip.</p> <p>Bolus dose = total dose required in the first 1 hour.</p> <p>Titrate to respiratory rate, hypoxia and/or CNS depression.</p> <p>Decrease rate if withdrawal symptoms occur.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Dosage",
+                "unit": "drugmg_naloxone",
+                "error_min": "-1",
+                "error_max": "20",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mg",
+                "units_us": "mg"
+            }
+        ],
+        "primary_complains": [
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\n\nvar bolus = parseFloat(bolus)\n\nvar rate = 2 / 3 * bolus\nvar halfbolus = bolus / 2\n\ncalc_output.push({\n    name: 'mini',\n    value: rate.toFixed(1),\n    value_text: 'mg/hr',\n    message: 'IV drip rate'\n});\ncalc_output.push({\n    name: 'rate',\n    value: rate.toFixed(1),\n    value_text: 'mg/hr',\n    message: 'Continuous IV infusion starting rate'\n});\ncalc_output.push({\n    name: 'additional',\n    value: halfbolus.toFixed(1),\n    value_text: 'mg',\n    message: 'May give ½ bolus dose 15 mins after starting drip'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Bolus dose",
+                "name": "bolus",
+                "optional": false,
+                "tips_en": "Total dose required in the first hour",
+                "type": "textbox",
+                "unit": "drugmg_naloxone"
+            }
+        ],
+        "can_search": [
+            "Naloxone",
+            "Narcan",
+            "Naloxone drip",
+            "Naloxone GTT"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Pharmacy",
+            "Toxicology"
+        ]
+    }
+}

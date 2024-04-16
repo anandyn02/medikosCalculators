@@ -1,0 +1,115 @@
+{
+    "id": "139",
+    "title": "Malnutrition Universal Screening Tool (MUST)",
+    "desc": "The Malnutrition Universal Screening Tool (MUST) identifies patients who are malnourished or are at risk of malnutrition.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.bapen.org.uk/pdfs/must/must-report.pdf",
+                "text": "Elia M. Screening for malnutrition: A multidisciplinary responsibility. Development and Use of the Malnutrition Universal Screening Tool (‘MUST’) for Adults. Redditch: BAPEN; 2003."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29954811",
+                "text": "Murphy J, Mayor A, Forde E. Identifying and treating older patients with malnutrition in primary care: the MUST screening tool. Br J Gen Pract. 2018;68(672):344-345."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"260\"><col width=\"103\"><col width=\"86\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><calculator id=\"29\">BMI</calculator>, kg/m<sup>2</sup></p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;20</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">18.5-20</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;18.5</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Unplanned weight loss in past 3-6 months</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;5%</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5-10%</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;10%</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Patient is acutely ill and there has been or is likely to be no nutritional intake for &gt;5 days</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-40fcfb92-7fff-0a6d-9d08-25749beb6d94\"><span id=\"docs-internal-guid-40fcfb92-7fff-0a6d-9d08-25749beb6d94\">&nbsp;</span></span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"57\"><col width=\"86\"><col width=\"306\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>MUST Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Overall malnutrition risk</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Suggested management by BAPEN guidelines</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">Routine clinical care</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">Medium</p>\n</td>\n<td>\n<p dir=\"ltr\">Observe; document dietary intake and if adequate/little concern, continue screening; if inadequate, improve and increase overall intake according to local policy</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;2</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">Treat*; refer to dietitian, improve and increase overall intake, increase frequency of monitoring according to local policy</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Unless detrimental or no benefit is expected from nutritional support, e.g. imminent death.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Preventive Care/Screening",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Malnutrition"
+        ],
+        "logic": "var calc_output = [];\nvar acute = parseFloat(acute);\nvar unplanned = parseFloat(unplanned);\nvar bmi = parseFloat(bmi);\n\nvar score = bmi + unplanned + acute;\n\nvar risk;\nvar rec;\n\nif (score == 0) {\n  risk = 'Low';\n  rec = 'Routine clinical care';\n} else if (score == 1) {\n  risk = 'Medium';\n  rec = 'Observe; document dietary intake and if adequate/little concern, continue screening; if inadequate, improve and increase overall intake according to local policy';\n} else if (score >= 2) {\n  risk = 'High';\n  rec = 'Treat (unless detrimental or no benefit is expected from nutritional support, e.g. imminent death); refer to dietitian, improve and increase overall intake, increase frequency of monitoring according to local policy';\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' overall malnutrition risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'MUST Score'  \n});\ncalc_output.push({\n    name: 'Score',\n    value: risk,\n    value_text: 'risk',\n    message: rec   \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><calculator id=\"29\">BMI</calculator>, kg/m<sup>2</sup></p>",
+                "name": "bmi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">20",
+                        "value": 0
+                    },
+                    {
+                        "label": "18.5-20",
+                        "value": 1
+                    },
+                    {
+                        "label": "<18.5",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Unplanned weight loss in past 3-6 months</p>",
+                "name": "unplanned",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<5%",
+                        "value": 0
+                    },
+                    {
+                        "label": "5-10%",
+                        "value": 1
+                    },
+                    {
+                        "label": ">10%",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Patient is acutely ill and there has been or is likely to be no nutritional intake for &gt;5 days</p>",
+                "name": "acute",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "MUST",
+            "malnutrition universal screen tool",
+            "undernutrition"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Surgery (General)"
+        ]
+    }
+}

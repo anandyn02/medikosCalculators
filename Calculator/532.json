@@ -1,0 +1,97 @@
+{
+    "id": "532",
+    "title": "Multiple Myeloma International Staging System (ISS)",
+    "desc": "The Multiple Myeloma International Staging System (ISS) prognosticates the severity of multiple myeloma based on routinely obtained lab values.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1182674",
+                "text": "Durie BGM, Salmon SE. A clinical staging system for multiple myeloma. Cancer 1975; 36:842-854."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15809451",
+                "text": "Greipp PR, et. al. International Staging System for Multiple Myeloma. JCO 2005; 23:3412-3420."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.myeloma.org/publications",
+                "text": "International Myeloma Foundation. International Staging System. April 2002."
+            }
+        ],
+        "evidence": "<p>Staging based on serum &beta;2 microglobulin and albumin levels.</p>",
+        "facts": "<p><strong>Multiple Myeloma ISS interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Stage</th>\n<th>Criteria</th>\n</tr>\n<tr>\n<td>I</td>\n<td>Serum &beta;2 microglobulin &lt;3.5 mg/L AND serum albumin &ge; 3.5 g/dL</td>\n</tr>\n<tr>\n<td>II</td>\n<td>Either: serum &beta;2 microglobulin &lt;3.5 mg/L, but serum albumin &lt;3.5 g/dL <br>OR <br>serum &beta;2 microglobulin 3.5 &ndash; 5.4 mg/L irrespective of the serum albumin</td>\n</tr>\n<tr>\n<td>III</td>\n<td>Serum &beta;2 microglobulin &ge;5.5 mg/L</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Hematologic Malignancy",
+            "Multiple Myeloma"
+        ],
+        "logic": "var calc_output = [];\nvar micro = parseFloat(micro);\nvar alb =  parseFloat(alb);\n\nvar string1, string2; \nvar mini_msg = 'Multiple Myeloma';\n\nif (micro == 1 && alb == 2 ) {string1 = 'Stage I';string2='Median survival is 62 months';}\n\nif (micro == 1 && alb == 1 ) {string1 = 'Stage II'; string2='Median survival is 44 months';}\n\nif (micro == 2 ) {string1 = 'Stage II'; string2='Median survival is 44 months';}\n\nif (micro == 3 ) {string1 = 'Stage III'; string2='Median survival is 29 months';}\n\n\ncalc_output.push({\n    name: 'mini',\n    value: string1,\n    value_text: ' ',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3841_Multiple Myeloma ISS_result',\n    value: string1,\n    value_text: ' ',\n    message: mini_msg +'<br/><br/>'+ string2\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Serum β2 microglobulin",
+                "mdcalc_info_concept": null,
+                "name": "micro",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<3.5 mg/L",
+                        "value": 1
+                    },
+                    {
+                        "label": "3.5 - 5.4 mg/L",
+                        "value": 2
+                    },
+                    {
+                        "label": ">5.4 mg/L",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Serum Albumin",
+                "mdcalc_info_concept": null,
+                "name": "alb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<3.5 g/dL",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥3.5 g/dL",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "myeloma",
+            "microglobulin",
+            "albumin",
+            "mm",
+            "miss",
+            "mmiss"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Internal Medicine"
+        ]
+    }
+}

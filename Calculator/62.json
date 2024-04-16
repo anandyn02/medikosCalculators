@@ -1,0 +1,89 @@
+{
+    "id": "62",
+    "title": "ALBI (Albumin-Bilirubin) Grade for Hepatocellular Carcinoma (HCC)",
+    "desc": "The ALBI (Albumin-Bilirubin) Grade for Hepatocellular Carcinoma (HCC) predicts survival in HCC patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25512453",
+                "text": "Johnson PJ, Berhane S, Kagebayashi C, et al. Assessment of liver function in patients with hepatocellular carcinoma: a new evidence-based approach-the ALBI grade. J Clin Oncol. 2015;33(6):550-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28626732",
+                "text": "Hiraoka A, Kumada T, Kudo M, et al. Albumin-Bilirubin (ALBI) Grade as Part of the Evidence-Based Clinical Practice Guideline for HCC of the Japan Society of Hepatology: A Comparison with the Liver Damage and Child-Pugh Classifications. Liver Cancer. 2017;6(3):204-215."
+            }
+        ],
+        "evidence": "<p><span id=\"docs-internal-guid-ef144afc-fad1-7c29-30ea-1de3beba1b3c\">ALBI = (log<sub>10</sub> bilirubin &times; 0.66) + (albumin &times; -0.085), where bilirubin is in &mu;mol/L and albumin in g/L.</span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"119\" /><col width=\"81\" /><col width=\"81\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>ALBI Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Grade</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Median survival</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;-2.60</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">18.5-85.6 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;-2.60 to &le;-1.39</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">5.3-46.5 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;-1.39</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">2.3-15.5 months</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-bc764477-fad2-0cb6-687f-ab512a08816e\"></span><span id=\"docs-internal-guid-bc764477-fad2-0cb6-687f-ab512a08816e\"><br /></span></p>",
+        "estimation": [
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Bilirubin",
+                "unit": "bili",
+                "error_min": "1E-8",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "17.104",
+                "normal_max_si": "32.49",
+                "normal_max_us": "1.9",
+                "normal_min_si": "5.13",
+                "normal_min_us": "0.3",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Jaundice",
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Hepatocellular Carcinoma"
+        ],
+        "logic": "var calc_output = [];\n\nif (UOMSYSTEM == true) {\n\tvar bilirubin = parseFloat(bilirubin)*17.1;\n\tvar albumin = parseFloat(albumin)*10;\n\n}if (UOMSYSTEM == false) {\n \tvar bilirubin = parseFloat(bilirubin);\n \tvar albumin = parseFloat(albumin);\n}\n\nvar albi = (Math.log10(bilirubin)*0.66) + (albumin*(-0.085));\nvar grade = ''\nvar survival = ''\n\nif (albi.toFixed(2) <= -2.60){\n\tgrade = '1' \n  \tsurvival = '18.5-85.6'\n}\nelse if (albi.toFixed(2) > -2.60 && albi.toFixed(2) <= -1.39) {\n\tgrade = '2' \n  \tsurvival = '5.3-46.5'\n}\nelse if (albi.toFixed(2) > -1.39) {\n\tgrade = '3' \n  \tsurvival = '2.3-15.5'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: 'Grade ' + grade,\n    value_text: '',\n    message: survival + ' months median survival'\n});\n\ncalc_output.push({\n   name: 'albi',\n   value: albi.toFixed(2),\n   value_text: 'points',\n   message: 'ALBI Score'\n});\n\ncalc_output.push({\n   name: 'grade',\n   value: 'Grade ' + grade,\n   value_text: '',\n   message: ''\n});\ncalc_output.push({\n   name: 'survival',\n   value: survival,\n   value_text: 'months',\n   message: 'Median survival'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "Bilirubin",
+                "name": "bilirubin",
+                "optional": false,
+                "type": "textbox",
+                "unit": "bili"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Albumin",
+                "name": "albumin",
+                "optional": false,
+                "type": "textbox",
+                "unit": "alb"
+            }
+        ],
+        "can_search": [
+            "Albi score"
+        ],
+        "specialty": [
+            "Hepatology",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Gastroenterology"
+        ]
+    }
+}

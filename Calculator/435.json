@@ -1,0 +1,222 @@
+{
+    "id": "435",
+    "title": "Groupe d'Etude des Lymphomes Folliculaires (GELF) Criteria",
+    "desc": "The Groupe d’Etude des Lymphomes Folliculaires (GELF) Criteria determines if immediate therapy for follicular lymphoma is required.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9060552",
+                "text": "Brice P, Bastion Y, Lepage E, et al. Comparison in low-tumor-burden follicular lymphomas between an initial no-treatment policy, prednimustine, or interferon alfa: a randomized study from the Groupe d'Etude des Lymphomes Folliculaires. J Clin Oncol. 1997. 15:1110-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Patients must meet &ge;1 criteria to be considered &ldquo;high&rdquo; tumor burden; criteria below:</p>\n<ul>\n<li>Any nodal or extranodal tumor mass &gt;7 cm diameter</li>\n<li>Involvement of at least 3 nodal sites, each with diameter &gt;3 cm</li>\n<li>Presence of any systemic or B symptoms</li>\n<li>Splenic enlargement with inferior margin below the umbilical line</li>\n<li>Compression syndrome (ureteral, orbital, gastrointestinal)</li>\n<li>Pleural or peritoneal serous effusion (irrespective of cell content)</li>\n<li>Leukemic phase (&gt;5.0 x10<sup>9</sup>/L circulating malignant cells)</li>\n<li>Cytopenia (granulocyte count &lt;1.0 x10<sup>9</sup>/L and/or platelets &lt;100x10<sup>9</sup>/L)</li>\n</ul>",
+        "facts": "<p><b>Nodal Sites</b></p>\n<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/flipi-nodal-site.png\" class=\"alignnone size-full wp-image-1839\" alt=\"nodal sites flipi\"></div>",
+        "estimation": [],
+        "primary_complains": [
+            "Lymphadenopathy",
+            "Mass"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Hematologic Malignancy",
+            "Leukemia/Lymphoma"
+        ],
+        "logic": "var calc_output = [];\nvar tumor = parseInt(tumor);\nvar nodal = parseInt(nodal);\nvar systemic = parseInt(systemic);\nvar spleen = parseInt(spleen);\nvar compress = parseInt(compress);\nvar pleural = parseInt(pleural);\nvar leuk = parseInt(leuk);\nvar cytopenia = parseInt(cytopenia);\nvar u = tumor + nodal + systemic + spleen + compress + pleural + leuk + cytopenia;\nvar msg;\nvar mini_msg;\nif (u < 1) { mini_msg = 'Negative for GELF Criteria';\n    msg = '<br/><br/>Immediate therapy is NOT indicated.';\n} else {\n    mini_msg = 'Positive for GELF Criteria';\n    msg = '<br/><br/>Immediate therapy is indicated.<br/><br/>Note: When a patient has ≥1 criteria, this is considered “high” tumor burden.';\n}\n\ncalc_output.push({\n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'criteria', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '2321_GELF Criteria_result', \n    value: u.toFixed(0), \n    value_text: 'criteria', \n    message: mini_msg+msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Any nodal or extranodal tumor mass >7 cm diameter",
+                "md_calc_info_concept": null,
+                "name": "tumor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Involvement of at least 3 nodal sites, each with diameter >3 cm",
+                "md_calc_info_concept": null,
+                "name": "nodal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "View more nodal site information in the More Info section.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Presence of any systemic or B symptoms",
+                "md_calc_info_concept": null,
+                "name": "systemic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Splenic enlargement with inferior margin below the umbilical line",
+                "md_calc_info_concept": null,
+                "name": "spleen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Compression syndrome (ureteral, orbital, gastrointestinal)",
+                "md_calc_info_concept": null,
+                "name": "compress",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pleural or peritoneal serous effusion (irrespective of cell content)",
+                "md_calc_info_concept": null,
+                "name": "pleural",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Leukemic phase (>5.0 x10⁹/L circulating malignant cells)",
+                "md_calc_info_concept": null,
+                "name": "leuk",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cytopenia (granulocyte count &lt;1.0x10⁹/L and/or platelets &lt;100x10⁹/L)</p>",
+                "md_calc_info_concept": null,
+                "name": "cytopenia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "LF",
+            "therapy",
+            "lymphoma",
+            "follicular",
+            "gelf"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Internal Medicine"
+        ]
+    }
+}

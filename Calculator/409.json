@@ -1,0 +1,117 @@
+{
+    "id": "409",
+    "title": "Prostate Tumor Volume & Density",
+    "desc": "The Prostate Tumor Volume & Density calculator measures prostate tumor volume and PSA density.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12520701",
+                "text": "Vollmer RT, et. al. Tumor Volume in Prostate Cancer and Serum Prostate-Specific Antigen. Analysis From a Kinetic Viewpoint. Am J Clin Pathol 2003;119:80-89."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p><b>Prostate volume in cc = L x W x H x &pi;/6 [shape of ellipsoid]</b></p>\n<ul>\n<li>L in cm</li>\n<li>W in cm</li>\n<li>H in cm</li>\n</ul>\n<p><b>Prostate density = PSA / Volume</b></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "psa",
+                "unit": "psa",
+                "error_min": "0",
+                "error_max": "10000",
+                "warn_min": "0",
+                "warn_max": "10000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "ng/mL",
+                "units_us": "ng/mL"
+            },
+            {
+                "name": "Length",
+                "unit": "length_si_cm",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "cm",
+                "units_us": "cm"
+            }
+        ],
+        "primary_complains": [
+            "Hematuria",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer"
+        ],
+        "logic": "var calc_output=[]; \nvar v=(parseFloat(pro_length)*parseFloat(pro_width)*parseFloat(pro_height)*(Math.PI/6));\nvar p=parseFloat(psa)/v; \n\ncalc_output.push({\n  name:'mini',\n  value:v.toFixed(2),\n  value_text:'cc',\n  message:'Prostate Volume'\n}); \n\ncalc_output.push({\n  name:'2076_Prostate Tumor Volume_result (volume)',\n  value:v.toFixed(2),\n  value_text:'cc',\n  message:'Prostate Volume'\n}); \n\ncalc_output.push({\n  name:'2076_Prostate Tumor Volume_result (density)',\n  value:p.toFixed(2),\n  value_text:'ng/mL/cc',\n  message:'PSA Density'\n}); ",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Prostate length",
+                "name": "pro_length",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_cm"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Prostate width",
+                "name": "pro_width",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_cm"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Prostate height",
+                "name": "pro_height",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_cm"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "PSA value",
+                "name": "psa",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "psa"
+            }
+        ],
+        "can_search": [
+            "density",
+            "cancer",
+            "ca",
+            "male",
+            "psa"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Urology"
+        ]
+    }
+}

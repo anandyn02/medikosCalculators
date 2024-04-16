@@ -1,0 +1,220 @@
+{
+    "id": "482",
+    "title": "Modified Asthma Predictive Index (mAPI)",
+    "desc": "The Modified Asthma Predictive Index (mAPI) predicts future asthma onset probability in pediatric patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16687711/",
+                "text": "Guilbert TW, et al. Long-term inhaled corticosteroids in preschool children at high risk for asthma. N Engl J Med. 2006 May 11;354(19):1985-97"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3811153/",
+                "text": "Chang TS, Lemanske RF, Guilbert TW, et al. Evaluation of the Modified Asthma Predictive Index in High-Risk Preschool Children. The journal of allergy and clinical immunology in practice. 2013; 1(2):10.1016/j.jaip.2012.10.008. doi:10.1016/j.jaip.2012.10.008."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p><strong>Positive mAPI defined by:</strong></p>\n<ul>\n<li>&ge;4 episodes of wheezing per year, AND</li>\n<li>&ge;1 major criteria OR &ge;2 minor criteria</li>\n</ul>",
+        "facts": "<p>Sensitivity and specificity for positive predictions of asthma by year of life</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Year</th>\n<th>Sensitivity (95% CI)</th>\n<th>Specificity (95% CI)</th>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"3\">Age 6 asthma diagnosis</td>\n</tr>\n<tr>\n<td>1</td>\n<td>11% (4.2&ndash;19)</td>\n<td>98% (96&ndash;100)</td>\n</tr>\n<tr>\n<td>2</td>\n<td>12% (4.2&ndash;19)</td>\n<td>99% (98&ndash;100)</td>\n</tr>\n<tr>\n<td>3</td>\n<td>17% (8.4&ndash;25)</td>\n<td>99% (98&ndash;100)</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"3\">Age 8 asthma diagnosis</td>\n</tr>\n<tr>\n<td>1</td>\n<td>8.2% (2.2&ndash;14)</td>\n<td>98% (97&ndash;100)</td>\n</tr>\n<tr>\n<td>2</td>\n<td>11% (3.9&ndash;18)</td>\n<td>99% (98&ndash;100)</td>\n</tr>\n<tr>\n<td>3</td>\n<td>19% (8.8&ndash;25)</td>\n<td>100% (99&ndash;100)</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"3\">Age 11 asthma diagnosis</td>\n</tr>\n<tr>\n<td>1</td>\n<td>11% (3.6&ndash;18)</td>\n<td>98% (95&ndash;100)</td>\n</tr>\n<tr>\n<td>2</td>\n<td>11% (3.6&ndash;19)</td>\n<td>98% (96&ndash;100)</td>\n</tr>\n<tr>\n<td>3</td>\n<td>19% (9.3&ndash;28)</td>\n<td>99% (97&ndash;100)</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Asthma"
+        ],
+        "logic": "var calc_output = [];\n\nvar wheezing = parseInt(wheezing);\nvar major = parseInt(asthma) + parseInt(eczema) + parseInt(airallerg);\nvar minor = parseInt(foodaller) + parseInt(cold) + parseInt(eos);\nvar msg;\nvar mini_msg;\nvar string;\nvar info = \"See sensitivity and specificity information in the About section.\"\n\nif (wheezing == 1) {\n    if (major > 0) {\n        string = \"Positive\";\n        mini_msg = \"Likely asthma diagnosis.\";\n        msg = \">98% specific for asthma diagnosis by age 11.\";\n    } else if (major == 0 && minor <= 1) {\n        string = \"Negative\";\n        mini_msg = \"Less likely asthma diagnosis.\";\n        msg = \"Patient less likely to develop asthma by age 11.\";\n    } else if (major == 0 && minor > 1) {\n        string = \"Positive\";\n        mini_msg = \"Likely asthma diagnosis.\";\n        msg = \">98% specific for asthma diagnosis by age 11.\";\n    }\n} else { string = \"Negative\";\n    mini_msg = \"Less likely asthma diagnosis.\";\n    msg = \"Patient less likely to develop asthma by age 11.\" }\n\ncalc_output.push({ name: 'mini', value: string, value_text: ' ', message: mini_msg });\ncalc_output.push({ name: '3382_Modified Asthma Predictive Index_result', value: string, value_text: ' ', message: msg + '<br/><br/>' +info });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "≥4 wheezing episodes/year",
+                "md_calc_info_concept": null,
+                "name": "wheezing",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Major Criteria",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Parent with asthma",
+                "md_calc_info_concept": null,
+                "name": "asthma",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Patient has atopic dermatitis",
+                "md_calc_info_concept": null,
+                "name": "eczema",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Patient with aeroallergen sensitivity (ex: hay fever)",
+                "md_calc_info_concept": null,
+                "name": "airallerg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Minor Criteria",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Wheezing unrelated to colds",
+                "md_calc_info_concept": null,
+                "name": "cold",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Eosinophils ≥4% (on CBC)",
+                "md_calc_info_concept": null,
+                "name": "eos",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Patient with allergy to milk, egg, or peanuts",
+                "md_calc_info_concept": null,
+                "name": "foodaller",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Mapi",
+            "api",
+            "asthma",
+            "pediatric asthma",
+            "childhood asthma",
+            "school"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Family Practice",
+            "Internal Medicine",
+            "Pediatrics",
+            "Primary Care",
+            "Pulmonology"
+        ]
+    }
+}

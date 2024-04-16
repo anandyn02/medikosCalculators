@@ -1,0 +1,209 @@
+{
+    "id": "544",
+    "title": "RENAL Nephrometry Score",
+    "desc": "The RENAL Nephrometry Score grades renal masses by complexity for surgical decision-making.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19616235",
+                "text": "Kutikov A, Uzzo RG. The R.E.N.A.L. nephrometry score: a comprehensive standardized system for quantitating renal tumor size, location and depth. J Urol. 2009 Sep;182(3):844-53. doi: 10.1016/j.juro.2009.05.035. Epub 2009 Jul 17."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>&nbsp;Addition of selected points, plus suffixes as applicable:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n<td>\n<p><strong>2 points </strong></p>\n</td>\n<td>\n<p><strong>3 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>R</strong><strong>adius</strong></p>\n<p>Measure largest cross-sectional (MRI/CT) diameter in any single plane.</p>\n</td>\n<td>\n<p>&le;4 cm</p>\n</td>\n<td>\n<p>&gt;4 cm and &lt;7 cm</p>\n</td>\n<td>\n<p>&ge;7 cm</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>E</strong><strong>xophytic/endophytic </strong></p>\n<p>Assess % mass exophytic (protruding out from renal parenchyma) vs. endophytic (contained within renal parenchyma).</p>\n</td>\n<td>\n<p>&ge;50% exophytic</p>\n</td>\n<td>\n<p>&lt;50% exophytic</p>\n</td>\n<td>\n<p>Entirely endophytic</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Nearness to renal sinus or collecting system</strong></p>\n<p>Measure shortest distance.</p>\n</td>\n<td>\n<p><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">&ge;7 mm</span></p>\n</td>\n<td>\n<p>&gt;4 mm and &lt;7 mm</p>\n</td>\n<td>\n<p>&le;4 mm</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>A</strong><strong>nterior vs. posterior</strong></p>\n<p>Suffix applied for primary location of tumor relative to coronal plane at level of hilar vessels.</p>\n</td>\n<td>\n<p>(add suffix)</p>\n<p>A: Anterior to hilar vessels</p>\n</td>\n<td>\n<p>(add suffix)</p>\n<p>P: Posterior to hilar vessels</p>\n</td>\n<td>\n<p>(add suffix)</p>\n<p>X: Neither</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Polar l</strong><strong>ines</strong></p>\n<p>Determine location of tumor relative to polar lines (see figure for details)</p>\n</td>\n<td>\n<p>Entirely above or below polar lines</p>\n</td>\n<td>\n<p>Crosses a polar line</p>\n</td>\n<td>\n<p>&gt;50% diameter across polar line, contained entirely within polar lines, or crosses renal axial midline</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Hilar tumor</strong></p>\n</td>\n<td>\n<p>(add suffix)</p>\n<p>H: If touching renal artery or vein</p>\n</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<table>\n<tbody>\n<tr>\n<td>\n<p><strong>RENAL Nephrometry Score</strong></p>\n</td>\n<td>\n<p><strong>Complexity</strong></p>\n</td>\n<td>\n<p><strong>Complication Rate*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>4&ndash;6</p>\n</td>\n<td>\n<p>Low</p>\n</td>\n<td>\n<p>6.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>7&ndash;9</p>\n</td>\n<td>\n<p>Intermediate</p>\n</td>\n<td>\n<p>11.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>10&ndash;12</p>\n</td>\n<td>\n<p>High</p>\n</td>\n<td>\n<p>21.9%</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Major complications as defined by Clavien-Dindo classification 3&ndash;5 (requiring intervention, requiring ICU admission, or death), from <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/21621910\" target=\"_blank\" rel=\"noopener\">Simhan 2011</a>.</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/renal-score-1.png\" alt=\"RENAL Nephrometry: Coronal CT images for &quot;L&quot; scoring\" width=\"100%\"></p>\n<p><strong>Figure 1.</strong>&nbsp;Scoring of L component. Polar lines (solid lines) and axial renal midline (broken line) are depicted on each sagittal view of kidney. Numbers 1 to 3 represent points attributed to each category of tumor.</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/renal-score-2.png\" alt=\"RENAL Nephrometry: CT images for &quot;E&quot; scoring\" width=\"100%\"></p>\n<p><strong>Figure 2.&nbsp;</strong>Scoring of E component. Broken line demonstrates how expected renal contour is estimated.</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/renal-score-3.png\" alt=\"RENAL Nephrometry: CT images for &quot;L&quot; scoring\" width=\"100%\"></p>\n<p><strong>Figure 3.&nbsp;</strong>A, scoring of L component,&nbsp;determined in relation to upper or lower polar line. B, polar lines defined as portion of kidney where concentric rim of renal parenchyma is interrupted by renal hilar vessels, pelvis or fat on axial imaging. Axial cut is shown between polar lines, and medial renal parenchyma is interrupted by sinus fat and renal vessels. Line drawn over right kidney divides kidney into anterior and posterior components. C, axial cut is shown below lower polar line and concentric rim of renal parenchyma in both kidneys surrounds sinus fat. Line drawn to divide kidney for anterior and posterior designations.</p>\n<p>Figures from <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/19616235\" target=\"_blank\" rel=\"noopener\">Kutikov 2009</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Flank Pain",
+            "Hematuria",
+            "Mass"
+        ],
+        "disease_treated": [
+            "Renal Cell Carcinoma"
+        ],
+        "logic": "var calc_output = [];\nvar radius = parseFloat(radius);\nvar exo = parseFloat(exo);\nvar nearness = parseFloat(nearness);\nvar ant = parseFloat(ant);\nvar hilum = parseFloat(hilum);\nvar loc = parseFloat(loc);\n\nif (loc == 3 || loc == 4 || loc == 5) {\n\tloc = 3\n}\n\nvar p = radius + exo + nearness + loc;\nvar ht = ['', 'h'];\nvar at = ['a', 'p', 'x'];\nvar score = p + at[ant] + ht[hilum];\nvar msg;\nvar complexity;\nvar complication;\n\nif (p >= 4 && p <= 6) {\n\tcomplexity = 'Low';\n\tcomplication = '6.4'\n}\nif (p >= 7 && p <= 9) {\n\tcomplexity = 'Intermediate';\n\tcomplication = '11.1'\n}\nif (p >= 10 && p <= 12) {\n\tcomplexity = 'High';\n\tcomplication = '21.9'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: '',\n    message: 'RENAL Nephrometry Score'\n});\ncalc_output.push({\n    name: '3908_RENAL Nephrometry Score_result (score)',\n    value: score,\n    value_text: '',\n    message: 'RENAL Nephrometry Score'\n});\ncalc_output.push({\n    name: '3908_RENAL Nephrometry Score_interpretation',\n    value: complexity,\n    value_text: '',\n    message: 'complexity'\n});\ncalc_output.push({\n    name: '3908_RENAL Nephrometry Score_result (risk)',\n    value: complication,\n    value_text: '%',\n    message: 'Likelihood of major complication (see Facts & Figures for definitions)'\n});\n\n\n\n\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Radius (cm)",
+                "mdcalc_info_concept": null,
+                "name": "radius",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤4",
+                        "value": 1
+                    },
+                    {
+                        "label": ">4 and <7",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥7",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Largest diameter in any single plane",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Exophytic/endophytic",
+                "mdcalc_info_concept": null,
+                "name": "exo",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥50% exophytic",
+                        "value": 1
+                    },
+                    {
+                        "label": "<50% exophytic",
+                        "value": 2
+                    },
+                    {
+                        "label": "Entirely endophytic",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "% mass exophytic (protruding out) vs. endophytic (contained) relative to renal parenchyma",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Nearness to collecting system or sinus (mm)",
+                "mdcalc_info_concept": null,
+                "name": "nearness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥7",
+                        "value": 1
+                    },
+                    {
+                        "label": ">4 and <7",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤4",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Measure shortest distance",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Anterior/posterior",
+                "mdcalc_info_concept": null,
+                "name": "ant",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Anterior",
+                        "value": 0
+                    },
+                    {
+                        "label": "Posterior",
+                        "value": 1
+                    },
+                    {
+                        "label": "Neither",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Primary location of tumor relative to coronal plane at level of hilar vessels",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Location relative to polar lines",
+                "mdcalc_info_concept": null,
+                "name": "loc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Entirely above or below",
+                        "value": 1
+                    },
+                    {
+                        "label": "Crosses a polar line",
+                        "value": 2
+                    },
+                    {
+                        "label": ">50% across polar line",
+                        "value": 3
+                    },
+                    {
+                        "label": "Crosses axial renal midline",
+                        "value": 4
+                    },
+                    {
+                        "label": "Entirely between polar lines",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hilar tumor",
+                "md_calc_info_concept": null,
+                "name": "hilum",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Touching renal artery or vein",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "renal",
+            "neph",
+            "mass",
+            "renal score",
+            "nephrometry",
+            "kidney",
+            "kidney cancer",
+            "kidney mass",
+            "renal scoring system",
+            "renal cell ca",
+            "RCC"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Internal Medicine",
+            "Nephrology",
+            "Radiation Oncology",
+            "Surgery (General)",
+            "Urology"
+        ]
+    }
+}

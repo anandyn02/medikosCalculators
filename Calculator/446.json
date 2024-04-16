@@ -1,0 +1,159 @@
+{
+    "id": "446",
+    "title": "Fuhrman Nuclear Grade for Clear Cell Renal Carcinoma",
+    "desc": "Fuhrman Nuclear Grade for Clear Cell Renal Carcinoma provides prognostic grading system for tumor cells based on physical cellular appearance.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7180965",
+                "text": "Fuhrman SA, Lasky LC, Limas C. Prognostic significance of morphologic parameters in renal cell carcinoma. Am J Surg Pathol. 1982 Oct;6(7):655-63."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11250993",
+                "text": "Zisman A, Pantuck AJ, Dorey F, et al. Improved prognostication of renal cell carcinoma using an integrated staging system. J Clin Oncol. 2001 Mar 15. 19(6):1649-57. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12454113",
+                "text": "Zisman A, Pantuck AJ, Wieder J, et al. Risk group assessment and clinical outcome algorithm to predict the natural history of patients with surgically resected renal cell carcinoma. J Clin Oncol. 2002 Dec 1. 20(23):4559-66."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12173325",
+                "text": " Minervini A, et al. Prognostic value of nuclear grading in patients with intracapsular (pT1-pT2) renal cell carcinoma. Long-term analysis in 213 patients. Cancer. 2002 May 15;94(10):2590-5."
+            }
+        ],
+        "evidence": "<ul>\n<li><strong>Grade 1</strong>\n<ul>\n<li>The nuclei of the tumor cells are small (&lt; 10 &micro;m), hyperchromatic, and round (resembling mature lymphocytes), with no visible nucleoli and little detail in the chromatin, as shown in the image below.</li>\n</ul>\n</li>\n<li><strong>Grade 2</strong>\n<ul>\n<li>Using the 10&times; objective, the nuclei of the tumor cells are slightly larger (15 &micro;m) with finely granular &ldquo;open&rdquo; chromatin but small, inconspicuous nucleoli (see the following image). The nucleoli are often present, and many appear as small chromocenters at 10&times; objective, with confirmation of their nature at higher power, but this does not count.</li>\n</ul>\n</li>\n<li><strong>Grade 3</strong>\n<ul>\n<li>Using the 10&times; objective, the nuclei of the tumor cells are larger (20 &micro;m in size) and may be oval in shape, with coarsely granular chromatin (see the image below). The nucleoli are easily unequivocally recognizable.</li>\n</ul>\n</li>\n<li><strong>Grade 4</strong>\n<ul>\n<li>The nuclei are pleomorphic with open chromatin or hyperchromatic and single or multiple macronucleoli, as depicted in the following image:</li>\n</ul>\n</li>\n</ul>\n<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/fuhrman.jpeg\" alt=\"\"></p>",
+        "facts": "<p>More recent studies have shown 2- and 3-tier grading systems for the Fuhrman Scale are equally as effective.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Flank Pain",
+            "Hematuria"
+        ],
+        "disease_treated": [
+            "Chemotherapy",
+            "Renal Cell Carcinoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar dia = parseInt(dia);\nvar shape =  parseInt(shape);\nvar nucleoli =  parseInt(nucleoli);\nvar biz = parseInt(biz);\n\nvar grade, surv, msg;\n\n\nif (dia == 1 && shape >= 1 && nucleoli >= 1) {grade = 'Grade I'; surv='96% Survival'; msg='<br/><br/>Per Original Study: Tumors classified as Nuclear Grade 1 did not metastasize for at least 5 years.';}\n\nif (dia == 1 && shape == 1 && nucleoli == 1) {grade = 'Grade I'; surv='96% Survival'; msg='<br/><br/>Per Original Study: Tumors classified as Nuclear Grade 1 did not metastasize for at least 5 years.';}\n\nif (dia == 2 && shape >= 1 && nucleoli >= 1) {grade = 'Grade II'; surv='84% Survival'; msg='';}\n\nif (dia == 2 && shape == 2 && nucleoli == 2) {grade = 'Grade II'; surv='84% Survival'; msg='';}\n\nif (dia == 3 && shape >= 1 && nucleoli >= 1 && biz == 1) {grade = 'Grade IV'; surv='31% Survival'; msg='';}\n\nif (dia == 3 && shape >= 1 && nucleoli >= 1 && biz == 0) {grade = 'Grade III'; surv='59% Survival'; msg='';}\n\nif (dia == 3 && shape == 3 && nucleoli ==3 && biz == 1) {grade = 'Grade IV'; surv='31% Survival'; msg='';}\n\n\ncalc_output.push({ name: 'mini', value: grade, value_text: '', message: surv });\ncalc_output.push({ name: '3012_Fuhrman Nuclear Grade_result', value: grade, value_text: '', message: surv+msg });",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Nuclear diameter",
+                "mdcalc_info_concept": null,
+                "name": "dia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Small (~10µm)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Larger (~15µm)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Even larger (~20µm)",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Nuclear shape",
+                "mdcalc_info_concept": null,
+                "name": "shape",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Round, uniform",
+                        "value": 1
+                    },
+                    {
+                        "label": "Irregularities in outline",
+                        "value": 2
+                    },
+                    {
+                        "label": "Obvious irregular outline",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Nucleoli",
+                "mdcalc_info_concept": null,
+                "name": "nucleoli",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent, inconspicuous",
+                        "value": 1
+                    },
+                    {
+                        "label": "Visible at x400",
+                        "value": 2
+                    },
+                    {
+                        "label": "Prominent at x100",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Bizarre often multilobed nuclei and/or spindle cells",
+                "md_calc_info_concept": null,
+                "name": "biz",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "rcc",
+            "renal",
+            "kidney cancer",
+            "kidney",
+            "nucleus",
+            "nucleoli",
+            "chomatic"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Radiation Oncology",
+            "Radiology",
+            "Urology"
+        ]
+    }
+}

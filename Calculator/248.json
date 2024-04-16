@@ -1,0 +1,66 @@
+{
+    "id": "248",
+    "title": "Immune-Related Adverse Events for GI Toxicity - Hepatitis",
+    "desc": "The Immune-Related Adverse Events for GI Toxicity - Hepatitis grades severity of hepatitis secondary to immune checkpoint inhibitor therapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29442540 ",
+                "text": "Brahmer JR, Lacchetti C, Schneider BJ, et al. Management of Immune-Related Adverse Events in Patients Treated With Immune Checkpoint Inhibitor Therapy: American Society of Clinical Oncology Clinical Practice Guideline. J Clin Oncol. 2018;36(17):1714-1768."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<div dir=\"ltr\" align=\"left\"><br class=\"Apple-interchange-newline\" />\n<table><colgroup><col width=\"258\" /><col width=\"190\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Hepatitis grade</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Asymptomatic (AST or ALT &gt; ULN to 3.0 x ULN and/or total bilirubin &gt; ULN to 1.5 x ULN)</p>\n</td>\n<td>\n<p dir=\"ltr\">G1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Asymptomatic (AST or ALT &gt; ULN to 3.0 to 5 x ULN and/or total bilirubin &gt;1.5 to &le;3 x ULN)</p>\n</td>\n<td>\n<p dir=\"ltr\">G2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Symptomatic liver dysfunction, fibrosis by biopsy, compensated cirrhosis, reactivation of chronic hepatitis (AST or ALT 5-20 x ULN and/or total bilirubin 3-10 x ULN)&nbsp;</p>\n</td>\n<td>\n<p dir=\"ltr\">G3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Decompensated liver function leg, ascites, coagulopathy, encephalopathy, coma; AST or ALT &gt;20 x ULN and/or total bilirubin &gt;10 x ULN)</p>\n</td>\n<td>\n<p dir=\"ltr\">G4</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">See Next Steps for details on management.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Fever",
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Hepatitis"
+        ],
+        "logic": "var calc_output = [];\n\nvar grading = parseFloat(grading);\nvar rec;\n\nswitch (grading) {\n  case 1:\n    rec = 'Continue ICPi with close monitoring; consider alternate etiologies; labs 1-2 times weekly; supportive care for symptoms; see Next Steps for details';\n    break;\n  case 2:\n    rec = 'Hold ICPi temporarily; consider prednisone ≤10 mg/d; consider resuming ICPi if pt recovers to Grade 1; consider d/c other hepatotoxic meds; if symptomatic and persistent consider 0.5–1 mg/kg/d prednisone or equivalent; monitor every 3 days; see Next Steps for details';\n    break;\n  case 3:\n    rec = 'Immediately start 1-2 mg/kg methylprednisone or equivalent; if refractory/unresponsive consider MMF or azathioprine; monitor daily or every other day; consider admission if AST/ALT >8 x ULN and/or elevated TB 3 x ULN; consider immunosuppressants; see Next Steps for details';\n    break;\n  case 4:\n    rec = 'Permanently d/c ICPi; start 2 mg/kg/d methylprednisolone equivalent; consider admission; monitor daily; if refractory/unresponsive consider MMF, consult hepatology; avoid infliximab; Consider transfer to tertiary care facility; see Next Steps for details';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: 'G'+grading,\n    value_text: '',\n    message: 'Hepatitis grade'   \n});\ncalc_output.push({\n    name: 'Score',\n    value: 'G'+grading,\n    value_text: '',\n    message: 'Hepatitis grade'   \n});\ncalc_output.push({\n    name: 'risk1',\n    value: '', \n    value_text: '',\n    message: rec\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Criteria",
+                "name": "grading",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Asymptomatic (AST or ALT > ULN to 3.0 x ULN and/or total bilirubin > ULN to 1.5 x ULN)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Asymptomatic (AST or ALT > ULN to 3.0 to 5 x ULN and/or total bilirubin >1.5 to ≤3 x ULN)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Symptomatic liver dysfunction, fibrosis by biopsy, compensated cirrhosis, reactivation of chronic hepatitis (AST or ALT 5-20 x ULN and/or total bilirubin 3-10 x ULN)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Decompensated liver function leg, ascites, coagulopathy, encephalopathy, coma; AST or ALT >20 x ULN and/or total bilirubin >10 x ULN)",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Immune Related Adverse Events, irae, hepatitis, immune checkpoint inhibitor therapy, ICPi therapy, ASCO guideline, ASCO"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

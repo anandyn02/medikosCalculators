@@ -1,0 +1,79 @@
+{
+    "id": "601",
+    "title": "New York Heart Association (NYHA) Functional Classification for Heart Failure",
+    "desc": "The New York Heart Association (NYHA) Functional Classification for Heart Failure stratifies severity of heart failure by patient-reported symptoms.",
+    "data": {
+        "orgreference": [
+            {
+                "text": "Dolgin M, Association NYH, Fox AC, Gorlin R, Levin RI, New York Heart Association. Criteria Committee. Nomenclature and criteria for diagnosis of diseases of the heart and great vessels. 9th ed. Boston, MA: Lippincott Williams and Wilkins; March 1, 1994."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7296795/",
+                "text": "Goldman L, Hashimoto B, Cook EF, Loscalzo A. Comparative reproducibility and validity of systems for assessing cardiovascular functional class: advantages of a new specific activity scale. Circulation. 1981;64(6):1227-34."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1861501/",
+                "text": "Raphael C, Briscoe C, Davies J, et al. Limitations of the New York Heart Association functional classification system and self-reported walking distances in chronic heart failure. Heart. 2007;93(4):476-82."
+            }
+        ],
+        "evidence": "<p></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><b>NYHA Heart Failure Classification</b></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Class I</p>\n</td>\n<td>\n<p dir=\"ltr\">No limitation of physical activity; ordinary physical activity does not cause undue fatigue, palpitation, or dyspnea</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Class II</p>\n</td>\n<td>\n<p dir=\"ltr\">Slight limitation of physical activity; comfortable at rest; ordinary physical activity results in fatigue, palpitation, or dyspnea</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Class III</p>\n</td>\n<td>\n<p dir=\"ltr\">Marked limitation of physical activity; comfortable at rest; less than ordinary activity causes fatigue, palpitation, or dyspnea</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Class IV</p>\n</td>\n<td>\n<p dir=\"ltr\">Unable to carry on any physical activity without discomfort; symptoms of heart failure at rest; if any physical activity is undertaken, discomfort increases</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Extremity Edema",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Heart Failure",
+            "Congestive Heart Failure"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar act = parseFloat(act);\n\n//interpretation\nvar result;\n\nif (act === 1) {\n\tresult = \"Class I\";\n} else if (act === 2) {\n\tresult = \"Class II\";\n} else if (act === 3) {\n\tresult = \"Class III\";\n} else if (act === 4) {\n\tresult = \"Class IV\";\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: '',\n    message: 'NYHA Classification'\n});\ncalc_output.push({\n    name: '',\n    value: result,\n    value_text: '',\n    message: 'NYHA Heart Failure Classification'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "Physical ability ",
+                "name": "act",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No limitation of physical activity; ordinary physical activity does not cause undue fatigue, palpitation, or dyspnea",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slight limitation of physical activity; comfortable at rest; ordinary physical activity results in fatigue, palpitation, or dyspnea",
+                        "value": 2
+                    },
+                    {
+                        "label": "Marked limitation of physical activity; comfortable at rest; less than ordinary activity causes fatigue, palpitation, or dyspnea",
+                        "value": 3
+                    },
+                    {
+                        "label": "Unable to carry on any physical activity without discomfort; symptoms of heart failure at rest; if any physical activity is undertaken, discomfort increases",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "heart failure",
+            "congestive heart failure",
+            "chf",
+            "hf",
+            "nyha"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Endocrinology",
+            "Internal Medicine",
+            "Emergency Medicine",
+            "Family Practice",
+            "Primary Care",
+            "Critical Care"
+        ]
+    }
+}

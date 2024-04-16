@@ -1,0 +1,168 @@
+{
+    "id": "525",
+    "title": "Barcelona-Clinic Liver Cancer (BCLC) Staging Classification and Treatment Guidelines",
+    "desc": "The BCLC Staging Classification determines progression of disease and proper treatment course for patients with HCC.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10518312",
+                "text": "Llovet JM, Brú C, Bruix J.Prognosis of hepatocellular carcinoma: the BCLC staging classification. Semin Liver Dis. 1999;19(3):329-38."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20175034",
+                "text": "Forner A, Reig ME, de Lope CR, Bruix J. Current strategy for staging and treatment: the BCLC update and future prospects. Semin Liver Dis. 2010 Feb;30(1):61-74. doi: 10.1055/s-0030-1247133. Epub 2010 Feb 19."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2023920/",
+                "text": "Pons F, Varela M, Llovet JM. Staging systems in hepatocellular carcinoma. HPB : The Official Journal of the International Hepato Pancreato Biliary Association. 2005;7(1):35-41. doi:10.1080/13651820410024058."
+            }
+        ],
+        "evidence": "<p><img src=\"https://cdn-web-img.mdcalc.com/content/BCLC_diagram.png\" alt=\"Algorithm showing the BCLC classification.\" width=\"100%\"></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Hepatocellular Carcinoma"
+        ],
+        "logic": "var stage = parseFloat(stage) || 0\nvar numnodes = parseFloat(numnodes) || 0\nvar portalpressure= parseFloat(portalpressure) || 0\nvar assocdis = parseFloat(assocdis) || 0\n\nvar calc_output = [];\n\nvar cp = parseFloat(cp);\nstage = parseFloat(stage);\nnumnodes = parseFloat(numnodes);\nportalpressure = parseFloat(portalpressure);\nassocdis = parseFloat(assocdis);\n\nvar stg, tx, surv, rec, mini_stage;\n\nif (cp <= 2 && stage == 0 && portalpressure== 1) {\n    mini_stage = 'Stage 0';\n    stg = 'Very early stage (0)';\n    tx = 'Curative treatments (30%)';\n    surv ='5-year survival: 50-70%';\n    rec = 'Resection recommended by BCLC';\n}\nif (cp <= 2 && stage == 0 && portalpressure == 2 && assocdis == 0) {\n    mini_stage = 'Stage 0';\n    stg = 'Very early stage (0)';\n    tx = 'Curative treatments (30%)';\n    surv ='5-year survival: 50-70%';\n    rec = 'Liver transplantation (CLT/LDLT) recommended by BCLC';\n}\nif (cp <= 2 && stage == 0 && portalpressure == 2 && assocdis == 1) {\n    mini_stage = 'Stage 0';\n    stg = 'Very early stage (0)';\n    tx = 'Curative treatments (30%)';\n    surv ='5-year survival: 50-70%';\n    rec = 'PEI/RF recommended by BCLC';\n}\nif (cp <= 2 && stage == 1 && numnodes == 1 && portalpressure == 1) {\n    mini_stage = 'Stage A';\n    stg = 'Early stage (A)';\n    tx = 'Curative treatments (30%)';\n    surv ='5-year survival: 50-70%';\n    rec = 'Resection recommended by BCLC';\n}\nif (cp <= 2 && stage == 1 && numnodes == 1 && portalpressure == 2 && assocdis == 0) {\n    mini_stage = 'Stage A';\n    stg = 'Early stage (A)';\n    tx = 'Curative treatments (30%)';\n    surv ='5-year survival: 50-70%';\n    rec = 'Liver transplantation (CLT/LDLT) recommended by BCLC';\n}\nif (cp <= 2 && stage == 1 && numnodes == 1 && portalpressure == 2 && assocdis == 1) {\n    mini_stage = 'Stage A';\n    stg = 'Early stage (A)';\n    tx = 'Curative treatments (30%)';\n    surv ='5-year survival: 50-70%';\n    rec = 'PEI/RF recommended by BCLC';\n}\nif (cp <= 2 && stage == 1 && numnodes == 2 && assocdis == 0) {\n    mini_stage = 'Stage A';\n    stg = 'Early stage (A)';\n    tx = 'Curative treatments (30%)';\n    surv ='5-year survival: 50-70%';\n    rec = 'Liver transplantation (CLT/LDLT) recommended by BCLC';\n}\nif (cp <= 2 && stage == 1 && numnodes == 2 && assocdis == 1) {\n    mini_stage = 'Stage A';\n    stg = 'Early stage (A)';\n    tx = 'Curative treatments (30%)';\n    surv ='5-year survival: 50-70%';\n    rec = 'PEI/RF recommended by BCLC';\n}\nif (cp <= 2 && stage == 2) {\n    mini_stage = 'Stage B';\n    stg = 'Intermediate stage (B)';\n    tx = 'Randomized control treatments (50%)';\n    surv ='3-year survival: 20-40%';\n    rec = 'Chemoembolization recommended by BCLC';\n}\nif (cp <= 2 && stage == 3) {\n    mini_stage = 'Stage C';\n    stg = 'Advanced stage (C)';\n    tx = 'Randomized control treatments (50%)';\n    surv ='3-year survival: 20-40%';\n    rec = 'New therpies and agents (e.g., sorafenib) recommended by BCLC';\n}\nif (cp == 3) {\n    mini_stage = 'Stage D';\n    stg = 'Terminal stage (D)';\n    tx = 'Symptomatic treatment (30%)';\n    surv ='1-year survival: 10-20%';\n    rec = 'Palliative care recommended by BCLC';\n}\n\n\ncalc_output.push({\n    name: 'mini',\n    value: mini_stage,\n    value_text: '',\n    message: surv\n});\ncalc_output.push({\n    name: 'bclc',\n    value: stg,\n    value_text: '',\n    message: surv\n});\ncalc_output.push({\n    name: 'bclctx',\n    value: tx,\n    value_text: '',\n    message: rec\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><calculator id=\"340\">Child-Pugh grade</calculator></p>",
+                "mdcalc_info_concept": null,
+                "name": "cp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "A",
+                        "value": 1
+                    },
+                    {
+                        "label": "B",
+                        "value": 2
+                    },
+                    {
+                        "label": "C",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "cp <= 2",
+                "default": null,
+                "label_en": "<p>Cancer stage</p>",
+                "mdcalc_info_concept": null,
+                "name": "stage",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Very early stage (single, carcinoma in situ)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Early stage (1 nodule <5cm up to 3 nodules <3cm)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Intermediate stage (multinodular)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Advanced stage (portal invasion with mets)",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "cp <=2 && stage == 1",
+                "default": null,
+                "label_en": "<p>Number of nodules</p>",
+                "mdcalc_info_concept": null,
+                "name": "numnodes",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Single",
+                        "value": 1
+                    },
+                    {
+                        "label": "Up to 3 nodules <3cm",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "(cp <=2 && stage == 0) || (cp <=2 && stage == 1 && numnodes == 1)",
+                "default": null,
+                "label_en": "<p>Portal pressure/bilirubin</p>",
+                "mdcalc_info_concept": null,
+                "name": "portalpressure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 1
+                    },
+                    {
+                        "label": "Increased",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "(cp <=2 && stage == 0 && portalpressure == 2) || (stage <= 1 && numnodes == 2) || (cp <=2 && stage == 1 && numnodes == 1 && portalpressure == 2) ",
+                "default": null,
+                "label_en": "<p>Associated diseases</p>",
+                "md_calc_info_concept": null,
+                "name": "assocdis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "chemo",
+            "hcc"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

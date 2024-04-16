@@ -1,0 +1,154 @@
+{
+    "id": "517",
+    "title": "NEXUS Chest CT Decision Instrument for CT Imaging",
+    "desc": "The NEXUS Chest CT Decision Instrument for CT Imaging identifies blunt trauma patients that have clinically significant thoracic injuries.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001883 ",
+                "text": "Rodriguez RM, Langdorf MI, Nishijima D, Baumann BM, Hendey GW, Medak AJ, Raja AS, Allen IE, Mower WR. Derivation and validation of two decision instruments for selective chest CT in blunt trauma: a multicenter prospective observational study (NEXUS Chest CT). PLoS Med. 2015 Oct 6;12(10):e1001883. doi: 10.1371/journal.pmed.1001883. eCollection 2015."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23925583",
+                "text": "Rodriguez RM, Hendey GW, Marek G, Dery RA, Bjoring A. A pilot study to derive clinical variables for selective chest radiography in blunt trauma patients. Ann Emerg Med. 2006 May;47(5):415-8. Epub 2005 Dec 27."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23925583",
+                "text": "Rodriguez RM, Anglin D, Langdorf MI, Baumann BM, Hendey GW, Bradley RN, Medak AJ, Raja AS, Juhn P, Fortman J, Mulkerin W, Mower WR. NEXUS chest: validation of a decision instrument for selective chest imaging in blunt trauma. JAMA Surg. 2013 Oct;148(10):940-6. doi: 10.1001/jamasurg.2013.2757."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21045745",
+                "text": "Rodriguez RM, Hendey GW, Mower W, Kea B, Fortman J, Merchant G, Hoffman JR. Derivation of a decision instrument for selective chest radiography in blunt trauma. J Trauma. 2011 Sep;7(3):549-53. PMID: 21045745."
+            }
+        ],
+        "evidence": "<p>Series of Yes/No questions as listed.</p>",
+        "facts": "<p>If any criteria are positive, major or minor thoracic injury can NOT be excluded.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseInt(cxr) + parseInt(distracting) + parseInt(ttp);\nvar v = parseInt(deceleration);\nvar p = u + v;\n\nvar mini_msg, msg;\n\nif (u > 0 && v == 0) {\n    mini_msg = 'Cannot exclude thoracic injury';\n    msg = 'Cannot exclude thoracic injury; consider further workup including chest CT';\n    msg2 = '';\n} else if (u > 0 && v > 0) {\n    mini_msg = 'Cannot exclude thoracic injury';\n    msg = 'Cannot exclude thoracic injury; consider further workup including chest CT';\n    msg2 = '';\n} else if (u == 0 && v == 1) {\n    mini_msg = 'Cannot exclude thoracic injury';\n    msg = 'Cannot exclude thoracic injury; consider further workup including chest CT';\n    msg2 = '<br/><br/>Major or minor injury: 95.4% sensitive, 25.5% specific';\n} else {\n    mini_msg = 'No Chest CT required by NEXUS Chest';\n    msg = 'All MAJOR AND MINOR criteria are ABSENT - no Chest CT by NEXUS Chest.';\n    msg2 = '<br/><br/>Major injury: 99.2% sensitive, 31.7% specific<br/>Major or minor injury: 90.7% sensitive, 37.9% specific';\n}\n\n\ncalc_output.push({ name: 'mini', value: '', value_text: '', message: mini_msg });\ncalc_output.push({ \n    name: '3815_NEXUS Chest CT Decision Instrument_result', \n    value: '', \n    value_text: '', \n    message: msg + msg2 \n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Clinically Major Thoracic Injuries",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Abnormal chest X-ray",
+                "md_calc_info_concept": null,
+                "name": "cxr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "CXR showing any thoracic injury (including clavicle fracture) or widened mediastinum",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Distracting injury",
+                "md_calc_info_concept": null,
+                "name": "distracting",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Chest wall, sternum, thoracic spine, or scapular tenderness",
+                "md_calc_info_concept": null,
+                "name": "ttp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "All Thoracic Injuries",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Rapid deceleration mechanism",
+                "md_calc_info_concept": null,
+                "name": "deceleration",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Fall from >20 feet/6.1 m or MVA at >40 mph/64.4 km/hr with sudden deceleration.",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ct",
+            "chest",
+            "chest trauma",
+            "trauma"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Surgery (Trauma)"
+        ]
+    }
+}

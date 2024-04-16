@@ -1,0 +1,450 @@
+{
+    "id": "368",
+    "title": "HIT Expert Probability (HEP) Score for Heparin-Induced Thrombocytopenia",
+    "desc": "The HIT Expert Probability Score (HEP) is a clinical scoring system to stratify the pre-test probability of suspected HIT cases.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20854372",
+                "text": "Cuker A, Arepally G, Crowther MA, Rice L, Datko F, Hook K, Propert KJ, Kuter DJ, Ortel TL, Konkle BA, Cines DB. The HIT Expert Probability (HEP) Score: a novel pre-test probability model for heparin-induced thrombocytopenia based on broad expert opinion. J Thromb Haemost 2010; 8: 2642–50."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points, see below:</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Value</th>\n<th>Points</th>\n</tr>\n<tr>\n<th rowspan=\"3\">Magnitude of fall in platelet count (peak platelet count to nadir since heparin)</th>\n<td>a) &lt;30%</td>\n<td>-1</td>\n</tr>\n<tr>\n<td>b) 30-50%</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>c) &gt;50%</td>\n<td>+3</td>\n</tr>\n<tr>\n<th rowspan=\"5\">Timing of fall in platelet count<br>For patients in whom typical onset HIT is suspected</th>\n<td>a) Fall begins &lt;4 days after heparin exposure</td>\n<td>-2</td>\n</tr>\n<tr>\n<td>b) Fall begins 4 days after heparin exposure</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>c) Fall begins 5-10 days after heparin exposure</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>d) Fall begins 11-14 days after heparin exposure</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>e) Fall begins &gt;14 days after heparin exposure</td>\n<td>-1</td>\n</tr>\n<tr>\n<th rowspan=\"3\">For patients with prior heparin exposure (last 100 days)<br>(rapid onset HIT is suspected)</th>\n<td>a) Fall begins &lt;4 days after heparin exposure</td>\n<td>-2</td>\n</tr>\n<tr>\n<td>f) Fall begins &lt;48 hours after heparin re-exposure</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>g) Fall begins &gt;48 hours after heparin re-exposure</td>\n<td>-1</td>\n</tr>\n<tr>\n<th rowspan=\"2\">Nadir platelet count</th>\n<td>a) &le;20 x 10<sup>9</sup>/L</td>\n<td>-2</td>\n</tr>\n<tr>\n<td>b) &gt;20 x 10<sup>9</sup>/L</td>\n<td>+2</td>\n</tr>\n<tr>\n<th rowspan=\"2\">Thrombosis For patients in whom typical onset HIT is suspected</th>\n<td>a) New VTE or ATE &ge;4 days after heparin exposure</td>\n<td>3</td>\n</tr>\n<tr>\n<td>b) Progression of pre-existing VTE or ATE while receiving heparin</td>\n<td>2</td>\n</tr>\n<tr>\n<th rowspan=\"2\">Thrombosis for patients with prior heparin exposure (last 100 days) and rapid onset HIT is suspected</th>\n<td>New VTE or ATE after heparin exposure</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>Progression of pre-existing VTE or ATE while receiving heparin</td>\n<td>+2</td>\n</tr>\n<tr>\n<td colspan=\"2\">a) Skin necrosis at subcutaneous heparin injection sites</td>\n<td>+3</td>\n</tr>\n<tr>\n<td colspan=\"2\">b) Acute systemic reaction after intravenous heparin bolus</td>\n<td>+2</td>\n</tr>\n<tr>\n<td colspan=\"2\">c) Severe DIC (fibrinogen &lt;100 mg/dL and D-dimer &gt;5.0 ug/mL</td>\n<td>-2</td>\n</tr>\n<tr>\n<td colspan=\"2\">d) Indwelling intra-arterial device (e.g. IABP, VAD, ECMO)</td>\n<td>-2</td>\n</tr>\n<tr>\n<td colspan=\"2\">e) Cardiopulmonary bypass within previous 96 h</td>\n<td>-1</td>\n</tr>\n<tr>\n<td colspan=\"2\">f) No other apparent cause</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding"
+        ],
+        "disease_treated": [
+            "Thrombocytopenia"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nif(parseFloat(type) == 0){ //typical\n\tvar score = parseFloat(mag) + parseFloat(timingty) + parseFloat(nadir) + parseFloat(thromty) + parseFloat(skin) + parseFloat(acute) + parseFloat(bleed) + parseFloat(pres) + parseFloat(neW) + parseFloat(severe) + parseFloat(dic) + parseFloat(indwell) + parseFloat(cardio) + parseFloat(other);\n}\n\nif(parseFloat(type) == 1){\t//rapid\n\tvar score = parseFloat(mag) + parseFloat(timingrap) + parseFloat(nadir) + parseFloat(thromrap) + parseFloat(skin) + parseFloat(acute) + parseFloat(bleed) + parseFloat(pres) + parseFloat(neW) + parseFloat(severe) + parseFloat(dic) + parseFloat(indwell) + parseFloat(cardio) + parseFloat(other);\n}\n\nif (score > 1) {\n    msg = 'Scores \\u22652 are 100% sensitive for HIT.';\n    mini_msg = 'Sensitive for HIT.';\n} else {\n    msg = 'Scores <2 suggest a lower probability of HIT.';\n    mini_msg = 'Lower probability of HIT.';\n}\n\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: score, \n\tvalue_text: 'points', \n\tmessage: mini_msg \n});\ncalc_output.push({ \n\tname: '1789_HEP Score_result', \n\tvalue: score, \n\tvalue_text: 'points', \n\tmessage: msg \n});\n",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Thrombocytopenia Features",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Type of heparin-induced thrombocytopenia (HIT) onset suspected",
+                "md_calc_info_concept": null,
+                "name": "type",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Typical",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rapid",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Magnitude of platelet count fall",
+                "mdcalc_info_concept": null,
+                "name": "mag",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<30%",
+                        "value": -1
+                    },
+                    {
+                        "label": "30-50%",
+                        "value": 1
+                    },
+                    {
+                        "label": ">50%",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Peak to nadir count since heparin",
+                "type": "radio"
+            },
+            {
+                "conditionality": "type==0",
+                "default": null,
+                "label_en": "Timing of platelet count fall",
+                "mdcalc_info_concept": null,
+                "name": "timingty",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Fall begins <4 days after heparin exposure",
+                        "value": -2
+                    },
+                    {
+                        "label": "Fall begins 4 days after heparin exposure",
+                        "value": 2
+                    },
+                    {
+                        "label": "Fall begins 5-10 days after heparin exposure",
+                        "value": 3
+                    },
+                    {
+                        "label": "Fall begins 11-14 days after heparin exposure",
+                        "value": 2
+                    },
+                    {
+                        "label": "Fall begins >14 days after heparin exposure",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "type==1",
+                "default": null,
+                "label_en": "Timing of platelet count fall",
+                "mdcalc_info_concept": null,
+                "name": "timingrap",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Fall begins <48 hours after heparin re-exposure",
+                        "value": 2
+                    },
+                    {
+                        "label": "Fall begins >48 hours after heparin re-exposure",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Nadir platelet count",
+                "mdcalc_info_concept": null,
+                "name": "nadir",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤20",
+                        "value": -2
+                    },
+                    {
+                        "label": ">20",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "type==0",
+                "default": null,
+                "label_en": "Thrombosis",
+                "mdcalc_info_concept": null,
+                "name": "thromty",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "New venous thromboembolism (VTE) or arterial thromboembolism (ATE) ≥4 days after heparin exposure",
+                        "value": 3
+                    },
+                    {
+                        "label": "Progression of pre-existing venous thromboembolism (VTE) or arterial thromboembolism (ATE) while receiving heparin",
+                        "value": 2
+                    },
+                    {
+                        "label": "None",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "type==1",
+                "default": null,
+                "label_en": "Thrombosis",
+                "mdcalc_info_concept": null,
+                "name": "thromrap",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "New venous thromboembolism (VTE) or arterial thromboembolism (ATE) after heparin exposure",
+                        "value": 3
+                    },
+                    {
+                        "label": "Progression of pre-existing venous thromboembolism (VTE) or arterial thromboembolism (ATE) while receiving heparin",
+                        "value": 2
+                    },
+                    {
+                        "label": "None",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Skin necrosis at subcutaneous heparin injection sites",
+                "md_calc_info_concept": null,
+                "name": "skin",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Acute systemic reaction after IV heparin bolus",
+                "md_calc_info_concept": null,
+                "name": "acute",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Presence of bleeding, petechiae or extensive bruising",
+                "md_calc_info_concept": null,
+                "name": "bleed",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Other Causes of Thrombocytopenia",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Presence of chronic thrombocytopenic disorder",
+                "md_calc_info_concept": null,
+                "name": "pres",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Newly initiated non-heparin medication known to cause thrombocytopenia",
+                "md_calc_info_concept": null,
+                "name": "neW",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Severe infection",
+                "md_calc_info_concept": null,
+                "name": "severe",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Severe disseminated intravascular coagulation (DIC)",
+                "md_calc_info_concept": null,
+                "name": "dic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Fibrinogen <100 mg/dL and D-dimer >5 µg/mL",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Indwelling intra-arterial device",
+                "md_calc_info_concept": null,
+                "name": "indwell",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<abbr title='Intra-arterial balloon pump'>IABP</abbr>, <abbr title='Ventricular assist device'>VAD</abbr>, <abbr title='Extra-corporeal membrane oxygenation'>ECMO</abbr>",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Cardiopulmonary bypass within previous 96 hours",
+                "md_calc_info_concept": null,
+                "name": "cardio",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "No other apparent cause",
+                "md_calc_info_concept": null,
+                "name": "other",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "hit",
+            "plt",
+            "platelets"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

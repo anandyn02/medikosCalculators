@@ -1,0 +1,193 @@
+{
+    "id": "290",
+    "title": "PHASES Score",
+    "desc": "The PHASES Score predicts the risk of rupture of intracranial aneurysms.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24290159/",
+                "text": "Greving JP, Wermer MJH, Brown RD, et al. Development of the PHASES score for prediction of risk of rupture of intracranial aneurysms: a pooled analysis of six prospective cohort studies. Lancet Neurol. 2014;13(1):59-66."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/28667020/",
+                "text": "Bijlenga P, Gondar R, Schilling S, et al. Phases score for the management of intracranial aneurysm: a cross-sectional population-based retrospective study. Stroke. 2017;48(8):2105-2112."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/25757900/",
+                "text": "Backes D, Vergouwen MDI, Tiel Groenestege AT, et al. Phases score for prediction of intracranial aneurysm growth. Stroke. 2015;46(5):1221-1226."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">The PHASES Score is calculated by the addition of the selected points:</p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col width=\"141\"><col width=\"196\"><col width=\"110\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>P</strong></span>opulation</p>\n</td>\n<td>\n<p dir=\"ltr\">North American, European (other than Finnish)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Japanese</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Finnish</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>H</strong></span>ypertension</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>A</strong></span>ge</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;70 years</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;70 years</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>S</strong></span>ize of aneurysm</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;7.0 mm</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7.0-9.9 mm</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10.0-19.9 mm</p>\n</td>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;20.0 mm</p>\n</td>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>E</strong></span>arlier <abbr title=\"subarachnoid hemorrhage\">SAH</abbr> from another aneurysm</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>S</strong></span>ite of aneurysm</p>\n</td>\n<td>\n<p dir=\"ltr\">Internal carotid artery (ICA)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Middle cerebral artery (MCA)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Anterior cerebral arteries (ACA), posterior communicating artery, posterior circulation</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>&nbsp;</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col width=\"211\"><col width=\"237\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>PHASES Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>5-Year Risk of Aneurysm Rupture</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;2</p>\n</td>\n<td>\n<p dir=\"ltr\">0.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">0.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">0.9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">1.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n<td>\n<p dir=\"ltr\">1.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n<td>\n<p dir=\"ltr\">2.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n<td>\n<p dir=\"ltr\">3.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">9</p>\n</td>\n<td>\n<p dir=\"ltr\">4.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n<td>\n<p dir=\"ltr\">5.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">11</p>\n</td>\n<td>\n<p dir=\"ltr\">7.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;12</p>\n</td>\n<td>\n<p dir=\"ltr\">17.8%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding",
+            "Headache",
+            "Nausea",
+            "Numbness",
+            "Pain",
+            "Seizure",
+            "Vision Loss",
+            "Vomiting",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Intracranial Aneurysm"
+        ],
+        "logic": "var calc_output = [];\n\nvar population = parseFloat(population);\nvar hypertension = parseFloat(hypertension);\nvar age = parseFloat(age);\nvar size = parseFloat(size);\nvar sah = parseFloat(sah);\nvar site = parseFloat(site);\n\nvar score = population + hypertension + age + size + sah + site;\n\nvar risk;\n\nif (score <= 2) {\n    risk = 0.4;\n} else if (score == 3) {\n    risk = 0.7;\n} else if (score == 4) {\n    risk = 0.9;\n} else if (score == 5) {\n    risk = 1.3;\n} else if (score == 6) {\n    risk = 1.7;\n} else if (score == 7) {\n    risk = 2.4;\n} else if (score == 8) {\n    risk = 3.2;\n} else if (score == 9) {\n    risk = 4.3;\n} else if (score == 10) {\n    risk = 5.3;\n} else if (score == 11) {\n    risk = 7.2;\n} else if (score >= 12) {\n    risk = 17.8;\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'PHASES Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'PHASES Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: '%',\n    message: '5-year risk of aneurysm rupture'\n})",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>P</strong></span>opulation</p>",
+                "name": "population",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "North American, European (other than Finnish)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Japanese",
+                        "value": 3
+                    },
+                    {
+                        "label": "Finnish",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>H</strong></span>ypertension</p>",
+                "name": "hypertension",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><strong><span style=\"text-decoration: underline;\">A</span></strong>ge</p>",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<70 years",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥70 years",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span style=\"text-decoration: underline;\"><strong id=\"docs-internal-guid-d1fc07a2-7fff-e06d-bb5f-0c3a932ceeb9\">S</strong></span>ize of aneurysm</p>",
+                "name": "size",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<7.0 mm",
+                        "value": 0
+                    },
+                    {
+                        "label": "7.0-9.9 mm",
+                        "value": 3
+                    },
+                    {
+                        "label": "10.0-19.9 mm",
+                        "value": 6
+                    },
+                    {
+                        "label": "≥20.0 mm",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>E</strong></span>arlier <abbr title=\"subarachnoid hemorrhage\">SAH</abbr> from another aneurysm</p>",
+                "name": "sah",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>S</strong></span>ite of aneurysm</p>",
+                "name": "site",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Internal carotid artery (ICA)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Middle cerebral artery (MCA)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Anterior cerebral arteries (ACA), posterior communicating artery, posterior circulation",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "PHASES Score",
+            "PHASES",
+            "aneurysm risk",
+            "aneurysm risk score",
+            "intracranial aneurysm",
+            "aneurysm rupture"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

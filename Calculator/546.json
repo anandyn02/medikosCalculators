@@ -1,0 +1,326 @@
+{
+    "id": "546",
+    "title": "Duke Activity Status Index (DASI)",
+    "desc": "The Duke Activity Status Index estimates functional capacity of patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2782256",
+                "text": "Hlatky MA, Boineau RE, Higginbotham MB, Lee KL, Mark DB, Califf RM, et al. A brief self-administered questionnaire to determine functional capacity (the Duke Activity Status Index) Am J Cardiol. 1989;64(10):651–654."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points (self-reported by patient):</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Is the patient able to:</strong></p>\n</td>\n<td>\n<p><strong>Yes</strong></p>\n</td>\n<td>\n<p><strong>No</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Take care of self (e.g. eating, dressing, bathing, using the toilet)</span></p>\n</td>\n<td>\n<p><span>+2.75</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Walk indoors</span></p>\n</td>\n<td>\n<p><span>+1.75</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Walk 1&ndash;2 blocks on level ground</span></p>\n</td>\n<td>\n<p><span>+2.75</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Climb a flight of stairs or walk up a hill</span></p>\n</td>\n<td>\n<p><span>+5.5</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Run a short distance</span></p>\n</td>\n<td>\n<p><span>+8.0</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Do light work around the house (e.g. dusting, washing dishes)</span></p>\n</td>\n<td>\n<p><span>+2.7</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Do moderate work around the house (e.g. vacuuming, sweeping floors, carrying in groceries)</span></p>\n</td>\n<td>\n<p><span>+3.5</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Do heavy work around the house (e.g. scrubbing floors, lifting or moving heavy furniture)</span></p>\n</td>\n<td>\n<p><span>+8.0</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Do yardwork (e.g. raking leaves, weeding, pushing a power mower)</span></p>\n</td>\n<td>\n<p><span>+4.5</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Have sexual relations</span></p>\n</td>\n<td>\n<p><span>+5.25</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Participate in moderate recreational activities (e.g. golf, bowling, dancing, doubles tennis, throwing a baseball or football)</span></p>\n</td>\n<td>\n<p><span>+6.0</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Participate in strenuous sports (e.g. swimming, singles tennis, football, basketball, skiing)</span></p>\n</td>\n<td>\n<p><span>+7.5</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p><strong>Interpretation:</strong></p>\n<p>VO<sub>2</sub> peak (mL/kg) = 0.43 &times; DASI + 9.6</p>\n<p>METs (metabolic equivalents) =&nbsp;VO<sub>2</sub> peak / 3.5</p>\n<p>VO<sub>2</sub> peak is&nbsp;maximal oxygen consumption (gold standard measurement is by exercise stress testing).</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Pain"
+        ],
+        "disease_treated": [
+            "Acute Pain",
+            "Appendicitis",
+            "Breast Cancer",
+            "Cholecystitis",
+            "GI Bleeding",
+            "Hernia",
+            "Pancreatic Cancer",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar care = parseFloat(care);\nvar indoor = parseFloat(indoor);\nvar level = parseFloat(level);\nvar climb = parseFloat(climb);\nvar run = parseFloat(run);\nvar lightwork = parseFloat(lightwork);\nvar modwork = parseFloat(modwork);\nvar heavywork = parseFloat(heavywork);\nvar yard = parseFloat(yard);\nvar sex = parseFloat(sex);\nvar modac = parseFloat(modac);\nvar strenac = parseFloat(strenac);\n\nvar u = care + indoor + level + climb + run + lightwork + modwork + heavywork + yard + sex + modac + strenac;\nvar msg = 'The higher the score (maximum 58.2), the higher the functional status.';\nvar mini_msg = 'Maximum score is 58.2';\nvar mets = (0.43 * u + 9.6) / 3.5\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: mini_msg \n});\ncalc_output.push({ \n\tname: '3910_DASI_result (score)', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg \n});\ncalc_output.push({ \n\tname: '3910_DASI_result (METs)',\n\tvalue: mets.toFixed(2), \n\tvalue_text: 'METs', \n\tmessage: '' \n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Is the patient able to:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "<p>Take care of self</p>",
+                "md_calc_info_concept": null,
+                "name": "care",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2.75
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. eating, dressing, bathing, using the toilet",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "Walk indoors",
+                "md_calc_info_concept": null,
+                "name": "indoor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.75
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "<p>Walk 1&ndash;2 blocks on level ground</p>",
+                "md_calc_info_concept": null,
+                "name": "level",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2.75
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "Climb a flight of stairs or walk up a hill",
+                "md_calc_info_concept": null,
+                "name": "climb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "Run a short distance",
+                "md_calc_info_concept": null,
+                "name": "run",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "<p>Do light work around the house</p>",
+                "md_calc_info_concept": null,
+                "name": "lightwork",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2.7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. dusting, washing dishes",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "<p>Do moderate work around the house</p>",
+                "md_calc_info_concept": null,
+                "name": "modwork",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. vacuuming, sweeping floors, carrying in groceries",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "Do heavy work around the house",
+                "md_calc_info_concept": null,
+                "name": "heavywork",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. scrubbing floors,  lifting or moving heavy furniture",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "Do yardwork",
+                "md_calc_info_concept": null,
+                "name": "yard",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. raking leaves, weeding, pushing a power mower",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "Have sexual relations",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5.25
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "Participate in moderate recreational activities",
+                "md_calc_info_concept": null,
+                "name": "modac",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. golf, bowling, dancing, doubles tennis, throwing a baseball or football",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "Participate in strenuous sports",
+                "md_calc_info_concept": null,
+                "name": "strenac",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 7.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. swimming, singles tennis, football, basketball, skiing",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Duke",
+            "activity",
+            "prognosis",
+            "functionality",
+            "capacity",
+            "independence",
+            "DASI"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Cardiology",
+            "Critical Care",
+            "Family Practice",
+            "Geriatrics",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Palliative Care/Hospice",
+            "Surgery (General)",
+            "Surgery (Vascular)"
+        ]
+    }
+}

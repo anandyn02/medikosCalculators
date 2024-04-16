@@ -1,0 +1,91 @@
+{
+    "id": "215",
+    "title": "Rome IV Diagnostic Criteria for Functional Gallbladder Disorder",
+    "desc": " The Rome IV Criteria for Functional Gallbladder Disorder provides criteria for diagnosis of functional gallbladder disorder.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144629",
+                "text": "Cotton PB, Elta GH, Carter CR, Pasricha PJ, Corazziari ES. Rome IV. Gallbladder and Sphincter of Oddi Disorders. Gastroenterology. 2016;150:1420-1429."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/19160318/",
+                "text": "Gurusamy KS, Junnarkar S, Farouk M, et al. Cholecystectomy for suspected gallbladder dyskinesia. Cochrane Database Syst Rev. 2009(1):CD007086. "
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/19542850",
+                "text": "Carr JA, Walls J, Bryan LJ, et al. The treatment of gallbladder dyskinesia based upon symptoms: results of a 2-year, prospective, nonrandomized, concurrent cohort study. Surg Laparosc Endosc Percutan Tech 2009; 19: 222–226."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for functional gallbladder disorder,* patient must have the following:&nbsp;</p>\n<ol>\n<li><calculator id=\"10319\">Biliary pain</calculator>.</li>\n<li>Absence of gallstones or other structural pathology.&nbsp;</li>\n</ol>\n<p>*Supportive Criteria:</p>\n<ul>\n<li>Low ejection fraction on gallbladder scintigraphy.</li>\n<li>Normal liver enzymes, conjugated bilirubin, and amylase/lipase.</li>\n</ul>",
+        "facts": "<p><img src=\"https://cdn-web-img.mdcalc.com/content/rome_gallbladder.png\" width=\"100%\" /></p>\n<p>From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/27144629\" target=\"_blank\">Cotton PB 2020</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Gallbladder Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two);\n\nvar diag;\n\nvar msg= 'Diagnosis for functional gallbladder disorder as per Rome IV criteria';\nvar minimsg= 'Diagnosis for functional gallbladder disorder';\n\nif (criteria==2) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Gallbladder Disorder',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id=\"10319\">Biliary pain</calculator>",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of gallstones or other structural pathology",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Functional Gallbladder Disorder, Rome IV for Functional Gallbladder Disorder, rome iv functional gallbladder disorder, rome iv gallbladder, rome for functional gallbladder disorder, rome iv gallbladder disorder, rome 4 for functional gallbladder disorder, rome 4 gallbladder disorder, rome 4 gallbladder"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

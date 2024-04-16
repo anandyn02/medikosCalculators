@@ -1,0 +1,178 @@
+{
+    "id": "220",
+    "title": "Rome IV Diagnostic Criteria for Child Functional Nausea and Vomiting",
+    "desc": "The Rome IV Criteria for Child Functional Nausea and Vomiting provides criteria for diagnosis of child functional nausea and vomiting.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7104693/",
+                "text": "Hyams J, Di lorenzo C, Forbes D, et al. Childhood functional gastrointestinal disorders: child/adolescent. Gastroenterology. 2006;130(5):1527-37."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p><strong>Functional nausea</strong></p>\n<p>To fulfill the Rome IV criteria for child functional nausea, patient must have the following (for &ge;2 months prior):</p>\n<ol>\n<li>Bothersome nausea as the predominant symptom, occurring &ge;2 times per week, and generally not related to meals.</li>\n<li>Not consistently associated with vomiting.</li>\n<li>After appropriate evaluation, the nausea cannot be fully explained by another medical condition.</li>\n</ol>\n<p><strong>Functional vomiting</strong></p>\n<p>To fulfill the Rome IV criteria for child functional vomiting, patient must have the following (for &ge;2 months prior):</p>\n<ol>\n<li>On average, &ge;1 episode of vomiting per week.</li>\n<li>Absence of self-induced vomiting or criteria for an eating disorder or rumination.</li>\n<li>After appropriate evaluation, the vomiting cannot be fully explained by another medical condition.</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Nausea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Child/Adolescent Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria1=parseFloat(one)+parseFloat(two)+parseFloat(three);\nvar\ncriteria2=parseFloat(four)+parseFloat(five)+parseFloat(six);\n\nvar diag;\nvar diag2;\n\nvar msg= 'Diagnosis for child functional nausea as per Rome IV criteria';\nvar minimsg= ' diagnosis for child functional nausea.';\n\nvar msg2= 'Diagnosis for child functional vomiting as per Rome IV criteria';\nvar minimsg2= ' diagnosis for child functional vomiting';\n\nif (criteria1==3) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\n\nif (criteria2==3) {\n  diag2='Positive';\n} else {\n  diag2='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: '',\n    value_text:'',\n    message: diag + minimsg + ' ' + diag2 + minimsg2\n});\ncalc_output.push({\n    name: 'Rome IV for Child Functional Nausea',\n    value: diag,\n    value_text:'',\n    message:msg\n});\n\ncalc_output.push({\n    name: 'Rome IV for Child Functional Vomiting',\n    value: diag2,\n    value_text:'',\n    message:msg2\n});\n\n",
+        "inputs": [
+            {
+                "subheading": "Functional Nausea",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For ≥2 months prior",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bothersome nausea as the predominant symptom, occurring ≥2 times per week, and generally not related to meals",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Not consistently associated with vomiting",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "After appropriate evaluation, the nausea cannot be fully explained by another medical condition",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Functional Vomiting",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For ≥2 months prior",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "On average, ≥1 episode of vomiting per week",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of self-induced vomiting or criteria for an eating disorder or rumination",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "After appropriate evaluation, the vomiting cannot be fully explained by another medical condition",
+                "name": "six",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Child Functional Nausea and Vomiting, Rome IV for Child Nausea and Vomiting, rome iv for child nausea vomiting, rome iv child functional vomiting, rome iv child functional nausea, rome iv child vomiting, rome iv child nausea, rome iv nausea, rome iv vomiting, rome 4 child functional vomiting, rome 4 child functional nausea, rome 4 child vomiting, rome 4 child nausea, rome 4 nausea, rome 4 vomiting, rome nausea, rome vomiting, rome, rome nausea and vomiting, child vomiting, child nausea, child functional nausea, child functional vomiting, nausea, vomiting"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

@@ -1,0 +1,187 @@
+{
+    "id": "714",
+    "title": "Serum Osmolality/Osmolarity",
+    "desc": "The Serum Osmolality/Osmolarity calculates expected serum osmolarity, for comparison to measured osmolarity to detect unmeasured compounds in the serum.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.sciencedirect.com/science/article/pii/S0196064401166667",
+                "text": "Purssell RA, Pudek M, Brubacher J, Abu-Laban RB.Derivation and validation of a formula to calculate the contribution of ethanol to the osmolal gap.Ann Emerg Med 2001;38 (6): 653–9.doi:10.1067/mem.2001.119455. PMID 11719745."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4751712",
+                "text": "Glasser L, et. al. Serum Osmolality and its applicability to drug overdose. Am. J. Clin. Path. 1973; 60:695."
+            }
+        ],
+        "evidence": "<p><strong>Traditional equation: </strong></p>\n<p>Serum osmolality, US units = (2&nbsp;<span style=\"color: #545454; font-family: Roboto, arial, sans-serif; font-size: small;\">&times;&nbsp;</span>Na + (BUN / 2.8) + (glucose / 18) + (ethanol / 4.6)</p>\n<p><strong><a href=\"https://www.sciencedirect.com/science/article/pii/S0196064401166667\" target=\"_blank\" rel=\"noopener\">Purssell et al</a> equation:</strong></p>\n<p>Serum osmolality, US units = (2&nbsp;<span style=\"color: #545454; font-family: Roboto, arial, sans-serif; font-size: small;\">&times;&nbsp;</span>Na + (BUN / 2.8) + (glucose / 18) + (ethanol / 3.7)</p>\n<p><em>Note:</em> the range displayed in the calculator uses the equations above.</p>\n<p><strong>Osmolal gap equation:</strong></p>\n<p>Osmolal gap = measured serum osm - calculated serum osm</p>\n<p><em>Note:</em> the osmolal gap displayed in the calculator uses the Pursell et al equation.</p>",
+        "facts": "<p>If values are in SI units, these are already molar (mmol/L for example), so these do not need to be divided by their molecular weight.</p>",
+        "estimation": [
+            {
+                "name": "Osmoles (Osm)",
+                "unit": "osm",
+                "error_min": "200",
+                "error_max": "700",
+                "warn_min": "270",
+                "warn_max": "350",
+                "conversion": "1",
+                "normal_max_si": "295",
+                "normal_max_us": "295",
+                "normal_min_si": "275",
+                "normal_min_us": "275",
+                "units_si": "mmol/kg",
+                "units_us": "mOsm/kg"
+            },
+            {
+                "name": "Glucose",
+                "unit": "glu",
+                "error_min": "1",
+                "error_max": "1600",
+                "warn_min": "50",
+                "warn_max": "1000",
+                "conversion": "0.0555",
+                "normal_max_si": "5.8",
+                "normal_max_us": "105",
+                "normal_min_si": "3.9",
+                "normal_min_us": "70",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Sodium",
+                "unit": "na",
+                "error_min": "100",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "170",
+                "conversion": "1",
+                "normal_max_si": "145",
+                "normal_max_us": "145",
+                "normal_min_si": "136",
+                "normal_min_us": "136",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            },
+            {
+                "name": "BUN",
+                "unit": "bun",
+                "error_min": "1",
+                "error_max": "500",
+                "warn_min": "2",
+                "warn_max": "300",
+                "conversion": "0.357",
+                "normal_max_si": "7.1",
+                "normal_max_us": "20",
+                "normal_min_si": "2.9",
+                "normal_min_us": "8",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Ethanol (ETOH)",
+                "unit": "etoh",
+                "error_min": "-0.01",
+                "error_max": "700",
+                "warn_min": "0",
+                "warn_max": "400",
+                "conversion": "0.217",
+                "normal_max_si": "17.36",
+                "normal_max_us": "80",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Intoxication/Overdose",
+            "Vomiting",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Acid-Base Disturbance",
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\nvar sodium = parseFloat(sodium);\nvar bun = parseFloat(bun);\nvar glucose = parseFloat(glucose);\nvar ethanol = parseFloat(ethanol);\nif (UOMSYSTEM == false) {\n  //sodium is 1:1 conversion, does not need UOM conversion\n  bun = bun / 0.357;\n  glucose = glucose / 0.0555;\n  ethanol = ethanol / 0.217;\n}\n\nif (ethanol) {\n\n  var va = 2 * (sodium) + (bun / 2.8) + (glucose / 18) + (ethanol / 4.6);\n  var vb = 2 * (sodium) + (bun / 2.8) + (glucose / 18) + (ethanol / 3.7);\n\n  if (UOMSYSTEM == false) {\n    var v = '~' + va.toFixed();\n  } else {\n\n    var v = va.toFixed(0).toString() + '-' + vb.toFixed(0).toString();\n  }\n\n} else {\n  var v = 2 * (sodium) + (bun / 2.8) + (glucose / 18);\n  v = v.toFixed(0);\n  va = v;\n}\n\ncalc_output.push({\n  name: 'mini',\n  value: v,\n  value_text: 'mOsm/kg' + ' Calculated Serum Osm',\n  message: 'Normal serum osmolality = 285-295 mOsm/kg'\n});\ncalc_output.push({\n  name: '91_Serum Osmolality_result (osm)',\n  value: v,\n  value_text: 'mOsm/kg' + ' Calculated Serum Osm',\n  message: 'Normal serum osmolality = 285-295 mOsm/kg'\n});\nif (measured_serum) {\n  var diff = parseFloat(measured_serum) - va;\n  if (ethanol) {\n   diff = parseFloat(measured_serum) - vb; \n  }\n  var msg = 'Normal Serum Osm Gap (Measured-Calculated) is -14 to +10.';\n  if (diff > 25) {\n    msg =\n      'This is a significant Osm Gap; if there is also an anion gap acidosis, you should strongly consider methanol or ethylene glycol intoxication.<br/><br/>Other causes of Osmolal Gap include other alcohols (acetone, isopropyl alcohol, polyethylene or propylene glycol), sugars (mannitol, sorbitol), lipids (hypertriglyceridemia) or proteins (hypergammaglobulinemia).';\n  }\n  calc_output.push({\n    name: '91_Serum Osmolality_result (gap)',\n    value: diff.toFixed(1),\n    value_text: 'mOsm/kg' + ' Osm Gap',\n    message: msg\n  });\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Sodium",
+                "name": "sodium",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "BUN",
+                "name": "bun",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bun"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Glucose",
+                "name": "glucose",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "glu"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Serum alcohol concentration",
+                "name": "ethanol",
+                "optional": true,
+                "tips_en": "Enter 80, not 0.08 if in US units (mg/dL)",
+                "type": "textbox",
+                "unit": "etoh"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Measured serum osm",
+                "name": "measured_serum",
+                "optional": true,
+                "tips_en": "Normal value is 285 mmol/kg",
+                "type": "textbox",
+                "unit": "osm"
+            }
+        ],
+        "can_search": [
+            "toxicology",
+            "gap",
+            "anion gap",
+            "ag",
+            "osmolar gap"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Toxicology"
+        ]
+    }
+}

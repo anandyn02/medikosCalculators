@@ -1,0 +1,206 @@
+{
+    "id": "693",
+    "title": "Glasgow Alcoholic Hepatitis Score",
+    "desc": "The Glasgow Alcoholic Hepatitis Score predicts mortality in alcoholic hepatitis patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16009691",
+                "text": "Forrest EH, Evans CD, Stewart S, Phillips M, Oo YH, McAvoy NC, Fisher NC, Singhal S, Brind A, Haydon G, O'Grady J, Day CP, Hayes PC, Murray LS, Morris AJ. Analysis of factors predictive of mortality in alcoholic hepatitis and derivation and validation of the Glasgow alcoholic hepatitis score. Gut. 2005 Aug;54(8):1174-9. PubMed PMID: 16009691; PubMed Central PMCID: PMC1774903."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>The Glasgow Alcoholic Hepatitis Score is calculated by the addition of the selected points:</p>\n<table style=\"width: 100%; height: 454.648px; border-width: 1px; border-style: none;\">\n<tbody>\n<tr style=\"height: 22.3984px;\">\n<td colspan=\"2\" style=\"width: 66.6667%; height: 22.3984px;\"><strong>Variable</strong></td>\n<td style=\"width: 33.3333%; height: 22.3984px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 34.3906px;\">\n<td rowspan=\"2\" style=\"width: 33.3333%; height: 64.789px;\">Age</td>\n<td style=\"width: 33.3333%; height: 34.3906px;\">&lt;50</td>\n<td style=\"width: 33.3333%; height: 34.3906px;\">1</td>\n</tr>\n<tr style=\"height: 30.3984px;\">\n<td style=\"width: 33.3333%; height: 30.3984px;\">&ge;50</td>\n<td style=\"width: 33.3333%; height: 30.3984px;\">2</td>\n</tr>\n<tr style=\"height: 40.2266px;\">\n<td rowspan=\"2\" style=\"width: 33.3333%; height: 85.4532px;\">White blood cell count</td>\n<td style=\"width: 33.3333%; height: 40.2266px;\">&lt;15 x10<sup>9</sup>/L</td>\n<td style=\"width: 33.3333%; height: 40.2266px;\">1</td>\n</tr>\n<tr style=\"height: 45.2266px;\">\n<td style=\"width: 33.3333%; height: 45.2266px;\">&ge;15 x10<sup>9</sup>/L</td>\n<td style=\"width: 33.3333%; height: 45.2266px;\">2</td>\n</tr>\n<tr style=\"height: 33.375px;\">\n<td style=\"height: 65.75px; width: 33.3333%;\" rowspan=\"2\">BUN</td>\n<td style=\"width: 33.3333%; height: 33.375px;\">&lt;5 mmol/L</td>\n<td style=\"width: 33.3333%; height: 33.375px;\">1</td>\n</tr>\n<tr style=\"height: 32.375px;\">\n<td style=\"width: 33.3333%; height: 32.375px;\">&ge;5 mmol/L</td>\n<td style=\"width: 33.3333%; height: 32.375px;\">2</td>\n</tr>\n<tr style=\"height: 38.375px;\">\n<td style=\"height: 108.125px; width: 33.3333%;\" rowspan=\"3\">Bilirubin</td>\n<td style=\"width: 33.3333%; height: 38.375px;\">&lt;125 &mu;mol/L</td>\n<td style=\"width: 33.3333%; height: 38.375px;\">1</td>\n</tr>\n<tr style=\"height: 37.375px;\">\n<td style=\"width: 33.3333%; height: 37.375px;\">125-250 &mu;mol/L</td>\n<td style=\"width: 33.3333%; height: 37.375px;\">2</td>\n</tr>\n<tr style=\"height: 32.375px;\">\n<td style=\"width: 33.3333%; height: 32.375px;\">&gt;250 &mu;mol/L</td>\n<td style=\"width: 33.3333%; height: 32.375px;\">3</td>\n</tr>\n<tr style=\"height: 34.3828px;\">\n<td rowspan=\"3\" style=\"width: 33.3333%; height: 108.133px;\">PT ratio</td>\n<td style=\"width: 33.3333%; height: 34.3828px;\">&lt;1.5</td>\n<td style=\"width: 33.3333%; height: 34.3828px;\">1</td>\n</tr>\n<tr style=\"height: 36.375px;\">\n<td style=\"width: 33.3333%; height: 36.375px;\">1.5-2.0</td>\n<td style=\"width: 33.3333%; height: 36.375px;\">2</td>\n</tr>\n<tr style=\"height: 37.375px;\">\n<td style=\"width: 33.3333%; height: 37.375px;\">&gt;2.0</td>\n<td style=\"width: 33.3333%; height: 37.375px;\">3</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "PT ",
+                "unit": "pt",
+                "error_min": "8",
+                "error_max": "100",
+                "warn_min": "9",
+                "warn_max": "50",
+                "conversion": "1",
+                "normal_max_si": "13",
+                "normal_max_us": "13",
+                "normal_min_si": "11",
+                "normal_min_us": "11",
+                "units_si": "sec",
+                "units_us": "sec"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Bilirubin",
+                "unit": "bili",
+                "error_min": "1E-8",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "17.104",
+                "normal_max_si": "32.49",
+                "normal_max_us": "1.9",
+                "normal_min_si": "5.13",
+                "normal_min_us": "0.3",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "PT Control Value",
+                "unit": "pt_ctrl",
+                "error_min": "6",
+                "error_max": "20",
+                "warn_min": "8",
+                "warn_max": "16",
+                "conversion": "1",
+                "normal_max_si": "13.5",
+                "normal_max_us": "13.5",
+                "normal_min_si": "11",
+                "normal_min_us": "11",
+                "units_si": "sec",
+                "units_us": "sec"
+            },
+            {
+                "name": "White Blood Cell Count",
+                "unit": "wbc",
+                "error_min": "0.0001",
+                "error_max": "500",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10.7",
+                "normal_max_us": "10.7",
+                "normal_min_si": "3.7",
+                "normal_min_us": "3.7",
+                "units_si": "× 10⁹ cells/L",
+                "units_us": "× 10³ cells/µL"
+            },
+            {
+                "name": "BUN",
+                "unit": "bun",
+                "error_min": "1",
+                "error_max": "500",
+                "warn_min": "2",
+                "warn_max": "300",
+                "conversion": "0.357",
+                "normal_max_si": "7.1",
+                "normal_max_us": "20",
+                "normal_min_si": "2.9",
+                "normal_min_us": "8",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Cirrhosis",
+            "Hepatitis",
+            "Hepatocellular Carcinoma",
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\nvar pt_ratio = parseFloat(pt) / parseFloat(pt_lab_normal);\nvar bili = parseFloat(bilirubin);\nvar bun = parseFloat(bun);\nvar age = parseFloat(age);\nvar age_score, wbc_score, bun_score, pt_score, bili_score;\nvar output_score = 0;\nvar output_msg = '';\nvar white_blood_cell_count = parseFloat(white_blood_cell_count);\nif (UOMSYSTEM == false) {\n    bili = bili;\n    bun = bun;\n    //all others are 1:1 conversions, need SI units for this corresponding scores\n}\nif (UOMSYSTEM == true) {\n    bili = bili * 17.104;\n    bun = bun * 0.357;\n    //all others are 1:1 conversions, need SI units for this corresponding scores\n}\n\nif (age < 50) { age_score = 1; } else { age_score = 2; }\nif (white_blood_cell_count < 15) { wbc_score = 1; } else { wbc_score = 2; }\nif (bun < 5) { bun_score = 1; } else { bun_score = 2; }\nif (pt_ratio > 2) { pt_score = 3; }\nif (pt_ratio > 1.499 && pt_ratio < 2.001) { pt_score = 2; }\nif (pt_ratio < 1.5) { pt_score = 1; }\nif (bili > 250) { bili_score = 3; }\nif (bili > 124.99 && bili < 250.001) { bili_score = 2; }\nif (bili < 125) { bili_score = 1; }\noutput_score = age_score + wbc_score + bun_score + pt_score + bili_score;\nif (output_score < 9) { output_msg = 'Scores of less than 9 portended a much better 28- and 84-day survival than scores above 9 or above (87%/79% vs. 46%/40%). The score was less sensitive but more accurate than the Modified Discriminant Function or MELD scores.'; } else { output_msg = 'Scores of greater than or equal to 9 portended a much poorer 28- and 84-day survival than scores less than 9 (46%/40% vs. 87%/79%). The score was less sensitive but more accurate than the Modified Discriminant Function or MELD scores.'; }\n\ncalc_output.push({ \n    name: 'mini', \n    value: output_score, \n    value_text: 'points', \n    message: 'Glasgow Alcoholic Hepatitis Score' \n});\ncalc_output.push({ \n    name: '680_Glasgow Alcoholic Hepatitis Score_result', \n    value: output_score, \n    value_text: 'points',\n    message: output_msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "White blood cell count",
+                "name": "white_blood_cell_count",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wbc"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "BUN",
+                "name": "bun",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bun"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Bilirubin",
+                "name": "bilirubin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bili"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "PT",
+                "name": "pt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "pt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "PT lab normal",
+                "name": "pt_lab_normal",
+                "optional": false,
+                "tips_en": "Normal value of PT, according to your lab",
+                "type": "textbox",
+                "unit": "pt_ctrl"
+            }
+        ],
+        "can_search": [
+            "etoh"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Toxicology"
+        ]
+    }
+}

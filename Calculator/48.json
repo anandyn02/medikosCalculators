@@ -1,0 +1,112 @@
+{
+    "id": "48",
+    "title": "Liver Decompensation Risk after Hepatectomy for Hepatocellular Carcinoma (HCC)",
+    "desc": "The Liver Decompensation Risk after Hepatectomy predicts risk of liver decompensation after hepatectomy for hepatocellular carcinoma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jamanetwork.com/journals/jamasurgery/fullarticle/2526245?alert=article",
+                "text": "Citterio D, Facciorusso A, Sposito C, Rota R, Bhoori S, Mazzaferro V. Hierarchic Interaction of Factors Associated With Liver Decompensation After Resection for Hepatocellular Carcinoma. JAMA Surg. 2016;151(9):846-53."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/liver-decompensation.png\" alt=\"\"></p>\n<p>Portal hypertension = at least F1 esophageal varices (i.e., small and straight) on endoscopy OR platelets &lt;100,000/&mu;L with splenomegaly (&gt;12 cm diameter).</p>\n<p>Extension of hepatectomy: major resection = removal of &ge;3 adjacent segments.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"*\"><col width=\"*\"><col width=\"*\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Risk Group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Liver decompensation rate</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Median length of stay</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><b>Risk of mortality due to liver failure</b></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">4.9%</p>\n</td>\n<td>\n<p dir=\"ltr\">7 days</p>\n</td>\n<td>\n<p dir=\"ltr\">4.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">28.6%</p>\n</td>\n<td>\n<p dir=\"ltr\">8 days</p>\n</td>\n<td>\n<p dir=\"ltr\">9.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">60.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">11 days</p>\n</td>\n<td>\n<p dir=\"ltr\">25.0%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Cirrhosis",
+            "Hepatocellular Carcinoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar hypertension = parseFloat(hypertension)\nvar extension = parseFloat(extension)\nvar meld = parseFloat(meld)\n\nvar risk\nvar los\nvar mortality\nvar percent\n\nif (hypertension == 1) {\n   if (extension == 0) {\n\t\trisk = 'Intermediate'\n     \tlos = 'Median length of stay 8 days'\n     \tmortality = '9.0'\n     \tpercent = '28.6'\n   }\n\telse if (extension == 1) {\n\t\trisk = 'High'\n      \tlos = 'Median length of stay 11 days'\n      \tmortality = '25.0'\n     \tpercent = '60.0'\n   }\n}\nelse if (hypertension == 0 && extension == 1){\nrisk = 'Intermediate'\nlos = 'Median length of stay 8 days'\nmortality = '9.0'\npercent = '28.6'\n}\n\nelse if (hypertension == 0 && extension == 0) {\n\t\tif (meld == 0) {\n\t\trisk = 'Low'  \n        los = 'Median length of stay 7 days'\n        mortality = '4.4'\n     \tpercent = '4.9'\n   }\n\telse if (meld == 1) {\n\t\trisk = 'Intermediate'\n      \tlos = 'Median length of stay 8 days'\n      \tmortality = '9.0'\n     \tpercent = '28.6'\n   }\n}\n  \n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: '',\n    message:'Risk of liver decompensation'\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: 'risk',\n    message: ''\n});\ncalc_output.push({\n    name: 'percent',\n    value: percent,\n    value_text: '%',\n    message: 'Rate of postop liver decompensation <br/><br/>' + los\n});\ncalc_output.push({\n    name: 'mortality',\n    value: mortality,\n    value_text: '%',\n    message: 'Risk of mortality due to liver failure'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Portal hypertension",
+                "md_calc_info_concept": null,
+                "name": "hypertension",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "At least F1 esophageal varices (i.e., small and straight) on endoscopy OR platelets <100,000/μL with splenomegaly (>12 cm diameter)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Extension of hepatectomy",
+                "mdcalc_info_concept": null,
+                "name": "extension",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Minor",
+                        "value": 0
+                    },
+                    {
+                        "label": "Major",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Major resection = removal of ≥3 adjacent segments",
+                "type": "radio"
+            },
+            {
+                "conditionality": "hypertension == 0 && extension == 0",
+                "default": null,
+                "label_en": "<calculator id=\"78\">MELD Score</calculator>",
+                "mdcalc_info_concept": null,
+                "name": "meld",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤9",
+                        "value": 0
+                    },
+                    {
+                        "label": ">9",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Liver decompensation",
+            "hepatocellular carcinoma",
+            "hepatectomy",
+            "risk",
+            "liver risk",
+            "HCC"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hematology and Oncology",
+            "Hepatology",
+            "Surgery (General)"
+        ]
+    }
+}

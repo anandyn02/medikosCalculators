@@ -1,0 +1,305 @@
+{
+    "id": "660",
+    "title": "RADS (Radiologist’s Score) for Smoke Inhalation Injury",
+    "desc": "The RADS (Radiologist’s Score) for Smoke Inhalation Injury stratifies severity of inhalation injury on chest CT.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22210063 ",
+                "text": "Oh JS, Chung KK, Allen A, et al. Admission chest CT complements fiberoptic bronchoscopy in prediction of adverse outcomes in thermally injured patients. J Burn Care Res. 2012;33(4):532-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4624587/ ",
+                "text": "Walker PF, Buehner MF, Wood LA, et al. Diagnosis and management of inhalation injury: an updated review. Crit Care. 2015;19:351. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27707500 ",
+                "text": "Enkhbaatar P, Pruitt BA, Suman O, et al. Pathophysiology, research challenges, and clinical management of smoke inhalation injury. Lancet. 2016;388(10052):1437-1446."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14501881",
+                "text": "Park MS, Cancio LC, Batchinsky AI, et al. Assessment of severity of ovine smoke inhalation injury by analysis of computed tomographic scans. J Trauma. 2003;55(3):417-27."
+            },
+            {
+                "href": "https://archive.rsna.org/2013/13015734.html",
+                "text": "August DL, Foster K, Richey K, Gridley D, Peck M and Pressman M. Computerized Tomography Correlates with Ventilator Days in Inhalation Injury: Preliminary Data from the Inhalation Severity Injury Scoring System (ISIS) Trial. Society of Thoracic Radiology. March 16, 2014. Oral Presentation. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2039288 ",
+                "text": "Cioffi Jr WG, Rue 3rd LW, Graves TA, McManus WF, Mason Jr AD, Pruitt Jr BA. Prophylactic use of high-frequency percussive ventilation in patients with inhalation injury. Ann Surg. 1991;213:575–80. discussion 580–2."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/410252 ",
+                "text": "Putman CE, Loke J, Matthay RA, Ravin CE. Radiographic manifestations of acute smoke inhalation. AJR Am J Roentgenol. 1977;129(5):865-70."
+            }
+        ],
+        "evidence": "<p>Selection of the appropriate finding:</p> <table> <tbody> <tr> <td> <p><strong>Finding</strong></p> </td> <td> <p><strong>Score</strong></p> </td> </tr> <tr> <td> <p>Normal</p> </td> <td> <p>0</p> </td> </tr> <tr> <td> <p>Increased interstitial markings</p> </td> <td> <p>1</p> </td> </tr> <tr> <td> <p>Ground glass opacification</p> </td> <td> <p>2</p> </td> </tr> <tr> <td> <p>Consolidation</p> </td> <td> <p>3</p> </td> </tr> </tbody> </table> <p>&nbsp;<img src=\"http://cdn-web-img.mdcalc.com/content/rads.jpg\" alt=\"RADS quadrants\" width=\"50%\"></p> <p><strong>Instructions:</strong></p> <ol> <li>Divide each lung on CT chest slice into quadrants as above.</li> <li>Select the worst (i.e., highest) possible score for each quadrant. Example: presence of a small area of consolidation in a quadrant yields a score of 3, even if the remainder of the quadrant is not consolidated.</li> <li>Add total RADS for each slice read, then divide by number of slices read per CT to obtain RADS per slice.</li> </ol>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>RADS&nbsp;</strong></p> </td> <td> <p><strong>Risk</strong></p> </td> </tr> <tr> <td> <p>&gt;8 per slice</p> </td> <td> <p>12.7x increased risk of composite endpoint (pneumonia, acute lung injury/ARDS, and death)</p> </td> </tr> </tbody> </table> <p>&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\n// Declare vars\n\nvar msg = 'RADS ≤8 associated with lower risk of composite endpoint including pneumonia, acute lung injury/ARDS, and death.'\n\nvar score = parseFloat(left_q1) + parseFloat(left_q2) + parseFloat(left_q3) + parseFloat(left_q4) + parseFloat(right_q1) + parseFloat(right_q2) + parseFloat(right_q3) + parseFloat(right_q4);\n\nif (score > 8) {\n   msg = 'RADS >8 associated with 12.7x increased risk of composite endpoint including pneumonia, acute lung injury/ARDS, and death.'\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: score,\n   value_text: 'points',\n   message: ''\n});\ncalc_output.push({\n   name: 'result',\n   value: score,\n   value_text: 'points',\n   message: msg\n   });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Worst finding, 1st quadrant left lung",
+                "name": "left_q1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Increased interstitial markings",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ground glass opacification",
+                        "value": 2
+                    },
+                    {
+                        "label": "Consolidation",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Worst finding, 2nd quadrant left lung",
+                "name": "left_q2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Increased interstitial markings",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ground glass opacification",
+                        "value": 2
+                    },
+                    {
+                        "label": "Consolidation",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Worst finding, 3rd quadrant left lung",
+                "name": "left_q3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Increased interstitial markings",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ground glass opacification",
+                        "value": 2
+                    },
+                    {
+                        "label": "Consolidation",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Worst finding, 4th quadrant left lung",
+                "name": "left_q4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Increased interstitial markings",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ground glass opacification",
+                        "value": 2
+                    },
+                    {
+                        "label": "Consolidation",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Worst finding, 1st quadrant right lung",
+                "name": "right_q1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Increased interstitial markings",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ground glass opacification",
+                        "value": 2
+                    },
+                    {
+                        "label": "Consolidation",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Worst finding, 2nd quadrant right lung",
+                "name": "right_q2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Increased interstitial markings",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ground glass opacification",
+                        "value": 2
+                    },
+                    {
+                        "label": "Consolidation",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Worst finding, 3rd quadrant right lung",
+                "name": "right_q3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Increased interstitial markings",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ground glass opacification",
+                        "value": 2
+                    },
+                    {
+                        "label": "Consolidation",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Worst finding, 4th quadrant right lung",
+                "name": "right_q4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Increased interstitial markings",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ground glass opacification",
+                        "value": 2
+                    },
+                    {
+                        "label": "Consolidation",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "chest CT",
+            "chest radiograph",
+            "CT",
+            "smoke",
+            "SII",
+            "smoke inhalation",
+            "smoke inhalation injury",
+            "inhalation injury",
+            "INHI",
+            "ARDS",
+            "acute pulmonary inflammatory response",
+            "burns",
+            "P:F ratio",
+            "lung injury",
+            "lung compliance",
+            "radiologists score",
+            "RADS score",
+            "acute lung injury",
+            "ALI",
+            "acute respiratory distress syndrome"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Pulmonology",
+            "Radiology"
+        ]
+    }
+}

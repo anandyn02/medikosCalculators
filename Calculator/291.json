@@ -1,0 +1,204 @@
+{
+    "id": "291",
+    "title": "HACOR Score",
+    "desc": "The HACOR Score predicts failure of noninvasive ventilation (NIV) in hypoxemic patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27812731/",
+                "text": "Duan J, Han X, Bai L, Zhou L, Huang S. Assessment of heart rate, acidosis, consciousness, oxygenation, and respiratory rate to predict noninvasive ventilation failure in hypoxemic patients. Intensive Care Med. 2017;43(2):192-199."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/35786223/",
+                "text": "Duan J, Chen L, Liu X, et al. An updated HACOR score for predicting the failure of noninvasive ventilation: a multicenter prospective observational study. Crit Care. 2022;26(1):196."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">The HACOR Score is calculated by the addition of the selected points:</p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 96.4455%; height: 1196.76px;\"><colgroup><col style=\"width: 50%;\"><col style=\"width: 22.6891%;\"><col style=\"width: 27.3109%;\"></colgroup>\n<tbody>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"2\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>H</strong></span>eart rate, beats/min</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">&le;120</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">&ge;121</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"4\" style=\"height: 217.594px;\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>A</strong></span>cidosis (pH)</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">&ge;7.35</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">7.30&ndash;7.34</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">7.25&ndash;7.29</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">&lt;7.25</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"4\" style=\"height: 217.594px;\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>C</strong></span>onsciousness (<calculator id=\"64\">GCS</calculator>)</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">15</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">13-14</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">11-12</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">&le;10</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">10</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"6\" style=\"height: 326.39px;\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>O</strong></span>xygenation (PaO2/FiO2), mm Hg</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">&ge;201</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">176&ndash;200</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">151&ndash;175</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">126&ndash;150</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">101&ndash;125</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">&le;100</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">6</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"5\" style=\"height: 271.992px;\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>R</strong></span>espiratory rate, breaths/min</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">&le;30</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">31&ndash;35</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">36&ndash;40</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">41&ndash;45</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">&ge;46</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>&nbsp;</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col><col></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>HACOR Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of NIV Failure</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;5</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;5</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Cough",
+            "Headache",
+            "Shortness of Breath",
+            "Wheezing",
+            "Hypoxemia"
+        ],
+        "disease_treated": [
+            "Acute Respiratory Distress Syndrome",
+            "Anemia",
+            "Asthma",
+            "Congestive Heart Failure",
+            "COPD",
+            "Idiopathic Pulmonary Fibrosis",
+            "Obstructive Sleep Apnea",
+            "Pneumonia",
+            "Pneumonitis",
+            "Pulmonary Embolism",
+            "Respiratory Distress",
+            "Respiratory Failure"
+        ],
+        "logic": "var calc_output = [];\n\nvar hr = parseFloat(hr);\nvar ph = parseFloat(ph);\nvar gcs = parseFloat(gcs);\nvar pao2 = parseFloat(pao2);\nvar resp = parseFloat(resp);\n\nvar score = hr + ph + gcs + pao2 + resp;\n\nvar risk;\n\nif (score <= 5) {\n    risk = 'Low';\n} else {\n    risk = 'High';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'HACOR Score'\n});\ncalc_output.push({\n    name: 'HACOR Score',\n    value: score,\n    value_text: 'points',\n    message: 'HACOR Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: 'risk',\n    message: 'Risk of NIV failure'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>H</strong></span>eart rate, beats/min</p>",
+                "name": "hr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤120",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥121",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><strong><span style=\"text-decoration: underline;\">A</span></strong>cidosis (pH)</p>",
+                "name": "ph",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥7.35",
+                        "value": 0
+                    },
+                    {
+                        "label": "7.30–7.34",
+                        "value": 2
+                    },
+                    {
+                        "label": "7.25–7.29",
+                        "value": 3
+                    },
+                    {
+                        "label": "<7.25",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>C</strong></span>onsciousness (<calculator id=\"64\">GCS</calculator>)</p>",
+                "name": "gcs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "15",
+                        "value": 0
+                    },
+                    {
+                        "label": "13-14",
+                        "value": 2
+                    },
+                    {
+                        "label": "11-12",
+                        "value": 5
+                    },
+                    {
+                        "label": "≤10",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><strong><span style=\"text-decoration: underline;\">O</span></strong>xygenation (PaO<sub>2</sub>/FiO<sub>2</sub>), mm Hg</p>",
+                "name": "pao2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥201",
+                        "value": 0
+                    },
+                    {
+                        "label": "176–200",
+                        "value": 2
+                    },
+                    {
+                        "label": "151–175",
+                        "value": 3
+                    },
+                    {
+                        "label": "126–150",
+                        "value": 4
+                    },
+                    {
+                        "label": "101–125",
+                        "value": 5
+                    },
+                    {
+                        "label": "≤100",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>R</strong></span>espiratory rate, breaths/min</p>",
+                "name": "resp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤30",
+                        "value": 0
+                    },
+                    {
+                        "label": "31–35",
+                        "value": 1
+                    },
+                    {
+                        "label": "36–40",
+                        "value": 2
+                    },
+                    {
+                        "label": "41–45",
+                        "value": 3
+                    },
+                    {
+                        "label": "≥46",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "HACOR Score",
+            "HACOR",
+            "NIV",
+            "noninvasive ventilation",
+            "hypoxemia",
+            "niv failure"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Family Practice",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

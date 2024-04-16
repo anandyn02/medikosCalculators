@@ -1,0 +1,206 @@
+{
+    "id": "558",
+    "title": "Pediatric Appendicitis Score (PAS)",
+    "desc": "The Pediatric Appendicitis Score (PAS) predicts appendicitis in children.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://com-emergency.sites.medinfo.ufl.edu/files/2013/02/Pediatric-Appendicitis-Score.pdf",
+                "text": "Samuel M. Pediatric Appendicitis Score. Journal of Pediatric Surgery, Vol 37,No 6 (June),2002: pp 877-881."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23177898",
+                "text": "Kulik DM, Uleryk EM, Maguire JL. Does this child have appendicitis? A systematic review of clinical prediction rules for children with acute abdominal pain. J Clin Epidemiol. 2013 Jan;66(1):95-104. doi: 10.1016/j.jclinepi.2012.09.004."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points.</p>",
+        "facts": "<table>\n<tbody>\n<tr>\n<td><strong>Variable</strong></td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td>Right lower quadrant (RLQ) tenderness to cough, percussion, or hopping</td>\n<td>2</td>\n</tr>\n<tr>\n<td>Anorexia</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Fever (temp &ge;38.0&ordm;C/100.4&ordm;F)</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Nausea or vomiting</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Tenderness over right iliac fossa</td>\n<td>2</td>\n</tr>\n<tr>\n<td>Leukocytosis (WBC &ge;10,000)</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Neutrophilia&nbsp;(<calculator id=\"19\"><abbr title=\"Absolute Neutrophil Count\">ANC</abbr></calculator> &gt;7,500)</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Migration of pain to RLQ</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Fever",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Appendicitis"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(rlq) + parseFloat(anorexia) + parseFloat(fever) + parseFloat(nausea) + parseFloat(rif) + parseFloat(wbc) + parseFloat(shift) + parseFloat(migration);\nvar risk;\nvar msg;\n\n// define risk\nif (u < 4 ) {\n\trisk = 'Low risk according to PAS'; \n\tmsg = 'Unlikely appendicitis. Consider other diagnoses.'\n}\n\nif (u == 4 || u == 5 || u == 6) {\n\trisk = 'Equivocal risk according to PAS'; \n\tmsg = 'Cannot definitively rule in or rule out appendicitis. Consider imaging and/or surgical consult.'\n}\n\nif (u > 6) {\n\trisk = 'High risk according to PAS'; \n\tmsg = 'Likely appendicitis. Consider surgical consult.'\n}\n\n// result on app\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: msg\n});\n\n// result on web\ncalc_output.push({\n    name: 'pas',\n    value: u,\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Right Lower Quadrant'>RLQ</abbr> tenderness to cough, percussion, or hopping",
+                "name": "rlq",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anorexia",
+                "name": "anorexia",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Fever",
+                "name": "fever",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Temp ≥38.0ºC/100.4ºF",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nausea or vomiting",
+                "name": "nausea",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tenderness over right iliac fossa",
+                "name": "rif",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Leukocytosis",
+                "name": "wbc",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<abbr title='White Blood Cell'>WBC</abbr> >10,000",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Neutrophilia",
+                "name": "shift",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<calculator id=\"19\"><abbr title=\"Absolute Neutrophil Count\">ANC</abbr></calculator> >7,500",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Migration of pain to <abbr title='Right Lower Quadrant'>RLQ</abbr>",
+                "name": "migration",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "PAS",
+            "Pediatric Appendicitis Score",
+            "pediatric appendicitis",
+            "appendicitis",
+            "appendicitis in children"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Pediatrics",
+            "Surgery (General)"
+        ]
+    }
+}

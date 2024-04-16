@@ -1,0 +1,111 @@
+{
+    "id": "213",
+    "title": "Rome IV Diagnostic Criteria for Infant Colic",
+    "desc": "The Rome IV Criteria for Infant Colic provides criteria for the diagnosis of infant colic.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27144631/",
+                "text": "Benninga MA, Faure C, Hyman PE, St james roberts I, Schechter NL, Nurko S. Childhood Functional Gastrointestinal Disorders: Neonate/Toddler. Gastroenterology. 2016; 1443-1455."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/13214956/",
+                "text": "Wessel MA, Cobb JC, Jackson EB, Harris GS, Detwiler AC. Paroxysmal fussing in infancy, sometimes called colic. Pediatrics. 1954;14(5):421-435."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/13872677/",
+                "text": "Brazelton TB. Crying in infancy. Pediatrics. 1962 Apr;29:579-88. PMID: 13872677."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for infant colic, patient must have the following:</p>\n<ol>\n<li>An infant who is &lt;5 months of age when the symptoms start and stop.</li>\n<li>Recurrent and prolonged periods of infant crying, fussing,* or irritability reported by caregivers that occur without obvious cause and cannot be prevented or resolved by caregivers.&nbsp;</li>\n<li>No evidence of infant failure to thrive, fever, or illness.</li>\n</ol>\n<p>*Refers to intermittent distressed vocalization and has been defined as &ldquo;[behavior] that is not quite crying but not awake and content either.&rdquo; Infants often fluctuate between crying and fussing, so that the 2 symptoms are difficult to distinguish in practice.&nbsp;</p>\n<p></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Excessive Crying"
+        ],
+        "disease_treated": [
+            "Neonate/Toddler Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three);\n\nvar diag;\n\nvar msg= 'Diagnosis for infant colic as per Rome IV criteria';\nvar minimsg= 'Diagnosis for infant colic';\n\nif (criteria==3) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Infant Colic',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "An infant who is <5 months of age when the symptoms start and stop",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recurrent and prolonged periods of infant crying, fussing, or irritability reported by caregivers that occur without obvious cause and cannot be prevented or resolved by caregivers",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No evidence of infant failure to thrive, fever, or illness",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Infant Colic, Rome IV for Infant Colic, rome 4 for infant colic, rome 4 infant colic, rome iv colic, rome colic, rome iv infant colic, infant colic, colic rome, colic"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

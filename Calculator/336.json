@@ -1,0 +1,250 @@
+{
+    "id": "336",
+    "title": "TASH Score (Trauma Associated Severe Hemorrhage)",
+    "desc": "The Trauma Associated Severe Hemorrhage (TASH) Score is a derived (and then validated) score from a database of over 35,000 German trauma patients to predict the need for massive transfusion.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16766965",
+                "text": "Yücel N, Lefering R, Maegele M, Vorweg M, Tjardes T, Ruchholtz S, Neugebauer EA, Wappler F, Bouillon B, Rixen D; Polytrauma Study Group of the German Trauma Society. Trauma Associated Severe Hemorrhage (TASH)-Score: probability of mass transfusion as surrogate for life threatening hemorrhage after multiple trauma. J Trauma. 2006 Jun;60(6):1228-36; discussion 1236-7. PubMed PMID: 16766965."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of selected points, as above.</p>",
+        "facts": "<p>The Trauma Associated Severe Hemorrhage (TASH) Score is a derived (and then validated) score from a database of over 35,000 German trauma patients to predict the need for massive transfusion.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Bleeding/Hemorrhage",
+            "Trauma"
+        ],
+        "logic": "var calc_output=[]; \nvar u=parseFloat(sex)+parseFloat(hemoglobin)+parseFloat(base_excess)+parseFloat(systolic_bp)+parseFloat(heart_rate)+parseFloat(fast)+parseFloat(pelvic_fracture)+parseFloat(femur_fracture);\n\nvar msg='';\n\nif(u<9){\n    msg='< 5% predicted need for massive transfusion.'\n} else if(u==9){\n    msg='6% predicted need for massive transfusion.'\n} else if(u==10){\n    msg='8% predicted need for massive transfusion.'\n} else if(u==11){\n    msg='11% predicted need for massive transfusion.'\n} else if(u==12){\n    msg='14% predicted need for massive transfusion.'\n} else if(u==13){\n    msg='18% predicted need for massive transfusion.'\n} else if(u==14){\n    msg='23% predicted need for massive transfusion.'\n} else if(u==15){\n    msg='29% predicted need for massive transfusion.'\n} else if(u==16){\n    msg='35% predicted need for massive transfusion.'\n} else if(u==17){\n    msg='43% predicted need for massive transfusion.'\n} else if(u==18){\n    msg='50% predicted need for massive transfusion.'\n} else if(u==19){\n    msg='57% predicted need for massive transfusion.'\n} else if(u==20){\n    msg='65% predicted need for massive transfusion.'\n} else if(u==21){\n    msg='71% predicted need for massive transfusion.'\n} else if(u==22){\n    msg='77% predicted need for massive transfusion.'\n} else if(u==23){\n    msg='82% predicted need for massive transfusion.'\n} else if(u>23){\n    msg='> 85% predicted need for massive transfusion.'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n}); \ncalc_output.push({\n    name:'1236_TASH Score_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Hemoglobin",
+                "mdcalc_info_concept": null,
+                "name": "hemoglobin",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "< 7 g/dL",
+                        "value": 8
+                    },
+                    {
+                        "label": "< 9 g/dL",
+                        "value": 6
+                    },
+                    {
+                        "label": "< 10 g/dL",
+                        "value": 4
+                    },
+                    {
+                        "label": "< 11 g/dL",
+                        "value": 3
+                    },
+                    {
+                        "label": "< 12 g/dL",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥ 12 g/dL",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Base Excess",
+                "mdcalc_info_concept": null,
+                "name": "base_excess",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "< -10 mmol/L",
+                        "value": 4
+                    },
+                    {
+                        "label": "< -6 mmol/L",
+                        "value": 3
+                    },
+                    {
+                        "label": "< -2 mmol/L",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥ -2 mmol/L",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Systolic Blood Pressure",
+                "mdcalc_info_concept": null,
+                "name": "systolic_bp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "< 100 mm Hg",
+                        "value": 4
+                    },
+                    {
+                        "label": "< 120 mm Hg",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥ 120 mm Hg",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Heart Rate",
+                "mdcalc_info_concept": null,
+                "name": "heart_rate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">120 bpm",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤ 120 bpm",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Positive FAST for Intra-Abdominal Fluid",
+                "md_calc_info_concept": null,
+                "name": "fast",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Clinically Unstable Pelvic Fracture",
+                "md_calc_info_concept": null,
+                "name": "pelvic_fracture",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Open or Dislocated Femur Fracture",
+                "md_calc_info_concept": null,
+                "name": "femur_fracture",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "trauma",
+            "transfusion",
+            "hemorrhage",
+            "trauma hemorrhage"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

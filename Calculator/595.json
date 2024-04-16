@@ -1,0 +1,409 @@
+{
+    "id": "595",
+    "title": "Hematopoietic Cell Transplantation-specific Comorbidity Index (HCT-CI)",
+    "desc": "The Hematopoietic Cell Transplantation (HCT)-specific Comorbidity Index predicts survival after HCT in patients with hematologic malignancies.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15994282 ",
+                "text": "Sorror ML, Maris MB, Storb R, et al. Hematopoietic cell transplantation (HCT)-specific comorbidity index: a new tool for risk assessment before allogeneic HCT. Blood. 2005;106(8):2912-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://www.bloodjournal.org/content/121/15/2854",
+                "text": "Sorror ML. How I assess comorbidities before hematopoietic cell transplantation. Blood. 2013;121(15):2854-63."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/5486228 ",
+                "text": "Dinakara P, Blumenthal WS, Johnston RF, Kauffman LA, Solnick PB. The effect of anemia on pulmonary diffusing capacity with derivation of a correction equation. Am Rev Respir Dis. 1970;102(6):965-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4178523/ ",
+                "text": "Sorror ML, Storb RF, Sandmaier BM, et al. Comorbidity-age index: a clinical measure of biologic age before allogeneic hematopoietic cell transplantation. J Clin Oncol. 2014;32(29):3249-56."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p>&nbsp;</p>\n</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n<td>\n<p><strong>2 points</strong></p>\n</td>\n<td>\n<p><strong>3 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>History of arrhythmia</p>\n</td>\n<td>\n<p>None</p>\n</td>\n<td>\n<p>Atrial fibrillation or flutter, sick sinus syndrome, or ventricular arrhythmias</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Cardiac dysfunction</p>\n</td>\n<td>\n<p>None</p>\n</td>\n<td>\n<p>CAD*, CHF, MI, or EF &le;50%</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Heart valve disease (except mitral valve prolapse)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Inflammatory bowel disease</p>\n</td>\n<td>\n<p>None</p>\n</td>\n<td>\n<p>Crohn disease or ulcerative colitis</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Diabetes</p>\n</td>\n<td>\n<p>None or diet-controlled</p>\n</td>\n<td>\n<p>Treated with insulin or oral hypoglycemics</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Cerebrovascular disease</p>\n</td>\n<td>\n<p>None</p>\n</td>\n<td>\n<p>CVA or TIA</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Psychiatric disturbance</p>\n</td>\n<td>\n<p>None</p>\n</td>\n<td>\n<p>Depression or anxiety requiring psychiatric consult or treatment</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Hepatic dysfunction</p>\n</td>\n<td>\n<p>None</p>\n</td>\n<td>\n<p>Chronic hepatitis (bilirubin &gt;<abbr title=\"Upper limit of normal\">ULN</abbr> to 1.5&times; ULN, or AST/ALT &gt;ULN to</p>\n<p>2.5&times; ULN)</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Liver cirrhosis (bilirubin &gt;1.5&times; ULN, or AST/ALT &nbsp;2.5&times; ULN)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Obesity (<calculator id=\"29\">BMI</calculator> &ge;35 kg/m<sup>2</sup>)</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Infection</p>\n</td>\n<td>\n<p>None or antibiotics only on day 0</p>\n</td>\n<td>\n<p>Requiring continuation of antimicrobial treatment after day 0</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>&nbsp;--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Rheumatologic disease</p>\n</td>\n<td>\n<p>None</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p><abbr title=\"Systemic lupus erythematosus\">SLE</abbr>, <abbr title=\"Rheumatoid arthritis\">RA</abbr>, polymyositis, mixed <abbr title=\"Connective tissue disorder\">CTD</abbr>, or polymyalgia rheumatica</p>\n</td>\n<td>\n<p>&nbsp;--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Peptic ulcer</p>\n</td>\n<td>\n<p>None or not requiring treatment</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Requiring treatment</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Renal dysfunction</p>\n</td>\n<td>\n<p>None or serum creatinine &le;2 mg/dL (177 &micro;mol/L), not on dialysis, and no prior renal transplant</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Serum creatinine &gt;2 mg/dL (177 &micro;mol/L), on dialysis, or prior renal transplant</p>\n</td>\n<td>\n<p>&nbsp;--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Pulmonary dysfunction</p>\n</td>\n<td>\n<p>None or mild</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p><abbr title=\"Diffusing capacity of lungs for carbon monoxide\">DLco</abbr>** and/or <abbr title=\"Forced expiratory volume, 1 sec\">FEV₁</abbr> 66%&ndash;80%, or dyspnea on slight activity</p>\n</td>\n<td>\n<p>DLco and/or FEV<sub>1</sub> &le;65% or dyspnea at rest or requiring oxygen</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Prior solid tumor</p>\n</td>\n<td>\n<p>None or nonmelanoma skin cancer</p>\n</td>\n<td>\n<p>&nbsp;--</p>\n</td>\n<td>\n<p>&nbsp;--</p>\n</td>\n<td>\n<p>Treated at any point in the patient&rsquo;s history</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"5\">\n<p><em>For age-adjusted HCT-CI (aaHCT-CI, optional):</em></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Age (years)</p>\n</td>\n<td>\n<p>&lt;40</p>\n</td>\n<td>\n<p>&ge;40</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--&nbsp;</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><br>*One or more vessel-coronary artery stenosis requiring medical treatment, stent, or bypass graft.</p>\n<p><strong>**Dinakara equation for DLco: </strong></p>\n<p>DLco (% predicted normal) = 6.07 + 6.49 &times; Hgb (in mg/dL)</p>",
+        "facts": "<p>Interpretation:</p>\n<p><strong>Allo-HCT</strong> (All types of patients and transplants: nonmyeloablative, reduced-intensity conditioning, myeloablative conditioning):</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">&nbsp;</td>\n<td colspan=\"3\">\n<p><strong>HCT-CI Score</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>0</strong></p>\n</td>\n<td>\n<p><strong>1&ndash;2</strong></p>\n</td>\n<td>\n<p><strong>&ge;3</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>1-year</p>\n</td>\n<td>\n<p>NRM</p>\n</td>\n<td>\n<p>17%</p>\n</td>\n<td>\n<p>21%</p>\n</td>\n<td>\n<p>26%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>OS</p>\n</td>\n<td>\n<p>69%</p>\n</td>\n<td>\n<p>62%</p>\n</td>\n<td>\n<p>56%</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>3-year</p>\n</td>\n<td>\n<p>NRM</p>\n</td>\n<td>\n<p>24%</p>\n</td>\n<td>\n<p>28%</p>\n</td>\n<td>\n<p>35%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>OS</p>\n</td>\n<td>\n<p>54%</p>\n</td>\n<td>\n<p>47%</p>\n</td>\n<td>\n<p>38%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><strong><br>ASCT</strong> (All types of patients and transplants):</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">&nbsp;</td>\n<td colspan=\"3\">\n<p><strong>HCT-CI Score</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>0</strong></p>\n</td>\n<td>\n<p><strong>1&ndash;2</strong></p>\n</td>\n<td>\n<p><strong>&ge;3</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>1-year</p>\n</td>\n<td>\n<p>NRM</p>\n</td>\n<td>\n<p>3%</p>\n</td>\n<td>\n<p>3%</p>\n</td>\n<td>\n<p>5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>OS</p>\n</td>\n<td>\n<p>91%</p>\n</td>\n<td>\n<p>88%</p>\n</td>\n<td>\n<p>86%</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>3-year</p>\n</td>\n<td>\n<p>NRM</p>\n</td>\n<td>\n<p>5%</p>\n</td>\n<td>\n<p>6%</p>\n</td>\n<td>\n<p>9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>OS</p>\n</td>\n<td>\n<p>79%</p>\n</td>\n<td>\n<p>73%</p>\n</td>\n<td>\n<p>70%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><strong>Age-adjusted HCT-CI</strong><span> (Allo-HCT </span><em><span>only</span></em><span>, including patients undergoing allo-HCT for nonmalignant diseases):</span></p>\n<table>\n<tbody>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">&nbsp;</td>\n<td colspan=\"4\">\n<p><strong>aaHCT-CI Score</strong></p>\n<p><span>Allo-HCT only</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>0</strong></p>\n</td>\n<td>\n<p><strong>1&ndash;2</strong></p>\n</td>\n<td>\n<p><strong>3&ndash;4</strong></p>\n</td>\n<td>\n<p><strong>&ge;5</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p><span>2-year</span></p>\n</td>\n<td>\n<p><span>NRM</span></p>\n</td>\n<td>\n<p><strong>NMA: </strong><span>5%</span></p>\n<p><strong>RIC:</strong><span> 12%</span></p>\n<p><strong>MAC:</strong><span> 10%</span></p>\n</td>\n<td>\n<p><strong>NMA:</strong><span> 9%</span></p>\n<p><strong>RIC: </strong><span>18%</span></p>\n<p><strong>MAC:</strong><span> 20%</span></p>\n</td>\n<td>\n<p><strong>NMA: </strong><span>17%</span></p>\n<p><strong>RIC: </strong><span>36%</span></p>\n<p><strong>MAC: </strong><span>37%</span></p>\n</td>\n<td>\n<p><strong>NMA:</strong><span> 35%</span></p>\n<p><strong>RIC:</strong><span> 41%</span></p>\n<p><strong>MAC:</strong><span> 49%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>OS</span></p>\n</td>\n<td>\n<p><strong>NMA: </strong><span>81%</span></p>\n<p><strong>RIC:</strong><span> 87%</span></p>\n<p><strong>MAC:</strong><span> 79%</span></p>\n</td>\n<td>\n<p><strong>NMA: </strong><span>74%</span></p>\n<p><strong>RIC:</strong><span> 70%</span></p>\n<p><strong>MAC:</strong><span> 66%</span></p>\n</td>\n<td>\n<p><strong>NMA: </strong><span>59%</span></p>\n<p><strong>RIC:</strong><span> 50%</span></p>\n<p><strong>MAC:</strong><span> 45%</span></p>\n</td>\n<td>\n<p><strong>NMA:</strong><span> 37%</span></p>\n<p><strong>RIC: </strong><span>35%</span></p>\n<p><strong>MAC: </strong><span>29%</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>NRM, non-relapse mortality. OS, overall survival. NMA, nonmyeloablative. RIC, reduced-intensity conditioning. MAC, myeloablative conditioning.<strong><br></strong></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Cancer"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Hematologic Malignancy"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs - addition of selected points\nvar score = parseFloat(arr)+parseFloat(cardiac)+parseFloat(ibd)+parseFloat(diabetes)+parseFloat(cd)+parseFloat(psych)+parseFloat(hepatic)+parseFloat(obesity)+parseFloat(infection)+parseFloat(rheu)+parseFloat(peptic)+parseFloat(renal)+parseFloat(pulm)+parseFloat(prior);\n\n//interpretation\nvar mort1, mort3, survival1, survival3, intensity, aamort, aasurvival;\nif(trans==0){\n    if(score == 0){\n    \tmort1 = '17';\n        mort3 = '24%';\n    \tsurvival1 = '69%';\n        survival3 = '54%';\n    }else if(0 < score < 3){\n        mort1 = '21'; \n        mort3 = '28%';\n        survival1 = '62%';\n        survival3 = '47%';\n    }\n    if (score > 2){\n        mort1 = '26'; \n        mort3 = '35%';\n        survival1 = '56%';\n        survival3 = '38%';\n    }\n}\nif(trans==1){\n    if(score == 0){\n        mort1 = '3';\n        mort3 = '5%';\n        survival1 = '91%';\n        survival3 = '79%';\n    }else if(0 < score < 3){\n        mort1 = '3';\n        mort3 = '6%';\n        survival1 = '88%';\n        survival3 = '73%';\n    }\n    if (score > 2){\n        mort1 = '5';\n        mort3 = '9%';\n        survival1 = '86%';\n        survival3 = '70%';\n    } \n}\n\nvar age = parseFloat(age);\nvar aascore = score;\nif(age === 1 || age === 0){\n    aascore = score + age;  //age adjusted score\n    var pt = 'points';\n    if(aascore === 1){\n        pt = 'point';\n    }\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: mort1 + '% 1-yr NRM'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'HCT-CI Score'\n});\ncalc_output.push({\n    name: 'non-relapse mortality',\n    value: mort1,\n    value_text: '%',\n    message: 'NRM at 1 year<br/><br/>' + '1-year OS: ' + survival1 + '<br/>3-year NRM: ' + mort3 + '<br/>3-year OS: ' + survival3 \n});\nif(age == 1 || age == 0){\n    if(intensity==0){ // NMA\n        if(aascore === 0){\n            aamort = '5%';\n            aasurvival = '81%';\n        }else if(aascore === 1 || aascore === 2){\n            aamort = '9%';\n            aasurvival = '74%';\n        }else if(aascore === 3 || aascore === 4){\n            aamort = '17%';\n            aasurvival = '59%';\n        }else if(aascore > 4){\n            aamort = '35%';\n            aasurvival = '37%';\n        }\n    }\n    if(intensity==1){ // RIC\n        if(aascore === 0){\n            aamort = '12%';\n            aasurvival = '87%';\n        }else if(aascore === 1 || aascore === 2){\n            aamort = '18%';\n            aasurvival = '70%';\n        }else if(aascore === 3 || aascore === 4){\n            aamort = '36%';\n            aasurvival = '50%';\n        }else if(aascore > 4){\n            aamort = '41%';\n            aasurvival = '35%';\n        }\n    }\n    if(intensity==2){ // MAC\n        if(aascore === 0){\n            aamort = '10%';\n            aasurvival = '79%';\n        }else if(aascore === 1 || aascore === 2){\n            aamort = '20%';\n            aasurvival = '66%';\n        }else if(aascore === 3 || aascore === 4){\n            aamort = '37%';\n            aasurvival = '45%';\n        }else if(aascore > 4){\n            aamort = '49%';\n            aasurvival = '29%';\n        }\n    }\n\n    calc_output.push({\n    name: 'aaScore',\n    value: aascore,\n    value_text: pt,\n    message: 'Age-adjusted HCT-CI Score (allo-HCT only)<br/><br/>2-year NRM: ' + aamort + '<br/>2-year OS: ' + aasurvival\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>History of arrhythmia</p>",
+                "name": "arr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Afib/flutter, <abbr title='Sick sinus syndrome'>SSS</abbr>, or ventricular arrhythmias",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cardiac disease</p>",
+                "name": "cardiac",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "CAD, CHF, MI, or EF ≤50%",
+                        "value": 1
+                    },
+                    {
+                        "label": "Valvular disease (except mitral prolapse)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "CAD = ≥1 vessel coronary stenosis requiring medical tx, stent, or CABG",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Inflammatory bowel disease</p>",
+                "name": "ibd",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Crohn disease or ulcerative colitis",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Diabetes</p>",
+                "name": "diabetes",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or diet-controlled",
+                        "value": 0
+                    },
+                    {
+                        "label": "Treated w/insulin or oral hypoglycemics",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cerebrovascular disease</p>",
+                "name": "cd",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "CVA or TIA",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Psychiatric disturbance</p>",
+                "name": "psych",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Depression or anxiety requiring psych consult or treatment",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hepatic dysfunction</p>",
+                "name": "hepatic",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Chronic hepatitis (bilirubin ><abbr title='Upper limit of normal'>ULN</abbr> to 1.5× ULN, or AST/ALT >ULN to 2.5× ULN)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Liver cirrhosis (bilirubin >1.5× ULN, or AST/ALT 2.5× ULN)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Obesity (<calculator id=\"29\">BMI</calculator> &ge;35 kg/m&sup2;)</p>",
+                "name": "obesity",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Infection</p>",
+                "name": "infection",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or abx only on day 0 ",
+                        "value": 0
+                    },
+                    {
+                        "label": "Requiring continuation of abx after day 0",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Rheumatologic disease</p>",
+                "name": "rheu",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "<abbr title='Systemic lupus erythematosus'>SLE</abbr>, <abbr title='Rheumatoid arthritis'>RA</abbr>, polymyositis, mixed <abbr title='Connective tissue disorder'>CTD</abbr>, or polymyalgia rheumatica",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Peptic ulcer</p>",
+                "name": "peptic",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or not requiring treatment",
+                        "value": 0
+                    },
+                    {
+                        "label": "Requiring treatment",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Renal dysfunction</p>",
+                "name": "renal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or serum Cr ≤2 mg/dL (177 µmol/L), not on dialysis, and no prior renal transplant",
+                        "value": 0
+                    },
+                    {
+                        "label": "Serum Cr >2 mg/dL (177 µmol/L), on dialysis, or prior renal transplant",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Pulmonary dysfunction</p>",
+                "name": "pulm",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or mild",
+                        "value": 0
+                    },
+                    {
+                        "label": "<abbr title='Diffusing capacity of lungs for carbon monoxide'>DLco</abbr> and/or <abbr title='Forced expiratory volume, 1 sec'>FEV₁</abbr> 66%–80%, or dyspnea on slight activity",
+                        "value": 2
+                    },
+                    {
+                        "label": "DLco and/or FEV<sub>1</sub> ≤65% or dyspnea at rest or requiring oxygen",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Prior solid tumor</p>",
+                "name": "prior",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or nonmelanoma skin cancer",
+                        "value": 0
+                    },
+                    {
+                        "label": "Treated at any point in the patient’s history",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Type of transplant</p>",
+                "name": "trans",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Allo-HCT",
+                        "value": 0
+                    },
+                    {
+                        "label": "ASCT",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Allo-HCT = allogeneic hematopoietic cell transplant, ASCT = autologous stem cell transplant",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "trans==0",
+                "default": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "<40",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥40",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "For age-adjusted HCT-CI (allo-HCT only)",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age==0 || age==1",
+                "default": null,
+                "label_en": "<p>Intensity</p>",
+                "name": "intensity",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Non-myeloablative (NMA)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Reduced intensity conditioning (RIC)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Myeloablative conditioning (MAC)",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "HCT",
+            "HSCT",
+            "stem cell transplant",
+            "comorbidity",
+            "comorbidities",
+            "hct ci",
+            "age adjusted HCT",
+            "aaHCT"
+        ],
+        "specialty": [
+            "Hematology and Oncology"
+        ]
+    }
+}

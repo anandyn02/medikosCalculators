@@ -1,0 +1,91 @@
+{
+    "id": "206",
+    "title": "Rome IV Diagnostic Criteria for Infant Regurgitation",
+    "desc": "The Rome IV Criteria for Infant Regurgitation provides criteria for the diagnosis of infant regurgitation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27144631/",
+                "text": "Benninga MA, Faure C, Hyman PE, St james roberts I, Schechter NL, Nurko S. Childhood Functional Gastrointestinal Disorders: Neonate/Toddler. Gastroenterology. 2016; 1443-1455."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/9193240/",
+                "text": "Nelson SP, Chen EH, Syniar GM, Christoffel KK. Prevalence of Symptoms of Gastroesophageal Reflux During Infancy: A Pediatric Practice-Based Survey. Arch Pediatr Adolesc Med. 1997;151(6):569–572."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5958910/",
+                "text": "Rosen R, Vandenplas Y, Singendonk M, Cabana M, DiLorenzo C, Gottrand F, Gupta S, Langendam M, Staiano A, Thapar N, Tipnis N, Tabbers M. Pediatric Gastroesophageal Reflux Clinical Practice Guidelines: Joint Recommendations of the North American Society for Pediatric Gastroenterology, Hepatology, and Nutrition and the European Society for Pediatric Gastroenterology, Hepatology, and Nutrition. J Pediatr Gastroenterol Nutr. 2018 Mar;66(3):516-554. "
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for infant regurgitation, patient must be an otherwise healthy infant 3 weeks to 12 months of age and have the following:</p>\n<ol>\n<li>Regurgitation&nbsp;&ge;2 times per day for&nbsp;&ge;3 weeks.</li>\n<li>No retching, hematemesis, aspiration, apnea, failure to thrive, feeding or swallowing difficulties, or abnormal posturing.</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Regurgitation"
+        ],
+        "disease_treated": [
+            "Neonate/Toddler Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two);\n\nvar diag;\n\nvar msg= 'Diagnosis for infant regurgitation as per Rome IV criteria';\nvar minimsg= 'Diagnosis for infant regurgitation';\n\nif (criteria==2) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Infant Regurgitation',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For an otherwise healthy infant 3 weeks to 12 months of age",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Regurgitation ≥2 times per day for ≥3 weeks",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No retching, hematemesis, aspiration, apnea, failure to thrive, feeding or swallowing difficulties, or abnormal posturing",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Infant Regurgitation, Rome IV for Infant Regurgitation, infant regurgitation, regurgitation, rome 4 regurgitation, rome iv regurgitation, rome infant regurgitation, rome 4 infant regurgitation, rome regurgitation"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

@@ -1,0 +1,152 @@
+{
+    "id": "105",
+    "title": "Age-Adjusted D-dimer for Venous Thromboembolism (VTE)",
+    "desc": "The Age-Adjusted D-dimer for Venous Thromboembolism (VTE) adjusts D-dimer cutoffs by age to help rule out VTE.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.bmj.com/content/346/bmj.f2492.full",
+                "text": "Schouten HJ, Geersing GJ, Koek HL, et al. Diagnostic accuracy of conventional or age adjusted D-dimer cut-off values in older patients with suspected venous thromboembolism: systematic review and meta-analysis. BMJ. 2013;346:f2492."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28079562",
+                "text": "Jaconelli T, Eragat M, Crane S. Can an age-adjusted D-dimer level be adopted in managing venous thromboembolism in the emergency department? A retrospective cohort study. Eur J Emerg Med. 2018;25(4):288-294."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9556229",
+                "text": "Knecht MF, Heinrich F. Clinical evaluation of an immunoturbidimetric D-dimer assay in the diagnostic procedure of deep vein thrombosis and pulmonary embolism. Thromb Res. 1997;88(5):413-7."
+            }
+        ],
+        "evidence": "<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"*\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Units</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Age-adjusted D-dimer cutoff</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">FEU (fibrinogen equivalent units)</p>\n</td>\n<td>\n<p dir=\"ltr\">Age &times; 10 &micro;g/L</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">DDU (D-dimer units)</p>\n</td>\n<td>\n<p dir=\"ltr\">Age &times; 5 &micro;g/L</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">Example:</p>\n<ul>\n<li dir=\"ltr\">For a patient aged 68 years, the D-dimer concentration (FEU assay) would be considered normal below 680 &mu;g/L (68 x 10 &micro;g/L), also equivalent to 680 ng/mL or 0.680 &micro;g/mL.</li>\n</ul>\n<p dir=\"ltr\">Note: should only be used in patients &ge;50 years of age. Check your lab result carefully for unit of measure (e.g. &mu;g/L or ng/mL vs &micro;g/mL) and type of unit (FEU vs DDU).</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"119\"><col width=\"93\"><col width=\"237\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Age-adjusted D-dimer</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>VTE diagnosis</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Above cutoff</p>\n</td>\n<td>\n<p dir=\"ltr\">Likely</p>\n</td>\n<td>\n<p dir=\"ltr\">Consider confirmatory testing with CTA or V/Q scan</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">At or below cutoff</p>\n</td>\n<td>\n<p dir=\"ltr\">Unlikely</p>\n</td>\n<td>\n<p dir=\"ltr\">Consider alternative diagnosis</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span id=\"docs-internal-guid-ac20cdec-7fff-7b2b-43e4-2bdab0af741a\"></span><span id=\"docs-internal-guid-ac20cdec-7fff-7b2b-43e4-2bdab0af741a\"><br></span></p>",
+        "estimation": [
+            {
+                "name": "ddimer",
+                "unit": "ddimer",
+                "error_min": "0",
+                "error_max": "9999",
+                "warn_min": "0",
+                "warn_max": "4999",
+                "conversion": "0.001",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "µg/mL",
+                "units_us": "µg/L"
+            },
+            {
+                "name": "Age_ddimer",
+                "unit": "age_ddimer",
+                "error_min": "50",
+                "error_max": "110",
+                "warn_min": "50",
+                "warn_max": "110",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Dyspnea",
+            "Extremity Edema",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Myocardial Infarction",
+            "Pulmonary Embolism",
+            "VTE"
+        ],
+        "logic": "var calc_output = [];\n\nvar a = parseFloat(age);\nvar lab = parseFloat(lab) || 0;\nvar type = parseFloat(type);\n\nvar score, unit, msg1, msg2, msg;\n\nvar score1 = a*10;\nvar score2 = a*5;\nvar unit1 = 'µg/L';\nvar feu = 'Age-adjusted D-dimer cutoff, FEU';\nvar ddu = 'Age-adjusted D-dimer cutoff, DDU';\n\nif (type == 0) {\n  score = a*10;\n  msg = 'Age-adjusted D-dimer cutoff, FEU';\n} else {\n  score = a*5;\n  msg = 'Age-adjusted D-dimer cutoff, DDU';\n}\n\nif (UOMSYSTEM == true) {\n  if (lab > score) {\n    msg1 = 'VTE possible';\n    msg2 = 'Reported D-dimer is greater than cutoff; consider confirmatory testing with CTA or V/Q scan';\n  } else {\n  \tmsg1 = 'VTE unlikely';\n  \tmsg2 = 'Reported D-dimer is less than or equal to cutoff; consider alternative diagnosis';\n  }\n  unit = 'µg/L';\n}\nif (UOMSYSTEM == false) {\n  score = score/1000;\n  if (lab > score) {\n    msg1 = 'VTE possible';\n    msg2 = 'Reported D-dimer is greater than cutoff; consider confirmatory testing with CTA or V/Q scan';\n  } else {\n  \tmsg1 = 'VTE unlikely';\n  \tmsg2 = 'Reported D-dimer is less than or equal to cutoff; consider alternative diagnosis';\n  }\n  unit = 'µg/mL';\n}\n\nvar unittype\nif (type == 0) {\n\tunittype = 'FEU'\n}\nif (type == 1) {\n\tunittype = 'DDU'\n}\n\n//results\nif (lab !== 0) { // user enters a level\ncalc_output.push({\n    name: 'mini',\n    value: msg1,\n    value_text: '',\n    message: score + ' ' + unit + ' ' + unittype + ' cutoff'\n});\ncalc_output.push({\n    name: '10138_Age-Adjusted D-dimer_result',\n    value: score,\n    value_text: unit,\n    message: msg \n    });\ncalc_output.push({\n    name: '10138_Age-Adjusted D-dimer_interpretation',\n    value: msg1, \n    value_text: '',\n    message: msg2\n});\n}\nif (lab == 0) { // user doesn't enter a level\ncalc_output.push({\n    name: 'mini',\n    value: score1,\n    value_text: unit1,\n    message: feu\n});\ncalc_output.push({\n    name: '10138_Age-Adjusted D-dimer_result (FEU)',\n    value: score1,\n    value_text: unit1,\n    message: feu \n    });\ncalc_output.push({\n    name: '10138_Age-Adjusted D-dimer_result (DDU)',\n    value: score2,\n    value_text: unit1,\n    message: ddu \n    });\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "Use in patients ≥50 years old",
+                "type": "textbox",
+                "unit": "age_ddimer"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Optional, for comparison if you have a D-dimer result",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>D-dimer level reported by lab</p>",
+                "name": "lab",
+                "optional": true,
+                "tips_en": "Note that µg/L is mathematically equivalent to ng/mL",
+                "type": "textbox",
+                "unit": "ddimer"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>D-dimer unit type</p>",
+                "md_calc_info_concept": null,
+                "name": "type",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "FEU (unadjusted cutoff typically ~500 or 0.50)",
+                        "value": 0
+                    },
+                    {
+                        "label": "DDU (unadjusted cutoff typically 230-250 or 0.23-0.25)",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Check your lab results carefully (see <a href = \"#pearls-pitfalls\">Pearls/Pitfalls</a> for details)",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "age-adjusted d-dimer",
+            "D-dimer for VTE",
+            "VTE",
+            "age-adjusted for VTE",
+            "PE",
+            "acute PE",
+            "pulmonary embolism",
+            "dvt",
+            "MI",
+            "ddimer",
+            "d dimer",
+            "age adjusted d-dimer",
+            "age adjusted d dimer",
+            "age adjusted for VTE",
+            "age-adjusted d dimer"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Primary Care",
+            "Pulmonology",
+            "Surgery (Vascular)"
+        ]
+    }
+}

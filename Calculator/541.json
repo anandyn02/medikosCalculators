@@ -1,0 +1,140 @@
+{
+    "id": "541",
+    "title": "Maximum Allowable Blood Loss (ABL) Without Transfusion",
+    "desc": "The Maximum Allowable Blood Loss (ABL) estimates the maximum allowable blood loss intraoperatively before transfusion should be considered, based on initial hemoglobin, weight and final hemoglobin.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6829965",
+                "text": "Gross JB. Estimating Allowable Blood Loss Corrected for Dilution. Anesthesiology 58.2 (1983): 277-280."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>ABL = [EBV x (H<sub>i</sub>-H<sub>f</sub>)] / H<sub>av</sub>, where EBV = body weight, kg x average blood volume*, mL/kg and other variables are as follows:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Variable</strong></p>\n</td>\n<td><strong>Description</strong></td>\n</tr>\n<tr>\n<td>ABL</td>\n<td>\n<p>Allowable blood loss</p>\n</td>\n</tr>\n<tr>\n<td>EBV</td>\n<td>\n<p>Estimated blood volume</p>\n</td>\n</tr>\n<tr>\n<td>H<sub>i</sub></td>\n<td>\n<p>Initial hemoglobin</p>\n</td>\n</tr>\n<tr>\n<td>H<sub>f</sub></td>\n<td>\n<p>Final hemoglobin (cutoff for transfusion)</p>\n</td>\n</tr>\n<tr>\n<td>H<sub>av</sub></td>\n<td>\n<p>Average of initial and final hemoglobin</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Average blood volume by age:</p>\n<table>\n<tbody>\n<tr>\n<td><strong>Age</strong></td>\n<td>\n<p><strong>Average blood volume, mL/kg</strong></p>\n</td>\n</tr>\n<tr>\n<td>Adult man</td>\n<td>\n<p>75</p>\n</td>\n</tr>\n<tr>\n<td>Adult woman</td>\n<td>\n<p>65</p>\n</td>\n</tr>\n<tr>\n<td>Infant</td>\n<td>\n<p>80</p>\n</td>\n</tr>\n<tr>\n<td>Neonate</td>\n<td>\n<p>85</p>\n</td>\n</tr>\n<tr>\n<td>Premature neonate</td>\n<td>\n<p>96</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Hemoglobin",
+                "unit": "hgb",
+                "error_min": "0.5",
+                "error_max": "25",
+                "warn_min": "4",
+                "warn_max": "20",
+                "conversion": "10",
+                "normal_max_si": "170",
+                "normal_max_us": "17",
+                "normal_min_si": "120",
+                "normal_min_us": "12",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\nvar abv, ebv, abl;\nvar msg = 'Allowable Blood Loss';\nvar age = parseFloat(age);\nvar hi = parseFloat(hi);\nvar hf = parseFloat(hf);\nvar wt = parseFloat(wt);\nvar hav = (hi+hf)/2;\n\nif (age == 1) {\n    abv = 75;\n}\nif (age == 2) {\n    abv = 65;\n}\nif (age == 3) {\n    abv = 80;\n}\nif (age == 4) {\n    abv = 85;\n}\nif (age == 5) {\n    abv = 96;\n}\nebv = wt * abv;\n\nabl = ((ebv * (hi - hf)) / hav);\ncalc_output.push({ name: 'mini', value: abl.toFixed(1), value_text: 'mL', message: 'Allowable Blood Loss' });\ncalc_output.push({ name: '3905_Maximum ABL_result', value: abl.toFixed(1), value_text: 'mL', message: 'Allowable Blood Loss' });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Adult man",
+                        "value": 1
+                    },
+                    {
+                        "label": "Adult woman",
+                        "value": 2
+                    },
+                    {
+                        "label": "Infant",
+                        "value": 3
+                    },
+                    {
+                        "label": "Neonate",
+                        "value": 4
+                    },
+                    {
+                        "label": "Premature neonate",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "wt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hemoglobin (initial)",
+                "name": "hi",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hgb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hemoglobin (final)",
+                "name": "hf",
+                "optional": false,
+                "tips_en": "Lowest acceptable hemoglobin, by clinical judgment",
+                "type": "textbox",
+                "unit": "hgb"
+            }
+        ],
+        "can_search": [
+            "abl",
+            "hb",
+            "hgb",
+            "hemoglobin"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Surgery (General)"
+        ]
+    }
+}

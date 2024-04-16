@@ -1,0 +1,508 @@
+{
+    "id": "375",
+    "title": "Major Depression Index (MDI)",
+    "desc": "Screens for depression based on clinically significant questions.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11578668",
+                "text": "Bech P, Rasmussen NA, Olsen LR, Noerholm V, Abildgaard W. The sensitivity and specificity of the Major Depression Inventory, using the Present State Examination as the index of diagnostic validity. J Affect Disord 2001; 66: 159-164."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<p></p>\n<table cellspacing=\"0\" cellpadding=\"0\">\n<tbody>\n<tr>\n<td valign=\"top\" colspan=\"2\">\n<p><strong>Variable</strong></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" colspan=\"3\">\n<p><strong>Ask the patient:&nbsp;</strong>how often have they been bothered by the following over the past 2 weeks?</p>\n<p></p>\n<p></p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>1. Felt low in spirits or sad?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>2. Lost interest in daily activities?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>3. Felt lacking in energy and strength?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>4. Felt less self-confident?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>5. Had a bad conscience or feelings of guilt?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>6. Felt that life wasn&rsquo;t worth living?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>7. Had difficulty in concentrating, e.g. when reading the newspaper or watching television?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>8a. Felt very restless?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>8b. Felt subdued or slowed down?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>9. Had trouble sleeping at night?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>10a. Suffered from reduced appetite?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\" rowspan=\"6\">\n<p>10b. Suffered from increased appetite?</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td valign=\"top\">\n<p>At no time</p>\n</td>\n<td valign=\"top\">\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Some of the time</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly less than half the time</p>\n</td>\n<td valign=\"top\">\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Slightly more than half the time</p>\n</td>\n<td valign=\"top\">\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Most of the time</p>\n</td>\n<td valign=\"top\">\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>All the time</p>\n</td>\n<td valign=\"top\">\n<p>5</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Symptoms are rated based on how the patient has been feeling over the past two weeks.</p>\n</li>\n<li>The diagnostic demarcation line indicates at which point a symptom is severe enough to be used in the DSM-IV diagnostic algorithm of major depression.</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">The first three symptoms (mood, interest and fatigue) should have been present at least &ldquo;most of the time&rdquo; during the past two weeks, while other symptoms should have been present during &ldquo;more than half of the time&rdquo; during the period for diagnosis of major depression.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">For symptoms 4 and 5 (guilt), only the highest score should be used, as they pertain to the same diagnostic criteria for depression in DSM-IV.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">For symptoms 8a and 8b (psychomotor changes), only the highest score should be used, as they pertain to the same diagnostic criteria for depression in DSM-IV.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">For symptoms 10a and 10b (weight/appetite), only the highest score should be used, as they pertain to the same diagnostic criteria for depression in DSM-IV.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Major depression is diagnosed if &ge;5 of the 9 symptoms (items 4 and 5 combined) have been present in the past two weeks and if symptom 1 or 2 are included in these 5 symptoms.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Per the DSM-IV, the 9 diagnostic criteria for Major Depression are (in the order they appear above):</p>\n</li>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Mood</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Interest</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Fatigue</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Guilt</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Suicidal ideation</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Concentration</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Psychomotor changes</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Sleep</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Weight/appetite</p>\n</li>\n</ul>\n</ul>\n<p><strong>Interpretation:</strong></p>\n<table width=\"473\" height=\"170\">\n<tbody>\n<tr>\n<td>\n<p><strong>Score</strong></p>\n</td>\n<td><strong>Severity of depression</strong></td>\n</tr>\n<tr>\n<td>\n<p>&lt;20</p>\n</td>\n<td>No depression</td>\n</tr>\n<tr>\n<td>\n<p>20-24</p>\n</td>\n<td>Mild</td>\n</tr>\n<tr>\n<td>\n<p>25-29</p>\n</td>\n<td>Moderate</td>\n</tr>\n<tr>\n<td>\n<p>&ge;30</p>\n</td>\n<td>Severe</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Depressed"
+        ],
+        "disease_treated": [
+            "Depression/Suicidality"
+        ],
+        "logic": "var calc_output = []; \n\nvar u = parseFloat(sad) + parseFloat(lost_interest) + parseFloat(lacking_energy) + Math.max(parseFloat(self_confident), parseFloat(guilt)) + parseFloat(life) + parseFloat(concentration) + Math.max(parseFloat(restless), parseFloat(subdued)) + parseFloat(sleeping) + Math.max(parseFloat(reduced_appetite), parseFloat(increased_appetite)); \n\nvar msg = ''; if (u < 20) {msg = 'No depression'; } \nelse if (u >= 20 && u <= 24) {msg = 'Mild depression'; } \nelse if (u >= 25 && u <= 29) {msg = 'Moderate depression'; } \nelse if (u >= 30) {msg = 'Severe depression'; } \n\ncalc_output.push({\n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: msg \n}); \ncalc_output.push({\n    name: '1844_Major Depression Index_result', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: msg \n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<strong>Ask the patient:</strong> how often have they been bothered by the following over the past 2 weeks?",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "1. Felt low in spirits or sad?",
+                "mdcalc_info_concept": null,
+                "name": "sad",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "2. Lost interest in daily activities?",
+                "mdcalc_info_concept": null,
+                "name": "lost_interest",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "3. Felt lacking in energy and strength?",
+                "mdcalc_info_concept": null,
+                "name": "lacking_energy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "4. Felt less self-confident?",
+                "mdcalc_info_concept": null,
+                "name": "self_confident",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "5. Had a bad conscience or feelings of guilt?",
+                "mdcalc_info_concept": null,
+                "name": "guilt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "6. Felt that life wasn’t worth living?",
+                "mdcalc_info_concept": null,
+                "name": "life",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "7. Had difficulty in concentrating, e.g. when reading the newspaper or watching television?",
+                "mdcalc_info_concept": null,
+                "name": "concentration",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "8a. Felt very restless?",
+                "mdcalc_info_concept": null,
+                "name": "restless",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "8b. Felt subdued or slowed down?",
+                "mdcalc_info_concept": null,
+                "name": "subdued",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "9. Had trouble sleeping at night?",
+                "mdcalc_info_concept": null,
+                "name": "sleeping",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "10a. Suffered from reduced appetite?",
+                "mdcalc_info_concept": null,
+                "name": "reduced_appetite",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "10b. Suffered from increased appetite?",
+                "mdcalc_info_concept": null,
+                "name": "increased_appetite",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "At no time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Some of the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slightly less than half of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slightly more than half of the time",
+                        "value": 3
+                    },
+                    {
+                        "label": "Most of the time",
+                        "value": 4
+                    },
+                    {
+                        "label": "All the time",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "depression",
+            "MDI",
+            "psych",
+            "diagnosis",
+            "suicidality"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Internal Medicine",
+            "Primary Care",
+            "Psychiatry"
+        ]
+    }
+}

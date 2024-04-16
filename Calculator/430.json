@@ -1,0 +1,242 @@
+{
+    "id": "430",
+    "title": "Veterans Aging Cohort Study (VACS) 1.0 Index",
+    "desc": "The Veterans Aging Cohort Study (VACS) Index estimates risk of 5-year all-cause mortality in patients with HIV and/or HCV.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23095314",
+                "text": "Tate JP, Justice AC, Hughes MD, Bonnet F, Reiss P, Mocroft A, et al. An internationally generalizable risk index for mortality after one year of antiretroviral therapy. AIDS 2013;27(4):563-72."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Value</th>\n<th>Points</th>\n</tr>\n<tr>\n<td rowspan=\"3\">Age</td>\n<td>&lt;50 years</td>\n<td>0</td>\n</tr>\n<tr>\n<td>50-64 years</td>\n<td>+12</td>\n</tr>\n<tr>\n<td>&ge;60 years</td>\n<td>+27</td>\n</tr>\n<tr>\n<td rowspan=\"6\">CD4</td>\n<td>&ge;500 cells/mm<sup>3</sup></td>\n<td>0</td>\n</tr>\n<tr>\n<td>350-499 cells/mm<sup>3</sup></td>\n<td>+6</td>\n</tr>\n<tr>\n<td>200-349 cells/mm<sup>3</sup></td>\n<td>+6</td>\n</tr>\n<tr>\n<td>100-199 cells/mm<sup>3</sup></td>\n<td>+10</td>\n</tr>\n<tr>\n<td>50-100 cells/mm<sup>3</sup></td>\n<td>+28</td>\n</tr>\n<tr>\n<td>&lt;50 cells/mm<sup>3</sup></td>\n<td>+29</td>\n</tr>\n<tr>\n<td rowspan=\"3\">HIV-1 RNA</td>\n<td>&lt;500 copies/mL</td>\n<td>0</td>\n</tr>\n<tr>\n<td>500-99,999 copies/mL</td>\n<td>+7</td>\n</tr>\n<tr>\n<td>&ge;1x10&amp;<sup>5</sup> copies/mL</td>\n<td>+14</td>\n</tr>\n<tr>\n<td rowspan=\"4\">Hemoglobin</td>\n<td>&ge;14 g/dL</td>\n<td>0</td>\n</tr>\n<tr>\n<td>12-13.9 g/dL</td>\n<td>+10</td>\n</tr>\n<tr>\n<td>10-11.9 g/dL</td>\n<td>+22</td>\n</tr>\n<tr>\n<td>&lt;10 g/dL</td>\n<td>+38</td>\n</tr>\n<tr>\n<td rowspan=\"3\"><calculator id=\"2200\">FIB-4</calculator></td>\n<td>&lt;1.45</td>\n<td>0</td>\n</tr>\n<tr>\n<td>1.45-3.25</td>\n<td>+6</td>\n</tr>\n<tr>\n<td>&gt;3.25</td>\n<td>+25</td>\n</tr>\n<tr>\n<td rowspan=\"4\"><calculator id=\"76\">eGFR</calculator></td>\n<td>&ge;60 mL/min</td>\n<td>0</td>\n</tr>\n<tr>\n<td>45-59.9 mL/min</td>\n<td>+6</td>\n</tr>\n<tr>\n<td>30-44.9 mL/min</td>\n<td>+8</td>\n</tr>\n<tr>\n<td>&lt;30 mL/min</td>\n<td>+26</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Hepatitis C Co-Infection</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>+5</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "HIV/AIDS"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = 0;\nvar msg;\nvar score_dic = {\n    0: 1.8,\n    20: 6.9,\n    40: 18.8,\n    60: 37.0,\n    80: 56.6,\n    100: 72.2,\n    120: 82.4,\n    1: 2.0,\n    21: 7.4,\n    41: 19.6,\n    61: 38.0,\n    81: 57.5,\n    101: 72.8,\n    121: 82.5,\n    2: 2.1,\n    22: 7.8,\n    42: 20.4,\n    62: 39.0,\n    82: 58.4,\n    102: 73.4,\n    122: 82.9,\n    3: 2.3,\n    23: 8.2,\n    43: 21.2,\n    63: 40.0,\n    83: 59.3,\n    103: 74.0,\n    123: 83.2,\n    4: 2.4,\n    24: 8.7,\n    44: 22.0,\n    64: 41.0,\n    84: 60.1,\n    104: 74.6,\n    124: 83.5,\n    5: 2.6,\n    25: 9.2,\n    45: 22.9,\n    65: 42.0,\n    85: 61.0,\n    105: 75.2,\n    125: 83.8,\n    6: 2.8,\n    26: 9.7,\n    46: 23.7,\n    66: 43.0,\n    86: 61.8,\n    106: 75.8,\n    126: 84.1,\n    7: 3.0,\n    27: 10.2,\n    47: 24.6,\n    67: 44.0,\n    87: 62.7,\n    107: 76.3,\n    127: 84.4,\n    8: 3.2,\n    28: 10.8,\n    48: 25.5,\n    68: 45.0,\n    88: 63.5,\n    108: 76.8,\n    128: 84.7,\n    9: 3.5,\n    29: 11.3,\n    49: 26.4,\n    69: 46.0,\n    89: 64.3,\n    109: 77.3,\n    129: 84.9,\n    10: 3.7,\n    30: 11.9,\n    50: 27.3,\n    70: 47.0,\n    90: 65.1,\n    110: 77.8,\n    130: 85.2,\n    11: 3.9,\n    31: 12.5,\n    51: 28.3,\n    71: 48.0,\n    91: 65.9,\n    111: 78.3,\n    131: 85.5,\n    12: 4.2,\n    32: 13.1,\n    52: 29.2,\n    72: 49.0,\n    92: 66.6,\n    112: 78.8,\n    132: 85.8,\n    13: 4.5,\n    33: 13.8,\n    53: 30.1,\n    73: 50.0,\n    93: 67.4,\n    113: 79.3,\n    14: 4.8,\n    34: 14.4,\n    54: 31.1,\n    74: 50.9,\n    94: 68.1,\n    114: 79.7,\n    15: 5.1,\n    35: 15.1,\n    55: 32.1,\n    75: 51.9,\n    95: 68.8,\n    115: 80.1,\n    16: 5.5,\n    36: 15.8,\n    56: 33.0,\n    76: 52.8,\n    96: 69.5,\n    116: 80.6,\n    17: 5.8,\n    37: 16.5,\n    57: 34.0,\n    77: 53.8,\n    97: 70.2,\n    117: 81.0,\n    18: 6.2,\n    38: 17.3,\n    58: 35.0,\n    78: 54.7,\n    98: 70.9,\n    118: 81.4,\n    19: 6.5,\n    39: 18.0,\n    59: 36.0,\n    79: 55.7,\n    99: 71.5,\n    119: 81.9\n};\n\nu = parseFloat(hepc) + parseFloat(egfr) + parseFloat(fib4) + parseFloat(hgb) + parseFloat(rna) + parseFloat(cd4) + parseFloat(age);\nvar mort = score_dic[u];\n\nif (u == 0) {\n    msg = \"1.8% predicted all-cause 5-year mortality.\";\n}\nif (u) {\n    msg = mort + \"% predicted all-cause 5-year mortality.\";\n}\nif (u > 132) {\n    msg = \">85.8% predicted all-cause 5-year mortality.\";\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: '2201_VACS 1.0 Index_result',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Age</p>",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "< 50 years",
+                        "value": 0
+                    },
+                    {
+                        "label": "50 - 64 years",
+                        "value": 12
+                    },
+                    {
+                        "label": "≥ 65 years",
+                        "value": 27
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>CD4 count</p>",
+                "mdcalc_info_concept": null,
+                "name": "cd4",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥ 500 cells/mm³",
+                        "value": 0
+                    },
+                    {
+                        "label": "350 - 499 cells/mm³",
+                        "value": 6
+                    },
+                    {
+                        "label": "200 - 349 cells/mm³",
+                        "value": 6
+                    },
+                    {
+                        "label": "100 - 199 cells/mm³",
+                        "value": 10
+                    },
+                    {
+                        "label": "50 - 100 cells/mm³",
+                        "value": 28
+                    },
+                    {
+                        "label": "< 50 cells/mm³",
+                        "value": 29
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>HIV-1 RNA</p>",
+                "mdcalc_info_concept": null,
+                "name": "rna",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "< 500 copies/mL",
+                        "value": 0
+                    },
+                    {
+                        "label": "500 - 99,999 copies/mL",
+                        "value": 7
+                    },
+                    {
+                        "label": "≥ 1x10⁵ copies/mL",
+                        "value": 14
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hemoglobin</p>",
+                "mdcalc_info_concept": null,
+                "name": "hgb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥ 14 g/dL",
+                        "value": 0
+                    },
+                    {
+                        "label": "12 - 13.9 g/dL",
+                        "value": 10
+                    },
+                    {
+                        "label": "10 - 11.9 g/dL",
+                        "value": 22
+                    },
+                    {
+                        "label": "<10 g/dL",
+                        "value": 38
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><calculator id=\"2200\">FIB-4 Index</calculator></p>",
+                "mdcalc_info_concept": null,
+                "name": "fib4",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "< 1.45",
+                        "value": 0
+                    },
+                    {
+                        "label": "1.45 - 3.25",
+                        "value": 6
+                    },
+                    {
+                        "label": "> 3.25",
+                        "value": 25
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Fibrosis-4 Index for Liver Fibrosis",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><calculator id=\"76\">eGFR</calculator></p>",
+                "mdcalc_info_concept": null,
+                "name": "egfr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥ 60 mL/min",
+                        "value": 0
+                    },
+                    {
+                        "label": "45 - 59.9 mL/min",
+                        "value": 6
+                    },
+                    {
+                        "label": "30 - 44.9 mL/min",
+                        "value": 8
+                    },
+                    {
+                        "label": "< 30 mL/min",
+                        "value": 26
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Estimated Golmerular Filtration Rate",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hepatitis C co-infection</p>",
+                "md_calc_info_concept": null,
+                "name": "hepc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "stroke",
+            "tia",
+            "cva",
+            "neuro",
+            "VACS",
+            "Veterans Aging Cohort Study index",
+            "veterans aging index",
+            "veterans hiv index",
+            "vacs score",
+            "vacs index",
+            "VA hcv score"
+        ],
+        "specialty": [
+            "Infectious Disease",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

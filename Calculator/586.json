@@ -1,0 +1,157 @@
+{
+    "id": "586",
+    "title": "Modified SOAR Score for Stroke",
+    "desc": "The Modified SOAR Score for Stroke predicts short term mortality in acute ischemic stroke.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23834262 ",
+                "text": "Myint PK, Clark AB, Kwok CS, et al. The SOAR (Stroke subtype, Oxford Community Stroke Project classification, Age, prestroke modified Rankin) score strongly predicts early outcomes in acute stroke. Int J Stroke. 2014;9(3):278-83."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p> <table> <tbody> <tr> <td>&nbsp;</td> <td> <p><strong>0 points</strong></p> </td> <td> <p><strong>1 point</strong></p> </td> <td> <p><strong>2 points</strong></p> </td> </tr> <tr> <td> <p><strong>S</strong><strong>troke type</strong></p> </td> <td> <p>Infarct</p> </td> <td> <p>Hemorrhage</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p><strong>O</strong><strong>xford Community Stroke Project classification</strong></p> </td> <td> <p>LACS/PACS</p> </td> <td> <p>POCS</p> </td> <td> <p>TACS</p> </td> </tr> <tr> <td> <p><strong>A</strong><strong>ge (years)</strong></p> </td> <td> <p>≤65</p> </td> <td> <p>66–85</p> </td> <td> <p>&gt;85</p> </td> </tr> <tr> <td> <p><strong>Pre-stroke disability (Modified </strong><strong>R</strong><strong>ankin Score)</strong></p> </td> <td> <p>0–2</p> </td> <td> <p>3–4</p> </td> <td> <p>5</p> </td> </tr> <tr> <td> <p><strong>NIH Stroke Scale Score</strong></p> </td> <td> <p>0–4</p> </td> <td> <p>5–10</p> </td> <td> <p>≥11</p> </td> </tr> </tbody> </table> <p>LACS, lacunar circulation stroke. PACS, partial anterior circulation stroke. POCS, posterior circulation stroke. TACS, total anterior circulation stroke.</p>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>mSOAR Score</strong></p> </td> <td> <p><strong>Inpatient mortality</strong></p> </td> </tr> <tr> <td> <p>0</p> </td> <td> <p> 1.0%</p> </td> </tr> <tr> <td> <p>1</p> </td> <td> <p> 1.0%</p> </td> </tr> <tr> <td> <p>2</p> </td> <td> <p> 1.5%</p> </td> </tr> <tr> <td> <p>3</p> </td> <td> <p> 6.5%</p> </td> </tr> <tr> <td> <p>4</p> </td> <td> <p> 9.2%</p> </td> </tr> <tr> <td> <p>5</p> </td> <td> <p> 19.5%</p> </td> </tr> <tr> <td> <p>6</p> </td> <td> <p> 26.2%</p> </td> </tr> <tr> <td> <p>7</p> </td> <td> <p>49.2%</p> </td> </tr> </tbody> </table> <p>From <a href=\"http://stroke.ahajournals.org/content/47/1/74.long\" target=\"_blank\">Abdul-Rahim 2016</a>. Scores &gt;7 were not reported.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Neurologic Deficit",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar type = parseFloat(type);\nvar classd = parseFloat(classd);\nvar age = parseFloat(age);\nvar disability = parseFloat(disability);\nvar nih = parseFloat(nih);\n\nvar modu = type + classd + disability + age + nih;\n\n//interpretation   [inpatient mortality rate SOAR score, inpatient mortality rate mSOAR score]\n\nvar mortality = [ 1.0, 1.0, 1.5, 6.5, 9.2, 19.5, 26.2, 49.2 ]\n\nvar inpatMS = mortality [modu]\n\nif (modu > 7) {\n    inpatMS = '>49.2'\n    msg = '. Note: scores >7 were not reported.'\n}\nelse {\n    inpatMS = inpatMS\n    msg = ''\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: modu,\n    value_text: 'points',\n    message: inpatMS + '% inpatient mortality'\n});\ncalc_output.push({\n    name: 'Mod Score',\n    value: modu,\n    value_text: 'points',\n    message: 'mSOAR Score'\n});\ncalc_output.push({\n    name: 'Mod Score',\n    value: inpatMS,\n    value_text: '%',\n    message: 'Inpatient mortality' + msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stroke type",
+                "name": "type",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Infarct",
+                        "value": 0
+                    },
+                    {
+                        "label": "Hemorrhage",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Oxfordshire Community Stroke Project classification",
+                "name": "classd",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "LACS/PACS",
+                        "value": 0
+                    },
+                    {
+                        "label": "POCS",
+                        "value": 1
+                    },
+                    {
+                        "label": "TACS",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "LACS = lacunar circulation stroke, PACS = partial anterior circulation stroke, POCS = posterior circulation stroke, TACS = total anterior circulation stroke",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤65",
+                        "value": 0
+                    },
+                    {
+                        "label": "66-85",
+                        "value": 1
+                    },
+                    {
+                        "label": ">85",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pre-stroke disability (<abbr title='Modified Rankin Scale'><calculator id='1890'>mRS</calculator></abbr> Score)",
+                "name": "disability",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0-2",
+                        "value": 0
+                    },
+                    {
+                        "label": "3-4",
+                        "value": 1
+                    },
+                    {
+                        "label": "5",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='715'>NIHSS</calculator> Score",
+                "name": "nih",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0-4",
+                        "value": 0
+                    },
+                    {
+                        "label": "5-10",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥11",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "soar",
+            "oxford",
+            "modified soar",
+            "cva",
+            "tia",
+            "ischemic stroke",
+            "brain attack"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Neurology"
+        ]
+    }
+}

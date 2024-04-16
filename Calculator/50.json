@@ -1,0 +1,145 @@
+{
+    "id": "50",
+    "title": "Shock Index, Pediatric Age-Adjusted (SIPA)",
+    "desc": "The Pediatric Age-Adjusted Shock Index (SIPA) calculates shock index (SI), adjusted for age, to predict mortality in children.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25638631",
+                "text": "Acker SN, Ross JT, Partrick DA, Tong S, Bensard DD. Pediatric specific shock index accurately identifies severely injured children. J Pediatr Surg. 2015;50(2):331-4."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29126550",
+                "text": "Vandewalle RJ, Peceny JK, Dolejs SC, Raymond JL, Rouse TM. Trends in pediatric adjusted shock index predict morbidity and mortality in children with severe blunt injuries. J Pediatr Surg. 2018;53(2):362-366."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23962830",
+                "text": "Yasaka Y, Khemani RG, Markovitz BP. Is shock index associated with outcome in children with sepsis/septic shock?*. Pediatr Crit Care Med. 2013;14(8):e372-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24076606",
+                "text": "Rousseaux J, Grandbastien B, Dorkenoo A, Lampin ME, Leteurtre S, Leclerc F. Prognostic value of shock index in children with septic shock. Pediatr Emerg Care. 2013;29(10):1055-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9751551",
+                "text": "Qazi K, Wright MS, Kippes C. Stable pediatric blunt trauma patients: is trauma team activation always necessary?. J Trauma. 1998;45(3):562-4."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11584402",
+                "text": "Wang MY, Kim KA, Griffith PM, et al. Injuries from falls in the pediatric population: an analysis of 729 cases. J Pediatr Surg. 2001;36(10):1528-34."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">SIPA = maximum heart rate/minimum systolic blood pressure, where normal values are as follows:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"87\" /><col width=\"99\" /><col width=\"129\" /><col width=\"117\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Age</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Heart rate</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Systolic blood pressure</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Maximum normal SIPA</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4&ndash;6 years</p>\n</td>\n<td>\n<p dir=\"ltr\">65&ndash;110</p>\n</td>\n<td>\n<p dir=\"ltr\">90&ndash;110</p>\n</td>\n<td>\n<p dir=\"ltr\">1.22</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7&ndash;12 years</p>\n</td>\n<td>\n<p dir=\"ltr\">60&ndash;100</p>\n</td>\n<td>\n<p dir=\"ltr\">100&ndash;120</p>\n</td>\n<td>\n<p dir=\"ltr\">1.00</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">13-16 years</p>\n</td>\n<td>\n<p dir=\"ltr\">55&ndash;90</p>\n</td>\n<td>\n<p dir=\"ltr\">100&ndash;135</p>\n</td>\n<td>\n<p dir=\"ltr\">0.90</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-4b35c7f8-8f0f-0259-7ede-3764448e5592\"></span><span id=\"docs-internal-guid-4b35c7f8-8f0f-0259-7ede-3764448e5592\"><br /></span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"88\" /><col width=\"88\" /><col width=\"227\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Age</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>SIPA</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of blunt injury if SIPA is elevated</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4&ndash;6 years</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;1.22</p>\n</td>\n<td>\n<p dir=\"ltr\">22.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7&ndash;12 years</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;1.00</p>\n</td>\n<td>\n<p dir=\"ltr\">25.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">13-16 years</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;0.90</p>\n</td>\n<td>\n<p dir=\"ltr\">32.0%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">Overall in-hospital mortality for elevated SIPA (at each cutoff) was 11%, versus 7% for non-age-adjusted shock index.</p>",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Heart Rate/Pulse",
+                "unit": "hr",
+                "error_min": "10",
+                "error_max": "300",
+                "warn_min": "20",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "beats/min",
+                "units_us": "beats/min"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Bleeding/Hemorrhage",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age)\nvar heartrate = parseFloat(heartrate)\nvar systolic = parseFloat(systolic)\n\n//equations\nvar si = heartrate / systolic\nvar SI = si.toFixed(2)\nvar msg\nvar risk\nvar msg2\n\nif (age >= 4 && age <= 6){\n\tif (SI > 1.22) {\n\tmsg = 'Elevated'\n    risk = '22.0'\n    msg2 = 'Maximum normal SIPA for age of ' + age + ' years is 1.22'\n    }\n    else {\n    msg = 'Normal'\n   \tmsg2 = 'Maximum normal SIPA for age of ' + age + ' years is 1.22'\n    }\n}\nelse if (age > 6 && age <= 12){\n\tif (SI > 1.0) {\n\tmsg = 'Elevated'\n    risk = '25.1'\n    msg2 = 'Maximum normal SIPA for age of ' + age + ' years is 1.0'\n    }\n    else {\n    msg = 'Normal'\n    msg2 = 'Maximum normal SIPA for age of ' + age + ' years is 1.0'\n    }\n}\nelse if (age > 12){\n\tif (SI > 0.9) {\n\tmsg = 'Elevated'\n    risk = '32.0'\n    msg2 = 'Maximum normal SIPA for age of ' + age + ' years is 0.9'\n    }\n    else {\n    msg = 'Normal'\n    msg2 = 'Maximum normal SIPA for age of ' + age + ' years is 0.9'\n   \n    }\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: SI,\n    value_text: '',\n    message: msg + ' SIPA'\n});\ncalc_output.push({\n    name: 'SIPA',\n    value: SI,\n    value_text: '',\n    message: 'SIPA'\n});\ncalc_output.push({\n    name: 'normal',\n    value: msg,\n    value_text: '',\n    message: msg2\n});\n\nif (msg == 'Elevated'){\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '%',\n    message: 'Risk of blunt injury'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "4-16 years old only",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Maximum heart rate",
+                "name": "heartrate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Minimum systolic blood pressure",
+                "name": "systolic",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            }
+        ],
+        "can_search": [
+            "Shock index",
+            "SI",
+            "SIPA",
+            "pediatric shock index",
+            "age adjusted shock index",
+            "trauma",
+            "mortality",
+            "hemorrhage",
+            "pediatric adjusted"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

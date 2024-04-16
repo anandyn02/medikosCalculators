@@ -1,0 +1,218 @@
+{
+    "id": "569",
+    "title": "Rapid Arterial oCclusion Evaluation (RACE) Scale for Stroke",
+    "desc": "The Rapid Arterial Occlusion Evaluation (RACE) Scale for Stroke predicts the presence of large vessel occlusion (LVO) in patients with acute stroke.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://stroke.ahajournals.org/content/45/1/87.full ",
+                "text": "Pérez de la Ossa N, Carrera D, Gorchs M, et al. Design and validation of a prehospital stroke scale to predict large arterial occlusion: the rapid arterial occlusion evaluation scale. Stroke. 2014;45(1):87-91."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<div class=\"table-responsive\">Addition of selected points:\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0</strong></p>\n</td>\n<td>\n<p><strong>1</strong></p>\n</td>\n<td>\n<p><strong>2</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Facial palsy</strong></p>\n</td>\n<td>\n<p>Absent</p>\n</td>\n<td>\n<p>Mild</p>\n</td>\n<td>\n<p>Moderate to severe</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Arm motor function</strong></p>\n</td>\n<td>\n<p>Normal to mild</p>\n</td>\n<td>\n<p>Moderate</p>\n</td>\n<td>\n<p>Severe</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Leg motor function</strong></p>\n</td>\n<td>\n<p>Normal to mild</p>\n</td>\n<td>\n<p>Moderate</p>\n</td>\n<td>\n<p>Severe</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Head and gaze deviation</strong></p>\n</td>\n<td>\n<p>Absent</p>\n</td>\n<td>\n<p>Present</p>\n</td>\n<td>\n<p>---</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Aphasia</strong></p>\n<p><strong>(if right hemiparesis)</strong></p>\n</td>\n<td>\n<p>Performs both tasks correctly</p>\n</td>\n<td>\n<p>Performs 1 task correctly</p>\n</td>\n<td>\n<p>Performs neither tasks</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Agnosia</strong></p>\n<p><strong>(if left hemiparesis)</strong></p>\n</td>\n<td>\n<p>Patient recognizes his/her arm and the impairment</p>\n</td>\n<td>\n<p>Does not recognize his/her arm or the impairment</p>\n</td>\n<td>\n<p>Does not recognize his/her arm nor the impairment</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p><strong>Interpretation:</strong></p>\n<div class=\"table-responsive\"><br>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>RACE Score</strong></p>\n</td>\n<td>\n<p><strong>Sensitivity</strong></p>\n</td>\n<td>\n<p><strong>Specificity</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;1</p>\n</td>\n<td>\n<p>100%</p>\n</td>\n<td>\n<p>13%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;2</p>\n</td>\n<td>\n<p>97%</p>\n</td>\n<td>\n<p>27%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;3</p>\n</td>\n<td>\n<p>93%</p>\n</td>\n<td>\n<p>40%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;4</p>\n</td>\n<td>\n<p>89%</p>\n</td>\n<td>\n<p>55%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;5</p>\n</td>\n<td>\n<p>85%</p>\n</td>\n<td>\n<p>68%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;6</p>\n</td>\n<td>\n<p>72%</p>\n</td>\n<td>\n<p>77%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;7</p>\n</td>\n<td>\n<p>53%</p>\n</td>\n<td>\n<p>89%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;8</p>\n</td>\n<td>\n<p>32%</p>\n</td>\n<td>\n<p>95%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>9</p>\n</td>\n<td>\n<p>7%</p>\n</td>\n<td>\n<p>99%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><br>RACE Scale scores &ge;5 were found to have the best predictive value and while protocols vary, it is generally recommended that patients with scores &ge;5 are directly referred to a stroke center with endovascular capabilities.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Neurologic Deficit",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "//outputs\nvar calc_output = [];\n\n//user inputs\nvar facpal = parseFloat(facpal);\nvar arm = parseFloat(arm);\nvar leg = parseFloat(leg);\nvar gaze = parseFloat(gaze);\nvar aph = parseFloat(aph);\nvar agn = parseFloat(agn);\nvar hemi = parseFloat(hemi);\n\n//calculation\nvar u;\nif (hemi == 0){\t\t//if left hemiparesis, use agn value\n\tu = facpal + arm + leg + agn + gaze;\n}else{\t\t\t\t\t//if right hemiparesis, use aph value\n\tu = facpal + arm + leg + aph + gaze;\n}\n\n//results\nvar sens, spec, ref\nvar msg = '';\nif (u == 0){\n\tsens = 'N/A';\n\tspec = 'N/A';\n\tref = 0;\n}else if (u == 1){\n\tsens = '100';\n\tspec = '13';\n\tref = 0;\n}else if(u == 2){\n\tsens = '97';\n\tspec = '27';\n\tref = 0;\n}else if(u == 3){\n\tsens = '93';\n\tspec = '40';\n\tref = 0;\n}else if(u == 4){\n\tsens = '89';\n\tspec = '55';\n\tref = 0;\n}else if(u == 5){\n\tsens = '85';\n\tspec = '68';\n\tref = 1;\n}else if(u == 6){\n\tsens = '72';\n\tspec = '77';\n\tref = 1;\n}else if(u == 7){\n\tsens = '53';\n\tspec = '89';\n\tref = 1;\n}else if(u == 8){\n\tsens = '32';\n\tspec = '95';\n\tref = 1;\n}else{\n\tsens = '7';\n\tspec = '99';\n\tref = 1;\n}\n\nvar msg1 = 'RACE Scale';\nif (ref == 1){\n\tmsg = '. While protocols vary, it is generally recommended that patients with scores ≥5 are directly referred to a stroke center with endovascular capabilities.';\n}\n\nvar mini_msg;\nif (u < 5) {\n\tmini_msg = 'LVO unlikely'\n}\nif (u >= 5) {\n\tmini_msg = 'LVO likely'\n}\n\n//result for user\ncalc_output.push({\n\tname: 'mini',\n\tvalue: u,\n\tvalue_text: 'points',\n\tmessage: mini_msg\n});\ncalc_output.push({\n\tname: '3941_RACE Scale_result (score)',\n\tvalue: u,\n\tvalue_text: 'points',\n\tmessage: msg1 + msg\n});\ncalc_output.push({\n\tname: '3941_RACE Scale_result (sensitivity)',\n\tvalue: sens,\n\tvalue_text: '%',\n\tmessage: 'Sensitivity (for LVO)'\n});\ncalc_output.push({\n\tname: '3941_RACE Scale_result (specificity)',\n\tvalue: spec,\n\tvalue_text: '%',\n\tmessage: 'Specificity (for LVO)'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Facial palsy",
+                "mdcalc_info_concept": null,
+                "name": "facpal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate to severe",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Arm motor impairment",
+                "mdcalc_info_concept": null,
+                "name": "arm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal to mild",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 1
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Leg motor impairment",
+                "mdcalc_info_concept": null,
+                "name": "leg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal to mild",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 1
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Head and gaze deviation",
+                "md_calc_info_concept": null,
+                "name": "gaze",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Hemiparesis",
+                "md_calc_info_concept": null,
+                "name": "hemi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Left",
+                        "value": 0
+                    },
+                    {
+                        "label": "Right",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "To evaluate for agnosia (left hemiparesis) vs aphasia (right hemiparesis)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hemi == 1",
+                "default": null,
+                "label_en": "Aphasia",
+                "mdcalc_info_concept": null,
+                "name": "aph",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Performs both tasks correctly\t",
+                        "value": 0
+                    },
+                    {
+                        "label": "Performs one task correctly",
+                        "value": 1
+                    },
+                    {
+                        "label": "Performs neither task",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Instruct the patient: (1) “Close your eyes.” (2) “Make a fist.\"",
+                "type": "radio"
+            },
+            {
+                "conditionality": "hemi == 0",
+                "default": null,
+                "label_en": "Agnosia",
+                "mdcalc_info_concept": null,
+                "name": "agn",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Patient recognizes his/her arm and the impairment",
+                        "value": 0
+                    },
+                    {
+                        "label": "Does not recognize his/her arm or the impairment",
+                        "value": 1
+                    },
+                    {
+                        "label": "Does not recognize his/her arm nor the impairment",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask the patient: (1) While showing them the paretic arm, “Whose arm is this?” (2) “Can you lift both arms and clap?”",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Stroke",
+            "ischemic stroke",
+            "CVA",
+            "GCS",
+            "stroke scale",
+            "RACE score",
+            "EMS",
+            "field",
+            "prehospital",
+            "LVO",
+            "large vessel occlusion"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

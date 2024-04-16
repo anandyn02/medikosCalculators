@@ -1,0 +1,204 @@
+{
+    "id": "616",
+    "title": "Diabetic Ketoacidosis Mortality Prediction Model (DKA MPM) Score",
+    "desc": "The Diabetic Ketoacidosis (DKA) Mortality Prediction Model predicts mortality in DKA.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12390332 ",
+                "text": "Efstathiou SP, Tsiakou AG, Tsioulos DI, et al. A mortality prediction model in diabetic ketoacidosis. Clin Endocrinol (Oxf). 2002;57(5):595-601."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28571190",
+                "text": "Mahesh MG, Shivaswamy RP, Chandra BS, Syed S. The Study of Different Clinical Pattern of Diabetic Ketoacidosis and Common Precipitating Events and Independent Mortality Factors. J Clin Diagn Res. 2017;11(4):OC42-OC46."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>No</strong></p>\n</td>\n<td>\n<p><strong>Yes</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>At presentation:</strong></p>\n</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td>\n<p>Severe comorbidities*</p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>+6</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>pH &lt;7.0</p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>+4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>At 12 hr after presentation:</strong></p>\n</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td>\n<p>&gt;50 units regular insulin required over 12 hr</p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>+4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Serum glucose &gt;300 mg/dL (16.7 mmol/L) after 12 hr</p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>+4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>At 24 hr after presentation:</strong></p>\n</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td>\n<p>Depressed mental state**</p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>+4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Fever***&nbsp;</p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>+3</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><br>*Immunosuppression, previous MI, COPD, cirrhosis, CHF, and/or previous stroke.</p>\n<p>**As determined by examiner.</p>\n<p>***Axillary temp &ge;38&deg;C (100.4&ordm;F).</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>DKA MPM Score</strong></p>\n</td>\n<td>\n<p><strong>Risk</strong></p>\n</td>\n<td>\n<p><strong>In-hospital mortality </strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0-14</p>\n</td>\n<td>\n<p>Low</p>\n</td>\n<td>\n<p>0.86%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>15-18</p>\n</td>\n<td>\n<p>High</p>\n</td>\n<td>\n<p>20.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>19-25</p>\n</td>\n<td>\n<p>Very high</p>\n</td>\n<td>\n<p>93.3%</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Polyuria",
+            "Vomiting",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar score = parseFloat(scd) + parseFloat(ph) + parseFloat(regular) + parseFloat(serum) + parseFloat(dep) + parseFloat(fever);\n\n\nvar mort, risk, riskmsg, range;\nif(score < 15){\n\tmort = '0.86';\n    risk = '';\n    riskmsg = '';\n    range = '(scores 0-14)';\n}else if(score > 14 && score < 19){\n\tmort = '20.8';\n    risk = '';\n    riskmsg = '';\n    range = '(scores 15-18)';\n}else if(score > 18){\n\tmort = '93.3';\n    risk = '';\n    riskmsg = '';\n    range = '(scores 19-25)';\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: mort + '% in-hospital mortality'\n});\ncalc_output.push({\n    name: '4003_DKA MPM Score_result (score)',\n    value: score,\n    value_text: 'points',\n    message: 'DKA MPM Score'\n});\ncalc_output.push({\n    name: '4003_DKA MPM Score_result (mortality)',\n    value: mort,\n    value_text: '%',\n    message: 'In-hospital mortality ' + range\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "At presentation",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Severe comorbidities",
+                "md_calc_info_concept": null,
+                "name": "scd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Immunosuppression, previous MI, COPD, cirrhosis, CHF, and/or previous stroke",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "pH <7.0",
+                "md_calc_info_concept": null,
+                "name": "ph",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "At 12 hr after presentation",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": ">50 units regular insulin required over 12 hr",
+                "md_calc_info_concept": null,
+                "name": "regular",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Serum glucose >300 mg/dL (16.7 mmol/L) after 12 hr",
+                "md_calc_info_concept": null,
+                "name": "serum",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "At 24 hr after presentation",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Depressed mental state",
+                "md_calc_info_concept": null,
+                "name": "dep",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "As determined by examiner",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Fever",
+                "md_calc_info_concept": null,
+                "name": "fever",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Axillary temp ≥38°C (100.4ºF)",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "dka",
+            "dka mortality",
+            "prediction model",
+            "dka mortality",
+            "diabetes",
+            "diabetes mortality",
+            "diabetic ketoacidosis"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

@@ -1,0 +1,323 @@
+{
+    "id": "167",
+    "title": "CLIF-C ACLF (Acute-on-Chronic Liver Failure)",
+    "desc": "The CLIF-C ACLF (Acute-on-Chronic Liver Failure) predicts mortality in acute-on-chronic liver failure.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24950482",
+                "text": "Jalan R, Saliba F, Pavesi M, et al. Development and validation of a prognostic score to predict mortality in patients with acute-on-chronic liver failure. J Hepatol. 2014;61(5):1038-47."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23474284",
+                "text": "Moreau R, Jalan R, Gines P, et al. Acute-on-chronic liver failure is a distinct syndrome that develops in patients with acute decompensation of cirrhosis. Gastroenterology. 2013;144(7):1426-37, 1437.e1-9."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">CLIF-C ACLF Score = 10 x [0.33 x CLIF Organ Failure Score + 0.04 x age, years + 0.63 x ln(WBC count, 10<sup>9</sup> cells/L) - 2],&nbsp;</p>\n<p dir=\"ltr\">where CLIF Organ Failure Score = addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"*\"><col width=\"*\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Liver</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Bilirubin</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;6 mg/dL (&lt;102.6 &micro;mol/L)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6 to &lt;12 mg/dL (102.6 to &lt;205.2 &micro;mol/L)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;12 mg/dL (&ge;205.2 &micro;mol/L)</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Kidney</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Creatinine</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;2 mg/dL (&lt;176.8 &micro;mol/L)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2 to &lt;3.5 mg/dL (176.8 to &lt;309.4 &micro;mol/L)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;3.5 mg/dL (&ge;309.4 &micro;mol/L) or renal replacement therapy</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Brain</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><calculator id=\"674\">West-Haven Grade for Hepatic Encephalopathy</calculator></p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1-2</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3-4 (or if patient is intubated due to hepatic encephalopathy and not respiratory failure*)</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Coagulation</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><abbr title=\"International normalized ratio\">INR</abbr></p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;2.0</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2.0 to &lt;2.5</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;2.5</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Circulatory</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><calculator id=\"74\">MAP</calculator>, mmHg</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;70</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;70</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Any MAP with vasopressors</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Respiratory (use PaO<sub>2</sub>/FiO<sub>2</sub> ratio or SpO<sub>2</sub>/FiO<sub>2</sub><span style=\"font-size: xx-small;\"> ratio)</span></strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><abbr title=\"Partial pressure of oxygen\">PaO<sub>2</sub></abbr>/<abbr title=\"Fraction of inspired oxygen\">FiO<sub>2</sub></abbr> ratio</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;300</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;200 to 300</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;200 (or if patient intubated for respiratory failure)</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><abbr title=\"Oxygen saturation\">SpO<sub>2</sub></abbr>/<abbr title=\"Fraction of inspired oxygen\">FiO<sub>2</sub></abbr> ratio</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;357</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;214 to 357</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;214 (or if patient intubated for respiratory failure)</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-2aea767b-7fff-8128-8a30-27f0656d87ea\"><span id=\"docs-internal-guid-2aea767b-7fff-8128-8a30-27f0656d87ea\">*Patients submitted to mechanical ventilation due to hepatic encephalopathy and not due to a respiratory failure are considered as presenting a cerebral failure (cerebral subscore = 3).</span></span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<p dir=\"ltr\">Probability of death at a given time = 1 - e<sup>y</sup>, where y = -CI x exp(&beta; x CLIF-C ACLF Score), where Cl and &beta; are as follows:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"*\"><col width=\"*\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Time</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Cumulative baseline hazard (Cl)</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Coefficient (&beta;)</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1 month</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0022</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0995</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3 months</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0079</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0869</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6 months</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0115</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0824</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1 year</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0231</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0731</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-1e5ee5b3-7fff-bc3b-6d13-c1105bb63b22\">From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/24950482\" target=\"_blank\" rel=\"noopener\">Jalan 2014</a>.</span></p>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "White Blood Cell Count",
+                "unit": "wbc",
+                "error_min": "0.0001",
+                "error_max": "500",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10.7",
+                "normal_max_us": "10.7",
+                "normal_min_si": "3.7",
+                "normal_min_us": "3.7",
+                "units_si": "× 10⁹ cells/L",
+                "units_us": "× 10³ cells/µL"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Cirrhosis",
+            "Hepatitis",
+            "Hepatocellular Carcinoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar wbc = parseFloat(wbc);\nvar age = parseFloat(age);\nvar bili = parseFloat(bili);\nvar cr = parseFloat(cr);\nvar grade = parseFloat(grade);\nvar inr = parseFloat(inr);\nvar map = parseFloat(map);\nvar resp = parseFloat(resp);\nvar resp1 = parseFloat(resp1) || 0;\nvar resp2 = parseFloat(resp2) || 0;\n\nif (resp == 0) {\n  var organ_score = bili + cr + grade + inr + map + resp1;\n} else if (resp == 1) {\n  var organ_score = bili + cr + grade + inr + map + resp2;\n}\n\nvar score = 10*(0.33*organ_score + 0.04*age + 0.63*Math.log(wbc) - 2);\n\nvar y_1 = -0.0022*Math.exp(0.0995*score);\nvar prob_1 = 1 - Math.pow(Math.E,y_1);\nprob_1 = prob_1*100;\nprob_1 = prob_1.toFixed(1);\n\nvar y_3 = -0.0079*Math.exp(0.0869*score);\nvar prob_3 = 1 - Math.pow(Math.E,y_3);\nprob_3 = prob_3*100;\nprob_3 = prob_3.toFixed(1);\n\nvar y_6 = -0.0115*Math.exp(0.0824*score);\nvar prob_6 = 1 - Math.pow(Math.E,y_6);\nprob_6 = prob_6*100;\nprob_6 = prob_6.toFixed(1);\n\nvar y_12 = -0.0231*Math.exp(0.0731*score);\nvar prob_12 = 1 - Math.pow(Math.E,y_12);\nprob_12 = prob_12*100;\nprob_12 = prob_12.toFixed(1);\n\nscore = score.toFixed(0);\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: prob_12 +'% probability of death at 1 year'\n});\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'CLIF-C ACLF Score'\n});\ncalc_output.push({\n    name: 'TNM RCC',\n    value: '',\n    value_text: '',\n    message: prob_1 + '% probability of death at 1 month<br/>' + prob_3 + '% probability of death at 3 months<br/>' + prob_6 + '% probability of death at 6 months<br/>' + prob_12 + '% probability of death at 1 year'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "WBC count",
+                "name": "wbc",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wbc"
+            },
+            {
+                "subheading": "Liver",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bilirubin",
+                "name": "bili",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<6 mg/dL (<102.6 µmol/L)",
+                        "value": 1
+                    },
+                    {
+                        "label": "6 to <12 mg/dL (102.6 to <205.2 µmol/L)",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥12 mg/dL (≥205.2 µmol/L)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Kidney",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Creatinine",
+                "name": "cr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2 mg/dL (<176.8 µmol/L)",
+                        "value": 1
+                    },
+                    {
+                        "label": "2 to <3.5 mg/dL (176.8 to <309.4 µmol/L)",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥3.5 mg/dL (≥309.4 µmol/L) or renal replacement therapy",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Brain",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id = \"674\">West-Haven Grade for Hepatic Encephalopathy</calculator>",
+                "name": "grade",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 1
+                    },
+                    {
+                        "label": "1-2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3-4 ",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Patients intubated due to hepatic encephalopathy (and not respiratory failure) should be scored as +3",
+                "type": "radio"
+            },
+            {
+                "subheading": "Coagulation",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title = \"International normalized ratio\">INR</abbr>",
+                "name": "inr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2.0",
+                        "value": 1
+                    },
+                    {
+                        "label": "2.0 to <2.5",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥2.5",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Circulatory",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title =\"Mean arterial pressure\">MAP</abbr>, mmHg",
+                "name": "map",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥70",
+                        "value": 1
+                    },
+                    {
+                        "label": "<70",
+                        "value": 2
+                    },
+                    {
+                        "label": "Any MAP with vasopressors",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Respiratory",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Information available",
+                "name": "resp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "PaO<sub>2</sub>/FiO<sub>2</sub> ratio",
+                        "value": 0
+                    },
+                    {
+                        "label": "SpO<sub>2</sub>/FiO<sub>2</sub> ratio",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "resp == 0",
+                "default": 0,
+                "label_en": "<abbr title=\"Partial pressure of oxygen\">PaO<sub>2</sub></abbr>/<abbr title=\"Fraction of inspired oxygen\">FiO<sub>2</sub></abbr> ratio",
+                "name": "resp1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">300",
+                        "value": 1
+                    },
+                    {
+                        "label": ">200 to 300",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤200 (or if patient intubated for respiratory failure)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "resp == 1",
+                "default": 0,
+                "label_en": "<abbr title=\"Oxygen saturation\">SpO<sub>2</sub></abbr>/<abbr title=\"Fraction of inspired oxygen\">FiO<sub>2</sub></abbr> ratio",
+                "name": "resp2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">357",
+                        "value": 1
+                    },
+                    {
+                        "label": ">214 to 357",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤214 (or if patient intubated for respiratory failure)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "CLIF-C ACLF",
+            "CLIF-C ACLF (Acute-on-Chronic Liver Failure)",
+            "clif aclf",
+            "clif-of",
+            "clif-c of",
+            "clif organ failure",
+            "aclf",
+            "acute on chronic liver failure",
+            "liver failure",
+            "aclf score",
+            "clif aclf score",
+            "clif-c aclf score"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

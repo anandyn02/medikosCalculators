@@ -1,0 +1,133 @@
+{
+    "id": "622",
+    "title": "LENT Prognostic Score for Malignant Pleural Effusion",
+    "desc": "The LENT Prognostic Score for Malignant Pleural Effusion predicts survival in patients with malignant pleural effusion.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://thorax.bmj.com/content/early/2014/08/06/thoraxjnl-2014-205285",
+                "text": "Clive AO, Kahan BC, Hooper CE, et al. Predicting survival in malignant pleural effusion: development and validation of the LENT prognostic score. Thorax. 2014;69(12):1098-104."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td>&nbsp;</td> <td colspan=\"4\"> <p><strong>Points</strong></p> </td> </tr> <tr> <td>&nbsp;</td> <td> <p><strong>0</strong></p> </td> <td> <p><strong>1</strong></p> </td> <td> <p><strong>2</strong></p> </td> <td> <p><strong>3</strong></p> </td> </tr> <tr> <td> <p>Pleural fluid LDH, U/L</p> </td> <td> <p>&lt;1,500</p> </td> <td> <p>≥1,500</p> </td> <td>--&nbsp;</td> <td>&nbsp;--</td> </tr> <tr> <td> <p><calculator id=\"3170\">ECOG Score</calculator></p> </td> <td> <p>0 (asymptomatic)</p> </td> <td> <p>1 (symptomatic but ambulatory)</p> </td> <td> <p>2 (symptomatic, in bed &lt;50% of day)</p> </td> <td> <p>3–4 (symptomatic, in bed &gt;50% of day or bedbound)</p> </td> </tr> <tr> <td> <p>Serum neutrophil-to-lymphocyte ratio</p> </td> <td> <p>&lt;9</p> </td> <td> <p>≥9</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Tumor type</p> </td> <td> <p>Mesothelioma or hematologic malignancy</p> </td> <td> <p>Breast or gynecologic cancer or RCC</p> </td> <td> <p>Lung or any other cancer</p> </td> <td> <p>--</p> </td> </tr> </tbody> </table> </div>",
+        "facts": "<p>Interpretation:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>LENT Score</strong></p> </td> <td> <p><strong>Risk</strong></p> </td> <td> <p><strong>Median survival</strong></p> </td> </tr> <tr> <td> <p>0–1</p> </td> <td> <p>Low</p> </td> <td> <p>319 days</p> </td> </tr> <tr> <td> <p>2–4</p> </td> <td> <p>Moderate</p> </td> <td> <p>130 days</p> </td> </tr> <tr> <td> <p>5–7</p> </td> <td> <p>High</p> </td> <td> <p>44 days</p> </td> </tr> </tbody> </table> </div>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Pleural Effusion"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs - addition of selected points\nvar score = parseFloat(ldh) + parseFloat(ecog) + parseFloat(serum) + parseFloat(tumor);\n\n//interpretation\nvar risk, survival;\nif(score < 2){\n\trisk = 'Low';\n\tsurvival = '319';\n}else if(score < 5){\n\trisk = 'Moderate';\n\tsurvival = '130';\n}else{\n\trisk = 'High';\n\tsurvival = '44';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'LENT Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'LENT Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: 'risk',\n    message: survival + ' days median survival'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pleural fluid <abbr title='Lactate dehydrogenase'>LDH</abbr>, U/L",
+                "name": "ldh",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<1,500",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥1,500",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='3170'>ECOG Score</calculator>",
+                "name": "ecog",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0 (asymptomatic)",
+                        "value": 0
+                    },
+                    {
+                        "label": "1 (symptomatic but ambulatory)",
+                        "value": 1
+                    },
+                    {
+                        "label": "2 (symptomatic, in bed <50% of day)",
+                        "value": 2
+                    },
+                    {
+                        "label": "3–4 (symptomatic, in bed >50% of day or bedbound)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Serum neutrophil-to-lymphocyte ratio",
+                "name": "serum",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<9",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥9",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "From <abbr title='Complete blood count'>CBC</abbr>",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tumor type",
+                "name": "tumor",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Mesothelioma or hematologic malignancy",
+                        "value": 0
+                    },
+                    {
+                        "label": "Breast or gynecologic cancer or <abbr title='renal cell carcinoma'>RCC</abbr>",
+                        "value": 1
+                    },
+                    {
+                        "label": "Lung or any other cancer",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "MPE",
+            "lent score",
+            "pleural effusion"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Hematology and Oncology",
+            "Pulmonology",
+            "Radiology",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

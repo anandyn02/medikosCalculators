@@ -1,0 +1,250 @@
+{
+    "id": "263",
+    "title": "Hack’s Impairment Index (HII)",
+    "desc": "The Hack’s Impairment Index (HII) provides a quantitative and standardized assessment of the degree of alcohol-induced impairment in emergency department patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24555813/",
+                "text": "Hack JB, Goldlust EJ, Gibbs F, Zink B. The H-Impairment Index (Hii): a standardized assessment of alcohol-induced impairment in the Emergency Department. Am J Drug Alcohol Abuse. 2014;40(2):111-117."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/28132795/",
+                "text": "Benoit JL, Hart KW, Soliman AA, et al. Developing a standardized measurement of alcohol intoxication. Am J Emerg Med. 2017;35(5):725-730."
+            }
+        ],
+        "evidence": "<p>The HII Score is calculated by dividing the sum of the selected points by the maximum score for all completed tasks:</p>\n<table style=\"border-collapse: collapse; width: 100%; height: 1188px;\">\n<tbody>\n<tr style=\"height: 22px;\">\n<td colspan=\"3\" style=\"width: 79.53321364452424%; height: 22px;\"><strong>Variable</strong></td>\n<td style=\"width: 20.287253141831236%; height: 22px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 66px;\">\n<td rowspan=\"5\" style=\"width: 24.95511669658887%; height: 286px;\">Speech quality and mentation</td>\n<td rowspan=\"5\" style=\"width: 22.800718132854577%; height: 286px;\">Response content</td>\n<td style=\"width: 31.77737881508079%; height: 66px;\">Normal or baseline speech; conversive and appropriate</td>\n<td style=\"width: 20.287253141831236%; height: 66px;\">0</td>\n</tr>\n<tr style=\"height: 66px;\">\n<td style=\"width: 31.77737881508079%; height: 66px;\">Imperfect speech; answers most questions appropriately</td>\n<td style=\"width: 20.287253141831236%; height: 66px;\">1</td>\n</tr>\n<tr style=\"height: 66px;\">\n<td style=\"width: 31.77737881508079%; height: 66px;\">Slurred speech; answers few questions appropriately</td>\n<td style=\"width: 20.287253141831236%; height: 66px;\">2</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 31.77737881508079%; height: 44px;\">Slurred speech; does not make sense</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">3</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 31.77737881508079%; height: 44px;\">Unintelligible speech or only moans</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">4</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td rowspan=\"5\" style=\"width: 24.95511669658887%; height: 220px;\">Gross motor skills</td>\n<td rowspan=\"5\" style=\"width: 22.800718132854577%; height: 220px;\">Stability on sitting, standing, and walking</td>\n<td style=\"width: 31.77737881508079%; height: 44px;\">Can stand and walk, and is steady</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">0</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 31.77737881508079%; height: 44px;\">Can stand and walk, but is unsteady</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">1</td>\n</tr>\n<tr style=\"height: 66px;\">\n<td style=\"width: 31.77737881508079%; height: 66px;\">Can sit up and is steady, but cannot stand</td>\n<td style=\"width: 20.287253141831236%; height: 66px;\">2</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 31.77737881508079%; height: 44px;\">Can sit up, but is unsteady</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">3</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 31.77737881508079%; height: 22px;\">Cannot sit up</td>\n<td style=\"width: 20.287253141831236%; height: 22px;\">4</td>\n</tr>\n<tr style=\"height: 66px;\">\n<td rowspan=\"5\" style=\"width: 24.95511669658887%; height: 286px;\">Eye movement</td>\n<td rowspan=\"5\" style=\"width: 22.800718132854577%; height: 286px;\">Accuracy of tracking a moving finger with eyes and nystagmus</td>\n<td style=\"width: 31.77737881508079%; height: 66px;\">No nystagmus; follows finger with eyes whole time</td>\n<td style=\"width: 20.287253141831236%; height: 66px;\">0</td>\n</tr>\n<tr style=\"height: 66px;\">\n<td style=\"width: 31.77737881508079%; height: 66px;\">Minimal nystagmus; follows finger with eyes whole time</td>\n<td style=\"width: 20.287253141831236%; height: 66px;\">1</td>\n</tr>\n<tr style=\"height: 66px;\">\n<td style=\"width: 31.77737881508079%; height: 66px;\">Moderate nystagmus; only follows finger with eyes for short distance</td>\n<td style=\"width: 20.287253141831236%; height: 66px;\">2</td>\n</tr>\n<tr style=\"height: 66px;\">\n<td style=\"width: 31.77737881508079%; height: 66px;\">Profound nystagmus; unable to follow finger with eyes</td>\n<td style=\"width: 20.287253141831236%; height: 66px;\">3</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 31.77737881508079%; height: 22px;\">Unable to participate</td>\n<td style=\"width: 20.287253141831236%; height: 22px;\">4</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td rowspan=\"5\" style=\"width: 24.95511669658887%; height: 198px;\">Coordination with target pursuit</td>\n<td rowspan=\"5\" style=\"width: 22.800718132854577%; height: 198px;\">Touching their finger to examiner&rsquo;s finger</td>\n<td style=\"width: 31.77737881508079%; height: 44px;\">Steady; accurate finger to target</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">0</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 31.77737881508079%; height: 44px;\">Steady; inaccurate but touches target</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">1</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 31.77737881508079%; height: 44px;\">Unsteady; inaccurate, barely touches target</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">2</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 31.77737881508079%; height: 44px;\">Grossly unsteady; misses finger to target</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">3</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 31.77737881508079%; height: 22px;\">Unable to participate</td>\n<td style=\"width: 20.287253141831236%; height: 22px;\">4</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"5\" style=\"width: 24.95511669658887%; height: 176px;\">Fine motor skills</td>\n<td rowspan=\"5\" style=\"width: 22.800718132854577%; height: 176px;\">Ability to trace a <a href=\"https://cdn-web-img.mdcalc.com/content/HII_tracing.pdf\" target=\"_blank\" rel=\"noopener\">curve between two printed lines </a>on a piece of paper</td>\n<td style=\"width: 31.77737881508079%; height: 22px;\">Traces curve perfectly</td>\n<td style=\"width: 20.287253141831236%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 31.77737881508079%; height: 44px;\">Traces mostly inside lines</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">1</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 31.77737881508079%; height: 44px;\">Traces mostly outside lines</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">2</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 31.77737881508079%; height: 44px;\">Makes mark on paper</td>\n<td style=\"width: 20.287253141831236%; height: 44px;\">3</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 31.77737881508079%; height: 22px;\">Unable to participate</td>\n<td style=\"width: 20.287253141831236%; height: 22px;\">4</td>\n</tr>\n</tbody>\n</table>\n<p></p>",
+        "facts": "<p>The final HII score is obtained by dividing the sum of all subscores by the maximum score for all completed tasks (i.e., 20 if all subscores were obtained, 16 if one assessment was refused). The final scores range from 0 (all items performed perfectly) to 15 (all items performed with maximal impairment). The score cannot be calculated if more than one assessment is refused.</p>\n<p>Estimated time to resolution of impairment = HII Score/0.0616</p>\n<p>See these <a href=\"https://cdn-web-img.mdcalc.com/content/HII_supplement.pdf\" target=\"_blank\" rel=\"noopener\">supplemental pages</a> for more information.&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "Altered Mental Status",
+            "Dizziness",
+            "Nausea",
+            "Numbness",
+            "Vertigo",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Drug/Alcohol Use"
+        ],
+        "logic": "var calc_output = [];\n\n// Declare variables\n\nvar speech = parseFloat(speech) || -2;\nvar gross_motor = parseFloat(gross_motor) || -2;\nvar eye = parseFloat(eye) || -2;\nvar target = parseFloat(target) || -2;\nvar fine_motor = parseFloat(fine_motor) || -2;\n\nvar sum = 0;\n\nvar max_score = 0;\nvar refuse = 0;\n\nif (speech != -2 && speech != 5) {\n  max_score = max_score + 4;\n  if (speech == -1) {\n    sum = sum;\n  } else {\n    sum = sum + speech;\n  }\n} else if (speech == 5) {\n  refuse++;\n}\nif (gross_motor != -2 && gross_motor != 5) {\n  max_score = max_score + 4;\n  if (gross_motor == -1) {\n    sum = sum;\n  } else {\n    sum = sum + gross_motor;\n  }\n} else if (gross_motor == 5) {\n  refuse++;\n}\nif (eye != -2 && eye != 5) {\n  max_score = max_score + 4;\n  if (eye == -1) {\n    sum = sum;\n  } else {\n    sum = sum + eye;\n  }\n} else if (eye == 5) {\n  refuse++;\n}\nif (target != -2 && target != 5) {\n  max_score = max_score + 4;\n  if (target == -1) {\n    sum = sum;\n  } else {\n    sum = sum + target;\n  }\n} else if (target == 5) {\n  refuse++;\n}\nif (fine_motor != -2 && fine_motor != 5) {\n  max_score = max_score + 4;\n  if (fine_motor == -1) {\n    sum = sum;\n  } else {\n    sum = sum + fine_motor;\n  }\n} else if (fine_motor == 5) {\n  refuse++;\n}\n\nvar score = sum/max_score;\nvar time = score/0.0616;\n\nif (speech == -1) {\n  speech = 0;\n}\nif (gross_motor == -1) {\n  gross_motor = 0;\n}\nif (eye == -1) {\n  eye = 0;\n}\nif (target == -1) {\n  target = 0;\n}\nif (fine_motor == -1) {\n  fine_motor = 0;\n}\n\nif (speech == 5) {\n  speech = 'Patient refused';\n}\nif (gross_motor == 5) {\n  gross_motor = 'Patient refused';\n}\nif (eye == 5) {\n  eye = 'Patient refused';\n}\nif (target == 5) {\n  target = 'Patient refused';\n}\nif (fine_motor == 5) {\n  fine_motor = 'Patient refused';\n}\n\nvar msg = '';\n\nif (speech != -2) {\n  msg = msg + '<br/>Speech: ' + speech;\n}\nif (gross_motor != -2) {\n  msg = msg + '<br/>Gross motor: ' + gross_motor;\n}\nif (eye != -2) {\n  msg = msg + '<br/>Eye movement: ' + eye;\n}\nif (target != -2) {\n  msg = msg + '<br/>Coordination with target: ' + target;\n}\nif (fine_motor != -2) {\n  msg = msg + '<br/>Fine motor: ' + fine_motor;\n}\n\nif (refuse > 1) {\n  calc_output.push({\n    name: 'mini',\n    value: '',\n    value_text: '',\n    message: 'Unable to calculate score because patient refused too many tasks'\n  });\n  calc_output.push({\n    name: 'refuse',\n    value: refuse,\n    value_text: 'refused tasks',\n    message: 'Unable to calculate score because patient refused too many tasks'\n  });\n} else if (score > 0) {\n  calc_output.push({\n    name: 'mini',\n    value: sum + '/' + max_score,\n    value_text: '',\n    message: 'HII Score'\n  });\n  calc_output.push({\n    name: 'HII Score',\n    value: sum + '/' + max_score,\n    value_text: '',\n    message: 'HII Score<br/>' + msg\n  });\n  calc_output.push({\n    name: 'HII Index',\n    value: score.toFixed(2),\n    value_text: 'points',\n    message: 'HII Index'\n  });\n  calc_output.push({\n    name: 'time',\n    value: Math.floor(time) + ' to ' + Math.ceil(time),\n    value_text: 'hours',\n    message: 'Estimated time to resolution of impairment'\n  });\n} else {\n  calc_output.push({\n    name: 'mini',\n    value: sum + '/' + max_score,\n    value_text: '',\n    message: 'HII Score'\n  });\n  calc_output.push({\n    name: 'HII Score',\n    value: sum + '/' + max_score,\n    value_text: '',\n    message: 'HII Score<br/>' + msg\n  });\n  calc_output.push({\n    name: 'HII Index',\n    value: score.toFixed(2),\n    value_text: 'points',\n    message: 'HII Index'\n  });\n  calc_output.push({\n    name: 'time',\n    value: Math.floor(time) ,\n    value_text: 'hours',\n    message: 'Estimated time to resolution of impairment'\n  });\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Speech quality and mentation</p>",
+                "name": "speech",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal or baseline speech; conversive and appropriate",
+                        "value": -1
+                    },
+                    {
+                        "label": "Imperfect speech; answers most questions appropriately",
+                        "value": 1
+                    },
+                    {
+                        "label": "Slurred speech; answers few questions appropriately",
+                        "value": 2
+                    },
+                    {
+                        "label": "Slurred speech; does not make sense",
+                        "value": 3
+                    },
+                    {
+                        "label": "Unintelligible speech or only moans",
+                        "value": 4
+                    },
+                    {
+                        "label": "Patient refused task",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Response content",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Gross motor skills</p>",
+                "name": "gross_motor",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Can stand and walk, and is steady",
+                        "value": -1
+                    },
+                    {
+                        "label": "Can stand and walk, but is unsteady",
+                        "value": 1
+                    },
+                    {
+                        "label": "Can sit up and is steady, but cannot stand",
+                        "value": 2
+                    },
+                    {
+                        "label": "Can sit up, but is unsteady",
+                        "value": 3
+                    },
+                    {
+                        "label": "Cannot sit up",
+                        "value": 4
+                    },
+                    {
+                        "label": "Patient refused task",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Stability on sitting, standing, and walking",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Eye movement</p>",
+                "name": "eye",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No nystagmus; follows finger with eyes whole time",
+                        "value": -1
+                    },
+                    {
+                        "label": "Minimal nystagmus; follows finger with eyes whole time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate nystagmus; only follows finger with eyes for short distance",
+                        "value": 2
+                    },
+                    {
+                        "label": "Profound nystagmus; unable to follow finger with eyes",
+                        "value": 3
+                    },
+                    {
+                        "label": "Unable to participate",
+                        "value": 4
+                    },
+                    {
+                        "label": "Patient refused task",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Accuracy of tracking a moving finger with eyes and nystagmus",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Coordination with target pursuit</p>",
+                "name": "target",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Steady; accurate finger to target",
+                        "value": -1
+                    },
+                    {
+                        "label": "Steady; inaccurate but touches target",
+                        "value": 1
+                    },
+                    {
+                        "label": "Unsteady; inaccurate, barely touches target",
+                        "value": 2
+                    },
+                    {
+                        "label": "Grossly unsteady; misses finger to target",
+                        "value": 3
+                    },
+                    {
+                        "label": "Unable to participate",
+                        "value": 4
+                    },
+                    {
+                        "label": "Patient refused task",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Touching their finger to examiner’s finger",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Fine motor skills</p>",
+                "name": "fine_motor",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Traces curve perfectly",
+                        "value": -1
+                    },
+                    {
+                        "label": "Traces mostly inside lines",
+                        "value": 1
+                    },
+                    {
+                        "label": "Traces mostly outside lines",
+                        "value": 2
+                    },
+                    {
+                        "label": "Makes mark on paper",
+                        "value": 3
+                    },
+                    {
+                        "label": "Unable to participate",
+                        "value": 4
+                    },
+                    {
+                        "label": "Patient refused task",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Ability to trace a <a href=\"https://cdn-web-img.mdcalc.com/content/HII_tracing.pdf\" target=\"_blank\" rel=\"noopener\">curve between two printed lines</a> on a piece of paper",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Hack’s Impairment Index (HII)",
+            "hii",
+            "impairment",
+            "alcohol-induced impairment",
+            "alcohol-induced impairment assessment",
+            "alcohol impairment assessment",
+            "impairment index",
+            "alcohol impairment index",
+            "hacks impairment index",
+            "hacks index",
+            "hacks impairment",
+            "hack",
+            "alcohol",
+            "drunk",
+            "alcohol impaired",
+            "sober",
+            "toxicology",
+            "clearance",
+            "psych",
+            "detox",
+            "withdrawal",
+            "alcohol impairment",
+            "HII score",
+            "hack's",
+            "hack's impairment",
+            "hack's impairment score"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Hospitalist Medicine"
+        ]
+    }
+}

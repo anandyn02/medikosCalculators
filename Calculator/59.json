@@ -1,0 +1,80 @@
+{
+    "id": "59",
+    "title": "Canadian Cardiovascular Society (CCS) Angina Grade",
+    "desc": "The Canadian Cardiovascular Society (CCS) Angina Score classifies the degree of effort necessary to induce angina symptoms.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/947585 ",
+                "text": "Campeau L. Letter: Grading of angina pectoris. Circulation. 1976;54(3):522-3."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Higher grade indicates higher severity of angina:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"77\" /><col width=\"371\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Grade</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Description</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">I</p>\n</td>\n<td>\n<p dir=\"ltr\">Angina with strenuous/rapid/prolonged exertion at work or recreation only; no angina with ordinary physical activity, e.g. walking, climbing stairs</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">II</p>\n</td>\n<td>\n<p dir=\"ltr\">Ordinary activity slightly limited: angina with walking/climbing stairs rapidly, walking uphill, walking or stair climbing after meals, in cold/wind, under emotional stress, during few hours after awakening, walking &gt;2 blocks on level ground, or climbing &gt;1 flight of stairs at normal pace and normal conditions</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">III</p>\n</td>\n<td>\n<p dir=\"ltr\">Marked limitation of ordinary physical activity: angina with walking 1-2 blocks on level ground or climbing 1 flight of stairs at normal pace and normal conditions</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">IV</p>\n</td>\n<td>\n<p dir=\"ltr\">Inability to carry on any physical activity without discomfort; anginal syndrome may be present at rest</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Chronic Pain"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Acute Pain",
+            "Congestive Heart Failure",
+            "Heart Failure",
+            "MI",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\n\nvar des = parseFloat(des) \n\nvar grade\n\nif (des == 0) {\n    grade = 'Grade I' \n} \nelse if (des == 1) { \n    grade = 'Grade II'\n}\nelse if (des == 2) { \n    grade = 'Grade III'\n}\nelse if (des == 3) { \n    grade = 'Grade IV'\n}\n\n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: grade,\n    value_text: '',\n    message: 'Higher grade = higher severity' \n    });\ncalc_output.push({\n    name: 'grade',\n    value: grade,\n    value_text: '',\n    message: 'CCS Angina Grade'\n    });\ncalc_output.push({\n    name: 'severity',\n    value: '',\n    value_text: '',\n    message: 'Higher grade indicates higher severity'\n    });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "Description",
+                "name": "des",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Angina with strenuous/rapid/prolonged exertion at work or recreation only; no angina with ordinary physical activity, e.g. walking, climbing stairs",
+                        "value": 0
+                    },
+                    {
+                        "label": "Ordinary activity slightly limited: angina with walking/climbing stairs rapidly, walking uphill, walking or stair climbing after meals, in cold/wind, under emotional stress, during few hours after awakening, walking >2 blocks on level ground, or climbing >1 flight of stairs at normal pace and normal conditions",
+                        "value": 1
+                    },
+                    {
+                        "label": "Marked limitation of ordinary physical activity: angina with walking 1-2 blocks on level ground or climbing 1 flight of stairs at normal pace and normal conditions",
+                        "value": 2
+                    },
+                    {
+                        "label": "Inability to carry on any physical activity without discomfort; anginal syndrome may be present at rest",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Angina",
+            "angina score",
+            "Canadian cardiovascular society",
+            "CCS",
+            "myocardial infarction",
+            " MI",
+            "heart attack",
+            "ccs angina"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Internal Medicine",
+            "Family Practice",
+            "Primary Care",
+            "Critical Care"
+        ]
+    }
+}

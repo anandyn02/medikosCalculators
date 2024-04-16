@@ -1,0 +1,114 @@
+{
+    "id": "149",
+    "title": "Nutritional Risk Index (NRI)",
+    "desc": "The Nutritional Risk Index (NRI) quantifies malnutrition, validated in many populations.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3124597",
+                "text": "Buzby GP, Williford WO, Peterson OL, et al. A randomized clinical trial of total parenteral nutrition in malnourished surgical patients: the rationale and impact of previous clinical trials and pilot study on protocol design. Am J Clin Nutr. 1988;47(2 Suppl):357-65."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">NRI = (1.519 x serum albumin, g/L) + (41.7 x present weight, kg / usual weight*, kg)</p>\n<p dir=\"ltr\">*Usual weight&nbsp;is defined as stable body weight for last 6 months.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"*\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>NRI Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of malnutrition</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;100.0</p>\n</td>\n<td>\n<p dir=\"ltr\">No risk</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">97.6-100.0</p>\n</td>\n<td>\n<p dir=\"ltr\">Mild</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">83.5-97.5</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;83.5</p>\n</td>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-55a6c610-7fff-e563-660f-704639e01c2a\">From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/26937075\" target=\"_blank\" rel=\"noopener\">Prasad 2016</a>.</span></p>",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            }
+        ],
+        "primary_complains": [
+            "Fatigue",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Malnutrition"
+        ],
+        "logic": "var calc_output = [];\n\nvar weight = parseFloat(weight1)/parseFloat(weight2);\nvar alb = parseFloat(alb);\n\nif (UOMSYSTEM == true) {\n  alb = alb*10;\n}\n\nvar nri = 1.519*alb + 41.7*weight;\n\nvar nri = Math.round(nri * 10) / 10;\n\nvar risk, msg;\n\nif (nri > 100) {\n  risk = 'No risk';\n  msg = '';\n} else if (nri >= 97.6 && nri <= 100) {\n  risk = 'Mild';\n  msg = 'risk';\n} else if (nri >= 83.5 && nri <= 97.5) {\n  risk = 'Moderate';\n  msg = 'risk';\n} else if (nri < 83.5) {\n  risk = 'Severe';\n  msg = 'risk';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: nri,\n    value_text: 'points',\n    message: risk + ' ' + msg\n});\ncalc_output.push({\n    name: '10202_Nutritional Risk Index (NRI)_result',\n    value: nri,\n    value_text: 'points',\n    message: 'NRI Score'   \n    });\ncalc_output.push({\n    name: '10202_Nutritional Risk Index (NRI)_interpretation',\n    value: risk, \n    value_text: msg,\n    message: 'Risk of malnutrition'\n});\n  ",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Serum albumin",
+                "name": "alb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Present weight",
+                "name": "weight1",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Usual weight",
+                "name": "weight2",
+                "optional": false,
+                "tips_en": "Defined as stable body weight for last 6 months",
+                "type": "textbox",
+                "unit": "wt"
+            }
+        ],
+        "can_search": [
+            "Nutrition",
+            "malnutrition",
+            "nutritional risk index",
+            "nri"
+        ],
+        "specialty": [
+            "Clinical Nutrition",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Primary Care",
+            "Surgery (General)"
+        ]
+    }
+}

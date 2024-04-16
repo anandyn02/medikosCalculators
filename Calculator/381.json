@@ -1,0 +1,223 @@
+{
+    "id": "381",
+    "title": "Confusion Assessment Method for the ICU (CAM-ICU)",
+    "desc": "The Confusion Assessment Method for the ICU (CAM-ICU) monitors delirium in ICU patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2240918",
+                "text": " Inouye SK, van Dyck CH, Alessi CA, Balkin S, Siegal AP, Horwitz RI. Clarifying confusion: the confusion assessment method. A new method for detection of delirium. Ann Intern Med. 1990;113(12):941–948."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11730446",
+                "text": "Ely EW, Inouye SK, et. al. Delirium in mechanically ventilated patients: validity and reliability of the confusion assessment method for the intensive care unit (CAM-ICU).JAMA. 2001 Dec 5;286(21):2703-10."
+            },
+            {
+                "href": "https://ccforum.com/content/16/4/R115",
+                "text": "Gusmao-Flores D, Salluh JIF, Chalhub RÁ, Quarantini LC. The confusion assessment method for the intensive care unit (CAM-ICU) and intensive care delirium screening checklist (ICDSC) for the diagnosis of delirium: a systematic review and meta-analysis of clinical studies. Crit Care. 2012;16(4):R115."
+            },
+            {
+                "href": "https://www.icudelirium.org/docs/CAM_ICU_training.pdf",
+                "text": "Ely EW, and Vanderbilt University. Confusion Assessment Method for the ICU (CAM-ICU). The Complete Training Manual. Revised 2014."
+            }
+        ],
+        "evidence": "<p>Algorithm of Yes/No questions.</p>",
+        "facts": "<p>The patient is CAM-ICU positive (patient has delirium) if:</p>\n<ul>\n<li>RASS &ge; -3, AND</li>\n<li>Acute onset change in mental status or fluctuating course in mental status, AND</li>\n<li>&gt;2 errors in letters attention test, AND</li>\n<li>Either <calculator id=\"1872\">RASS</calculator> is not 0, OR combined number of errors to questions and commands &gt;1&nbsp;</li>\n</ul>\n<p>For more information and a schematic of questions, see <a title=\"here\" href=\"https://www.icudelirium.org/docs/CAM_ICU_training.pdf\" target=\"_blank\" rel=\"noopener\">this CAM-ICU training manual</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS"
+        ],
+        "disease_treated": [
+            "Delirium"
+        ],
+        "logic": "var calc_output = [];\nvar msg, msgalt, mini_v;\nif (rass_3 == 0) { \n    mini_v = 'Too sedated';\n    msg = 'Patient is too sedated';\n    msgalt = 'Complete CAM-ICU at a later time.' \n} else if (rass_3 == 1) {\n    if (baseline_status == 0 && mental_status == 0) { \n        mini_v = 'Negative';\n        msg = 'CAM-ICU negative';\n        msgalt = 'Delirium absent.' \n    } else if (baseline_status == 1 || mental_status == 1) {\n        if (attention_test == 1) {\n            if (rass_score == 0 && error_questions == 0) { \n                mini_v = 'Negative';\n                msg = 'CAM-ICU negative';\n                msgalt = 'Delirium absent.' \n            } else if (rass_score == 1 || error_questions == 1) {\n                mini_v = 'Positive';\n                msg = 'CAM-ICU positive';\n                msgalt = 'Delirium present.' \n            } \n        } \n        else {\n            mini_v = 'Negative';\n            msg = 'CAM-ICU negative';\n            msgalt = 'Delirium absent.' \n        }\n    } \n}\nelse {\n        mini_v = 'Negative';\n        msg = 'CAM-ICU negative';\n        msgalt = 'Delirium absent.' \n    } \ncalc_output.push({ \n    name: 'mini', \n    value: mini_v, \n    value_text: ' ', \n    message: 'CAM-ICU' \n});\ncalc_output.push({ \n    name: '1870_CAM-ICU_result', \n    value: msg, \n    value_text: ' ', \n    message: msgalt \n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Level of Consciousness",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<calculator id='1872'>RASS</calculator> ≥ -3",
+                "md_calc_info_concept": null,
+                "name": "rass_3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Or other scoring system shows sufficient level of consciousness",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Feature 1: Acute Onset or Fluctuating Course",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "rass_3 == 1",
+                "default": 0,
+                "label_en": "Patient different than baseline, pre-hospital mental status",
+                "md_calc_info_concept": null,
+                "name": "baseline_status",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "rass_3 == 1",
+                "default": 0,
+                "label_en": "Patient with fluctuating mental status in past 24 hours by fluctuation of level of consciousness/sedation",
+                "md_calc_info_concept": null,
+                "name": "mental_status",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Feature 2: Inattention",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "rass_3 == 1 && (baseline_status == 1 || mental_status ==1)",
+                "default": 0,
+                "label_en": "Letters attention test with >2 errors",
+                "md_calc_info_concept": null,
+                "name": "attention_test",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Say C-A-S-A-B-L-A-N-C-A. Patient should squeeze your hand when the letter A is spoken. Error is missing an A or squeezing without an A.",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Feature 3: Altered Level of Consciousness",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "rass_3 == 1 && (baseline_status == 1 || mental_status ==1) && attention_test == 1",
+                "default": 0,
+                "label_en": "<calculator id='1872'>RASS</calculator> is not 0 (alert and calm)",
+                "md_calc_info_concept": null,
+                "name": "rass_score",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Feature 4: Disorganized Thinking (modal)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "rass_3 == 1 && (baseline_status == 1 || mental_status ==1) && attention_test == 1",
+                "default": 0,
+                "label_en": "Combined number of errors to questions and commands >1 ",
+                "md_calc_info_concept": null,
+                "name": "error_questions",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Ask the patient the following yes/no questions and count errors: 1. Will a stone float on water?;  2. Are there fish in the sea?;  3. Does 1 pound weigh more than 2 pounds?;  4. Can you use a hammer to pound a nail? Next, ask the patient to follow your commands:  a) “Hold up this many fingers” (hold up 2 fingers) ; b) “Now do the same thing with the other hand” (do not demonstrate the number of fingers). If unable to move both arms, for part “b” ask patient to hold up one more finger. Count errors if patient is unable to complete the entire command.",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ICU",
+            "CAM",
+            "CAM-ICU",
+            "delirium",
+            "CAMICU",
+            "CAM ICU"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Psychiatry"
+        ]
+    }
+}

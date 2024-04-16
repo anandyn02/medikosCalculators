@@ -1,0 +1,197 @@
+{
+    "id": "456",
+    "title": "CEDOCS Score for Emergency Department Overcrowding",
+    "desc": "The Community Emergency Department Overcrowding Scale (CEDOCS) estimates severity of overcrowding in emergency departments.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25234796",
+                "text": "Weiss SJ, Rogers DB, Maas F, Ernst AA, Nick TG. Evaluating community ED crowding: the Community ED Overcrowding Scale study. Am J Emerg Med. 2014 Nov;32(11):1357-63. doi: 10.1016/j.ajem.2014.08.035. Epub 2014 Aug 22."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>CEDOCS Score =&nbsp;&ndash;29.53 + (3.14 x critical care patients in the ED) + (0.52 x waiting time of longest admitted patient) + (1.14 x number of patients in waiting room) + (20.55 x ratio of total ED patients to number of ED beds) + (0.00124 x ED visits per year) + A + B + C + D (additional variables&nbsp;based on ED visits per year) as follows:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Threshold</strong></p>\n</td>\n<td><strong>Additional variables*</strong></td>\n</tr>\n<tr>\n<td>\n<p>If ED visits per year &ge;18,811</p>\n</td>\n<td>\n<p>A = &ndash; [(1.09 x 10<sup>-12</sup>)&nbsp;x (ED visits per year&nbsp;&ndash;&nbsp;18,811)<sup>3</sup>]</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>If ED visits per year &ge;43,012</p>\n</td>\n<td>\n<p>B = [(8.18 x 10<sup>-12</sup>) x (ED visits per year&nbsp;&ndash;&nbsp;43,012)<sup>3</sup>]</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>If ED visits per year &ge;49,466</p>\n</td>\n<td>\n<p>C = &ndash; [(8.18 x 10<sup>-12</sup>) x (ED visits per year&nbsp;&ndash;&nbsp;49,466)<sup>3</sup>]</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>If ED visits per year &ge;67,273</p>\n</td>\n<td>\n<p>D = [(1.08 x 10<sup>-12</sup>) x (ED visits per year&nbsp;&ndash;&nbsp;67,273)<sup>3</sup>]</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Include all variables in scoring where &ldquo;ED visits per year&rdquo; is greater than or equal to the threshold. If &ldquo;ED visits per year&rdquo; does not meet the threshold requirement, count&nbsp;variable as 0. For example, if ED visits per year is &ge;43,012, final CEDOCS Score = CEDOCS Score&nbsp;+ A + B.&nbsp;</p>\n<p>Note: Final CEDOCS Score is multiplied by the scaling factor specified. If no scaling factor or a scaling factor of 0 is specified, final CEDOCS Score is multplied by 2.</p>\n<p></p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: left;\">\n<p>Level</p>\n</th>\n<th style=\"text-align: left;\">Score</th>\n<th style=\"text-align: left;\">Interpretation</th>\n</tr>\n<tr>\n<td>\n<p>Level 1</p>\n</td>\n<td>1-20</td>\n<td>Not busy</td>\n</tr>\n<tr>\n<td>\n<p>Level 2</p>\n</td>\n<td>21-60</td>\n<td>Busy</td>\n</tr>\n<tr>\n<td>\n<p>Level 3</p>\n</td>\n<td>61-100</td>\n<td>Extremely busy but not overcrowded</td>\n</tr>\n<tr>\n<td>\n<p>Level 4</p>\n</td>\n<td>101-140</td>\n<td>Overcrowded</td>\n</tr>\n<tr>\n<td>\n<p>Level 5</p>\n</td>\n<td>141-180</td>\n<td>Severely overcrowded</td>\n</tr>\n<tr>\n<td>\n<p>Level 6</p>\n</td>\n<td>181-200</td>\n<td>Dangerously overcrowded</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "Patients",
+                "unit": "patients",
+                "error_min": "-1",
+                "error_max": "500",
+                "warn_min": "1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "patients",
+                "units_us": "patients"
+            },
+            {
+                "name": "Patients",
+                "unit": "unitless",
+                "error_min": "-1",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": " ",
+                "units_us": " "
+            },
+            {
+                "name": "Hours",
+                "unit": "time",
+                "error_min": "0",
+                "error_max": "72",
+                "warn_min": "0.999",
+                "warn_max": "24.001",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "hours",
+                "units_us": "hours"
+            },
+            {
+                "name": "Beds",
+                "unit": "beds",
+                "error_min": "-1",
+                "error_max": "10000",
+                "warn_min": "1",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "beds",
+                "units_us": "beds"
+            },
+            {
+                "name": "Visits Per Year",
+                "unit": "visits",
+                "error_min": "-1",
+                "error_max": "1000000",
+                "warn_min": "1000",
+                "warn_max": "200000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "visits/yr",
+                "units_us": "visits/yr"
+            }
+        ],
+        "primary_complains": [
+            "Any/All"
+        ],
+        "disease_treated": [
+            "Public Health"
+        ],
+        "logic": "var calc_output = [];\n\n    var msg = '';\n    var level = '';\n    var gtot;\n    var c = parseFloat(edbeds);\n    var d = parseFloat(totalpts);\n    var e = parseFloat(criticalpts);\n    var f = parseFloat(waitingtime);\n    var g = parseFloat(edvisits);\n    var h = parseFloat(waitingroompts);\n    var k = parseFloat(scalingfactor);\n    var m = 0.1;\n    var l = 2;\n    var z = (k * 1);\n    if (k < m) z = (l * 1);\n    var con1 = 18811;\n    var con2 = 43012;\n    var con3 = 49466;\n    var con4 = 67273;\n    var gval1 = 0.001242525 * g;\n    var gval2 = 0.0000000000010942811 * ((g - 18811) * (g - 18811) * (g - 18811));\n    var gval3 = ((g - 43012) * (g - 43012) * (g - 43012)) * 8.1755923e-12;\n    var gval4 = ((g - 49466) * (g - 49466) * (g - 49466)) * 8.1755923e-12;\n    var gval5 = ((g - 67273) * (g - 67273) * (g - 67273)) * 1.0793556e-12;\n    if (g > con4) gtot = gval1 - gval2 + gval3 - gval4 + gval5;\n    if (g < con4) gtot = gval1 - gval2 + gval3 - gval4;\n    if (g < con3) gtot = gval1 - gval2 + gval3;\n    if (g < con2) gtot = gval1 - gval2;\n    if (g < con1) gtot = gval1;\n    var gcheck = (k);\n    gtot = (gtot + e * 3.1379478 + f * 0.51702033 + h * 1.1446639 + (d / c) * 20.545758 - 29.52616);\n    gtot = gtot * z;\n    if (gtot > 200) { gtot = 200; }\n    if (gtot < 0) { gtot = 0; }\n    if (gtot < 21) { level = 'Level 1';\n        msg = 'Not Busy';}\n    if (gtot > 20 && gtot < 61) { level = 'Level 2';\n        msg = 'Busy';}\n    if (gtot > 60 && gtot < 101) { level = 'Level 3';\n        msg = 'Extremely busy but not overcrowded';}\n    if (gtot > 100 && gtot < 141) { level = 'Level 4';\n        msg = 'Overcrowded'; }\n    if (gtot > 140 && gtot < 181) { level = 'Level 5';\n        msg = 'Severely overcrowded';}\n    if (gtot > 180) { level = 'Level 6';\n        msg = 'Dangerously overcrowded';}\n\ncalc_output.push({\n    name: 'mini',\n    value: level,\n    value_text: '('+gtot.toFixed(0)+')',\n    message: msg\n});\ncalc_output.push({\n    name: '3142_CEDOCS_result',\n    value: level,\n    value_text: '('+gtot.toFixed(0)+')',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of ED beds",
+                "name": "edbeds",
+                "optional": false,
+                "tips_en": "Total licensed number of beds",
+                "type": "textbox",
+                "unit": "beds"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "ED visits per year",
+                "name": "edvisits",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "visits"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Total patients in the ED",
+                "name": "totalpts",
+                "optional": false,
+                "tips_en": "Include patients doubled up in rooms and hallway beds",
+                "type": "textbox",
+                "unit": "patients"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Critical care patients in the ED",
+                "name": "criticalpts",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "patients"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of patients in waiting room",
+                "name": "waitingroompts",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "patients"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Waiting time of longest admitted patient",
+                "name": "waitingtime",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "time"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Scaling factor",
+                "name": "scalingfactor",
+                "optional": true,
+                "tips_en": "Advanced users only, can ignore",
+                "type": "textbox",
+                "unit": "unitless"
+            }
+        ],
+        "can_search": [
+            "DOCS",
+            "emergency",
+            "overcrowding",
+            "crowded"
+        ],
+        "specialty": [
+            "Administration",
+            "Emergency Medicine",
+            "Pediatrics"
+        ]
+    }
+}

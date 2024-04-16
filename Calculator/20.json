@@ -1,0 +1,215 @@
+{
+    "id": "20",
+    "title": "ARISCAT Score for Postoperative Pulmonary Complications",
+    "desc": "The ARISCAT Score for Postoperative Pulmonary Complications predicts risk of pulmonary complications after surgery, including respiratory failure. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21045639",
+                "text": "Canet J, Gallart L, Gomar C, et al. Prediction of postoperative pulmonary complications in a population-based surgical cohort. Anesthesiology. 2010;113(6):1338-50."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"151\"><col width=\"97\"><col width=\"71\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Age, years</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;50</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">51-80</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;80</p>\n</td>\n<td>\n<p dir=\"ltr\">16</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Preoperative SpO<sub>2</sub></p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;96%</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">91-95%</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;90%</p>\n</td>\n<td>\n<p dir=\"ltr\">24</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Respiratory infection in the last month*</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">17</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Preoperative anemia (Hgb &le;10 g/dL)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">11</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Surgical incision</p>\n</td>\n<td>\n<p dir=\"ltr\">Peripheral</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Upper abdominal</p>\n</td>\n<td>\n<p dir=\"ltr\">15</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Intrathoracic</p>\n</td>\n<td>\n<p dir=\"ltr\">24</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Duration of surgery</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;2 hrs</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2-3 hrs</p>\n</td>\n<td>\n<p dir=\"ltr\">16</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;3 hrs</p>\n</td>\n<td>\n<p dir=\"ltr\">23</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Emergency procedure</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Either upper or lower (i.e., URI, bronchitis, pneumonia), with fever and antibiotic treatment</p>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"92\"><col width=\"110\"><col width=\"222\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>ARISCAT Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of in-hospital postoperative pulmonary complications*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;26</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">1.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">26&ndash;44</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">13.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;45</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">42.1%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span id=\"docs-internal-guid-96a0fce1-fee4-78c2-3c06-2172cb9b14a3\"></span></p>\n<p dir=\"ltr\">*Complications were defined as a composite including respiratory failure, respiratory infection, pleural effusion, atelectasis on chest x-ray, pneumothorax, bronchospasm treated with bronchodilators, and aspiration pneumonitis.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Pneumonia",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age)\nvar oxygen = parseFloat(oxygen)\nvar infection = parseFloat(infection)\nvar anemia = parseFloat(anemia)\nvar incision = parseFloat(incision)\nvar duration = parseFloat(duration)\nvar emergency = parseFloat(emergency)\n\nvar score = age + oxygen + infection + anemia + incision + duration + emergency\n\nvar risk, rate\n\nif (score < 26) {\n\trisk = 'Low'\n\trate = 1.6\n}\nelse if (score >= 26 && score <= 44) {\n\trisk = 'Intermediate'\n\trate = 13.3\n}\nelse {\n\trisk = 'High'\n\trate = 42.1\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '10022_ARISCAT Score_result',\n    value: score,\n    value_text: 'points',\n    message: 'ARISCAT Score'\n});\ncalc_output.push({\n    name: '10022_ARISCAT Score_interpretation',\n    value: risk, \n    value_text: 'risk',\n    message: rate + '% risk of in-hospital post-op pulmonary complications (composite including respiratory failure, respiratory infection, pleural effusion, atelectasis, pneumothorax, bronchospasm, aspiration pneumonitis)'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age, years",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤50",
+                        "value": 0
+                    },
+                    {
+                        "label": "51-80",
+                        "value": 3
+                    },
+                    {
+                        "label": ">80",
+                        "value": 16
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Preoperative SpO₂",
+                "mdcalc_info_concept": null,
+                "name": "oxygen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥96%",
+                        "value": 0
+                    },
+                    {
+                        "label": "91-95%",
+                        "value": 8
+                    },
+                    {
+                        "label": "≤90%",
+                        "value": 24
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Respiratory infection in the last month",
+                "md_calc_info_concept": null,
+                "name": "infection",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 17
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Either upper or lower (i.e., URI, bronchitis, pneumonia), with fever and antibiotic treatment",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Preoperative anemia (Hgb ≤10 g/dL)",
+                "md_calc_info_concept": null,
+                "name": "anemia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 11
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Surgical incision",
+                "mdcalc_info_concept": null,
+                "name": "incision",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Peripheral",
+                        "value": 0
+                    },
+                    {
+                        "label": "Upper abdominal",
+                        "value": 15
+                    },
+                    {
+                        "label": "Intrathoracic",
+                        "value": 24
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Duration of surgery",
+                "mdcalc_info_concept": null,
+                "name": "duration",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2 hrs",
+                        "value": 0
+                    },
+                    {
+                        "label": " 2-3 hrs",
+                        "value": 16
+                    },
+                    {
+                        "label": ">3 hrs",
+                        "value": 23
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Emergency procedure",
+                "md_calc_info_concept": null,
+                "name": "emergency",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ARISCAT",
+            "postoperative",
+            "pulmonary complications",
+            "anesthesia risk"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Surgery (Cardiothoracic)",
+            "Surgery (General)",
+            "Surgery (Vascular)"
+        ]
+    }
+}

@@ -1,0 +1,198 @@
+{
+    "id": "503",
+    "title": "Mayo Score/Disease Activity Index (DAI) for Ulcerative Colitis",
+    "desc": "Mayo Score / Disease Activity Index (DAI) for Ulcerative Colitis assesses severity of current ulcerative colitis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3317057",
+                "text": "Schroeder KW, Tremaine WJ, Ilstrup DM. Coated oral 5-aminosalicylic acid therapy for mildly to moderately active ulcerative colitis. A randomized study. N Engl J Med. 1987 Dec 24;317(26):1625-9. PMID: 3317057."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2597552/",
+                "text": "Lewis JD, et. al. Use of the Non-invasive Components of the Mayo Score to Assess Clinical Response in Ulcerative Colitis. Inflamm Bowel Dis. Dec 2008; 14(12): 1660–1666. doi: 10.1002/ibd.20520."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3569765",
+                "text": "Sutherland LR, et al. 5-Aminosalicylic acid enema in the treatment of distal ulcerative colitis, proctosigmoiditis, and proctitis. Gastroenterology 92.6; 1987: 1894-1898."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4124270/",
+                "text": "Paine ER. Colonoscopic evaluation in ulcerative colitis. Gastroenterology report 2.3; 2014: 161-168."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17258735",
+                "text": "D’Haens G, et al. A review of activity indices and efficacy end points for clinical trials of medical therapy in adults with ulcerative colitis. Gastroenterology 132.2; 2007: 763-786."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25550182",
+                "text": "Manginot C et al. An endoscopic Mayo score of 0 is associated with a lower risk of colectomy than a score of 1 in ulcerative colitis. Gut 64.7; 2015: 1181."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8299896",
+                "text": "Irvine EJ, et al. Quality of life: a valid and reliable measure of therapeutic efficacy in the treatment of inflammatory bowel disease. Canadian Crohn's Relapse Prevention Trial Study Group. Gastroenterology 106.2; 1994: 287-296."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144850",
+                "text": "Sandborn WJ, et al. Ozanimod Induction and Maintenance Treatment for Ulcerative Colitis. New England Journal of Medicine 374.18; 2016: 1754-1762."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Point Value</th>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"2\"><strong>Stool Frequency</strong></td>\n</tr>\n<tr>\n<td>Normal</td>\n<td>0</td>\n</tr>\n<tr>\n<td>1&ndash;2 stools/day more than normal</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>3&ndash;4 stools/day more than normal</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&gt;4 stools/day more than normal</td>\n<td>+3</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"2\"><strong>Rectal bleeding*</strong></td>\n</tr>\n<tr>\n<td>None</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Visible blood with stool less than half the time</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Visible blood with stool half of the time or more</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Passing blood alone</td>\n<td>+3</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"2\"><strong>Mucosal appearance at endoscopy</strong></td>\n</tr>\n<tr>\n<td>Normal or inactive disease</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Mild disease (erythema, decreased vascular pattern, mild friability)</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Moderate disease (marked erythema, absent vascular pattern, friability, erosions)</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Severe disease (spontaneous bleeding, ulceration)</td>\n<td>+3</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"2\"><strong>Physician rating of disease activity</strong></td>\n</tr>\n<tr>\n<td>Normal</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Mild</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Moderate</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Severe</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n<p>*Assigning a score of 3 requires patients to have &ge;50% of bowel movement accompanied by visible blood and 1+ bowel movement with blood alone.</p>\n</div>\n<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>The higher the score, the more severe the case of ulcerative colitis.</li>\n<li>The highest score possible is a 12.</li>\n<li>Scores should be compared to previous scores taken for a patient.</li>\n<li>The mucosal appearance at endoscopy is not included in the Partial Mayo Score.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Bleeding",
+            "Blood in Stool",
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Autoimmune Disorders",
+            "Colitis",
+            "Gastroenteritis",
+            "GI Bleeding",
+            "Inflammatory Bowel Disease"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(stool)+parseFloat(rectal)+parseFloat(mucos)+parseFloat(rating);\nvar msg = 'Scores should be compared to previous scores taken for a patient. <br/><br/>The higher the score (maximum 12 points), the more severe the ulcerative colitis.';\nvar mini_msg = 'Higher scores (maximum 12 points) indicate more severe ulcerative colitis.';\n\ncalc_output.push({ name: 'mini', value: u, value_text: 'points', message: mini_msg });\ncalc_output.push({ name: '3675_Mayo DAI_result', value: u, value_text: 'points', message: msg });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Stool frequency</p>",
+                "mdcalc_info_concept": null,
+                "name": "stool",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-2 stools/day more than normal",
+                        "value": 1
+                    },
+                    {
+                        "label": "3-4 stools/day more than normal",
+                        "value": 2
+                    },
+                    {
+                        "label": ">4 stools/day more than normal",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Rectal bleeding</p>",
+                "mdcalc_info_concept": null,
+                "name": "rectal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Visible blood with stool less than half the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Visible blood with stool half of the time or more",
+                        "value": 2
+                    },
+                    {
+                        "label": "Passing blood alone",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "3 points requires patients to have ≥50% of BMs with visible blood AND ≥1 BM with blood alone.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Mucosal appearance at endoscopy</p>",
+                "mdcalc_info_concept": null,
+                "name": "mucos",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal or inactive disease",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild disease (erythema, decreased vascular pattern, mild friability)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate disease (marked erythema, absent vascular pattern, friability, erosions)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe disease (spontaneous bleeding, ulceration)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Physician rating of disease activity</p>",
+                "mdcalc_info_concept": null,
+                "name": "rating",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "mayo",
+            "DAI",
+            "ulcerative colitis",
+            "colitis",
+            "rectal bleed",
+            "melena",
+            "blood in stool",
+            "endoscopy",
+            "uc"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

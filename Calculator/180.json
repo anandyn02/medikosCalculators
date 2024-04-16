@@ -1,0 +1,203 @@
+{
+    "id": "180",
+    "title": "Severe Community-Acquired Pneumonia (SCAP) Score",
+    "desc": "The Severe Community-Acquired Pneumonia (SCAP) Score predicts risk of adverse outcomes in ED patients with community-acquired pneumonia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16973986",
+                "text": "España PP, Capelastegui A, Gorordo I, et al. Development and validation of a clinical prediction rule for severe community-acquired pneumonia. Am J Respir Crit Care Med. 2006;174(11):1249-56."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<table width=\"471\" height=\"403\">\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p><strong>Variable</strong></p>\n</td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td rowspan=\"2\">Arterial pH &lt;7.30</td>\n<td>\n<p>Yes</p>\n</td>\n<td>13</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Systolic pressure &lt;90 mmHg</td>\n<td>\n<p>Yes</p>\n</td>\n<td>11</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Respiratory rate &gt;30 breaths/min</td>\n<td>\n<p>Yes</p>\n</td>\n<td>9</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">BUN &gt;30 mg/dL (&gt;10.7 mmol/L)</td>\n<td>\n<p>Yes</p>\n</td>\n<td>5</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Altered mental status (e.g. confusion)</td>\n<td>\n<p>Yes</p>\n</td>\n<td>5</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">PaO<sub>2</sub> &lt;54 mmHg (or PaO<sub>2</sub>/FiO<sub>2</sub>&nbsp;&lt;250 mmHg)</td>\n<td>\n<p>Yes</p>\n</td>\n<td>6</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Age &ge;80 years</td>\n<td>\n<p>Yes</p>\n</td>\n<td>5</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Multilobar/bilateral X-ray</td>\n<td>\n<p>Yes</p>\n</td>\n<td>5</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<table width=\"407\" height=\"272\">\n<tbody>\n<tr>\n<td><strong>SCAP Score*</strong></td>\n<td><strong>Risk of SCAP**</strong></td>\n</tr>\n<tr>\n<td>0</td>\n<td>0.27-3.43%</td>\n</tr>\n<tr>\n<td>1-9</td>\n<td>0.66-3.25%</td>\n</tr>\n<tr>\n<td>10-19</td>\n<td>9.23-11.24%</td>\n</tr>\n<tr>\n<td>20-29</td>\n<td>36.62-41.82%</td>\n</tr>\n<tr>\n<td>&ge;30</td>\n<td>50%</td>\n</tr>\n</tbody>\n</table>\n<p>*Patients with scores &ge;10 are classified as having severe community-acquired pneumonia and are recommended for ICU, monitored bed, and/or immediate intervention.&nbsp;&nbsp;</p>\n<p>**Defined as in-hospital death, septic shock, and/or need for mechanical ventilation.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(five)+parseFloat(six)+parseFloat(seven)+parseFloat(eight);\n\nvar level;\nvar risk;\n\nif (criteria==0) {\n  risk='0.27-3.43';\n}\n\nif (criteria>=1 && criteria<=9) {\n  risk='0.66-3.25';\n}\n\nif (criteria>=10 && criteria<=19) {\n  risk='9.23-11.24';\n}\n\nif (criteria>=20 && criteria<=29) {\n  risk='36.62-41.82';\n}\n\nif (criteria>=30) {\n  risk='50';\n}\n\nvar msg;\nif (criteria >= 10) {\n  msg = '<br/><br/>Recommended for ICU, monitored bed, and/or immediate intervention';\n} else {\n  msg = '';\n}\n\n//results\n\ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text: 'points',\n    message: risk + '% risk of SCAP',\n});\ncalc_output.push({\n    name: 'criteria',\n    value: criteria,\n    value_text: 'points',\n    message: 'SCAP Score',\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '%',\n    message: 'Risk of SCAP' + msg,\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Arterial pH &lt;7.30</p>",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 13
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Systolic pressure &lt;90 mmHg</p>",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 11
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Respiratory rate &gt;30 breaths/min</p>",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 9
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><abbr title=\"Blood urea nitrogen\">BUN</abbr> &gt;30 mg/dL (&gt;10.7 mmol/L)</p>",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Altered mental status</p>",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "E.g. confusion",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>PaO<sub>2</sub> &lt;54 mmHg (or PaO<sub>2</sub>/FiO<sub>2</sub> &lt;250 mmHg)</p>",
+                "name": "six",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Age &ge;80 years</p>",
+                "name": "seven",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Multilobar/bilateral X-ray</p>",
+                "name": "eight",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Severe Community-Acquired Pneumonia (SCAP) Score, SCAP score,Severe Community-Acquired Pneumonia Score, community acquired pneumonia, community-acquired pneumonia, SCAP diagnosis, CAP, severe pneumonia, severe pneumonia diagnosis, pneumonia score, severe pneumonia score, pneumonia severity, scap, coronaivirus, corona virus, covid-19, covid 19, covid19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

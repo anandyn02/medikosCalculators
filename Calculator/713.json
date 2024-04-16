@@ -1,0 +1,295 @@
+{
+    "id": "713",
+    "title": "Ranson's Criteria for Pancreatitis Mortality",
+    "desc": "The Ranson's Criteria for Pancreatitis Mortality Estimates mortality of patients with pancreatitis, based on initial and 48-hour lab values.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4834279",
+                "text": "Ranson JH, Rifkind KM, Roses DF, Fink SD, Eng K, Spencer FC. Prognostic signs and the role of operative management in acute pancreatitis. Surg Gynecol Obstet. 1974 Jul;139(1):69-81. PubMed PMID: 4834279."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the assigned points.</p>",
+        "facts": "<p>Ranson's Criteria was developed in the 1970s to address pancreatitis mortality; however, it may over-estimate mortality given its study and development 30-40 years ago. The <calculator id=\"1735\">BISAP Score</calculator> requires fewer patient variables and is likely just as accurate -- if not more so -- than Ranson's criteria for predicting adverse outcome in patients with acute pancreatitis.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Pancreatitis"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(wbc_16k) + parseFloat(age_55) + parseFloat(glucose_200) + parseFloat(ast_250) + parseFloat(ldh_350);\nvar v = u + parseFloat(hct_10) + parseFloat(bun_5) + parseFloat(ca_8) + parseFloat(po2_60) + parseFloat(base_deficit_4) + parseFloat(fluid_needs_6);\nvar msg = '';\nvar txt = '';\nif (u < 3) { txt = 'Severe pancreatitis unlikely.'; }\nif (u == 3 || u == 4) { txt = 'Severe pancreatitis likely. Consider ICU admission.'; }\nif (u == 5 || u == 6) { txt = 'Severe pancreatitis likely. Consider ICU admission.'; }\nif (u > 6) { txt = 'Severe pancreatitis likely. Consider ICU admission.'; }\nif (v < 3) { msg = '1% predicted mortality.'; }\nif (v == 3 || v == 4) { msg = '15% predicted mortality.'; }\nif (v == 5 || v == 6) { msg = '40% predicted mortality.' }\nif (v > 6) { msg = '100% predicted mortality.'; }\n\ncalc_output.push({ \n    name: 'mini', \n    value: v.toFixed(0), \n    value_text: 'points', \n    message: msg \n});\ncalc_output.push({\n    name: \"89_Ranson's Criteria_result (admission)\", \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: \"Ranson's Criteria (On Admission)<br/><br/>\" + txt \n});\ncalc_output.push({ \n    name: \"89_Ranson's Criteria_result (cumulative)\", \n    value: v.toFixed(0), \n    value_text: 'points', \n    message: \"Ranson's Criteria (Cumulative)<br/><br/>\" + msg \n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "On Admission",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>WBC &gt;16k</p>",
+                "md_calc_info_concept": null,
+                "name": "wbc_16k",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Age &gt;55 years</p>",
+                "md_calc_info_concept": null,
+                "name": "age_55",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Glucose &gt;200 mg/dL (&gt;11.1 mmol/L)</p>",
+                "md_calc_info_concept": null,
+                "name": "glucose_200",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>AST &gt;250</p>",
+                "md_calc_info_concept": null,
+                "name": "ast_250",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>LDH &gt;350</p>",
+                "md_calc_info_concept": null,
+                "name": "ldh_350",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "48 Hours Into Admission",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Hct drop &gt;10% from admission</p>",
+                "md_calc_info_concept": null,
+                "name": "hct_10",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>BUN increase &gt;5 mg/dL (&gt;1.79 mmol/L) from admission</p>",
+                "md_calc_info_concept": null,
+                "name": "bun_5",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Ca &lt;8 mg/dL (&lt;2 mmol/L) within 48 hours</p>",
+                "md_calc_info_concept": null,
+                "name": "ca_8",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Arterial pO2 &lt;60 mmHg within 48 hours</p>",
+                "md_calc_info_concept": null,
+                "name": "po2_60",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Base deficit (24 - HCO3) &gt;4 mg/dL within 48 hours</p>",
+                "md_calc_info_concept": null,
+                "name": "base_deficit_4",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Fluid needs &gt;6 L within 48 hours</p>",
+                "md_calc_info_concept": null,
+                "name": "fluid_needs_6",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ransons",
+            "pancreatitis"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

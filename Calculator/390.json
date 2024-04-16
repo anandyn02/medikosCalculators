@@ -1,0 +1,242 @@
+{
+    "id": "390",
+    "title": "Pediatric SIRS, Sepsis, and Septic Shock Criteria",
+    "desc": "The Pediatric SIRS, Sepsis, and Septic Shock Criteria defines the severity of sepsis and septic shock for pediatric patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15636651",
+                "text": "Goldstein B, Giroir B, Randolph A, and the Members of the International Consensus Conference on Pediatric Sepsis. International Pediatric Sepsis Consensus Conference (ICCPS): Definitions for Sepsis and Organ Dysfunction in Pediatrics. Pediatr Crit Care Med. 2005; 6(1): 2-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://link.springer.com/article/10.1007%2Fs00134-012-2769-8",
+                "text": "R. P. Dellinger, et. al. Surviving Sepsis Campaign: International Guidelines for Management of Severe Sepsis and Septic Shock, 2012. Intensive Care Medicine. February 2013; 39(2), 165-228."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19325359",
+                "text": "Brierley J, Carcillo J, Choong K, et al. Clinical Practice Parameters for Hemodynamic Support of Pediatric and Neonatal Septic Shock. 2007 Update from the American College of Critical Care Medicine. Crit Care Med. 2009; 37:666–688."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23167859",
+                "text": "Scott HF, Donoghue AJ, Gaieski DF, Marchese RF, Mistry RD. The Utility of Early Lactate Testing in Undifferentiated Pediatric Systemic Inflammatory Response Syndrome. Academic Emergency Medicine. 2012; 19: 1276-80."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4058838/",
+                "text": "Sepanski RJ, Godambe SA, Mangum CD, Bovat CS, Zaritsky AL, Shah SH. Designing a Pediatric Severe Sepsis Screening Tool. Frontiers in Pediatrics. 2014;2:56. doi:10.3389/fped.2014.00056."
+            }
+        ],
+        "evidence": "<p>Series of Yes/No questions.</p>",
+        "facts": "<ul>\n<li>SIRS = &ge;2 meets SIRS definition</li>\n<ul>\n<li>1 of which must be abnormal temperature or leukocyte count.</li>\n</ul>\n<li>Sepsis = SIRS + Suspected infection</li>\n<ul>\n<li>Infectious etiology may be bacterial, viral, or fungal.</li>\n</ul>\n<li>Severe Sepsis = Sepsis +1 of the following:</li>\n<ul>\n<li>Cardiovascular organ dysfunction</li>\n<li>Acute respiratory distress syndrome (ARDS)</li>\n<li>Evidence of &ge;2 organ dysfunction (e.g., respiratory, renal, neurologic, hematologic, or hepatic)</li>\n</ul>\n<li>Septic Shock = Severe Sepsis + Cardiovascular Dysfunction (despite adequate fluid resuscitation)</li>\n<ul>\n<li>Unlike with adults, hypotension is <strong>not</strong> required to make the diagnosis of Septic Shock.</li>\n</ul>\n</ul>\n<table class=\"table table-bordered table-hover\" cellspacing=\"0\" cellpadding=\"0\">\n<thead>\n<tr>\n<th class=\"tg-031e\" rowspan=\"2\">Age Group</th>\n<th class=\"tg-031e\" colspan=\"2\">Heart Rate (bpm)&sup1;</th>\n<th class=\"tg-031e\" rowspan=\"2\">Respiratory Rate&sup2;</th>\n<th class=\"tg-031e\" rowspan=\"2\">Leukocyte Count&sup3;</th>\n<th class=\"tg-031e\" rowspan=\"2\">Systolic Blood Pressure⁴</th>\n</tr>\n<tr>\n<th class=\"tg-031e\">Tachycardia</th>\n<th class=\"tg-031e\">Bradycardia</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td valign=\"top\">0 days &ndash; 1 week</td>\n<td valign=\"top\">&gt;180</td>\n<td valign=\"top\">&lt;100</td>\n<td valign=\"top\">&gt;50</td>\n<td valign=\"top\">&gt;34</td>\n<td valign=\"top\">&lt;59</td>\n</tr>\n<tr>\n<td valign=\"top\">1 week &ndash; 1 month</td>\n<td valign=\"top\">&gt;180</td>\n<td valign=\"top\">&lt;100</td>\n<td valign=\"top\">&gt;40</td>\n<td valign=\"top\">&gt;19.5 or &lt;5</td>\n<td valign=\"top\">&lt;69</td>\n</tr>\n<tr>\n<td valign=\"top\">1 month &ndash; 1 year</td>\n<td valign=\"top\">&gt;180</td>\n<td valign=\"top\">&lt;90</td>\n<td valign=\"top\">&gt;34</td>\n<td valign=\"top\">&gt;17.5 or &lt;5</td>\n<td valign=\"top\">&lt;75</td>\n</tr>\n<tr>\n<td valign=\"top\">2 - 5 years</td>\n<td valign=\"top\">&gt;140</td>\n<td valign=\"top\">NA</td>\n<td valign=\"top\">&gt;22</td>\n<td valign=\"top\">&gt;15.5 or &lt;6</td>\n<td valign=\"top\">&lt;74</td>\n</tr>\n<tr>\n<td valign=\"top\">6 - 12 years</td>\n<td valign=\"top\">&gt;130</td>\n<td valign=\"top\">NA</td>\n<td valign=\"top\">&gt;18</td>\n<td valign=\"top\">&gt;13.5 or &lt;4.5</td>\n<td valign=\"top\">&lt;83</td>\n</tr>\n<tr>\n<td valign=\"top\">13 - &lt;18 years</td>\n<td valign=\"top\">&gt;110</td>\n<td valign=\"top\">NA</td>\n<td valign=\"top\">&gt;14</td>\n<td valign=\"top\">&gt;11 or &lt;4.5</td>\n<td valign=\"top\">&lt;90</td>\n</tr>\n</tbody>\n</table>\n<ol>\n<li>Tachycardia is defined as mean HR &gt;2 SD above normal for age not resulting from external stimulus, chronic drugs, or painful stimuli; or unexplained persistent tachycardia over a 0.5- to 4-hr duration. In children &lt;1 yr old, bradycardia is defined as a mean HR &lt;10th percentile for age not resulting from external vagal stimulus, B-blocker drugs, or congenital heart disease; or unexplained persistent bradycardia over a 0.5-hr duration.</li>\n<li>Tachypnea is defined as mean respiratory rate &gt;2 SD above normal for age or mechanical ventilation resulting from an acute process not caused by underlying neuromuscular disease or due to general anesthesia.</li>\n<li>Not as a result of chemotherapy-induced leukopenia. Values taken from The Harriet Lane handbook.</li>\n<li>Values differ slightly from PALS definition of hypotension as published by the American Heart Association.</li>\n</ol>",
+        "estimation": [],
+        "primary_complains": [
+            "Fever"
+        ],
+        "disease_treated": [
+            "Sepsis"
+        ],
+        "logic": "var calc_output=[]; \n\nvar mini_msg=''; \nvar u=1;msgadd='';\nif((parseFloat(temperature)+parseFloat(tachycardia)+parseFloat(tachypnea)+parseFloat(leukocyte)>=2)&&(parseFloat(temperature)+parseFloat(leukocyte)>0)){mini_msg='Meets SIRS criteria'; msg='This patient meets SIRS criteria.';if(parseFloat(infection)==1){mini_msg='Meets sepsis criteria'; msg='This patient meets sepsis criteria.<br/><br/>';msgadd=' Screen for Severe Sepsis and Septic Shock physical exam findings. If present, initiate ACCM/PALS Septic Shock Algorithm (see Next Steps section).<br/><br/>Consider IV fluid resuscitation, cultures, and broad-spectrum antibiotics.'}if(parseFloat(severe_sepsis)==1){mini_msg='Severe sepsis'; msg='This patient meets severe sepsis criteria.<br/><br/>'}if(parseFloat(septic_shock)==1){mini_msg='Septic shock'; msg='This patient meets septic shock criteria.<br/><br/>'}}else{mini_msg='Does not meet SIRS'; msg='This patient does not meet SIRS criteria. <br/><br/> For other causes of shock, see the Next Steps section.'}msg+=msgadd; \n\ncalc_output.push({\n    name:'mini',\n    value:' ',\n    value_text:' ',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1977_Pediatric SIRS_results',\n    value:' ',\n    value_text:' ',\n    message:msg\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<calculator id='1096'>SIRS Criteria</calculator> (≥2 meets SIRS definition, 1 of which must be abnormal temperature or leukocyte count)<br/>List of Age-Dependent Vital Sign Ranges Available in About Section",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Temp &gt;38.5&deg;C (101.3&deg;F) or &lt;36&deg;C (96.8&deg;F)</p>",
+                "md_calc_info_concept": null,
+                "name": "temperature",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Tachycardia or bradycardia (if <1 year)",
+                "md_calc_info_concept": null,
+                "name": "tachycardia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Tachypnea or mechanical ventilation (related to an acute process)",
+                "md_calc_info_concept": null,
+                "name": "tachypnea",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Abnormal leukocyte count or >10% bands",
+                "md_calc_info_concept": null,
+                "name": "leukocyte",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Sepsis Criteria (SIRS + Source of Infection)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Suspected or present source of infection",
+                "md_calc_info_concept": null,
+                "name": "infection",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Severe Sepsis Criteria (Sepsis + ≥1 following Dysfunction Criteria)<br/>Organ Dysfunction Criteria »",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Cardiovascular dysfunction OR ARDS OR &ge;2 other organ dysfunction</p>",
+                "md_calc_info_concept": null,
+                "name": "severe_sepsis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Septic Shock Criteria (Sepsis + Cardiovascular Dysfunction)<br/>Organ Dysfunction Criteria »",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Cardiovascular dysfunction despite adequate fluid resuscitation",
+                "md_calc_info_concept": null,
+                "name": "septic_shock",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "SIRS",
+            "peds",
+            "sepsis",
+            "ICCPS",
+            "Systemic inflammatory response syndrome"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neonatal)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pediatric Subspecialty",
+            "Pediatrics"
+        ]
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "id": "449",
+    "title": "AST to Platelet Ratio Index (APRI)",
+    "desc": "The AST to Platelet Ratio Index (APRI) determines the likelihood of hepatic fibrosis and cirrhosis in patients with Hepatitis C.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12883497",
+                "text": "Wai CT, Greenson JK, Fontana RJ, et al. A simple noninvasive index can predict both significant fibrosis and cirrhosis in patients with chronic hepatitis C. Hepatology. 2003;38(2):518-26."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/10.1111/j.1365-2036.2011.04897.x/full",
+                "text": "Sebastiani G, Halfon P, Castera L, et al. Comparison of three algorithms of non-invasive markers of fibrosis in chronic hepatitis C. Aliment Pharmacol Ther. 2012;35(1):92-104."
+            }
+        ],
+        "evidence": "<p>APRI = (AST in IU/L) / (AST Upper Limit of Normal in IU/L) / (Platelets in 10<sup>9</sup>/L)</p>",
+        "facts": "<p>Based on 2011 meta-analysis in Hepatology by Lin et. al:</p>\n<p><u>Significant fibrosis</u>: APRI threshold of 0.7 was 77% sensitive and 72% specific.</p>\n<p><u>Severe fibrosis</u>: APRI threshold of 1.0 was 61% sensitive and 64% specific.</p>\n<p><u>Cirrhosis</u>: APRI threshold of 1.0 was 76% sensitive and 72% specific.</p>",
+        "estimation": [
+            {
+                "name": "Aspartate Aminotransferase",
+                "unit": "AST",
+                "error_min": "1",
+                "error_max": "10000",
+                "warn_min": "4",
+                "warn_max": "4000",
+                "conversion": "1",
+                "normal_max_si": "41",
+                "normal_max_us": "41",
+                "normal_min_si": "15",
+                "normal_min_us": "15",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "Platelet Count",
+                "unit": "plt",
+                "error_min": "1",
+                "error_max": "3200",
+                "warn_min": "10",
+                "warn_max": "750",
+                "conversion": "1",
+                "normal_max_si": "350",
+                "normal_max_us": "350",
+                "normal_min_si": "150",
+                "normal_min_us": "150",
+                "units_si": "× 10⁹/L",
+                "units_us": "× 10³/µL"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Hepatitis"
+        ],
+        "logic": "var calc_output = [];\n\nvar ast = parseFloat(ast);\nvar uln = parseFloat(uln);\nvar plt = parseFloat(plt);\nvar score = (ast / uln / plt) * 100;\nvar msg = '';\nvar mini_msg= '';\nswitch (true) {\n    case (score < 0.7):\n        msg = 'Per Lin et al (2011), scores < 0.7 were not sensitive or specific enough to determine level of fibrosis or cirrhosis.';\n        mini_msg= 'Unable to determine severity.';\n        break;\n    case (score >= 0.7 && score < 1.0):\n        msg = 'Per Lin et al (2011), scores ≥ 0.7:<br/><br/> 77% sensitive and 72% specific for significant fibrosis';\n        mini_msg= 'Siginificant fibrosis';\n        break;\n    case (score >= 1.0 && score < 1.5):\n        msg = \"Per Lin et al (2011), scores ≥1:<br/><br/>61% sensitive and 64% specific for severe fibrosis<br/><br/>76% sensitive and 72% specific for cirrhosis\";\n        mini_msg= 'Severe fibrosis';\n        break;\n    case (score >= 1.5 && score < 2.0):\n        msg = \"Per Lin et al (2011), scores ≥1.5:<br/><br/>27% sensitive and 93% specific for significant fibrosis<br/>br/>50% sensitive and 84% specific for severe fibrosis<br/><br/>scores ≥1:<br/>76% sensitive and 72% specific for cirrhosis\";\n        mini_msg= 'Significant fibrosis';\n        break;\n    case (score >= 2.0):\n        msg = \"Per Lin et al (2011), scores ≥2:<br/><br/>36% sensitive and 93% specific for severe fibrosis<br/><br/>46% sensitive and 91% specific for cirrhosis\";\n        mini_msg= 'Severe fibrosis';\n        break;\n    default:\n        console.log('error')\n};\ncalc_output.push({\n    name: 'mini',\n    value: score.toFixed(1),\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3094_APRI_result',\n    value: score.toFixed(1),\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "AST",
+                "name": "ast",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "AST"
+            },
+            {
+                "conditionality": "",
+                "default": 40,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "AST upper limit of normal",
+                "name": "uln",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "AST"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Platelet count",
+                "name": "plt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plt"
+            }
+        ],
+        "can_search": [
+            "cirrhosis",
+            "hep c",
+            "fibrosis",
+            "plt",
+            "amino"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hepatology",
+            "Internal Medicine"
+        ]
+    }
+}

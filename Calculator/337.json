@@ -1,0 +1,304 @@
+{
+    "id": "337",
+    "title": "Injury Severity Score (ISS)",
+    "desc": "The Injury Severity Score (ISS) Standardizes severity of traumatic injury based on worst injury of 6 body systems.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4814394",
+                "text": "Baker SP, O'Neill B, Haddon W Jr, Long WB. The injury severity score: a method for describing patients with multiple injuries and evaluating emergency care. J Trauma. 1974 Mar;14(3):187-96. PubMed PMID: 4814394."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/5107365",
+                "text": "Rating the severity of tissue damage. I. The abbreviated scale. JAMA. 1971;215(2):277-80."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/965234",
+                "text": "Semmlow JL, Cone R. Utility of the injury severity score: a confirmation. Health Serv Res. 1976;11(1):45-52."
+            },
+            {
+                "href": "https://www.sciencedirect.com/science/article/pii/0020138378900049",
+                "text": "Bull JP. Measures of severity of injury. Injury. 1978;9(3):184-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3123707",
+                "text": "Copes WS, Champion HR, Sacco WJ, Lawnick MM, Keast SL, Bain LW. The Injury Severity Score revisited. J Trauma. 1988;28(1):69-77."
+            }
+        ],
+        "evidence": "<p>Assign an Abbreviated Injury Scale (AIS) Score to the most severe injury in each body system as follows:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Severity</strong></p>\n</td>\n<td>\n<p><strong>AIS</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>No injury</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Minor</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Moderate</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Serious</p>\n</td>\n<td>\n<p>3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Severe</p>\n</td>\n<td>\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Critical</p>\n</td>\n<td>\n<p>5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Unsurvivable</p>\n</td>\n<td>\n<p>6</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>Then, if the 3 most severe injuries in 3 body systems are A, B, and C, then</p>\n<p>ISS = A&sup2; + B&sup2; + C&sup2;</p>\n<p>If a patient has an AIS of 6 in any body system, they are automatically assigned an ISS of 75.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output=[]; \n\nvar arr=new Array(parseFloat(head_neck),parseFloat(face),parseFloat(chest),parseFloat(abdomen),parseFloat(extremity),parseFloat(external));\nfunction sortNumber(param2,param1){var first=parseFloat(param1);var second=parseFloat(param2);if(first==second)return 0;if(first<second)return-1;else return 1}var arrsort=arr.sort(sortNumber);if(arrsort[0]==6||arrsort[1]==6||arrsort[2]==6){var u=75;var msg='Maximum Injury Severity Score.<br/><br/>Major Trauma Sustained.'}else{var u=arrsort[0]*arrsort[0];u+=arrsort[1]*arrsort[1];u+=arrsort[2]*arrsort[2];var msg='Out of a possible 75 points'} \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:'Injury Severity Score'\n}); \ncalc_output.push({\n    name:'1239_Injury Severity Score_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Head and neck worst injury?",
+                "mdcalc_info_concept": null,
+                "name": "head_neck",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No injury",
+                        "value": 0
+                    },
+                    {
+                        "label": "Minor",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Serious",
+                        "value": 3
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 4
+                    },
+                    {
+                        "label": "Critical",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unsurvivable",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Face worst injury?",
+                "mdcalc_info_concept": null,
+                "name": "face",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No injury",
+                        "value": 0
+                    },
+                    {
+                        "label": "Minor",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Serious",
+                        "value": 3
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 4
+                    },
+                    {
+                        "label": "Critical",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unsurvivable",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chest worst injury?",
+                "mdcalc_info_concept": null,
+                "name": "chest",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No injury",
+                        "value": 0
+                    },
+                    {
+                        "label": "Minor",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Serious",
+                        "value": 3
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 4
+                    },
+                    {
+                        "label": "Critical",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unsurvivable",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abdomen worst injury?",
+                "mdcalc_info_concept": null,
+                "name": "abdomen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No injury",
+                        "value": 0
+                    },
+                    {
+                        "label": "Minor",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Serious",
+                        "value": 3
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 4
+                    },
+                    {
+                        "label": "Critical",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unsurvivable",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Extremity (including pelvis) worst injury?",
+                "mdcalc_info_concept": null,
+                "name": "extremity",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No injury",
+                        "value": 0
+                    },
+                    {
+                        "label": "Minor",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Serious",
+                        "value": 3
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 4
+                    },
+                    {
+                        "label": "Critical",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unsurvivable",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "External worst injury?",
+                "mdcalc_info_concept": null,
+                "name": "external",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No injury",
+                        "value": 0
+                    },
+                    {
+                        "label": "Minor",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Serious",
+                        "value": 3
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 4
+                    },
+                    {
+                        "label": "Critical",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unsurvivable",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "trauma"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

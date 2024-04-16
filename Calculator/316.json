@@ -1,0 +1,146 @@
+{
+    "id": "316",
+    "title": "Sequential Clinical Assessment of Respiratory Function (SCARF) Score",
+    "desc": "The Sequential Clinical Assessment of Respiratory Function (SCARF) Score predicts adverse outcomes in critically ill rib fracture patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31425473/",
+                "text": "Hardin KS, Leasia KN, Haenel J, Moore EE, Burlew CC, Pieracci FM. The Sequential Clinical Assessment of Respiratory Function (Scarf) score: A dynamic pulmonary physiologic score that predicts adverse outcomes in critically ill rib fracture patients. J Trauma Acute Care Surg. 2019;87(6):1260-1268."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31047683/",
+                "text": "Martin TJ, Eltorai AS, Dunn R, et al. Clinical management of rib fractures and methods for prevention of pulmonary complications: A review. Injury. 2019;50(6):1159-1165."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>The SCARF Score is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100.121%;\"><colgroup><col style=\"width: 60.8696%;\"><col style=\"width: 19.5757%;\"><col style=\"width: 19.5547%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Incentive spirometry &lt;50% of predicted</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Respiratory rate &gt;20 breaths/min</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Numeric pain score &ge;5</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Cough inadequate to clear respiratory secretions</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col><col></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>SCARF Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of &ge;1 Adverse Outcome</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Low</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>1-2</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Intermediate</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>3-4</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>High</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding",
+            "Chest Pain",
+            "Cough",
+            "Shortness of Breath",
+            "Swelling",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Fracture",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar is = parseFloat(is);\nvar rr = parseFloat(rr);\nvar nps = parseFloat(nps);\nvar cough = parseFloat(cough);\n\nvar score = is + rr + nps + cough;\n\nvar risk;\nif (score == 0) {\n    risk = 'Low';\n} else if (score <= 2) {\n    risk = 'Intermediate';\n} else if (score <= 4) {\n    risk = 'High';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk of ≥1 adverse outcome'\n});\ncalc_output.push({\n    name: '10486_SCARF Score_result',\n    value: score,\n    value_text: 'points',\n    message: 'SCARF Score'\n});\ncalc_output.push({\n    name: '10486_SCARF Score_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: 'Risk of ≥1 adverse outcome'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Incentive spirometry &lt;50% of predicted</p>",
+                "mdcalc_info_concept": null,
+                "name": "is",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Respiratory rate &gt;20 breaths/min</p>",
+                "mdcalc_info_concept": null,
+                "name": "rr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Numeric pain score &ge;5</p>",
+                "mdcalc_info_concept": null,
+                "name": "nps",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Cough inadequate to clear respiratory secretions</p>",
+                "mdcalc_info_concept": null,
+                "name": "cough",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Sequential Clinical Assessment of Respiratory Function (SCARF) Score",
+            "scarf score",
+            "ribs",
+            "rib fracture",
+            "fracture",
+            "bone fracture",
+            "fracture severity",
+            "trauma",
+            "critical rib fracture"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

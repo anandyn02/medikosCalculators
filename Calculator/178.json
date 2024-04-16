@@ -1,0 +1,251 @@
+{
+    "id": "178",
+    "title": "PIRO Score for Community-Acquired Pneumonia",
+    "desc": "The PIRO Score for Community-Acquired Pneumonia predicts ICU mortality in patients with community-acquired pneumonia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/19114916/",
+                "text": "Rello J, Rodriguez A, Lisboa T, Gallego M, Lujan M, Wunderink R. PIRO score for community-acquired pneumonia: a new prediction rule for assessment of severity in intensive care unit patients with community-acquired pneumonia. Crit Care Med. 2009;37(2):456-62."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24120831/",
+                "text": "Fica A, Bunster N, Aliaga F, et al. Bacteremic pneumococcal pneumonia: serotype distribution, antimicrobial susceptibility, severity scores, risk factors, and mortality in a single center in Chile. Braz J Infect Dis. 2014;18(2):115-23."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\" style=\"margin-left: 0pt;\" align=\"left\">\n<table width=\"670\" height=\"387\">\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p><strong>Variable</strong></p>\n</td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p><strong>Predisposition</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Comorbitities (COPD or immunocompromised)</td>\n<td>\n<p>Yes</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>Age &gt;70 years</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p><strong>Insult</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Bacteremia</td>\n<td>\n<p>Yes</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>Multilobar opacities in chest radiograph</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p><strong>Response</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Shock</td>\n<td>\n<p>Yes</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Severe hypoxemia</td>\n<td>\n<p>Yes</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p><strong>Organ dysfunction</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Acute renal failure</td>\n<td>\n<p>Yes</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Acute respiratory distress syndrome</td>\n<td>\n<p>Yes</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p><span id=\"docs-internal-guid-dc2e156a-7fff-8d02-9883-a6c9e00c5106\">&nbsp;Interpretation:</span></p>\n<div dir=\"ltr\" style=\"margin-left: 0pt;\" align=\"left\">\n<table width=\"668\" height=\"182\">\n<tbody>\n<tr>\n<td><strong>PIRO Score for CAP</strong></td>\n<td><strong>Risk level</strong></td>\n<td><strong>28-day mortality</strong></td>\n</tr>\n<tr>\n<td>0-2</td>\n<td>Low</td>\n<td>3.6%</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Mild</td>\n<td>13.0%</td>\n</tr>\n<tr>\n<td>4</td>\n<td>High&nbsp;</td>\n<td>43.0%</td>\n</tr>\n<tr>\n<td>5-8</td>\n<td>Very high</td>\n<td>76.3%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(five)+parseFloat(six)+parseFloat(seven)+parseFloat(eight);\n\nvar level;\nvar risk;\n\nif (criteria>=0 && criteria<=2) {\n  level='Low';\n  risk='3.6';\n} \n\nif (criteria==3) {\n  level='Mild';\n  risk='13.0';\n}\n\nif (criteria==4) {\n  level='High';\n  risk='43.0';\n}\n\nif (criteria>=5 && criteria<=8) {\n  level='Very high';\n  risk='76.3';\n}\n  \ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text: 'points',\n    message: risk + '% 28-day mortality',  \n});\ncalc_output.push({\n    name: 'criteria',\n    value: criteria,\n    value_text: 'points',\n    message: 'PIRO Score',  \n});\ncalc_output.push({\n    name: 'level',\n    value: level,\n    value_text: 'risk',\n    message: 'Risk level',\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk, \n    value_text: '%',\n    message: '28-day mortality',\n});\n",
+        "inputs": [
+            {
+                "subheading": "<b>Predisposition</b>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Comorbitities (COPD or immunocompromised)</p>",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >70 years",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "<b>Insult</b>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bacteremia",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Multilobar opacities in chest radiograph",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "<b>Response</b>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Shock",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Severe hypoxemia",
+                "name": "six",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "<b>Organ dysfunction</b>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acute renal failure",
+                "name": "seven",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acute respiratory distress syndrome",
+                "name": "eight",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "CAP-PIRO Score",
+            "CAP-PIRO",
+            "pneumonia severity",
+            "pneumonia severity score",
+            "ICU pneumonia",
+            "pneumonia ICU",
+            "community-acquired pneumonia",
+            "CAP",
+            "PIRO",
+            "ICU pneumonia severity",
+            "ICU pneumonia severity score",
+            "CAP-PIRO pneumonia",
+            "CAP-PIRO pneumonia score",
+            "community acquired pneumonia",
+            "icu mortality",
+            "piro score",
+            "piro score for cap",
+            "piro score for community acquired pneumonia",
+            "Coronavirus",
+            "Corona virus",
+            "COVID",
+            "COVID-19",
+            "COVID 19",
+            "COVID19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

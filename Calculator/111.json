@@ -1,0 +1,263 @@
+{
+    "id": "111",
+    "title": "Rapid Emergency Medicine Score (REMS)",
+    "desc": "The Rapid Emergency Medicine Score (REMS) predicts in-hospital mortality in nonsurgical patients presenting to the ED.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15078500",
+                "text": "Olsson T, Terent A, Lind L. Rapid Emergency Medicine score: a new prognostic tool for in-hospital mortality in nonsurgical emergency department patients. J Intern Med. 2004;255(5):579-87."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3593492",
+                "text": "Rhee KJ, Fisher CJ, Willitis NH. The Rapid Acute Physiology Score. Am J Emerg Med. 1987;5(4):278-82."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14525735",
+                "text": "Olsson T, Lind L. Comparison of the rapid emergency medicine score and APACHE II in nonsurgical emergency department patients. Acad Emerg Med. 2003;10(10):1040-8."
+            },
+            {
+                "href": "https://bmjopen.bmj.com/content/4/5/e004738",
+                "text": "Imhoff BF, Thompson NJ, Hastings MA, et al. Rapid Emergency Medicine Score (REMS) in the trauma population: a retrospective study. BMJ Open 2014;4:e004738."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"200\" /><col width=\"136\" /><col width=\"113\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">Age, years</td>\n<td>\n<p>&lt;45</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>45-54</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>55-64</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>65-74</p>\n</td>\n<td>5</td>\n</tr>\n<tr>\n<td>\n<p>&gt;74</p>\n</td>\n<td>6</td>\n</tr>\n<tr>\n<td rowspan=\"6\">\n<p dir=\"ltr\">Mean arterial pressure, mmHg</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;159</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">130-159</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">110-129</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">70-109</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">50-69</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;49</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"7\">\n<p dir=\"ltr\">Heart rate, beats per minute</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;179</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">140-179</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">110-139</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">70-109</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">55-69</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">40-54</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;39</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"7\">\n<p dir=\"ltr\">Respiratory rate, breaths per minute</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;49</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">35-49</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">25-34</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">12-24</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10-11</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-9</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;5</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Peripheral oxygen saturation</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;75%</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">75-85%</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">86-89%</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;89%</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">Glasgow Coma Scale</td>\n<td>\n<p dir=\"ltr\">&lt;5</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5-7</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8-10</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">11-13</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;13</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-190b4c47-7fff-4ff1-26e2-b8afa7d48ea9\"><span id=\"docs-internal-guid-190b4c47-7fff-4ff1-26e2-b8afa7d48ea9\">&nbsp;</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"224\" /><col width=\"155\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>REMS</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>In-hospital mortality</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-2</p>\n</td>\n<td>\n<p dir=\"ltr\">0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3-5</p>\n</td>\n<td>\n<p dir=\"ltr\">1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-9</p>\n</td>\n<td>\n<p dir=\"ltr\">3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10-11</p>\n</td>\n<td>\n<p dir=\"ltr\">4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">12-13</p>\n</td>\n<td>\n<p dir=\"ltr\">10%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">14-15</p>\n</td>\n<td>\n<p dir=\"ltr\">17%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">16-17</p>\n</td>\n<td>\n<p dir=\"ltr\">38%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">18-19</p>\n</td>\n<td>\n<p dir=\"ltr\">75%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">20-21</p>\n</td>\n<td>\n<p dir=\"ltr\">56%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">22-23</p>\n</td>\n<td>\n<p dir=\"ltr\">66%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">24-26</p>\n</td>\n<td>\n<p dir=\"ltr\">100%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span id=\"docs-internal-guid-b8401fa2-7fff-e0ed-6d3e-4642ff03a14e\"></p>\n<p dir=\"ltr\">Note that &lt;0.3% of patients had scores &gt;19, which may account for the paradoxical apparent decrease in events between scores of 19 and scores &gt;19.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar map = parseFloat(map);\nvar hr = parseFloat(hr);\nvar resp = parseFloat(resp);\nvar o2 = parseFloat(o2);\nvar gcs = parseFloat(gcs);\nvar age = parseFloat(age);\n\nvar score = map + hr + resp + o2 + gcs + age; \n\nvar risk1;\n\nif (score >= 0 && score <= 2) {\n\trisk1 = '0';\n}\nelse if (score >= 3 && score <= 5) { \n\trisk1 = '1';\n}\nelse if (score >= 6 && score <= 9) { \n\trisk1 = '3';\n}\nelse if (score >= 10 && score <= 11) { \n\trisk1 = '4';\n}\nelse if (score >= 12 && score <= 13) { \n\trisk1 = '10';\n} \nelse if (score >= 14 && score <= 15) { \n\trisk1 = '17';\n} \nelse if (score >= 16 && score <= 17) { \n\trisk1 = '38';\n}\nelse if (score >= 18 && score <= 19) { \n    risk1 = '75';\n} \nelse if (score >= 20 && score <= 21) { \n    risk1 = '56';\n} \nelse if (score >= 22 && score <= 23) { \n    risk1 = '66';\n}\nelse if (score >= 24 && score <= 26) {\n  risk1 = '100';\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk1 + '% risk of in-hospital mortality'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'REMS'   \n    });\ncalc_output.push({\n    name: 'risk1',\n    value: risk1, \n    value_text: '%',\n    message: 'In-hospital mortality'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<45",
+                        "value": 0
+                    },
+                    {
+                        "label": "45-54",
+                        "value": 2
+                    },
+                    {
+                        "label": "55-64",
+                        "value": 3
+                    },
+                    {
+                        "label": "65-74",
+                        "value": 5
+                    },
+                    {
+                        "label": ">74",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 3,
+                "label_en": "Mean arterial pressure, mmHg",
+                "name": "map",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">159",
+                        "value": 4
+                    },
+                    {
+                        "label": "130-159",
+                        "value": 3
+                    },
+                    {
+                        "label": "110-129",
+                        "value": 2
+                    },
+                    {
+                        "label": "70-109",
+                        "value": 0
+                    },
+                    {
+                        "label": "50-69",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤49",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 3,
+                "label_en": "Heart rate, beats per minute",
+                "name": "hr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">179",
+                        "value": 4
+                    },
+                    {
+                        "label": "140-179",
+                        "value": 3
+                    },
+                    {
+                        "label": "110-139",
+                        "value": 2
+                    },
+                    {
+                        "label": "70-109",
+                        "value": 0
+                    },
+                    {
+                        "label": "55-69",
+                        "value": 2
+                    },
+                    {
+                        "label": "40-54",
+                        "value": 3
+                    },
+                    {
+                        "label": "≤39",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 3,
+                "label_en": "Respiratory rate, breaths per minute",
+                "name": "resp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">49",
+                        "value": 4
+                    },
+                    {
+                        "label": "35-49",
+                        "value": 3
+                    },
+                    {
+                        "label": "25-34",
+                        "value": 1
+                    },
+                    {
+                        "label": "12-24",
+                        "value": 0
+                    },
+                    {
+                        "label": "10-11",
+                        "value": 1
+                    },
+                    {
+                        "label": "6-9",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤5",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 3,
+                "label_en": "Peripheral oxygen saturation",
+                "name": "o2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<75%",
+                        "value": 4
+                    },
+                    {
+                        "label": "75-85%",
+                        "value": 3
+                    },
+                    {
+                        "label": "86-89%",
+                        "value": 1
+                    },
+                    {
+                        "label": ">89%",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 4,
+                "label_en": "<calculator id = \"64\">Glasgow Coma Scale</calculator>",
+                "name": "gcs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<5",
+                        "value": 4
+                    },
+                    {
+                        "label": "5-7",
+                        "value": 3
+                    },
+                    {
+                        "label": "8-10",
+                        "value": 2
+                    },
+                    {
+                        "label": "11-13",
+                        "value": 1
+                    },
+                    {
+                        "label": ">13",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Raps",
+            "rapid",
+            "acute",
+            "physiology",
+            "score",
+            "emergency department",
+            "rems",
+            "hospital mortality"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

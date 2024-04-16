@@ -1,0 +1,204 @@
+{
+    "id": "331",
+    "title": "TIMI Risk Score for UA/NSTEMI",
+    "desc": "The TIMI Risk Score for UA/NSTEMI estimates mortality for patients with unstable angina and non-ST elevation myocardial infarction (MI).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10938172",
+                "text": "Antman EM, Cohen M, Bernink PJLM, McCabe CH, Hoacek T, Papuchis G, Mautner B, Corbalan R, Radley D, Braunwald E. The TIMI risk score for unstable angina/non-ST elevation MI: a method for prognostication and therapeutic decision making JAMA. 2000;284(7):835-42."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22578923",
+                "text": "Than M, Cullen L, Aldous S, et al. 2-Hour accelerated diagnostic protocol to assess patients with chest pain symptoms using contemporary troponins as the only biomarker: the ADAPT trial. J Am Coll Cardiol. 2012;59(23):2091-8."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\" style=\"width: 94.2263%;\">\n<tbody>\n<tr>\n<th style=\"text-align: left; width: 75.6931%;\">Variable</th>\n<th style=\"width: 24.3069%;\">Points</th>\n</tr>\n<tr>\n<td style=\"width: 75.6931%;\">Age &ge;65</td>\n<td style=\"width: 24.3069%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 75.6931%;\">&ge;3 CAD risk factors*</td>\n<td style=\"width: 24.3069%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 75.6931%;\">Known CAD (stenosis &ge;50%)</td>\n<td style=\"width: 24.3069%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 75.6931%;\">ASA use in past 7 days</td>\n<td style=\"width: 24.3069%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 75.6931%;\">Severe angina (&ge;2 episodes in 24 hrs)</td>\n<td style=\"width: 24.3069%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 75.6931%;\">EKG ST changes &ge;0.5mm</td>\n<td style=\"width: 24.3069%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 75.6931%;\">Positive cardiac marker</td>\n<td style=\"width: 24.3069%;\">1</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*Risk factors for CAD: Family history of CAD, hypertension, hypercholesterolemia, diabetes, or current smoker (thanks to Jeff Geske at Mayo for this update!)</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output=[]; \nvar u=parseInt(age_65)+parseInt(cad_risk_factors)+parseInt(known_cad)+parseInt(asa_use)+parseInt(angina)+parseInt(ekg_changes)+parseInt(cardiac_marker); \nvar msg=''; \nvar mini_msg='';\nif(u<=1){\n    msg='5% risk at 14 days of: all-cause mortality, new or recurrent MI, or severe recurrent ischemia requiring urgent revascularization.';\n    mini_msg='5% all-cause mortality risk.'\n} \nif(u==2){\n    msg='8% risk at 14 days of: all-cause mortality, new or recurrent MI, or severe recurrent ischemia requiring urgent revascularization.';\n    mini_msg='8% all-cause mortality risk.'\n} \nif(u==3){\n    msg='13% risk at 14 days of: all-cause mortality, new or recurrent MI, or severe recurrent ischemia requiring urgent revascularization.';\n    mini_msg='13% all-cause mortality risk.'\n} \nif(u==4){\n    msg='20% risk at 14 days of: all-cause mortality, new or recurrent MI, or severe recurrent ischemia requiring urgent revascularization.';\n    mini_msg='20% all-cause mortality risk.'\n} \nif(u==5){\n    msg='26% risk at 14 days of: all-cause mortality, new or recurrent MI, or severe recurrent ischemia requiring urgent revascularization.';\n    mini_msg='26% all-cause mortality risk.'\n} \nif(u>5){\n    msg='41% risk at 14 days of: all-cause mortality, new or recurrent MI, or severe recurrent ischemia requiring urgent revascularization.';\n    mini_msg='41% all-cause mortality risk.'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'111_TIMI Score for UA/NSTEMI_result',\n    value:u,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥65",
+                "md_calc_info_concept": null,
+                "name": "age_65",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "≥3 CAD risk factors",
+                "md_calc_info_concept": null,
+                "name": "cad_risk_factors",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Hypertension, hypercholesterolemia, diabetes, family history of CAD, or current smoker",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Known CAD (stenosis ≥50%)",
+                "md_calc_info_concept": null,
+                "name": "known_cad",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "ASA use in past 7 days",
+                "md_calc_info_concept": null,
+                "name": "asa_use",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Severe angina (≥2 episodes in 24 hrs)",
+                "md_calc_info_concept": null,
+                "name": "angina",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "EKG ST changes ≥0.5mm",
+                "md_calc_info_concept": null,
+                "name": "ekg_changes",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Positive cardiac marker",
+                "md_calc_info_concept": null,
+                "name": "cardiac_marker",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "acs",
+            "cad",
+            "mi",
+            "myocardial infarction",
+            "heart disease",
+            "nstemi",
+            "ua",
+            "unstable",
+            "angina"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

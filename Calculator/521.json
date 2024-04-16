@@ -1,0 +1,245 @@
+{
+    "id": "521",
+    "title": "Kawasaki Disease Diagnostic Criteria",
+    "desc": "The Kawasaki Disease Diagnostic Criteria diagnoses Kawasaki Disease.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=15505111",
+                "text": "Newburger JW, et al. Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease: A Statement for Health Professionals From the Committee on Rheumatic Fever, Endocarditis and Kawasaki Disease, Council on Cardiovascular Disease in the Young, American Heart Association. Circulation.2004; 110(17), 2747-2771. doi:10.1161/01.cir.0000145143.19711.78"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=8491037",
+                "text": "Dajani A, et al. Diagnosis and therapy of Kawasaki disease in children. Circulation. 1993; 87, 1776-1780."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19038400",
+                "text": "Baker AL, et al. Associated Symptoms in the Ten Days Before Diagnosis of Kawasaki Disease. The Journal of Pediatrics. 2009; 154(4), 592. doi:10.1016/j.jpeds.2008.10.006"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12427361",
+                "text": "Sundel RP. Update on the treatment of kawasaki disease in childhood. Current Rheumatology Reports. 2002; 4(6), 474-482. doi:10.1007/s11926-002-0053-6"
+            },
+            {
+                "href": "https://download.lww.com/wolterskluwer_vitalstream_com/PermaLink/INF/A/00006454-920021100-00014.pdf",
+                "text": "Kawasaki T. Pediatric acute febrile mucocutaneous lymph node syndrome with characteristic desquamation of fingers and toes: My clinical observation of fifty cases. Pediatr Infect Dis J. 2002; 21, 1-38."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=1709446",
+                "text": "Newburger JW, et al. A Single Intravenous Infusion of Gamma Globulin as Compared with Four Infusions in the Treatment of Acute Kawasaki Syndrome. The New England Journal of Medicine. 1991; 24, 1633-1639."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=27344221",
+                "text": "Hao S, et al. A Classification Tool for Differentiation of Kawasaki Disease from Other Febrile Illnesses. The Journal of Pediatrics. 2016; 176, 114-120."
+            }
+        ],
+        "evidence": "<p>Classic clinical features for diagnosis:</p>\n<ul>\n<li>Fever persisting at least 5 days.</li>\n<li>At least 4 of the following 5 principal features:\n<ol>\n<li>Changes in extremities.\n<ul>\n<li>Acute: Erythema of palms and soles; edema of hands and feet.</li>\n<li>Subacute: Periungual peeling of fingers and toes in weeks 2 and 3.</li>\n</ul>\n</li>\n<li>Polymorphous exanthem.</li>\n<li>Bilateral bulbar conjunctival injection without exudate.</li>\n<li>Changes in lips and oral cavity: Erythema, lips cracking, strawberry tongue, diffuse injection of oral and pharyngeal mucosae.</li>\n<li>Cervical lymphadenopathy (&gt;1.5-cm diameter), usually unilateral.</li>\n</ol>\n</li>\n<li>Exclusion of other diseases with similar findings.</li>\n</ul>\n<p>The diagnosis is made if any of the following is true:</p>\n<ul>\n<li>Fever for &ge;5 days and at least 4 of the 5 principal features.</li>\n<li>Fever for &ge;5 days and &lt;4 principal features when coronary artery disease is detected by 2D echocardiography or coronary angiography.</li>\n<li>Day 4 of illness and &ge;4 principal features.</li>\n</ul>\n<p>Incomplete Kawasaki Disease should be considered in all children with fever for &ge;5 days and 2 or 3 of the principal features.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Fever"
+        ],
+        "disease_treated": [
+            "Kawasaki Disease"
+        ],
+        "logic": "var acute = acute || 0\nvar subacute = subacute || 0\nvar exanth = exanth || 0\nvar conjunct = conjunct || 0\nvar lips = lips || 0\nvar lad = lad || 0\nvar cad = cad || 0\n\nvar calc_output = [];\n\nvar fever = parseFloat(fever);\nacute = parseFloat(acute);\nsubacute = parseFloat(subacute);\nexanth = parseFloat(exanth);\nconjunct = parseFloat(conjunct);\nlips = parseFloat(lips);\nlad = parseFloat(lad);\ncad = parseFloat(cad);\nvar acuity;\n\nif (acute == 1 || subacute == 1) {\n    acuity = 1\n}\nelse {\n    acuity = 0\n}\n\nvar score = acuity + exanth + conjunct + lips + lad;\n\nif (fever == 1) {\n    if (score >= 4) {\n        string = 'Positive';\n    } else if (score < 4 && cad == 1) {\n        string = 'Positive';\n    } else if (score == 2 || score == 3) {\n        string = 'Incomplete'\n    } else {\n        string = 'Negative';\n    }\n} else {\n    string = 'Negative';\n}\nif (fever == 0 && score >= 4) {\n    string = 'Positive'\n    }\n\ncalc_output.push({\n    name: 'mini',\n    value: string,\n    value_text: '',\n    message: 'For Kawasaki Disease'\n});\ncalc_output.push({\n    name: '3819_Kawasaki Disease Diagnostic Criteria_result',\n    value: string,\n    value_text: '',\n    message: 'For Kawasaki Disease'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Fever for ≥5 days",
+                "md_calc_info_concept": null,
+                "name": "fever",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acute change in extremities",
+                "md_calc_info_concept": null,
+                "name": "acute",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Erythema of palms and soles, or edema of hands and feet",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Subacute change in extremities",
+                "md_calc_info_concept": null,
+                "name": "subacute",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Periungual peeling of fingers and toes in weeks 2 and 3",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Polymorphous exanthem",
+                "md_calc_info_concept": null,
+                "name": "exanth",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bilateral bulbar conjunctival injection without exudate",
+                "md_calc_info_concept": null,
+                "name": "conjunct",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Changes in lips and oral cavity",
+                "md_calc_info_concept": null,
+                "name": "lips",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Erythema, lips cracking, strawberry tongue, diffuse injection of oral/pharyngeal mucosae",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cervical lymphadenopathy",
+                "md_calc_info_concept": null,
+                "name": "lad",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": ">1.5 cm diameter, usually unilateral",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Coronary artery disease detected by 2D echo or coronary angiogram",
+                "md_calc_info_concept": null,
+                "name": "cad",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Kawasaki",
+            "fever",
+            "labs",
+            "diagnosis",
+            "Kawasaki Disease",
+            "KD",
+            "Kawasaki Disease Diagnostic Criteria",
+            "KD Diagnostic Criteria"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Cardiology",
+            "Endocrinology",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pediatrics"
+        ]
+    }
+}

@@ -1,0 +1,171 @@
+{
+    "id": "192",
+    "title": "Berlin Criteria for Acute Respiratory Distress Syndrome",
+    "desc": "The Berlin Criteria for Acute Respiratory Distress Syndrome provides diagnostic criteria for acute respiratory distress syndrome (ARDS).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jamanetwork.com/journals/jama/article-abstract/1160659",
+                "text": "Ranieri VM, Rubenfeld GD, Thompson BT, et al. Acute respiratory distress syndrome: the Berlin Definition. JAMA. 2012;307(23):2526-33."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29466596",
+                "text": "Fan E, Brodie D, Slutsky AS. Acute Respiratory Distress Syndrome: Advances in Diagnosis and Treatment. JAMA. 2018;319(7):698-710."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Selection of the appropriate criteria:&nbsp;</p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Berlin Criteria for ARDS</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Required criteria (must have all three of the following):</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Timing within 1 week of clinical insult or new/worsening respiratory symptoms</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Chest XR shows bilateral opacities not fully explained by effusions, lobar/lung collapse, or nodules</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Respiratory failure not fully explained by cardiac failure/fluid overload</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Risk factor (one of the following):</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Risk factor for ARDS present (e.g. pneumonia, trauma, sepsis, pancreatitis)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Objective assessment (Echo) excludes hydrostatic edema</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Severity (based on oxygenation, select one of the following):</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Mild: <calculator id=\"4062\">PaO₂/FiO₂</calculator> &gt;200 to &le;300 mmHg with PEEP OR CPAP &ge;5 cm H₂O</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate: PaO₂/FiO₂ &gt;100 to &le;200 mmHg with PEEP &ge;5 cm H₂O</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe: PaO₂/FiO₂ &le;100 mmHg with PEEP &ge;5 cm H₂O</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Respiratory Distress Syndrome",
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output = [];\n\nreq = parseFloat(req1) + parseFloat(req2) + parseFloat(req3);\nseverity = parseFloat(severity);\nrisk = parseFloat(risk1);\n\nvar diag, msg, level;\n\nif (req == 3 && severity > 0 && risk > 0) {\n    diag = 'Positive';\n    if (severity == 1) {\n        level = 'Mild ARDS';\n    } else if (severity == 2) {\n        level = 'Moderate ARDS';\n    } else if (severity == 3) {\n        level = 'Severe ARDS';\n    }\n    msg = level;\n} else {\n    diag = 'Not positive';\n    msg = 'Not positive for ARDS by Berlin Criteria';\n} \n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: msg\n});\ncalc_output.push({\n    name: 'Score',\n    value: diag,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Required criteria",
+                "subheading_instructions": "Must have all three of the following:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Timing within 1 week of clinical insult or new/worsening respiratory symptoms</p>",
+                "name": "req1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Chest XR shows bilateral opacities not fully explained by effusions, lobar/lung collapse, or nodules</p>",
+                "name": "req2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Respiratory failure not fully explained by cardiac failure/fluid overload</p>",
+                "name": "req3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Risk factor",
+                "subheading_instructions": "Select one of the following:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Risk factor</p>",
+                "name": "risk1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Risk factor for ARDS present (e.g. pneumonia, trauma, sepsis, pancreatitis)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Objective assessment (Echo) excludes hydrostatic edema if no risk factor present",
+                        "value": 1
+                    },
+                    {
+                        "label": "None of the above",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Severity",
+                "subheading_instructions": "Based on oxygenation, select one of the following:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Oxygenation</p>",
+                "name": "severity",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Mild: PaO₂/FiO₂ >200 to ≤300 mmHg with PEEP OR CPAP ≥5 cm H₂O",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate: PaO₂/FiO₂ >100 to ≤200 mmHg with PEEP ≥5 cm H₂O",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe: PaO₂/FiO₂ ≤100 mmHg with PEEP ≥5 cm H₂O",
+                        "value": 3
+                    },
+                    {
+                        "label": "None of the above",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Berlin definition, berlin criteria, Berlin Criteria for Acute Respiratory Distress Syndrome, Berlin Criteria for ARDS, ards, ards diagnosis, covid-19, coronavirus, covid, covid19, covid 19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

@@ -1,0 +1,176 @@
+{
+    "id": "494",
+    "title": "Nonverbal Pain Scale (NVPS) for Nonverbal Patients",
+    "desc": "The Nonverbal Pain Scale (NVPS) quantifies pain in patients unable to speak (e.g., due to intubation, dementia, etc.)",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14639117",
+                "text": "Odhner M, et al. Assessing pain control in nonverbal critically ill adults. Dimens Crit Care Nurs. 2003 Nov-Dec;22(6):260-7"
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>Scores &le;2 indicate no pain.</li>\n<li>Scores 3-6 indicate moderate pain.*</li>\n<li>Scores &ge;7 indicate severe pain.*</li>\n</ul>\n<p><strong>*Note:</strong> Scores &ge;3 indicate possible need for analgesia.</p>\n<p>This assessment is normally documented every 4 hours on nursing flow sheets and completed before <strong>and</strong> after interventions.</p>\n<p>Sepsis, hypovolemia, and hypoxia need to be resolved prior to interventions.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS"
+        ],
+        "disease_treated": [
+            "Delirium",
+            "Dementia"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(resp) + parseFloat(vs) + parseFloat(guard) + parseFloat(activity) + parseFloat(face);\nvar mini_msg, msg;\n\nif (u <= 2) { mini_msg = \"No pain\"; msg = \"\"; }\nif (u >= 3 && u <= 6) { mini_msg = \"Moderate pain\";\n    msg = \"<br/><br/>Consider analgesia.\"; }\nif (u >= 7 && u <= 10) { mini_msg = \"Severe pain\";\n    msg = \"<br/><br/>Consider analgesia.\"; }\n\nif (u >= 3) { msg += \" Sepsis, hypovolemia, and hypoxia need to be resolved prior to interventions.\"; }\n\n\ncalc_output.push({ name: 'mini', value: u, value_text: 'points', message: mini_msg });\ncalc_output.push({ name: '3621_Nonverbal Pain Scale_result', value: u, value_text: 'points', message: mini_msg + msg });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Face",
+                "mdcalc_info_concept": null,
+                "name": "face",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No particular expression or smile",
+                        "value": 0
+                    },
+                    {
+                        "label": "Occasional grimace, tearing, frowning, wrinkled forehead",
+                        "value": 1
+                    },
+                    {
+                        "label": "Frequent grimace, tearing, frowning, wrinkled forehead",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Activity (movement)",
+                "mdcalc_info_concept": null,
+                "name": "activity",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Lying quietly, normal position",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seeking attention through movement or slow, cautious movement",
+                        "value": 1
+                    },
+                    {
+                        "label": "Restless, excessive activity and/or withdrawal reflexes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Guarding",
+                "mdcalc_info_concept": null,
+                "name": "guard",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Lying quietly, no positioning of hands over areas of the body",
+                        "value": 0
+                    },
+                    {
+                        "label": "Splinting areas of the body, tense",
+                        "value": 1
+                    },
+                    {
+                        "label": "Rigid, stiff",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Physiology (vital signs)",
+                "mdcalc_info_concept": null,
+                "name": "vs",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Baseline vital signs unchanged",
+                        "value": 0
+                    },
+                    {
+                        "label": "Change in SBP>20 mmHg or HR>20 bpm",
+                        "value": 1
+                    },
+                    {
+                        "label": "Change in SBP>30 mmHg or HR>25 bpm",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Respiratory",
+                "mdcalc_info_concept": null,
+                "name": "resp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Baseline RR/SpO₂ synchronous with ventilator",
+                        "value": 0
+                    },
+                    {
+                        "label": "RR >10 bpm over baseline, 5% decrease SpO₂ or mild ventilator asynchrony",
+                        "value": 1
+                    },
+                    {
+                        "label": "RR >20 bpm over baseline, 10% decrease SpO₂ or severe ventilator asynchrony",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "intubation",
+            "nonverbal",
+            "pain",
+            "icu",
+            "critical care",
+            "synchronous",
+            "intubated",
+            "deaf"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pain Management",
+            "Palliative Care/Hospice"
+        ]
+    }
+}

@@ -1,0 +1,411 @@
+{
+    "id": "317",
+    "title": "SETscore",
+    "desc": "The SETscore predicts tracheostomy need in neurocritical care patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/26842719/",
+                "text": "Schönenberger S, Al-Suwaidan F, Kieser M, Uhlmann L, Bösel J. The setscore to predict tracheostomy need in cerebrovascular neurocritical care patients. Neurocrit Care. 2016;25(1):94-104."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The SETscore is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 94.5%; height: 1700px;\"><colgroup><col style=\"width: 52.8174%;\"><col style=\"width: 23.5751%;\"><col style=\"width: 23.6074%;\"></colgroup>\n<tbody>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"2\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"3\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Neurological function</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Dysphagia</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Observed aspiration</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span><calculator id=\"64\">GCS</calculator> on admission</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>&ge;10</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>&lt;10</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"3\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Neurological lesion</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Brainstem</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Space-occupying cerebellar</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Ischemic infarct &gt;2/3 <abbr title=\"Middle cerebral artery\">MCA</abbr> territory</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span><abbr title=\"Intracerebral hemorrhage\">ICH</abbr> volume &gt;25 mL</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Diffuse lesion</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Hydrocephalus</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"3\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>General organ function/procedure</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>(Neuro)surgical intervention</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Additional respiratory disease</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>PaO</span><sub><span>2</span></sub><span>/FiO</span><sub><span>2</span></sub><span> &lt;150</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Acute physiology score (<calculator id=\"1868\">APACHE II</calculator>)</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>&le;20</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>&gt;20</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 64.3984px;\">\n<p dir=\"ltr\"><span>Lung injury score</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>&le;1</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"height: 10px;\">\n<p dir=\"ltr\"><span>&gt;1</span></p>\n</td>\n<td style=\"height: 10px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Sepsis</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p>A score &ge;8 indicates prolonged NICU length of stay and ventilation time, as well as need for tracheostomy.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Altered Mental Status",
+            "Bleeding",
+            "Dizziness",
+            "Fatigue",
+            "Headache",
+            "Injury/Trauma",
+            "Nausea",
+            "Numbness",
+            "Seizure",
+            "Vision Loss",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Bleeding/Hemorrhage",
+            "Intracranial Hemorrhage",
+            "Seizure Disorder",
+            "Stroke/TIA",
+            "Subarachnoid Hemorrhage",
+            "Traumatic Brain Injury",
+            "Intracranial Aneurysm"
+        ],
+        "logic": "var calc_output = [];\n\nvar dysphagia = parseFloat(dysphagia);\nvar aspiration = parseFloat(aspiration);\nvar gcs = parseFloat(gcs);\nvar brainstem = parseFloat(brainstem);\nvar space = parseFloat(space);\nvar mca = parseFloat(mca);\nvar ich = parseFloat(ich);\nvar lesion = parseFloat(lesion);\nvar hydro = parseFloat(hydro);\nvar neurosurgery = parseFloat(neurosurgery);\nvar resp = parseFloat(resp);\nvar pao2 = parseFloat(pao2);\nvar apache = parseFloat(apache);\nvar lung = parseFloat(lung);\nvar sepsis = parseFloat(sepsis);\n\nvar score = dysphagia + aspiration + gcs + brainstem + space + mca + ich + lesion + hydro + neurosurgery + resp + pao2 + apache + lung + sepsis;\nvar msg = 'A score ≥8 indicates prolonged NICU length of stay and ventilation time, as well as need for tracheostomy.';\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: '10487_Setscore_result',\n    value: score,\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Neurological function",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Dysphagia</p>",
+                "mdcalc_info_concept": null,
+                "name": "dysphagia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Observed aspiration</p>",
+                "mdcalc_info_concept": null,
+                "name": "aspiration",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><calculator id=\"64\">GCS</calculator> on admission</p>",
+                "mdcalc_info_concept": null,
+                "name": "gcs",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥10",
+                        "value": 0
+                    },
+                    {
+                        "label": "<10",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Neurological lesion",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Brainstem</p>",
+                "mdcalc_info_concept": null,
+                "name": "brainstem",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Space-occupying cerebellar</p>",
+                "mdcalc_info_concept": null,
+                "name": "space",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Ischemic infarct &gt;2/3 <abbr title=\"Middle cerebral artery\">MCA</abbr> territory</p>",
+                "mdcalc_info_concept": null,
+                "name": "mca",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><abbr title=\"Intracerebral hemorrhage\">ICH</abbr> volume &gt;25 mL</p>",
+                "mdcalc_info_concept": null,
+                "name": "ich",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Diffuse lesion</p>",
+                "mdcalc_info_concept": null,
+                "name": "lesion",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Hydrocephalus</p>",
+                "mdcalc_info_concept": null,
+                "name": "hydro",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "General organ function/procedure",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>(Neuro)surgical intervention</p>",
+                "mdcalc_info_concept": null,
+                "name": "neurosurgery",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Additional respiratory disease</p>",
+                "mdcalc_info_concept": null,
+                "name": "resp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>PaO<sub>2</sub>/FiO<sub>2</sub> &lt;150</p>",
+                "mdcalc_info_concept": null,
+                "name": "pao2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Acute physiology score (<calculator id=\"1868\">APACHE II</calculator>)</p>",
+                "mdcalc_info_concept": null,
+                "name": "apache",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤20",
+                        "value": 0
+                    },
+                    {
+                        "label": ">20",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Lung injury score</p>",
+                "mdcalc_info_concept": null,
+                "name": "lung",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤1",
+                        "value": 0
+                    },
+                    {
+                        "label": ">1",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Sepsis</p>",
+                "mdcalc_info_concept": null,
+                "name": "sepsis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "SETscore",
+            "set score",
+            "tracheostomy",
+            "neurocritical care",
+            "stroke-related early tracheostomy",
+            "stroke related early tracheostomy",
+            "early tracheostomy",
+            "stroke"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

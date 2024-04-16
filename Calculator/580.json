@@ -1,0 +1,330 @@
+{
+    "id": "580",
+    "title": "CHALICE (Children's Head injury ALgorithm for the prediction of Important Clinical Events) Rule",
+    "desc": "The CHALICE (Children's Head injury ALgorithm for the prediction of Important Clinical Events) Rule predicts death, need for neurosurgical intervention or CT abnormality in children with head trauma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17056862 ",
+                "text": "Dunning J, Daly JP, Lomas JP, et al. Derivation of the children's head injury algorithm for the prediction of important clinical events decision rule for head injury in children. Arch Dis Child. 2006;91(11):885-91."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22291431 ",
+                "text": "Lyttle MD, Crowe L, Oakley E, Dunning J, Babl FE. Comparing CATCH, CHALICE and PECARN clinical decision rules for pediatric head injuries. Emerg Med J. 2012;29(10):785–94. doi: 10.1136/emermed-2011-200225"
+            }
+        ],
+        "evidence": "<p>A CT head is required if any of the following criteria are present:</p> <p><strong>History</strong></p> <ul> <li>Witnessed loss of consciousness of &gt;5 min duration.</li> <li>History of amnesia (either antegrade or retrograde) of &gt;5 min duration.</li> <li>Abnormal drowsiness (defined as drowsiness in excess of that expected by the examining doctor).</li> <li>≥3 vomits after head injury (a vomit is defined as a single discrete episode of vomiting).</li> <li>Suspicion of non‐accidental injury (NAI, defined as any suspicion of NAI by the examining doctor).</li> <li>Seizure after head injury in a patient who has no history of epilepsy.</li> </ul> <p><strong>Examination</strong></p> <ul> <li>Glasgow Coma Score (GCS) &lt;14, or GCS &lt;15 if &lt;1 year old.</li> <li>Suspicion of penetrating or depressed skull injury, or tense fontanelle.</li> <li>Signs of a basal skull fracture (defined as evidence of blood or cerebrospinal fluid from ear or nose, panda eyes, Battle's sign, hemotympanum, facial crepitus, or serious facial injury).</li> <li>Positive focal neurologic sign (defined as any focal neurologic sign, including motor, sensory, coordination, or reflex abnormality).</li> <li>Presence of bruise, swelling or laceration &gt;5 cm if &lt;1 year old.</li> </ul> <p> <strong>Mechanism</strong></p> <ul> <li>High‐speed road traffic accident either as pedestrian, cyclist or occupant (defined as accident with speed &gt;40 mph).</li> <li>Fall of &gt;3 m in height.</li> <li>High‐speed injury from a projectile or an object.</li> </ul> <p>If none of the above variables are present, the patient is at low risk of intracranial pathology.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Dizziness",
+            "Headache",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs - major criteria\nvar wit = parseFloat(wit);\nvar abn = parseFloat(abn);\nvar hx = parseFloat(hx);\nvar vomit = parseFloat(vomit);\nvar sus = parseFloat(sus);\nvar seiz = parseFloat(seiz);\nvar gcs = parseFloat(gcs);\nvar sign = parseFloat(sign);\nvar pos = parseFloat(pos);\nvar pres = parseFloat(pres);\nvar road = parseFloat(road);\nvar fall = parseFloat(fall);\nvar high = parseFloat(high);\nvar nai = parseFloat(nai);\n\n//interpretation\nvar u = wit + vomit + sus + seiz + gcs + sign + pos + pres + road + fall + high + abn + hx + nai;\nvar msg, ct, sens;\nif (u == 0){\n\tmsg = \"Low\";\n    ct = 'CT not necessary.'\n    sens = '98% sensitive (death, neurosurgical intervention, abnormal CT).'\n}else{\n\tmsg = \"Not low\";\n\tct = 'Consider CT.';\n    sens =''\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: msg,\n    value_text: 'risk',\n    message: ct\n});\ncalc_output.push({\n    name: 'Score',\n    value: msg,\n    value_text: 'risk',\n    message: ct + '<br/>' + sens\n});",
+        "inputs": [
+            {
+                "subheading": "History",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "default": 0,
+                "label_en": "Witnessed <abbr title='Loss of Consciousness'>LOC</abbr> >5 min",
+                "name": "wit",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "Amnesia >5 min",
+                "name": "hx",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Antegrade or retrograde",
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "Abnormal drowsiness",
+                "name": "abn",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Abnormal = in excess of drowsiness expected by the examining doctor",
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "≥3 vomits after head injury",
+                "name": "vomit",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "1 vomit = single discrete episode of vomiting",
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "Suspicion of non‐accidental injury (NAI)",
+                "name": "nai",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Any suspicion of NAI by the examining doctor",
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "Seizure after head injury (and no previous history of epilepsy)",
+                "name": "seiz",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "subheading": "Examination",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "default": 0,
+                "label_en": "<calculator id='64'><abbr title='Glasgow Coma Scale'>GCS</abbr></calculator> <14 (or GCS <15 if <1 year old)",
+                "name": "gcs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "Suspicion of penetrating or depressed skull injury, or tense fontanelle",
+                "name": "sus",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "Signs of basal skull fracture",
+                "name": "sign",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Blood or <abbr title='Cerebrospinal Fluid'>CSF</abbr> from ear or nose, panda eyes, Battle's sign, hemotympanum, facial crepitus, or serious facial injury",
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "Positive focal neurologic sign",
+                "name": "pos",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Any focal neurologic sign (motor, sensory, coordination, or reflex abnormality)",
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "Bruise, swelling or laceration >5 cm (if <1 year old)",
+                "name": "pres",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "subheading": "Mechanism",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "default": 0,
+                "label_en": "High‐speed road traffic accident as pedestrian, cyclist or occupant ",
+                "name": "road",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "High-speed: >40 mph (64 km/h)",
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "Fall of >3 m in height",
+                "name": "fall",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "High‐speed injury from a projectile or an object",
+                "name": "high",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "head trauma",
+            "trauma",
+            "head injury",
+            "CT head",
+            "trauma imaging",
+            "chalice",
+            "intracranial hemorrhage",
+            "intracranial bleed",
+            "pediatrics",
+            "peds",
+            "peds trauma",
+            "child",
+            "children"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Radiology"
+        ]
+    }
+}

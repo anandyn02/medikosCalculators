@@ -1,0 +1,203 @@
+{
+    "id": "615",
+    "title": "Cambridge Diabetes Risk Score",
+    "desc": "The Cambridge Diabetes Risk Score predicts risk of having previously undiagnosed type 2 diabetes.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10867715 ",
+                "text": "Griffin SJ, Little PS, Hales CN, Kinmonth AL, Wareham NJ. Diabetes risk score: towards earlier detection of type 2 diabetes in general practice. Diabetes Metab Res Rev. 2000;16(3):164-71."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21380593",
+                "text": "Wareham NJ, Griffin SJ. Risk scores for predicting type 2 diabetes: comparing axes and spades. Diabetologia. 2011;54(5):994-5."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17490419",
+                "text": "Simmons RK, Harding AH, Wareham NJ, Griffin SJ. Do simple questions about diet and physical activity help to identify those at risk of Type 2 diabetes?. Diabet Med. 2007;24(8):830-5."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16922706",
+                "text": "Heldgaard PE, Griffin SJ. Routinely collected general practice data aids identification of people with hyperglycaemia and metabolic syndrome. Diabet Med. 2006;23(9):996-1002."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12518011",
+                "text": "Spijkerman A, Griffin S, Dekker J, Nijpels G, Wareham NJ. What is the risk of mortality for people who are screen positive in a diabetes screening programme but who do not have diabetes on biochemical testing? Diabetes screening programmes from a public health perspective. J Med Screen. 2002;9(4):187-90."
+            }
+        ],
+        "evidence": "<p>Probability of having T2DM (HgbA1c ≥7.0%) =</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 / (1 + <em>e</em><sup>-(α + β<sub>1</sub>x<sub>1</sub> + β<sub>2</sub>x<sub>2&nbsp;</sub>+ β<sub>3</sub>x<sub>3&nbsp;</sub>+...+ β<sub>n</sub>x<sub>n</sub>)</sup>&nbsp;)</p> <p>Where:</p> <p>α = -6.322, and additional constants and variables are as follows:</p> <p>&nbsp;</p> <table> <tbody> <tr> <td rowspan=\"2\">&nbsp;</td> <td rowspan=\"2\"> <p><strong>β</strong></p> </td> <td colspan=\"2\" rowspan=\"2\"> <p><strong>x</strong></p> </td> </tr> <tr> <td>&nbsp;</td> <td colspan=\"2\">&nbsp;</td> </tr> <tr> <td> <p>1. Gender</p> </td> <td> <p>-0.879</p> </td> <td colspan=\"2\"> <p>0 if Male</p> <p>1 if Female</p> </td> </tr> <tr> <td> <p>2. Prescribed antihypertensive medication</p> </td> <td>&nbsp;1.222</td> <td colspan=\"2\">&nbsp; <p>0 if No</p> <p>1 if Yes</p> </td> </tr> <tr> <td> <p>3. Prescribed steroids </p> </td> <td> <p>2.191</p> </td> <td colspan=\"2\"> <p>0 if No</p> <p>1 if Yes</p> </td> </tr> <tr> <td> <p>4. Age</p> </td> <td> <p>0.063</p> </td> <td colspan=\"2\"> <p>Age in years</p> </td> </tr> <tr> <td> <p>5. BMI, kg/m<sup>2</sup></p> </td> <td colspan=\"3\"> <p>β<sub>5</sub>x<sub>5</sub>= 0 if &lt;25</p> <p>β<sub>5</sub>x<sub>5</sub>= 0.699 if ≥25 and &lt;27.5</p> <p>β<sub>5</sub>x<sub>5</sub>= 1.97 if ≥27.5 and &lt;30</p> <p>β<sub>5</sub>x<sub>5</sub>= 2.518 if ≥30</p> </td> </tr> <tr> <td> <p>6. Family history</p> </td> <td colspan=\"3\"> <p>β<sub>6</sub>x<sub>6 </sub>= 0 if no diabetic 1st-degree relative</p> <p>β<sub>6</sub>x<sub>6</sub>&nbsp;= 0.728 if parent <em>or</em> sibling with diabetes</p> <p>β<sub>6</sub>x<sub>6</sub> = 0.753 if parent <em>and</em> sibling with diabetes</p> </td> </tr> <tr> <td> <p>7. Smoking history</p> </td> <td colspan=\"3\"> <p>β<sub>7</sub>x<sub>7</sub> = 0 if non-smoker</p> <p>β<sub>7</sub>x<sub>7</sub>&nbsp;= -0.218 if ex-smoker</p> <p>β<sub>7</sub>x<sub>7</sub> = 0.855 if current smoker</p> </td> </tr> </tbody> </table>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>Griffin score cutoff</strong></p> </td> <td> <p><strong>Sensitivity</strong></p> </td> <td> <p><strong>Specificity</strong></p> </td> <td> <p><strong>Positive predictive value</strong></p> </td> <td> <p><strong>Negative predictive value</strong></p> </td> </tr> <tr> <td> <p>0.11</p> </td> <td> <p>85%</p> </td> <td> <p>51%</p> </td> <td> <p>2.2%</p> </td> <td> <p>99.6%</p> </td> </tr> <tr> <td> <p>0.15</p> </td> <td> <p>72%</p> </td> <td> <p>60%</p> </td> <td> <p>2.2%</p> </td> <td> <p>99.4%</p> </td> </tr> <tr> <td> <p>0.17</p> </td> <td> <p>70%</p> </td> <td> <p>64%</p> </td> <td> <p>2.4%</p> </td> <td> <p>99.4%</p> </td> </tr> <tr> <td> <p>0.23</p> </td> <td> <p>63%</p> </td> <td> <p>72%</p> </td> <td> <p>2.8%</p> </td> <td> <p>99.4%</p> </td> </tr> <tr> <td> <p>0.29</p> </td> <td> <p>51%</p> </td> <td> <p>78%</p> </td> <td> <p>2.9%</p> </td> <td> <p>99.2%</p> </td> </tr> </tbody> </table>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Fatigue",
+            "Polyuria",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar bx1 = parseFloat(gender);\nvar bx2 = parseFloat(anti);\nvar bx3 = parseFloat(steroids);\nvar bx4 = parseFloat(age) * 0.063;\nvar bx5 = parseFloat(bmi);\nvar bx6 = parseFloat(hx);\nvar bx7 = parseFloat(smoker);\n\nif (bx7 == 0.218) {\n\tbx7 = -0.218\n}\n\n//formula\nvar denominator = 1 + Math.exp(-(-6.322 + bx1 + bx2 + bx3 + bx4 + bx5 + bx6 + bx7));\n\nvar result = 100*(1 / denominator);\n\n//interpretation\nvar i = 'Risk score >11% is 85% sensitive for predicting previously undiagnosed hyperglycemia (HbA1c >= 7.0%)'\nvar j = 'Risk Score <11%';\nif(result > 11){\n\tj = 'Risk Score >11%';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: result.toFixed(1),\n    value_text: '%',\n    message: 'Probability of T2DM'\n});\ncalc_output.push({\n    name: 'Result',\n    value: (result).toFixed(1),\n    value_text: '%',\n    message: 'Probability of T2DM in previously undiagnosed patient<br/><br/>Risk scores >11% are 85% sensitive for identifying diabetes (HgbA1c ≥7.0%)'\n});",
+        "inputs": [
+            {
+                "label_en": "Gender",
+                "name": "gender",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": -0.879
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "default": 0,
+                "label_en": "Prescribed antihypertensive medication",
+                "name": "anti",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.222
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "default": 0,
+                "label_en": "Prescribed steroids",
+                "name": "steroids",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2.191
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "default": 0,
+                "label_en": "<calculator id='29'>BMI</calculator>, kg/m²",
+                "name": "bmi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<25",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥25 and <27.5",
+                        "value": 0.699
+                    },
+                    {
+                        "label": "≥27.5 and <30",
+                        "value": 1.97
+                    },
+                    {
+                        "label": "≥30",
+                        "value": 2.518
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "default": 0,
+                "label_en": "Family history",
+                "name": "hx",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No diabetic 1st-degree relative",
+                        "value": 0
+                    },
+                    {
+                        "label": "Parent <i>or</i> sibling with diabetes",
+                        "value": 0.728
+                    },
+                    {
+                        "label": "Parent <i>and</i> sibling with diabetes",
+                        "value": 0.753
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "default": 0,
+                "label_en": "Smoking history",
+                "name": "smoker",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Non-smoker",
+                        "value": 0
+                    },
+                    {
+                        "label": "Ex-smoker",
+                        "value": 0.218
+                    },
+                    {
+                        "label": "Current smoker",
+                        "value": 0.855
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "diabetes risk score",
+            "griffin score",
+            "cambridge risk score",
+            "cambridge diabetes risk score"
+        ],
+        "specialty": [
+            "Endocrinology",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

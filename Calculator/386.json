@@ -1,0 +1,192 @@
+{
+    "id": "386",
+    "title": "DRAGON Score for Post-TPA Stroke Outcome",
+    "desc": "The DRAGON Score for Post-TPA Stroke Outcome predicts 3 month outcome in ischemic stroke patients receiving TPA.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22311929",
+                "text": "Strbian D, Meretoja A, Ahlhelm FJ, Pitkäniemi J, Lyrer P, Kaste M, Engelter S, Tatlisumak T. Predicting outcome of IV thrombolysis-treated ischemic stroke patients: the DRAGON score. Neurology. 2012 Feb 7;78(6):427-32. doi: 10.1212/WNL.0b013e318245d2a9."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points; points assigned below:</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Value</th>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"2\"><strong>Dense Cerebral Artery or Early Infarct Signs on Computerized Tomography</strong></td>\n</tr>\n<tr>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>One of these</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Both</td>\n<td>+2</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"2\"><strong><abbr title=\"Modified Rankin Scale\">mRS</abbr><calculator id=\"1890\"></calculator> &gt;1, Prestroke</strong></td>\n</tr>\n<tr>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>+1</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"2\"><strong>Age</strong></td>\n</tr>\n<tr>\n<td>&lt;65</td>\n<td>0</td>\n</tr>\n<tr>\n<td>65-79</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>&ge;80</td>\n<td>+2</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"2\"><strong>Glucose Level at Baseline</strong></td>\n</tr>\n<tr>\n<td>&lt;8 mmol/L (144 mg/dL)</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&gt;8 mmol/L (144 mg/dL)</td>\n<td>+1</td>\n</tr>\n<tr>\n<td colspan=\"2\">Onset to Treatment Time</td>\n</tr>\n<tr>\n<td>&le; 90 minutes</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&gt;90 minutes</td>\n<td>+1</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\" colspan=\"2\"><strong>Baseline <abbr title=\"NIH Stroke Scale\">NIHSS</abbr><calculator id=\"715\"></calculator></strong></td>\n</tr>\n<tr>\n<td>0-4</td>\n<td>0</td>\n</tr>\n<tr>\n<td>5-9</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>10-15</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&gt;15</td>\n<td>3</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>DRAGON Score</th>\n<th>Outcome</th>\n<th>mRS Score</th>\n<th>Percentage of Cohort</th>\n</tr>\n<tr>\n<td>0 - 1</td>\n<td>Good</td>\n<td>0 - 2</td>\n<td>96%</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Good</td>\n<td>0 - 2</td>\n<td>88%</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Good</td>\n<td>0 - 2</td>\n<td>78%</td>\n</tr>\n<tr>\n<td>8 - 10</td>\n<td>Good</td>\n<td>0 - 2</td>\n<td>0%</td>\n</tr>\n<tr>\n<td>0 - 1</td>\n<td>Miserable</td>\n<td>5 - 6</td>\n<td>0%</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Miserable</td>\n<td>5 - 6</td>\n<td>2%</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Miserable</td>\n<td>5 - 6</td>\n<td>5%</td>\n</tr>\n<tr>\n<td>8</td>\n<td>Miserable</td>\n<td>5 - 6</td>\n<td>70%</td>\n</tr>\n<tr>\n<td>9 - 10</td>\n<td>Miserable</td>\n<td>5 - 6</td>\n<td>100%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output=[]; var u=parseInt(cerebral_artery)+parseInt(mrs_prestroke)+parseInt(age)+parseInt(glucose)+parseInt(treatment_onset)+parseInt(baseline_nihss);var msg=''; var mini_msg='';if(u==0||u==1){msg='>96% likelihood of good outcome (mRS 0-2).<br/><br/>0% likelihood of miserable outcome (mRS 5-6).'; mini_msg='Good outcome likely.'}else if(u==2){msg='96% likelihood of good outcome (mRS 0-2).<br/><br/>2% likelihood of miserable outcome (mRS 5-6).'; mini_msg='Good outcome likely.'}else if(u==3){msg='87% likelihood of good outcome (mRS 0-2).<br/><br/>5% likelihood of miserable outcome (mRS 5-6).'; mini_msg='Good outcome likely.'}else if(u==4){msg='81% likelihood of good outcome (mRS 0-2).'; mini_msg='Good outcome likely.'}else if(u==5){msg='83% likelihood of miserable outcome (mRS 5-6).'; mini_msg='Miserable outcome likely.'}else if(u==6){msg='90% likelihood of miserable outcome (mRS 5-6).'; mini_msg='Miserable outcome likely.'}else if(u==7){msg='97% likelihood of miserable outcome (mRS 5-6).'; mini_msg='Miserable outcome likely.'}else if(u==8){msg='0% likelihood of good outcome (mRS 0-2).<br/><br/>99% likelihood of miserable outcome (mRS 5-6).'; mini_msg='Miserable outcome likely.'}else if(u==9){msg='0% likelihood of good outcome (mRS 0-2).<br/><br/>99% likelihood of miserable outcome (mRS 5-6).'; mini_msg='Miserable outcome likely.'}else if(u==10){msg='0% likelihood of good outcome (mRS 0-2).<br/><br/>99% likelihood of miserable outcome (mRS 5-6).'; mini_msg='Miserable outcome likely.'}\n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1892_DRAGON Score_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "HyperDense Cerebral Artery / Early Infarct on CT",
+                "mdcalc_info_concept": null,
+                "name": "cerebral_artery",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Either",
+                        "value": 1
+                    },
+                    {
+                        "label": "Both",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Modified Rankin Scale >1, prestroke",
+                "md_calc_info_concept": null,
+                "name": "mrs_prestroke",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<65",
+                        "value": 0
+                    },
+                    {
+                        "label": "65-79",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥80",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Glucose at Baseline>144 mg/dL (8 mmol/L)",
+                "md_calc_info_concept": null,
+                "name": "glucose",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Onset of Treatment >90 minutes",
+                "md_calc_info_concept": null,
+                "name": "treatment_onset",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Baseline NIH Stroke Scale",
+                "mdcalc_info_concept": null,
+                "name": "baseline_nihss",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0-4",
+                        "value": 0
+                    },
+                    {
+                        "label": "5-9",
+                        "value": 1
+                    },
+                    {
+                        "label": "10-15",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥16",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "dragon score",
+            "post tpa score",
+            "IV alteplase score",
+            "alteplase score",
+            "dragon cva",
+            "dragon prognosis",
+            "cva score"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Radiology"
+        ]
+    }
+}

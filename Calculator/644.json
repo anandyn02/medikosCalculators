@@ -1,0 +1,212 @@
+{
+    "id": "644",
+    "title": "Corrected Count Increment (CCI) for Platelet Transfusion",
+    "desc": "Corrected Count Increment (CCI) for Platelet Transfusion quantifies response to platelet transfusion.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10378838 ",
+                "text": "Davis KB, Slichter SJ, Corash L. Corrected count increment and percent platelet recovery as measures of posttransfusion platelet response: problems and a solution. Transfusion. 1999;39(6):586-92."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2048176 ",
+                "text": "Bishop JF, Matthews JP, Mcgrath K, Yuen K, Wolf MM, Szer J. Factors influencing 20-hour increments after platelet transfusion. Transfusion. 1991;31(5):392-6."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1895076/",
+                "text": "Slichter SJ, Davis K, Enright H, et al. Factors affecting posttransfusion platelet increments, platelet refractoriness, and platelet transfusion intervals in thrombocytopenic patients. Blood. 2005;105(10):4106-14."
+            }
+        ],
+        "evidence": "<p>CCI = count increment, per &micro;L &times; body surface area (m&sup2;) / unit content</p>\n<p>Units (m&sup2;/&micro;L) are usually omitted when reporting the result.</p>\n<p>Example:</p>\n<p>For an adult patient with a <calculator id=\"29\">BSA</calculator> of 2.0 m&sup2; whose platelet count rose from 5&nbsp;&times; 10<sup>9</sup>/L to 25&nbsp;&times; 10<sup>9</sup>/L after a platelet transfusion containing 4.0 &times; 10<sup>11</sup> platelets:</p>\n<ul>\n<li>CCI for above patient = (20 &times; 10<sup>9</sup>/L &times; 2.0 m&sup2;) / 4.0 =&nbsp;10,000</li>\n</ul>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>CCI at 1 hour</strong></p>\n</td>\n<td>\n<p><strong>CCI at 20 hours</strong></p>\n</td>\n<td>\n<p><strong>Interpretation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&gt;7,500</p>\n</td>\n<td>\n<p>&gt;4,800</p>\n</td>\n<td>\n<p>Successful transfusion</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&le;7,500</p>\n</td>\n<td>\n<p>&le;4,800</p>\n</td>\n<td>\n<p>Repeat transfusion. Two CCIs&nbsp;below the cutoff&nbsp;indicate refractoriness.</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [
+            {
+                "name": "Platelet count, thrombocytopenia",
+                "unit": "plt_tcp",
+                "error_min": "0",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "50",
+                "conversion": "1",
+                "normal_max_si": "50",
+                "normal_max_us": "50",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "× 10⁹/L",
+                "units_us": "× 10³/µL"
+            },
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Height (Adult)",
+                "unit": "ht_adult",
+                "error_min": "48",
+                "error_max": "90",
+                "warn_min": "48",
+                "warn_max": "80",
+                "conversion": "2.54",
+                "normal_max_si": "213",
+                "normal_max_us": "84",
+                "normal_min_si": "152",
+                "normal_min_us": "60",
+                "units_si": "cm",
+                "units_us": "in"
+            },
+            {
+                "name": "Platelet count, posttransfusion",
+                "unit": "plt_posttrans",
+                "error_min": "0",
+                "error_max": "500",
+                "warn_min": "0",
+                "warn_max": "500",
+                "conversion": "1",
+                "normal_max_si": "150",
+                "normal_max_us": "150",
+                "normal_min_si": "50",
+                "normal_min_us": "50",
+                "units_si": "× 10⁹/L",
+                "units_us": "× 10³/µL"
+            },
+            {
+                "name": "Platelet unit content",
+                "unit": "plt_unit",
+                "error_min": "0",
+                "error_max": "500",
+                "warn_min": "0",
+                "warn_max": "500",
+                "conversion": "1",
+                "normal_max_si": "10",
+                "normal_max_us": "10",
+                "normal_min_si": "0.5",
+                "normal_min_us": "0.5",
+                "units_si": "× 10¹¹ plts",
+                "units_us": "× 10¹¹ plts"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Bleeding/Hemorrhage",
+            "GI Bleeding",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nif (UOMSYSTEM == true) {\n  height = height * 2.54\n}\n\nvar plt_pre = parseFloat(plt_pre)\nvar plt_post = parseFloat(plt_post)\nvar weight = parseFloat(weight)\nvar height = parseFloat(height)\nvar bsa = Math.pow(weight * height / 3600, 0.5)\nvar plt_unit = parseFloat(plt_unit) \nvar time = parseFloat(time)\n\n//equations\nvar cci = Math.round((plt_post - plt_pre) * bsa.toFixed(1) / plt_unit * 1000 / 100)*100\n\ncci = cci.toFixed(0)\n\nvar msg\n\nif (time == 0) {\n  if (cci > 7500) {\n  msg = '1-hr CCI >7,500 indicates successful transfusion (platelet transfusion refractoriness unlikely)'\n  }\n  else {\n    msg = 'Recommend repeat transfusion. Two CCIs ≤7,500 within 1 hour after transfusion suggests refractoriness.'\n  }\n}\nelse if (time == 1) {\n  if (cci > 4800) {\n    msg = '20-hr CCI >4,800 indicates successful transfusion (platelet transfusion refractoriness unlikely)'\n  }\n  else {\n    msg = 'Recommend repeat transfusion. Two CCIs ≤4,800 within 20 hours after transfusion suggests refractoriness.'\n  }\n} \n\n\n//results\nif (time == 0) {\n  calc_output.push({\n      name: 'mini',\n      value: cci.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\"),\n      value_text: '',\n      message: 'Corrected count increment'\n  });\n  calc_output.push({\n      name: '4034_CCI_result',\n      value: cci.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\"),\n      value_text: '',\n      message: 'Corrected count increment' \n  });\n  calc_output.push({\n      name: '4034_CCT_interpretation',\n      value: '',\n      value_text: '',\n      message: msg\n  });\n}\nelse {\n  calc_output.push({\n      name: 'mini',\n      value: cci.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\"),\n      value_text: '',\n      message: 'Corrected count increment'\n  });\n  calc_output.push({\n      name: '4034_CCI_result',\n      value: cci.toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\"),\n      value_text: '',\n      message: 'Corrected count increment' \n  });\n  calc_output.push({\n      name: '4034_CCT_interpretation',\n      value: '',\n      value_text: '',\n      message: msg\n  });\n}\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Pre-transfusion platelet count",
+                "name": "plt_pre",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plt_tcp"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Post-transfusion platelet count",
+                "name": "plt_post",
+                "optional": false,
+                "tips_en": "Collect at either 1 or 20 hours after transfusion",
+                "type": "textbox",
+                "unit": "plt_posttrans"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Time after transfusion",
+                "mdcalc_info_concept": null,
+                "name": "time",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1-hour",
+                        "value": 0
+                    },
+                    {
+                        "label": "20-hour",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Height",
+                "name": "height",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht_adult"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Platelet unit content",
+                "name": "plt_unit",
+                "optional": false,
+                "tips_en": "One apheresis unit is ~3.0 x 10¹¹ plts; one pooled unit is ~0.55 x 10¹¹ plts",
+                "type": "textbox",
+                "unit": "plt_unit"
+            }
+        ],
+        "can_search": [
+            "CCI",
+            "corrected count",
+            "count increment",
+            "plt",
+            "platelet transfusion",
+            "transfusion",
+            "massive transfusion"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Pathology",
+            "Surgery (Trauma)",
+            "Transfusion Medicine"
+        ]
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "id": "619",
+    "title": "mMRC (Modified Medical Research Council) Dyspnea Scale",
+    "desc": "The mMRC (Modified Medical Research Council) Dyspnea Scale stratifies severity of dyspnea in respiratory diseases, particularly COPD.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3342669",
+                "text": "Mahler DA, Wells CK. Evaluation of clinical methods for rating dyspnea. Chest. 1988;93(3):580-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20413545",
+                "text": "Nishiyama O, Taniguchi H, Kondoh Y, et al. A simple assessment of dyspnoea as a prognostic indicator in idiopathic pulmonary fibrosis. Eur Respir J. 2010;36(5):1067-72."
+            },
+            {
+                "href": "https://bmcpulmmed.biomedcentral.com/articles/10.1186/1471-2466-12-61 ",
+                "text": "Launois C, Barbe C, Bertin E, et al. The modified Medical Research Council scale for the assessment of dyspnea in daily living in obesity: a pilot study. BMC Pulm Med. 2012;12:61."
+            },
+            {
+                "href": "http://www.nejm.org/doi/full/10.1056/NEJMoa021322",
+                "text": "Celli BR, Cote CG, Marin JM, Casanova C, de Oca MM, Mendez RA, et al. The body mass index, airflow obstruction, dyspnea, and exercise capacity index in chronic obstructive pulmonary disease. N Engl J Med. 2004;350:1005–12. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2714566/",
+                "text": "Chhabra SK, Gupta AK, Khuma MZ. Evaluation of three scales of dyspnea in chronic obstructive pulmonary disease. Ann Thorac Med. 2009;4(3):128-32."
+            },
+            {
+                "href": "http://www.goldcopd.com",
+                "text": "GOLD: Global Initiative for Obstructive Lung Disease Global Strategy for the Diagnosis, Management and Prevention of Chronic Obstructive Pulmonary Disease 2011 Available from: http://www.goldcopd.com Accessed August 2nd, 2017"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1987525/ ",
+                "text": "Fletcher CM. Discussion on the diagnosis of pulmonary emphysema. Proc R Soc Med. 1952;45:576-585. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4884681/",
+                "text": "Henoch I, Strang S, Löfdahl CG, Ekberg-Jansson A. Health-related quality of life in a nationwide cohort of patients with COPD related to other characteristics. Eur Clin Respir J.  2016;3:31459."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12412667",
+                "text": "Rennard S, Decramer M, Calverley PM, et al. Impact of COPD in North America and Europe in 2000: subjects’ perspective of confronting COPD International Survey. Eur Respir J. 2002;20(4):799–805."
+            }
+        ],
+        "evidence": "<p><span>Selection of the appropriate grade:</span></p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>Grade</strong></p> </td> <td> <p><strong>Symptom severity</strong></p> </td> </tr> <tr> <td> <p><span>0</span></p> </td> <td> <p><span>Dyspnea only with strenuous exercise</span></p> </td> </tr> <tr> <td> <p><span>1</span></p> </td> <td> <p><span>Dyspnea when hurrying on level ground or walking up a slight hill</span></p> </td> </tr> <tr> <td> <p><span>2</span></p> </td> <td> <p><span>Walks slower than people of the same age because of dyspnea, or has to stop for breath when walking at own pace on level ground</span></p> </td> </tr> <tr> <td> <p><span>3</span></p> </td> <td> <p><span>Stops for breath after walking 100 yards (91 m) or after a few minutes on level ground</span></p> </td> </tr> <tr> <td> <p><span>4</span></p> </td> <td> <p><span>Too dyspneic to leave house or breathless when dressing</span></p> </td> </tr> </tbody> </table> </div>",
+        "facts": "<p>Interpretation:</p> <p>Higher grade indicates higher severity.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "COPD"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar stage = parseFloat(sev);\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: stage,\n    value_text: 'grade',\n    message: 'Higher grade indicates higher severity.'\n});\ncalc_output.push({\n    name: 'Result',\n    value: 'Grade ' + stage,\n    value_text: '',\n    message: 'Higher grade indicates higher severity.'\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Symptom severity",
+                "name": "sev",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Dyspnea only with strenuous exercise",
+                        "value": 0
+                    },
+                    {
+                        "label": "Dyspnea when hurrying or walking up a slight hill",
+                        "value": 1
+                    },
+                    {
+                        "label": "Walks slower than people of the same age because of dyspnea or has to stop for breath when walking at own pace",
+                        "value": 2
+                    },
+                    {
+                        "label": "Stops for breath after walking 100 yards (91 m) or after a few minutes",
+                        "value": 3
+                    },
+                    {
+                        "label": "Too dyspneic to leave house or breathless when dressing",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Walking should be assessed on level ground",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "mmrc",
+            "mmrcs scale",
+            "dyspnoea",
+            "dyspnea scale",
+            "sob",
+            "sob scale"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

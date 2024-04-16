@@ -1,0 +1,305 @@
+{
+    "id": "462",
+    "title": "Manning Criteria for Diagnosis of Irritable Bowel Syndrome (IBS)",
+    "desc": "The Manning Criteria for Diagnosis of IBS determines likelihood of irritable bowel syndrome diagnosis based on clinically significant criteria.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/698649",
+                "text": "Manning AP, Thompson WG, Heaton KW, Morris AF (1978). 'Towards positive diagnosis of the irritable bowel.'. Br Med J 2 (6138): 653–4.doi:10.1136/bmj.2.6138.653. PMC 1607467. PMID 698649."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23994201",
+                "text": "Validation of the Rome III criteria for the diagnosis of irritable bowel syndrome in secondary care.'. Gastroenterology. 145: 1262–70.e1. Dec 2013.doi:10.1053/j.gastro.2013.08.048. PMID 23994201"
+            }
+        ],
+        "evidence": "<p>Addition of positive criterion.</p>\n<ul>\n<li>Onset of pain linked to more frequent bowel movements</li>\n<li>Looser stools associated with onset of pain</li>\n<li>Pain relieved by passage of stool</li>\n<li>Noticeable abdominal bloating</li>\n<li>Sensation of incomplete evacuation more than 25% of the time</li>\n<li>Diarrhea with mucus more than 25% of the time</li>\n</ul>",
+        "facts": "<p>If no red flag signs are present, a patient likely has IBS when at least 3 of the 6 criteria are met with 63-90% sensitivity and 70-93% specificity.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Anxious",
+            "Constipation",
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Anxiety",
+            "Irritable Bowel Syndrome"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(freq) + parseFloat(loose) + parseFloat(painrel) + parseFloat(bloat) + parseFloat(evac) + parseFloat(diarrhea);\nvar v = parseFloat(age) + parseFloat(weight) + parseFloat(blood) + parseFloat(anemia) + parseFloat(fever);\n\nvar string, ibs, mini_msg;\nif (u < 2 && v == 0) {\n    string = 'Negative';\n    ibs = 'Unlikely IBS.';\n    mini_msg = 'Unlikely IBS.';\n}\nif (u == 2 && v == 0) {\n    string = 'Negative';\n    ibs = 'Unlikely IBS.<br/>84 - 94 % sensitive, 55 - 76 % specific for IBS.';\n    mini_msg = 'Unlikely IBS.';\n}\nif (u >= 3 && v == 0) {\n    string = 'Positive';\n    ibs = 'Likely IBS.<br/>63 - 90 % sensitive, 70 - 93 % specific for IBS.';\n    mini_msg = 'Likely IBS.';\n}\nif (u <= 2 && v >= 1) {\n    string = 'Negative';\n    ibs = 'Patient unlikely suffers from IBS.<br/>If ≥ 1 “red flag” signs present, consider assessment for other pathology.';\n    mini_msg = 'Unlikely IBS.';\n}\nif (u >= 3 && v >= 1) {\n    string = 'Inconclusive';\n    ibs = 'Unable to diagnose IBS from Manning Criteria alone. If any \"red flag(s)\" present, consider assessment for other pathology.';\n    mini_msg = ' ';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: string,\n    value_text: ' ',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3167_Manning Criteria_result',\n    value: string,\n    value_text: ' ',\n    message: ibs\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "",
+                "subheading_instructions": "3+ required for positive diagnosis (and 0 red flags)",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Onset of pain linked to more frequent bowel movements",
+                "md_calc_info_concept": null,
+                "name": "freq",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Looser stools associated with onset of pain",
+                "md_calc_info_concept": null,
+                "name": "loose",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pain relieved by passage of stool",
+                "md_calc_info_concept": null,
+                "name": "painrel",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Noticeable abdominal bloating",
+                "md_calc_info_concept": null,
+                "name": "bloat",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sensation of incomplete evacuation > 25% of the time",
+                "md_calc_info_concept": null,
+                "name": "evac",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Diarrhea with mucus > 25% of the time",
+                "md_calc_info_concept": null,
+                "name": "diarrhea",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Red Flag Signs",
+                "subheading_instructions": "If any are present, IBS is not likely",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age > 50 years",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Weight loss",
+                "md_calc_info_concept": null,
+                "name": "weight",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Blood in stools",
+                "md_calc_info_concept": null,
+                "name": "blood",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anemia",
+                "md_calc_info_concept": null,
+                "name": "anemia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Fever",
+                "md_calc_info_concept": null,
+                "name": "fever",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "dx",
+            "ibs",
+            "red",
+            "flag",
+            "ibs",
+            "diarrhea"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

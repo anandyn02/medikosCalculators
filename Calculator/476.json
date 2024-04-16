@@ -1,0 +1,183 @@
+{
+    "id": "476",
+    "title": "FeverPAIN Score for Strep Pharyngitis",
+    "desc": "The FeverPAIN for Streptococcal Pharyngitis calculates likelihood of strep throat and need for antibiotic prescription.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23211183",
+                "text": "Little P, et al. Incidence and clinical variables associated with streptococcal throat infections: a prospective diagnostic cohort study. Br J Gen Pract. 2012 Nov;62(604):e787-94."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3805475/#!po=87.5000",
+                "text": "Little P, Hobbs FDR, Moore M, et al. Clinical score and rapid antigen detection test to guide antibiotic use for sore throats: randomised controlled trial of PRISM (primary care streptococcal management). BMJ : British Medical Journal. 2013;347:f5806. doi:10.1136/bmj.f5806."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/books/NBK261552/",
+                "text": "Little P, Moore M, Hobbs FDR, et al. Chapter 3: Two diagnostic cohorts to identify clinical variables associated with Lancefield group A beta-haemolytic streptococci and Lancefield non-group A streptococcal throat infections. In: PRImary care Streptococcal Management (PRISM) study: in vitro study, diagnostic cohorts and a pragmatic adaptive randomised controlled trial with nested qualitative study and cost-effectiveness study."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/books/NBK261552/",
+                "text": "Little P, Moore M, Hobbs FDR, et al. Chapter 3: Two diagnostic cohorts to identify clinical variables associated with Lancefield group A beta-haemolytic streptococci and Lancefield non-group A streptococcal throat infections. In: PRImary care Streptococcal Management (PRISM) study: in vitro study, diagnostic cohorts and a pragmatic adaptive randomised controlled trial with nested qualitative study and cost-effectiveness study."
+            }
+        ],
+        "evidence": "",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>A score of 0-1 is associated with 13-18% isolation of streptococcus (close to background carriage rates).</li>\n<ul>\n<li>No antibiotics recommended.</li>\n</ul>\n<li>A score of 2 is associated with 30-35% isolation of streptococcus.</li>\n<ul>\n<li>Delayed antibiotic may be appropriate.</li>\n</ul>\n<li>A score of 3 is associated with 39-48% isolation of streptococcus.</li>\n<ul>\n<li>Delayed antibiotic may be appropriate.</li>\n</ul>\n<li>A score of 4 or more is associated with 62-65% isolation of streptococcus.</li>\n<ul>\n<li>Consider antibiotics if symptoms are severe or a short delayed prescribing strategy may be appropriate (48 hours).</li>\n</ul>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Sore Throat"
+        ],
+        "disease_treated": [
+            "Pharyngitis",
+            "Strep Pharyngitis"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseInt(fev) + parseInt(cough) + parseInt(pur) + parseInt(symp) + parseInt(inf);\nvar msg, mini_msg;\n\n\nif (u == 0) { mini_msg = '13-18% isolation of streptococcus.';\n    msg = '<br/><br/>Unlikely streptococcal infection; antibiotics not recommended.'; }\nif (u == 1) { mini_msg = '13-18% isolation of streptococcus.';\n    msg = '<br/><br/>Unlikely streptococcal infection; antibiotics not recommended.'; }\nif (u == 2) { mini_msg = '30-35% isolation of streptococcus.';\n    msg = '<br/><br/>Consider delayed antibiotics.'; }\nif (u == 3) { mini_msg = '39-48% isolation of streptococcus.';\n    msg = '<br/><br/>Consider delayed antibiotics.'; }\nif (u >= 4) { mini_msg = '62-65% isolation of streptococcus.';\n    msg = '<br/><br/>Consider antibiotics.'; }\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3316_FeverPAIN Score_result',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: mini_msg + msg\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "History",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Fever in past 24 hours",
+                "md_calc_info_concept": null,
+                "name": "fev",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of cough or coryza",
+                "md_calc_info_concept": null,
+                "name": "cough",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Symptom onset ≤3 days",
+                "md_calc_info_concept": null,
+                "name": "symp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Physical Exam Findings",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Purulent tonsils",
+                "md_calc_info_concept": null,
+                "name": "pur",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Severe tonsil inflammation",
+                "md_calc_info_concept": null,
+                "name": "inf",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "feverpain",
+            "fever",
+            "pain",
+            "strep throat",
+            "streptococcal",
+            "pharyngitis",
+            "sore throat",
+            "exudates",
+            "erythema"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Oral and Maxillofacial Surgery",
+            "Otolaryngology",
+            "Pediatrics"
+        ]
+    }
+}

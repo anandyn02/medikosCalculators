@@ -1,0 +1,260 @@
+{
+    "id": "518",
+    "title": "Burch-Wartofsky Point Scale (BWPS) for Thyrotoxicosis",
+    "desc": "The Burch-Wartofsky Point Scale (BWPS) for Thyrotoxicosis determines likelihood of thyrotoxicosis independent of thyroid hormone levels.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8325286",
+                "text": "Burch HB, Wartofsky L. Life-Threatening Thyrotoxicosis. Thyrotoxic storm. Endocrinology and Metabolism Clinics of North America . 1993; 22(2): 263-77."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22690898",
+                "text": "Akamizu T, Satoh T, Isozaki O, Suzuki A, Wakino S, Iburi T, Tsuboi K, Monden T, Kouki T, Otani H, Teramukai S, Uehara R, Nakamura Y, Nagai M, Mori M Diagnostic criteria, clinical features, and incidence of thyroid storm based on nationwide surveys. Thyroid. 2012 Jul;22(7):661-79."
+            }
+        ],
+        "evidence": "<p>Addition of assigned points.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Score</th>\n<th>Thyroid Storm</th>\n</tr>\n<tr>\n<td>&lt;25</td>\n<td>Unlikely to represent thyroid storm</td>\n</tr>\n<tr>\n<td>25-44</td>\n<td>Suggestive of impending thyroid storm</td>\n</tr>\n<tr>\n<td>&ge;45</td>\n<td>Highly suggestive of thyroid storm</td>\n</tr>\n</tbody>\n</table>\n<p><strong>&nbsp;</strong></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Anxious",
+            "Fever",
+            "Palpitations",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Anxiety",
+            "Atrial Fibrillation",
+            "Thyroid Dysfunction"
+        ],
+        "logic": "var calc_output = [];\n\nvar v = parseFloat(temp) + parseFloat(cns) + parseFloat(gihep) + parseFloat(tachy) + parseFloat(chf) + parseFloat(afib) + parseFloat(precip);\n\nvar msg;\n\nif (v < 25) {\n    msg = 'Unlikely to represent thyroid storm';\n} else if (v >= 25 && v <= 44) {\n    msg = 'Suggestive of impending thyroid storm';\n} else if (v >= 45) {\n    msg = 'Highly suggestive of thyroid storm';\n}\n\ncalc_output.push({\n  name: 'mini',\n  value: v,\n  value_text: 'points',\n  message: msg\n});\ncalc_output.push({\n  name: '3816_Burch-Wartofsky_result',\n  value: v,\n  value_text: 'points',\n  message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Temperature &deg;F (&deg;C)</p>",
+                "mdcalc_info_concept": null,
+                "name": "temp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<99",
+                        "value": 0
+                    },
+                    {
+                        "label": "99–99.9 (37.2-37.7)",
+                        "value": 5
+                    },
+                    {
+                        "label": "100–100.9 (37.8-38.2)",
+                        "value": 10
+                    },
+                    {
+                        "label": "101–101.9 (38.3-38.8)",
+                        "value": 15
+                    },
+                    {
+                        "label": "102–102.9 (38.9-39.2)",
+                        "value": 20
+                    },
+                    {
+                        "label": "103–103.9 (39.3-39.9)",
+                        "value": 25
+                    },
+                    {
+                        "label": "≥104.0 (≥ 40.0)",
+                        "value": 30
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Central nervous system effects</p>",
+                "mdcalc_info_concept": null,
+                "name": "cns",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild (agitation)",
+                        "value": 10
+                    },
+                    {
+                        "label": "Moderate (delirium, psychosis, extreme lethargy)",
+                        "value": 20
+                    },
+                    {
+                        "label": "Severe (seizures, coma)",
+                        "value": 30
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Gastrointestinal-hepatic dysfunction</p>",
+                "mdcalc_info_concept": null,
+                "name": "gihep",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderate (diarrhea, nausea/vomiting, abdominal pain)",
+                        "value": 10
+                    },
+                    {
+                        "label": "Severe (unexplained jaundice)",
+                        "value": 20
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Heart Rate (beats/minute)</p>",
+                "mdcalc_info_concept": null,
+                "name": "tachy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<90",
+                        "value": 0
+                    },
+                    {
+                        "label": "90-109",
+                        "value": 5
+                    },
+                    {
+                        "label": "110-119",
+                        "value": 10
+                    },
+                    {
+                        "label": "120-129",
+                        "value": 15
+                    },
+                    {
+                        "label": "130-139",
+                        "value": 20
+                    },
+                    {
+                        "label": "≥140",
+                        "value": 25
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Congestive Heart Failure</p>",
+                "mdcalc_info_concept": null,
+                "name": "chf",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild (pedal edema)",
+                        "value": 5
+                    },
+                    {
+                        "label": "Moderate (bibasilar rales)",
+                        "value": 10
+                    },
+                    {
+                        "label": "Severe (pulmonary edema)",
+                        "value": 15
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Atrial fibrillation present</p>",
+                "md_calc_info_concept": null,
+                "name": "afib",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Precipitating event</p>",
+                "md_calc_info_concept": null,
+                "name": "precip",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "thyroid",
+            "tsh",
+            "thyroid storm",
+            "Burch Wartofsky",
+            "thyrotoxicosis",
+            "thyroid dysfunction",
+            "stroke risk"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Endocrinology"
+        ]
+    }
+}

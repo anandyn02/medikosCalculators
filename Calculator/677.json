@@ -1,0 +1,203 @@
+{
+    "id": "677",
+    "title": "King's College Criteria for Acetaminophen Toxicity",
+    "desc": "The Kings College Criteria for Acetaminophen Overdose evaluates the need for translpantation in liver failure secondary to acetaminophen overdose.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2490426",
+                "text": "O'Grady J, Alexander G, Hayllar K, Williams R (1989). Early indicators of prognosis in fulminant hepatic failure. Gastroenterology 97 (2): 439–45"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11867109",
+                "text": "Bernal W, Donaldson N, Wyncoll D, Wendon J. Blood lactate as an early predictor of outcome in paracetamol-induced acute liver failure: a cohort study. Lancet. 2002; 359(9306): 558-63. PMID:11867109."
+            },
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/10.1053/jhep.2002.35069/epdf",
+                "text": "Schmidt LE, Dalhoff K. Serum phosphate is an early predictor of outcome in severe acetaminophen-induced hepatotoxicity. Hepatology. 2002; 36(3):659–665. doi: 10.1053/jhep.2002.35069."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9250851",
+                "text": "Riordan SM, Williams R. Treatment of hepatic encephalopathy. N Engl J Med. 1997 Aug 14;337(7):473-9."
+            },
+            {
+                "href": "https://accessemergencymedicine.mhmedical.com/book.aspx?bookID=1163",
+                "text": "Goldfrank's Toxicologic Emergencies, 10th Edition."
+            }
+        ],
+        "evidence": "<p>Series of Yes/No Questions.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>PPV</th>\n<th>Sensitivity</th>\n<th>Specificity</th>\n<th>Predictive Accuracy</th>\n</tr>\n<tr>\n<td>Arterial pH &lt;7.30</td>\n<td>0.95</td>\n<td>0.49</td>\n<td>0.99</td>\n<td>0.81</td>\n</tr>\n<tr>\n<td>HE + PT + Cr</td>\n<td>0.67</td>\n<td>0.45</td>\n<td>0.94</td>\n<td>0.83</td>\n</tr>\n<tr>\n<td>Lactate*</td>\n<td></td>\n<td>0.81</td>\n<td>0.95</td>\n<td>0.92</td>\n</tr>\n<tr>\n<td>Phosphate**</td>\n<td>1</td>\n<td>0.89</td>\n<td>1</td>\n<td>0.98</td>\n</tr>\n</tbody>\n</table>\n<p>PPV = Positive predictive value; HE = Hepatic encephalopathy stage III/IV; PT = prothrombin time &gt;100 s; Cr = creatinine &gt;3.4 mg/dL<br><br>* Either lactate &gt;3.5 mmol/L after early resuscitation, or &gt;3.0 mmol/L after full resuscitation.<br><br>** Phosphate &gt;3.7 mg/dL between 48 &ndash; 96 hours.</p>\n</div>\n<p>For more information on Hepatic Encephelopathy Stages, <calculator id=\"674\">click here</calculator>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "AMS"
+        ],
+        "disease_treated": [
+            "Cirrhosis",
+            "Hepatitis",
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(ph) + parseFloat(inr) + parseFloat(creatinine) + parseFloat(hepatic_encphalopathy);\nvar lactate = parseFloat(lactate);\nvar phosphorus = parseFloat(phosphorus);\nvar msg = '';\nvar msgadd = '';\nvar mini_msg = '';\nif (u == 3) {\n    msg = 'Transfer to transplant center and list for transplant if INR, Creatinine, and Encephalopathy indicators all present in a 24 hour period.';\n    mini_msg = 'Transfer for transplant if all present in 24 hr period.'\n}\nif (u > 3) {\n    msg = 'Transfer to transplant center and list for transplant.';\n    mini_msg = 'Transfer for transplant.'\n}\nif (u < 3) {\n    msg = 'Does not meet transplant or referral criteria.';\n    mini_msg = 'Does not meet transplant or referral criteria.'\n}\nif (parseFloat(ph) == 1) {\n    msg = 'Transfer to transplant center and list for transplant.';\n    mini_msg = 'Transfer for transplant.'\n}\nif (lactate == 1 && phosphorus == 0) { msgadd = '<br/><br/>While not part of the King\\u2019s Criteria, hyperlactatemia is a strong predictor of poor prognosis for survival without transplantation.'; }\nif (lactate == 0 && phosphorus == 1) { msgadd = '<br/><br/>While not part of the King\\u2019s Criteria, hyperphosphatemia is a strong predictor of poor prognosis for survival without transplantation.'; }\nif (lactate == 1 && phosphorus == 1) { msgadd = '<br/><br/>While not part of the King\\u2019s Criteria, hyperlactatemia and hyperphosphatemia are strong predictors of poor prognosis for survival without transplantation.'; }\n\ncalc_output.push({ \n    name: 'mini', \n    value: u, \n    value_text: 'criteria', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: \"532_King's College Criteria_result\", \n    value: u, \n    value_text: 'criteria', \n    message: msg + msgadd \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Arterial pH &lt;7.30</p>",
+                "md_calc_info_concept": null,
+                "name": "ph",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>INR &gt;6.5 (PT &gt;100 sec)</p>",
+                "md_calc_info_concept": null,
+                "name": "inr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><calculator id=\"43\">Creatinine</calculator> &gt;3.4 mg/dL (300 &micro;mol/L)</p>",
+                "md_calc_info_concept": null,
+                "name": "creatinine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Grade III or IV <calculator id=\"674\">hepatic encephalopathy</calculator></p>",
+                "md_calc_info_concept": null,
+                "name": "hepatic_encphalopathy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Other predictors of poor prognosis without transplant",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Lactate &gt;3.5 mmol/L after fluid resuscitation (&lt;4 hrs) OR lactate &gt;3 mmol/L after full fluid resuscitation (12 hours)</p>",
+                "md_calc_info_concept": null,
+                "name": "lactate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Phosphate &gt;3.75 mg/dL (1.2 mmol/L) at 48-96 hours</p>",
+                "md_calc_info_concept": null,
+                "name": "phosphorus",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "tylenol",
+            "mucomyst",
+            "liver",
+            "apap",
+            "kings",
+            "KCC"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)",
+            "Toxicology"
+        ]
+    }
+}

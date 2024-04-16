@@ -1,0 +1,126 @@
+{
+    "id": "637",
+    "title": "High-dose Insulin Euglycemia Therapy (HIET)",
+    "desc": "High-dose Insulin Euglycemia Therapy doses insulin for calcium-channel blocker or beta blocker overdose.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://accesspharmacy.mhmedical.com/content.aspx?bookid=1163&sectionid=65087723",
+                "text": "Howland M. Antidotes in Depth. In: Hoffman RS, Howland M, Lewin NA, Nelson LS, Goldfrank LR. eds. Goldfrank's Toxicologic Emergencies, 10e. McGraw Hill; 2015."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21819291 ",
+                "text": "Holger JS, Stellpflug SJ, Cole JB, Harris CR, Engebretsen KM. High-dose insulin: a consecutive case series in toxin-induced cardiogenic shock. Clin Toxicol (Phila). 2011;49(7):653-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17622512 ",
+                "text": "Greene SL, Gawarammana I, Wood DM, Jones AL, Dargan PI. Relative safety of hyperinsulinaemia/euglycaemia therapy in the management of calcium channel blocker overdose: a prospective observational study. Intensive Care Med. 2007;33(11):2019-24."
+            },
+            {
+                "href": "https://www.google.com/books/edition/_/lRjgswEACAAJ?hl=en&sa=X&ved=2ahUKEwjy7az-2c76AhUGFlkFHU23ApgQre8FegQIEhAC",
+                "text": "Lugassy DM et al. The Critically Ill Poisoned Patient. Emergency Department Resuscitation of the Critically Ill 2015. M. E. Winters, American College of Emergency Physicians."
+            }
+        ],
+        "evidence": "<p>Insulin bolus:</p> <ul> <li>Intravenous bolus of regular insulin at a dose of <strong>1 unit/kg</strong>.</li> <li>If serum glucose &lt;250 mg/dL, concurrently administer a bolus of dextrose 25-50 g (or 0.5-1 g/kg) IV. <ul> <li><em>Note:&nbsp;</em>the calculator assumes D50 (50% dextrose in water) will be given for the initial bolus, and uses the weight-based dosing (0.5-1 g dextrose per kg patient weight; i.e., 1-2 cc D50 per kg patient weight).</li> </ul> </li> </ul> <p>HIET continuous infusion:</p> <ul> <li>Regular insulin: start 0.5–1 unit/kg/hr.</li> <li>Dextrose: 0.5 g/kg/hr (titrate to maintain glucose 110–250 mg/dL).</li> <li>If fluid overload is a concern, the insulin can be concentrated to 10 units/mL.</li> <li>If hypoglycemia does occur, bolus with dextrose and/or increase dextrose infusion first before considering a decrease or cessation of insulin infusion.</li> </ul> <p>Continuous monitoring:</p> <ul> <li>Serum glucose every 30 minutes for 1-2 hours until stable.</li> <li>Potassium every 1 hour.</li> </ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Glucose",
+                "unit": "glu",
+                "error_min": "1",
+                "error_max": "1600",
+                "warn_min": "50",
+                "warn_max": "1000",
+                "conversion": "0.0555",
+                "normal_max_si": "5.8",
+                "normal_max_us": "105",
+                "normal_min_si": "3.9",
+                "normal_min_us": "70",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\nif (UOMSYSTEM == false) {\n  glucose = parseFloat(glucose) / 0.0555;\n}\nvar weight = parseFloat(weight)\nvar glucose = parseFloat(glucose)\nvar dextrose = parseFloat(dextrose)\n\nvar ins_bolus = weight\nvar ins_infusion = (weight/2).toFixed(0) + '-' + weight.toFixed(0) \nvar dex_bolus = weight.toFixed(0) + '-' + (2 * weight).toFixed(0)\nvar glu_msg = ' (since serum glucose is <250 mg/dL or 13.9 mmol/L)' \nvar dex_infusion = weight/2  \nvar dex_msg = 'D50'\n\nif (dextrose == 1) {\n    dex_infusion = weight\n    dex_msg = 'D25'\n}\nelse if (dextrose == 2) {\n    dex_infusion = 2.5 * weight\n    dex_msg = 'D10'\n}\n\nvar msgAppend = '<br/><br/>' + dex_bolus + ' cc D50 bolus' + glu_msg\n\nif (glucose >= 250) {\n    msgAppend = ''\n}\n\n\n\ncalc_output.push({\n    name: 'mini',\n    value: ins_bolus.toFixed(0),\n    value_text: 'units',\n    message: 'Regular insulin bolus'\n}); \ncalc_output.push({\n    name: 'insulin bolus',\n    value: ins_bolus.toFixed(0),\n    value_text: 'units',\n    message: 'Regular insulin bolus' + msgAppend\n}); \ncalc_output.push({\n    name: 'insulin infusion',\n    value: ins_infusion,\n    value_text: 'units/hr',\n    message: 'Regular insulin continuous infusion'\n});\ncalc_output.push({\n    name: 'dextrose infusion',\n    value: dex_infusion.toFixed(0),    \n    value_text: 'cc/hr',\n    message: dex_msg + ' continuous infusion (titrate to maintain glucose 110–250 mg/dL or 6.1-13.9 mmol/L)'\n}); ",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Patient body weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Serum glucose",
+                "name": "glucose",
+                "optional": false,
+                "tips_en": "To determine whether D50 bolus should be given concurrently with initial insulin bolus",
+                "type": "textbox",
+                "unit": "glu"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Dextrose replacement for infusion",
+                "name": "dextrose",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "D50",
+                        "value": 0
+                    },
+                    {
+                        "label": "D25",
+                        "value": 1
+                    },
+                    {
+                        "label": "D10",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Calcium channel blocker",
+            "ccb",
+            "beta blocker",
+            "antidote",
+            "toxicity",
+            "tox"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Toxicology"
+        ]
+    }
+}

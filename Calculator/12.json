@@ -1,0 +1,230 @@
+{
+    "id": "12",
+    "title": "Donor Lymphocyte Infusion (DLI) Volume",
+    "desc": "The Donor Lymphocyte Infusion (DLI) Volume to Process by Apheresis estimates the volume of whole blood to be processed by apheresis to yield an appropriate DLI dosage.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.google.com/books/edition/Hematopoietic_Stem_Cell_Transplantation/wzkNYAAACAAJ?hl=en",
+                "text": "Wingard JR. Hematopoietic Stem Cell Transplantation, A Handbook for Clinicians. 2010."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p></p>\n<p>(A) Absolute CD3<sup>+</sup> lymphocyte count, cells/mL = donor WBC x donor % total lymphocytes x donor % CD3+ lymphocytes x 1,000</p>\n<p>(B) Total CD3+ cells needed = weight, kg x CD3<sup>+</sup> infusion dose, cells/kg x number of doses desired</p>\n<p>(C) Total blood volume needed, L = (B / A) / collection efficiency</p>\n<p>Note: percents should be expressed as fractions, e.g. 30% total lymphocytes should be 0.30 in equation (A).</p>\n<p><strong>Example:</strong></p>\n<p>For a 85 kg patient with WBC 6.2, 30% lymphocytes, 54% CD3<sup><sub>+</sub></sup> lymphocytes who will receive 2 doses of 50 &times; 10⁶ cells/kg each, collection efficiency 50%:</p>\n<p>(A) Absolute CD3<sup>+</sup>&nbsp;lymphocyte count = 6.2 x 10<sup>3</sup> x 0.30 x 0.54 x 1,000 = 1.004 x 10<sup>6</sup> cells/mL</p>\n<p>(B) Total CD3<sup>+</sup> cells needed = 85 x (50&nbsp;&times; 10⁶) x 2 = 8.5 x 10<sup>9</sup> CD3<sup>+</sup> cells</p>\n<p>(C) Total blood volume needed, L = 8.5 x 10<sup>9</sup> / 1.004 x 10<sup>6</sup> / 0.5 = 16.9 L</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "doses",
+                "unit": "infusions",
+                "error_min": "0",
+                "error_max": "10",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "5",
+                "normal_max_us": "5",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": "doses",
+                "units_us": "doses"
+            },
+            {
+                "name": "CD3+",
+                "unit": "cd3",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "× 10⁶ cells/kg",
+                "units_us": "× 10⁶ cells/kg"
+            },
+            {
+                "name": "donor total lymphocytes",
+                "unit": "donor_total_lymphs",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "42",
+                "normal_max_us": "42",
+                "normal_min_si": "14",
+                "normal_min_us": "14",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "percentages",
+                "unit": "basic_stats",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "White Blood Cell Count",
+                "unit": "wbc",
+                "error_min": "0.0001",
+                "error_max": "500",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10.7",
+                "normal_max_us": "10.7",
+                "normal_min_si": "3.7",
+                "normal_min_us": "3.7",
+                "units_si": "× 10⁹ cells/L",
+                "units_us": "× 10³ cells/µL"
+            },
+            {
+                "name": "donor cd3",
+                "unit": "donor_cd3",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "80",
+                "normal_max_us": "80",
+                "normal_min_si": "50",
+                "normal_min_us": "50",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Hematologic Malignancy",
+            "Leukemia/Lymphoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar wbc = parseFloat(wbc) * 1000\nvar lymphs_total = parseFloat(lymphs_total) / 100\nvar lymphs_cd3 = parseFloat(lymphs_cd3) / 100\nvar efficiency = parseFloat(efficiency) / 100\n\nvar abs = wbc * lymphs_total\n\nvar donor_abs = abs * lymphs_cd3 * 1000\n\nvar cells = wt * cd3*1000000 * infusions\n    \nvar tbv = cells / donor_abs\n\nvar blood = tbv / efficiency / 1000\n\ncalc_output.push({\n   name: 'mini',\n   value: blood.toFixed(1),\n   value_text: 'L',\n   message: ''\n});\ncalc_output.push({\n   name: '10012_DLI Volume_result',\n   value: blood.toFixed(1),\n   value_text: 'L',\n   message: 'Processed blood'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Recipient weight",
+                "name": "wt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": 50,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "CD3+ infusion dose",
+                "name": "cd3",
+                "optional": false,
+                "tips_en": "Number of CD+ cells to be infused to recipient per dose",
+                "type": "textbox",
+                "unit": "cd3"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of infusions to recipient",
+                "name": "infusions",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "infusions"
+            },
+            {
+                "conditionality": "",
+                "default": 50,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Collection efficiency",
+                "name": "efficiency",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Donor WBC",
+                "name": "wbc",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wbc"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Donor total lymphocytes",
+                "name": "lymphs_total",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "donor_total_lymphs"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Donor CD3+ lymphocytes",
+                "name": "lymphs_cd3",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "donor_cd3"
+            }
+        ],
+        "can_search": [
+            "whole blood",
+            "donor blood",
+            "donor lymphocytes",
+            "DLI Volume",
+            "Donor Lymphocyte Infusion (DLI) Volume"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Pathology",
+            "Transfusion Medicine"
+        ]
+    }
+}

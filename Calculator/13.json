@@ -1,0 +1,111 @@
+{
+    "id": "13",
+    "title": "Therapeutic Plasmapheresis Calculator",
+    "desc": "Therapeutic Apheresis predicts residual relative concentration after removal or addition of a substance by apheresis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2535895/",
+                "text": "Reverberi R, Reverberi L. Removal kinetics of therapeutic apheresis. Blood Transfus. 2007;5(3):164-74."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3220819/",
+                "text": "Kellogg RM, Hester JP. Kinetics modeling of plasma exchange: intra- and post-plasma exchange. J Clin Apher. 1988;4(4):183-7."
+            }
+        ],
+        "evidence": "<p>Residual relative concentration, % = 100 * e<sup>-x</sup></p>\n<p>Where x =&nbsp;plasma volume, mL x number of plasma volumes to be exchanged&nbsp;/ total blood volume, mL</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Volume",
+                "unit": "volume",
+                "error_min": "0",
+                "error_max": "20000",
+                "warn_min": "1",
+                "warn_max": "5000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL",
+                "units_us": "mL"
+            },
+            {
+                "name": "plasma",
+                "unit": "plasma",
+                "error_min": "1",
+                "error_max": "10",
+                "warn_min": "1",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "3",
+                "normal_max_us": "3",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": " ",
+                "units_us": " "
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Hematologic Malignancy"
+        ],
+        "logic": "var calc_output = [];\n\nvar x = pv * volumes / bv\n\nvar conc = 100 * Math.exp(-x)\n\ncalc_output.push({\n   name: 'mini',\n   value: conc.toFixed(1),\n   value_text: '%',\n   message: 'Residual relative concentration'\n});\ncalc_output.push({\n   name: '10013_Therapeutic Plasmapheresis_result',\n   value: conc.toFixed(1),\n   value_text: '%',\n   message: 'Residual relative concentration'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<calculator id='4065'>Total blood volume</calculator>",
+                "name": "bv",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "volume"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<calculator id='4065'>Plasma volume</calculator>",
+                "name": "pv",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "volume"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of plasma volumes to be exchanged",
+                "name": "volumes",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plasma"
+            }
+        ],
+        "can_search": [
+            "Therapeutic Plasmapheresis",
+            "Plasmapheresis",
+            "Apheresis",
+            "plasma exchange"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Pathology",
+            "Transfusion Medicine"
+        ]
+    }
+}

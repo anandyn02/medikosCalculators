@@ -1,0 +1,145 @@
+{
+    "id": "511",
+    "title": "Secondary Intracerebral Hemorrhage (sICH) Score",
+    "desc": "The Secondary Intracerebral Hemorrhage (sICH) Score quantifies likelihood of underlying vascular etiology in patients with ICH.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3682824/",
+                "text": "Almandoz JED, Schaefer PW, Goldstein JN, et al. Practical Scoring System for the Identification of Patients with Intracerebral Hemorrhage at Highest Risk of Harboring an Underlying Vascular Etiology: The Secondary Intracerebral Hemorrhage Score. AJNR American journal of neuroradiology. 2010;31(9):1653-1660. doi:10.3174/ajnr.A2156."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Parameter</strong></p>\n</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n<td>\n<p><strong>2 points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p><strong>Probability by NCCT Categorization</strong></p>\n<br><br></td>\n<td>\n<p>Low</p>\n</td>\n<td>\n<p>Indeterminate</p>\n</td>\n<td>\n<p>High</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>No high-probability criteria present</p>\n<p>OR</p>\n<p>Basal ganglia, thalamus, or brainstem location</p>\n</td>\n<td>\n<p>No high or low probability features present</p>\n</td>\n<td>\n<p>Enlarged vessels or calcifications along margins of ICH</p>\n<p>OR</p>\n<p>Hyperattenuation within dural venous sinus or cortical vein along the path of drainage of ICH</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Age</strong></p>\n</td>\n<td>\n<p>&ge;71 years</p>\n</td>\n<td>\n<p>46-70 years</p>\n</td>\n<td>\n<p>18-45 years</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Sex</strong></p>\n</td>\n<td>\n<p>Male</p>\n</td>\n<td>\n<p>Female</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Absence of both HTN AND impaired coagulation*</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Defined as admission INR &gt;3, aPTT &gt;80 seconds, platelet count &lt;50,000, or daily antiplatelet therapy.</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>sICH Score</strong></p>\n</td>\n<td>\n<p><strong>% Positive CTA*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>1</p>\n</td>\n<td>\n<p>1.5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>2</p>\n</td>\n<td>\n<p>4.4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>3</p>\n</td>\n<td>\n<p>20</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>4</p>\n</td>\n<td>\n<p>38.1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>5</p>\n</td>\n<td>\n<p>80</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>6</p>\n</td>\n<td>\n<p>100</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>For siCH Score &gt;2, sensitivity: 85.8%, specificity: 72.3%.</p>\n<p>*CTA showing vascular abnormality, in prospective validation cohort from <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3682824/\" target=\"_blank\" rel=\"noopener\">Almandoz 2010</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Headache",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(ncct) + parseFloat(age) + parseFloat(sex) + parseFloat(htn);  \n\n\nif (u == 0) {msg = '0';}\nif (u == 1) {msg = '1.5';}\nif (u == 2) {msg = '4.4';}\nif (u == 3) {msg = '20';}\nif (u == 4) {msg = '38.1';}\nif (u == 5) {msg = '80';}\nif (u == 6) {msg = '100';}\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg+'% of CTA positive for vascular cause of ICH' \n});\ncalc_output.push({ \n\tname: '3802_sICH Score_result', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg+'% of CTA positive for vascular cause of ICH' \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "Probability of vascular cause on non-contrast computed tomography (NCCT)",
+                "mdcalc_info_concept": null,
+                "name": "ncct",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "High",
+                        "value": 2
+                    },
+                    {
+                        "label": "Indeterminate",
+                        "value": 1
+                    },
+                    {
+                        "label": "Low",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "See Evidence > Formula for definitions",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "Age",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "18-45 years",
+                        "value": 2
+                    },
+                    {
+                        "label": "46-70 years",
+                        "value": 1
+                    },
+                    {
+                        "label": ">71 years",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of both hypertension AND impaired coagulation",
+                "md_calc_info_concept": null,
+                "name": "htn",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Impaired coagulation: admission INR >3, aPTT >80 sec, platelet count <50,000, or daily antiplatelet therapy",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "SICH",
+            "vascular etiology",
+            "TIA",
+            "stroke",
+            "cva",
+            "brain",
+            "bleed",
+            "secondary",
+            "ich",
+            "intracranial",
+            "bleed",
+            "angiography",
+            "CTA",
+            "headache"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

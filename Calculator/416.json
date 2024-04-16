@@ -1,0 +1,194 @@
+{
+    "id": "416",
+    "title": "SSIGN Score for Renal Cell Carcinoma (RCC)",
+    "desc": "SSIGN Score for Renal Cell Carcinoma (RCC) predicts progression of clear cell renal cell carcinoma after radical nephrectomy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12441925",
+                "text": "Frank I, Blute ML, Cheville JC, Lohse CM, Weaver AL, Zincke H. An outcome prediction model for patients with clear cell renal cell carcinoma treated with radical nephrectomy based on tumour stage, size, grade and necrosis: the SSIGN score. J Urol 2002; 168:2395–400."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/10.1002/cncr.11234/full",
+                "text": "Leibovich BC, Blute M, Cheville JC, et al. Prediction of progression after radical nephrectomy for patients with clear cell renal cell carcinoma: a stratification tool for prospective clinical trials. Cancer 2003;97:1663-1671"
+            },
+            {
+                "href": "https://annonc.oxfordjournals.org/content/23/suppl_7/vii65.full",
+                "text": "Escudier B, Eisen T, Porta C, et al. Renal cell carcinoma: ESMO clinical practice guidelines for diagnosis, treatment and follow-up. Ann Oncol, 2012; 23(suppl 7):vii65–vii71."
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<p><strong>Predicted Outcomes</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th></th>\n<th colspan=\"5\">% estimated cancer-specific survival rates</th>\n</tr>\n<tr>\n<td><strong>SSIGN Score</strong></td>\n<td><strong>Year 1</strong></td>\n<td><strong>Year 3</strong></td>\n<td><strong>Year 5</strong></td>\n<td><strong>Year 7</strong></td>\n<td><strong>Year 10</strong></td>\n</tr>\n<tr>\n<td>0 - 2</td>\n<td>99.7</td>\n<td>98.7</td>\n<td>97.3</td>\n<td>96</td>\n<td>93.6</td>\n</tr>\n<tr>\n<td>3 - 4</td>\n<td>98.1</td>\n<td>93.4</td>\n<td>89.8</td>\n<td>84</td>\n<td>77.9</td>\n</tr>\n<tr>\n<td>5 - 6</td>\n<td>92.9</td>\n<td>83.8</td>\n<td>74.1</td>\n<td>65</td>\n<td>57.3</td>\n</tr>\n<tr>\n<td>7 - 9</td>\n<td>76.5</td>\n<td>46.9</td>\n<td>38.6</td>\n<td>29</td>\n<td>25.9</td>\n</tr>\n<tr>\n<td>&ge; 10</td>\n<td>43.3</td>\n<td>21.9</td>\n<td>19.2</td>\n<td>19.2</td>\n<td>19.2</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Hematuria"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Renal Cell Carcinoma"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(t) + parseFloat(n) + parseFloat(m) + parseFloat(tumor) + parseFloat(nuc) + parseFloat(nec);\nvar surv;\nvar surv_txt = ' 5-year estimated cancer-specific survival.';\nif (u <= 2) {\n    surv = '97.3%';\n} else if (u >= 3 && u <= 4) {\n    surv = '89.8%';\n} else if (u >= 5 && u <= 6) {\n    surv = '74.1%';\n} else if (u >= 7 && u <= 9) {\n    surv = '38.6%';\n} else if (u >= 10) {\n    surv = '19.2%';\n}\ncalc_output.push({\n    name: 'mini',\n    value: surv,\n    value_text: '',\n    message: surv_txt\n});\ncalc_output.push({\n    name: '2154_SSIGN Score_result',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: surv + surv_txt\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Pathological T category",
+                "mdcalc_info_concept": null,
+                "name": "t",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "pT1",
+                        "value": 0
+                    },
+                    {
+                        "label": "pT2",
+                        "value": 1
+                    },
+                    {
+                        "label": "pT3a-c",
+                        "value": 2
+                    },
+                    {
+                        "label": "pT4",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "As per 2002 TNM staging guidelines",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Regional lymph node status",
+                "mdcalc_info_concept": null,
+                "name": "n",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "pNx or pN0",
+                        "value": 0
+                    },
+                    {
+                        "label": "pN1 or pN2",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "As per 2002 TNM staging guidelines",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Metastasis category",
+                "mdcalc_info_concept": null,
+                "name": "m",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "M0",
+                        "value": 0
+                    },
+                    {
+                        "label": "M1",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "As per 2002 TNM staging guidelines",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Tumor size",
+                "mdcalc_info_concept": null,
+                "name": "tumor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<5 cm",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥5 cm",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<calculator id='3012'>Tumor (nuclear) grade</calculator>",
+                "mdcalc_info_concept": null,
+                "name": "nuc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1 or 2",
+                        "value": 0
+                    },
+                    {
+                        "label": "3",
+                        "value": 1
+                    },
+                    {
+                        "label": "4",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Tumor necrosis present",
+                "mdcalc_info_concept": null,
+                "name": "nec",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "nephrectomy",
+            "RCC",
+            "prognosis",
+            "renal",
+            "clear cell"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Nephrology",
+            "Palliative Care/Hospice",
+            "Urology"
+        ]
+    }
+}

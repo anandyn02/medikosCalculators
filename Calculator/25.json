@@ -1,0 +1,175 @@
+{
+    "id": "25",
+    "title": "FOUR (Full Outline of UnResponsiveness) Score",
+    "desc": "The FOUR (Full Outline of UnResponsiveness) Score grades severity of coma, more accurately than GCS.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16178024/ ",
+                "text": "Wijdicks EF, Bamlet WR, Maramattom BV, Manno EM, Mcclelland RL. Validation of a new coma scale: The FOUR score. Ann Neurol. 2005;58(4):585-93."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"113\"><col width=\"269\"><col width=\"54\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Eye response</p>\n</td>\n<td>\n<p dir=\"ltr\">Eyelids open or opened, tracking, or blinking to command</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Eyelids open but not tracking</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Eyelids closed but open to loud voice</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Eyelids closed but open to pain</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Eyelids remain closed with pain</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Motor response (upper extremities)</p>\n</td>\n<td>\n<p dir=\"ltr\">Thumbs-up, fist, or peace sign</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Localizing to pain</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Flexion response to pain</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Extension response to pain</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No response to pain or generalized myoclonus status</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Brainstem reflexes</p>\n</td>\n<td>\n<p dir=\"ltr\">Pupil and corneal reflexes present</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">One pupil wide and fixed</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Pupil OR corneal reflex absent</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Pupil AND corneal reflexes absent</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Absent pupil, corneal, and cough reflexes</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Respiration pattern</p>\n</td>\n<td>\n<p dir=\"ltr\">Not intubated, regular breathing pattern</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Not intubated, Cheyne-Stokes breathing pattern</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Not intubated, irregular breathing</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Breathes above ventilatory rate</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Breathes at ventilator rate or apnea</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p><span id=\"docs-internal-guid-40a84ae0-ffd9-e157-54fc-1570fe87b4a8\">Lower scores indicate higher coma severity.</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Sepsis",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar eyeresponse = parseFloat(eyeresponse)\nvar motorresponse = parseFloat(motorresponse)\nvar brainstemreflex = parseFloat(brainstemreflex)\nvar respirationpattern = parseFloat(respirationpattern)\n\nvar score = eyeresponse + motorresponse + brainstemreflex + respirationpattern \nvar subscore = 'E' + eyeresponse + ' M' + motorresponse + ' B' + brainstemreflex + ' R' + respirationpattern\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: subscore \n});\ncalc_output.push({\n    name: '10028_FOUR Score_result',\n    value: score,\n    value_text: 'points',\n    message: subscore + '<br/><br/>Lower scores indicate higher coma severity.'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Eye response",
+                "mdcalc_info_concept": null,
+                "name": "eyeresponse",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Eyelids open or opened, tracking, or blinking to command",
+                        "value": 4
+                    },
+                    {
+                        "label": "Eyelids open but not tracking",
+                        "value": 3
+                    },
+                    {
+                        "label": "Eyelids closed but open to loud voice",
+                        "value": 2
+                    },
+                    {
+                        "label": "Eyelids closed but open to pain",
+                        "value": 1
+                    },
+                    {
+                        "label": "Eyelids remain closed with pain",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Motor response (upper extremities)",
+                "mdcalc_info_concept": null,
+                "name": "motorresponse",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Thumbs-up, fist, or peace sign",
+                        "value": 4
+                    },
+                    {
+                        "label": "Localizing to pain",
+                        "value": 3
+                    },
+                    {
+                        "label": "Flexion response to pain",
+                        "value": 2
+                    },
+                    {
+                        "label": "Extension response to pain",
+                        "value": 1
+                    },
+                    {
+                        "label": "No response to pain or generalized myoclonus status",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Brainstem reflexes",
+                "mdcalc_info_concept": null,
+                "name": "brainstemreflex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Pupil and corneal reflexes present",
+                        "value": 4
+                    },
+                    {
+                        "label": "One pupil wide and fixed",
+                        "value": 3
+                    },
+                    {
+                        "label": "Pupil OR corneal reflex absent",
+                        "value": 2
+                    },
+                    {
+                        "label": "Pupil AND corneal reflexes absent",
+                        "value": 1
+                    },
+                    {
+                        "label": "Absent pupil, corneal, and cough reflexes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Respiration pattern",
+                "mdcalc_info_concept": null,
+                "name": "respirationpattern",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not intubated, regular breathing pattern",
+                        "value": 4
+                    },
+                    {
+                        "label": "Not intubated, Cheyne-Stokes breathing pattern",
+                        "value": 3
+                    },
+                    {
+                        "label": "Not intubated, irregular breathing",
+                        "value": 2
+                    },
+                    {
+                        "label": "Breathes above ventilatory rate",
+                        "value": 1
+                    },
+                    {
+                        "label": "Breathes at ventilator rate or apnea",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Four score",
+            "coma scale",
+            "coma score"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

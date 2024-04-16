@@ -1,0 +1,123 @@
+{
+    "id": "666",
+    "title": "Horowitz Index for Lung Function (P/F Ratio)",
+    "desc": "The Horowitz index for Lung Function (P/F ratio) assesses lung function, particularly in intubated patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4813333",
+                "text": "Horovitz JH, Carrico CJ, Shires GT. Pulmonary response to major injury. Arch Surg. 1974;108(3):349-55."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17573487",
+                "text": "Rice TW, Wheeler AP, Bernard GR, et al. Comparison of the SpO2/FIO2 ratio and the PaO2/FIO2 ratio in patients with acute lung injury or ARDS. Chest. 2007;132(2):410-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17573487",
+                "text": "Rice TW, Wheeler AP, Bernard GR, et al. Comparison of the SpO2/FIO2 ratio and the PaO2/FIO2 ratio in patients with acute lung injury or ARDS. Chest. 2007;132(2):410-7."
+            }
+        ],
+        "evidence": "<p>Horowitz Index (P/F Ratio), mmHg = PaO<sub>2</sub>&nbsp;/ FiO<sub>2 </sub>(see table below)</p>\n<p>&nbsp;</p>\n<p><strong>Estimating FiO₂ from oxygen flow/delivery rates:</strong></p>\n<div dir=\"ltr\" align=\"left\">\n<table>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\">Type of O₂ delivery</p>\n</td>\n<td>\n<p dir=\"ltr\">Flow rates, L/min</p>\n</td>\n<td>\n<p dir=\"ltr\">FiO₂</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Nasal cannula</p>\n</td>\n<td>\n<p dir=\"ltr\">1-6</p>\n</td>\n<td>\n<p dir=\"ltr\">~4% FiO₂ added above room air* per 1 L/min</p>\n<ul>\n<li>Room air = 21%&nbsp;</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">1 L/min = 25%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">2 L/min = 29%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">3 L/min = 33%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">4 L/min = 37%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">5 L/min = 41%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">6 L/min = 45%</p>\n</li>\n</ul>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Simple face mask</p>\n</td>\n<td>\n<p dir=\"ltr\">~6-12</p>\n</td>\n<td>\n<p dir=\"ltr\">35-60%*</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Non-rebreather mask</p>\n</td>\n<td>\n<p dir=\"ltr\">10-15</p>\n</td>\n<td>\n<p dir=\"ltr\">~70-90%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">High-flow nasal cannula</p>\n</td>\n<td>\n<p dir=\"ltr\">Up to 60</p>\n</td>\n<td>\n<p dir=\"ltr\">30-100%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Varies based on respiratory rate and minute ventilation.</p>",
+        "facts": "<p><strong>Interpretation:</strong></p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Horowitz Index (P/F Ratio), mmHg</strong></p>\n</td>\n<td>\n<p><strong>Severity of ARDS</strong></p>\n</td>\n<td>\n<p><strong>Mortality</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&gt;300</p>\n</td>\n<td>\n<p>Not ARDS</p>\n</td>\n<td>\n<p>-</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&gt;200-300</p>\n</td>\n<td>\n<p>Mild</p>\n</td>\n<td>\n<p>27%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&gt;100-200</p>\n</td>\n<td>\n<p>Moderate</p>\n</td>\n<td>\n<p>32%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&le;100</p>\n</td>\n<td>\n<p>Severe</p>\n</td>\n<td>\n<p>45%</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>From <a href=\"https://jamanetwork.com/journals/jama/article-abstract/1160659\" target=\"_blank\" rel=\"noopener\">Ranieri 2012</a>.</p>",
+        "estimation": [
+            {
+                "name": "Partial Pressure of Oxygen",
+                "unit": "pao2",
+                "error_min": "1",
+                "error_max": "650",
+                "warn_min": "10",
+                "warn_max": "600",
+                "conversion": "0.133",
+                "normal_max_si": "13.3",
+                "normal_max_us": "100",
+                "normal_min_si": "10",
+                "normal_min_us": "75",
+                "units_si": "kPa",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Fraction of Inhaled O2",
+                "unit": "fio2",
+                "error_min": "10",
+                "error_max": "100.01",
+                "warn_min": "20",
+                "warn_max": "100.001",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Fatigue",
+            "Pain",
+            "Shortness of Breath",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output = [];\n\nvar fi = parseFloat(fi)/100;\nvar pa = parseFloat(pa);\n\nif (UOMSYSTEM == false) {\n  pa = pa*7.5187969925;\n}\n\nvar ratio = pa/fi;\n\nratio = ratio.toFixed(1);\nvar risk;\nvar mort;\n\nif (ratio > 300) {\n  risk = 'Not ARDS';\n  mort = '';\n} else if (ratio > 200 && ratio <= 300) {\n  risk = 'Mild';\n  mort = '27';\n} else if (ratio > 100 && ratio <= 200) {\n  risk = 'Moderate';\n  mort = '32';\n} else if (ratio <= 100) {\n  risk = 'Severe';\n  mort = '45';\n}\n    \n\n//results\nif (UOMSYSTEM == true) {\n  calc_output.push({\n      name: 'mini',\n      value: ratio,\n      value_text: 'mmHg',\n      message: 'Horowitz Index (P/F ratio)'\n  });\n  calc_output.push({\n      name: '4062_Horowitz Index_result (score)',\n      value: ratio,\n      value_text: 'mmHg',\n      message: 'Horowitz Index (P/F ratio)'\n  });\n}\nif (UOMSYSTEM == false) {\n  calc_output.push({\n      name: 'mini',\n      value: (ratio/7.5187969925).toFixed(1),\n      value_text: 'kPA',\n      message: 'Horowitz Index (P/F ratio)'\n  });\n  calc_output.push({\n      name: '4062_Horowitz Index_result (score)',\n      value: (ratio/7.5187969925).toFixed(1),\n      value_text: 'kPA',\n      message: 'Horowitz Index (P/F ratio)'\n  });\n}\ncalc_output.push({\n    name: '4062_Horowitz Index_interpretation',\n    value: risk,\n    value_text: '',\n    message: 'Severity of ARDS'\n});\nif (ratio <= 300) {\ncalc_output.push({\n    name: '4062_Horowitz Index_result (mortality)',\n    value: mort,\n    value_text: '%',\n    message: 'Mortality'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>PaO<sub>2</sub></p>",
+                "name": "pa",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "pao2"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>FiO<sub>2</sub></p>",
+                "name": "fi",
+                "optional": false,
+                "tips_en": "See <a href=\"#evidence\">Evidence</a> for estimating FiO₂ from oxygen flow/delivery rates",
+                "type": "textbox",
+                "unit": "fio2"
+            }
+        ],
+        "can_search": [
+            "Acute Respiratory Distress Syndrome",
+            "ARDS",
+            "hypoxemia",
+            "P/F ratio",
+            "Horowitz index",
+            "oxygenation after Horowitz",
+            "Horowitz quotient",
+            "PaO2/FIO2 ratio",
+            "PF ratio",
+            "Carrico index",
+            "acute lung injury",
+            "ali",
+            "acute respiratory failure",
+            "coronavirus",
+            "covid-19",
+            "covid19",
+            "covid 19",
+            "covid"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (General)"
+        ]
+    }
+}

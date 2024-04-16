@@ -1,0 +1,145 @@
+{
+    "id": "259",
+    "title": "Trauma Score and Injury Severity Score (TRISS)",
+    "desc": "The Trauma Score and Injury Severity Score (TRISS) estimates the probability of survival for trauma patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/3106646/",
+                "text": "Boyd CR, Tolson MA, Copes WS. Evaluating trauma care: the triss method. Trauma score and the injury severity score. J Trauma. 1987;27(4):370-378."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Probability of survival = 1/(1 + <em>e</em><sup>-b</sup>)</p>\n<p>where&nbsp;b = b<sub>0</sub> + b<sub>1</sub>(<calculator id=\"683\">RTS</calculator>) + b<sub>2</sub>(<calculator id=\"1239\">ISS</calculator>) + b<sub>3</sub>(A)</p>\n<p>A is determined by the following:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%; height: 66px;\">\n<tbody>\n<tr style=\"height: 22px;\">\n<td style=\"width: 47.440636200716845%; height: 22px;\"><strong>Age, years</strong></td>\n<td style=\"width: 47.440636200716845%; height: 22px;\"><strong>A</strong></td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 47.440636200716845%; height: 22px;\">&le;54</td>\n<td style=\"width: 47.440636200716845%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 47.440636200716845%; height: 22px;\">&gt;54</td>\n<td style=\"width: 47.440636200716845%; height: 22px;\">1</td>\n</tr>\n</tbody>\n</table>\n<p>Values for the coefficients:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%;\">\n<tbody>\n<tr>\n<td style=\"width: 97.65625px;\"><strong>Trauma type</strong></td>\n<td style=\"width: 97.609375px;\"><strong>b<sub>0</sub></strong></td>\n<td style=\"width: 97.609375px;\"><strong>b<sub>1</sub></strong></td>\n<td style=\"width: 97.609375px;\"><strong>b<sub>2</sub></strong></td>\n<td style=\"width: 97.609375px;\"><strong>b<sub>3</sub></strong></td>\n</tr>\n<tr>\n<td style=\"width: 97.65625px;\">Blunt</td>\n<td style=\"width: 97.609375px;\">-1.2470</td>\n<td style=\"width: 97.609375px;\">0.9544</td>\n<td style=\"width: 97.609375px;\">-0.0768</td>\n<td style=\"width: 97.609375px;\">-1.9052</td>\n</tr>\n<tr>\n<td style=\"width: 97.65625px;\">Penetrating</td>\n<td style=\"width: 97.609375px;\">-0.6029</td>\n<td style=\"width: 97.609375px;\">1.1430</td>\n<td style=\"width: 97.609375px;\">-0.1516</td>\n<td style=\"width: 97.609375px;\">-2.6676</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<p>Probability of survival = 1/(1 +&nbsp;<em>e</em><sup>-b</sup>)</p>\n<p>where&nbsp;b = b<sub>0</sub>&nbsp;+ b<sub>1</sub>(<calculator id=\"683\">RTS</calculator>) + b<sub>2</sub>(<calculator id=\"1239\">ISS</calculator>) + b<sub>3</sub>(A)</p>",
+        "estimation": [
+            {
+                "name": "Injury Severity Score",
+                "unit": "iss",
+                "error_min": "0",
+                "error_max": "75",
+                "warn_min": "0",
+                "warn_max": "75",
+                "conversion": "1",
+                "normal_max_si": "75",
+                "normal_max_us": "75",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "points",
+                "units_us": "points"
+            },
+            {
+                "name": "Revised Trauma Score",
+                "unit": "rts",
+                "error_min": "0",
+                "error_max": "4",
+                "warn_min": "0",
+                "warn_max": "4",
+                "conversion": "1",
+                "normal_max_si": "4",
+                "normal_max_us": "4",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "points",
+                "units_us": "points"
+            }
+        ],
+        "primary_complains": [
+            "Headache",
+            "Head Injury",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma",
+            "Traumatic Brain Injury"
+        ],
+        "logic": "var calc_output = [];\n\n// Declare vars\n\nvar traumatype = parseFloat(traumatype);\nvar rts = parseFloat(rts);\nvar iss = parseFloat(iss);\nvar a = parseFloat(a);\n\nvar b;\n\nif (traumatype == 0) {\n  b = -1.2470 + 0.9544*rts + -0.0768*iss + -1.9052*a;\n}  else {\n  b = -0.6029 + 1.1430*rts + -0.1516*iss + -2.6676*a;\n}\n\nvar prob_survival = 1/(1 + Math.exp(-b)) * 100;\n\ncalc_output.push({\n  name: 'mini',\n  value: prob_survival.toFixed(1),\n  value_text: '%',\n  message: 'Probability of survival'\n});\ncalc_output.push({\n  name: 'Probability of survival',\n  value: prob_survival.toFixed(1),\n  value_text: '%',\n  message: 'Probability of survival'\n});\n  ",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Trauma type</p>",
+                "name": "traumatype",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Blunt",
+                        "value": 0
+                    },
+                    {
+                        "label": "Penetrating",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><calculator id=\"683\">Revised Trauma Score (RTS)</calculator></p>",
+                "name": "rts",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "rts"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><calculator id=\"1239\">Injury Severity Score (ISS)</calculator></p>",
+                "name": "iss",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "iss"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "a",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤54",
+                        "value": 0
+                    },
+                    {
+                        "label": ">54",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Trauma Score and Injury Severity Score (TRISS)",
+            "trauma score",
+            "trauma",
+            "injury",
+            "injury severity",
+            "injury severity score",
+            "injury score",
+            "severity",
+            "severity score",
+            "TRISS",
+            "TRISS method",
+            "mortality risk",
+            "mortality",
+            "survival",
+            "survival probability"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Surgery (Trauma)"
+        ]
+    }
+}

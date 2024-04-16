@@ -1,0 +1,247 @@
+{
+    "id": "410",
+    "title": "Kruis Score for Diagnosis of Irritable Bowel Syndrome (IBS)",
+    "desc": "The Kruis Score for Diagnosis of Irritable Bowel Syndrome (IBS) determines presence of IBS using clinically significant weighted criteria.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/0006724251",
+                "text": "Kruis W, Thiem C, Weinzierl M, et al. A diagnostic score for the irritable bowel syndrome: its value in the exclusion of organic disease. Gastroenterology 1984;87:1–7."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of assigned points.</p>",
+        "facts": "<ul>\n<li>If score &lt;44, negative for IBS.</li>\n<li>If score &gt;44, positive&nbsp;for IBS.</li>\n<li>If any &ldquo;red flags&rdquo; present, consider further assessment for other pathology.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Anxious",
+            "Constipation",
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Anxiety",
+            "Irritable Bowel Syndrome"
+        ],
+        "logic": "var calc_output = [];\nvar msg = '';\nvar mini_msg = '';\nvar u = parseFloat(pfi) + parseFloat(duration) + parseFloat(abdpain) + parseFloat(dc);\nvar v = parseFloat(abnl) + parseFloat(esr) + parseFloat(wbc) + parseFloat(anemia) + parseFloat(blood);\nvar p = u + v;\nif (p <= 44 && v >= 0) {\n    mini_msg = 'Negative for IBS';\n} else if (p >= 44 && v >= 0) {\n    mini_msg = 'Positive for IBS';\n    } else if (p <= 44 && v << 0) {\n        mini_msg='Negative for IBS';\n        msg='<br/><br/>If any \"red flags\" present, consider further assessment for other pathology.';\n    } else if (p >= 44 && v << 0) {\n        mini_msg='Positive for IBS';\n        msg='<br/><br/>If any \"red flags\" present, consider further assessment for other pathology.';\n    }\n    calc_output.push({\n        name: 'mini',\n        value: p,\n        value_text: 'points',\n        message: mini_msg\n    });\n    calc_output.push({\n        name: '2141_Kruis Score_result',\n        value: p,\n        value_text: 'points',\n        message: mini_msg + msg\n    });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Symptoms of abdominal pain, flatulence, or bowel irregularity",
+                "md_calc_info_concept": null,
+                "name": "pfi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 34
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Symptom duration > 2 years",
+                "md_calc_info_concept": null,
+                "name": "duration",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 16
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pain described as burning, cutting, very strong, terrible, feeling of pressure, dull, boring, or 'not so bad'",
+                "md_calc_info_concept": null,
+                "name": "abdpain",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 23
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Alternating constipation and diarrhea",
+                "md_calc_info_concept": null,
+                "name": "dc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 14
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Red Flags",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abnormal physical findings or history pathognomonic of other disease",
+                "md_calc_info_concept": null,
+                "name": "abnl",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -47
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "ESR > 10 mm/hr",
+                "md_calc_info_concept": null,
+                "name": "esr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -13
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "WBC > 10,000/µL",
+                "md_calc_info_concept": null,
+                "name": "wbc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -50
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemoglobin (female < 12 g/dL; male < 14 g/dL)",
+                "md_calc_info_concept": null,
+                "name": "anemia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -98
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of blood in stool",
+                "md_calc_info_concept": null,
+                "name": "blood",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -98
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "dx",
+            "ibs",
+            "bowel",
+            "diarrhea"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

@@ -1,0 +1,194 @@
+{
+    "id": "198",
+    "title": "CSHA Clinical Frailty Scale (CFS)",
+    "desc": "The CSHA Clinical Frailty Scale (CFS) measures frailty to predict survival or need for institutional care.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7458601/",
+                "text": "Rockwood K, Theou O. Using the clinical frailty scale in allocating scarce health care resources. Can Geriatr J. 2020;23(3):210-215."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/32392289/",
+                "text": "Pulok MH, Theou O, van der Valk AM, Rockwood K. The role of illness acuity on the association between frailty and mortality in emergency department patients referred to internal medicine. Age and Ageing. 2020;49(6):1071-1079."
+            },
+            {
+                "href": "https://www.cmaj.ca/content/173/5/489#sec-5",
+                "text": "Rockwood K, Song X, Macknight C, et al. A global clinical measure of fitness and frailty in elderly people. CMAJ. 2005;173(5):489-95."
+            }
+        ],
+        "evidence": "<p><strong>When the CTAS Triage Scale (for ED patients) is not available, selection of the appropriate criteria:</strong></p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/CFS.png\" width=\"100%\" alt=\"\"></p>\n<p>From <a href=\"https://www.cmaj.ca/content/173/5/489#sec-5\" target=\"_blank\" rel=\"noopener\">Rockwood 2005</a>.</p>\n<p><strong>When the&nbsp;CTAS Triage Scale (for ED patients) is available, selection of the appropriate criteria:</strong></p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/clinical-frailty-score-9-points.png\" width=\"100%\"></p>\n<p>From <a href=\"https://cgjonline.ca/index.php/cgj/article/view/463/577\" target=\"_blank\" rel=\"noopener\">Rockwood 2020</a>.</p>",
+        "facts": "<p>When the CTAS Triage Scale (for ED patients) is not available:</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/csha.png\" width=\"100%\"></p>\n<p>From&nbsp;<a href=\"https://www.cmaj.ca/content/173/5/489#sec-5\" target=\"_blank\" rel=\"noopener\">Rockwood 2005</a>.</p>\n<p>Interpretation:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%; height: 214px;\">\n<tbody>\n<tr style=\"height: 87px;\">\n<td rowspan=\"2\" style=\"width: 17.1122%; height: 130px;\"><strong>CSHA Clinical Frailty Score</strong></td>\n<td colspan=\"2\" style=\"width: 34.2244%; height: 87px;\"><strong>Approximate probability of avoidance of institutional care</strong></td>\n<td colspan=\"2\" style=\"width: 34.626%; height: 87px;\"><strong>Approximate probability of survival</strong></td>\n</tr>\n<tr style=\"height: 43px;\">\n<td style=\"width: 17.1122%; height: 43px;\"><strong>At 30 months</strong></td>\n<td style=\"width: 17.1122%; height: 43px;\"><strong>At 70 months</strong></td>\n<td style=\"width: 17.313%; height: 43px;\"><strong>At 30 months</strong></td>\n<td style=\"width: 17.313%; height: 43px;\"><strong>At 70 months</strong></td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 17.1122%; height: 21px;\">1-3</td>\n<td style=\"width: 17.1122%; height: 21px;\">93%</td>\n<td style=\"width: 17.1122%; height: 21px;\">88%</td>\n<td style=\"width: 17.313%; height: 21px;\">89%</td>\n<td style=\"width: 17.313%; height: 21px;\">75%</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 17.1122%; height: 21px;\">4</td>\n<td style=\"width: 17.1122%; height: 21px;\">85%</td>\n<td style=\"width: 17.1122%; height: 21px;\">75%</td>\n<td style=\"width: 17.313%; height: 21px;\">77%</td>\n<td style=\"width: 17.313%; height: 21px;\">55%</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 17.1122%; height: 21px;\">5</td>\n<td style=\"width: 17.1122%; height: 21px;\">72%</td>\n<td style=\"width: 17.1122%; height: 21px;\">58%</td>\n<td style=\"width: 17.313%; height: 21px;\">68%</td>\n<td style=\"width: 17.313%; height: 21px;\">42%</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 17.1122%; height: 21px;\">6-7</td>\n<td style=\"width: 17.1122%; height: 21px;\">66%</td>\n<td style=\"width: 17.1122%; height: 21px;\">50%</td>\n<td style=\"width: 17.313%; height: 21px;\">60%</td>\n<td style=\"width: 17.313%; height: 21px;\">38%</td>\n</tr>\n</tbody>\n</table>\n<p>From&nbsp;<a href=\"https://www.cmaj.ca/content/173/5/489#sec-5\" target=\"_blank\" rel=\"noopener\">Rockwood 2005</a>.<span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\"></span></p>\n<p>When the CTAS Triage Scale (for ED patients) is available:</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/cfs_ctas.jpeg\" alt=\"\" width=\"100%\"></p>\n<p>From&nbsp;<a href=\"https://pubmed.ncbi.nlm.nih.gov/32392289/\" target=\"_blank\" rel=\"noopener\">Pulok 2020</a>.</p>\n<p>Interpretation:&nbsp;&nbsp;</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%;\">\n<tbody>\n<tr>\n<td style=\"width: 23.6135%;\"><strong>CTAS Score</strong></td>\n<td style=\"width: 23.6135%;\"><strong>CFS Score</strong></td>\n<td style=\"width: 23.6135%;\"><strong>Probabilty of survival at 30 days</strong></td>\n<td style=\"width: 23.7106%;\"><strong>Probability of survival at 6 months</strong></td>\n</tr>\n<tr>\n<td rowspan=\"4\" style=\"width: 23.6135%;\">1-2</td>\n<td style=\"width: 23.6135%;\">1-4</td>\n<td style=\"width: 23.6135%;\">99%</td>\n<td style=\"width: 23.7106%;\">88%</td>\n</tr>\n<tr>\n<td style=\"width: 23.6135%;\">5</td>\n<td style=\"width: 23.6135%;\">86%</td>\n<td style=\"width: 23.7106%;\">66%</td>\n</tr>\n<tr>\n<td style=\"width: 23.6135%;\">6</td>\n<td style=\"width: 23.6135%;\">78%</td>\n<td style=\"width: 23.7106%;\">63%</td>\n</tr>\n<tr>\n<td style=\"width: 23.6135%;\">7-9</td>\n<td style=\"width: 23.6135%;\">47%</td>\n<td style=\"width: 23.7106%;\">26%</td>\n</tr>\n<tr>\n<td rowspan=\"4\" style=\"width: 23.6135%;\">3-5</td>\n<td style=\"width: 23.6135%;\">1-4</td>\n<td style=\"width: 23.6135%;\">95%</td>\n<td style=\"width: 23.7106%;\">84%</td>\n</tr>\n<tr>\n<td style=\"width: 23.6135%;\">5</td>\n<td style=\"width: 23.6135%;\">92%</td>\n<td style=\"width: 23.7106%;\">77%</td>\n</tr>\n<tr>\n<td style=\"width: 23.6135%;\">6</td>\n<td style=\"width: 23.6135%;\">90%</td>\n<td style=\"width: 23.7106%;\">73%</td>\n</tr>\n<tr>\n<td style=\"width: 23.6135%;\">7-9</td>\n<td style=\"width: 23.6135%;\">68%</td>\n<td style=\"width: 23.7106%;\">47%</td>\n</tr>\n</tbody>\n</table>\n<p>From&nbsp;<a href=\"https://pubmed.ncbi.nlm.nih.gov/32392289/\" target=\"_blank\" rel=\"noopener\">Pulok 2020</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Any/All"
+        ],
+        "disease_treated": [
+            "Any/All",
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output = [];\n\nvar scale;\nvar level;\nvar level_msg;\n\nvar institution_30; \nvar institution_70;\nvar survival_30;\nvar survival_70;\n\nif (available ==1){\n  var criteria = parseFloat(cfs_9);\n  var ctas = parseFloat(ctas);\n  var thirty;\n  var six;\n  if (criteria == 1) {\n    scale = 'Very fit';\n  } \n  if (criteria == 2) {\n    scale = 'Fit';\n  } \n  if (criteria == 3) {\n   scale = 'Managing well';\n  } \n  if (criteria == 4) {\n    scale = 'Living with very mild frailty';\n  } \n  if (criteria == 5) {\n    scale = 'Living with mild frailty';\n  } \n  if (criteria == 6) {\n    scale = 'Living with moderate frailty';\n  } \n  if (criteria == 7) {\n    scale = 'Living with severe frailty';\n  } \n  if (criteria == 8) {\n    scale = 'Living with very severe frailty';\n  }\n   if (criteria == 9) {\n    scale = 'Terminally ill';\n  } \n\n\n  if (ctas ==1){\n      level = 'Level I';\n      level_msg = 'Resuscitation';\n  }\n  if (ctas ==2){\n      level = 'Level II';\n      level_msg = 'Emergency';\n  }\n  if (ctas ==3){\n      level = 'Level III';\n      level_msg = 'Urgency';\n  }\n  if (ctas ==4){\n      level = 'Level IV';\n      level_msg = 'Less urgency';\n  }\n  if (ctas ==5){\n      level = 'Level V';\n      level_msg = 'Non urgency';\n  }\n\n  if (ctas >=1 && ctas <=2){\n    if (criteria >=1 && criteria <=4){\n      thirty = '99';\n      six = '88';\n    }\n    if (criteria == 5){\n      thirty = '86';\n      six = '66';\n  }\n    if (criteria == 6){\n      thirty = '78';\n      six = '63';\n  }\n  if (criteria >=7 && criteria <=9){\n      thirty = '47';\n      six = '26';\n    }\n  }\n\n  if (ctas >=3 && ctas <=5){\n      if (criteria >=1 && criteria <=4){\n        thirty = '95';\n        six = '84';\n      }\n        if (criteria == 5){\n        thirty = '92';\n        six = '77';\n      }\n      if (criteria == 6){\n        thirty = '90';\n        six = '73';\n      }\n      if (criteria >=7 && criteria <=9){\n        thirty = '68';\n        six = '47';\n      }\n  }\n\n  calc_output.push({\n      name: 'mini',\n      value: criteria,\n      value_text: 'points',\n      message: scale,\n  });\n  calc_output.push({\n      name: 'criteria',\n      value: criteria,\n      value_text: 'points',\n      message: scale,\n  });\n    calc_output.push({\n      name: 'ctas',\n      value: level,\n      value_text: '',\n      message: level_msg + '<br/><br/>' + 'CTAS level'\n  });\n  calc_output.push({\n      name: 'criteria',\n      value: thirty,\n      value_text: '%',\n      message: 'Probability of survival at 30 days<br/><br/>Probability of survival at 6 months: ' + six + '%'\n  });\n}\nif (available == 0){\n  var criteria = parseFloat(cfs_7);\n   if (criteria == 1) {\n  \tscale = 'Very fit';\n\t} \n   if (criteria == 2) {\n  \tscale = 'Well';\n\t}\n   if (criteria == 3) {\n \t scale = 'Well, with treated comorbid disease';\n\t} \n   if (criteria == 4) {\n\t  scale = 'Apparently vulnerable';\n\t} \n   if (criteria == 5) {\n\t  scale = 'Mildly frail';\n\t}  \n   if (criteria == 6) {\n\t  scale = 'Moderately frail';\n\t} \n   if (criteria == 7) {\n\t  scale = 'Severely frail';\n\t} \n   if (criteria >=1 && criteria<=3){\n    institution_30 = 93;\n    institution_70 = 88;\n    survival_30 = 89;\n    survival_70 = 75;\n  }\n   if (criteria == 4){\n    institution_30 = 85;\n    institution_70 = 75;\n    survival_30 = 77;\n    survival_70 = 55;\n   }\n   if (criteria == 5){\n    institution_30 = 72;\n    institution_70 = 58;\n    survival_30 = 68;\n    survival_70 = 42;\n   }\n   if (criteria >=6 && criteria<=7){\n    institution_30 = 66; \n    institution_70 = 50;\n    survival_30 = 60;\n    survival_70 = 38;\n   }\n   calc_output.push({\n     \tname: 'mini',\n    \tvalue: criteria,\n    \tvalue_text: 'points',\n    \tmessage: scale,\n\t});\n\tcalc_output.push({\n    \tname: 'criteria',\n    \tvalue: criteria,\n    \tvalue_text: 'points',\n    \tmessage: scale,\n\t});\n\tcalc_output.push({\n    \tname: 'institution',\n    \tvalue: institution_30,\n    \tvalue_text: '%',\n    \tmessage: 'Approximate probability of avoidance of institutional care at 30 months<br/><br/>Approximate probability of mortality at 70 months: ' + institution_70 + '%'\n\t});\n\tcalc_output.push({\n    \tname: 'criteria',\n    \tvalue: survival_30,\n    \tvalue_text: '%',\n    \tmessage: 'Approximate probability of survival at 30 months<br/><br/>Approximate probability of survival at 70 months: ' + survival_70 + '%'\n\t});\n}\n\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Canadian Triage Acuity Scale (5 level ED triage) available?</p>",
+                "md_calc_info_concept": null,
+                "name": "available",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "available == 1",
+                "default": null,
+                "label_en": "<p>CTAS Triage Scale (for ED patients)</p>",
+                "mdcalc_info_concept": null,
+                "name": "ctas",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Level I - resuscitation",
+                        "value": 1
+                    },
+                    {
+                        "label": "Level II - emergency",
+                        "value": 2
+                    },
+                    {
+                        "label": "Level III - urgency",
+                        "value": 3
+                    },
+                    {
+                        "label": "Level IV - less urgency",
+                        "value": 4
+                    },
+                    {
+                        "label": "Level V - non urgency",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "available == 1",
+                "default": null,
+                "label_en": "<p>CFS Score</p>",
+                "mdcalc_info_concept": null,
+                "name": "cfs_9",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Robust, active, energetic, and motivated; they tend to exercise regularly and are in the most fit for their age ",
+                        "value": 1
+                    },
+                    {
+                        "label": "Without active disease symptoms, but less fit than people in category 1; they exercise or are very active occasionally",
+                        "value": 2
+                    },
+                    {
+                        "label": "Medical problems are well controlled, but are not regularly active beyond routine walking",
+                        "value": 3
+                    },
+                    {
+                        "label": "While not dependent on others for daily help, symptoms often limit activities; a common complaint is being \"slowed up\" and/or being tired during the day",
+                        "value": 4
+                    },
+                    {
+                        "label": "More evident slowing, need help with high order instrumental activities of daily living",
+                        "value": 5
+                    },
+                    {
+                        "label": "Help is needed with all outside activities and with keeping house; they often have problems with stairs and need help bathing",
+                        "value": 6
+                    },
+                    {
+                        "label": "Completely dependent on others for personal care from whatever cause; they seem stable and not at a high risk of dying within 6 months",
+                        "value": 7
+                    },
+                    {
+                        "label": "Completely dependent for personal care from whatever cause; typically they could not recover from a minor illness",
+                        "value": 8
+                    },
+                    {
+                        "label": "Approaching the end of life; they have a life expectancy <6 month and are not otherwise living with severe frailty",
+                        "value": 9
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "available == 0",
+                "default": null,
+                "label_en": "<p>CFS Score</p>",
+                "mdcalc_info_concept": null,
+                "name": "cfs_7",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Robust, active, energetic, well motivated and fit; they commonly exercise regularly and are in the most fit group for their age",
+                        "value": 1
+                    },
+                    {
+                        "label": "Without active disease, but less fit than people in category 1",
+                        "value": 2
+                    },
+                    {
+                        "label": "Disease symptoms are well controlled compared with those in category 4",
+                        "value": 3
+                    },
+                    {
+                        "label": "Although not frankly dependent, these people commonly complain of being “slowed up” or have disease symptoms",
+                        "value": 4
+                    },
+                    {
+                        "label": "With limited dependence on others for instrumental activities of daily living",
+                        "value": 5
+                    },
+                    {
+                        "label": "Help is needed with both instrumental and non-instrumental activities of daily living",
+                        "value": 6
+                    },
+                    {
+                        "label": "Completely dependent on others for the activities of daily living, or terminally ill",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Clinical Frailty Scale, CSHA, CSHA Clinical Frailty Scale (CFS), Frailty measurement, Frailty, covid19, covid, coronavirus, covid-19, covid 19"
+        ],
+        "specialty": [
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Palliative Care/Hospice"
+        ]
+    }
+}

@@ -1,0 +1,214 @@
+{
+    "id": "688",
+    "title": "Glasgow Coma Scale/Score (GCS)",
+    "desc": "The Glasgow Coma Scale/Score (GCS) estimates coma severity based on Eye (4), Verbal (5), and Motor (6) criteria.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4136544",
+                "text": "Teasdale G, Jennett B.Assessment of coma and impaired consciousness. A practical scale. Lancet. 1974 Jul 13;2(7872):81-4."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/686455",
+                "text": "Teasdale G, Jennett B. Assessment of coma and severity of brain damage. Anesthesiology. 1978;49:225-226."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6136811",
+                "text": "Teasdale G, Jennett B, Murray L, Murray G. Glasgow coma scale: to sum or not to sum. Lancet. 1983 Sep 17;2(8351):678."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12707528",
+                "text": "Healey C, Osler TM, Rogers FB, Healey MA, Glance LG, Kilgo PD, Shackford SR, Meredith JW. Improving the Glasgow Coma Scale score: motor score alone is a better predictor. J Trauma. 2003 Apr;54(4):671-8; discussion 678-80."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21803447",
+                "text": "Green SM. Cheerio, laddie! Bidding farewell to the Glasgow Coma Scale. Ann Emerg Med. 2011 Nov;58(5):427-30. doi: 10.1016/j.annemergmed.2011.06.009. Epub 2011 Jul 30."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22947690",
+                "text": "Middleton PM. Practical use of the Glasgow Coma Scale; a comprehensive narrative review of GCS methodology. Australas Emerg Nurs J. 2012 Aug;15(3):170-83. doi: 10.1016/j.aenj.2012.06.002. Epub 2012 Aug 3. Review."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24899079",
+                "text": "Yeh DD. Glasgow Coma Scale 40 years later: in need of recalibration? JAMA Surg. 2014 Jul;149(7):734. doi: 10.1001/jamasurg.2014.47. No abstract available."
+            },
+            {
+                "href": "https://www.nursingtimes.net/Journals/2014/10/10/n/p/l/141015Forty-years-on-updating-the-Glasgow-coma-scale.pdf",
+                "text": "Teasdale G. Forty Years on: Updating the Glasgow Coma Scale. Nursing Times. 2014; 110(42)."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15635308",
+                "text": "Gill M, Windemuth R, Steele R, Green SM. A comparison of the Glasgow Coma Scale score to simplified alternative scores for the prediction of traumatic brain injury outcomes. Ann Emerg Med. 2005 Jan;45(1):37-42."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17113193",
+                "text": "Haukoos JS, Gill MR, Rabon RE, Gravitz CS, Green SM. Validation of the Simplified Motor Score for the prediction of brain injury outcomes after trauma. Ann Emerg Med. 2007 Jul;50(1):18-24. Epub 2006 Nov 16."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21803448",
+                "text": "Thompson DO, Hurtado TR, Liao MM, Byyny RL, Gravitz C, Haukoos JS. Validation of the Simplified Motor Score in the out-of-hospital setting for the prediction of outcomes after traumatic brain injury. Ann Emerg Med. 2011 Nov;58(5):417-25. doi: 10.1016/j.annemergmed.2011.05.033. Epub 2011 Jul 30."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25030516",
+                "text": "Teasdale G, Maas A, Lecky F, Manley G, Stocchetti N, Murray G. The Glasgow Coma Scale at 40 years: standing the test of time. Lancet Neurol. 2014;13(8):844-54."
+            }
+        ],
+        "evidence": "<p>The Glasgow Coma <strong>Score&nbsp;</strong>is calculated by addition of the total points selected under each component (eye, verbal, motor) below, e.g. \"15 points\".</p>\n<p>The Glasgow Coma <strong>Scale</strong> is&nbsp;comprised of the individual components, e.g. \"E(4) V(5) M (6)\".</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<th>Component</th>\n<th>Response</th>\n<th>Points</th>\n</tr>\n<tr>\n<td rowspan=\"5\">Eye</td>\n<td>Eyes open spontaneously</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>Eye opening to verbal command</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>Eye opening to pain</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>No eye opening</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Not testable*</td>\n<td>NT</td>\n</tr>\n<tr>\n<td rowspan=\"6\">Verbal</td>\n<td>Oriented</td>\n<td>+5</td>\n</tr>\n<tr>\n<td>Confused</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>Inappropriate words</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>Incomprehensible sounds</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>No verbal response</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Not testable/intubated*</td>\n<td>NT</td>\n</tr>\n<tr>\n<td rowspan=\"7\">Motor</td>\n<td>Obeys commands</td>\n<td>+6</td>\n</tr>\n<tr>\n<td>Localizes pain</td>\n<td>+5</td>\n</tr>\n<tr>\n<td>Withdrawal from pain</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>Flexion to pain</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>Extension to pain</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>No motor response</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Not testable*</td>\n<td>NT</td>\n</tr>\n</tbody>\n</table>\n<p>*Individual components may be not testable due to any of&nbsp;the following (note this is not a comprehensive list):</p>\n<ul>\n<li><strong>Eye:</strong> local injury and/or edema.</li>\n<li><strong>Verbal:</strong> intubation.</li>\n<li><strong>All (eye, verbal, motor):</strong> sedation, paralysis, and ventilation eliminating all responses.&nbsp;</li>\n</ul>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Head Injury",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Delirium",
+            "Dementia",
+            "Ingestion/Overdose",
+            "Meningitis",
+            "Trauma"
+        ],
+        "logic": "var calc_output = []; \n\nvar eye = parseInt(eye)\nvar motor = parseInt(motor)\nvar verbal = parseInt(verbal)\n\n// SCORE (total points)\nvar score = eye + motor + verbal\n\n// SCALE (individual components)\nvar eye_scale, verbal_scale, motor_scale\n\neye == 0 ? eye_scale = 'NT' : eye_scale = eye\n\nverbal == 0 ? verbal_scale = 'NT' : verbal_scale = verbal\n\nmotor == 0 ? motor_scale = 'NT' : motor_scale = motor\n\nvar scale = 'E(' + eye_scale + ') ' + 'V(' + verbal_scale + ') ' + 'M(' + motor_scale + ') ' \n\n\nif (eye == 0 || verbal == 0 || motor == 0) {\n  calc_output.push({ \n    name: 'mini', \n    value: scale, \n    value_text: '', \n    message: 'Glasgow Coma Scale' \n  }); \n  calc_output.push({ \n    name: '64_GCS_result (score)', \n    value: '', \n    value_text: '', \n    message: 'Glasgow Coma Score cannot be calculated (one or more components not testable)' \n  });\n}\nelse {\n  calc_output.push({ \n    name: 'mini', \n    value: score, \n    value_text: 'points', \n    message: 'Glasgow Coma Score' \n  }); \n  calc_output.push({ \n    name: '64_GCS_result (score)', \n    value: score, \n    value_text: 'points', \n    message: 'Glasgow Coma Score' \n  });\n}\n  calc_output.push({ \n    name: '64_GCS_result (scale)', \n    value: scale,\n    value_text: '', \n    message: 'Glasgow Coma Scale'\n  });\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Best eye response</p>",
+                "mdcalc_info_concept": null,
+                "name": "eye",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Spontaneously (+4)",
+                        "value": 4
+                    },
+                    {
+                        "label": "To verbal command (+3)",
+                        "value": 3
+                    },
+                    {
+                        "label": "To pain (+2)",
+                        "value": 2
+                    },
+                    {
+                        "label": "No eye opening (+1)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Not testable (NT)",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "If local injury, edema, or otherwise unable to be assessed, mark \"Not testable (NT)\"",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Best verbal response</p>",
+                "mdcalc_info_concept": null,
+                "name": "verbal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Oriented (+5)",
+                        "value": 5
+                    },
+                    {
+                        "label": "Confused (+4)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Inappropriate words (+3)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Incomprehensible sounds (+2)",
+                        "value": 2
+                    },
+                    {
+                        "label": "No verbal response (+1)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Not testable/intubated (NT)",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "If intubated or otherwise unable to be assessed, mark \"Not testable (NT)\"",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Best motor response</p>",
+                "mdcalc_info_concept": null,
+                "name": "motor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Obeys commands (+6)",
+                        "value": 6
+                    },
+                    {
+                        "label": "Localizes pain (+5)",
+                        "value": 5
+                    },
+                    {
+                        "label": "Withdrawal from pain (+4)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Flexion to pain (+3)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Extension to pain (+2)",
+                        "value": 2
+                    },
+                    {
+                        "label": "No motor response (+1)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Not testable (NT)",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "If on sedation/paralysis or unable to be assessed, mark \"Not testable (NT)\"",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "ams",
+            "trauma",
+            "gcs",
+            "covid",
+            "covid19",
+            "covid-19",
+            "covid 19",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Surgery (Trauma)",
+            "Toxicology"
+        ]
+    }
+}

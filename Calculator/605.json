@@ -1,0 +1,129 @@
+{
+    "id": "605",
+    "title": "Duke Treadmill Score",
+    "desc": "The Duke Treadmill Score diagnoses and prognoses suspected CAD based on the treadmill exercise test.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3579066 ",
+                "text": "Mark DB, Hlatky MA, Harrell FE, Lee KL, Califf RM, Pryor DB. Exercise treadmill score for predicting prognosis in coronary artery disease. Ann Intern Med. 1987;106(6):793-800."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9778327 ",
+                "text": "Shaw LJ, Peterson ED, Shaw LK, et al. Use of a prognostic treadmill score in identifying diagnostic coronary disease subgroups. Circulation. 1998;98(16):1622-30."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9822093 ",
+                "text": "Alexander KP, Shaw LJ, Shaw LK, Delong ER, Mark DB, Peterson ED. Value of exercise treadmill testing in women. J Am Coll Cardiol. 1998;32(6):1657. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10493203 ",
+                "text": "Kwok JM, Miller TD, Christian TF, Hodge DO, Gibbons RJ. Prognostic value of a treadmill exercise score in symptomatic patients with nonspecific ST-T abnormalities on resting ECG. JAMA. 1999;282(11):1047."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26358085 ",
+                "text": "Koh AS, Gao F, Chin CT, Keng FY, Tan RS, Chua TS. Differential risk reclassification improvement by exercise testing and myocardial perfusion imaging in patients with suspected and known coronary artery disease. J Nucl Cardiol. 2016 Jun;23(3):366-78. "
+            }
+        ],
+        "evidence": "<p>Duke Treadmill Score = duration of exercise, minutes &ndash; (5 &times; maximal net ST-segment deviation during or after exercise*, millimeters) &ndash; (4 &times; treadmill angina index)</p>\n<p>*<em>except in lead aVR</em></p>\n<p>Where angina index is as follows:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>Feature</strong></p>\n</td>\n<td>\n<p><strong>Angina index</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>No angina during exercise</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Non-limiting angina</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Patient stops exercising because of angina</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p>Interpretation:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>Duke Treadmill Score</strong></p>\n</td>\n<td>\n<p><strong>Risk group</strong></p>\n</td>\n<td>\n<p><strong>Survival at 5 years*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;+5</p>\n</td>\n<td>\n<p>Low</p>\n</td>\n<td>\n<p>99%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>-10 to +4</p>\n</td>\n<td>\n<p>Medium</p>\n</td>\n<td>\n<p>95%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&lt;-10</p>\n</td>\n<td>\n<p>High</p>\n</td>\n<td>\n<p>79%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*For outpatients. From <a href=\"http://www.nejm.org/doi/full/10.1056/NEJM199109193251204\" target=\"_blank\" rel=\"noopener\">Mark 1991</a>.</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/dts.jpg\" alt=\"\" width=\"100%\"></p>\n<p>The data from the treadmill exercise test can be plotted on a nomogram to derive an estimate of five-year survival or average annual mortality.</p>\n<p>Prognosis is determined in five steps:</p>\n<ol>\n<li>The observed amount of exercise-induced ST-segment deviation (the largest elevation or depression after resting changes have been subtracted) is marked on the line for ST-segment deviation during exercise.</li>\n<li>The observed degree of angina during exercise is marked on the line for angina.</li>\n<li>The marks for ST-segment deviation and degree of angina are connected with a straight edge. The point where this line intersects the ischemia-reading line is noted.</li>\n<li>The total number of minutes of exercise in treadmill testing according to the Bruce protocol (or the equivalent in multiples of resting oxygen consumption [METs] from an alternative protocol) is marked on the exercise-duration line.</li>\n<li>The mark for ischemia is connected with that for exercise duration. The point at which this line intersects the line for prognosis indicates the five-year survival rate and average annual mortality for patients with these characteristics.</li>\n</ol>",
+        "estimation": [
+            {
+                "name": "Duration of exercise",
+                "unit": "dur_exer",
+                "error_min": "0",
+                "error_max": "60",
+                "warn_min": "0",
+                "warn_max": "30",
+                "conversion": "1",
+                "normal_max_si": "10",
+                "normal_max_us": "10",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "min",
+                "units_us": "min"
+            },
+            {
+                "name": "ST deviation",
+                "unit": "st_dev",
+                "error_min": "0",
+                "error_max": "20",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "1",
+                "normal_max_si": "0.5",
+                "normal_max_us": "0.5",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mm",
+                "units_us": "mm"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar duration = parseFloat(duration);\nvar stseg = parseFloat(stseg);\nvar index = parseFloat(index);\n\nvar score = duration - (5*stseg) - (4*index);\nvar risk, survival;\nvar rec;\n\nif(score >= 5){\n\trisk = 'Low';\n\tsurvival = '99%'\n    rec = ''\n}\nif(score < 5 && score >= -10){\n\trisk = 'Medium';\n\tsurvival = '95%'\n    rec = ''\n}\nif(score < -10){\n\trisk = 'High';\n\tsurvival = '79%'\n    rec = '. Coronary angiography recommended (see Next Steps).'\n}\nif(score > 0){\n    score = '+' + score\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: '',\n    message: risk + ' risk' + rec\n});\ncalc_output.push({\n    name: 'Duke Treadmill Score',\n    value: score,\n    value_text: '',\n    message: 'Duke Treadmill Score'\n});\ncalc_output.push({\n    name: 'Risk Group & Survival',\n    value: risk,\n    value_text: 'risk',\n    message: survival + ' survival at 5 years' + rec\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Duration of exercise</p>",
+                "name": "duration",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "dur_exer"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Maximal net ST-segment deviation</p>",
+                "name": "stseg",
+                "optional": false,
+                "tips_en": "During or after exercise and NOT in lead aVR",
+                "type": "textbox",
+                "unit": "st_dev"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Angina index</p>",
+                "name": "index",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No angina during exercise",
+                        "value": 0
+                    },
+                    {
+                        "label": "Non-limiting angina",
+                        "value": 1
+                    },
+                    {
+                        "label": "Patient stops exercising because of angina",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "dts",
+            "duke score",
+            "treadmill score"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Family Practice",
+            "Internal Medicine"
+        ]
+    }
+}

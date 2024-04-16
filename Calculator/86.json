@@ -1,0 +1,331 @@
+{
+    "id": "86",
+    "title": "Preoperative Mortality Predictor (PMP) Score",
+    "desc": "The Preoperative Mortality Predictor (PMP) Score predicts risk of perioperative mortality in general surgery patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3523928/",
+                "text": "Vaid S, Bell T, Grim R, Ahuja V. Predicting risk of death in general surgery patients on the basis of preoperative variables using American College of Surgeons National Surgical Quality Improvement Program data. Perm J. 2012;16(4):10-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"201\" /><col width=\"156\" /><col width=\"92\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Inpatient</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Sepsis</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Poor functional status (total assistance required for all daily activities)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Disseminated cancer</p>\n<p dir=\"ltr\"></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Age, years</p>\n<p dir=\"ltr\"></p>\n<p dir=\"ltr\"></p>\n<p></p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;65</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">65-69</p>\n</td>\n<td>\n<p dir=\"ltr\">0.5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">70-79</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;80</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Cardiac comorbidity (dyspnea and CHF history, past MI or angina, peripheral artery disease, hypertension requiring medication)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Pulmonary comorbidity (on ventilator, COPD history, current pneumonia)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Renal comorbidity (dialysis, renal failure)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Liver comorbidity (ascites, esophageal varices)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Steroids for chronic condition</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Weight loss (&gt;10% body weight in last 6 months)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Bleeding disorder</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">DNR status</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Obesity</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>PMP Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of perioperative mortality</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-1-5</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-10</p>\n</td>\n<td>\n<p dir=\"ltr\">0.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">11-15</p>\n</td>\n<td>\n<p dir=\"ltr\">2.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">16-20</p>\n</td>\n<td>\n<p dir=\"ltr\">12.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">21-25</p>\n</td>\n<td>\n<p dir=\"ltr\">37.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">26-30</p>\n</td>\n<td>\n<p dir=\"ltr\">40.0%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-4866c953-7fff-f26e-a4dc-fabfe92054c9\"></span><span id=\"docs-internal-guid-4866c953-7fff-f26e-a4dc-fabfe92054c9\"><br /></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Weight Loss/Gain",
+            "Bleeding",
+            "Any/All"
+        ],
+        "disease_treated": [
+            "Sepsis",
+            "Obesity",
+            "Bleeding/Hemorrhage",
+            "Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar a = parseFloat(obesity);\nvar b = parseFloat(dnr);\nvar c = parseFloat(bleeding);\nvar d = parseFloat(loss);\nvar e = parseFloat(steroids);\nvar f = parseFloat(cardiac);\nvar g = parseFloat(age);\nvar h = parseFloat(cancer);\nvar i = parseFloat(pfs);\nvar j = parseFloat(sepsis);\nvar k = parseFloat(inpatient);\nvar l = parseFloat(pulmonary);\nvar m = parseFloat(renal);\nvar n = parseFloat(liver);\n\nvar score = a + b + c + d + e + f + g + h + i + j + k + l + m + n; \n\nvar risk1;\n\nif (score >= -1 && score <= 5) {\n\trisk1 = '0.1';\n}\nelse if (score > 5 && score < 6) { \n\trisk1 = '0.1-0.6';\n}\nelse if (score >= 6 && score <= 10) { \n\trisk1 = '0.6';\n}\nelse if (score > 10 && score <  11) { \n\trisk1 = '0.6-2.4';\n}\nelse if (score >= 11 && score <= 15) { \n\trisk1 = '2.4';\n}\nelse if (score > 15 && score <  16) { \n\trisk1 = '2.4-12.6';\n}\nelse if (score >= 16 && score <= 20) { \n\trisk1 = '12.6';\n}\nelse if (score > 20 && score <  21) { \n\trisk1 = '12.6-37.5';\n}\nelse if (score >= 21 && score <= 25) { \n\trisk1 = '37.5';\n}\nelse if (score > 25 && score < 26) { \n\trisk1 = '37.5-40.0';\n}\nelse if (score >= 26 && score <= 30) { \n\trisk1 = '40.0';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk1 + '% risk of perioperative mortality'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'PMP Score'   \n    });\ncalc_output.push({\n    name: 'risk1',\n    value: risk1, \n    value_text: '%',\n    message: 'Risk of perioperative mortality'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Inpatient",
+                "name": "inpatient",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sepsis",
+                "name": "sepsis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Poor functional status",
+                "name": "pfs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Total assistance required for all daily activities",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Disseminated cancer",
+                "name": "cancer",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<65",
+                        "value": 0
+                    },
+                    {
+                        "label": "65-69",
+                        "value": 0.5
+                    },
+                    {
+                        "label": "70-79",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥80",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cardiac comorbidity",
+                "name": "cardiac",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Dyspnea and CHF history, past MI or angina, peripheral artery disease, hypertension requiring medication",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pulmonary comorbidity",
+                "name": "pulmonary",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "On ventilator, COPD history, current pneumonia",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Renal comorbidity",
+                "name": "renal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Dialysis, renal failure",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Liver comorbidity",
+                "name": "liver",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ascites, esophageal varices",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Steroids for chronic condition",
+                "name": "steroids",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Weight loss",
+                "name": "loss",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": ">10% body weight in last 6 months",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bleeding disorder",
+                "name": "bleeding",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title = 'Do not resuscitate'>DNR</abbr> status",
+                "name": "dnr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Obesity",
+                "name": "obesity",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "surgical risk",
+            "Perioperative death",
+            "perioperative risk",
+            "postoperative death",
+            "postoperative risk",
+            "periop death",
+            "preop death",
+            "periop risk",
+            "preop risk"
+        ],
+        "specialty": [
+            "Surgery (General)",
+            "Internal Medicine",
+            "Hospitalist Medicine"
+        ]
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "id": "352",
+    "title": "Sgarbossa's Criteria for MI in Left Bundle Branch Block",
+    "desc": "The Sgarbossa’s Criteria for MI in Left Bundle Branch Block diagnoses acute MI in patients with prior Left Bundle Branch Block (LBBB).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8559200?dopt=Abstract",
+                "text": "Sgarbossa EB, Pinski SL, Barbagelata A, Underwood DA, Gates KB, Topol EJ, Califf RM, Wagner GS. Electrocardiographic diagnosis of evolving acute myocardial infarction in the presence of left bundle-branch block. GUSTO-1 (Global Utilization of Streptokinase and Tissue Plasminogen Activator for Occluded Coronary Arteries) Investigators. N Engl J Med. 1996 Feb 22;334(8):481-7. Erratum in: N Engl J Med 1996 Apr 4;334(14):931. PubMed PMID: 8559200."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24016487",
+                "text": "Cai Q, Mehta N, Sgarbossa EB, Pinski SL, Wagner GS, Califf RM, Barbagelata A. The left bundle-branch block puzzle in the 2013 ST-elevation myocardial infarction guideline: from falsely declaring emergency to denying reperfusion in a high-risk population. Are the Sgarbossa Criteria ready for prime time? Am Heart J. 2013 Sep;166(3):409-13. doi: 10.1016/j.ahj.2013.03.032. Epub 2013 Aug 6. PubMed PMID: 24016487."
+            }
+        ],
+        "evidence": "<p>Addition of the assigned points.</p>",
+        "facts": "<p>As mentioned, Sgarbossa's criteria not rule out myocardial infarction in patients with pre-existing Left Bundle Branch Block (it is not sufficiently sensitive), but in patients with &ge;3 points, it is specific for MI.</p>\n<p>Recently, <a href=\"https://hqmeded-ecg.blogspot.com/\" target=\"_blank\" rel=\"noopener\">Stephen Smith</a> modified Sgarbossa Criteria looking at excessively discordant ST elevation and changing this slightly. This has been referenced by Dr. Sgarbossa herself (see reference) and should now be included in Sgarbossa criteria.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output=[]; var msg=''; var mini_msg=''; var u=parseFloat(concordant_st_elevation)+parseFloat(concordant_st_depression)+parseFloat(discordant_st_elevation);if(u<3){mini_msg='Low specificity'; msg='In the original Sgarbossa criteria, a score of <3 typically is not considered diagnostic of acute MI, but also does not rule out MI. In concerning patients, repeating EKGs and cardiac enzymes may be helpful, along with cardiology consultation.<br/><br/>NOTE: the Modified Sgarbossa Criteria (which changes the third criteria) does not use the points system, it is positive if any criteria are met.'}if(u>2){mini_msg='High specificity'; msg='A score of \\u2265 3 has a specificity of 90% for diagnosing acute MI.<br/><br/>Also note: the Modified Sgarbossa Criteria (which changes the third criteria) does not use the points system, it is positive if any criteria are met.'} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:\"1732_Sgarbossa's Criteria for MI_result\",\n    value:u,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Concordant ST elevation > 1mm in leads with a positive QRS complex",
+                "md_calc_info_concept": null,
+                "name": "concordant_st_elevation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Concordant ST depression > 1 mm in V1-V3",
+                "md_calc_info_concept": null,
+                "name": "concordant_st_depression",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Excessively discordant ST elevation (or depression) in leads with a negative QRS",
+                "md_calc_info_concept": null,
+                "name": "discordant_st_elevation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "In proportion to the preceding S-wave (or R-wave) as determined by 1) at least 1 mm of ST elevation (or depression) AND 2) an ST/S ratio ≤-0.25",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "lbbb",
+            "ekg",
+            "stemi"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

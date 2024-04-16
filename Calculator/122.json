@@ -1,0 +1,219 @@
+{
+    "id": "122",
+    "title": "History and Electrocardiogram-only Manchester Acute Coronary Syndromes (HE-MACS)",
+    "desc": "The History and Electrocardiogram-only Manchester Acute Coronary Syndromes (HE-MACS) rules out acute coronary syndrome with history and EKG only.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/30289775",
+                "text": "Alghamdi A, Howard L, Reynard C, et al. Enhanced triage for patients with suspected cardiac chest pain: the History and Electrocardiogram-only Manchester Acute Coronary Syndromes (HE-MACS) decision aid. Eur J Emerg Med. 2018."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24780911",
+                "text": "Body R, Carley S, McDowell G, Pemberton P, Burrows G, Cook G, et al. The Manchester Acute Coronary Syndromes (MACS) decision rule for suspected cardiac chest pain: derivation and external validation. Heart. 2014."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27565197",
+                "text": "Burrows G, Carley S, et al. Troponin-only Manchester Acute Coronary Syndromes (T-MACS) decision aid: single biomarker re-derivation and external validation in three cohorts. Emerg Med J. 2017."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Probability of ACS = 1 / (1 + e<sup>x</sup>),</p>\n<p dir=\"ltr\">where x = - [(1.426 x sweating) + (1.838 x EKG) + (0.734 x pain) + (0.996 x vomiting) + (1.353 x systolic BP) + (0.675 x tobacco) + (0.024 x age) + (0.462 x sex) &minus; 4.416]</p>\n<p dir=\"ltr\">and the variables are as follows:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Age</strong>, years</p>\n</td>\n<td>\n<p dir=\"ltr\">Continuous</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>Sex</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">Female</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Male</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>Sweating</strong> observed</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Acute <strong>EKG</strong> ischemia</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>Pain</strong> radiating to the right arm or shoulder</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>Vomiting</strong> associated with pain</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>Systolic BP</strong> &lt;100 mmHg</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Current <strong>tobacco</strong> smoker</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><b>Risk</b><strong>&nbsp;of ACS or MACE in 30 days</strong><br /><span id=\"docs-internal-guid-41592961-7fff-932f-794a-0728e80653e1\"></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;4.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">Very low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4.0-6.9%</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7.0-49.9%</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;50.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-39c7df07-7fff-0efa-5e63-496cdc66eeb3\"><span id=\"docs-internal-guid-39c7df07-7fff-0efa-5e63-496cdc66eeb3\">&nbsp;</p>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age_adult",
+                "error_min": "18",
+                "error_max": "110",
+                "warn_min": "18",
+                "warn_max": "110",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome"
+        ],
+        "logic": "var calc_output = [];\nvar age = parseFloat(age); \nvar sex = parseFloat(sex); \nvar sweating = parseFloat(sweating); \nvar ecg = parseFloat(ecg);\nvar pain = parseFloat(pain); \nvar vomit = parseFloat(vomit); \nvar bp = parseFloat(bp); \nvar smoker = parseFloat(smoker);\n\nvar x = - (1.426 * sweating + 1.838 * ecg + 0.734 * pain + 0.996 * vomit + 1.353 * bp + 0.675 * smoker + 0.024 * age + 0.462 * sex - 4.416);\n\nvar score = 1 + Math.exp(x);\n\nscore = 1/score;\n\nvar percent = score*100;\n\npercent = percent.toFixed(1);\n\nvar risk;\n\nif (percent < 4.0) {\n  risk = \"Very low\";\n} else if (percent >= 4.0 && percent <= 6.9) {\n  risk = \"Low\";\n} else if (percent >= 7.0 && percent <= 49.9) {\n  risk = \"Moderate\";\n} else if (percent >= 50.0) {\n  risk = \"High\";\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: 'risk',\n    message: percent + '% risk of ACS or MACE in 30 days'\n});\ncalc_output.push({\n    name: 'Score',\n    value: percent,\n    value_text: '%',\n    message: 'Risk of ACS or MACE in 30 days'   \n});\ncalc_output.push({\n    name: 'risk1',\n    value: risk, \n    value_text: 'risk',\n    message: 'Risk group'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_adult"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sweating observed",
+                "name": "sweating",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acute EKG ischemia",
+                "name": "ecg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pain radiating to the right arm or shoulder",
+                "name": "pain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Vomiting associated with pain",
+                "name": "vomit",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Systolic BP <100 mmHg",
+                "name": "bp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Current tobacco smoker",
+                "name": "smoker",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Acs",
+            "acute coronary syndrome",
+            "rule out acs",
+            "ekg",
+            "hemacs",
+            "he-mac",
+            "he-macs",
+            "history and electrocardiogram",
+            "manchester",
+            "acute coronary syndromes",
+            "he macs",
+            "hemacs"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine"
+        ]
+    }
+}

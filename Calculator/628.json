@@ -1,0 +1,214 @@
+{
+    "id": "628",
+    "title": "McMahon Score for Rhabdomyolysis",
+    "desc": "The Rhabdomyolysis Risk Score predicts mortality or acute kidney injury (AKI) in rhabdomyolysis patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24000014 ",
+                "text": "McMahon GM, Zeng X, Waikar SS. A risk prediction score for kidney failure or mortality in rhabdomyolysis. JAMA Intern Med. 2013;173(19):1821-8."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p><span>Addition of the selected points:</span></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p><strong>Variable</strong></p>\n</td>\n<td>\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p><span>Age, years</span></p>\n</td>\n<td>\n<p><span>&le;50</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>51&ndash;70</span></p>\n</td>\n<td>\n<p><span>1.5</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>71&ndash;80</span></p>\n</td>\n<td>\n<p><span>2.5</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>&gt;80</span></p>\n</td>\n<td>\n<p><span>3</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p><span>Sex</span></p>\n</td>\n<td>\n<p><span>Male</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Female</span></p>\n</td>\n<td>\n<p><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p><span>Initial creatinine</span></p>\n</td>\n<td>\n<p><span>&lt;1.4 mg/dL (124 &micro;mol/L)</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>1.4&ndash;2.2 mg/dL (124&ndash;195 &micro;mol/L)</span></p>\n</td>\n<td>\n<p><span>1.5</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>&gt;2.2 mg/dL (195 &micro;mol/L)</span></p>\n</td>\n<td>\n<p><span>3</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p><span>Initial calcium &lt;7.5 mg/dL (1.88 mmol/L)</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Yes</span></p>\n</td>\n<td>\n<p><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>Initial CPK&nbsp;&gt;40,000 U/L</p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Yes</span></p>\n</td>\n<td>\n<p><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p><span>Rhabdo secondary to seizures, syncope, exercise, statins, or myositis</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>3</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p><span>Initial phosphate</span></p>\n</td>\n<td>\n<p><span>&lt;4.0 mg/dL (1.0 mmol/L)</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>4.0&ndash;5.4 mg/dL </span>(1.0-1.4 mmol/L)</p>\n</td>\n<td>\n<p><span>1.5</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>&gt;5.4 mg/dL</span>&nbsp;(1.4 mmol/L)</p>\n</td>\n<td>\n<p><span>3</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p><span>Initial bicarbonate &lt;19 mEq/L (19 mmol/L)</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Yes</span></p>\n</td>\n<td>\n<p><span>2</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"91\" /><col width=\"114\" /><col width=\"246\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>McMahon Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;6</p>\n</td>\n<td>\n<p dir=\"ltr\">Low risk</p>\n</td>\n<td>\n<p dir=\"ltr\">Usual care (3% risk of death or AKI requiring RRT)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;6*</p>\n</td>\n<td>\n<p dir=\"ltr\">Not low risk</p>\n</td>\n<td>\n<p dir=\"ltr\">Initiate renal protective therapy including high-volume fluid resuscitation to urine output 1-2 mL/kg/hr (52% risk of death or AKI requiring RRT at scores &ge;10)</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/27259093\" target=\"_blank\">Simpson 2016</a>.</p>\n<p dir=\"ltr\">*McMahon Score &ge;6, calculated on admission, is 86% sensitive and 68% specific for identifying patients who will require RRT.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "AMS",
+            "Fever",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Renal Failure"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar score = parseFloat(age) + parseFloat(sex) + parseFloat(cre) + parseFloat(ca) + parseFloat(cpk) + parseFloat(rhabdo) + parseFloat(phos) + parseFloat(bicarb);\n\nvar risk, msg\n\nif (score <= 5.9) {\n  risk = 'Low'\n  msg = 'Recommend usual care (3% risk of death or AKI requiring RRT)'\n}\nelse if (score >= 6) {\n  risk = 'Not low'\n  msg = 'Recommend initiating renal protective therapy. McMahon Scores ≥6 are 86% sensitive for identifying patients who will require RRT (52% risk of death or AKI requiring RRT at scores ≥10).'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Rhabdomyolysis Risk Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: ' risk',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤50",
+                        "value": 0
+                    },
+                    {
+                        "label": "51-70",
+                        "value": 1.5
+                    },
+                    {
+                        "label": "71-80",
+                        "value": 2.5
+                    },
+                    {
+                        "label": ">80",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sex",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Initial creatinine",
+                "name": "cre",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "<1.4 mg/dL (124 µmol/L)",
+                        "value": 0
+                    },
+                    {
+                        "label": "1.4–2.2 mg/dL (124–195 µmol/L)",
+                        "value": 1.5
+                    },
+                    {
+                        "label": ">2.2 mg/dL (195 µmol/L)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Initial calcium <7.5 mg/dL (1.88 mmol/L)",
+                "name": "ca",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Initial CPK >40,000 U/L",
+                "name": "cpk",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Rhabdo secondary to seizures, syncope, exercise, statins, or myositis",
+                "name": "rhabdo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    },
+                    {
+                        "label": "No",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Initial phosphate",
+                "name": "phos",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<4.0 mg/dL (1.0 mmol/L)",
+                        "value": 0
+                    },
+                    {
+                        "label": "4.0–5.4 mg/dL (1.0-1.4 mmol/L)",
+                        "value": 1.5
+                    },
+                    {
+                        "label": ">5.4 mg/dL (1.4 mmol/L)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Initial bicarbonate <19 mEq/L (19 mmol/L)",
+                "name": "bicarb",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "rhabdomylosis risk calculator",
+            "rabdo",
+            "Rhabdo"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Nephrology"
+        ]
+    }
+}

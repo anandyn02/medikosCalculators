@@ -1,0 +1,101 @@
+{
+    "id": "472",
+    "title": "Glasgow Prognostic Score (GPS) for Cancer Outcomes",
+    "desc": "The Glasgow Prognostic Score provides prognoses for cancer patients based on serum biomarkers.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2376960/",
+                "text": "Forrest LM, McMillan DC, McArdle CS, Angerson WJ, Dunlop DJ. Evaluation of cumulative prognostic scores based on the systemic inflammatory response in patients with inoperable non-small-cell lung cancer. British Journal of Cancer. 2003;89(6):1028-1030. doi:10.1038/sj.bjc.6601242."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2409737/",
+                "text": "Forrest LM, McMillan DC, McArdle CS, Angerson WJ, Dunlop DJ. Comparison of an inflammation-based prognostic score (GPS) with performance status (ECOG) in patients receiving platinum-based chemotherapy for inoperable non-small-cell lung cancer. British Journal of Cancer. 2004;90(9):1704-1706. doi:10.1038/sj.bjc.6601789."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17245566",
+                "text": "McMillan DC et. al. Evaluation of an inflammation-based prognostic score (GPS) in patients undergoing resection for colon and rectal cancer. Int J Colorectal Dis. 2007 Aug;22(8):881-6. Epub 2007 Jan 24."
+            }
+        ],
+        "evidence": "<p>Selection of appropriate criteria.</p>",
+        "facts": "<p>The GPS has been shown to be accurate in different types of cancer, including cervical, renal, lung, gastric cancers, as well as in primary care. However, the score has been <calculator id=\"3312\">modified</calculator> with better predictive values.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Pancreatic Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar crp = parseInt(crp);\nvar alb =  parseInt(alb);\n\nvar string1, string2;\n\nif (crp == 1 && alb == 2) {string1 = \"GPS 0\";string2=\"Good Prognosis\";}\nif (crp == 2 && alb == 2) {string1 = \"GPS 1\";string2=\"Intermediate Prognosis\";}\nif (crp == 1 && alb == 1) {string1 = \"GPS 1\";string2=\"Intermediate Prognosis\";}\nif (crp == 2 && alb == 1) {string1 = \"GPS 2\";string2=\"Poor Prognosis\";}\n\ncalc_output.push({ name: 'mini', value: string1, value_text: ' ', message: string2 });\ncalc_output.push({ name: '3311_GPS for Cancer Outcomes_result', value: string1, value_text: ' ', message: string2 });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "CRP",
+                "mdcalc_info_concept": null,
+                "name": "crp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "CRP ≤10 mg/L",
+                        "value": 1
+                    },
+                    {
+                        "label": "CRP >10 mg/L",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Albumin",
+                "mdcalc_info_concept": null,
+                "name": "alb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Albumin <3.5 g/dL (35 g/L)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Albumin ≥3.5 g/dL (35 g/L)",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Gps",
+            "cancer",
+            "colorectal",
+            "renal",
+            "CA",
+            "alb",
+            "crp"
+        ],
+        "specialty": [
+            "Endocrinology",
+            "Family Practice",
+            "Gastroenterology",
+            "Hematology and Oncology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Radiation Oncology"
+        ]
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "id": "650",
+    "title": "Prague C & M Classification for Barrett's Esophagus",
+    "desc": "The Prague C & M Classification for Barrett's esophagus stratifies severity of Barrett’s esophagus according to endoscopic findings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17101315/ ",
+                "text": "Sharma P, Dent J, Armstrong D, Bergman JJ, Gossner L, Hoshihara Y, Jankowski JA, Junghard O, Lundell L, Tytgat GN, Vieth M. The development and validation of an endoscopic grading system for Barrett's esophagus: the Prague C & M criteria. Gastroenterology. 2006 Nov;131(5):1392-9. Epub 2006 Aug 16."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28109913 ",
+                "text": "Eluri S, Shaheen NJ. Barrett's esophagus: diagnosis and management. Gastrointest Endosc. 2017;85(5):889-903."
+            }
+        ],
+        "evidence": "<p><strong>C</strong>ircumferential extent of <abbr title=\"Barrett's esophagus\">BE</abbr> above the GE Junction (C value)</p>\n<ul>\n<li>Measure the distance from the GE junction to the highest location where metaplasia is present, around the entire circumference of the esophagus.</li>\n</ul>\n<p><strong>M</strong>aximal extent of <abbr title=\"Barrett's esophagus\">BE</abbr> above the GE Junction (M value)</p>\n<ul>\n<li>Measure the distance from the GE junction to the highest location of metaplasia.</li>\n</ul>",
+        "facts": "<p>Interpretation:</p>\n<p>The higher the Prague C&amp;M numbers, the more severe the Barrett's esophagus and the higher the risk of developing cancer.</p>",
+        "estimation": [
+            {
+                "name": "Length of Barrett's esophagus",
+                "unit": "length_barretts",
+                "error_min": "0",
+                "error_max": "10",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "cm",
+                "units_us": "cm"
+            }
+        ],
+        "primary_complains": [
+            "Hematemesis",
+            "Melena",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "GI Bleeding"
+        ],
+        "logic": "var calc_output = [];\n\nvar cvalue, mvalue;\nvar u = 'C' + cvalue + 'M' + mvalue\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: '',\n    message: 'Prague C & M Classification'\n});\ncalc_output.push({\n    name: '4041_Prague C & M Classification_result',\n    value: u,\n    value_text: '',\n    message: 'Prague C & M Classification'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Circumferential extent of <abbr title=\"Barrett's esophagus\">BE</abbr> above the GE Junction (C value)",
+                "name": "cvalue",
+                "optional": false,
+                "tips_en": "Measure the distance from the GE junction to the highest location where metaplasia is present, around the entire circumference of the esophagus.",
+                "type": "textbox",
+                "unit": "length_barretts"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Maximal extent of <abbr title=\"Barrett's esophagus\">BE</abbr> above the GE Junction (M value)",
+                "name": "mvalue",
+                "optional": false,
+                "tips_en": "Measure the distance from the GE junction to the highest location of metaplasia.",
+                "type": "textbox",
+                "unit": "length_barretts"
+            }
+        ],
+        "can_search": [
+            "Prague",
+            "prague c & m",
+            "barretts",
+            "barrett",
+            "barrett esophagus",
+            "Barrett's esophagus",
+            "esophageal adenocarcinoma",
+            "esophageal cancer",
+            "esophagus cancer",
+            "oesophageal cancer",
+            "BE segment",
+            "endoscopy"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Surgery (General)"
+        ]
+    }
+}

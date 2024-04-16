@@ -1,0 +1,128 @@
+{
+    "id": "199",
+    "title": "Sepsis-Induced Coagulopathy (SIC) Score",
+    "desc": "The Sepsis-Induced Coagulopathy (SIC) Score predicts likelihood of sepsis-induced coagulopathy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28963294?dopt=Abstract",
+                "text": "Iba T, Nisio MD, Levy JH, Kitamura N, Thachil J. New criteria for sepsis-induced coagulopathy (SIC) following the revised sepsis definition: a retrospective analysis of a nationwide survey. BMJ Open. 2017;7(9):e017046."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29720054?dopt=Abstract",
+                "text": "Iba T, Arakawa M, Di nisio M, et al. Newly Proposed Sepsis-Induced Coagulopathy Precedes International Society on Thrombosis and Haemostasis Overt-Disseminated Intravascular Coagulation and Predicts High Mortality. J Intensive Care Med. 2018;885066618773679."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/30015646?dopt=Abstract",
+                "text": "Ding R, Wang Z, Lin Y, Liu B, Zhang Z, Ma X. Comparison of a new criteria for sepsis-induced coagulopathy and International Society on Thrombosis and Haemostasis disseminated intravascular coagulation score in critically ill patients with sepsis 3.0: a retrospective study. Blood Coagul Fibrinolysis. 2018;29(6):551-558."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29695178?dopt=Abstract",
+                "text": "Iba T, Arakawa M, Levy JH, et al. Sepsis-Induced Coagulopathy and Japanese Association for Acute Medicine DIC in Coagulopathic Patients with Decreased Antithrombin and Treated by Antithrombin. Clin Appl Thromb Hemost. 2018;24(7):1020-1026."
+            },
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/full/10.1111/jth.14578",
+                "text": "Iba T, Levy JH, Warkentin TE, et al. Diagnosis and management of sepsis-induced coagulopathy and disseminated intravascular coagulation. J Thromb Haemost. 2019;17(11):1989-1994."
+            }
+        ],
+        "evidence": "<p>Diagnosed as sepsis-induced coagulopathy when the total score from below is &ge;4 AND total score of prothrombin time and coagulation is &ge;3.</p>\n<table><colgroup><col><col><col></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">INR</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;1.2</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;1.2 to 1.4</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;1.4</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Platelet count, cells x 10<sup>9</sup>/L</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;150</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">100 to &lt;150</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;100</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><calculator id=\"691\">Total SOFA score</calculator>*</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;2</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p dir=\"ltr\">*Summation of the SOFA score's respiratory, cardiovascular, hepatic, and renal SOFA components.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col><col></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>SIC Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Approximate 28-day mortality</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-1</p>\n</td>\n<td>\n<p dir=\"ltr\">0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">20%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">19%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">30%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">32%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n<td>\n<p dir=\"ltr\">46%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Sepsis"
+        ],
+        "logic": "var calc_output = [];\n\nvar inr = parseFloat(inr);\nvar platelet = parseFloat(platelet);\nvar sofa = parseFloat(sofa);\n\nvar score = inr + sofa + platelet;\nvar score2 = inr + platelet;\n\nif (score >= 4 && score2 >= 3) {\n  msg = 'SIC likely';\n} else {\n  msg = 'SIC not likely';\n}\n\nvar risk;\n\nif (score == 0 || score == 1) {\n  risk = '0';\n} else if (score == 2) {\n  risk = '20';\n} else if (score == 3) {\n  risk = '19';\n} else if (score == 4) {\n  risk = '30';\n} else if (score == 5) {\n  risk = '32';\n} else if (score == 6) {\n  risk = '46';\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: 'Score',\n    value: msg,\n    value_text: '',\n    message: 'Diagnosis of SIC'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: risk + '% approximate 28-day mortality'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>INR</p>",
+                "name": "inr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤1.2",
+                        "value": 0
+                    },
+                    {
+                        "label": ">1.2 to 1.4",
+                        "value": 1
+                    },
+                    {
+                        "label": ">1.4",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Platelet count, cells x 10<sup>9</sup>/L</p>",
+                "name": "platelet",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥150",
+                        "value": 0
+                    },
+                    {
+                        "label": "100 to <150",
+                        "value": 1
+                    },
+                    {
+                        "label": "<100",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><calculator id=\"691\">Total SOFA score</calculator></p>",
+                "name": "sofa",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥2",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Sum the full SOFA Score’s Respiratory, Cardiovascular, Hepatic, and Renal components",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Sic, sic score, Sepsis-Induced Coagulopathy (SIC) Score, coagulopathy, sepsis, covid19, covid, coronavirus, covid-19, covid 19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine"
+        ]
+    }
+}

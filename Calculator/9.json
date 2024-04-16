@@ -1,0 +1,148 @@
+{
+    "id": "9",
+    "title": "Peripheral Blood Stem Cell Collection",
+    "desc": "The Peripheral Blood Stem Cell Collection calculator estimates CD34+ yield using preapheresis peripheral blood absolute CD34 blood count.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24118027",
+                "text": "Hosing C, Saliba RM, Hamerschlak N, et al. Peripheral blood stem cell yield calculated using preapheresis absolute CD34+ cell count, peripheral blood volume processed, and donor body weight accurately predicts actual yield at multiple centers. Transfusion. 2014;54(4):1081-7."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Collection, cells/kg = collection efficiency, % / 100 &times; peripheral CD34+, cells/L &times; processed blood, L / recipient weight, kg</p>\n<p>Example:</p>\n<ul>\n<li>Collection, cells/kg = [40% / 100] &times;&nbsp;[40&nbsp;&times; 10<sup>6</sup> CD34+ cells/L] &times; [18 L] / [70 kg]</li>\n<li>Collection, cells/kg = [0.4] &times;&nbsp;[40&nbsp;&times; 10<sup>6</sup>] &times;&nbsp;[18] / [70]</li>\n<li>Collection, cells/kg = 4.11 &times; 10<sup>6</sup>&nbsp;CD34+ cells/kg</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Peripheral CD34+",
+                "unit": "cd34",
+                "error_min": "0",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "200",
+                "normal_max_us": "200",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "× 10⁶ cells/L",
+                "units_us": "× 10⁶ cells/L"
+            },
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Collection efficiency",
+                "unit": "coll_efficiency",
+                "error_min": "1",
+                "error_max": "100",
+                "warn_min": "1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "processed blood",
+                "unit": "processed_blood",
+                "error_min": "0",
+                "error_max": "30",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "1",
+                "normal_max_si": "20",
+                "normal_max_us": "20",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": "L",
+                "units_us": "L"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Mass",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Hematologic Malignancy",
+            "Leukemia/Lymphoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar efficiency = parseFloat(efficiency)/100\nvar peripheral = parseFloat(peripheral)\nvar blood = parseFloat(blood)\nvar wt = parseFloat(wt)\n\nvar collection = efficiency * peripheral * blood / wt\n\ncalc_output.push({\n   name: 'mini',\n   value: collection.toFixed(1),\n   value_text: 'million CD34+ cells/kg',\n   message: ''\n});\ncalc_output.push({\n   name: '10009_Peripheral Blood Stem Cell Collection_result',\n   value: collection.toFixed(1),\n   value_text: 'million CD34+ cells/kg',\n   message: ''\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Recipient weight",
+                "name": "wt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Processed blood",
+                "name": "blood",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "processed_blood"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Peripheral CD34+",
+                "name": "peripheral",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cd34"
+            },
+            {
+                "conditionality": "",
+                "default": 40,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Collection efficiency",
+                "name": "efficiency",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "coll_efficiency"
+            }
+        ],
+        "can_search": [
+            "stem cell transplant",
+            "pbsc"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Pathology",
+            "Transfusion Medicine"
+        ]
+    }
+}

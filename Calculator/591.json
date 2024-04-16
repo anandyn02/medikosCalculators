@@ -1,0 +1,75 @@
+{
+    "id": "591",
+    "title": "Modified Hoehn and Yahr Scale for Parkinson’s Disease",
+    "desc": "The Modified Hoehn and Yahr Scale for Parkinson’s Disease grades severity of symptoms in Parkinson’s disease.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6067254 ",
+                "text": "Hoehn MM, Yahr MD. Parkinsonism: onset, progression and mortality. Neurology. 1967;17(5):427-42."
+            }
+        ],
+        "evidence": "<p>&nbsp;</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><span>Unilateral involvement only</span></p> </td> <td> <p><span>Stage 1</span></p> </td> </tr> <tr> <td> <p><span>Unilateral and axial involvement</span></p> </td> <td> <p><span>Stage 1.5</span></p> </td> </tr> <tr> <td> <p><span>Bilateral involvement without impairment of balance</span></p> </td> <td> <p><span>Stage 2</span></p> </td> </tr> <tr> <td> <p><span>Mild bilateral disease with recovery on pull test</span></p> </td> <td> <p><span>Stage 2.5</span></p> </td> </tr> <tr> <td> <p><span>Mild to moderate bilateral disease; some postural instability; physicially independent</span></p> </td> <td> <p><span>Stage 3</span></p> </td> </tr> <tr> <td> <p><span>Severe disability; still able to walk or stand unassisted</span></p> </td> <td> <p><span>Stage 4</span></p> </td> </tr> <tr> <td> <p><span>Wheelchair bound or bedridden unless aided</span></p> </td> <td> <p><span>Stage 5</span></p> </td> </tr> </tbody> </table> </div>",
+        "facts": "<p><span>Interpretation:</span><br><span>Higher stage indicates higher degree of disability.</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Anxious",
+            "Depressed",
+            "Muscle Stiffness",
+            "Pain"
+        ],
+        "disease_treated": [
+            "Parkinson's Disease"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar status = parseFloat(status);\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: 'Stage ' + status,\n    value_text: '',\n    message: ''\n});\ncalc_output.push({\n    name: 'Stage',\n    value: 'Stage ' + status,\n    value_text: '',\n    message: 'Higher stage indicates higher degree of disability.'\n});",
+        "inputs": [
+            {
+                "label_en": "Severity of symptoms",
+                "name": "status",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Unilateral involvement only",
+                        "value": 1
+                    },
+                    {
+                        "label": "Unilateral and axial involvement",
+                        "value": 1.5
+                    },
+                    {
+                        "label": "Bilateral involvement without impairment of balance",
+                        "value": 2
+                    },
+                    {
+                        "label": "Mild bilateral disease with recovery on pull test",
+                        "value": 2.5
+                    },
+                    {
+                        "label": "Mild to moderate bilateral disease; some postural instability; physically independent",
+                        "value": 3
+                    },
+                    {
+                        "label": "Severe disability; still able to walk or stand unassisted",
+                        "value": 4
+                    },
+                    {
+                        "label": "Wheelchair bound or bedridden unless aided",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "hoehn",
+            "yahr",
+            "hoehn and yahr",
+            "parkinson",
+            "parkinsons"
+        ],
+        "specialty": [
+            "Neurology"
+        ]
+    }
+}

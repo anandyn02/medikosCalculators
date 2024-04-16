@@ -1,0 +1,188 @@
+{
+    "id": "255",
+    "title": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+    "desc": "The Centor Score (Modified) for Strep Pharyngitis Estimates probability that pharyngitis is streptococcal, and suggests management course.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6763125",
+                "text": "Centor RM, Witherspoon JM, Dalton HP, Brody CE, Link K. The diagnosis of strep throat in adults in the emergency room. Med Decis Making. 1981;1(3):239-46."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9475915",
+                "text": "McIsaac WJ, White D, Tannenbaum D, Low DE. A clinical score to reduce unnecessary antibiotic use in patients with sore throat. CMAJ. 1998 Jan 13;158(1):75-83. PubMed PMID: 9475915; PubMed Central PMCID: PMC1228750."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21646249",
+                "text": "Mitchell MS, Sorrentino A, Centor RM. Adolescent pharyngitis: a review of bacterial causes. Clin Pediatr (Phila). 2011;50(12):1091-5."
+            },
+            {
+                "href": "https://academic.oup.com/cid/article/55/10/e86/321183",
+                "text": " Shulman ST, et. al. Clinical Practice Guideline for the Diagnosis and Management of Group A Streptococcal Pharyngitis: 2012 Update by the Infectious Diseases Society of America. Clin Infect Dis. 2012 Nov 15;55(10):1279-82."
+            },
+            {
+                "href": "https://annals.org/article.aspx?articleid=2481815",
+                "text": "Harris AM, Hicks LA, Qaseem A, for the High Value Care Task Force of the American College of Physicians and for the Centers for Disease Control and Prevention. Appropriate Antibiotic Use for Acute Respiratory Tract Infection in Adults: Advice for High-Value Care From the American College of Physicians and the Centers for Disease Control and Prevention. Ann Intern Med. 2016 Jan 19. doi: 10.7326/M15-1840."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27386721?dopt=Abstract",
+                "text": "Kalra MG, Higgins KE, Perez ED. Common Questions About Streptococcal Pharyngitis. Am Fam Physician. 2016;94(1):24-31."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p><strong>Criteria</strong></p>\n</td>\n<td>\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p>Age</p>\n</td>\n<td>\n<p>3-14 years</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>15-44 years</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;45 years</p>\n</td>\n<td>\n<p>-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>Exudate or swelling on tonsils</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>Tender/swollen anterior cervical lymph nodes</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>Temp &gt;38&deg;C (100.4&deg;F)</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>Cough</p>\n</td>\n<td>\n<p>Cough present</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Cough absent</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Centor Score</strong></p>\n</td>\n<td>\n<p><strong>Probability of strep pharyngitis</strong></p>\n</td>\n<td>\n<p><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>1-2.5%</p>\n</td>\n<td rowspan=\"2\">\n<p>No further testing or antibiotics.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>1</p>\n</td>\n<td>\n<p>5-10%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>2</p>\n</td>\n<td>\n<p>11-17%</p>\n</td>\n<td>\n<p>Optional rapid strep testing and/or culture.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>3</p>\n</td>\n<td>\n<p>28-35%</p>\n</td>\n<td>\n<p>Consider rapid strep testing and/or culture.&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;4</p>\n</td>\n<td>\n<p>51-53%</p>\n</td>\n<td>\n<p>Consider rapid strep testing and/or culture. Empiric antibiotics may be appropriate depending on the specific scenario.</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Cough",
+            "Fever",
+            "Sore Throat"
+        ],
+        "disease_treated": [
+            "Acute Pain",
+            "Coronavirus",
+            "COVID-19",
+            "Pharyngitis",
+            "Strep Pharyngitis"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(age_range) + parseFloat(exudate_swelling) + parseFloat(lymph_nodes) + parseFloat(fever) + parseFloat(cough);\nvar msg, mini_msg;\nif (u == -1) {\n    msg = '1% - 2.5% likelihood of strep<br/><br/>No further testing nor antibiotics.';\n    mini_msg = '1% - 2.5% '\n}\nif (u == 0) {\n    msg = '1% - 2.5% likelihood of strep<br/><br/>No further testing nor antibiotics.';\n    mini_msg = '1% - 2.5% '\n}\nif (u == 1) {\n    msg = '5% - 10% likelihood of strep<br/><br/>No further testing nor antibiotics.';\n    mini_msg = '5% - 10% '\n}\nif (u == 2) {\n    msg = '11% - 17%<br/><br/>Optional rapid strep testing and/or culture.';\n    mini_msg = '11% - 17% '\n}\nif (u == 3) {\n    msg = '28% - 35%<br/><br/>Consider rapid strep testing and/or culture.';\n    mini_msg = '28% - 35% '\n}\nif (u > 3) {\n    msg = '51% - 53% likelihood of strep<br/><br/>Consider rapid strep testing and/or culture. Empiric antibiotics may be appropriate depending on the specific scenario.';\n    mini_msg = '51% - 53% '\n}\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: mini_msg + 'Probability of Strep Pharyngitis'\n});\ncalc_output.push({\n    name: '104_Centor Score_result',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age</p>",
+                "mdcalc_info_concept": null,
+                "name": "age_range",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "3-14 years",
+                        "value": 1
+                    },
+                    {
+                        "label": "15-44 years",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥45 years",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Group A streptococcus (GAS) rare under 3",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Exudate or swelling on tonsils</p>",
+                "md_calc_info_concept": null,
+                "name": "exudate_swelling",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Tender/swollen anterior cervical lymph nodes</p>",
+                "md_calc_info_concept": null,
+                "name": "lymph_nodes",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Temp &gt;38&deg;C (100.4&deg;F)</p>",
+                "md_calc_info_concept": null,
+                "name": "fever",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Cough</p>",
+                "mdcalc_info_concept": null,
+                "name": "cough",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Cough present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Cough absent",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "strep",
+            "sore throat",
+            "centaur",
+            "centor",
+            "covid",
+            "covid19",
+            "covid-19",
+            "covid 19",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Oral and Maxillofacial Surgery",
+            "Otolaryngology",
+            "Pediatrics"
+        ]
+    }
+}

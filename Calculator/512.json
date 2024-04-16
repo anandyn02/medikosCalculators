@@ -1,0 +1,380 @@
+{
+    "id": "512",
+    "title": "MAGGIC Risk Calculator for Heart Failure",
+    "desc": "The MAGGIC Risk Calculator for Heart Failure estimates 1- and 3- year mortality in patients with heart failure.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://eurheartj.oxfordjournals.org/content/early/2012/10/23/eurheartj.ehs337",
+                "text": "Pocock SJ et al. Predicting survival in heart failure: a risk score based on 39 372 patients from 30 studies. Eur Heart J. 2013 May;34(19):1404-13. doi: 10.1093/eurheartj/ehs337. Epub 2012 Oct 24."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21821849",
+                "text": "Meta-analysis Global Group in Chronic Heart Failure (MAGGIC). The survival of patients with heart failure with preserved or reduced left ventricular ejection fraction: an individual patient data meta-analysis. Eur Heart J. 2012 Jul;33(14):1750-7. doi: 10.1093/eurheartj/ehr254. Epub 2011 Aug 6."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26385583 ",
+                "text": "Nanayakkara S, Kaye DM. Management of heart failure with preserved ejection fraction: a review. Clin Ther. 2015 Oct 1;37(10):2186-98. doi: 10.1016/j.clinthera.2015.08.005. Epub 2015 Sep 16."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4089693/",
+                "text": "Chapter 1: Definition and classification of CKD. Kidney Int Suppl (2011). 2013;3(1):19-62."
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<table>\n<tbody>\n<tr>\n<td colspan=\"2\"><strong>Risk Factor</strong></td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Male</p>\n<p>Smoker</p>\n<p>Diabetic</p>\n<p>COPD</p>\n<p>Heart failure first diagnosed &ge;18 months ago</p>\n<p>Not on beta blocker</p>\n<p>Not on ACE-I/ARB</p>\n</td>\n<td>\n<p>+1</p>\n<p>+1</p>\n<p>+3</p>\n<p>+2</p>\n<p>+2</p>\n<p>+3</p>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Ejection fraction (EF)</p>\n</td>\n<td>\n<p>&lt;20</p>\n<p>20-24</p>\n<p>25-29</p>\n<p>30-34</p>\n<p>35-39</p>\n<p>&ge;40</p>\n</td>\n<td>\n<p>+7</p>\n<p>+6</p>\n<p>+5</p>\n<p>+3</p>\n<p>+2</p>\n<p>+0</p>\n</td>\n</tr>\n<tr>\n<td>NYHA class</td>\n<td>\n<p>1</p>\n<p>2</p>\n<p>3</p>\n<p>4</p>\n</td>\n<td>\n<p>+0</p>\n<p>+2</p>\n<p>+6</p>\n<p>+8&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td>&nbsp;Creatinine*</td>\n<td>\n<p>&nbsp;&lt;90</p>\n<p>90-109</p>\n<p>110-129</p>\n<p>130-149</p>\n<p>150-169</p>\n<p>170-209</p>\n<p>210-249</p>\n<p>&ge;250</p>\n</td>\n<td>\n<p>+0</p>\n<p>+1</p>\n<p>+2</p>\n<p>+3</p>\n<p>+4</p>\n<p>+5</p>\n<p>+6</p>\n<p>+8&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td>BMI&nbsp;</td>\n<td>\n<p>&lt;15</p>\n<p>15-19</p>\n<p>20-24</p>\n<p>&nbsp;25-29</p>\n<p>&ge;30</p>\n</td>\n<td>\n<p>+6</p>\n<p>+5</p>\n<p>+3</p>\n<p>+2</p>\n<p>+0&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Extra for&nbsp;systolic BP (mm Hg) if EF &lt;30</p>\n<p>&nbsp;</p>\n</td>\n<td>\n<p>&lt;110</p>\n<p>110-119</p>\n<p>120-129</p>\n<p>130-139</p>\n<p>140-149</p>\n<p>&ge;150</p>\n</td>\n<td>\n<p>+5</p>\n<p>+4</p>\n<p>+3</p>\n<p>+2</p>\n<p>+1</p>\n<p>+0&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td>&nbsp;Extra for&nbsp;systolic BP (mm Hg) if EF 30-39</td>\n<td>\n<p>&lt;110</p>\n<p>110-119</p>\n<p>120-129</p>\n<p>130-139</p>\n<p>140-149</p>\n<p>&ge;150</p>\n</td>\n<td>\n<p>+3</p>\n<p>+2</p>\n<p>+1</p>\n<p>+1</p>\n<p>+0</p>\n<p>+0</p>\n</td>\n</tr>\n<tr>\n<td>&nbsp;&nbsp;Extra for&nbsp;systolic BP (mm Hg) if EF &ge;40</td>\n<td>\n<p>&nbsp;&lt;110</p>\n<p>110-119</p>\n<p>120-129</p>\n<p>130-139</p>\n<p>140-149</p>\n<p>&ge;150</p>\n</td>\n<td>\n<p>+2</p>\n<p>+1</p>\n<p>+1</p>\n<p>+0</p>\n<p>+0</p>\n<p>+0&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td>Extra for age (years) if EF &lt;30</td>\n<td>\n<p>&lt;55</p>\n<p>55-59</p>\n<p>60-64</p>\n<p>65-69</p>\n<p>70-74</p>\n<p>75-79</p>\n<p>&ge;80</p>\n</td>\n<td>\n<p>+0</p>\n<p>+1</p>\n<p>+2</p>\n<p>+4</p>\n<p>+6</p>\n<p>+8</p>\n<p>+10</p>\n</td>\n</tr>\n<tr>\n<td>Extra for age (years) if EF 30-39</td>\n<td>\n<p>&lt;55</p>\n<p>55-59</p>\n<p>60-64</p>\n<p>65-69</p>\n<p>70-74</p>\n<p>75-79</p>\n<p>&ge;80</p>\n</td>\n<td>\n<p>+0</p>\n<p>+2</p>\n<p>+4</p>\n<p>+6</p>\n<p>+8</p>\n<p>+10</p>\n<p>+13&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td>Extra for age (years) if EF &ge;40</td>\n<td>\n<p>&lt;55</p>\n<p>55-59</p>\n<p>60-64</p>\n<p>65-69</p>\n<p>70-74</p>\n<p>75-79</p>\n<p>&ge;80</p>\n</td>\n<td>\n<p>+0</p>\n<p>+3</p>\n<p>+5</p>\n<p>+7</p>\n<p>+9</p>\n<p>+12</p>\n<p>+15&nbsp;</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Note: while this score uses creatinine as a proxy for renal function, eGFR is generally considered a more accurate indicator.</p>",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Age",
+                "unit": "age_adult",
+                "error_min": "18",
+                "error_max": "110",
+                "warn_min": "18",
+                "warn_max": "110",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Creatinine",
+                "unit": "cr",
+                "error_min": "0.01",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "88.4",
+                "normal_max_si": "115",
+                "normal_max_us": "1.3",
+                "normal_min_si": "62",
+                "normal_min_us": "0.7",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Body Mass Index",
+                "unit": "BMI",
+                "error_min": "0",
+                "error_max": "50",
+                "warn_min": "10",
+                "warn_max": "30",
+                "conversion": "1",
+                "normal_max_si": "25",
+                "normal_max_us": "25",
+                "normal_min_si": "20",
+                "normal_min_us": "20",
+                "units_si": "kg/m²",
+                "units_us": "kg/m²"
+            },
+            {
+                "name": "% Neutrophils",
+                "unit": "neut",
+                "error_min": "-0.01",
+                "error_max": "100.01",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Dyspnea",
+            "Extremity Edema",
+            "Shortness of Breath",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Congestive Heart Failure",
+            "Heart Failure"
+        ],
+        "logic": "var calc_output = [];\n\nvar ef = parseFloat(ef);\nvar age = parseFloat(age);\nvar sbp = parseFloat(sbp);\nvar bmi = parseFloat(bmi);\n\nif (UOMSYSTEM == true) { // Cr already in right units, so we're good\n var cr = parseFloat(cr);\n}\n\nif (UOMSYSTEM == false) { // Cr you gotta get converted\n var cr = parseFloat(cr) / 88.4;\n}\n\nvar nyha = parseFloat(nyha);\nvar sex = parseFloat(sex);\nvar smoke = parseFloat(smoke);\nvar dm = parseFloat(dm);\nvar copd = parseFloat(copd);\nvar hfdx = parseFloat(hfdx);\nvar bb = parseFloat(bb);\nvar ace = parseFloat(ace);\n\nvar efscore;\nvar agescore, sbpscore, bmiscore, crscore, total;\n\n\n\nif (ef < 20) {\n    efscore = 7;\n}\nif (ef >= 20 && ef < 25) {\n    efscore = 6;\n}\nif (ef >= 25 && ef < 30) {\n    efscore = 5;\n}\nif (ef >= 30 && ef < 35) {\n    efscore = 3;\n}\nif (ef >= 35 && ef < 40) {\n    efscore = 2;\n}\nif (ef >= 40) {\n    efscore = 0;\n}\n\nif (age < 55) {\n    if (ef < 30) {\n        agescore = 0;\n    }\n    if (ef >= 30 && ef < 40) {\n        agescore = 0;\n    }\n    if (ef >= 40) {\n        agescore = 0;\n    }\n}\nif (age >= 55 && age < 60) {\n    if (ef < 30) {\n        agescore = 1;\n    }\n    if (ef >= 30 && ef < 40) {\n        agescore = 2;\n    }\n    if (ef >= 40) {\n        agescore = 3;\n    }\n}\nif (age >= 60 && age < 65) {\n    if (ef < 30) {\n        agescore = 2;\n    }\n    if (ef >= 30 && ef < 40) {\n        agescore = 4;\n    }\n    if (ef >= 40) {\n        agescore = 5;\n    }\n}\nif (age >= 65 && age < 70) {\n    if (ef < 30) {\n        agescore = 4;\n    }\n    if (ef >= 30 && ef < 40) {\n        agescore = 6;\n    }\n    if (ef >= 40) {\n        agescore = 7;\n    }\n}\nif (age >= 70 && age < 75) {\n    if (ef < 30) {\n        agescore = 6;\n    }\n    if (ef >= 30 && ef < 40) {\n        agescore = 8;\n    }\n    if (ef >= 40) {\n        agescore = 9;\n    }\n}\nif (age >= 75 && age < 80) {\n    if (ef < 30) {\n        agescore = 8;\n    }\n    if (ef >= 30 && ef < 40) {\n        agescore = 10;\n    }\n    if (ef >= 40) {\n        agescore = 12;\n    }\n}\nif (age >= 80) {\n    if (ef < 30) {\n        agescore = 10;\n    }\n    if (ef >= 30 && ef < 40) {\n        agescore = 13;\n    }\n    if (ef >= 40) {\n        agescore = 15;\n    }\n}\n\nif (sbp < 110) {\n    if (ef < 30) {\n        sbpscore = 5;\n    }\n    if (ef >= 30 && ef < 40) {\n        sbpscore = 3;\n    }\n    if (ef >= 40) {\n        sbpscore = 2;\n    }\n}\nif (sbp >= 110 && sbp < 120) {\n    if (ef < 30) {\n        sbpscore = 4;\n    }\n    if (ef >= 30 && ef < 40) {\n        sbpscore = 2;\n    }\n    if (ef >= 40) {\n        sbpscore = 1;\n    }\n}\nif (sbp >= 120 && sbp < 130) {\n    if (ef < 30) {\n        sbpscore = 3;\n    }\n    if (ef >= 30 && ef < 40) {\n        sbpscore = 1;\n    }\n    if (ef >= 40) {\n        sbpscore = 1;\n    }\n}\nif (sbp >= 130 && sbp < 140) {\n    if (ef < 30) {\n        sbpscore = 2;\n    }\n    if (ef >= 30 && ef < 40) {\n        sbpscore = 1;\n    }\n    if (ef >= 40) {\n        sbpscore = 0;\n    }\n}\nif (sbp >= 140 && sbp < 150) {\n    if (ef < 30) {\n        sbpscore = 1;\n    }\n    if (ef >= 30 && ef < 40) {\n        sbpscore = 0;\n    }\n    if (ef >= 40) {\n        sbpscore = 0;\n    }\n}\nif (sbp >= 150) {\n    if (ef < 30) {\n        sbpscore = 0;\n    }\n    if (ef >= 30 && ef < 40) {\n        sbpscore = 0;\n    }\n    if (ef >= 40) {\n        sbpscore = 0;\n    }\n}\n\nif (bmi < 15) {\n    bmiscore = 6;\n}\nif (bmi >= 15 && bmi < 20) {\n    bmiscore = 5;\n}\nif (bmi >= 20 && bmi < 25) {\n    bmiscore = 3;\n}\nif (bmi >= 25 && bmi < 30) {\n    bmiscore = 2;\n}\nif (bmi >= 30) {\n    bmiscore = 0;\n}\n\nif (cr < 1.02) {\n    crscore = 0;\n}\nif (cr >= 1.02 && cr < 1.24) {\n    crscore = 1;\n}\nif (cr >= 1.24 && cr < 1.47) {\n    crscore = 2;\n}\nif (cr >= 1.47 && cr < 1.7) {\n    crscore = 3;\n}\nif (cr >= 1.7 && cr < 1.92) {\n    crscore = 4;\n}\nif (cr >= 1.92 && cr < 2.38) {\n    crscore = 5;\n}\nif (cr >= 2.38 && cr < 2.82) {\n    crscore = 6;\n}\nif (cr >= 2.82) {\n    crscore = 8;\n}\n\nvar total = efscore + agescore + sbpscore + bmiscore + crscore + nyha + sex + smoke + dm + copd + hfdx + bb + ace;\n\nvar score_dic1 = {\n    0: 0.015,\n    1: 0.016,\n    2: 0.018,\n    3: 0.02,\n    4: 0.022,\n    5: 0.024,\n    6: 0.027,\n    7: 0.029,\n    8: 0.032,\n    9: 0.036,\n    10: 0.039,\n    11: 0.043,\n    12: 0.048,\n    13: 0.052,\n    14: 0.058,\n    15: 0.063,\n    16: 0.07,\n    17: 0.077,\n    18: 0.084,\n    19: 0.093,\n    20: 0.102,\n    21: 0.111,\n    22: 0.122,\n    23: 0.134,\n    24: 0.147,\n    25: 0.16,\n    26: 0.175,\n    27: 0.191,\n    28: 0.209,\n    29: 0.227,\n    30: 0.248,\n    31: 0.269,\n    32: 0.292,\n    33: 0.316,\n    34: 0.342,\n    35: 0.369,\n    36: 0.398,\n    37: 0.427,\n    38: 0.458,\n    39: 0.49,\n    40: 0.523,\n    41: 0.557,\n    42: 0.591,\n    43: 0.625,\n    44: 0.659,\n    45: 0.692,\n    46: 0.725,\n    47: 0.757,\n    48: 0.787,\n    49: 0.816,\n    50: 0.842\n};\nvar score_dic3 = {\n    0: 0.039,\n    1: 0.043,\n    2: 0.048,\n    3: 0.052,\n    4: 0.058,\n    5: 0.063,\n    6: 0.07,\n    7: 0.077,\n    8: 0.084,\n    9: 0.092,\n    10: 0.102,\n    11: 0.111,\n    12: 0.122,\n    13: 0.134,\n    14: 0.146,\n    15: 0.16,\n    16: 0.175,\n    17: 0.191,\n    18: 0.209,\n    19: 0.227,\n    20: 0.247,\n    21: 0.269,\n    22: 0.292,\n    23: 0.316,\n    24: 0.342,\n    25: 0.369,\n    26: 0.397,\n    27: 0.427,\n    28: 0.458,\n    29: 0.49,\n    30: 0.523,\n    31: 0.556,\n    32: 0.59,\n    33: 0.625,\n    34: 0.658,\n    35: 0.692,\n    36: 0.725,\n    37: 0.756,\n    38: 0.787,\n    39: 0.815,\n    40: 0.842,\n    41: 0.866,\n    42: 0.889,\n    43: 0.908,\n    44: 0.926,\n    45: 0.941,\n    46: 0.953,\n    47: 0.964,\n    48: 0.973,\n    49: 0.98,\n    50: 0.985\n};\nvar mort1 = score_dic1[total] * 100;\nvar mort3 = score_dic3[total] * 100;\n\nmort1 = mort1.toFixed(1)\nmort3 = mort3.toFixed(1)\n\nif (total > 50) {\n  mort1 = '>84.2'\n  mort3 = '>98.5'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: total.toFixed(0),\n    value_text: 'points',\n    message: mort1 + '% 1-year mortality'\n});\ncalc_output.push({\n    name: '3803_MAGGIC_result (score)',\n    value: total.toFixed(0),\n    value_text: 'points',\n    message: ''\n});\ncalc_output.push({\n    name: '3803_MAGGIC_result (1 yr)',\n    value: mort1,\n    value_text: '%',\n    message: '1-year mortality'\n});\ncalc_output.push({\n    name: '3803_MAGGIC_result (3 yrs)',\n    value: mort3,\n    value_text: '%',\n    message: '3-year mortality'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_adult"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Ejection Fraction",
+                "name": "ef",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "neut"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "sBP",
+                "name": "sbp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<calculator id='29'>BMI</calculator>",
+                "name": "bmi",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "BMI"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Creatinine",
+                "name": "cr",
+                "optional": false,
+                "tips_en": "Note: while this score uses creatinine as a proxy for renal function, eGFR is generally considered a more accurate indicator",
+                "type": "textbox",
+                "unit": "cr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "NYHA Class",
+                "mdcalc_info_concept": null,
+                "name": "nyha",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Class I",
+                        "value": 0
+                    },
+                    {
+                        "label": "Class II",
+                        "value": 2
+                    },
+                    {
+                        "label": "Class III",
+                        "value": 6
+                    },
+                    {
+                        "label": "Class IV",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Gender",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Current smoker",
+                "md_calc_info_concept": null,
+                "name": "smoke",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Diabetes",
+                "md_calc_info_concept": null,
+                "name": "dm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "COPD",
+                "md_calc_info_concept": null,
+                "name": "copd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Heart failure first diagnosed ≥18 months ago",
+                "md_calc_info_concept": null,
+                "name": "hfdx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Beta blocker",
+                "md_calc_info_concept": null,
+                "name": "bb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 3
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "ACEi/ARB",
+                "md_calc_info_concept": null,
+                "name": "ace",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Hf",
+            "heart failure",
+            "magic",
+            "mortality",
+            "survival",
+            "EF",
+            "ejection",
+            "fraction",
+            "ejection fraction",
+            "CHF",
+            "congestive heart failure"
+        ],
+        "specialty": [
+            "Cardiology"
+        ]
+    }
+}

@@ -1,0 +1,125 @@
+{
+    "id": "483",
+    "title": "Pediatric Asthma Severity Score (PASS) for Asthma Exacerbation Severity",
+    "desc": "The Pediatric Asthma Severity Score (PASS) determines severity of pediatric asthma based on physical exam findings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14709423",
+                "text": "Gorelick MH, et al. Performance of a novel clinical score, the Pediatric Asthma Severity Score (PASS), in the evaluation of acute asthma.Acad Emerg Med. 2004 Jan;11(1):10-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<p>The PASS Score uses a cut off value of 2 points as indication for potential admission to PICU.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Asthma"
+        ],
+        "logic": "var calc_output = [];\nvar v = parseInt(wheezing) + parseInt(amu) + parseInt(exp);\nvar msg, mini_msg;\nif (v >= 2) {\n    mini_msg =\"Severe Asthma\"\n    msg = 'PASS suggests severe asthma - consider admission to PICU.';\n} else {\n    mini_msg = \"Possible outpatient treatment.\"\n    msg = 'PASS suggests asthma may be treatable as outpatient.';\n}\ncalc_output.push({ name: 'mini', value: v, value_text: 'points', message: mini_msg });\ncalc_output.push({ name: '3383_Pediatric Asthma Severity Score_result', value: v, value_text: 'points', message: msg });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Wheezing",
+                "mdcalc_info_concept": null,
+                "name": "wheezing",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or mild",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 1
+                    },
+                    {
+                        "label": "Severe wheezing or absent due to poor air movement",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Work of breathing",
+                "mdcalc_info_concept": null,
+                "name": "amu",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal or mildly diminished",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 1
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Use of accessory muscles, retractions",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Prolongation of expiration",
+                "mdcalc_info_concept": null,
+                "name": "exp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal or mildly prolonged",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderately prolonged",
+                        "value": 1
+                    },
+                    {
+                        "label": "Severely prolonged",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ratio of expiration to inspiration",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Asthma",
+            "peds",
+            "breathing",
+            "wheezing",
+            "gorelick"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Pediatrics",
+            "Pulmonology"
+        ]
+    }
+}

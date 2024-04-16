@@ -1,0 +1,200 @@
+{
+    "id": "92",
+    "title": "Risk of Malignancy Index (RMI) for Ovarian Cancer",
+    "desc": "The Risk of Malignancy Index (RMI) for Ovarian Cancer predicts risk that an adnexal mass is malignant.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2223684",
+                "text": "Jacobs I, Oram D, Fairbanks J, Turner J, Frost C, Grudzinskas JG. A risk of malignancy index incorporating CA 125, ultrasound and menopausal status for the accurate preoperative diagnosis of ovarian cancer. Br J Obstet Gynaecol. 1990;97(10):922-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">RMI = menopausal status x ultrasound score x serum CA-125, U/mL</p>\n<p></p>\n<p dir=\"ltr\">Where menopausal status and ultrasound score are as follows:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Ultrasound features</p>\n</td>\n<td>\n<p dir=\"ltr\">Multiloculated cysts</p>\n</td>\n<td rowspan=\"5\">\n<p dir=\"ltr\">1 if 0-1 present</p>\n<p dir=\"ltr\">3 if &ge;2 present</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Solid areas</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Bilateral lesions</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Ascites</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Intra-abdominal metastases</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Menopausal status*</p>\n</td>\n<td>\n<p dir=\"ltr\">Premenopausal or perimenopausal</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Postmenopausal</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>\n<p dir=\"ltr\">*Postmenopausal status = &gt;1 year of amenorrhea or age &ge;50 years if patient is status post hysterectomy.</p>\n<p><span style=\"font-size: 10pt; font-family: Arial; color: #0000ff; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;\">&nbsp;</span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>RMI</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of malignancy</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;200</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;200</p>\n</td>\n<td>\n<p dir=\"ltr\">High*</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-63d985a8-7fff-e8a3-afe1-b4f4a55e601e\"></span></p>\n<p dir=\"ltr\">*71% sensitive and 92% specific for ovarian cancer.</p>",
+        "estimation": [
+            {
+                "name": "ca125",
+                "unit": "ca125",
+                "error_min": "0",
+                "error_max": "10000",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "35",
+                "normal_max_us": "35",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "U/mL",
+                "units_us": "U/mL"
+            }
+        ],
+        "primary_complains": [
+            "Cancer",
+            "Mass"
+        ],
+        "disease_treated": [
+            "Ovarian Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar cyst = parseFloat(cyst);\nvar lesions = parseFloat(lesions);\nvar areas = parseFloat(areas);\nvar ascites = parseFloat(ascites);\nvar intra = parseFloat(intra);\nvar meno = parseFloat(meno);\nvar ca = parseFloat(ca);\n\nvar ultrascore = cyst + lesions + areas + ascites + intra; \n\nif(ultrascore == 0 || ultrascore == 1){\n  ultrascore = 1;\n}\nelse{ultrascore = 3;}\n\nvar score = ultrascore*meno*ca;\n\nscore = score.toFixed(0);\n  \nvar risk1;\nvar msg;\n\nif (score <= 200) {\n\trisk1 = 'Low';\n  \tmsg = '';\n}\nelse if (score > 200) { \n\trisk1 = 'High';\n  \tmsg = '71% sensitive and 92% specific for ovarian cancer';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk1 + ' risk of malignancy'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'RMI'   \n    });\ncalc_output.push({\n    name: 'risk1',\n    value: risk1, \n    value_text: 'risk of malignancy',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Ultrasound features",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Multiloculated cysts",
+                "name": "cyst",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Solid areas",
+                "name": "areas",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bilateral lesions",
+                "name": "lesions",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ascites",
+                "name": "ascites",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intra-abdominal metastases",
+                "name": "intra",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "subheading": "Other features",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Menopausal status",
+                "name": "meno",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Premenopausal or perimenopausal",
+                        "value": 1
+                    },
+                    {
+                        "label": "Postmenopausal",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Postmenopausal status = >1 year of amenorrhea or age ≥50 years if patient is status post hysterectomy",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Serum CA-125, U/mL",
+                "name": "ca",
+                "optional": false,
+                "type": "textbox",
+                "unit": "ca125"
+            }
+        ],
+        "can_search": [
+            "Ovarian cancer index",
+            "metastases",
+            "CA125",
+            "menopause",
+            "ultrasound score",
+            "lesion",
+            "ascites",
+            "cyst",
+            "CA-125"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Radiation Oncology",
+            "Internal Medicine",
+            "Hospitalist Medicine",
+            "Surgery (General)",
+            "OB-Gyn"
+        ]
+    }
+}

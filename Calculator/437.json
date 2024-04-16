@@ -1,0 +1,197 @@
+{
+    "id": "437",
+    "title": "Basal Energy Expenditure",
+    "desc": "The Basal Energy Expenditure calculates daily energy expenditure.",
+    "data": {
+        "orgreference": [
+            {
+                "href": null,
+                "text": "Harris J, Benedict F. A biometric study of basal metabolism in man. Washington D.C. Carnegie Institute of Washington. 1919."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Note: The Basal Energy Expenditure must be multiplied by activity and stress factors to calculate total caloric requirement.</p>\n<p>BEE, kcal/day (male) = 66.5 + (13.75 &times; weight, kg) + (5.003 &times; height, cm) - (6.775 &times; age)</p>\n<p>BEE, kcal/day (female) = 655.1 + (9.563 &times; weight, kg) + (1.850 &times; height, cm) - (4.676 &times; age)</p>\n<p><strong>Harris-Benedict&nbsp;adjustment:</strong></p>\n<ul>\n<li>Sedentary (little to no exercise) = BEE &times; 1.2</li>\n<li>Light exercise (1-3 days per week) = BEE &times; 1.375</li>\n<li>Moderate exercise (3&ndash;5 days per week) = BEE &times; 1.55</li>\n<li>Heavy exercise (6&ndash;7 days per week) = BEE &times; 1.725</li>\n<li>Very heavy exercise (twice per day, extra heavy workouts) = BEE &times; 1.9</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Height",
+                "unit": "ht",
+                "error_min": "0",
+                "error_max": "90",
+                "warn_min": "5",
+                "warn_max": "80",
+                "conversion": "2.54",
+                "normal_max_si": "213",
+                "normal_max_us": "84",
+                "normal_min_si": "152",
+                "normal_min_us": "60",
+                "units_si": "cm",
+                "units_us": "in"
+            }
+        ],
+        "primary_complains": [
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Malnutrition",
+            "Obesity"
+        ],
+        "logic": "var calc_output = [];\nvar weight = parseFloat(weight); // already in SI units which is what we want\nvar height = parseFloat(height); // already in SI units which is what we want\nvar age = parseFloat(age);\nvar v;\nvar unit\n\nif (sex == 0) {\n  v = 66.5 + (13.75 * weight) + (5.003 * height) - (6.775 * age);\n} else {\n  v = 655.1 + (9.563 * weight) + (1.850 * height) - (4.676 * age);\n}\n\nif (UOMSYSTEM == false) {\n  v = v*4.184\n  unit = 'kJ/day'\n} else {\n  unit = 'kcal/day'\n}\n\nvar hb;\n\nvar activity = parseFloat(activity); \nif (activity == 1) {\n  hb = (v * 1.2).toFixed(0);\n} else if (activity == 2) {\n  hb = (v * 1.375).toFixed(0);\n} else if (activity == 3) {\n  hb = (v * 1.55).toFixed(0);\n} else if (activity == 4) {\n  hb = (v * 1.725).toFixed(0);\n} else if (activity == 5) {\n  hb = (v * 1.9).toFixed(0);\n} else {\n  hb = 'N/A';\n} \n\n\ncalc_output.push({\nname: 'mini',\nvalue: v.toFixed(0),\nvalue_text: unit,\nmessage: 'Basal Energy Expenditure'\n});\ncalc_output.push({\n  name: '25_Basal Energy Expenditure_result (expend)',\n  value: v.toFixed(0),\n  value_text: unit,\n  message: 'Basal Energy Expenditure<br/><br/>Note: stress, activity, illness, trauma, burns, cancers can increase daily caloric requirement.'\n});\ncalc_output.push({\n  name: '25_Basal Energy Expenditure_result (intake)',\n  value: hb,\n  value_text: unit,\n  message: 'Harris-Benedict Recommended Caloric Intake'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 1
+                    },
+                    {
+                        "label": "Male",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Height",
+                "name": "height",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Harris-Benedict Equation Predictors",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Activity level",
+                "mdcalc_info_concept": null,
+                "name": "activity",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Sedentary (little to no exercise)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Light exercise (1-3 days per week)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Moderate exercise (3–5 days per week)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Heavy exercise (6–7 days per week)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Very heavy exercise (twice per day, extra heavy workouts)",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "calories",
+            "metabolism",
+            "harris",
+            "Benedict",
+            "harris-benedict"
+        ],
+        "specialty": [
+            "Clinical Nutrition",
+            "Critical Care",
+            "Endocrinology",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "OB-Gyn",
+            "Pediatrics",
+            "Pharmacy",
+            "Rehabilitation Medicine",
+            "Sports Medicine"
+        ]
+    }
+}

@@ -1,0 +1,210 @@
+{
+    "id": "662",
+    "title": "Solitary Pulmonary Nodule (SPN) Malignancy Risk Score (Mayo Clinic Model)",
+    "desc": "The Solitary Pulmonary Nodule (SPN) Malignancy Risk Score predicts malignancy risk in solitary lung nodules on chest x-ray.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9129544 ",
+                "text": "Swensen SJ, Silverstein MD, Ilstrup DM, Schleck CD, Edell ES. The probability of malignancy in solitary pulmonary nodules. Application to small radiologically indeterminate nodules. Arch Intern Med. 1997;157(8):849-55."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://annals.org/aim/fullarticle/716394/cost-effectiveness-alternative-management-strategies-patients-solitary-pulmonary-nodules",
+                "text": "Gould MK, Sanders GD, Barnett PG, et al. Cost-effectiveness of alternative management strategies for patients with solitary pulmonary nodules. Ann Intern Med. 2003;138(9):724-35."
+            }
+        ],
+        "evidence": "<p>Probability of malignancy, % = 100 x e<sup>x&nbsp;</sup>/ (1 + e<sup>x</sup>)</p>\n<p>Probability of malignancy with FDG-PET, % = 100 / (1 + e<sup>-y</sup>)</p>\n<p>where:</p>\n<ul>\n<li>x&nbsp;= (0.0391 &times; age, years) + (0.1274 &times; nodule diameter, mm) + (0.7917 &times; smoker) + (1.3388 &times; cancer) + (0.7838 &times; upper lobe) + (1.0407 &times; spiculation) - 6.8272,&nbsp;</li>\n<li>y&nbsp;= -4.739 + (3.691 &times; probability of malignancy*)&nbsp;+ 2.322 (if faint uptake), or + 4.617 (if moderate uptake), or + 4.771 (if intense uptake),</li>\n</ul>\n<p>and other variables are as follows:</p>\n<table><colgroup><col width=\"231\" /><col width=\"75\" /><col width=\"56\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Current or former smoker</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Extrathoracic cancer diagnosis &ge;5 years prior</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Upper lobe location of tumor</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Nodule spiculation</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><span id=\"docs-internal-guid-869c11dc-7fff-dce1-2584-fd53295bb2a3\">*Note: expressed as a decimal, e.g. 0.12 for 12%.</span></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Length",
+                "unit": "length_si_mm",
+                "error_min": "0",
+                "error_max": "10000",
+                "warn_min": "0.1",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mm",
+                "units_us": "mm"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Shortness of Breath",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Lung Cancer"
+        ],
+        "logic": "var calc_output = [];\n\n// Declare vars\n\nvar age = parseFloat(age);\nvar diameter = parseFloat(diameter);\nvar smoker = parseFloat(smoker);\nvar cancer = parseFloat(cancer);\nvar spiculation = parseFloat(spiculation);\nvar lobe = parseFloat(lobe);\nvar pet1 = parseFloat(pet1);\n\nvar x = (0.0391*age) + (0.1274*diameter) + (0.7917*smoker) + (1.3388*cancer) + (1.0407*spiculation) + (0.7838*lobe) - 6.8272;\nvar z = Math.exp(x)/(1 + Math.exp(x));\nvar malignancy = z*100;\n\nvar pet, spn;\n\nif (pet1 == 0) {\n  pet = malignancy;\n  spn = pet;\n} else if (pet1 == 1) {\n  pet = -4.739 + 3.691*z;\n  spn = 100/(1 + Math.exp(-pet));\n} else if (pet1 == 2) {\n  pet = -4.739 + 3.691*z + 2.322;\n  spn = 100/(1 + Math.exp(-pet));\n} else if (pet1 == 3) {\n  pet = -4.739 + 3.691*z + 4.617;\n  spn = 100/(1 + Math.exp(-pet));\n} else if (pet1 == 4) {\n  pet = -4.739 + 3.691*z + 4.771;\n  spn = 100/(1 + Math.exp(-pet));\n}\n\n\ncalc_output.push({\n   name: 'mini',\n   value: spn.toFixed(1),\n   value_text: '%',\n   message: 'Probability of malignancy'\n});\ncalc_output.push({\n   name: 'score',\n   value: spn.toFixed(1),\n   value_text: '%',\n   message: 'Probability of malignancy <br/><br/> One study suggests watchful waiting only at very low post-test probabilities (<2%), biopsy at \"lower\" post-test probabilities (2% to 20%), and surgery at higher post-test probabilities (>70%). See Next Steps.'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Nodule diameter",
+                "name": "diameter",
+                "optional": false,
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Current or former smoker",
+                "name": "smoker",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Extrathoracic cancer diagnosis ≥5 years prior",
+                "name": "cancer",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Upper lobe location of tumor",
+                "name": "lobe",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nodule spiculation",
+                "name": "spiculation",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title = \"Fluorodeoxyglucose (FDG)-positron emission tomography (PET)\">FDG-PET</abbr>",
+                "name": "pet1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "PET not performed",
+                        "value": 0
+                    },
+                    {
+                        "label": "No uptake",
+                        "value": 1
+                    },
+                    {
+                        "label": "Faint uptake",
+                        "value": 2
+                    },
+                    {
+                        "label": "Moderate uptake",
+                        "value": 3
+                    },
+                    {
+                        "label": "Intense uptake",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Optional, if performed",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "solitary pulmonary nodules",
+            "SPNs",
+            "radiologically indeterminate SPNs",
+            "radiologically indeterminate solitary pulmonary nodules",
+            "clinical predictors of malignancy",
+            "radiological predictors of malignancy",
+            "lung cancer",
+            "metastasis",
+            "metastatic cancer",
+            "indeterminate pulmonary nodules",
+            "primary bronchogenic carcinoma",
+            "carcinoid tumors",
+            "hemoptysis"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Pulmonology",
+            "Radiology"
+        ]
+    }
+}

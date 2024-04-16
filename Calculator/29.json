@@ -1,0 +1,323 @@
+{
+    "id": "29",
+    "title": "ASAS Criteria for Peripheral SpondyloArthritis (SpA)",
+    "desc": "The ASAS Criteria for Peripheral SpondyloArthritis (SpA) diagnoses peripheral spondyloarthritis in patients presenting with peripheral arthritis, enthesitis and/or dactylitis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://ard.bmj.com/content/annrheumdis/70/1/25.full.pdf",
+                "text": "Rudwaleit M, Van der heijde D, Landewé R, et al. The Assessment of SpondyloArthritis International Society classification criteria for peripheral spondyloarthritis and for spondyloarthritis in general. Ann Rheum Dis. 2011;70(1):25-31."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><strong>Entry criterion</strong></p>\n<p dir=\"ltr\">&ge;1 of the following:</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Peripheral arthritis*</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Enthesitis</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Dactylitis</p>\n</li>\n</ul>\n<p></p>\n<p dir=\"ltr\"><strong>Required criteria</strong></p>\n<p dir=\"ltr\">&ge;1 SpA features:</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Uveitis</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Psoriasis</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Crohn&lsquo;s disease or ulcerative colitis</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Preceding infection</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">HLA-B27</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Sacroiliitis on imaging</p>\n</li>\n</ul>\n<p></p>\n<p dir=\"ltr\">Or &ge;2 additional SpA features:</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Arthritis</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Enthesitis</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Dactylitis</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Any history of inflammatory back pain</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Positive family history of SpA</p>\n</li>\n</ul>\n<p dir=\"ltr\">*Predominantly lower limb and/or asymmetric arthritis.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Joint Pain",
+            "Pain"
+        ],
+        "disease_treated": [
+            "Rheumatoid Arthritis"
+        ],
+        "logic": "var calc_output = [];\n\nvar p_arthritis = parseFloat(p_arthritis)\nvar enthesitis = parseFloat(enthesitis)\nvar dactylitis = parseFloat(dactylitis)\nvar uveitis = parseFloat(uveitis)\nvar psoriasis = parseFloat(psoriasis)\nvar crohns = parseFloat(crohns)\nvar infection = parseFloat(infection)\nvar hla = parseFloat(hla)\nvar sacroiliitis = parseFloat(sacroiliitis)\nvar arthritis = parseFloat(arthritis)\nvar ent = parseFloat(ent)\nvar dac = parseFloat(dac)\nvar backpain = parseFloat(backpain)\nvar history = parseFloat(history)\n\nvar entry = p_arthritis + enthesitis + dactylitis\nvar sum = uveitis + psoriasis + crohns + infection + hla + sacroiliitis\nvar req = arthritis + ent + dac + backpain + history\n\nvar result = ''\nvar msg = ''\n\nif (entry > 0){\n    if ((req >= 2) | (sum >= 1)) {\n\tresult = 'Peripheral SpA'\n    msg = 'Meets ASAS criteria for peripheral SpA diagnosis'\n    }\n    else {\n\tresult = 'Not peripheral SpA'\n\tmsg = 'Does not meet ASAS criteria for peripheral SpA diagnosis'\n    }\n}\nelse {\n  \tresult = 'Not peripheral SpA'\n    msg = 'Entry criterion not fulfilled'\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: result,\n   value_text: '',\n   message: ''\n});\ncalc_output.push({\n   name: 'ASAS',\n   value: result,\n   value_text: '',\n   message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Entry criterion",
+                "subheading_instructions": "≥1 of the following:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Peripheral arthritis",
+                "name": "p_arthritis",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Predominantly lower limb and/or asymmetric arthritis",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Enthesitis",
+                "name": "enthesitis",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Dactylitis",
+                "name": "dactylitis",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "subheading": "Required criteria",
+                "subheading_instructions": "≥1 SpA features, in addition to the above:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "Uveitis",
+                "name": "uveitis",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "Psoriasis",
+                "name": "psoriasis",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "Crohn‘s disease or ulcerative colitis",
+                "name": "crohns",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "Preceding infection",
+                "name": "infection",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "HLA-B27",
+                "name": "hla",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "Sacroiliitis on imaging",
+                "name": "sacroiliitis",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "subheading": "",
+                "subheading_instructions": "Or ≥2 additional SpA features:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "Arthritis ",
+                "name": "arthritis",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "Enthesitis",
+                "name": "ent",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "Dactylitis",
+                "name": "dac",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "Any history of inflammatory back pain",
+                "name": "backpain",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+                "default": 0,
+                "label_en": "Positive family history of SpA",
+                "name": "history",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ASAS",
+            "ASAS criteria",
+            "Peripheral SpondyloArthritis",
+            "SpA"
+        ],
+        "specialty": [
+            "Rheumatology"
+        ]
+    }
+}

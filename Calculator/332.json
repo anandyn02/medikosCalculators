@@ -1,0 +1,167 @@
+{
+    "id": "332",
+    "title": "Free Water Deficit in Hypernatremia",
+    "desc": "The Free Water Deficit in Hypernatremia calculates free water deficit by estimated total body water.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10816188",
+                "text": "Adrogue HJ and Madias NE. Primary Care: Hypernatremia. New England Journal of Medicine 2000; 342(20):1493-1499."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10824078",
+                "text": "Adrogue HJ and Madias NE. Primary Care: Hyponatremia. New England Journal of Medicine 2000; 342(21):1581-1589."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://ndt.oxfordjournals.org/content/17/7/1176.long",
+                "text": "Barsoum NR and Levine BS.Current prescriptions for the correction of hyponatraemia and hypernatraemia: are they too simple?Nephrol. Dial. Transplant. (2002) 17 (7): 1176-1180 doi:10.1093/ndt/17.7.1176"
+            }
+        ],
+        "evidence": "<p data-pm-slice=\"1 1 []\">Free water deficit, L = (% total body water, fraction)*(Weight, kg)*([Current Na/Ideal Na] &ndash; 1)</p>\n<p>where % total body water (TBW) is:</p>\n<ul>\n<li>Adult&nbsp;male: 60% (i.e., use 0.6 in the equation)</li>\n<li>Adult female: 50% (0.5)</li>\n<li>Elderly male: 50% (0.5)</li>\n<li>Elderly female: 45% (0.45)</li>\n<li>Child: 60% (0.6)</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Sodium",
+                "unit": "na",
+                "error_min": "100",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "170",
+                "conversion": "1",
+                "normal_max_si": "145",
+                "normal_max_us": "145",
+                "normal_min_si": "136",
+                "normal_min_us": "136",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Dizziness",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Hypernatremia"
+        ],
+        "logic": "var calc_output = [];\nvar tbw, v;\nvar weight = parseFloat(weight);\nvar sex = parseFloat(sex);\n// no need for unit conversion, all 1:1, and weight works without UOMSYSTEM declaration\nswitch (parseFloat(age)) {\n    case 2:\n        if (sex == '1') { tbw = .45 } else { tbw = .5 }\n        break;\n    case 1:\n        if (sex == '1') { tbw = .5 } else { tbw = .6 }\n        break;\n    case 0:\n        tbw = .6;\n        break; }\ntbw = tbw * parseFloat(weight);\nv = tbw * (parseFloat(sodium) / parseFloat(sodium_desired) - 1);\n\ncalc_output.push({ \n    name: 'mini', \n    value: v.toFixed(1), \n    value_text: 'L', \n    message: 'Free Water Deficit' \n});\ncalc_output.push({ \n    name: '113_Free Water Deficit_result', \n    value: v.toFixed(1), \n    value_text: 'L', \n    message: 'Free Water Deficit' \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 1
+                    },
+                    {
+                        "label": "Male",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age range",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Child",
+                        "value": 0
+                    },
+                    {
+                        "label": "Adult",
+                        "value": 1
+                    },
+                    {
+                        "label": "Elderly",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Sodium",
+                "name": "sodium",
+                "optional": false,
+                "tips_en": "Use only if sodium >140",
+                "type": "textbox",
+                "unit": "na"
+            },
+            {
+                "conditionality": "",
+                "default": 140,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Sodium desired",
+                "name": "sodium_desired",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na"
+            }
+        ],
+        "can_search": [
+            "na",
+            "sodium",
+            "h20"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology"
+        ]
+    }
+}

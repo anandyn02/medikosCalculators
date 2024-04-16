@@ -1,0 +1,186 @@
+{
+    "id": "505",
+    "title": "Ottawa Knee Rule",
+    "desc": "The Ottawa Knee Rule describes criteria for minor knee trauma patients that are so low risk as not to warrant knee imaging.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7574120",
+                "text": "Stiell IG, et al. Derivation of a decision rule for the use of radiography in acute knee injuries. Annals of Emergency Medicine. 1995; 26(10): 405-13."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9403421",
+                "text": "Stiell IG, et al. Implementation of the Ottawa knee rule for the use of radiography in acute knee injuries. JAMA. 1997; 278(23): 2075-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14734335",
+                "text": " Bachmann L M, Haberzeth S, Steurer J, ter Riet G. The accuracy of the Ottawa knee rule to rule out knee fractures. Annals of Internal Medicine 2004; 140(2): 121-124."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10499943",
+                "text": "Nichol G, Stiell IG, Wells GA, Juergensen LS, Laupacis A. An economic analysis of the Ottawa knee rule.Ann Emerg Med. 1999 Oct;34(4 Pt 1):438-47."
+            },
+            {
+                "href": "https://www.annemergmed.com/article/S0196-0644%2899%2970404-X/abstract",
+                "text": "Stiell IG, Wells GA, McKnight RD. Validating the “Real” Ottawa Knee Rule. Ann Emerg Med 1999;33:241-243."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10587149",
+                "text": "Tigges S, et al. External validation of the Ottawa knee rules in an urban trauma center in the United States. American Journal of Roentgenology. 1999; 172:1069-71."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12827123",
+                "text": "Bulloch B, et al. Validation of the Ottawa knee rule in children: A multicenter study. Annals of Emergency Medicine. 2003; 42(7): 48-55."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23399332",
+                "text": "Cheung TC, et al. Diagnostic accuracy and reproducibility of the Ottawa knee rule vs the Pittsburgh decision rule. 2013; 31: 641-5."
+            }
+        ],
+        "evidence": "<p>Series of Yes/No questions. See criteria below.</p>",
+        "facts": "<ul>\n<li>A knee x-ray series is only required for knee injury patients with any of these findings:\n<ul>\n<li>Age &ge; 55, OR</li>\n<li>Isolated tenderness of patella (no bone tenderness of knee other than patella), OR</li>\n<li>Tenderness of head of fibula, OR</li>\n<li>Inability to flex to 90&deg;, OR</li>\n<li>Inability to bear weight both immediately after injury and in the ED for 4 steps (unable to transfer weight twice onto each lower limb regardless of limping.</li>\n</ul>\n</li>\n</ul>\n<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/ottawa-knee-rule.png\" class=\"alignnone size-full wp-image-1839\" alt=\"\"></div>",
+        "estimation": [],
+        "primary_complains": [
+            "Extremity Pain",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Fracture",
+            "Sprain/Strain",
+            "Trauma"
+        ],
+        "logic": "var calc_output = []; \nvar msg='';\nvar mini_msg='';\nvar u=parseInt(age_55)+parseInt(patella_tenderness)+parseInt(fibular_tenderness)+parseInt(knee_flex_unable)+parseInt(bear_weight_unable);\n\nif(u==0){\n    mini_msg='Imaging not required'; \n    msg='If no criteria are met, according to the Ottawa Knee Rules, imaging is not indicated.'\n} else if(u>0){\n    mini_msg='Consider imaging'; \n    msg='If any of the above criteria are met, this patient may need knee imaging: the rule is sensitive to rule-out fractures, but not specific to suggest who may have a fracture.'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:' ',\n    value_text:' ',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'368_Ottawa Knee Rule_result',\n    value:' ',\n    value_text:' ',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥55",
+                "md_calc_info_concept": null,
+                "name": "age_55",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Isolated tenderness of the patella (no other bony tenderness)",
+                "md_calc_info_concept": null,
+                "name": "patella_tenderness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tenderness at the fibular head",
+                "md_calc_info_concept": null,
+                "name": "fibular_tenderness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Unable to flex knee to 90°",
+                "md_calc_info_concept": null,
+                "name": "knee_flex_unable",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Unable to bear weight both immediately and in ED (4 steps, limping is okay)</p>",
+                "md_calc_info_concept": null,
+                "name": "bear_weight_unable",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/ottawa-knee-rule.png\" class=\"alignnone size-full wp-image-1839\" alt=\"\"></div>"
+            }
+        ],
+        "can_search": [
+            "ortho",
+            "knee"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Orthopedics",
+            "Primary Care",
+            "Surgery (Trauma)"
+        ]
+    }
+}

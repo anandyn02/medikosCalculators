@@ -1,0 +1,303 @@
+{
+    "id": "553",
+    "title": "Hestia Criteria for Outpatient Pulmonary Embolism Treatment",
+    "desc": "The Hestia Criteria for VTE evaluates a patient for recurrent VTE and suitability for outpatient treatment.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21645235",
+                "text": "Zondag W, Mos IC, Creemers-schild D, et al. Outpatient treatment in patients with acute pulmonary embolism: the Hestia Study. J Thromb Haemost. 2011;9(8):1500-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://em.osumc.edu/education/journalClub/PESIvsHESTIAforoutptPE2012.pdf",
+                "text": "Zondag W, Den exter PL, Crobach MJ, et al. Comparison of two methods for selection of out of hospital treatment in patients with acute pulmonary embolism. Thromb Haemost. 2013;109(1):47-52."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20230418",
+                "text": "Agterof MJ, Schutgens RE, Snijder RJ, et al. Out of hospital treatment of acute pulmonary embolism in patients with a low NT-proBNP level. J Thromb Haemost. 2010;8(6):1235-41."
+            }
+        ],
+        "evidence": "<p>If &ge;1 present, patient is not eligible for outpatient management by Hestia Criteria.</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>Hestia Criteria</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Hemodynamically unstable*</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Thrombolysis or embolectomy needed</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Active bleeding or high risk for bleeding**</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&gt;24 hrs on supplemental oxygen required to maintain SaO<sub>2</sub> &gt;90%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>PE diagnosed while on anticoagulation</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Severe pain needing IV pain medication required &gt;24 hr</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Medical or social reason for admission &gt;24 hr (infection, malignancy, no support system)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Creatinine clearance &lt;30 mL/min by Cockcroft-Gault formula</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Severe liver impairment***</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Pregnant</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Documented history of heparin-induced thrombocytopenia (HIT)</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><br>*sBP &lt;100 mmHg and HR &gt;100, needing ICU care, or by clinician judgment.</p>\n<p>**GI bleeding or surgery within 2 weeks, stroke within 1 month, bleeding disorder or thrombocytopenia (platelet count &lt;75 &times; 10<sup>9</sup>/L), uncontrolled HTN (sBP &gt;180 or dBP &gt;110), or by clinician judgment.</p>\n<p>***By clinician judgment.</p>",
+        "facts": "<p>&nbsp;</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Hestia Criteria</strong></p>\n</td>\n<td>\n<p><strong>Risk</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0 points</p>\n</td>\n<td>\n<p>Low (0% mortality, 2% VTE recurrence)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&gt;0 points</p>\n</td>\n<td>\n<p>Not low</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(unstable) + parseFloat(thrombolysis) + parseFloat(activebleeding) + parseFloat(oxygen) + parseFloat(anticoagulant) + parseFloat(painmeds) + parseFloat(medicalsocial) + parseFloat(crcl) + parseFloat(liver) + parseFloat(preg) + parseFloat(hit);\nvar msg, mini_msg, risk;\nif (u < 1) { mini_msg = \"Outpatient treatment\";\n    msg = \"Patient eligible for outpatient treatment (0% mortality, 2% VTE recurrence).\";\n    risk = 'Low'\n} else { mini_msg = \"Inpatient treatment\";\n    msg = \"Patient <u>not</u> eligible for outpatient treatment per the Hestia Criteria, which recommends admission and inpatient treatment.\";\n    risk = 'Not low'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3918_Hestia Criteria_result',\n    value: u,\n    value_text: 'points',\n    message: 'Hestia Criteria'\n});\ncalc_output.push({\n    name: '3918_Hestia Criteria_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemodynamically unstable",
+                "md_calc_info_concept": null,
+                "name": "unstable",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "sBP <100 mmHg and HR >100, needing ICU care, or by clinician judgment",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Thrombolysis or embolectomy needed",
+                "md_calc_info_concept": null,
+                "name": "thrombolysis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "For reasons other than hemodynamic instability",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Active bleeding or high risk for bleeding",
+                "md_calc_info_concept": null,
+                "name": "activebleeding",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "GI bleeding or surgery ≤2 weeks ago, stroke ≤1 month ago, bleeding disorder or platelet count <75 × 10⁹/L, uncontrolled HTN (sBP >180 or dBP >110), or by clinician judgment",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": ">24 hrs on supplemental oxygen required to maintain SaO₂ >90%",
+                "md_calc_info_concept": null,
+                "name": "oxygen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "PE diagnosed while on anticoagulation",
+                "md_calc_info_concept": null,
+                "name": "anticoagulant",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Severe pain needing IV pain medication required >24 hr",
+                "md_calc_info_concept": null,
+                "name": "painmeds",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Medical or social reason for admission >24 hr (infection, malignancy, no support system)",
+                "md_calc_info_concept": null,
+                "name": "medicalsocial",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Creatinine clearance <30 mL/min by <calculator id='43'>Cockcroft-Gault</calculator>",
+                "md_calc_info_concept": null,
+                "name": "crcl",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Severe liver impairment",
+                "md_calc_info_concept": null,
+                "name": "liver",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "By clinician judgment",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pregnant",
+                "md_calc_info_concept": null,
+                "name": "preg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Documented history of heparin-induced thrombocytopenia (HIT)",
+                "md_calc_info_concept": null,
+                "name": "hit",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "VTE",
+            "DVT",
+            "PE",
+            "hestia",
+            "outpt",
+            "outpatient",
+            "tx",
+            "treatment",
+            "clot",
+            "venous thromboembolism",
+            "pulmonary embolism",
+            "pulmonary embolus"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)",
+            "Surgery (Vascular)"
+        ]
+    }
+}

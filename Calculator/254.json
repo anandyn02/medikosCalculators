@@ -1,0 +1,137 @@
+{
+    "id": "254",
+    "title": "Rebound Hyperbilirubinemia Risk Score",
+    "desc": "The Rebound Hyperbilirubinemia Risk Score estimates the risk of rebound hyperbilirubinemia after inpatient phototherapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/28196932/",
+                "text": "Chang PW, Kuzniewicz MW, McCulloch CE, Newman TB. A clinical prediction rule for rebound hyperbilirubinemia following inpatient phototherapy. Pediatrics. 2017;139(3):e20162896."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.aafp.org/afp/2002/0215/p599.html",
+                "text": "Porter ML, Dennis MBL. Hyperbilirubinemia in the term newborn. AFP. 2002;65(4):599."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31196939/",
+                "text": "Chang PW, Newman TB. A simpler prediction rule for rebound hyperbilirubinemia. Pediatrics. 2019;144(1):e20183712."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>The Rebound Hyperbilirubinemia Risk Score is calculated based on the following inputs:</span></p>\n<ul>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Gestational age (GA) &lt;38 weeks (yes or no).</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\"><span>Age at phototherapy initiation, hours.</span></li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Total serum bilirubin (TSB) at phototherapy termination.</span></p>\n</li>\n</ul>\n<p dir=\"ltr\"><span>American Academy of Pediatrics (AAP) phototherapy threshold is determined as follows:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 79.69283276450513%;\"><colgroup><col style=\"width: 41.19047619047619%;\"><col style=\"width: 58.57142857142858%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Age, hours</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>AAP Threshold, mg/dL</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>25-48</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>15 mg/dL</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>49-72</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>18 mg/dL</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&gt;72</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>20 mg/dL</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>Note: formula assumes TSB and AAP threshold units in mg/dL.</p>\n</div>\n<p dir=\"ltr\"><span>Rebound Hyperbilirubinemia Risk Score = 15*(GA &lt;38 weeks) - 7*(age at phototherapy initiation, days) - 4*(AAP threshold - TSB) + 50</span></p>\n<p></p>",
+        "facts": "<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 74.8268%;\"><colgroup><col width=\"146\" style=\"width: 41.1535%;\"><col width=\"302\" style=\"width: 58.8465%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>RH Risk Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of Rebound Hyperbilirubinemia</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&le;9</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.3%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>10-19</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1.8%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>20-29</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>6.1%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>30-39</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>17.4%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>40-49</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>25.8%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;50</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>40.5%</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [
+            {
+                "name": "Bilirubin",
+                "unit": "bili",
+                "error_min": "1E-8",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "17.104",
+                "normal_max_si": "32.49",
+                "normal_max_us": "1.9",
+                "normal_min_si": "5.13",
+                "normal_min_us": "0.3",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "RH Age",
+                "unit": "age_hours",
+                "error_min": "25",
+                "error_max": "336",
+                "warn_min": "25",
+                "warn_max": "336",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "hours",
+                "units_us": "hours"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Chest Pain",
+            "Fatigue",
+            "Fever",
+            "Jaundice",
+            "Nausea",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Neonatal Hyperbilirubinemia"
+        ],
+        "logic": "var calc_output = [];\n\nvar gest = parseFloat(gest);\nvar age = parseFloat(age);\n\nif (UOMSYSTEM == true) {  //US units\n    var tsb = parseFloat(tsb);\n} else if (UOMSYSTEM == false) { //SI units\n    var tsb = parseFloat(tsb)/88.4;\n}\n\nvar aap;\n\nif (age <=48) {\n    aap = 15;\n} else if (age <= 72) {\n    aap = 18;\n} else {\n    aap = 20;\n}\n\nvar score = 15*gest - 7*(age/24) - 4*(aap - tsb) + 50;\n\nvar risk;\n\nif (score <=9) {\n    risk = 0.3;\n} else if (score <= 19) {\n    risk = 1.8;\n} else if (score <= 29) {\n    risk = 6.1;\n} else if (score <= 39) {\n    risk = 17.4;\n} else if (score <= 49) {\n    risk = 25.8;\n} else {\n    risk = 40.5;\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score.toFixed(1),\n    value_text: 'points',\n    message: risk + '% risk of rebound hyperbilirubinemia'\n});\ncalc_output.push({\n    name: 'score',\n    value: score.toFixed(1),\n    value_text: 'points',\n    message: 'Rebound hyperbilirubinemia risk score'\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '%',\n    message: 'Risk of rebound hyperbilirubinemia'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Gestational age (GA)</p>",
+                "mdcalc_info_concept": null,
+                "name": "gest",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<38 weeks",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥38 weeks",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age at phototherapy initiation, hours</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_hours"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Total serum bilirubin (TSB)</p>",
+                "name": "tsb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bili"
+            }
+        ],
+        "can_search": [
+            "Rebound Hyperbilirubinemia Risk Score",
+            "rebound hyperbilirubinemia",
+            "hyperbilirubinemia",
+            "hyperbilirubinemia risk score",
+            "infant rebound hyperbilirubinemia",
+            "hyperbilirubinemia risk",
+            "neonatal hyperbilirubinemia"
+        ],
+        "specialty": [
+            "Critical Care (Neonatal)",
+            "Critical Care (Pediatric)",
+            "Hematology and Oncology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatric Subspecialty",
+            "Pediatrics"
+        ]
+    }
+}

@@ -1,0 +1,1082 @@
+{
+    "id": "100",
+    "title": "Patient Activity Scale (PAS) for RA",
+    "desc": "The Patient Activity Scale (PAS) for RA quantifies severity of rheumatoid arthritis (RA) using patient-reported symptoms.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://www.jrheum.org/content/32/12/2410",
+                "text": "Wolfe F, Michaud K, Pincus T. A composite disease activity scale for clinical practice, observational studies, and clinical trials: the patient activity scale (PAS/PAS-II). J Rheumatol. 2005;32(12):2410-5."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.rheumatology.org/Portals/0/Files/Rheumatoid%20Arthritis%20Disease%20Activity%20Measures.pdf",
+                "text": "Anderson J, Caplan L, Yazdany J, et al. Rheumatoid arthritis disease activity measures: American College of Rheumatology recommendations for use in clinical practice. Arthritis Care Res (Hoboken). 2012;64(5):640-7."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">PAS = (A x 3.33 + B + C) / 3, where</p>\n<ul>\n<li>A = Health Assessment Questionnaire Disability Index (HAQ-DI), calculated by averaging of the selected categorical scores* below.</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">B = Pain Visual Analog Scale (ask patient to rate pain on a scale of 0-10, where 10 is worst pain imaginable).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">C = Patient Global Assessment of Disease Activity (ask patient to rate how well they are doing in the past week considering all the ways their disease affects them on a scale of 0-10, where 10 is the worst).</p>\n</li>\n</ul>\n<p>*Categorical score is the highest selected score within a given category. Example: If patient can self-dress without any difficulty but shampoos hair with much difficulty, the categorical score for dress and groom&nbsp;is 2.</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"213\" /><col width=\"112\" /><col width=\"124\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Is patient able to dress and groom</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Self-dress, including shoelaces and buttons</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Shampoo hair</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Is patient able to a</strong><strong>rise</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Stand up from a straight chair</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Get in and out of bed</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Is patient able to e</strong><strong>at</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Cut own meat</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Lift a full cup or glass to mouth</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Open a new milk carton</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Is patient able to w</strong><strong>alk</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Walk outdoors on flat ground</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Climb up five steps</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Is patient able to p</strong><strong>erform hygiene activities</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Wash and dry body</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Take a tub bath</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Get on and off toilet</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Is patient able to r</strong><strong>each</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Reach and get down a 5-pound object (such as a bag of sugar) from above head</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Bend down to pick up clothing from floor</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Is patient able to g</strong><strong>rip</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Open car doors</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Open previously opened jars</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Turn faucets on and off</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Is patient able to p</strong><strong>erform other activities</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Run errands and shop</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Get in and out of car</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Do chores such as vacuuming or yard work</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">If patient uses any aids or devices and/or requires help from another person for any given category, the score for that category is adjusted upward to 2. If the categorical score is already &ge;2, the score remains unchanged.</p>\n<p dir=\"ltr\"></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>PAS</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Disease activity</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0.00-0.25</p>\n</td>\n<td>\n<p dir=\"ltr\">Remission</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0.26-3.70</p>\n</td>\n<td>\n<p dir=\"ltr\">Low/minimal</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3.71-7.99</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8.00-10.00</p>\n</td>\n<td>\n<p dir=\"ltr\">High/severe</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-1685c015-7fff-34c5-942e-179a39289677\"></span><span id=\"docs-internal-guid-1685c015-7fff-34c5-942e-179a39289677\"><br /></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Joint Pain"
+        ],
+        "disease_treated": [
+            "Rheumatoid Arthritis"
+        ],
+        "logic": "//outputs\nvar calc_output = [];\n\n//user inputs\nvar haq1 = parseFloat(haq1);\nvar haq2 = parseFloat(haq2);\nvar haq3 = parseFloat(haq3);\nvar haq4 = parseFloat(haq4);\nvar haq5 = parseFloat(haq5);\nvar haq6 = parseFloat(haq6);\nvar haq7 = parseFloat(haq7);\nvar haq8 = parseFloat(haq8);\nvar haq9 = parseFloat(haq9);\nvar haq10 = parseFloat(haq10);\nvar haq11 = parseFloat(haq11);\nvar haq12 = parseFloat(haq12);\nvar haq13 = parseFloat(haq13);\nvar haq14 = parseFloat(haq14);\nvar haq15 = parseFloat(haq15);\nvar haq16 = parseFloat(haq16);\nvar haq17 = parseFloat(haq17);\nvar haq18 = parseFloat(haq18);\nvar haq19 = parseFloat(haq19);\nvar haq20 = parseFloat(haq20);\n\nvar device1 = parseFloat(device1);\nvar device2 = parseFloat(device2);\nvar device3 = parseFloat(device3);\nvar device4 = parseFloat(device4);\nvar device5 = parseFloat(device5);\nvar device6 = parseFloat(device6);\nvar device7 = parseFloat(device7);\n\nvar help1 = parseFloat(help1);\nvar help2 = parseFloat(help2);\nvar help3 = parseFloat(help3);\nvar help4 = parseFloat(help4);\nvar help5 = parseFloat(help5);\nvar help6 = parseFloat(help6);\nvar help7 = parseFloat(help7);\nvar help8 = parseFloat(help8);\n\nvar dressing = Math.max(haq1, haq2);\nvar arising = Math.max(haq3, haq4);\nvar eating = Math.max(haq5, haq6, haq7);\nvar walking = Math.max(haq8, haq9);\nvar hygiene = Math.max(haq10, haq11, haq12);\nvar reach = Math.max(haq13, haq14);\nvar grip = Math.max(haq15, haq16, haq17);\nvar activities = Math.max(haq18, haq19, haq20);\n\nif (dressing < 2) {\n  if (device1 > 0 || help1 > 0) {\n    dressing = 2;\n  }\n}\nif (arising < 2) {\n  if (device2 > 0 || help2 > 0) {\n    arising = 2;\n  }\n}\nif (eating < 2) {\n  if (device3 > 0 || help3 > 0) {\n    eating = 2;\n  }\n}\nif (walking < 2) {\n  if (device4 > 0 || help4 > 0) {\n    walking = 2;\n  }\n}\nif (hygiene < 2) {\n  if (device5 > 0 || help5 > 0) {\n    hygiene = 2;\n  }\n}\nif (reach < 2) {\n  if (device6 > 0 || help6 > 0) {\n    reach = 2;\n  }\n  }  \nif (grip < 2) {\n  if (device7 > 0 || help7 > 0) {\n    grip = 2;\n  }\n}\nif (activities < 2) {\n  if (help8 > 0) {\n    activities = 2;\n  }\n}\n\nvar haq = dressing + arising + eating + walking + hygiene + reach + grip + activities;\nhaq = haq/8;\n\nvar pain = parseFloat(pain);\nvar global = parseFloat(global);\nvar risk;\nvar msg;\n\n//final score\nvar score = (haq*3.33) + pain + global;\nscore = score/3;\nscore = score.toFixed(2);\n  \n//disease activity\nif (score <= 0.25 && score >= 0){\n  risk = 'Remission';\n    msg = risk;\n} else if (score <= 3.70 && score >= 0.26){\n  risk = 'Low/minimal';\n    msg = risk + \" disease activity\";\n} else if (score <= 7.99 && score >= 3.71){\n  risk = 'Moderate';\n    msg = risk + \" disease activity\";\n} else{\n  risk = 'High/severe';\n    msg = risk + \" disease activity\";\n}\n\n//result for user \ncalc_output.push({\n  name: 'mini',\n  value: score,\n  value_text: 'points',\n  message: msg\n});\ncalc_output.push({\n  name: 'group',\n  value: score,\n  value_text: 'points',\n  message: 'PAS'\n});\ncalc_output.push({\n  name: 'ppf',\n  value: risk,\n  value_text: '',\n  message: 'Disease activity<br/><br/><guideline id = \"10123\">ACR guideline</guideline>'\n});\n",
+        "inputs": [
+            {
+                "subheading": "Health Assessment Questionnaire Disability Index",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "subheading": "<strong>Dress and groom - is the patient able to:</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Self-dress, including shoelaces and buttons",
+                "name": "haq1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Shampoo hair",
+                "name": "haq2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "<strong>Rise - is the patient able to:</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stand up from a straight chair",
+                "name": "haq3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Get in and out of bed",
+                "name": "haq4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "<strong>Eat - is the patient able to:</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cut own meat",
+                "name": "haq5",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lift a full cup or glass to mouth",
+                "name": "haq6",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Open a new milk carton",
+                "name": "haq7",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "<strong>Walk - is the patient able to:</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Walk outdoors on flat ground",
+                "name": "haq8",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Climb up five steps",
+                "name": "haq9",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "<strong>Hygiene - is the patient able to:</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Wash and dry body",
+                "name": "haq10",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Take a tub bath",
+                "name": "haq11",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Get on and off toilet",
+                "name": "haq12",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "<strong>Reach - is the patient able to:</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Reach and get down a 5-pound object (such as a bag of sugar) from above head",
+                "name": "haq13",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bend down to pick up clothing from floor",
+                "name": "haq14",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "<strong>Grip - is the patient able to:</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Open car doors",
+                "name": "haq15",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Open previously opened jars",
+                "name": "haq16",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Turn faucets on and off",
+                "name": "haq17",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "<strong>Other - is the patient able to:</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Run errands and shop",
+                "name": "haq18",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Get in and out of car",
+                "name": "haq19",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Do chores such as vacuuming or yard work",
+                "name": "haq20",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "<strong>Aids or devices used by patient</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Devices for dressing",
+                "name": "device1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Button hook, zipper pull",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Devices for arising",
+                "name": "device2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Special or built up chair",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Devices for eating",
+                "name": "device3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Built up or special utensils",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Devices for walking",
+                "name": "device4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Cane, walker, crutches, wheelchair",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Devices for hygiene activities",
+                "name": "device5",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Raised toilet seat, bathtub seat, bathtub bar, long-handled appliances in bathroom",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Devices for reaching",
+                "name": "device6",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Long-handled appliances for reach",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Devices for gripping",
+                "name": "device7",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Jar opener (for jars previously opened)",
+                "type": "toggle"
+            },
+            {
+                "subheading": "<strong>Patient needs help from another person</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Dressing and grooming",
+                "name": "help1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Arising",
+                "name": "help2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Eating",
+                "name": "help3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Walking",
+                "name": "help4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hygiene activities",
+                "name": "help5",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Reaching",
+                "name": "help6",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Gripping and opening things",
+                "name": "help7",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Errands and chores",
+                "name": "help8",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Pain Visual Analog Scale",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ask patient to rate pain on a scale of 0-10, where 10 is the worst pain imaginable",
+                "name": "pain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "6",
+                        "value": 6
+                    },
+                    {
+                        "label": "7",
+                        "value": 7
+                    },
+                    {
+                        "label": "8",
+                        "value": 8
+                    },
+                    {
+                        "label": "9",
+                        "value": 9
+                    },
+                    {
+                        "label": "10",
+                        "value": 10
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Patient Global Assessment of Disease Activity",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ask patient to rate how well they are doing in the past week considering all the ways their disease affects them on a scale of 0-10, where 10 is the worst",
+                "name": "global",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "6",
+                        "value": 6
+                    },
+                    {
+                        "label": "7",
+                        "value": 7
+                    },
+                    {
+                        "label": "8",
+                        "value": 8
+                    },
+                    {
+                        "label": "9",
+                        "value": 9
+                    },
+                    {
+                        "label": "10",
+                        "value": 10
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Disease activity",
+            "pain vas",
+            "haq",
+            "arthritis",
+            "patient global health"
+        ],
+        "specialty": [
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Orthopedics",
+            "Primary Care",
+            "Rheumatology"
+        ]
+    }
+}

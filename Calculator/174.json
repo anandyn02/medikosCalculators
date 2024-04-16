@@ -1,0 +1,191 @@
+{
+    "id": "174",
+    "title": "Rome IV Diagnostic Criteria for Opioid-Induced Constipation",
+    "desc": "The Rome IV Criteria for Opioid-induced Constipation provides criteria for diagnosis of opioid-induced constipation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27144627-bowel-disorders/",
+                "text": "Lacy BE, Mearin F, Chang L. et al. Bowel disorders. Gastroenterology. 2016;150:1393-1407."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.gastrojournal.org/article/S0016-5085(18)34782-6/fulltext",
+                "text": "Crockett SD, Greer KB, Heidelbaugh JJ, Falck-Ytter Y, Hanson BJ, Sultan S. American gastroenterological association institute guideline on the medical management of opioid-induced constipation. Gastroenterology. 2019;156(1):218-226."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">To fulfill the Rome IV criteria for opioid-induced constipation, patient must have the following:</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">New, or worsening, symptoms of constipation when initiating, changing, or increasing opioid therapy that must include &ge;2 of the following:</p>\n</li>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Straining during more than one-fourth (25%)&nbsp;of defecations.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Lumpy or hard stools (<calculator id=\"10017\">Bristol Stool Form Scale</calculator> 1-2) more than one-fourth (25%) of defecations.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Sensation of incomplete evacuation more than one-fourth (25%) of defecations.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Sensation of anorectal obstruction/blockage more than one-fourth (25%) of defecations.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Manual maneuvers to facilitate more than one-fourth (25%) of defecations (e.g. digital evacuation or support of the pelvic floor).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">&lt;3 spontaneous bowel movements per week.</p>\n</li>\n</ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Loose stools are rarely present without the use of laxatives.</p>\n</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Constipation"
+        ],
+        "disease_treated": [
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output = [];\n\nvar stools = parseFloat(stools);\nvar symptoms = parseFloat(one) + parseFloat(two) + parseFloat(three) + parseFloat(four) + parseFloat(five) + parseFloat(six);\n\n\nvar total = stools;\n\nvar diag;\n\nvar msg = 'Diagnosis for opioid-induced constipation as per Rome IV criteria';\nvar minimsg = 'Diagnosis for opioid-induced constipation';\n\nif (total == 1 && symptoms >= 2) {\n  diag = 'Positive';\n} else {\n  diag = 'Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Diarrhea',\n    value: diag,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have new, or worsening, symptoms of constipation when initiating, changing, or increasing opioid therapy that must include ≥2 of the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Straining during more than one-fourth (25%) of defecations",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lumpy or hard stools (<calculator id = \"10017\">Bristol Stool Form Scale</calculator> 1-2) more than one-fourth (25%) of defecations",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sensation of incomplete evacuation more than one-fourth (25%) of defecations",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sensation of anorectal obstruction/blockage more than one-fourth (25%) of defecations",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Manual maneuvers to facilitate more than one-fourth (25%) of defecations",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "e.g. digital evacuation or support of the pelvic floor",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<3 spontaneous bowel movements per week",
+                "name": "six",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Loose stools are rarely present without the use of laxatives",
+                "name": "stools",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Opioid-induced constipation, oic, Rome IV Criteria, Rome IV for Opioid-induced Constipation, Rome IV Criteria for Opioid-induced Constipation, rome 4, opioid"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

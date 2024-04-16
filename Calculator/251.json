@@ -1,0 +1,162 @@
+{
+    "id": "251",
+    "title": "Novel Pneumonia Risk Score (PRS)",
+    "desc": "The Novel Pneumonia Risk Score (PRS) predicts radiographic pneumonia in children.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/34694254/",
+                "text": "Lipsett SC, Hirsch AW, Monuteaux MC, Bachur RG, Neuman MI. Development of the novel pneumonia risk score to predict radiographic pneumonia in children. Pediatric Infectious Disease Journal. 2022;41(1):24-30."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>The probability of radiographic pneumonia is calculated based on the following inputs:</p>\n<ul>\n<li>Age, years</li>\n<li>Fever<strong>*</strong> at home or in ED (yes or no)</li>\n<li>First O2 saturation obtained</li>\n<li>Crackles (yes or no)</li>\n<li>Wheezing (yes or no)</li>\n</ul>\n<p>% risk of radiographic pneumonia = e<sup>x</sup>/(1+e<sup>x</sup>)*100</p>\n<p>where x = 18.05624 + 0.098308*(Age, years) + 1.144985*(Fever) - 0.21636*(First O2 saturation obtained) + 0.407494*(Crackles) - 0.907087*(Wheezing)</p>\n<p>Pneumonia Risk Score (PRS):</p>\n<table border=\"0\" style=\"border-collapse: collapse;\" ;=\"\" width:=\"\" 100%;=\"\" height:=\"\" 246.382px;=\"\" border-width:=\"\" 1px;=\"\" border-style:=\"\" none;=\"\"><colgroup><col style=\"width: 50%;\"><col style=\"width: 50%;\"></colgroup>\n<tbody>\n<tr>\n<td><strong>% Risk of Radiographic Pneumonia</strong></td>\n<td><strong>Pneumonia Risk Score (PRS)</strong></td>\n</tr>\n<tr>\n<td>&lt;5% (low)</td>\n<td>1</td>\n</tr>\n<tr>\n<td>&ge;5% and &lt;11% (low)</td>\n<td>2</td>\n</tr>\n<tr>\n<td>&ge;11% and &lt;21% (medium)</td>\n<td>3</td>\n</tr>\n<tr>\n<td>&ge;21% and &lt;51% (medium)</td>\n<td>4</td>\n</tr>\n<tr>\n<td>&ge;51% and &lt;75% (high)</td>\n<td>5</td>\n</tr>\n<tr>\n<td>&ge;75% (high)</td>\n<td>6</td>\n</tr>\n</tbody>\n</table>\n<p><strong>*</strong>A fever is defined as &gt;38<span>&deg;C (&gt;100.4&deg;F).</span></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "O2 saturation",
+                "unit": "o2_sat",
+                "error_min": "80",
+                "error_max": "101",
+                "warn_min": "88",
+                "warn_max": "101",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "95",
+                "normal_min_us": "95",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "PRS Age",
+                "unit": "prs_age",
+                "error_min": "3",
+                "error_max": "216",
+                "warn_min": "3",
+                "warn_max": "216",
+                "conversion": "0.08333333333333333",
+                "normal_max_si": "18",
+                "normal_max_us": "216",
+                "normal_min_si": "0.25",
+                "normal_min_us": "3",
+                "units_si": "years",
+                "units_us": "months"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fatigue",
+            "Fever",
+            "Loss of Appetite",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Pneumonia"
+        ],
+        "logic": "var calc_output = [];\n\nvar fever = parseFloat(fever);\nvar oxygen = parseFloat(oxygen);\nvar crackles = parseFloat(crackles);\nvar wheezing = parseFloat(wheezing);\n\nif (UOMSYSTEM == true) {\n    var age = parseFloat(age)/12\n} else {\n    var age = parseFloat(age);\n}\n\nvar x = 18.05624 + 0.098308*age + 1.144985*fever - 0.21636*oxygen + 0.407494*crackles - 0.907087*wheezing;\n\nvar risk = Math.exp(x)/(1 + Math.exp(x)) * 100;\n\nvar prs;\n\nif (risk < 5) {\n    prs = 1;\n} else if (risk < 11) {\n    prs = 2;\n} else if (risk < 21) {\n    prs = 3;\n} else if (risk < 51) {\n    prs = 4;\n} else if (risk < 75) {\n    prs = 5;\n} else {\n    prs = 6;\n}\n\nvar risk2;\nvar rec;\n\nif (prs <= 2) {\n    risk2 = 'low';\n    rec = 'Consider deferring chest X-ray and antibiotics';\n}  else if (prs <= 4) {\n    risk2 = 'medium';\n    rec = 'Consider chest X-ray to further evaluate for pneumonia';\n} else {\n    risk2 = 'high';\n    rec = 'Consider chest X-ray vs. empiric antibiotics';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: risk.toFixed(1),\n    value_text: '%',\n    message: 'Risk of radiographic pneumonia (' + risk2 + ')'\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk.toFixed(1),\n    value_text: '%',\n    message: 'Risk of radiographic pneumonia (' + risk2 + ')'\n});\ncalc_output.push({\n    name: 'PRS',\n    value: prs,\n    value_text: 'points',\n    message: 'Pneumonia Risk Score (PRS)'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Age, months or years</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "prs_age"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Fever at home or in ED</p>",
+                "name": "fever",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "A fever is defined as >38°C (>100.4°F)",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>First O<sub>2</sub> saturation obtained</p>",
+                "name": "oxygen",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "o2_sat"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Crackles</p>",
+                "name": "crackles",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Wheezing</p>",
+                "name": "wheezing",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Novel Pneumonia Risk Score (PRS)",
+            "prs",
+            "novel pneumonia",
+            "pneumonia risk score",
+            "radiographic pneumonia",
+            "radiographic pneumonia risk",
+            "pneumonia risk",
+            "radiographic pneumonia risk score"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatrics",
+            "Pulmonology"
+        ]
+    }
+}

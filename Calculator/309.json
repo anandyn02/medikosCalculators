@@ -1,0 +1,112 @@
+{
+    "id": "309",
+    "title": "CHADS-65 (Canadian Society of Cardiology Guideline)",
+    "desc": "CHADS-65 (Canadian Society of Cardiology Guideline) guides antithrombotic therapy for patients with nonvalvular atrial fibrillation or atrial flutter.",
+    "data": {
+        "orgreference": [],
+        "other_refer": [],
+        "evidence": "<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/CHADS-65%20Flowchart.png\" class=\"alignnone size-full wp-image-1839\" alt=\"\"></div>\n<p dir=\"ltr\"><span><sup>1</sup> </span><span>Direct oral anticoagulants are preferred over warfarin.</span></p>\n<p><sup>2</sup> Therapeutic options include ASA 81 mg daily alone, clopidogrel 75 mg daily alone, or ASA 81 mg daily in combination with either clopidogrel 75 mg daily, ticagrelor 60 mg bid, or rivaroxaban 2.5 mg bid (depending on clinical circumstance).</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Anxious",
+            "Chest Pain",
+            "Dizziness",
+            "Fatigue",
+            "Palpitations",
+            "Shortness of Breath",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Arrhythmia",
+            "Atrial Fibrillation"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar prior = parseFloat(prior);\nvar disease = parseFloat(disease);\n\nvar rec;\nvar msg;\n\nif (age == 1) {\n    rec = 'OAC';\n    msg = 'Therapy recommendation.<br/><br/>Direct oral anticoagulants are preferred over warfarin.';\n} else if (age == 0 && prior == 1) {\n    rec = 'OAC';\n    msg = 'Therapy recommendation.<br/><br/>Direct oral anticoagulants are preferred over warfarin.';\n} else if (age == 0 && prior == 0 && disease == 1) {\n    rec = 'Antiplatelet therapy';\n    msg = 'Therapy recommendation.<br/><br/> Therapeutic options include ASA 81 mg daily alone, clopidogrel 75 mg daily alone, or ASA 81 mg daily in combination with either clopidogrel 75 mg daily, ticagrelor 60 mg bid, or rivaroxaban 2.5 mg bid (depending on clinical circumstance).'\n} else {\n    rec = 'No antithrombotic';\n    msg = 'Therapy recommendation.'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: rec,\n    value_text: '',\n    message: 'Therapy recommendation'\n});\ncalc_output.push({\n    name: 'Rec',\n    value: rec,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Age &ge;65 years</p>",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 0",
+                "default": null,
+                "label_en": "<p>Prior stroke or TIA, hypertension, heart failure, or diabetes mellitus</p>",
+                "mdcalc_info_concept": null,
+                "name": "prior",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "prior == 0",
+                "default": null,
+                "label_en": "<p>Coronary or peripheral artery disease</p>",
+                "mdcalc_info_concept": null,
+                "name": "disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "CHADS-65 (Canadian Society of Cardiology Guideline)",
+            "CHADS-65",
+            "chads",
+            "chads 65",
+            "chads65",
+            "chads score",
+            "Canadian Society of Cardiology Guideline"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

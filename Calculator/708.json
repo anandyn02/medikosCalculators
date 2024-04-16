@@ -1,0 +1,211 @@
+{
+    "id": "708",
+    "title": "CHA<sub>2</sub>DS<sub>2</sub>-VASc Score for Atrial Fibrillation Stroke Risk",
+    "desc": "The CHA2DS2-VASc Score for for Atrial Fibrillation Stroke Risk calculates stroke risk for patients with atrial fibrillation, possibly better than the CHADS2 score.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19762550",
+                "text": "Lip GY, Nieuwlaat R, Pisters R, Lane DA, Crijns HJ. Refining clinical risk stratification for predicting stroke and thromboembolism in atrial fibrillation using a novel risk factor-based approach: the euro heart survey on atrial fibrillation. Chest. 2010 Feb;137(2):263-72. doi: 10.1378/chest.09-1584. Epub 2009 Sep 17. PubMed PMID: 19762550."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: left;\" colspan=\"2\">\n<p>Criteria</p>\n</th>\n<th style=\"text-align: left;\">Points</th>\n</tr>\n<tr>\n<td rowspan=\"3\">Age</td>\n<td>\n<p>&lt;65 years old</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>65-74 years old</p>\n</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>\n<p>&ge;75 years old</p>\n</td>\n<td>+2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Sex</td>\n<td>\n<p>Male</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>Female</p>\n</td>\n<td>+1</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Congestive heart failure history</p>\n</td>\n<td>+1</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Hypertension history</p>\n</td>\n<td>+1</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Stroke/TIA/thromboembolism history</p>\n</td>\n<td>+2</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Vascular disease history&nbsp;(prior MI, peripheral artery disease, or aortic plaque)</p>\n</td>\n<td>+1</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Diabetes mellitus history</p>\n</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n<p></p>\n<p></p>",
+        "facts": "<div>\n<p>Interpretation:</p>\n<p></p>\n<table cellspacing=\"0\" cellpadding=\"0\">\n<tbody>\n<tr>\n<td valign=\"top\">\n<p><strong>CHA₂DS₂-VASc Score</strong></p>\n</td>\n<td valign=\"top\">\n<p><strong>Risk of ischemic stroke</strong></p>\n</td>\n<td valign=\"top\">\n<p><strong>Risk of stroke/TIA/systemic embolism</strong></p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>0</p>\n</td>\n<td valign=\"top\">\n<p>0.2%</p>\n</td>\n<td valign=\"top\">\n<p>0.3%</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>1</p>\n</td>\n<td valign=\"top\">\n<p>0.6%</p>\n</td>\n<td valign=\"top\">\n<p>0.9%</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>2</p>\n</td>\n<td valign=\"top\">\n<p>2.2%</p>\n</td>\n<td valign=\"top\">\n<p>2.9%</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>3</p>\n</td>\n<td valign=\"top\">\n<p>3.2%</p>\n</td>\n<td valign=\"top\">\n<p>4.6%</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>4</p>\n</td>\n<td valign=\"top\">\n<p>4.8%</p>\n</td>\n<td valign=\"top\">\n<p>6.7%</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>5</p>\n</td>\n<td valign=\"top\">\n<p>7.2%</p>\n</td>\n<td valign=\"top\">\n<p>10.0%</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>6</p>\n</td>\n<td valign=\"top\">\n<p>9.7%</p>\n</td>\n<td valign=\"top\">\n<p>13.6%</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>7</p>\n</td>\n<td valign=\"top\">\n<p>11.2%</p>\n</td>\n<td valign=\"top\">\n<p>15.7%</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>8</p>\n</td>\n<td valign=\"top\">\n<p>10.8%</p>\n</td>\n<td valign=\"top\">\n<p>15.2%</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>9</p>\n</td>\n<td valign=\"top\">\n<p>12.2%</p>\n</td>\n<td valign=\"top\">\n<p>17.4%</p>\n</td>\n</tr>\n</tbody>\n</table>\nFrom <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/22246443\" target=\"_blank\" rel=\"noopener\">Friberg&nbsp;2012</a>. Note the paradoxical decrease in risk&nbsp;between 7 and 8 points; this reflects the&nbsp;findings published in the study, but in general, assume increasing risk with higher scores.</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Palpitations",
+            "Shortness of Breath",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Arrhythmia",
+            "Atrial Fibrillation",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(sex) + parseFloat(age) + parseFloat(heart_failure) + parseFloat(hypertension) + parseFloat(stroke) + parseFloat(vascular_disease) + parseFloat(diabetes);\nvar msg = '';\nvar mini_msg = '';\nvar webLanguage = webLanguage || \"english\"\n\nif (webLanguage == \"webProduction-chinese-traditional\") {\n    var msgalt = '0分基本上為低風險，也不一定需要抗凝血劑使用；1分是低到中等風險，且應考慮抗血小板藥物或抗凝血劑使用；2分或以上屬於中等到高風險，且應考慮抗凝血劑使用。';\n} else if (webLanguage == \"webProduction-chinese-simplified\") {\n    var msgalt = '建议：0分 低风险，可能不需要使用抗凝剂；1分 低中度风险，应考虑使用抗血小板药物或抗凝剂；2分以上 中高度风险，应该使用抗凝剂。';\n} else if (webLanguage == \"webProduction-spanish\") {\n    var msgalt = 'Una recomendación sugiere que 0 puntos es “bajo” riesgo y tal vez no requiere anticoagulación; puntaje de uno es “bajo-moderado” riesgo y debería considerar antiplaquetarios o anticoagulantes, y puntaje de 2 o más es “moderado-alto” riesgo y de lo contrario debe ser candidato para anticoagulación. ';\n} else {\n    var msgalt = 'One recommendation suggests a 0 score for men or 1 score for women (no clinical risk factors) is “low” risk and may not require anticoagulation; a 1 score for men or 2 score for women is “low-moderate” risk and should consider antiplatelet or anticoagulation; and a score ≥2 for men or ≥3 for women is “moderate-high” risk and should otherwise be an anticoagulation candidate.';\n}\n\nvar calculations = {\n    \"0\": {\n        stroke_risk_percentage: \"0.2%\",\n        stroke_tia_systemic_percentage: \"0.3%\"\n    },\n    \"1\": {\n        stroke_risk_percentage: \"0.6%\",\n        stroke_tia_systemic_percentage: \"0.9%\"\n    },\n    \"2\": {\n        stroke_risk_percentage: \"2.2%\",\n        stroke_tia_systemic_percentage: \"2.9%\"\n    },\n    \"3\": {\n        stroke_risk_percentage: \"3.2%\",\n        stroke_tia_systemic_percentage: \"4.6%\"\n    },\n    \"4\": {\n        stroke_risk_percentage: \"4.8%\",\n        stroke_tia_systemic_percentage: \"6.7%\"\n    },\n    \"5\": {\n        stroke_risk_percentage: \"7.2%\",\n        stroke_tia_systemic_percentage: \"10.0%\"\n    },\n    \"6\": {\n        stroke_risk_percentage: \"9.7%\",\n        stroke_tia_systemic_percentage: \"13.6%\"\n    },\n    \"7\": {\n        stroke_risk_percentage: \"11.2%\",\n        stroke_tia_systemic_percentage: \"15.7%\"\n    },\n    \"8\": {\n        stroke_risk_percentage: \"10.8%\",\n        stroke_tia_systemic_percentage: \"15.2%\"\n    }\n}\n\nvar stroke_risk_percentage = calculations[u] ? calculations[u].stroke_risk_percentage : \"12.2%\"\n\nvar stroke_tia_systemic_percentage = calculations[u] ? calculations[u].stroke_tia_systemic_percentage : \"17.4%\"\n\n\n\nif (webLanguage == \"webProduction-chinese-traditional\") {\n\n    msg = '中風機會是每年' + stroke_risk_percentage + '大於九萬人( 來自 瑞士的心房顫動世代研究) 和' + stroke_tia_systemic_percentage + '的中風/暫時性中風/系統性血栓形成。';\n\n    if (u == 8) {\n        msg += '<br/><br/>在這篇文章，我們發現八分比7分的風險還要低，顯然的我們應該要假設所有大於7分的患者風險都大於10%'\n    }\n\n    mini_msg = stroke_risk_percentage + ' Stroke risk per year.'\n\n} else if (webLanguage == \"webProduction-chinese-simplified\") {\n\n    msg = '在90000多名病人中，中风风险为每年' + stroke_risk_percentage + '（来自瑞士的一个关于房颤的队列研究），中风/短暂性脑缺血/系统性血栓形成风险为' + stroke_tia_systemic_percentage + \"。\";\n\n    if (u == 8) {\n        msg += '<br/><br/>在这个研究中，我们发现8分比7分的风险还要低，显然，我们应该假设所有大于7分的患者风险都大于10%。'\n    }\n\n    mini_msg = stroke_risk_percentage + ' Stroke risk per year.'\n\n\n} else if (webLanguage == \"webProduction-spanish\") {\n\n\n    msg = 'El riesgo de derrame fue de ' + stroke_risk_percentage + '(estudio sueco de cohorte) y ' + stroke_tia_systemic_percentage + ' riesgo de derrame/AIT/embolismo sistémico.';\n\n    if (u == 8) {\n        msg += '<br/><br/>Nosotros realizamos que 8 puntos demuestran menos riesgo que 7 puntos, estos fueron las recomendaciones en el estudio, obviamente deberá asumir todos puntajes > 7 tienen un riesgo > 10%.'\n    }\n\n    mini_msg = stroke_risk_percentage + ' Stroke risk per year.'\n\n\n} else {\n    msg = 'Stroke risk was ' + stroke_risk_percentage + ' per year in >90,000 patients (the Swedish Atrial Fibrillation Cohort Study) and ' + stroke_tia_systemic_percentage + ' risk of stroke/TIA/systemic embolism.';\n\n    if (u == 8) {\n        msg += '<br/><br/>We realize that 8 points showed a lower risk than 7 points, these were the findings in the study, obviously one should assume all scores \\u22657 have a risk >10%.'\n    }\n\n    mini_msg = stroke_risk_percentage + ' Stroke risk per year.'\n}\n\nvar value_text = ''\n\nif (webLanguage == \"webProduction-chinese-traditional\" || webLanguage == \"webProduction-chinese-simplified\") {\n    var value_text = '分'\n} else if (webLanguage == \"webProduction-spanish\") {\n    if (u.toFixed(0) == 1) {\n        var value_text = 'punto'\n    } else {\n        var value_text = 'puntage'\n    }\n} else {\n    var value_text = 'points'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(0),\n    value_text: value_text,\n    message: mini_msg\n});\ncalc_output.push({\n    name: '801_CHA2DS2-VASc Score_result',\n    value: u.toFixed(0),\n    value_text: value_text,\n    message: msg + '<br/><br/>' + msgalt\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age</p>",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<65",
+                        "value": 0
+                    },
+                    {
+                        "label": "65-74",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥75",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 1
+                    },
+                    {
+                        "label": "Male",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><abbr title=\"Congestive heart failure\">CHF</abbr> history</p>",
+                "md_calc_info_concept": null,
+                "name": "heart_failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hypertension history</p>",
+                "md_calc_info_concept": null,
+                "name": "hypertension",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Stroke/TIA/thromboembolism history</p>",
+                "md_calc_info_concept": null,
+                "name": "stroke",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Vascular disease history (prior MI, peripheral artery disease, or aortic plaque)</p>",
+                "md_calc_info_concept": null,
+                "name": "vascular_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Diabetes history</p>",
+                "md_calc_info_concept": null,
+                "name": "diabetes",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "chads",
+            "chads2",
+            "chads2-vasc",
+            "chads2vasc",
+            "stroke risk"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Primary Care"
+        ]
+    }
+}

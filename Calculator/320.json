@@ -1,0 +1,198 @@
+{
+    "id": "320",
+    "title": "Nomogram for Breast Cancer Brain Metastasis",
+    "desc": "The Nomogram for Breast Cancer Brain Metastasis predicts risk of brain metastasis in patients with stage IV breast cancer.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/20308667/",
+                "text": "Graesslin O, Abdulkarim BS, Coutant C, et al. Nomogram to predict subsequent brain metastasis in patients with metastatic breast cancer. J Clin Oncol. 2010;28(12):2032-2037."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The nomogram score is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100.125%;\"><colgroup><col style=\"width: 49.4975%;\"><col style=\"width: 23.3952%;\"><col style=\"width: 27.1073%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"10\">\n<p dir=\"ltr\"><span>Age, years</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>10-14</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>100</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>15-24</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>88</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>25-34</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>77</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>35-44</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>65</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>45-54</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>55</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>55-64</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>45</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>65-74</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>34</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>75-84</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>22</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>85-94</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>10</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>95-100</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Histological grade</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1 and 2</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>25</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><span>Receptor status</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>ER+ or PR+/HER2-</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>ER-/HER2-</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>20</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>HER2+</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>60</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"8\">\n<p dir=\"ltr\"><span>Delay between diagnosis and first metastasis, months</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0-9</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>73</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>10-21</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>70</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>22-29</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>65</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>30-41</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>60</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>42-53</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>45</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>54-71</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>35</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>72-91</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>15</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;92</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Number of non brain metastatic sites</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&gt;1</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>35</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/nomogram-cropped.png\" width=\"100%\"></p>\n<p>From <a href=\"https://pubmed.ncbi.nlm.nih.gov/20308667/\" target=\"_blank\" rel=\"noopener\">Graesslin 2010</a>.</p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 64.4918%;\"><colgroup><col style=\"width: 37.8855%;\"><col style=\"width: 62.1145%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Probability of brain metastasis</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>0-79</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&lt;4%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>80-89</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>4%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>90-124</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>5%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>125-162</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>10%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>163-187</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>15%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>188-212</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>21%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>213-237</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>27%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>238-262</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>38%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>263-293</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>47%</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [
+            {
+                "name": "Age (Brain Mets)",
+                "unit": "age_brain_mets",
+                "error_min": "10",
+                "error_max": "100",
+                "warn_min": "10",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Delay (Brain Mets)",
+                "unit": "delay_brain_mets",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "months",
+                "units_us": "months"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Dizziness",
+            "Dyspnea",
+            "Joint Pain",
+            "Urinary Incontinence",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Breast Cancer",
+            "Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar grade = parseFloat(grade);\nvar receptor = parseFloat(receptor);\nvar delay = parseFloat(delay);\nvar sites = parseFloat(sites);\n\nvar age_score;\nif (age < 15) {\n    age_score = 100;\n} else if (age < 25) {\n    age_score = 88;\n} else if (age < 35) {\n    age_score = 77;\n} else if (age < 45) {\n    age_score = 65;\n} else if (age < 55) {\n    age_score = 55;\n} else if (age < 65) {\n    age_score = 45;\n} else if (age < 75) {\n    age_score = 34;\n} else if (age < 85) {\n    age_score = 22;\n} else if (age < 95) {\n    age_score = 10;\n} else {\n    age_score = 0;\n}\n\nvar delay_score;\nif (delay < 10) {\n    delay_score = 73;\n} else if (delay < 22) {\n    delay_score = 70;\n} else if (delay < 30) {\n    delay_score = 65;\n} else if (delay < 42) {\n    delay_score = 60;\n} else if (delay < 54) {\n    delay_score = 45;\n} else if (delay < 72) {\n    delay_score = 35;\n} else if (delay < 92) {\n    delay_score = 15;\n} else {\n    delay_score = 0;\n}\n\nvar score = age_score + grade + receptor + delay_score + sites;\n\nvar risk;\nif (score < 80) {\n    risk = '<4';\n} else if (score < 90) {\n    risk = 4;\n} else if (score < 125) {\n    risk = 5;\n} else if (score < 163) {\n    risk = 10;\n} else if (score < 188) {\n    risk = 15;\n} else if (score < 213) {\n    risk = 21;\n} else if (score < 238) {\n    risk = 27;\n} else if (score < 263) {\n    risk = 38;\n} else {\n    risk = 47;\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + '% probability of brain metastasis'\n});\n\ncalc_output.push({\n    name: '10492_Breast Cancer Brain Metastasis_result',\n    value: score,\n    value_text: 'points',\n    message: risk + '% probability of brain metastasis'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_brain_mets"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Histological grade</p>",
+                "mdcalc_info_concept": null,
+                "name": "grade",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1 and 2",
+                        "value": 0
+                    },
+                    {
+                        "label": "3",
+                        "value": 25
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Receptor status</p>",
+                "mdcalc_info_concept": null,
+                "name": "receptor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "ER+ or PR+/HER2-",
+                        "value": 0
+                    },
+                    {
+                        "label": "ER-/HER2-",
+                        "value": 20
+                    },
+                    {
+                        "label": "HER2+",
+                        "value": 60
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Delay between diagnosis and first metastasis</p>",
+                "name": "delay",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "delay_brain_mets"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Number of non brain metastatic sites</p>",
+                "mdcalc_info_concept": null,
+                "name": "sites",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1",
+                        "value": 0
+                    },
+                    {
+                        "label": ">1",
+                        "value": 35
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Nomogram to predict breast cancer metastasis to the brain",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<p><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/nomogram-cropped.png\"></p>"
+            }
+        ],
+        "can_search": [
+            "Nomogram for Breast Cancer Brain Metastasis",
+            "Breast Cancer Brain Metastasis",
+            "brain metastasis",
+            "metastasis",
+            "metastatic breast cancer",
+            "breast cancer",
+            "cancer",
+            "metastatic",
+            "metastatic cancer",
+            "brain cancer",
+            "brain",
+            "stage iv",
+            "stage iv breast cancer",
+            "stage 4",
+            "stage 4 breast cancer"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Primary Care",
+            "Radiation Oncology"
+        ]
+    }
+}

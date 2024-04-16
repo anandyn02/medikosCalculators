@@ -1,0 +1,128 @@
+{
+    "id": "490",
+    "title": "Immunization Schedule Calculator",
+    "desc": "The Immunization Schedule Calculator determines doses of vaccinations due based on age.",
+    "data": {
+        "orgreference": [],
+        "other_refer": [],
+        "evidence": "<p>See full schedule at the CDC's website for <a href=\"https://www.cdc.gov/vaccines/schedules/hcp/imz/child-adolescent.html\" target=\"_blank\" rel=\"noopener\">children</a> and <a href=\"https://www.cdc.gov/vaccines/schedules/hcp/imz/adult-shell.html\" target=\"_blank\" rel=\"noopener\">adults</a>.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Age in years",
+                "unit": "age_years_imm",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": " years",
+                "units_us": " years"
+            },
+            {
+                "name": "Age in months",
+                "unit": "age_months_imm",
+                "error_min": "0",
+                "error_max": "36",
+                "warn_min": "0",
+                "warn_max": "24",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": " ",
+                "units_us": " "
+            }
+        ],
+        "primary_complains": [
+            "Cough",
+            "Fever",
+            "Sore Throat"
+        ],
+        "disease_treated": [
+            "Public Health"
+        ],
+        "logic": "var calc_output = [];\nvar msg;\n\nvar agerange = parseFloat(agerange);\nvar age = parseFloat(age);\nvar age_months = parseFloat(age_months);\n\n\n// calculation for < 18 months\nif (agerange == 0 && age_months < 1 && age < 1) { msg = \"Please enter an appropriate age range.\"; }\nif (agerange == 0) {\n    if (age_months == \"null\" || age_months == \" \" && age == \"null\" || age == \"\") { msg = \"Please enter an appropriate age range.\"; }\n    if (age_months > 0 && age_months < 1) {\n        msg = \"Hep B: 1st dose\";\n    } else if (age_months >= 1 && age_months < 2) {\n        msg = \"Hep B: 2nd dose (1st dose at birth)\";\n    } else if (age_months >= 2 && age_months < 3) {\n        msg = \"Hep B: 2nd dose (if not yet given)\";\n        msg += \"<br/>Rotavirus (RV): 1st dose\";\n        msg += \"<br/>DTaP: (<7 yrs): 1st dose\";\n        msg += \"<br/>H. flu (Hib): 1st dose\";\n        msg += \"<br/>Pneumococcal (PCV13): 1st dose\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 1st dose\";\n    } else if (age_months >= 3 && age_months < 4) {\n        msg = \"Hep B: 2nd dose (if not yet given)\";\n        msg += \"<br/>Rotavirus (RV): 1st dose (if not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): 1st dose (if not yet given)\";\n        msg += \"<br/>H. flu (Hib): 1st dose(if not yet given)\";\n        msg += \"<br/>Pneumococcal (PCV13): 1st dose (if not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 1st dose (if not yet given)\";\n    } else if (age_months >= 4 && age_months < 5) {\n        msg = \"Hep B: Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Rotavirus (RV): 2nd dose\";\n        msg += \"<br/>DTaP: (<7 yrs): 2nd dose\";\n        msg += \"<br/>H. flu (Hib): 2nd dose\";\n        msg += \"<br/>Pneumococcal (PCV13): 2nd dose\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 2nd dose\";\n    } else if (age_months >= 5 && age_months < 6) {\n        msg = \"Hep B: Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Rotavirus (RV): 2nd dose (if not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): 2nd dose (if not yet given)\";\n        msg += \"<br/>H. flu (Hib): 2nd dose(if not yet given)\";\n        msg += \"<br/>Pneumococcal (PCV13): 2nd dose (if not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 2nd dose (if not yet given)\";\n    } else if (age_months >= 6 && age_months < 7) {\n        msg = \"Hep B: 3rd dose\";\n        msg += \"<br/>Rotavirus (RV): 3rd dose (if RV5)\";\n        msg += \"<br/>DTaP: (<7 yrs): 3rd dose\";\n        msg += \"<br/>H. flu (Hib): 3rd dose (if 3-dose primary series)\";\n        msg += \"<br/>Pneumococcal (PCV13): 3rd dose\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 3rd dose\";\n        msg += \"<br/>Influenza: Annual vaccination (IIV only - 1 or 2 doses)\";\n    } else if (age_months >= 7 && age_months < 8) {\n        msg = \"Hep B: 3rd dose (if not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): 3rd dose (if not yet given)\";\n        msg += \"<br/>Pneumococcal (PCV13): 3rd dose (if not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 3rd dose (if not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (IIV only - 1 or 2 doses)\";\n    } else if (age_months >= 8 && age_months < 10) {\n        msg = \"Hep B: 3rd dose (if not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>H. flu (Hib): Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Pneumococcal (PCV13): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 3rd dose (if not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (IIV only - 1 or 2 doses)\";\n    } else if (age_months >= 10 && age_months < 12) {\n        msg = \"Hep B: 3rd dose (if not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>H. flu (Hib): Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Pneumococcal (PCV13): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 3rd dose (if not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (IIV only - 1 or 2 doses)\";\n    } else if (age_months >= 12 && age_months < 13) {\n        msg = \"Hep B: 3rd dose (if not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>H. flu (Hib): 3rd or 4th dose (dependent on primary series)\";\n        msg += \"<br/>Pneumococcal (PCV13): 4th dose\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 3rd dose (if not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (IIV only - 1 or 2 doses)\";\n        msg += \"<br/>MMR: 1st dose\";\n        msg += \"<br/>Varicella (VAR): 1st dose\";\n        msg += \"<br/>Hep A: 2 dose series (Initiate the 2-dose Hep A vaccine series at 12 through 23 months; separate the 2 doses by 6 to 18 months)\";\n    } else if (age_months >= 13 && age_months < 15) {\n        msg = \"Hep B: 3rd dose (if not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>H. flu (Hib): 3rd or 4th dose (if not yet given; dependent on primary series)\";\n        msg += \"<br/>Pneumococcal (PCV13): 4th dose (if not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 3rd dose (if not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (IIV only - 1 or 2 doses)\";\n        msg += \"<br/>MMR: 1st dose (if not yet given)\";\n        msg += \"<br/>Varicella (VAR): 1st dose (if not yet given)\";\n        msg += \"<br/>Hep A: 2 dose series (Initiate the 2-dose Hep A vaccine series at 12 through 23 months; separate the 2 doses by 6 to 18 months)\";\n    } else if (age_months >= 15 && age_months < 16) {\n        msg = \"Hep B: 3rd dose (if not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): 4th dose\";\n        msg += \"<br/>H. flu (Hib): 3rd or 4th dose (if not yet given)\";\n        msg += \"<br/>Pneumococcal (PCV13): 4th dose (if not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 3rd dose (if not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (IIV only - 1 or 2 doses)\";\n        msg += \"<br/>MMR: 1st dose (if not yet given)\";\n        msg += \"<br/>Varicella (VAR): 1st dose (if not yet given)\";\n        msg += \"<br/>Hep A: 2 dose series (Initiate the 2-dose Hep A vaccine series at 12 through 23 months; separate the 2 doses by 6 to 18 months)\";\n    } else if (age_months >= 16 && age_months < 19) {\n        msg = \"Hep B: 3rd dose (if not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): 4th dose (if not yet given)\";\n        msg += \"<br/>H. flu (Hib): Catch-up dose (if 4rd or 4th dose not yet given; dependent on primary series)\";\n        msg += \"<br/>Pneumococcal (PCV13): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 3rd dose (if not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (IIV only - 1 or 2 doses)\";\n        msg += \"<br/>MMR: Catch-up dose (if not yet given)\";\n        msg += \"<br/>Varicella (VAR): Catch-up dose (if not yet given)\";\n        msg += \"<br/>Hep A: 2 dose series (Initiate the 2-dose Hep A vaccine series at 12 through 23 months; separate the 2 doses by 6 to 18 months)\";\n    } else if (age_months >= 19 && age_months <= 23) {\n        msg = \"Hep B: Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>H. flu (Hib): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Pneumococcal (PCV13): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (IIV only - 1 or 2 doses)\";\n        msg += \"<br/>MMR: Catch-up dose (if 1st dose not yet given)\";\n        msg += \"<br/>Varicella (VAR): Catch-up dose (if 1st dose not yet given)\";\n        msg += \"<br/>Hep A: 2 dose series (Initiate the 2-dose Hep A vaccine series at 12 through 23 months; separate the 2 doses by 6 to 18 months)\";\n    } else if (age_months > 23 && age >= 0) { msg = \"Please enter an appropriate age range.\"; } else { msg = \"Please enter an appropriate age range.\"; }\n\n}\nif (agerange == 1) {\n    if (age < 2 || age_months >= 0) { msg = \"Please enter an appropriate age range.\"; }\n    if (age >= 2 && age < 4) {\n        msg = \"Hep B: Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>H. flu (Hib): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Pneumococcal (PCV13): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (LAIV or IIV - 1 or 2 doses)\";\n        msg += \"<br/>MMR: Catch-up dose (if 1st dose not yet given)\";\n        msg += \"<br/>Varicella (VAR): Catch-up dose (if 1st dose not yet given)\";\n        msg += \"<br/>Hep A: Catch-up dose (if 2 dose series not complete)\";\n    }\n    if (age >= 4 && age < 7) {\n        msg = \"Hep B: Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>DTaP: (<7 yrs): 5th dose\";\n        msg += \"<br/>H. flu (Hib): Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Pneumococcal (PCV13): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): 4th dose\";\n        msg += \"<br/>Influenza: Annual vaccination (LAIV or IIV - 1 or 2 doses)\";\n        msg += \"<br/>MMR: 2nd dose\";\n        msg += \"<br/>Varicella (VAR): 2nd dose\";\n        msg += \"<br/>Hep A: Catch-up dose (if 2 dose series not complete)\";\n    }\n    if (age >= 7 && age < 11) {\n        msg = \"Hep B: Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (LAIV or IIV - 1 or 2 doses)\";\n        msg += \"<br/>MMR: Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Varicella (VAR): Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Hep A: Catch-up dose (if 2 dose series not complete)\";\n        msg += \"<br/>Tetanus, diphtheria, & acellular pertussis (Tdap: ≥7 yrs): Catch-up dose\";\n    }\n    if (age >= 11 && age < 13) {\n        msg = \"Hep B: Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (LAIV or IIV - 1 doses only)\";\n        msg += \"<br/>MMR: Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Varicella (VAR): Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Hep A: Catch-up dose (if 2 dose series not complete)\";\n        msg += \"<br/>Meningococcal (MenACWY-D): 1st dose\"\n        msg += \"<br/>Tetanus, diphtheria, & acellular pertussis (Tdap: ≥7 yrs): Tdap only\";\n        msg += \"<br/>HPV (2vHPV:females only; 4vHPV, 9vHPV:males and females): 3 dose series, begin 1st dose.\";\n    }\n    if (age >= 13 && age < 16) {\n        msg = \"Hep B: Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (LAIV or IIV - 1 doses only)\";\n        msg += \"<br/>MMR: Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Varicella (VAR): Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Hep A: Catch-up dose (if 2 dose series not complete)\";\n        msg += \"<br/>Meningococcal (MenACWY-D): Catch-up dose (if not yet given)\"\n        msg += \"<br/>Tdap: Catch-up dose (if not yet given)\";\n        msg += \"<br/>HPV (2vHPV:females only; 4vHPV, 9vHPV:males and females): 3 dose series\";\n    }\n    if (age >= 16 && age < 18) {\n        msg = \"Hep B: Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (LAIV or IIV - 1 doses only)\";\n        msg += \"<br/>MMR: Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Varicella (VAR): Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Hep A: Catch-up dose (if 2 dose series not complete)\";\n        msg += \"<br/>Meningococcal (MenACWY-D): Booster\"\n        msg += \"<br/>Tdap: Catch-up dose (if not yet given)\";\n        msg += \"<br/>HPV (2vHPV:females only; 4vHPV, 9vHPV:males and females): 3 dose series\";\n    }\n    if (age >= 18 && age < 19) {\n        msg = \"Hep B: Catch-up dose (if 3rd dose not yet given)\";\n        msg += \"<br/>Inactivated polio (IPV:<18 yrs): Catch-up dose (if 4th dose not yet given)\";\n        msg += \"<br/>Influenza: Annual vaccination (LAIV or IIV - 1 doses only)\";\n        msg += \"<br/>MMR: Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Varicella (VAR): Catch-up dose (if 2nd dose not yet given)\";\n        msg += \"<br/>Hep A: Catch-up dose (if 2 dose series not complete)\";\n        msg += \"<br/>Meningococcal (MenACWY-D): Booster\"\n        msg += \"<br/>Tdap: Catch-up dose (if not yet given)\";\n        msg += \"<br/>HPV (2vHPV:females only; 4vHPV, 9vHPV:males and females): 3 dose series\";\n    }\n    if (age >= 19 && age < 22) {\n        msg = \"Influenza: 1 dose annually\";\n        msg += \"<br/>Tetanus, diphtheria, pertussis (Td/Tdap): Substitute Tdap for Td once, then Td booster every 10 years\";\n        msg += \"<br/>Varicella: 2 doses (if childhood doses not yet given)\";\n        msg += \"<br/>HPV (Female): 3 doses\";\n        msg += \"<br/>HPV (Male): 3 doses\";\n        msg += \"<br/>MMR: 1 or 2 doses depending on indication (if childhood doses not yet given)\";\n        msg += \"<br/><br/>If high risk for any of the following, administer:\";\n        msg += \"<br/>Pneumococcal 13-valent conjugate (PCV13), Pneumococcal polysaccharide (PPSV23) (1 or 2 doses; dependent on indication), Hep A (2 or 3 doses; dependent on indication), Hep B (3 doses), Meningococcal (MenACWY or MPSV4) (1 or more doses; dependent on indication), Meningococcal B (MenB) (2 or 3 doses; dependent on vaccine), H. flu (Hib) (1 or 3 doses; dependent on indication)\";\n    }\n    if (age >= 22 && age < 27) {\n        msg = \"Influenza: 1 dose annually\";\n        msg += \"<br/>Tetanus, diphtheria, pertussis (Td/Tdap): Substitute Tdap for Td once, then Td booster every 10 years\";\n        msg += \"<br/>Varicella: 2 doses (if childhood doses not yet given)\";\n        msg += \"<br/>HPV (Female): 3 doses\";\n        msg += \"<br/>MMR: 1 or 2 doses; depending on indication (if childhood doses not yet given)\";\n        msg += \"<br/><br/>If high risk for any of the following, administer:\";\n        msg += \"<br/>HPV (Male) (3 doses), Pneumococcal 13-valent conjugate (PCV13), Pneumococcal polysaccharide (PPSV23), (1 or 2 doses; dependent on indication), Hep A (2 or 3 doses; dependent on indication), Hep B (3 doses), Meningococcal (MenACWY or MPSV4) (1 or more doses; dependent on indication), Meningococcal B (MenB) (2 or 3 doses; dependent on vaccine) H. flu (Hib), (1 or 3 doses; dependent on indication)\";\n    }\n    if (age >= 27 && age < 58) {\n        msg = \"Influenza: 1 dose annually\";\n        msg += \"<br/>Tetanus, diphtheria, pertussis (Td/Tdap): Substitute Tdap for Td once, then Td booster every 10 years\";\n        msg += \"<br/>Varicella: 2 doses (if childhood doses not yet given)\";\n        msg += \"<br/>MMR: 1 or 2 doses depending on indication (if childhood doses not yet given)\";\n        msg += \"<br/><br/>If high risk for any of the following, administer:\";\n        msg += \"<br/>Pneumococcal 13-valent conjugate (PCV13), Pneumococcal polysaccharide (PPSV23) (1 or 2 doses; dependent on indication), Hep A (2 or 3 doses; dependent on indication), Hep B (3 doses), Meningococcal (MenACWY or MPSV4) (1 or more doses; dependent on indication), Meningococcal B (MenB) (2 or 3 doses; dependent on vaccine), H. flu (Hib) (1 or 3 doses; dependent on indication)\";\n    }\n    if (age >= 58 && age < 60) {\n        msg = \"Influenza: 1 dose annually\";\n        msg += \"<br/>Tetanus, diphtheria, pertussis (Td/Tdap): Substitute Tdap for Td once, then Td booster every 10 years\";\n        msg += \"<br/>Varicella: 2 doses (if childhood doses not yet given)\";\n        msg += \"<br/><br/>If high risk for any of the following, administer:\";\n        msg += \"<br/>Pneumococcal 13-valent conjugate (PCV13), Pneumococcal polysaccharide (PPSV23) (1 or 2 doses; dependent on indication), Hep A (2 or 3 doses; dependent on indication), Hep B (3 doses), Meningococcal (MenACWY or MPSV4) (1 or more doses; dependent on indication), Meningococcal B (MenB) (2 or 3 doses; dependent on vaccine), H. flu (Hib) (1 or 3 doses; dependent on indication)\";\n    }\n    if (age >= 60 && age < 65) {\n        msg = \"Influenza: 1 dose annually\";\n        msg += \"<br/>Tetanus, diphtheria, pertussis (Td/Tdap): Substitute Tdap for Td once, then Td booster every 10 years\";\n        msg += \"<br/>Varicella: 2 doses (if childhood doses not yet given)\";\n        msg += \"<br/>Zoster: 1 dose (if not yet given)\";\n        msg += \"<br/><br/>If high risk for any of the following, administer:\";\n        msg += \"<br/>Pneumococcal 13-valent conjugate (PCV13), Pneumococcal polysaccharide (PPSV23) (1 or 2 doses; dependent on indication), Hep A (2 or 3 doses; dependent on indication), Hep B (3 doses), Meningococcal (MenACWY or MPSV4) (1 or more doses; dependent on indication),  Meningococcal B (MenB) (2 or 3 doses; dependent on vaccine), H. flu (Hib) (1 or 3 doses; dependent on indication)\";\n    }\n    if (age >= 65) {\n        msg = \"Influenza: 1 dose annually\";\n        msg += \"<br/>Tetanus, diphtheria, pertussis (Td/Tdap): Substitute Tdap for Td once, then Td booster every 10 years\";\n        msg += \"<br/>Varicella: 2 doses (if childhood doses not yet given)\";\n        msg += \"<br/>Zoster: 1 dose (if not yet given)\";\n        msg += \"<br/>Pneumococcal 13-valent conjugate (PCV13): 1 dose\";\n        msg += \"<br/>Pneumococcal polysaccharide (PPSV23): 1 dose\";\n        msg += \"<br/><br/>If high risk for any of the following, administer:\";\n        msg += \"<br/>Hep A (2 or 3 doses), Hep B (3 doses), Meningococcal (MenACWY or MPSV4) (1 or more doses), Meningococcal B (MenB) (2 or 3 doses), H. flu (Hib) (1 or 3 doses)\";\n    }\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: '',\n    value_text: '',\n    message: 'Swipe up to see all vaccinations'\n});\ncalc_output.push({\n    name: '3401_Immunization Schedule Calculator_result',\n    value: 'Vaccinations Due',\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Age Range",
+                "md_calc_info_concept": null,
+                "name": "agerange",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥2 years",
+                        "value": 1
+                    },
+                    {
+                        "label": "<2 years",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "agerange == 0",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age in months",
+                "name": "age_months",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_months_imm"
+            },
+            {
+                "conditionality": "agerange == 1",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age in years",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_years_imm"
+            }
+        ],
+        "can_search": [
+            "vaccination",
+            "tdap",
+            "mmr",
+            "measles",
+            "rubella",
+            "mumps",
+            "varicella",
+            "zoster",
+            "pneumococcal",
+            "meningococcal",
+            "meningitis",
+            "flu",
+            "influenza",
+            "tetanus",
+            "whooping cough",
+            "pertussis",
+            "hpv",
+            "gardisil"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Family Practice",
+            "Geriatrics",
+            "Internal Medicine",
+            "Pediatrics",
+            "Primary Care"
+        ]
+    }
+}

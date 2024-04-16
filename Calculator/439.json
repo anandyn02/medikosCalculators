@@ -1,0 +1,126 @@
+{
+    "id": "439",
+    "title": "Atropine Dosing for Cholinesterase Inhibitor Toxicity",
+    "desc": "Atropine Dosing for Cholinesterase Inhibitor Toxicity doses atropine for cholinesterase inhibitor toxicity (prescribed drugs, nerve gas, insecticides).",
+    "data": {
+        "orgreference": [
+            {
+                "href": null,
+                "text": "Howland, MA Antidotes in Depth: Atropine. In: Hoffman R, Howland MA, Lewin N et al. Goldfrank's Toxicologic Emergencies, Tenth Edition. McGraw-Hill Education / Medical; 2014."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22351300 ",
+                "text": "Abedin MJ, Sayeed AA, Basher A, Maude RJ, Hoque G, Faiz MA. Open-label randomized clinical trial of atropine bolus injection versus incremental boluses plus infusion for organophosphate poisoning in Bangladesh. J Med Toxicol. 2012;8(2):108-17."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15533026 ",
+                "text": "Eddleston M, Buckley NA, Checketts H, et al. Speed of initial atropinisation in significant organophosphorus pesticide poisoning--a systematic comparison of recommended regimens. J Toxicol Clin Toxicol. 2004;42(6):865-75."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4609713",
+                "text": "Hopmann G, Wanke H. [Maximum dose atropin treatment in severe organophosphate poisoning (author's transl)]. Dtsch Med Wochenschr. 1974;99(42):2106-8."
+            }
+        ],
+        "evidence": "<ul>\n<li>Initial dose:</li>\n<ul>\n<li>Pediatric: 0.02 mg/kg, up to adult dose.</li>\n<li>Adult, mild toxicity: 1-2 mg.</li>\n<li>Adult, severe toxicity (hemodynamic compromise, unconsciousness): 3-5 mg.</li>\n</ul>\n<li>Assess for atropinization every 5 minutes:</li>\n<ul>\n<li>Clear lung exam on auscultation is the most important factor.</li>\n<li>Additional factors: heart rate &gt;80, systolic blood pressure &gt;80.</li>\n</ul>\n<li>If atropinization has not been achieved, double previous dose and reassess in another 5 minutes.</li>\n<li>Repeat doubling every 5 minutes until atropinization achieved.</li>\n<li>Once atropinization achieved, begin continuous infusion at an hourly rate of 10% of the <strong>sum</strong> of all doses necessary to achieve initial atropinization.</li>\n<li>Titrate as necessary.</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\n\nvar result\nvar msg = 'Assess for atropinization after 5 mins (clear lung exam, HR >80, sBP >80). If not atropinized, double previous dose and reassess in another 5 mins. Repeat doubling and reassessment every 5 mins until atropinization achieved, then begin continuous infusion at an hourly rate of 10% of the SUM of all doses.'\n\nif (type == 0) {\n    if (severity == 0) { // adult, mild \n        result = '1-2'\n    } else if (severity == 1) { // adult, severe \n        result = '3-5'\n    }\n} else if (type == 1) { // peds\n    if (weight <= 50) {\n        result = (weight * 0.02).toFixed(2)\n    } else {\n        if (severity == 0) { // peds over 50 kg, mild \n            result = '1-2'\n        } else if (severity == 1) { // peds over 50 kg, severe \n            result = '3-5'\n        }\n    }\n}\n\nvar result = parseFloat(result)\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: 'mg',\n    message: 'First dose'\n});\ncalc_output.push({\n    name: '2664_Atropine Dosing_result',\n    value: result,\n    value_text: 'mg',\n    message: 'First dose of atropine<br/><br/>' + msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Adult or pediatric patient",
+                "mdcalc_info_concept": null,
+                "name": "type",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Adult",
+                        "value": 0
+                    },
+                    {
+                        "label": "Pediatric",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "type == 1",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Severity",
+                "mdcalc_info_concept": null,
+                "name": "severity",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Mild",
+                        "value": 0
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Severe = hemodynamic compromise, unconsciousness",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "ach",
+            "cholinesterase",
+            "ache",
+            "nerve agent",
+            "nerve gas",
+            "organophosphates",
+            "neostigmine"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Toxicology"
+        ]
+    }
+}

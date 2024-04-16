@@ -1,0 +1,179 @@
+{
+    "id": "24",
+    "title": "Recognition of Stroke in the Emergency Room (ROSIER) Scale",
+    "desc": "The ROSIER Scale identifies acute stroke patients (versus stroke mimics).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16239179 ",
+                "text": "Nor AM, Davis J, Sen B, et al. The Recognition of Stroke in the Emergency Room (ROSIER) scale: development and validation of a stroke recognition instrument. Lancet Neurol. 2005;4(11):727-34."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22014183",
+                "text": "Yock-Corrales A, Babl FE, Mosley IT, Mackay MT. Can the FAST and ROSIER adult stroke recognition tools be applied to confirmed childhood arterial ischemic stroke?. BMC Pediatr. 2011;11:93."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"261\" /><col width=\"70\" /><col width=\"63\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Finding</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Loss of consciousness or syncope</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Seizure activity</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>New, acute onset (or upon awaking from sleep) finding of any of the following:</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Asymmetric facial weakness</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Asymmetric arm weakness</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Asymmetric leg weakness</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Speech disturbance</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Visual field defect</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p dir=\"ltr\">Likelihood of stroke:</p>\n<p><span id=\"docs-internal-guid-c82a8761-ffc6-4cad-18c9-172359f2356e\"></span></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"112\" /><col width=\"126\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>ROSIER Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Interpretation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;0</p>\n</td>\n<td>\n<p dir=\"ltr\">Stroke unlikely</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;0</p>\n</td>\n<td>\n<p dir=\"ltr\">Stroke possible</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness",
+            "Neurologic Deficit"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar syncope = parseFloat(syncope)\nvar seizure = parseFloat(seizure)\nvar facialweakness = parseFloat(facialweakness)\nvar armweakness = parseFloat(armweakness)\nvar legweakness = parseFloat(legweakness)\nvar speech = parseFloat(speech)\nvar visualdefect = parseFloat(visualdefect)\n\nvar score = syncope + seizure + facialweakness + armweakness + legweakness + speech + visualdefect \n\nvar interpretation\n\n\nif (score <= 0) {\n    interpretation = 'Stroke unlikely' \n}    \nelse if (score > 0) { \n    interpretation = 'Stroke possible'\n}\n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: interpretation,\n    value_text: '',\n    message: score + ' points' \n    });\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'ROSIER Score'\n    });\ncalc_output.push({\n    name: 'interpretation',\n    value: interpretation, \n    value_text: '',\n    message: ''\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Loss of consciousness or syncope",
+                "name": "syncope",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Seizure activity",
+                "name": "seizure",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "subheading": "New, acute onset (or on awakening from sleep) finding of any of the following: ",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Asymmetric facial weakness",
+                "name": "facialweakness",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Asymmetric arm weakness",
+                "name": "armweakness",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Asymmetric leg weakness",
+                "name": "legweakness",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Speech disturbance",
+                "name": "speech",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Visual field defect",
+                "name": "visualdefect",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rosier",
+            "stroke",
+            "cva"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

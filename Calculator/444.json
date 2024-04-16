@@ -1,0 +1,194 @@
+{
+    "id": "444",
+    "title": "IMDC (International Metastatic RCC Database Consortium) Risk Model for Metastatic Renal Cell Carcinoma",
+    "desc": "The IMDC (International Metastatic RCC Database Consortium) Risk Score for RCC predicts survival patients in metastatic renal cell carcinoma treated with systemic therapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19826129",
+                "text": "Heng DY, Xie W, Regan MM, Warren MA, Golshayan AR, Sahi C, Eigl BJ, Ruether JD, Cheng T, North S, Venner P, Knox JJ, Chi KN, Kollmannsberger C, McDermott DF, Oh WK, Atkins MB, Bukowski RM, Rini BI, Choueiri TK. Prognostic Factors for Overall Survival in Patients With Metastatic Renal Cell Carcinoma Treated With Vascular Endothelial Growth Factor–Targeted Agents: Results From a Large, Multicenter Study. JCO Dec 1, 2009:5794-5799; published online on October 13, 2009."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://ascopubs.org/doi/abs/10.1200/JCO.2017.35.6_suppl.492",
+                "text": "Yip S, Wells C, Moreira RB, et al. Real world experience of immuno-oncology agents in metastatic renal cell carcinoma: Results from the IMDC. JCO (Abstract)."
+            },
+            {
+                "href": "https://ascopubs.org/doi/full/10.1200/JCO.2016.70.7398",
+                "text": "Choueiri TK, Halabi S, Sanford BL, et al. Cabozantinib Versus SUNItinib As Initial Targeted Therapy for Patients With Metastatic Renal Cell Carcinoma of Poor or Intermediate Risk: The Alliance A031203 CABOSUN Trial. J Clin Oncol. 2017;35(6):591-597."
+            },
+            {
+                "href": "https://www.europeanurology.com/article/S0302-2838(16)30258-5/fulltext",
+                "text": "Wells JC, Stukalin I, Norton C, et al. Third-line Targeted Therapy in Metastatic Renal Cell Carcinoma: Results from the International Metastatic Renal Cell Carcinoma Database Consortium. Eur Urol. 2017;71(2):204-209."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29562145",
+                "text": "Motzer RJ, Tannir NM, Mcdermott DF, et al. Nivolumab plus Ipilimumab versus SUNItinib in Advanced Renal-Cell Carcinoma. N Engl J Med. 2018;378(14):1277-1290."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table width=\"324\" height=\"132\">\n<tbody>\n<tr>\n<td>\n<p><strong>Variable</strong></p>\n</td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td>\n<p>&lt;1&nbsp;year from time of diagnosis to systemic therapy</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p><calculator id=\"3168\">Karnofsky performance status</calculator> &lt;80%</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Hemoglobin &lt; lower limit of normal (usually ~120 g/L or 12 g/dL)</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p><calculator id=\"31\">Corrected calcium</calculator> &gt; upper limit of normal (usually ~8.5-10.2 mg/dL)</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Neutrophils &gt; upper limit of normal (usually ~2.0-7.0&times;10⁹/L)</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Platelets &gt; upper limit of normal (usually ~150,000-400,000 cells/&micro;L)</p>\n</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>\n<p>IMDC Risk Score</p>\n</th>\n<th>Risk group</th>\n<th>Median survival</th>\n</tr>\n<tr>\n<td>\n<p>0</p>\n</td>\n<td>Favorable</td>\n<td>43.2 months</td>\n</tr>\n<tr>\n<td>\n<p>1-2</p>\n</td>\n<td>Intermediate</td>\n<td>22.5 months</td>\n</tr>\n<tr>\n<td>\n<p>&ge;3</p>\n</td>\n<td>Poor</td>\n<td>7.8 months</td>\n</tr>\n</tbody>\n</table>\n<p>From <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4144042/\" target=\"_blank\" rel=\"noopener\">Heng 2013</a>.</p>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Flank Pain",
+            "Hematuria"
+        ],
+        "disease_treated": [
+            "Chemotherapy",
+            "Renal Cell Carcinoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar msg='';\nvar s= '';\nvar u = parseFloat(dx) + parseFloat(perf) + parseFloat(ca) + parseFloat(hgb) + parseFloat(neut) + parseFloat(plt);\n\n        if (u < 1) {\n            msg='Favorable risk'; s='Median survival: 43.2 months';\n        } if (u == 1 || u == 2) {\n            msg='Intermediate risk'; s='Median survival: 22.5 months';\n        } if (u >= 3) {\n            msg='Poor risk'; s='Median survival: 7.8 months';\n        } \n\ncalc_output.push({\n    name: 'mini', \n    value: u, \n    value_text: 'points', \n    message: msg \n});\ncalc_output.push({ \n    name: '3008_IMDC Model for mRCC_result', \n    value: u, \n    value_text: 'points', \n    message: msg + '<br/><br/>' + s + '<br/><br/><guideline id = \"10121\">AUA guideline</guideline>'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<1 year from time of diagnosis to systemic therapy",
+                "md_calc_info_concept": null,
+                "name": "dx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id = \"3168\">Karnofsky Performance Status</calculator> <80%",
+                "md_calc_info_concept": null,
+                "name": "perf",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemoglobin < lower limit of normal",
+                "md_calc_info_concept": null,
+                "name": "hgb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Usually ~120 g/L or 12 g/dL",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id=\"31\">Corrected calcium</calculator> > upper limit of normal",
+                "md_calc_info_concept": null,
+                "name": "ca",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Usually ~8.5-10.2 mg/dL",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Neutrophils > upper limit of normal",
+                "md_calc_info_concept": null,
+                "name": "neut",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Usually ~2.0-7.0×10⁹/L",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Platelets > upper limit of normal",
+                "md_calc_info_concept": null,
+                "name": "plt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Usually ~150,000-400,000 cells/µL",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "heng",
+            "vegf",
+            "OS",
+            "survival",
+            "mets",
+            "metastasis",
+            "RCC",
+            "heng score"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Urology"
+        ]
+    }
+}

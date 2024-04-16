@@ -1,0 +1,350 @@
+{
+    "id": "257",
+    "title": "Veterans Aging Cohort Study (VACS) 2.0 Index",
+    "desc": "The Veterans Aging Cohort Study (VACS) 2.0 Index estimates risk of 5-year all-cause mortality in patients with HIV.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/30649058/",
+                "text": "Tate JP, Sterne JAC, Justice AC. Albumin, white blood cell count, and body mass index improve discrimination of mortality in HIV-positive individuals. AIDS. 2019;33(5):903-912."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Risk is calculated using a Cox proportional hazard regression model from <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6749990/\" target=\"_blank\" rel=\"noopener\">Tate 2020</a>.</p>\n<p>The influence of HCV on all-cause mortality has not yet been determined. However, Hepatitis C co-infection is the least influential predictive variable.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "hemoglobin",
+                "unit": "hemoglobin",
+                "error_min": "0",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "0.6206",
+                "normal_max_si": "11.2",
+                "normal_max_us": "18",
+                "normal_min_si": "7.4",
+                "normal_min_us": "12",
+                "units_si": "mmol/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Alanine Aminotransferase",
+                "unit": "ALT",
+                "error_min": "1",
+                "error_max": "1000",
+                "warn_min": "4",
+                "warn_max": "400",
+                "conversion": "1",
+                "normal_max_si": "35",
+                "normal_max_us": "35",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "gfr",
+                "unit": "gfr",
+                "error_min": "0",
+                "error_max": "160",
+                "warn_min": "60",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "90",
+                "normal_min_us": "90",
+                "units_si": "mL/min/1.73 m²",
+                "units_us": "mL/min/1.73 m²"
+            },
+            {
+                "name": "Aspartate Aminotransferase",
+                "unit": "AST",
+                "error_min": "1",
+                "error_max": "10000",
+                "warn_min": "4",
+                "warn_max": "4000",
+                "conversion": "1",
+                "normal_max_si": "41",
+                "normal_max_us": "41",
+                "normal_min_si": "15",
+                "normal_min_us": "15",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "White Blood Cell Count",
+                "unit": "wbc",
+                "error_min": "0.0001",
+                "error_max": "500",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10.7",
+                "normal_max_us": "10.7",
+                "normal_min_si": "3.7",
+                "normal_min_us": "3.7",
+                "units_si": "× 10⁹ cells/L",
+                "units_us": "× 10³ cells/µL"
+            },
+            {
+                "name": "bmi_vacs2",
+                "unit": "bmi_vacs2",
+                "error_min": "0",
+                "error_max": "75",
+                "warn_min": "0",
+                "warn_max": "40",
+                "conversion": "1",
+                "normal_max_si": "35",
+                "normal_max_us": "35",
+                "normal_min_si": "15",
+                "normal_min_us": "15",
+                "units_si": "kg/m²",
+                "units_us": "kg/m²"
+            },
+            {
+                "name": "cd4_vacs2",
+                "unit": "cd4_vacs2",
+                "error_min": "0",
+                "error_max": "1500",
+                "warn_min": "0",
+                "warn_max": "1500",
+                "conversion": "1",
+                "normal_max_si": "1200",
+                "normal_max_us": "1200",
+                "normal_min_si": "600",
+                "normal_min_us": "600",
+                "units_si": "× 10⁶ cells/L",
+                "units_us": "× 10⁶ cells/L"
+            },
+            {
+                "name": "hiv_rna",
+                "unit": "hiv_rna",
+                "error_min": "0",
+                "error_max": "10000000",
+                "warn_min": "0",
+                "warn_max": "10000000",
+                "conversion": "1",
+                "normal_max_si": "10000000",
+                "normal_max_us": "10000000",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "copies/mL",
+                "units_us": "copies/mL"
+            },
+            {
+                "name": "Platelet Count",
+                "unit": "plt",
+                "error_min": "1",
+                "error_max": "3200",
+                "warn_min": "10",
+                "warn_max": "750",
+                "conversion": "1",
+                "normal_max_si": "350",
+                "normal_max_us": "350",
+                "normal_min_si": "150",
+                "normal_min_us": "150",
+                "units_si": "× 10⁹/L",
+                "units_us": "× 10³/µL"
+            }
+        ],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "HIV/AIDS"
+        ],
+        "logic": "var calc_output=[];\n\nvar age = parseFloat(age);\nvar sex = parseFloat(sex);\nvar egfr = parseFloat(egfr);\nvar cd4 = parseFloat(cd4);\nvar hemoglobin = parseFloat(hemoglobin);\nvar hiv = parseFloat(hiv);\nvar bmi = parseFloat(bmi);\nvar alt = parseFloat(alt);\nvar ast = parseFloat(ast);\nvar plt = parseFloat(platelet);\nvar wbc = parseFloat(wbc);\nvar hcv = parseFloat(hcv);\nvar alb = parseFloat(alb);\nvar age_t;\nvar age_c;\n\nvar fib4 = ((age * ast)/(plt * Math.sqrt(alt)));\n\nif (age <30){\n\tage_t = 30;\n}\nelse if (age > 75){\n\tage_t = 75;\n}\nelse {\n\tage_t = age;\n}\n\nvar age_c = (age_t-50)/5;\nvar age_csq = Math.pow(age_c,2);\nvar age_ccu = Math.pow(age_c,3);\n\nvar cd4_t;\nif (cd4 < 10){\n\tcd4_t = 10;\n}\nelse if (cd4 > 1000){\n\tcd4_t = 1000;\n}\nelse{\n\tcd4_t = cd4;\n}\n\nvar cd4_c = Math.log(1000 - cd4_t + 0.1);\nvar cd4_csq = Math.pow(cd4_c, 2);\nvar cd4_ccu = Math.pow(cd4_c, 3);\n\nvar vl_log = Math.log10(hiv);\nvar vl_t;\n\nif (vl_log < 1.3){\n\tvl_t = 1.3;\n}\nelse if(vl_log > 5){\n\tvl_t = 5;\n}\nelse {\n\tvl_t = vl_log;\n}\n\nvar vl_c = vl_t - 2;\nvar vl_csq = Math.pow(vl_c,2);\nvar vl_ccu = Math.pow(vl_c,3);\n\nvar hgb_t;\n\nif (hemoglobin < 9){\n\thgb_t = 9;\n}\nelse if (hemoglobin > 15){\n\thgb_t = 16;\n}\nelse {\n\thgb_t = hemoglobin;\n}\n\nvar hgb_c = hgb_t - 14;\nvar hgb_csq = Math.pow(hgb_c,2);\nvar hgb_ccu = Math.pow(hgb_c,3);\n\nvar fib4_t;\nif (fib4 < 0.5){\n\tfib4_t = 0.5;\n}\nelse if (fib4 > 7.5){\n\tfib4_t = 7.5;\n}\nelse {\n\tfib4_t = fib4;\n}\n\nvar fib4_c = fib4_t;\nvar fib4_csq = Math.pow(fib4_c,2);\nvar fib4_ccu = Math.pow(fib4_c,3);\n\nvar egfr_t;\nvar egfrx2;\nvar egfrx3;\nvar egfrx4;\n\nif (egfr > 180){\n\tegfr_t = 180;\n}\nelse {\n\tegfr_t = egfr;\n}\n\nvar egfrx1 = egfr/10;\n\nif (egfr > 35){\n\tegfrx2 = (egfr_t - 35)/10;\n}\nelse {\n\tegfrx2 = 0;\n}\n\nif (egfr > 65){\n\tegfrx3 = (egfr_t - 65)/10;\n}\nelse {\n\tegfrx3 = 0;\n}\n\nif (egfr > 115){\n\tegfrx4 = (egfr_t - 115)/10;\n}\nelse {\n\tegfrx4 = 0;\n}\n\nvar alb_t;\nif (alb < 2){\n\talb_t = 2;\n}\nelse if (alb > 5){\n\talb_t = 5;\n}\nelse {\n\talb_t = alb;\n}\n\nvar alb_c = alb_t - 4;\nvar alb_csq = Math.pow(alb_c,2);\nvar alb_ccu = Math.pow(alb_c,3);\n\n\nvar bmi_t;\nif (bmi < 15){\n\tbmi_t = 15;\n}\nelse if (bmi > 35){\n\tbmi_t = 35;\n}\nelse {\n\tbmi_t = bmi;\n}\n\nvar bmi_c = bmi_t - 25;\nvar bmi_csq = Math.pow(bmi_c,2);\nvar bmi_ccu = Math.pow(bmi_c,3);\n\n\nvar wbc_t;\nif (wbc < 2.5){\n\twbc_t = 2.5;\n}\nelse if (wbc > 11){\n\twbc_t = 11;\n}\nelse {\n\twbc_t = wbc;\n}\n\nvar wbc_c = wbc_t - 5.5;\nvar wbc_csq = Math.pow(wbc_c,2);\nvar wbc_ccu = Math.pow(wbc_c,3);\n\nvar comp_age = (0.05593 * age_c) + (-0.00447 * age_csq) + (0.00518 * age_ccu);\n\nvar comp_cd4 = (-0.05608 * cd4_c) + (-0.15344 * cd4_csq) + (0.02352 * cd4_ccu);\n\nvar comp_vl = (0.51329 * vl_c) + (-0.42235 * vl_csq) + (0.09798 * vl_ccu);\n\nvar comp_hgb = (-0.13364 * hgb_c) + (0.02601 * hgb_csq) + (0.00456 * hgb_ccu);\n\nvar comp_fib4 = (0.22045 * fib4_c) + (-0.00875 * fib4_csq);\n\nvar comp_egfr = (-0.03075 * egfrx1) + (-0.07668 * egfrx2) + (0.10629 * egfrx3) + (0.1325 * egfrx4);\n\nvar comp_hepc = (hcv * 0.34201);\n\nvar comp_alb = (-0.44289 * alb_c) + (0.10394 * alb_csq) + (0.02766 * alb_ccu);\n\nvar comp_bmi = (-0.05452 * bmi_c) + (0.00359 * bmi_csq);\n\nvar comp_wbc =  (0.1257 * wbc_c) + (0.01985 * wbc_csq) + (-0.00438 * wbc_ccu);\n\nvar calc_xb = comp_age + comp_cd4 + comp_vl + comp_hgb + comp_fib4 + comp_egfr + comp_hepc + comp_alb + comp_bmi + comp_wbc;\n\nvar range = 5.35;\nvar dist = calc_xb + 3.25;\nvar score = (dist/range) * 100;\nscore = score.toFixed(0);\nvar mortality;\n\nif (score == 0){\n   mortality = 0.3;\n}\nif (score == 1){\n   mortality = 0.3;\n}\nif (score == 2){\n   mortality = 0.4;\n}\nif (score == 3){\n   mortality = 0.4;\n}\nif (score == 4){\n   mortality = 0.4;\n}\nif (score == 5){\n   mortality = 0.5;\n}\nif (score == 6){\n   mortality = 0.5;\n}\nif (score == 7){\n   mortality = 0.6;\n}\nif (score == 8){\n   mortality = 0.6;\n}\nif (score == 9){\n   mortality = 0.7;\n}\nif (score == 10){\n   mortality = 0.7;\n}\nif (score == 11){\n   mortality = 0.8;\n}\nif (score == 12){\n   mortality = 0.9;\n}\nif (score == 13){\n   mortality = 0.9;\n}\nif (score == 14){\n   mortality = 1.0;\n}\nif (score == 15){\n   mortality = 1.1;\n}\nif (score == 16){\n   mortality = 1.2;\n}\nif (score == 17){\n   mortality = 1.3;\n}\nif (score == 18){\n   mortality = 1.4;\n}\nif (score == 19){\n   mortality = 1.5;\n}\nif (score == 20){\n   mortality = 1.6;\n}\nif (score == 21){\n   mortality = 1.7;\n}\nif (score == 22){\n   mortality = 1.9;\n}\nif (score == 23){\n   mortality = 2.0;\n}\nif (score == 24){\n   mortality = 2.1;\n}\nif (score == 25){\n   mortality = 2.3;\n}\nif (score == 26){\n   mortality = 2.5;\n}\nif (score == 27){\n   mortality = 2.7;\n}\nif (score == 28){\n   mortality = 2.9;\n}\nif (score == 29){\n   mortality = 3.1;\n}\nif (score == 30){\n   mortality = 3.3;\n}\nif (score == 31){\n   mortality = 3.5;\n}\nif (score == 32){\n   mortality = 3.8;\n}\nif (score == 33){\n   mortality = 4.1;\n}\nif (score == 34){\n   mortality = 4.3;\n}\nif (score == 35){\n   mortality = 4.6;\n}\nif (score == 36){\n   mortality = 5.0;\n}\nif (score == 37){\n   mortality = 5.3;\n}\nif (score == 38){\n   mortality = 5.7;\n}\nif (score == 39){\n   mortality = 6.0;\n}\nif (score == 40){\n   mortality = 6.4;\n}\nif (score == 41){\n   mortality = 6.8;\n}\nif (score == 42){\n   mortality = 7.3;\n}\nif (score == 43){\n   mortality = 7.8;\n}\nif (score == 44){\n   mortality = 8.2;\n}\nif (score == 45){\n   mortality = 8.8;\n}\nif (score == 46){\n   mortality = 9.3;\n}\nif (score == 47){\n   mortality = 9.9;\n}\nif (score == 48){\n   mortality = 10.4;\n}\nif (score == 49){\n   mortality = 11.1;\n}\nif (score == 50){\n   mortality = 11.7;\n}\nif (score == 51){\n   mortality = 12.4;\n}\nif (score == 52){\n   mortality = 13.1;\n}\nif (score == 53){\n   mortality = 13.8;\n}\nif (score == 54){\n   mortality = 14.6;\n}\nif (score == 55){\n   mortality = 15.4;\n}\nif (score == 56){\n   mortality = 16.2;\n}\nif (score == 57){\n   mortality = 17.1;\n}\nif (score == 58){\n   mortality = 17.9;\n}\nif (score == 59){\n   mortality = 18.9;\n}\nif (score == 60){\n   mortality = 19.8;\n}\nif (score == 61){\n   mortality = 20.8;\n}\nif (score == 62){\n   mortality = 21.8;\n}\nif (score == 63){\n   mortality = 22.9;\n}\nif (score == 64){\n   mortality = 24.0;\n}\nif (score == 65){\n   mortality = 25.1;\n}\nif (score == 66){\n   mortality = 26.2;\n}\nif (score == 67){\n   mortality = 27.4;\n}\nif (score == 68){\n   mortality = 28.6;\n}\nif (score == 69){\n   mortality = 29.8;\n}\nif (score == 70){\n   mortality = 31.1;\n}\nif (score == 71){\n   mortality = 32.4;\n}\nif (score == 72){\n   mortality = 33.7;\n}\nif (score == 73){\n   mortality = 35.0;\n}\nif (score == 74){\n   mortality = 36.4;\n}\nif (score == 75){\n   mortality = 37.8;\n}\nif (score == 76){\n   mortality = 39.2;\n}\nif (score == 77){\n   mortality = 40.6;\n}\nif (score == 78){\n   mortality = 42.1;\n}\nif (score == 79){\n   mortality = 43.5;\n}\nif (score == 80){\n   mortality = 45.0;\n}\nif (score == 81){\n   mortality = 46.5;\n}\nif (score == 82){\n   mortality = 48.0;\n}\nif (score == 83){\n   mortality = 49.5;\n}\nif (score == 84){\n   mortality = 51.0;\n}\nif (score == 85){\n   mortality = 52.5;\n}\nif (score == 86){\n   mortality = 54.0;\n}\nif (score == 87){\n   mortality = 55.6;\n}\nif (score == 88){\n   mortality = 57.1;\n}\nif (score == 89){\n   mortality = 58.6;\n}\nif (score == 90){\n   mortality = 60.1;\n}\nif (score == 91){\n   mortality = 61.6;\n}\nif (score == 92){\n   mortality = 63.1;\n}\nif (score == 93){\n   mortality = 64.6;\n}\nif (score == 94){\n   mortality = 66.0;\n}\nif (score == 95){\n   mortality = 67.4;\n}\nif (score == 96){\n   mortality = 68.9;\n}\nif (score == 97){\n   mortality = 70.3;\n}\nif (score == 98){\n   mortality = 71.6;\n}\nif (score == 99){\n   mortality = 73.0;\n}\nif (score == 100){\n   mortality = 74.3;\n}\nif (score == 101){\n   mortality = 75.6;\n}\nif (score == 102){\n   mortality = 76.8;\n}\nif (score == 103){\n   mortality = 78.1;\n}\nif (score == 104){\n   mortality = 79.3;\n}\nif (score == 105){\n   mortality = 80.4;\n}\nif (score == 106){\n   mortality = 81.5;\n}\nif (score == 107){\n   mortality = 82.6;\n}\nif (score == 108){\n   mortality = 83.7;\n}\nif (score == 109){\n   mortality = 84.7;\n}\nif (score == 110){\n   mortality = 85.7;\n}\nif (score == 111){\n   mortality = 86.6;\n}\nif (score == 112){\n   mortality = 87.5;\n}\nif (score == 113){\n   mortality = 88.3;\n}\nif (score == 114){\n   mortality = 89.2;\n}\nif (score == 115){\n   mortality = 89.9;\n}\nif (score == 116){\n   mortality = 90.7;\n}\nif (score == 117){\n   mortality = 91.4;\n}\nif (score == 118){\n   mortality = 92.0;\n}\nif (score == 119){\n   mortality = 92.7;\n}\nif (score == 120){\n   mortality = 93.2;\n}\nif (score == 121){\n   mortality = 93.8;\n}\nif (score == 122){\n   mortality = 94.3;\n}\nif (score == 123){\n   mortality = 94.8;\n}\nif (score == 124){\n   mortality = 95.3;\n}\nif (score == 125){\n   mortality = 95.7;\n}\nif (score == 126){\n   mortality = 96.1;\n}\nif (score == 127){\n   mortality = 96.5;\n}\nif (score == 128){\n   mortality = 96.8;\n}\nif (score == 129){\n   mortality = 97.1;\n}\nif (score == 130){\n   mortality = 97.4;\n}\nif (score == 131){\n   mortality = 97.7;\n}\nif (score == 132){\n   mortality = 97.9;\n}\nif (score == 133){\n   mortality = 98.1;\n}\nif (score == 134){\n   mortality = 98.3;\n}\nif (score == 135){\n   mortality = 98.5;\n}\nif (score <= 135) {\n  calc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: mortality + '% predicted all-cause 5-year mortality'\n});\n  \ncalc_output.push({\n    name: 'VACS',\n    value: score,\n    value_text: 'points',\n    message: mortality + '% predicted all-cause 5-year mortality'\n});\n\n}\n\nif (score > 135) {\n  calc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: \">\" + mortality + '% predicted all-cause 5-year mortality'\n});\n  \ncalc_output.push({\n    name: 'VACS',\n    value: score,\n    value_text: 'points',\n    message: \">\" + mortality + '% predicted all-cause 5-year mortality'\n});\n\n}\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>BMI</p>",
+                "name": "bmi",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bmi_vacs2"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>CD4 count</p>",
+                "name": "cd4",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cd4_vacs2"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><calculator id=\"3939\">Estimated glomerular filtration rate</calculator></p>",
+                "name": "egfr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "gfr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>HIV-1 RNA</p>",
+                "name": "hiv",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hiv_rna"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Hemoglobin</p>",
+                "name": "hemoglobin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hemoglobin"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><abbr title=\"Alanine transaminase\">ALT</abbr></p>",
+                "name": "alt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ALT"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><abbr title=\"Aspartate aminotransferase\">AST</abbr></p>",
+                "name": "ast",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "AST"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Platelet count</p>",
+                "name": "platelet",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><abbr title=\"White blood cell\">WBC</abbr> count</p>",
+                "name": "wbc",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wbc"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Albumin</p>",
+                "name": "alb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Hepatitis C co-infection</p>",
+                "name": "hcv",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Veterans Aging Cohort Study (VACS) 2.0 Index, vacs, vacs 2, vacs 2.0, stroke, tia, hiv, Veterans Aging Cohort Study index, vacs score, vacs index, vacs 2 score, vacs 2 index, veterans aging index, veterans hiv index, veterans aging index 2, veterans hiv index 2, va hiv, hiv mortality"
+        ],
+        "specialty": [
+            "Infectious Disease",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

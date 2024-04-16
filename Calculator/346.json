@@ -1,0 +1,154 @@
+{
+    "id": "346",
+    "title": "ATRIA Bleeding Risk Score",
+    "desc": "The ATRIA bleeding score Determines bleeding risk in patients on warfarin for atrial fibrillation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://content.onlinejacc.org/article.aspx?articleid=1146658",
+                "text": "Fang MC, Go AS, Chang Y, et al. A New Risk Scheme to Predict Warfarin-Associated Hemorrhage: The ATRIA (Anticoagulation and Risk Factors in Atrial Fibrillation) Study. J Am Coll Cardiol. 2011;58(4):395-401. doi:10.1016/j.jacc.2011.03.031."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<th>Risk Factor</th>\n<th>Point Value</th>\n</tr>\n<tr>\n<td>Anemia</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>Severe Renal Disease/Dialysis</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>Age &ge;75</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Prior Hemorrhage</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Hypertension</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<div class=\"table-responsive\"></div>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding",
+            "Palpitations"
+        ],
+        "disease_treated": [
+            "Arrhythmia",
+            "Atrial Fibrillation",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output=[]; \nvar output_score=parseInt(anemia)+parseInt(severe_renal_disease)+parseInt(age_75)+parseInt(prior_hemorrhage_diagnosis)+parseInt(hypertension);\nvar msg,recs,mini_msg; \nif(output_score<4){msg='Low Risk (<4 Points), 0.76% Annual Risk of Hemorrhage.';recs='Reasonable to start warfarin.';mini_msg='Low Risk';} if(output_score==4){msg='Intermediate Risk (4 Points), 2.6% Annual Risk of Hemorrhage.';recs='Alternatives to warfarin therapy can be considered.';mini_msg='Intermediate Risk';} if(output_score>4){msg='High Risk (>4 Points), 5.8% Annual Risk of Hemorrhage.';recs='Alternatives to warfarin should be strongly considered.';mini_msg='High Risk';} msg=msg+' '+recs; \n\ncalc_output.push({\n    name:'mini',\n    value:output_score,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1718_ATRIA Bleeding Risk_result',\n    value:output_score,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anemia",
+                "md_calc_info_concept": null,
+                "name": "anemia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Hemoglobin <13 g/dL (Male), <12 g/dL (Female)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Severe Renal Disease",
+                "md_calc_info_concept": null,
+                "name": "severe_renal_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Glomerular filtration rate <30 mL/min or dialysis-dependent",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥ 75 years",
+                "md_calc_info_concept": null,
+                "name": "age_75",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Any Prior Hemorrhage Diagnosis",
+                "md_calc_info_concept": null,
+                "name": "prior_hemorrhage_diagnosis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ex: GI bleed, intracranial hemorrhage",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hypertension History",
+                "md_calc_info_concept": null,
+                "name": "hypertension",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "coumadin",
+            "warfarin",
+            "afib",
+            "stroke risk"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Neurology",
+            "Primary Care"
+        ]
+    }
+}

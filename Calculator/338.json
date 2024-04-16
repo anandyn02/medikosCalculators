@@ -1,0 +1,181 @@
+{
+    "id": "338",
+    "title": "Simplified PESI (Pulmonary Embolism Severity Index)",
+    "desc": "The Simplified PESI (Pulmonary Embolism Severity Index) Predicts 30-day outcome of patients with PE, with fewer criteria than the original PESI.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20696966",
+                "text": "Jiménez D, Aujesky D, Moores L, Gómez V, Lobo JL, Uresandi F, Otero R, Monreal M, Muriel A, Yusen RD; RIETE Investigators. Simplification of the pulmonary embolism severity index for prognostication in patients with acute symptomatic pulmonary embolism. Arch Intern Med. 2010 Aug 9;170(15):1383-9. PubMed PMID:20696966."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23210843",
+                "text": "Zhou X-Y, Ben S-Q, Chen H-L, Ni S-S. The prognostic value of pulmonary embolism severity index in acute pulmonary embolism: a meta-analysis. Respiratory Research. 2012;13(1):111. doi:10.1186/1465-9921-13-111."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"193\"><col width=\"136\"><col width=\"122\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Age, years</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;80</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;80</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">History of cancer</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">History of chronic cardiopulmonary disease</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Heart rate, bpm</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;110</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;110</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Systolic BP, mmHg</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;100</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;100</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">O<sub>2</sub> saturation</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;90%</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;90%</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\" style=\"margin-left: 0pt;\">\n<table style=\"border: none; border-collapse: collapse;\"><colgroup><col width=\"83\"><col width=\"90\"><col width=\"279\"></colgroup>\n<tbody>\n<tr style=\"height: 0pt;\">\n<td>\n<p dir=\"ltr\"><strong>Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Interpretation</strong></p>\n</td>\n</tr>\n<tr style=\"height: 0pt;\">\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">1.1% risk of death, with 1.5% having recurrent thromboembolism or non-fatal bleeding</p>\n</td>\n</tr>\n<tr style=\"height: 0pt;\">\n<td>\n<p dir=\"ltr\">&ge;1 points</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">8.9% risk of death</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>\n<p>From the <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/20696966\" target=\"_blank\" rel=\"noopener\">derivation study</a>:</p>\n<p>&ldquo;This study shows that the simplified PESI successfully predicts 30-day mortality after acute symptomatic PE. Compared with the <calculator id=\"1304\">original PESI</calculator>, the simplified PESI has similar prognostic accuracy. The simplified score had good discrimination and calibration, and an external data set validated the generalizability of its predictive accuracy.&rdquo;</p>\n<p><strong>Note: While the Simplified PESI was applied to a group of patients with data that was collected prospectively, the rule itself has not been validated in a newly-prospective cohort.</strong></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Palpitations",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = [];\nvar mini_msg = '';\nvar msg = '';\nvar u = parseInt(age_80) + parseInt(cancer) + parseInt(cardiopulmonary_disease) + parseInt(heart_rate_110) + parseInt(systolic_blood_pressure_100) + parseInt(o2_saturation_90);\nif (u == 0) { mini_msg = 'Low';\n    msg = '1.1% risk of death in the \\u201cLow\\u201d risk group (0 points), with 1.5% having recurrent thromboembolism or non-fatal bleeding';}\nif (u > 0) { mini_msg = 'High';\n    msg = '8.9% risk of death in the \\u201cHigh\\u201d risk group (>0 points)';}\ncalc_output.push({ \n    name: 'mini', \n    value: mini_msg, \n    value_text: 'risk', \n    message: ' ' \n});\ncalc_output.push({ \n    name: '1247_Simplified PESI_result', \n    value: mini_msg, \n    value_text: 'risk', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age, years",
+                "md_calc_info_concept": null,
+                "name": "age_80",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤80",
+                        "value": 0
+                    },
+                    {
+                        "label": ">80",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of cancer",
+                "md_calc_info_concept": null,
+                "name": "cancer",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of chronic cardiopulmonary disease",
+                "md_calc_info_concept": null,
+                "name": "cardiopulmonary_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Heart rate, bpm",
+                "md_calc_info_concept": null,
+                "name": "heart_rate_110",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<110",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥110",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Systolic BP, mmHg",
+                "md_calc_info_concept": null,
+                "name": "systolic_blood_pressure_100",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥100",
+                        "value": 0
+                    },
+                    {
+                        "label": "<100",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "O₂ saturation",
+                "md_calc_info_concept": null,
+                "name": "o2_saturation_90",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥90%",
+                        "value": 0
+                    },
+                    {
+                        "label": "<90%",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "PE",
+            "pulmonary embolism",
+            "DVT",
+            "spesi"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "id": "203",
+    "title": "Neutrophil-Lymphocyte Ratio (NLR) Calculator",
+    "desc": "The Neutrophil-Lymphocyte Ratio (NLR) Calculator calculates neutrophil-lymphocyte ratio. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/11723675/",
+                "text": "Zahorec R. Ratio of Neutrophil to Lymphocyte Counts--Rapid and Simple Parameter of Systemic Inflammation and Stress in Critically Ill.Bratisl Lek Listy. 2001;102(1):5-14. "
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Neutrophil-lymphocyte ratio (NLR) = (Absolute neutrophil count, cells/&mu;L) / (Absolute lymphocyte count, cells/&mu;L)</p>\n<p>Note: Neutrophil&nbsp;and lymphocyte&nbsp;can also be entered as percentages.</p>",
+        "facts": "<table width=\"*\" height=\"*\">\n<tbody>\n<tr>\n<td><strong>Neutrophil-lymphocyte ratio</strong></td>\n<td><strong>Physiologic stress level</strong></td>\n</tr>\n<tr>\n<td>1-3</td>\n<td>Normal</td>\n</tr>\n<tr>\n<td>4-5</td>\n<td>-</td>\n</tr>\n<tr>\n<td>6-8</td>\n<td>Mild</td>\n</tr>\n<tr>\n<td>9-18</td>\n<td>Moderate</td>\n</tr>\n<tr>\n<td>&gt;18</td>\n<td>Severe</td>\n</tr>\n</tbody>\n</table>\n<p></p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/nlr.png\" width=\"100%\">From&nbsp;<a href=\"https://emcrit.org/pulmcrit/nlr/\" target=\"_blank\" rel=\"noopener\">PulmCrit: Neutrophil-Lymphocyte Ratio (2019)</a>.</p>",
+        "estimation": [
+            {
+                "name": "NLR",
+                "unit": "NLR",
+                "error_min": "0.001",
+                "error_max": "3000",
+                "warn_min": "0.001",
+                "warn_max": "3000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "cells/μL or %",
+                "units_us": "cells/μL or %"
+            }
+        ],
+        "primary_complains": [
+            "Any/All"
+        ],
+        "disease_treated": [
+            "Any/All"
+        ],
+        "logic": "calc_output = [];\nvar neut = parseFloat(neut);\nvar lymph = parseFloat(lymph);\nvar ratio= neut/lymph;\nratio = ratio.toFixed(0);\nvar level;\n\nif (ratio>=0 & ratio<1) {\n  level = '';\n} else if (ratio>=1 & ratio<=3) {\n  level='Normal';\n} else if (ratio>3 & ratio<=5) {\n  level = '';\n} else if (ratio>=6 & ratio<9) {\n  level='Mild'; \n} else if (ratio>=9 & ratio<=18) {\n  level='Moderate';\n} else if (ratio>18) {\n  level='Severe';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: ratio,\n    value_text:'',\n    message:'Neutrophil-Lymphocyte Ratio'\n});\ncalc_output.push({\n    name: '10305_Neutrophil-Lymphocyte Ratio (NLR)_result',\n    value: ratio,\n    value_text:'',\n    message: 'Neutrophil-Lymphocyte Ratio'\n});\nif(ratio==1 || ratio==2 || ratio==3 || ratio >= 6) {\ncalc_output.push({\n    name: '10305_Neutrophil-Lymphocyte Ratio (NLR)_interpretation',\n    value: level,\n    value_text:'',\n    message:'Physiologic stress level'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p><calculator id=\"19\">Absolute or % neutrophil count</calculator></p>",
+                "name": "neut",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "NLR"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p><calculator id=\"2203\">Absolute or % lymphocyte count</calculator></p>",
+                "name": "lymph",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "NLR"
+            }
+        ],
+        "can_search": [
+            "Neutrophil-Lymphocyte Ratio (NLR) Calculator, NLR Calculator, NLR, neutrophil, lymphocyte, neutrophil lymphocyte, neutrophil lymphocyte ratio, NLR ratio"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine"
+        ]
+    }
+}

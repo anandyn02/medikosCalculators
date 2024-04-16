@@ -1,0 +1,99 @@
+{
+    "id": "649",
+    "title": "Hunt & Hess Classification of Subarachnoid Hemorrhage",
+    "desc": "The Hunt & Hess Classification of Subarachnoid Hemorrhage Classifies severity of subarachnoid hemorrhage to predict mortality.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/5635959",
+                "text": "Hunt WE, Hess RM. 'Surgical risk as related to time of intervention in the repair of intracranial aneurysms.' Journal of Neurosurgery 1968 Jan;28(1):14-20."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://stroke.ahajournals.org/content/42/6/1546.full",
+                "text": "Degen LA, Dorhout Mees SM, Algra A, Rinkel GJ. Interobserver variability of grading scales for aneurysmal subarachnoid hemorrhage. Stroke. 2011;42(6):1546-1549."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/5979493",
+                "text": "Hunt WE, Meagher JN, Hess RM. 'Intracranial aneurysm. A nine-year study.' Ohio State Medical Journal 1966 Nov;62(11):1168-71."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16159052",
+                "text": "Rosen DS, Macdonald RL. Subarachnoid Hemorrhage Grading Scales: A Systematic Review. Neurocrit Care. 2005;2:110-118."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6847910",
+                "text": "Lindsay KW, Teasdale GM, Knill-Jones RP. Observer variability in assessing the clinical features of subarachnoid hemorrhage. J Neurosurg. 1983;58:57-62."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19501022",
+                "text": "Nieuwkamp DJ, Setz LE, Algra A, Linn FH, de Rooij NK, Rinkel GJ. Changes in case fatality of aneurysmal subarachnoid haemorrhage over time, according to age, sex, and region: a meta-analysis. Lancet Neurol. 2009 Jul;8(7):635-42."
+            }
+        ],
+        "evidence": "<p>Selection of group of symptoms, assigned point value.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Value</th>\n<th>Grade</th>\n<th>Mortality</th>\n</tr>\n<tr>\n<td>Mild Headache, Alert and Oriented, Minimal (if any) Nuchal Rigidity</td>\n<td>1</td>\n<td>I</td>\n<td>30%</td>\n</tr>\n<tr>\n<td>Full Nuchal Rigidity, Moderate-Severe Headache, Alert and Oriented, No Neuro Deficit (Besides CN Palsy)</td>\n<td>2</td>\n<td>II</td>\n<td>40%</td>\n</tr>\n<tr>\n<td>Lethargy or Confusion, Mild Focal Neurological Deficits</td>\n<td>3</td>\n<td>III</td>\n<td>50%</td>\n</tr>\n<tr>\n<td>Stuporous, More Severe Focal Deficit</td>\n<td>4</td>\n<td>IV</td>\n<td>80%</td>\n</tr>\n<tr>\n<td>Comatose, showing signs of severe neurological impairment (ex: posturing)</td>\n<td>5</td>\n<td>V</td>\n<td>90%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Headache"
+        ],
+        "disease_treated": [
+            "Intracranial Hemorrhage",
+            "Stroke/TIA",
+            "Subarachnoid Hemorrhage"
+        ],
+        "logic": "var calc_output=[]; \nvar u=signs_symptoms; \nvar msg=''; \nvar mini_msg=''; \n\nif(u==1){\n    msg='Patients with Grade I have an approximate 30% mortality.';\n    mini_msg='Grade I'} \nelse if(u==2){\n    msg='Patients with Grade II have an approximate 40% mortality.';\n    mini_msg='Grade II'\n} else if(u==3){\n    msg='Patients with Grade III have an approximate 50% mortality.';\n    mini_msg='Grade III'\n} else if(u==4){\n    msg='Patients with Grade IV have an approximate 80% mortality.';\n    mini_msg='Grade IV'\n} else if(u==5){\n    msg='Patients with Grade V have an approximate 90% mortality.';\n    mini_msg='Grade V'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'404_Hunt & Hess Classification_result',\n    value:u,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Signs/Symptoms",
+                "mdcalc_info_concept": null,
+                "name": "signs_symptoms",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Mild Headache, Alert and Oriented, Minimal (if any) Nuchal Rigidity",
+                        "value": 1
+                    },
+                    {
+                        "label": "Full Nuchal Rigidity, Moderate-Severe Headache, Alert and Oriented, No Neuro Deficit (Besides CN Palsy)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Lethargy or Confusion, Mild Focal Neurological Deficits",
+                        "value": 3
+                    },
+                    {
+                        "label": "Stuporous, More Severe Focal Deficit",
+                        "value": 4
+                    },
+                    {
+                        "label": "Comatose, showing signs of severe neurological impairment (ex: posturing)",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "intracranial bleed",
+            "ich",
+            "hunt and hess",
+            "sah"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Surgery (General)"
+        ]
+    }
+}

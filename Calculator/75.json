@@ -1,0 +1,157 @@
+{
+    "id": "75",
+    "title": "Subaxial Injury Classification and Severity Scale (SLICS)",
+    "desc": "The Subaxial Injury Classification (SLIC) and Severity Score classifies the severity of subaxial cervical spine injury.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://thejns.org/doi/full/10.3171/FOC.2008.25.11.E8 ",
+                "text": "Patel AA, Dailey A, Brodke DS, et al. Subaxial cervical spine trauma classification: the Subaxial Injury Classification system and case examples. Neurosurg Focus. 2008;25(5):E8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\"><span><span><br /></span></span>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"128\" /><col width=\"239\" /><col width=\"82\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Characteristic</p>\n</td>\n<td>\n<p dir=\"ltr\">Points</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Morphology</p>\n</td>\n<td>\n<p dir=\"ltr\">No abnormality</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Compression</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Burst</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Distraction (e.g. facet perch, hyperextension)</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Rotation/translation (e.g. facet dislocation, unstable teardrop or advance-stage flexion compression injury)</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Discoligamentous complex (DLC)*</p>\n</td>\n<td>\n<p dir=\"ltr\">Intact</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Intermediate (e.g. isolated interspinous widening, MRI signal changes only)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Disrupted (e.g. widening of the disk space, facet perch or dislocation, kyphotic deformity)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Neurological status**</p>\n</td>\n<td>\n<p dir=\"ltr\">Intact</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Root injury</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Complete cord injury</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Incomplete cord injury</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Continuous cord compression (signal change within cord on MRI) in setting of neuro deficit</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*As seen on x-ray or MRI.</p>\n<p>**By physical exam.</p>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"98\" /><col width=\"350\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>SLICS Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;4</p>\n</td>\n<td>\n<p dir=\"ltr\">Non-operative treatment</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">Non-operative or operative treatment</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;5</p>\n</td>\n<td>\n<p dir=\"ltr\">Operative treatment*</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>\n<p dir=\"ltr\">*May consist of realignment, neurological decompression (if indicated), and stabilization.</p>\n<p><span style=\"font-size: 10pt; font-family: Arial; color: #0000ff; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;\">&nbsp;</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dizziness",
+            "Neurologic Deficit",
+            "Injury/Trauma",
+            "Neck Pain"
+        ],
+        "disease_treated": [
+            "Acute Pain",
+            "Fracture",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar morph = parseFloat(morph);\nvar dis = parseFloat(dis);\nvar neuro = parseFloat(neuro);\n\nif (neuro > 0) {\n  var cord = parseFloat(cord);\n}\nelse {\n  var cord = 0\n  }\n\nvar score = morph + dis + neuro + cord; \n\nvar recommend;\n\nif (score < 4) {\n\trecommend = 'Non-op';\n}\nelse if (score == 4) {\n\trecommend = 'Non-op or operative';\n}\nelse {\n\trecommend = 'Operative';\n}\n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: recommend + ' treatment'\n    });\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'SLICS Score'\n    });\n\nif (score >= 5) {\n\tcalc_output.push({\n    \tname: 'recommend',\n    \tvalue: recommend,\n    \tvalue_text: 'treatment',\n    \tmessage: 'May consist of realignment, neurological decompression (if indicated), and stabilization'\n    });\n}\nelse {\n  calc_output.push({\n    name: 'recommend',\n    value: recommend,\n    value_text: 'treatment',\n    message: ''\n    });\n}\n\n  \n  ",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Morphology",
+                "name": "morph",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No abnormality ",
+                        "value": 0
+                    },
+                    {
+                        "label": "Compression",
+                        "value": 1
+                    },
+                    {
+                        "label": "Burst",
+                        "value": 2
+                    },
+                    {
+                        "label": "Distraction (e.g. facet perch, hyperextension)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Rotation/translation (e.g. facet dislocation, unstable teardrop or advance-stage flexion compression injury) ",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Discoligamentous complex (DLC)",
+                "name": "dis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Intact",
+                        "value": 0
+                    },
+                    {
+                        "label": "Indeterminate (e.g. isolated interspinous widening, MRI signal changes only)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Disrupted (e.g. widening of the disk space, facet perch or dislocation, kyphotic deformity) ",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "As seen on x-ray or MRI",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Neurological status",
+                "name": "neuro",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Intact",
+                        "value": 0
+                    },
+                    {
+                        "label": "Root injury",
+                        "value": 1
+                    },
+                    {
+                        "label": "Complete cord injury",
+                        "value": 2
+                    },
+                    {
+                        "label": "Incomplete cord injury",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "By physical exam",
+                "type": "radio"
+            },
+            {
+                "conditionality": "neuro > 0",
+                "label_en": "Continuous cord compression (signal change within cord on MRI) in setting of neuro deficit",
+                "name": "cord",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "SLIC",
+            "subaxial injury",
+            "SLIC score",
+            "subaxial severity score",
+            "cervical spine trauma score",
+            "cervical spine injury ",
+            "SLIC score"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Orthopedics",
+            "Surgery (Trauma)"
+        ]
+    }
+}

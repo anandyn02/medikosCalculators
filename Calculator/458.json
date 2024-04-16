@@ -1,0 +1,77 @@
+{
+    "id": "458",
+    "title": "PEDOCS Score for Pediatric Emergency Department Overcrowding",
+    "desc": "The Pediatric Emergency Department Overcrowding Scale (PEDOCS) estimates severity of overcrowding in pediatric emergency departments.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17876254",
+                "text": "Weiss SJ, Ernst AA, Sills MR, Quinn BJ, Johnson A, Nick TG. Development of a novel measure of overcrowding in a pediatric emergency department. Pediatr Emerg Care. 2007 Sep;23(9):641-5."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Pediatric ED Overcrowding Scale (<span class=\"il\">PEDOCS</span>)= 33.3 * [0.11 + 0.07 * (patients in the waiting room)+ 0.04 * (total registered patients)]</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Level</th>\n<th>Score</th>\n<th>Interpretation</th>\n</tr>\n<tr>\n<td>Level 1</td>\n<td>1-20</td>\n<td>Not busy</td>\n</tr>\n<tr>\n<td>Level 2</td>\n<td>21-60</td>\n<td>Busy</td>\n</tr>\n<tr>\n<td>Level 3</td>\n<td>61-100</td>\n<td>Extremely busy but not overcrowded</td>\n</tr>\n<tr>\n<td>Level 4</td>\n<td>101-140</td>\n<td>Overcrowded</td>\n</tr>\n<tr>\n<td>Level 5</td>\n<td>141-180</td>\n<td>Severely overcrowded</td>\n</tr>\n<tr>\n<td>Level 6</td>\n<td>181-200</td>\n<td>Dangerously overcrowded</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "Patients",
+                "unit": "patients",
+                "error_min": "-1",
+                "error_max": "500",
+                "warn_min": "1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "patients",
+                "units_us": "patients"
+            }
+        ],
+        "primary_complains": [
+            "Any/All"
+        ],
+        "disease_treated": [
+            "Public Health"
+        ],
+        "logic": "var calc_output = [];\n\nvar msg = '';\nvar level = '';\nvar value = 33.3 * (0.11 + (0.07 * parseFloat(waitingpts)) + (0.04 * parseFloat(totalpts)));\nvar gtot = value;\nif (gtot < 21) {\n    level = 'Level 1';\n    msg = 'Not Busy';\n}\nif (gtot > 20 && gtot < 61) {\n    level = 'Level 2';\n    msg = 'Busy';\n}\nif (gtot > 60 && gtot < 101) {\n    level = 'Level 3';\n    msg = 'Extremely busy but not overcrowded';\n}\nif (gtot > 100 && gtot < 141) {\n    level = 'Level 4';\n    msg = 'Overcrowded';\n}\nif (gtot > 140 && gtot < 181) {\n    level = 'Level 5';\n    msg = 'Severely overcrowded';\n}\nif (gtot > 180) {\n    level = 'Level 6';\n    msg = 'Dangerously overcrowded';\n}\n\n calc_output.push({\n     name: 'mini',\n     value: level,\n     value_text: '('+gtot.toFixed(0)+')',\n     message: msg\n });\n calc_output.push({\n     name: '3144_PEDOCS_result',\n     value: level,\n     value_text: '('+gtot.toFixed(0)+')',\n     message: msg\n });",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Total patients registered",
+                "name": "totalpts",
+                "optional": false,
+                "tips_en": "In ED and in waiting room",
+                "type": "textbox",
+                "unit": "patients"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of patients in waiting room",
+                "name": "waitingpts",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "patients"
+            }
+        ],
+        "can_search": [
+            "DOCS",
+            "emergency",
+            "overcrowding",
+            "crowded"
+        ],
+        "specialty": [
+            "Administration",
+            "Emergency Medicine",
+            "Pediatrics"
+        ]
+    }
+}

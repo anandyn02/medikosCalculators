@@ -1,0 +1,189 @@
+{
+    "id": "315",
+    "title": "RibScore",
+    "desc": "The RibScore predicts adverse pulmonary outcomes from rib fractures.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/26683395/",
+                "text": "Chapman BC, Herbert B, Rodil M, et al. RibScore: A novel radiographic score based on fracture pattern that predicts pneumonia, respiratory failure, and tracheostomy. J Trauma Acute Care Surg. 2016;80(1):95-101."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31047683/",
+                "text": "Martin TJ, Eltorai AS, Dunn R, et al. Clinical management of rib fractures and methods for prevention of pulmonary complications: A review. Injury. 2019;50(6):1159-1165."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>The RibScore is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100.121%;\"><colgroup><col style=\"width: 48.0612%;\"><col style=\"width: 28.0257%;\"><col style=\"width: 23.913%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>&ge;6 fractures</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Bilateral fractures</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Flail chest</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>&ge;3 severely (bicortical) displaced fractures</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>First rib fracture</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>&ge;1 fracture in all three anatomic areas (anterior, lateral, and posterior)</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p>A RibScore of &ge;4 corresponds to greater risk of pneumonia, respiratory failure, and tracheostomy.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding",
+            "Chest Pain",
+            "Cough",
+            "Shortness of Breath",
+            "Swelling",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Fracture",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar n_fractures = parseFloat(n_fractures);\nvar bilat = parseFloat(bilat);\nvar flail = parseFloat(flail);\nvar displaced = parseFloat(displaced);\nvar first = parseFloat(first);\nvar anatomic = parseFloat(anatomic);\n\nvar score = n_fractures + bilat + flail + displaced + first + anatomic;\n\nvar msg = 'A RibScore of ≥4 corresponds to greater risk of pneumonia, respiratory failure, and tracheostomy.';\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'RibScore<br/><br/>' + msg\n});\ncalc_output.push({\n    name: '10485_RibScore_result',\n    value: score,\n    value_text: 'points',\n    message: 'RibScore<br/><br/>' + msg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>&ge;6 fractures</p>",
+                "mdcalc_info_concept": null,
+                "name": "n_fractures",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Bilateral fractures</p>",
+                "mdcalc_info_concept": null,
+                "name": "bilat",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Flail chest</p>",
+                "mdcalc_info_concept": null,
+                "name": "flail",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>&ge;3 severely (bicortical) displaced fractures</p>",
+                "mdcalc_info_concept": null,
+                "name": "displaced",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>First rib fracture</p>",
+                "mdcalc_info_concept": null,
+                "name": "first",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>&ge;1 fracture in all three anatomic areas (anterior, lateral, and posterior)</p>",
+                "mdcalc_info_concept": null,
+                "name": "anatomic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "RibScore",
+            "rib score",
+            "rib fracture",
+            "fracture",
+            "bone fracture",
+            "fracture severity",
+            "trauma",
+            "ribs"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

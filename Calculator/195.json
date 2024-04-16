@@ -1,0 +1,199 @@
+{
+    "id": "195",
+    "title": "CAHP (Cardiac Arrest Hospital Prognosis) Score",
+    "desc": "The CAHP (Cardiac Arrest Hospital Prognosis) Score predicts poor prognosis after out-of-hospital cardiac arrest.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26497161",
+                "text": "Maupain C, Bougouin W, Lamhaut L, et al. The CAHP (Cardiac Arrest Hospital Prognosis) score: a tool for risk stratification after out-of-hospital cardiac arrest. Eur Heart J. 2016;37(42):3222-3228."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.sciencedirect.com/science/article/abs/pii/S0300957216305895",
+                "text": "Debaty G, Babaz V, Durand M, et al. Prognostic factors for extracorporeal cardiopulmonary resuscitation recipients following out-of-hospital refractory cardiac arrest. A systematic review and meta-analysis. Resuscitation. 2017;112:1-10."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/30391369 ",
+                "text": "Isenschmid C, Luescher T, Rasiah R, et al. Performance of clinical risk scores to predict mortality and neurological outcome in cardiac arrest patients. Resuscitation. 2019;136:21-29."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table width=\"377\" height=\"287\">\n<tbody>\n<tr>\n<td>\n<p><strong>Variable</strong></p>\n</td>\n<td><strong></strong></td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td>\n<p>Age, years</p>\n</td>\n<td></td>\n<td>1.1 x (Age - 10)</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Setting</td>\n<td>Public setting</td>\n<td>\n<p>0&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td>Home</td>\n<td>\n<p>24</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Initial Rhythm</td>\n<td>Shockable</td>\n<td>\n<p>0</p>\n<p></p>\n</td>\n</tr>\n<tr>\n<td>Non-shockable</td>\n<td>\n<p>27</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Duration from collapse to CPR begun, min</p>\n</td>\n<td>2.8 x Duration</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Duration from CPR to <abbr title=\"Return of spontaneous circulation\">ROSC</abbr>, min</p>\n</td>\n<td>0.8 x Duration</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Admission pH</p>\n</td>\n<td>585 - (77 x pH)</td>\n</tr>\n<tr>\n<td rowspan=\"3\">Total Epinephrine given, mg</td>\n<td>0</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>1-2</td>\n<td>\n<p>27</p>\n</td>\n</tr>\n<tr>\n<td>&ge;3</td>\n<td>\n<p>43</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>From <a href=\"https://www.sciencedirect.com/science/article/pii/S1936879817319453?via%3Dihub#appsec1\" target=\"_blank\" rel=\"noopener\">Bougoin 2018</a>.</p>",
+        "facts": "<p>Interpretation:</p>\n<table width=\"628\" height=\"177\">\n<tbody>\n<tr>\n<td><strong>CAHP Score</strong></td>\n<td><strong>Risk&nbsp;</strong><b>of poor outcome</b></td>\n<td><strong>Risk of poor neurological outcome*</strong></td>\n</tr>\n<tr>\n<td>&lt;150</td>\n<td>Low</td>\n<td>39%</td>\n</tr>\n<tr>\n<td>150-200</td>\n<td>Moderate</td>\n<td>81%</td>\n</tr>\n<tr>\n<td>&gt;200</td>\n<td>High</td>\n<td>100%</td>\n</tr>\n</tbody>\n</table>\n<p>*Defined as Cerebral Performance Category of 3 (severe disability), 4 (vegetative state), and 5 (death) at hospital discharge.</p>",
+        "estimation": [
+            {
+                "name": "years",
+                "unit": "time_years",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "minutes",
+                "unit": "min",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "min",
+                "units_us": "min"
+            },
+            {
+                "name": "pH",
+                "unit": "ph",
+                "error_min": "6.2",
+                "error_max": "8.5",
+                "warn_min": "7",
+                "warn_max": "7.6",
+                "conversion": "1",
+                "normal_max_si": "7.44",
+                "normal_max_us": "7.44",
+                "normal_min_si": "7.38",
+                "normal_min_us": "7.38",
+                "units_si": "",
+                "units_us": ""
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath",
+            "Syncope",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Heart Failure",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\n\nvar one=(parseFloat(age)-10)*1.1;\nvar two=parseFloat(setting);\nvar three=parseFloat(shockable);\nvar four=parseFloat(collapse)*2.8;\nvar five=parseFloat(rosc)*0.8;\nvar six=585-(77*ph);\nvar seven=parseFloat(epi);\nvar total= one+two+three+four+five+six+seven;\nvar tot=total.toFixed(0);\nvar diag;\nvar msg;\nvar minimsg;\nvar msg2;\nvar minimsg2;\n\nif(tot<150) {\n  \trisk='Low';\n  \tpercent='39';\n}\n\nif(tot>200) {\n  \trisk='High';\n  \tpercent='100';\n}\n\nif(tot>=150&&tot<=200) {\n  \trisk='Moderate';\n  \tpercent='81';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: tot,\n    value_text: 'points',\n    message: risk + ' risk',\n});\ncalc_output.push({\n    name: 'tot',\n    value: tot,\n    value_text: 'points',\n    message: 'CAHP Score',\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk, \n    value_text: 'risk',\n    message: 'Risk of poor outcome',\n});\n  calc_output.push({\n    name: 'percent',\n    value: percent,\n    value_text: '%',\n    message:'Poor neurological outcome',\n});\n\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "time_years"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Setting",
+                "name": "setting",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Public setting",
+                        "value": 0
+                    },
+                    {
+                        "label": "Home ",
+                        "value": 24
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Initial rhythm",
+                "name": "shockable",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Shockable",
+                        "value": 0
+                    },
+                    {
+                        "label": "Non-shockable",
+                        "value": 27
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Duration from collapse to CPR begun",
+                "name": "collapse",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "min"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Duration from CPR to <abbr title=\"Return of spontaneous circulation\">ROSC</abbr>",
+                "name": "rosc",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "min"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Admission pH",
+                "name": "ph",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ph"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Total Epinephrine given, mg",
+                "name": "epi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-2",
+                        "value": 27
+                    },
+                    {
+                        "label": "≥3",
+                        "value": 43
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Cardiac arrest, CAHP (Cardiac Arrest Hospital Prognosis) Score, CAHP Score, out-of-hospital cardiac arrest"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

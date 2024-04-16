@@ -1,0 +1,171 @@
+{
+    "id": "412",
+    "title": "Sokal Index for Chronic Myelogenous Leukemia (CML)",
+    "desc": "The Sokal Index for CML predicts survival of CML based on clinical and lab information.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6584184",
+                "text": "Sokal JE, Cox EB, Baccarani M, Tura S, Gomez GA, Robertson JE et al. Prognostic discrimination in “good-risk” chronic granulocytic leukemia. Blood 1984; 63: 789-99."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23540886 ",
+                "text": "Uz B, Buyukasik Y, Atay H, et al. EUTOS CML prognostic scoring system predicts ELN-based 'event-free survival' better than Euro/Hasford and Sokal systems in CML patients receiving front-line imatinib mesylate. Hematology. 2013;18(5):247-52."
+            },
+            {
+                "href": "https://ashpublications.org/blood/article/120/21/2794/102519/Comparison-of-Sokal-Hasford-and-EUTOS-Scores-in",
+                "text": "Yahng SA, Jang EJ, Choi SY, et al. Comparison of Sokal, Hasford and EUTOS scores in terms of long-term treatment outcome according to the risks in each prognostic model: a single center data analyzed in 255 early chronic phase chronic myeloid leukemia patients treated with frontline imatinib mesylate. Blood 2012;120:Abstract 2794."
+            },
+            {
+                "href": "https://ascopubs.org/doi/full/10.1200/jco.2011.37.6962   \t",
+                "text": "Marin D, Ibrahim AR, Goldman JM. European Treatment and Outcome Study (EUTOS) score for chronic myeloid leukemia still requires more confirmation. J Clin Oncol 2011;29:3944–5. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24450386 ",
+                "text": "Yamamoto E, Fujisawa S, Hagihara M, et al. European Treatment and Outcome Study score does not predict imatinib treatment response and outcome in chronic myeloid leukemia patients. Cancer Sci. 2014;105(1):105-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26416462 ",
+                "text": "Pfirrmann M, Baccarani M, Saussele S, et al. Prognosis of long-term survival considering disease-specific death in patients with chronic myeloid leukemia. Leukemia. 2016;30(1):48-56."
+            }
+        ],
+        "evidence": "<p>Sokal Score = exp([0.0116 &times; (age in years &ndash; 43.4)] + [0.0345 &times; (spleen size in cm &ndash; 7.51)] + [0.188 x ((platelets in 10<sup>9</sup>/L / 700)<sup>2</sup> &ndash; 0.563)] + [0.0887 &times; (blasts in % &ndash; 2.10)])</p>",
+        "facts": "<p>Interpretation:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>Risk Group</strong></p>\n</td>\n<td>\n<p><strong>Sokal Score</strong></p>\n</td>\n<td>\n<p><strong>2-year Survival</strong></p>\n</td>\n<td>\n<p><strong>Median Survival </strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Low</p>\n</td>\n<td>\n<p>&lt;0.8</p>\n</td>\n<td>\n<p>90%</p>\n</td>\n<td>\n<p>5 years</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Intermediate</p>\n</td>\n<td>\n<p>0.8&ndash;1.2</p>\n</td>\n<td>\n<p>65-90%</p>\n</td>\n<td>\n<p>2.5-5 years</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>High</p>\n</td>\n<td>\n<p>&gt;1.2</p>\n</td>\n<td>\n<p>65%</p>\n</td>\n<td>\n<p>2.5 years</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Max distance of spleen from costal margin",
+                "unit": "spleen",
+                "error_min": "0",
+                "error_max": "20",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "0.39370079",
+                "normal_max_si": "5",
+                "normal_max_us": "12.7",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "in",
+                "units_us": "cm"
+            },
+            {
+                "name": "% Myeloblasts",
+                "unit": "myeloblasts",
+                "error_min": "-0.01",
+                "error_max": "100.01",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Platelet Count",
+                "unit": "plt",
+                "error_min": "1",
+                "error_max": "3200",
+                "warn_min": "10",
+                "warn_max": "750",
+                "conversion": "1",
+                "normal_max_si": "350",
+                "normal_max_us": "350",
+                "normal_min_si": "150",
+                "normal_min_us": "150",
+                "units_si": "× 10⁹/L",
+                "units_us": "× 10³/µL"
+            }
+        ],
+        "primary_complains": [
+            "Dizziness",
+            "Lymphadenopathy"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "CML",
+            "Hematologic Malignancy",
+            "Leukemia/Lymphoma"
+        ],
+        "logic": "var calc_output = [];\nvar age = parseFloat(age);\nvar spl = parseFloat(spl);\nvar plt = parseFloat(plt);\nvar blasts = parseFloat(blasts);\nvar two = '';\nvar median = '';\nvar risk = '';\n\nif (UOMSYSTEM == false) {\n  spl = spl*2.54;\n}\n\nvar score = Math.exp((0.0116 * (age - 43.4)) + (0.0345 * (spl - 7.51)) + (0.188 * (Math.pow((plt / 700), 2) - 0.563)) + (0.0887 * (blasts - 2.10)));\n\n\nif (score.toFixed(1) < 0.80) {\n    two = 'Two year survival: 90%';\n    median = 'Median survival: 5 years';\n    risk = 'Low'\n}\nif (score.toFixed(1) >= 0.80 && score.toFixed(1) <= 1.2) {\n    two = 'Two year survival: 65-90%';\n    median = 'Median survival: 2.5-5 years';\n    risk = 'Intermediate'\n}\nif (score.toFixed(1) > 1.2) {\n    two = 'Two year survival: 65%';\n    median = 'Median survival: 2.5 years';\n    risk = 'High'\n}\n\n\ncalc_output.push({\n    name: 'mini',\n    value: score.toFixed(1),\n    value_text: 'points',\n    message: median\n});\ncalc_output.push({\n    name: '2143_Sokal Score_result',\n    value: score.toFixed(1),\n    value_text: 'points',\n    message: 'Sokal Index'\n});\ncalc_output.push({\n    name: '2143_Sokal Score_interpretation',\n    value: risk,\n    value_text: ' risk',\n    message: two + '<br/>' + median\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Spleen size",
+                "name": "spl",
+                "optional": false,
+                "tips_en": "Maximum distance palpable below costal margin",
+                "type": "textbox",
+                "unit": "spleen"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Platelet count",
+                "name": "plt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "% myeloblasts in peripheral blood",
+                "name": "blasts",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "myeloblasts"
+            }
+        ],
+        "can_search": [
+            "cml",
+            "blast",
+            "plt",
+            "platelets"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Palliative Care/Hospice"
+        ]
+    }
+}

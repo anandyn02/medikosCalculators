@@ -1,0 +1,234 @@
+{
+    "id": "191",
+    "title": "Tisdale Risk Score for QT Prolongation",
+    "desc": "The Tisdale Risk Score for QT Prolongation predicts risk of QT prolongation >500 msec in hospitalized patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23716032",
+                "text": "Tisdale JE, Jaynes HA, Kingery JR, et al. Development and validation of a risk score to predict QT interval prolongation in hospitalized patients. Circ Cardiovasc Qual Outcomes. 2013;6(4):479-87."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4696749/",
+                "text": "Tisdale JE, Jaynes HA, Kingery JR, Overholser BR, Mourad NA, Trujillo TN, Kovacs RJ. Effectiveness of a clinical decision support system for reducing the risk of QT interval prolongation in hospitalized patients. Circ Cardiovasc Qual Outcomes 2014;7:381-390."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4860751/",
+                "text": "Tisdale JE. Drug-induced QT interval prolongation and torsades de pointes: Role of the pharmacist in risk assessment, prevention and management. Can Pharm J (Ott). 2016;149(3):139-52."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col><col><col></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Age &ge;68 years</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Sex</p>\n</td>\n<td>\n<p dir=\"ltr\">Male</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Female</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Patient on loop diuretic</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Potassium* &le;3.5 mEq/L</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Admission <calculator id=\"48\">QTc</calculator>** &ge;450 msec</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Being admitted for acute myocardial infarction</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Being admitted for sepsis</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Being admitted for heart failure</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Number of QTc-prolonging drugs given***</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1 QTc-prolonging drug</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;2 QTc-prolonging drugs</p>\n</td>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Potassium should be potassium determined closest to EKG timing.</p>\n<p dir=\"ltr\">**Auto-calculated by EKG.</p>\n<p dir=\"ltr\">***If receiving &ge;2 drugs, patient receives 3 points for 1 QTc-prolonging drug as well as 3 additional points for &ge;2.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col><col><col></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Tisdale Risk Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk for QT prolongation</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;6</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">Always consider that higher risk may develop depending on clinical course and drug interactions and pharmacokinetics.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7-10</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">Consider consultation with pharmacist, adjusting risk factors as much as possible. EKG should be repeated after 5 half-lives of QT-prolonging drugs given to evaluate QTc.&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;11</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">Consider consultation with pharmacist, adjusting risk factors as much as possible, and using alternative medications if possible. EKG should be repeated after 5 half-lives of QT-prolonging drugs given to evaluate QTc.&nbsp;</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-fc5b3494-7fff-f9c8-78e8-017fd502125f\"><span id=\"docs-internal-guid-fc5b3494-7fff-f9c8-78e8-017fd502125f\">&nbsp;</span></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Arrhythmia",
+            "Palpitations"
+        ],
+        "disease_treated": [
+            "Arrhythmia",
+            "Coronavirus",
+            "COVID-19",
+            "Heart Failure"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar sex = parseFloat(sex);\nvar loop = parseFloat(loop);\nvar potassium = parseFloat(potassium);\nvar qtc = parseFloat(qtc);\nvar mi = parseFloat(mi);\nvar sepsis = parseFloat(sepsis);\nvar hf = parseFloat(hf);\nvar drugs = parseFloat(drugs);\n\nscore =  age + sex + loop + potassium + qtc + mi + sepsis + hf + drugs;\nvar risk, msg;\n\nif (score < 7) {\n    risk = 'Low';\n    msg = 'Low risk for QT prolongation; always consider that higher risk may develop depending on clinical course and drug interactions and pharmacokinetics';\n} else if (score >= 7 && score <= 10) {\n    risk = 'Moderate';\n    msg = 'Moderate risk for QT prolongation; consider consultation with pharmacist, adjusting risk factors as much as possible<br/><br/>EKG should be repeated after 5 half-lives of QT prolonging drugs given to evaluate QTc';\n} else if (score > 10) {\n    risk = 'High';\n    msg = 'High risk for QT prolongation; consider consultation with pharmacist, adjusting risk factors as much as possible, and using alternative medications if possible<br/><br/>EKG should be repeated after 5 half-lives of QT prolonging drugs given to evaluate QTc';\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Tisdale Risk Score for QTc'\n});\ncalc_output.push({\n    name: 'Score',\n    value: risk,\n    value_text: 'risk',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Age &ge;68 years</p>",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Patient on loop diuretic</p>",
+                "name": "loop",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Potassium &le;3.5 mEq/L</p>",
+                "name": "potassium",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Potassium should be potassium determined closest to EKG timing",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Admission <calculator id=\"48\">QTc</calculator> &ge;450 msec</p>",
+                "name": "qtc",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Auto-calculated by EKG",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Being admitted for acute myocardial infarction</p>",
+                "name": "mi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Being admitted for sepsis</p>",
+                "name": "sepsis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Being admitted for heart failure</p>",
+                "name": "hf",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Number of QTc-prolonging drugs given</p>",
+                "name": "drugs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "1 QTc-prolonging drug",
+                        "value": 3
+                    },
+                    {
+                        "label": "≥2 QTc-prolonging drugs",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "If receiving ≥2 drugs, patient receives 3 points for 1 QTc-prolonging drug as well as 3 additional points for ≥2",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Qt, qtc, tisdale risk score, tisdale score, qt prolongation, qtc prolongation, Tisdale Score for QTc Prolongation, qt interval prolongation, Drug induced QTc, Drug-associated QTc prolongation, covid-19, covid, covid 19, covid19, coronavirus, tisdale risk score, qt prolongation"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

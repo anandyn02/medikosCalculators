@@ -1,0 +1,196 @@
+{
+    "id": "130",
+    "title": "EVendo Score for Esophageal Varices",
+    "desc": "The EVendo Score for Esophageal Varices predicts presence and size of esophageal varices before endoscopy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.cghjournal.org/article/S1542-3565(19)30072-2/pdf",
+                "text": "Dong T, Kalani A, Aby E, et al. Machine Learning-based Development and Validation of a Scoring System for Screening High Risk Esophageal Varices. Clin Gastroenterol Hepatol. 2019."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">A = (8.5 x INR) + (AST,&nbsp;U/L&nbsp;/ 35)</p>\n<p dir=\"ltr\">B = (Platelet count, x&nbsp;10&sup3;/&micro;L&nbsp;/ 150) + (BUN, mg/dL / 20) + (Hemoglobin, g/dL / 15)</p>\n<p dir=\"ltr\">EVendo Score = (A / B) + 1 (if ascites present)</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<table><colgroup><col width=\"94\" /><col width=\"138\" /><col width=\"216\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>EVendo Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Probability of finding varices*</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;3.90</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;5%**</p>\n</td>\n<td>\n<p dir=\"ltr\">Expectant management</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;3.90</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;5%</p>\n</td>\n<td>\n<p dir=\"ltr\">Endoscopy</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Any esophageal varices or varices needing treatment.</p>\n<p>**95.1% sensitivity, 95.8% NPV.</p>\n<p>From <a href=\"https://www.cghjournal.org/article/S1542-3565(19)30072-2/pdf\" target=\"_blank\">Dong 2019</a>.</p>",
+        "estimation": [
+            {
+                "name": "Hemoglobin",
+                "unit": "hgb",
+                "error_min": "0.5",
+                "error_max": "25",
+                "warn_min": "4",
+                "warn_max": "20",
+                "conversion": "10",
+                "normal_max_si": "170",
+                "normal_max_us": "17",
+                "normal_min_si": "120",
+                "normal_min_us": "12",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Aspartate Aminotransferase",
+                "unit": "AST",
+                "error_min": "1",
+                "error_max": "10000",
+                "warn_min": "4",
+                "warn_max": "4000",
+                "conversion": "1",
+                "normal_max_si": "41",
+                "normal_max_us": "41",
+                "normal_min_si": "15",
+                "normal_min_us": "15",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "BUN",
+                "unit": "bun",
+                "error_min": "1",
+                "error_max": "500",
+                "warn_min": "2",
+                "warn_max": "300",
+                "conversion": "0.357",
+                "normal_max_si": "7.1",
+                "normal_max_us": "20",
+                "normal_min_si": "2.9",
+                "normal_min_us": "8",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "INR",
+                "unit": "inr",
+                "error_min": "0.1",
+                "error_max": "20",
+                "warn_min": "0.5",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "1.2",
+                "normal_max_us": "1.2",
+                "normal_min_si": "0.8",
+                "normal_min_us": "0.8",
+                "units_si": " ",
+                "units_us": " "
+            },
+            {
+                "name": "Platelet Count",
+                "unit": "plt",
+                "error_min": "1",
+                "error_max": "3200",
+                "warn_min": "10",
+                "warn_max": "750",
+                "conversion": "1",
+                "normal_max_si": "350",
+                "normal_max_us": "350",
+                "normal_min_si": "150",
+                "normal_min_us": "150",
+                "units_si": "× 10⁹/L",
+                "units_us": "× 10³/µL"
+            }
+        ],
+        "primary_complains": [
+            "Blood in Stool",
+            "Dizziness",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Cirrhosis",
+            "Hypertension"
+        ],
+        "logic": "var calc_output = [];\nvar bun = parseFloat(bun);\nvar ascites = parseFloat(ascites);\nvar hemo = parseFloat(hemo);\nvar platelet = parseFloat(platelet);\nvar ast = parseFloat(ast);\nvar inr = parseFloat(inr);\n\nif (UOMSYSTEM == false) {\n  hemo = hemo * 0.1;\n  bun = bun * 2.8;\n}\n  \nvar A = (8.5*inr) + (ast / 35);\nvar B = (platelet / 150) + (bun / 20) + (hemo / 15);\nvar score = (A / B) + ascites;\nvar risk1, rec;\n\nscore = score.toFixed(2);\n\nif (score <= 3.90) {\n  risk1 = '<5';\n  rec = 'expectant management';\n} else {\n  risk1 = '≥5';\n  rec = 'endoscopy';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk1 + '% probability of finding varices'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'EVendo Score'   \n    });\ncalc_output.push({\n    name: 'risk1',\n    value: risk1, \n    value_text: '%',\n    message: 'Probability of finding any esophageal varices or varices needing treatment<br/><br/>Recommendation: ' + rec\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<abbr title = \"International normalized ratio\">INR</abbr>",
+                "name": "inr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "inr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<abbr title = \"Aspartate aminotransferase\">AST</abbr>",
+                "name": "ast",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "AST"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Platelet count",
+                "name": "platelet",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<abbr title = \"Blood urea nitrogen\">BUN</abbr>",
+                "name": "bun",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bun"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Hemoglobin",
+                "name": "hemo",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hgb"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ascites",
+                "name": "ascites",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Ev",
+            "endoscopy",
+            "pre-endoscopy",
+            "ev endo",
+            "esophagus",
+            "ev score",
+            "endo"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

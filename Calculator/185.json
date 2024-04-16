@@ -1,0 +1,236 @@
+{
+    "id": "185",
+    "title": "Brescia-COVID Respiratory Severity Scale (BCRSS)/Algorithm",
+    "desc": "The Brescia-COVID Treatment Algorithm is a step-wise approach to COVID-19 treatment and management based on disease severity.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.eahp.eu/sites/default/files/linee_guida_sulla_gestione_terapeutica_e_di_supporto_per_pazienti_con_infezione_da_coronavirus_covid-19.pdf",
+                "text": "Italian Society of Infectious and Tropical Diseases (SIMIT). Guidelines on therapeutic and supportive management for patients with COVID-19 coronavirus infection. 2020."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p><a href=\"https://cdn-web-img.mdcalc.com/content/BRSS_A4-1 2.pdf\" target=\"_blank\" rel=\"noopener\">Brescia-COVID Treatment Algorithm</a>:</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/BRSS_A4-1 2.png\" width=\"100%\"></p>\n<p>*Inclusion criteria for tocilizumab:</p>\n<ol>\n<li>End of the initial phase of high viral load of COVID-19 (e.g. apyretic from &gt;72h and/or elapsed &ge;7 days after the onset of symptoms).</li>\n<li>Worsening of respiratory exchanges, such as to require non-invasive or invasive support from ventilation (Level &ge;3).</li>\n<li>High levels of IL-6 (&gt;40 pg/mL); alternatively high levels of d-dimer, CRP, ferritin, and/or fibrinogen progressively increasing.</li>\n</ol>\n<p></p>\n<p>From <a href=\"https://cdn-web-img.mdcalc.com/content/Vademecum%20for%20the%20treatment%20of%20people%20with%20COVID-19%20disease.pdf\" target=\"_blank\" rel=\"noopener\">Italy's latest SIMIT Guidelines.</a></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Cough",
+            "Dyspnea",
+            "Fever"
+        ],
+        "disease_treated": [
+            "Acute Respiratory Distress Syndrome",
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output = [];\n\nvar criteria1 = parseFloat(criteria1) || 0;\nvar criteria2 = parseFloat(criteria2) || 0;\nvar criteria3 = parseFloat(criteria3) || 0;\nvar criteria4 = parseFloat(criteria4) || 0;\nvar ques1 = parseFloat(ques1) || 0;\nvar question1 = parseFloat(question1) || 0;\nvar question2 = parseFloat(question2) || 0;\nvar question3 = parseFloat(question3) || 0;\nvar question4 = parseFloat(question4) || 0;\n\nvar score = criteria1 + criteria2 + criteria3 + criteria4;\nvar management, med, level;\n\nif (score == 0) {\n\tlevel = '0';\n\tmanagement = 'Keep patient monitored with pulse oximetry and clinical evaluation.';\n\tmed = 'Lopinavir/ritonavir.';\n} else if (score == 1) {\n\tlevel = '1';\n\tmanagement = 'Provide supplemental O<sub>2</sub>. Keep patient monitored with pulse oximetry and clinical evaluation.';\n\tmed = 'Lopinavir/ritonavir.';\n} else if (score == 2) {\n\tlevel = '2';\n\tmanagement = 'Perform CXR and ABG. Provide supplemental O<sub>2</sub>. Keep patient monitored with pulse oximetry and clinical evaluation.';\n\tmed = 'Lopinavir/ritonavir. Consider dexamethasone¹.<br/><br/>¹Consider age/comorbidities, cognitive decline.'; \n} else if (score == 3 || score == 4) {\n\tlevel = '3';\n\tmanagement = 'Trial of non-invasive ventilation (CPAP/BiPAP) or high-flow nasal canula (HFNC) recommended. If above clinical criteria worsening or patient clinically worsening despite this trial, intubation recommended. Otherwise, perform CXR every 2 days and ABG twice a day.';\n\tmed = 'Lopinavir/ritonavir. Consider dexamethasone¹ and consider starting tocilizumab².<br/><br/>¹Consider age/comorbidities, cognitive decline.<br/>²<a href=\"https://www.mdcalc.com/brescia-covid-respiratory-severity-scale-bcrss-algorithm#evidence\" target=\"_blank\">Inclusion criteria</a>.';\n\tif (ques1 == 2) {\n\t\tlevel = '';\n\t\tmanagement = 'Re-select number of criteria present and follow management.';\n\t\tmed = '';\n\t} else if (ques1 == 1) {\n\t\tif (question1 == 0) {\n\t\t\tlevel = '4';\n\t\t\tmanagement = 'Follow ICU protocols; use local ventilator weaning protocol.';\n\t\t\tmed = 'Remdesivir (if not available, lopinavir/ritonavir) PLUS considering dexamethasone¹ and tocilizumab².<br/><br/>¹Consider age/comorbidities, cognitive decline.<br/>²<a href=\"https://www.mdcalc.com/brescia-covid-respiratory-severity-scale-bcrss-algorithm#evidence\" target=\"_blank\">Inclusion criteria</a>.';\n\t\t} else if (question1 == 1) {\n\t\t\tif (question2 == 1) {\n\t\t\t\tif (question3 == 0) {\n\t\t\t\t\tlevel = '6';\n\t\t\t\t\tmanagement = 'Try to minimize sedation (RASS -1 to 0).';\n\t\t\t\t\tmed = 'Remdesivir (if not available, lopinavir/ritonavir) PLUS considering dexamethasone¹ and tocilizumab².<br/><br/>¹Consider age/comorbidities, cognitive decline.<br/>²<a href=\"https://www.mdcalc.com/brescia-covid-respiratory-severity-scale-bcrss-algorithm#evidence\" target=\"_blank\">Inclusion criteria</a>.';\n\t\t\t\t} else if (question3 == 1) {\n\t\t\t\t\tif (question4 == 0) {\n\t\t\t\t\t\tlevel = '7';\n\t\t\t\t\t\tmanagement = 'Perform best <calculator id=\"10289\">PEEP and Compliance calculation</calculator>. Try to suspend NMBA. Optimize volume status.';\n\t\t\t\t\t\tmed = 'Remdesivir (if not available, lopinavir/ritonavir) PLUS considering dexamethasone¹ and tocilizumab².<br/><br/>¹Consider age/comorbidities, cognitive decline.<br/>²<a href=\"https://www.mdcalc.com/brescia-covid-respiratory-severity-scale-bcrss-algorithm#evidence\" target=\"_blank\">Inclusion criteria</a>.';\n\t\t\t\t\t} else if (question4 == 1) {\n\t\t\t\t\t\tlevel = '8';\n\t\t\t\t\t\tmanagement = 'Extreme level of medical complexity given failing other management options; defer to clinician expertise.';\n\t\t\t\t\t\tmed = 'Remdesivir (if not available, lopinavir/ritonavir) PLUS considering dexamethasone¹ and tocilizumab².<br/><br/>¹Consider age/comorbidities, cognitive decline.<br/>²<a href=\"https://www.mdcalc.com/brescia-covid-respiratory-severity-scale-bcrss-algorithm#evidence\" target=\"_blank\">Inclusion criteria</a>.';\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t} else if (question2 == 0) {\n\t\t\t\tlevel = '5';\n\t\t\t\tmanagement = 'Try to minimize sedation (RASS -1 to 0). Perform SBT daily.';\n\t\t\t\tmed = 'Remdesivir (if not available, lopinavir/ritonavir) PLUS considering dexamethasone¹ and tocilizumab².<br/><br/>¹Consider age/comorbidities, cognitive decline.<br/>²<a href=\"https://www.mdcalc.com/brescia-covid-respiratory-severity-scale-bcrss-algorithm#evidence\" target=\"_blank\">Inclusion criteria</a>.';\n\t    \t}\n\t    }\n\t}\n}\n\nvalue = 'Level ' + level;\nmsg = '<strong>Management</strong>: ' + management +'<br/><br/>'+ '<strong>Medications</strong>: ' + med;\n\nif (score > 2 && ques1 == 2) {\n\tvalue = '';\n\tmsg = management;\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: value,\n    value_text: '',\n    message: 'Click for management and medication recs.'\n});\ncalc_output.push({\n    name: 'Score',\n    value: value,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "[Patient has COVID-19 pneumonia or COVID-19 symptoms for ≥7 days]<br/>AND<br/>[Patient is PCR+ OR high suspicion for COVID-19/PCR pending]",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Patient wheezing OR unable to speak in full sentences while at rest/with minimal effort</p>",
+                "name": "criteria1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Respiratory rate &gt;22</p>",
+                "name": "criteria2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>PaO<sub>2</sub> &lt;65 mmHg or SpO<sub>2</sub> &lt;90%</p>",
+                "name": "criteria3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Repeat <abbr title=\"Chest X-ray\">CXR</abbr> is significantly worsening</p>",
+                "name": "criteria4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "When >2 criteria are selected, algorithm recommends escalating to non-invasive ventilation (NIV/CPAP/BiPAP) or high-flow nasal cansula (HFNC), and then reassessing patient criteria",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "(criteria1 + criteria2 + criteria3 + criteria4) > 2",
+                "default": null,
+                "label_en": "<p>Does patient still have &gt;2 criteria despite NIV/HFNC?</p>",
+                "name": "ques1",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 2
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Intubation recommended for worsening symptoms despite NIV/HFNC.<br/><br/>With the patient intubated:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "ques1 == 1",
+                "default": null,
+                "label_en": "<p>Is the intubated patient on <abbr title=\"Continuous mandatory ventilation\">CMV</abbr>?</p>",
+                "name": "question1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "question1==1",
+                "default": null,
+                "label_en": "<p><calculator>PaO</calculator><sub>2</sub><calculator>/FiO</calculator><sub>2</sub><calculator id=\"4062\"></calculator> &lt;150 mmHg</p>",
+                "name": "question2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "question2==1",
+                "default": null,
+                "label_en": "<p>Patient on neuromuscular blockade (NMBA)</p>",
+                "name": "question3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "question3==1",
+                "default": null,
+                "label_en": "<p>Patient prone or on ECMO</p>",
+                "name": "question4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Covid-19, covid, covid 19, coronavirus, bcrss, Brescia-COVID Respiratory Severity Scale, Brescia, covid19, respiratory severity scale, covid-19 severity, covid-19 treatment, covid treatment, covid-19 severity, Brescia-COVID Score, Brescia-COVID Respiratory Severity Score, Brescia-COVID Algorithm, Brescia-COVID Respiratory Severity Algorithm, COVID-19 treatment/management, bcrss"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

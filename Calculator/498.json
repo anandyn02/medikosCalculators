@@ -1,0 +1,214 @@
+{
+    "id": "498",
+    "title": "Neuropathic Pain Scale (NPS)",
+    "desc": "The Neuropathic Pain Scale (NPS) assesses severity of neuropathic pain.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9040716",
+                "text": "Galer BS, Jensen MP. Development and preliminary validation of a pain measure specific to neuropathic pain: the Neuropathic Pain Scale. Neurology. 1997 Feb;48(2):332-8"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16340598",
+                "text": "Jensen MP, et al. The validity of the neuropathic pain scale for assessing diabetic neuropathic pain in a clinical trial. Clin J Pain. 2006 Jan;22(1):97-103"
+            }
+        ],
+        "evidence": "<p>Addition of assigned points.</p>",
+        "facts": "<p>The higher the score, the worse the neuropathic pain. Consider appropriate analgesia.</p>",
+        "estimation": [
+            {
+                "name": "ten",
+                "unit": "ten",
+                "error_min": "0",
+                "error_max": "10",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "10",
+                "normal_max_us": "10",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "",
+                "units_us": ""
+            }
+        ],
+        "primary_complains": [
+            "Chronic Pain"
+        ],
+        "disease_treated": [
+            "Neuropathy",
+            "Trauma"
+        ],
+        "logic": "  var calc_output = [];\n  var u = parseFloat(surface) + parseFloat(deep) + parseFloat(unpleasant) + parseFloat(itch) + parseFloat(sensitive) + parseFloat(cold) + parseFloat(dull) + parseFloat(hot) + parseFloat(sharp) + parseFloat(intense);\n  var mini_msg = 'Higher scores indicate worse neuropathic pain.';\n  var msg = 'The higher the score (maximum 100 points), the worse the neuropathic pain. Consider appropriate analgesia.';\n\nvar time_msg;\n\nif (time == 0) {\n time_msg = 'background pain present all the time, with occasional flare-ups (breakthrough pain)';\n}\nelse if (time == 1) {\n  time_msg = 'single type of pain present all the time'\n}\nelse if (time == 2) {\n  time_msg = 'single type of pain only sometimes present'\n}\n\n  calc_output.push({\n      name: 'mini',\n      value: u.toFixed(1),\n      value_text: \"points\",\n      message: mini_msg\n  });\n  calc_output.push({\n      name: '3626_Neuropathic Pain Scale_result',\n      value: u.toFixed(1),\n      value_text: \"points\",\n      message: msg\n  });\n  calc_output.push({\n      name: '3626_Neuropathic Pain Scale_interpretation',\n      value: '',\n      value_text: '',\n      message: 'Time quality of pain: ' + time_msg\n  });",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "NOTE: Enter 0-10 depending on patient responses.",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "How intense is the pain?",
+                "name": "intense",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ten"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "How sharp is the pain?",
+                "name": "sharp",
+                "optional": false,
+                "tips_en": "‘Like a knife’",
+                "type": "textbox",
+                "unit": "ten"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "How hot is the pain?",
+                "name": "hot",
+                "optional": false,
+                "tips_en": "‘On fire’",
+                "type": "textbox",
+                "unit": "ten"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "How dull is the pain?",
+                "name": "dull",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ten"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "How cold is the pain?",
+                "name": "cold",
+                "optional": false,
+                "tips_en": "‘Freezing’",
+                "type": "textbox",
+                "unit": "ten"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "How sensitive is the skin to light touch?",
+                "name": "sensitive",
+                "optional": false,
+                "tips_en": "‘Raw skin’",
+                "type": "textbox",
+                "unit": "ten"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "How itchy is the pain?",
+                "name": "itch",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ten"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "How unpleasant is the pain?",
+                "name": "unpleasant",
+                "optional": false,
+                "tips_en": "‘Intolerable’",
+                "type": "textbox",
+                "unit": "ten"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "If the pain is deep, how intense is the deep pain?",
+                "name": "deep",
+                "optional": false,
+                "tips_en": "Mark 0 if no deep pain",
+                "type": "textbox",
+                "unit": "ten"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "If the pain is on the surface, how intense is the surface pain?",
+                "name": "surface",
+                "optional": false,
+                "tips_en": "Mark 0 if no surface pain",
+                "type": "textbox",
+                "unit": "ten"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What is the time quality of the pain?",
+                "mdcalc_info_concept": null,
+                "name": "time",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Background pain present all the time, with occasional flare-ups (breakthrough pain)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Single type of pain present all the time",
+                        "value": 1
+                    },
+                    {
+                        "label": "Single type of pain only sometimes present",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "neuropathy",
+            "pain"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Endocrinology",
+            "Geriatrics",
+            "Internal Medicine",
+            "Neurology",
+            "Pain Management",
+            "Primary Care"
+        ]
+    }
+}

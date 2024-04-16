@@ -1,0 +1,169 @@
+{
+    "id": "393",
+    "title": "AUDIT-C for Alcohol Use",
+    "desc": "The AUDIT-C for Alcohol Use identifies at-risk drinkers (i.e., binge drinking) who may not be alcohol-dependent.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://apps.who.int/iris/bitstream/handle/10665/67205/WHO_MSD_MSB_01.6a.pdf;jsessionid=1FAFA3CC325018FC69178F3AF9944665?sequence=1",
+                "text": "Babor TF, Higgins-Biddle JC, Saunders JB and Monteiro M. AUDIT. The Alcohol Use Disorders Identification Test: Guidelines for Use in Primary Care. Geneva: World Health Organization, 2001 (Second Edition)."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9738608",
+                "text": "Bush K, Kivlahan DR, McDonell MB, Fihn SD, Bradley KA. The AUDIT alcohol consumption questions (AUDIT-C): an effective brief screening test for problem drinking. Ambulatory Care Quality Improvement Project (ACQUIP). Alcohol Use Disorders Identification Test. Arch Intern Med. 1998 Sep 14;158(16):1789-95."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7966928",
+                "text": "Kitchens JM. Does this patient have an alcohol problem? JAMA. 1994 Dec 14;272(22):1782-7. PubMed PMID: 7966928."
+            },
+            {
+                "href": "https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm",
+                "text": "Centers for Disease Control and Prevention. Alcohol use and health. 2014."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1530196",
+                "text": "Klatsky AL, Armstrong MA, Friedman GD. Alcohol and mortality. Ann Intern Med. 1992;117:646-654. PubMed PMID:1530196."
+            },
+            {
+                "href": "https://pubs.niaaa.nih.gov/publications/aa65/AA65.htm",
+                "text": "The Physicians' Guide to Helping Patients With Alcohol Problems. Washington, DC US Dept of Health and Human Services, Public Health Service, National Institutes of Health, National Institute on Alcohol Abuse and Alcoholism, 1995."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points.</p>",
+        "facts": "<p>The AUDIT-C (Alcohol Use Disorder Identification Test) quantifies alcohol misuse, based on 3 questions posed to patients about their consumption habits. It was adapted from the longer <a href=\"https://apps.who.int/iris/bitstream/handle/10665/67205/WHO_MSD_MSB_01.6a.pdf;jsessionid=1FAFA3CC325018FC69178F3AF9944665?sequence=1#page=32\" target=\"_blank\" rel=\"noopener\">AUDIT</a>, which is mainly used in primary care settings.</p>\n<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>Males: Scores &ge;4 suggest alcohol misuse.</li>\n<li>Females: Score &ge;3 suggest alcohol misuse.</li>\n<li>Higher score correlates with greater severity of alcohol misuse.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Drug/Alcohol Use"
+        ],
+        "logic": "var calc_output = []; \nvar msg = ''; \nvar mini_msg = ''; \nvar msgalt = ''; \nvar u = parseFloat(often) + parseFloat(count) + parseFloat(more); \nif (u < 3) {msg = 'Scores <3 are consistent with normal alcohol consumption.'; mini_msg = 'Normal alcohol consumption.'; } \nif (u == 3) {msg = 'For females: Scores \\u22653 are consistent with alcohol misuse. For males: Normal alcohol consumption.'; mini_msg = 'Alcohol misuse for females only.'; } \nif (u == 4) {msg = 'For females: Scores \\u22653 are consistent with alcohol misuse. For males: Scores \\u22654 are consistent with alcohol misuse.'; mini_msg = 'Alcohol misuse.'; } \nelse if (u > 4) {msg = 'Scores \\u22655 are consistent with alcohol misuse and possible liver damage.'; mini_msg = 'Alcohol misuse and possible liver damage.'; } \nif (count + more == 0 && often > 0) {msgalt = 'When points are only from Question 1, patients are often drinking below the AUDIT-C cutoff; to confirm accuracy, review patient\\u2019s alcohol intake over past months.'; } \n\ncalc_output.push({\n    name: 'mini', \n    value: u, \n    value_text: 'points', \n    message: mini_msg \n}); \ncalc_output.push({\n    name: '2021_AUDIT-C_result', \n    value: u, \n    value_text: 'points', \n    message: msg+'<br/>'+msgalt \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "How often did you have a drink containing alcohol in the past year?",
+                "mdcalc_info_concept": null,
+                "name": "often",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Monthly or less",
+                        "value": 1
+                    },
+                    {
+                        "label": "Two to four times a month",
+                        "value": 2
+                    },
+                    {
+                        "label": "Two to three times per week",
+                        "value": 3
+                    },
+                    {
+                        "label": "Four or more times a week",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "How many drinks containing alcohol did you have on a typical day when you were drinking in the past year?",
+                "mdcalc_info_concept": null,
+                "name": "count",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1 or 2 drinks",
+                        "value": 0
+                    },
+                    {
+                        "label": "3 or 4",
+                        "value": 1
+                    },
+                    {
+                        "label": "5 or 6",
+                        "value": 2
+                    },
+                    {
+                        "label": "7 to 9",
+                        "value": 3
+                    },
+                    {
+                        "label": "10 or more",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "How often did you have six or more drinks on one occasion in the past year?",
+                "mdcalc_info_concept": null,
+                "name": "more",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Less than monthly",
+                        "value": 1
+                    },
+                    {
+                        "label": "Monthly",
+                        "value": 2
+                    },
+                    {
+                        "label": "Weekly",
+                        "value": 3
+                    },
+                    {
+                        "label": "Daily or almost daily",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Alcoholism",
+            "Diagnosis",
+            "Psych",
+            "rule out",
+            "Etoh",
+            "abuse",
+            "intoxication",
+            "auditc",
+            "audit c"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Psychiatry"
+        ]
+    }
+}

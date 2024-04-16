@@ -1,0 +1,223 @@
+{
+    "id": "470",
+    "title": "Glasgow-Imrie Criteria for Severity of Acute Pancreatitis",
+    "desc": "The Glasgow-Imrie Criteria for Acute Pancreatitis determines severity of pancreatitis based on 8 laboratory values.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1420197/pdf/gut00397-0014.pdf",
+                "text": "Blamey SL, Imrie CW, O'Neill J, Gilmour WH, Carter DC. Prognostic factors in acute pancreatitis. Gut. 1984 Dec;25(12):1340-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>\n<p><strong>Useful mnemonic: PANCREAS</strong></p>\n<ul>\n<li>PaO2 &lt;7.9 kPa</li>\n<li>Age &gt;55 years</li>\n<li>Neutrophils (WBC &gt;15 x 10⁹/L)</li>\n<li>Calcium &lt;2 mmol/L</li>\n<li>Renal function: Urea &gt;16 mmol/L</li>\n<li>Enzymes LDH &gt;600 IU/L</li>\n<li>Albumin &lt;32 g/L (serum)</li>\n<li>Sugar (blood glucose) &gt;10 mmol/L</li>\n</ul>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: center;\">Score</th>\n<th style=\"text-align: center;\">Number of patients (in original study)</th>\n<th style=\"text-align: center;\">Severe Pancreatitis*</th>\n</tr>\n<tr>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\">101</td>\n<td style=\"text-align: center;\">7%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">1</td>\n<td style=\"text-align: center;\">125</td>\n<td style=\"text-align: center;\">6%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">2</td>\n<td style=\"text-align: center;\">87</td>\n<td style=\"text-align: center;\">16%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">3</td>\n<td style=\"text-align: center;\">49</td>\n<td style=\"text-align: center;\">20%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">4</td>\n<td style=\"text-align: center;\">28</td>\n<td style=\"text-align: center;\">61%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">5</td>\n<td style=\"text-align: center;\">11</td>\n<td style=\"text-align: center;\">55%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">6</td>\n<td style=\"text-align: center;\">2</td>\n<td style=\"text-align: center;\">100%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">7</td>\n<td style=\"text-align: center;\">1</td>\n<td style=\"text-align: center;\">0%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">8</td>\n<td style=\"text-align: center;\">1</td>\n<td style=\"text-align: center;\">100%</td>\n</tr>\n</tbody>\n</table>\n<p>*PPV of 79% in original study</p>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Pancreatitis"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseInt(pao2) + parseInt(age) + parseInt(wbc) + parseInt(ca) + parseInt(renal) + parseInt(ldh) + parseInt(alb) + parseInt(gluc);\nvar msg;\nif (u < 3) { msg = \"Low risk for severe pancreatitis.\"; } else { msg = \"High risk for severe pancreatitis.\"; }\n\ncalc_output.push({ name: 'mini', value: u.toFixed(0), value_text: 'points', message: msg });\ncalc_output.push({ \n    name: '3287_Glasgow-Imrie Pancreatitis Score_result', value: u.toFixed(0), value_text: 'points', message: msg });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "PaO₂ <59.3 mmHg (7.9 kPa)",
+                "md_calc_info_concept": null,
+                "name": "pao2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >55 years",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "WBC >15 x 10³/µL (10⁹/L)",
+                "md_calc_info_concept": null,
+                "name": "wbc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Calcium <8 mg/dL (2 mmol/L)",
+                "md_calc_info_concept": null,
+                "name": "ca",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "BUN >44.8 mg/dL (serum urea >16 mmol/L)",
+                "md_calc_info_concept": null,
+                "name": "renal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "LDH >600 IU/L",
+                "md_calc_info_concept": null,
+                "name": "ldh",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Albumin <3.2 g/dL (32 g/L)",
+                "md_calc_info_concept": null,
+                "name": "alb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Glucose >180 mg/dL (10 mmol/L)",
+                "md_calc_info_concept": null,
+                "name": "gluc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Glasgow",
+            "imrie",
+            "pancreatitis",
+            "48h",
+            "admission",
+            "acute",
+            "prognosis"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

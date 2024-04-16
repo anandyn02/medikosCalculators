@@ -1,0 +1,259 @@
+{
+    "id": "27",
+    "title": "CholeS Score for Duration of Laparoscopic Cholecystectomy",
+    "desc": "The CholeS Score for Duration of Laparoscopic Cholecystectomy predicts operative time of laparoscopic cholecystectomy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://link.springer.com/article/10.1007/s00464-018-6030-6",
+                "text": "Bharamgoudar R, Sonsale A, Hodson J, Griffiths E. The development and validation of a scoring tool to predict the operative duration of elective laparoscopic cholecystectomy. Surg Endosc. 2018;32(7):3149-3157."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"193\" /><col width=\"165\" /><col width=\"91\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Age, years</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;40</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;40</p>\n</td>\n<td>\n<p dir=\"ltr\">1.5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Gender</p>\n</td>\n<td>\n<p dir=\"ltr\">Male</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Female</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Indication</p>\n</td>\n<td>\n<p dir=\"ltr\">Pancreatitis</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Colic, dyskinesia, or polyp</p>\n</td>\n<td>\n<p dir=\"ltr\">0.5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Common bile duct stone</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Acalculous or cholecystitis</p>\n</td>\n<td>\n<p dir=\"ltr\">2.5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><calculator id=\"29\">BMI</calculator></p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;25</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">25-35</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;35</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Common bile duct diameter</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Dilated</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Gallbladder wall</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Thick</p>\n</td>\n<td>\n<p dir=\"ltr\">1.5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Pre-operative CT done</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1.5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Intra-op cholangiogram planned</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Number of previous surgical admissions</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1-2</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;2</p>\n</td>\n<td>\n<p dir=\"ltr\">2.5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><calculator id=\"10024\">ASA Class</calculator></p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;2</p>\n</td>\n<td>\n<p dir=\"ltr\">2.5</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"109\" /><col width=\"134\" /><col width=\"206\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>CholeS Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Likelihood of operative time &gt;90 minutes</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-3.5</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">5.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4-8</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">5.1-41.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;8</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">41.8%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Cholangitis",
+            "Cholecystitis"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age)\nvar gender = parseFloat(gender)\nvar indication = parseFloat(indication)\nvar bmi = parseFloat(bmi)\nvar ductdiameter = parseFloat(ductdiameter)\nvar gallbladderwall = parseFloat(gallbladderwall)\nvar preopct = parseFloat(preopct)\nvar cholangiogram = parseFloat(cholangiogram)\nvar surgadmits = parseFloat(surgadmits)\nvar asa = parseFloat(asa)\n\nvar score = age + gender + indication + bmi + ductdiameter + gallbladderwall + preopct + cholangiogram + surgadmits + asa \n\nvar risk \nvar optime\n\nif (score <=3.5) {\n    risk = 'Low'\n    optime = '5.1'   \n}    \nelse if (score >= 4 && score <= 8) { \n    risk = 'Intermediate'\n    optime = '5.1-41.8' \n}\nelse {\n    risk = 'High'\n    optime = '41.8'\n} \n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: optime,\n    value_text: '%',\n    message: risk + ' chance of OR time >90 mins'\n    });\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'CholeS Score'\n    });\ncalc_output.push({\n    name: 'risk',\n    value: risk, \n    value_text: 'risk',\n    message: ''\n});\ncalc_output.push({\n    name: 'optime',\n    value: optime, \n    value_text: '%',\n    message:'Likelihood of operative time >90 minutes'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<40",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥40",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Gender",
+                "name": "gender",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 1
+                    },
+                    {
+                        "label": "Female",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Indication",
+                "name": "indication",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Pancreatitis",
+                        "value": 0
+                    },
+                    {
+                        "label": "Colic, dyskinesia, or polyp",
+                        "value": 0.5
+                    },
+                    {
+                        "label": "Common bile duct stone",
+                        "value": 2
+                    },
+                    {
+                        "label": "Acalculous or cholecystitis",
+                        "value": 2.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id=\"29\">BMI</calculator>",
+                "name": "bmi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<25",
+                        "value": 0
+                    },
+                    {
+                        "label": "25-35",
+                        "value": 1
+                    },
+                    {
+                        "label": ">35",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Common bile duct diameter",
+                "name": "ductdiameter",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Dilated",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Gallbladder wall",
+                "name": "gallbladderwall",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Thick",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pre-operative CT done",
+                "name": "preopct",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intra-op cholangiogram planned",
+                "name": "cholangiogram",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Number of previous surgical admissions",
+                "name": "surgadmits",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0 ",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-2",
+                        "value": 1
+                    },
+                    {
+                        "label": ">2",
+                        "value": 2.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id=\"10024\">ASA Class</calculator>",
+                "name": "asa",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1",
+                        "value": 0
+                    },
+                    {
+                        "label": "2",
+                        "value": 1
+                    },
+                    {
+                        "label": ">2",
+                        "value": 2.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Choles score",
+            "lap chol duration"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Gastroenterology",
+            "Hepatology",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

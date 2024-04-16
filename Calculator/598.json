@@ -1,0 +1,188 @@
+{
+    "id": "598",
+    "title": "6 Minute Walk Distance",
+    "desc": "The 6 Minute Walk Distance calculates reference values for distance walked, as a measure of functional status.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9817683 ",
+                "text": "Enright PL, Sherrill DL. Reference equations for the six-minute walk in healthy adults. Am J Respir Crit Care Med. 1998;158(5 Pt 1):1384-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12890299",
+                "text": "Enright PL. The six-minute walk test. Respir Care. 2003;48(8):783-5."
+            }
+        ],
+        "evidence": "<p><strong>Male patients: </strong></p>\n<p>6MWD in meters = (7.57 &times; height in cm) &ndash; (5.02 &times; age) &ndash; (1.76 &times; weight in kg) &ndash; 309</p>\n<p>Lower limit of normal = 6MWD - 153</p>\n<p><strong>Female patients:</strong></p>\n<p>6MWD in meters = (2.11 &times; height in cm) &ndash; (2.29 &times; weight in kg) &nbsp;&ndash; (5.78 &times; age) + 667</p>\n<p>Lower limit of normal = 6MWD -&nbsp;139</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Height (Adult)",
+                "unit": "ht_adult",
+                "error_min": "48",
+                "error_max": "90",
+                "warn_min": "48",
+                "warn_max": "80",
+                "conversion": "2.54",
+                "normal_max_si": "213",
+                "normal_max_us": "84",
+                "normal_min_si": "152",
+                "normal_min_us": "60",
+                "units_si": "cm",
+                "units_us": "in"
+            },
+            {
+                "name": "6MWD meters",
+                "unit": "m_6mwd",
+                "error_min": "0",
+                "error_max": "6561.68",
+                "warn_min": "1312.34",
+                "warn_max": "2296.59",
+                "conversion": "0.3048",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "m",
+                "units_us": "ft"
+            },
+            {
+                "name": "Age",
+                "unit": "age_6mwd",
+                "error_min": "40",
+                "error_max": "80",
+                "warn_min": "40",
+                "warn_max": "80",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Weight, adult",
+                "unit": "wt_adult",
+                "error_min": "55",
+                "error_max": "620",
+                "warn_min": "55",
+                "warn_max": "300",
+                "conversion": "0.453592",
+                "normal_max_si": "113",
+                "normal_max_us": "250",
+                "normal_min_si": "45",
+                "normal_min_us": "100",
+                "units_si": "kg",
+                "units_us": "lbs"
+            }
+        ],
+        "primary_complains": [
+            "Dyspnea",
+            "Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "CHF",
+            "Chronic Pain",
+            "Congestive Heart Failure",
+            "COPD",
+            "Heart Failure",
+            "Idiopathic Pulmonary Fibrosis",
+            "Multiple Sclerosis",
+            "Neuropathy"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar sex = parseFloat(sex);\nvar ht = parseFloat(ht);\nvar age = parseFloat(age);\nvar wt = parseFloat(wt);\nvar distance = parseFloat(distance_walked);\n\nif (UOMSYSTEM === true) { // US units\n    ht = parseFloat(ht)*(2.54);\n    wt = parseFloat(wt)*(0.453592);\n}\n\n//formula\nvar score, lln;\nif(sex === 0){\t\t//male\n\tscore = 7.57*ht - 5.02*age - 1.76*wt - 309;\n  lln = score - 153;\n}\n\nif(sex === 1){\t\t//female\n\tscore = 2.11*ht - 2.29*wt - 5.78*age + 667;\n  lln = score - 139;\n}\n\nvar units; \n\nif (UOMSYSTEM == true){\n\tscore = score*3.28084;\n\tlln = lln*3.28084;\n  \tunits = ' feet';\n}\n\nelse {units = ' meters';}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: Math.round(score),\n    value_text: units,\n    message: 'Expected 6 Minute Walk Distance for healthy patient'\n});\ncalc_output.push({\n    name: '3983_6 Minute Walk Distance_result (expected)',\n    value: Math.round(score),\n    value_text: units,\n    message: 'Expected 6 Minute Walk Distance for healthy patient'\n});\n\nif(distance){\n    var percent = Math.round(100*distance / score);\n\n    calc_output.push({\n        name: '3983_6 Minute Walk Distance_result (percentage)',\n        value: percent,\n        value_text: '%',\n        message: 'Percentage of expected distance for healthy patient'\n    });\n}calc_output.push({\n    name: '3983_6 Minute Walk Distance_result (LLN)',\n    value: Math.round(lln),\n    value_text: units,\n    message: 'Lower limit of normal'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Height",
+                "name": "ht",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht_adult"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_6mwd"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "wt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt_adult"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Distance walked",
+                "name": "distance_walked",
+                "optional": true,
+                "tips_en": "Optional, to calculate percentage of expected",
+                "type": "textbox",
+                "unit": "m_6mwd"
+            }
+        ],
+        "can_search": [
+            "6MWD",
+            "walking",
+            "six minute",
+            "functional status"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Primary Care",
+            "Pulmonology",
+            "Rheumatology"
+        ]
+    }
+}

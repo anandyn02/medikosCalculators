@@ -1,0 +1,524 @@
+{
+    "id": "374",
+    "title": "Hamilton Anxiety Scale",
+    "desc": "The Hamilton Anxiety Scale rates level of anxiety based on clinical questions.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/13638508",
+                "text": "Hamilton M. The assessment of anxiety states by rating. Br J Med Psychol 1959; 32:50–55."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.intechopen.com/books/different-views-of-anxiety-disorders/measuring-states-of-anxiety-with-clinician-rated-and-patient-rated-scales",
+                "text": "Per Bech. Measuring States of Anxiety with Clinician-Rated and Patient-Rated Scales, Different Views of Anxiety Disorders. 2011, DOI: 10.5772/21246."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points.</p>\n<p><strong>Point Values:</strong></p>\n<ul>\n<li>0=Not Present</li>\n<li>+1=Mild</li>\n<li>+2=Moderate</li>\n<li>+3=Severe</li>\n<li>+4=Very Severe</li>\n</ul>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>Scores &le;17 indicate mild anxiety severity.</li>\n<li>Scores of 18-24 indicate mild to moderate anxiety severity</li>\n<li>Scores of 25-30 indicate moderate to severe anxiety severity</li>\n<li>Scores &gt;30 indicate severe anxiety</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Anxious"
+        ],
+        "disease_treated": [
+            "Anxiety",
+            "Depression/Suicidality"
+        ],
+        "logic": "var calc_output=[];\nvar msg=''; \nvar u=parseFloat(mood)+parseFloat(tension)+parseFloat(fears)+parseFloat(insomnia)+parseFloat(intellectual)+parseFloat(depressed_mood)+parseFloat(somatic_muscular)+parseFloat(somatic_sensory)+parseFloat(cardiovascular)+parseFloat(respiratory)+parseFloat(gastrointestinal)+parseFloat(genitourinary)+parseFloat(autonomic)+parseFloat(behavior);\n\nif(u<=17){msg='Mild anxiety'} \nelse if(u>=18&&u<=24){msg='Mild to moderate anxiety'} \nelse if(u>=25&&u<=30){msg='Moderate to severe anxiety'} \nelse if(u>30){msg='Severe anxiety'} \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n}); \ncalc_output.push({\n    name:'1843_Hamilton Anxiety Scale_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "1. Anxious mood: Worries, anticipation of the worst, fearful anticipation, irritability.",
+                "mdcalc_info_concept": null,
+                "name": "mood",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "2. Tension: Feelings of tension, fatigability, startle response, moved to tears easily, trembling, feelings of restlessness, inability to relax.",
+                "mdcalc_info_concept": null,
+                "name": "tension",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "3. Fears: Of dark, of strangers, of being left alone, of animals, of traffic, of crowds.",
+                "mdcalc_info_concept": null,
+                "name": "fears",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "4. Insomnia: Difficulty in falling asleep, broken sleep, unsatisfying sleep and fatigue on waking, dreams, nightmares, night terrors.",
+                "mdcalc_info_concept": null,
+                "name": "insomnia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "5. Intellectual: Difficulty in concentration, poor memory.",
+                "mdcalc_info_concept": null,
+                "name": "intellectual",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "6. Depressed mood: Loss of interest, lack of pleasure in hobbies, depression, early waking, diurnal swing.",
+                "mdcalc_info_concept": null,
+                "name": "depressed_mood",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "7. Somatic (muscular): Pains and aches, twitching, stiffness, myoclonic jerks, grinding of teeth, unsteady voice, increased muscular tone.",
+                "mdcalc_info_concept": null,
+                "name": "somatic_muscular",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "8. Somatic (sensory): Tinnitus, blurring of vision, hot and cold flushes, feelings of weakness, pricking sensation.",
+                "mdcalc_info_concept": null,
+                "name": "somatic_sensory",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "9. Cardiovascular symptoms: Tachycardia, palpitations, pain in chest, throbbing of vessels, fainting feelings, missing beat.",
+                "mdcalc_info_concept": null,
+                "name": "cardiovascular",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "10 . Respiratory symptoms: Pressure or constriction in chest, choking feelings, sighing, dyspnea.",
+                "mdcalc_info_concept": null,
+                "name": "respiratory",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "11. Gastrointestinal symptoms: Difficulty in swallowing, wind abdominal pain, burning sensations, abdominal fullness, nausea, vomiting, borborygmi, looseness of bowels, loss of weight, constipation.",
+                "mdcalc_info_concept": null,
+                "name": "gastrointestinal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "12. Genitourinary symptoms: Frequency of micturition, urgency of micturition, amenorrhea, menorrhagia, development of frigidity, premature ejaculation,loss of libido, impotence.",
+                "mdcalc_info_concept": null,
+                "name": "genitourinary",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "13. Autonomic symptoms: Dry mouth, flushing, pallor, tendency to sweat, giddiness, tension headache, raising of hair.",
+                "mdcalc_info_concept": null,
+                "name": "autonomic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "14. Behavior at interview: Fidgeting, restlessness or pacing, tremor of hands, furrowed brow, strained face, sighing or rapid respiration, facial pallor, swallowing, etc.",
+                "mdcalc_info_concept": null,
+                "name": "behavior",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very Severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Anxiety",
+            "psych",
+            "diagnosis",
+            "rule out",
+            "GAD",
+            "worrying",
+            "nervous"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Geriatrics",
+            "Internal Medicine",
+            "Primary Care",
+            "Psychiatry"
+        ]
+    }
+}

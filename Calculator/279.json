@@ -1,0 +1,208 @@
+{
+    "id": "279",
+    "title": "Resuscitation Using ECPR During In-Hospital Cardiac Arrest (RESCUE-IHCA)",
+    "desc": "Resuscitation Using ECPR During In-Hospital Cardiac Arrest (RESCUE-IHCA) predicts the probability of death for adult extracorporeal cardiopulmonary resuscitation (ECPR).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/35033471/",
+                "text": "Tonna JE, Selzman CH, Girotra S, et al. Resuscitation using ecpr during in-hospital cardiac arrest (Rescue-ihca) mortality prediction score and external validation. JACC Cardiovasc Interv. 2022;15(3):237-247."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The RESCUE-IHCA Score is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100.117%;\"><colgroup><col style=\"width: 42.0188%;\"><col style=\"width: 38.2635%;\"><col style=\"width: 19.7178%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Age, years</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&le;20</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Each additional 10 years</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Pre-existing renal insufficiency</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>8</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><span>Time of day</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>7 AM - 2:59 PM</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>3 PM - 10:59 PM</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>11 PM - 6:59 AM</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>13</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><span>Illness category</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Medical cardiac</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Surgical noncardiac</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-6</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Surgical cardiac</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-11</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><span>Presenting rhythm</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Pulseless electrical activity</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-1</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Pulseless ventricular tachycardia</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-5</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Palpable pulse initially</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-5</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Ventricular fibrillation</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-8</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Duration of cardiac arrest, min</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Each 10 minutes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><b id=\"docs-internal-guid-1843889b-7fff-1378-d4b4-3131b00d024e\"></b>Risk is calculated using the Bayesian model from&nbsp;<a href=\"https://pubmed.ncbi.nlm.nih.gov/35033471/\">Tonna 2022</a>.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "minutes",
+                "unit": "min",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "min",
+                "units_us": "min"
+            },
+            {
+                "name": "Age in years",
+                "unit": "age_years_imm",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": " years",
+                "units_us": " years"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Dizziness",
+            "Fatigue",
+            "Nausea",
+            "Shortness of Breath",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Heart Failure"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar renal = parseFloat(renal);\nvar time = parseFloat(time);\nvar illness = parseFloat(illness);\nvar rhythm = parseFloat(rhythm);\nvar duration = parseFloat(duration);\n\nvar age_score;\nif (age <= 20) {\n    age_score = 2;\n} else {\n    age_score = 2 + 2*(Math.floor((age-20)/10));\n}\n\nvar duration_score = 2*(Math.floor(duration/10));\n\nvar score = age_score + renal + time + illness + rhythm + duration_score;\n\nvar r = [];\n\nr[0] = 0.178;\nr[1] = 0.189;\nr[2] = 0.201;\nr[3] = 0.214;\nr[4] = 0.227;\nr[5] = 0.241;\nr[6] = 0.255;\nr[7] = 0.27;\nr[8] = 0.285;\nr[9] = 0.301;\nr[10] = 0.317;\nr[11] = 0.334;\nr[12] = 0.351;\nr[13] = 0.369;\nr[14] = 0.387;\nr[15] = 0.405;\nr[16] = 0.424;\nr[17] = 0.443;\nr[18] = 0.462;\nr[19] = 0.481;\nr[20] = 0.5;\nr[21] = 0.519;\nr[22] = 0.538;\nr[23] = 0.557;\nr[24] = 0.576;\nr[25] = 0.594;\nr[26] = 0.612;\nr[27] = 0.63;\nr[28] = 0.648;\nr[29] = 0.665;\nr[30] = 0.682;\nr[31] = 0.698;\nr[32] = 0.714;\nr[33] = 0.73;\nr[34] = 0.745;\nr[35] = 0.759;\nr[36] = 0.773;\nr[37] = 0.786;\nr[38] = 0.798;\nr[39] = 0.81;\nr[40] = 0.822;\nr[41] = 0.833;\nr[42] = 0.843;\nr[43] = 0.853;\nr[44] = 0.862;\nr[45] = 0.871;\nr[46] = 0.879;\nr[47] = 0.887;\nr[48] = 0.895;\nr[49] = 0.902;\nr[50] = 0.908;\nr[51] = 0.914;\nr[52] = 0.92;\nr[53] = 0.926;\nr[54] = 0.931;\nr[55] = 0.936;\nr[56] = 0.94;\nr[57] = 0.944;\nr[58] = 0.948;\nr[59] = 0.952;\nr[60] = 0.955;\nr[61] = 0.958;\nr[62] = 0.961;\nr[63] = 0.964;\nr[64] = 0.967;\nr[65] = 0.969;\nr[66] = 0.971;\nr[67] = 0.973;\nr[68] = 0.975;\nr[69] = 0.977;\nr[70] = 0.979;\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: (r[score + 20]*100).toFixed(1) + '% probability of mortality'\n});\ncalc_output.push({\n    name: '10431_RESCUE-IHCA_result (score)',\n    value: score,\n    value_text: 'points',\n    message: 'RESCUE-IHCA Score'\n});\ncalc_output.push({\n    name: '10431_RESCUE-IHCA_result (mortality)',\n    value: (r[score + 20]*100).toFixed(1),\n    value_text: '%',\n    message: 'Probability of mortality'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_years_imm"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Pre-existing renal insufficiency</p>",
+                "mdcalc_info_concept": null,
+                "name": "renal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Time of day</p>",
+                "mdcalc_info_concept": null,
+                "name": "time",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "7 AM - 2:59 PM",
+                        "value": 0
+                    },
+                    {
+                        "label": "3 PM - 10:59 PM",
+                        "value": 4
+                    },
+                    {
+                        "label": "11 PM - 6:59 AM",
+                        "value": 13
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Illness category</p>",
+                "mdcalc_info_concept": null,
+                "name": "illness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Surgical cardiac",
+                        "value": -11
+                    },
+                    {
+                        "label": "Surgical noncardiac",
+                        "value": -6
+                    },
+                    {
+                        "label": "Medical cardiac",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Presenting rhythm</p>",
+                "mdcalc_info_concept": null,
+                "name": "rhythm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Ventricular fibrillation",
+                        "value": -8
+                    },
+                    {
+                        "label": "Pulseless ventricular tachycardia or palpable pulse initially",
+                        "value": -5
+                    },
+                    {
+                        "label": "Pulseless electrical activity",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Duration of cardiac arrest, min</p>",
+                "name": "duration",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "min"
+            }
+        ],
+        "can_search": [
+            "Resuscitation Using ECPR During In-Hospital Cardiac Arrest (RESCUE-IHCA)",
+            "ECPR",
+            "cardiac arrest",
+            "rescue-ihca",
+            "rescue",
+            "ihca",
+            "in-hospital cardiac arrest",
+            "resuscitation",
+            "extracorporeal cardiopulmonary resuscitation",
+            "rescueihca",
+            "rescue ihca"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

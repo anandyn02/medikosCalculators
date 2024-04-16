@@ -1,0 +1,219 @@
+{
+    "id": "567",
+    "title": "CKD-EPI Equations for Glomerular Filtration Rate (GFR)",
+    "desc": "The CKD-EPI Creatinine Equation for Glomerular Filtration Rate (GFR) estimates GFR based on serum creatinine.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19414839 ",
+                "text": "Levey AS, Stevens LA, Schmid CH, et al. A new equation to estimate glomerular filtration rate. Ann Intern Med. 2009;150(9):604-12."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22762315  ",
+                "text": "Inker LA, Schmid CH, Tighiouart H, et al. Estimating glomerular filtration rate from serum creatinine and cystatin C. N Engl J Med. 2012;367(1):20-9."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/34554658/",
+                "text": "Inker LA, Eneanya ND, Coresh J, et al. New creatinine- and cystatin c-based equations to estimate gfr without race. N Engl J Med. Published online September 23, 2021."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p><strong>2021&nbsp; CKD-EPI Creatinine&nbsp;</strong>= 142 x (Scr/<em>A</em>)<em><sup>B</sup></em> x 0.9938<sup>age&nbsp;</sup>x (1.012 if female), where <em>A </em>and <em>B </em>are the following:</p>\n<table style=\"width: 58.932%; height: 380px;\">\n<tbody>\n<tr style=\"height: 54px;\">\n<td colspan=\"2\" style=\"width: 50.1425%; height: 54px;\">\n<p><strong>Female</strong></p>\n</td>\n<td colspan=\"2\" style=\"width: 49.8575%; height: 54px;\">\n<p><strong>Male</strong></p>\n</td>\n</tr>\n<tr style=\"height: 158px;\">\n<td style=\"width: 22.2222%; height: 158px;\">\n<p><strong>Scr &le;0.7</strong></p>\n</td>\n<td style=\"width: 27.9202%; height: 158px;\">\n<p><em>A</em> = 0.7</p>\n<p><em>B </em>= -0.241</p>\n</td>\n<td style=\"width: 23.3618%; height: 158px;\">\n<p><strong>Scr &le;0.9</strong></p>\n</td>\n<td style=\"width: 26.4957%; height: 158px;\">\n<p><em>A</em>&nbsp;= 0.9</p>\n<p><em>B</em> = -0.302</p>\n</td>\n</tr>\n<tr style=\"height: 168px;\">\n<td style=\"width: 22.2222%; height: 168px;\">\n<p><strong>Scr &gt;0.7</strong></p>\n</td>\n<td style=\"width: 27.9202%; height: 168px;\">\n<p>A = 0.7</p>\n<p>B = -1.2</p>\n</td>\n<td style=\"width: 23.3618%; height: 168px;\">\n<p><strong>Scr &gt;0.9</strong></p>\n</td>\n<td style=\"width: 26.4957%; height: 168px;\">\n<p><em></em></p>\n<p><em>A</em>&nbsp;= 0.9</p>\n<p><em>B</em>&nbsp;= -1.2</p>\n<p></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><strong>2021 CKD-EPI Creatinine-Cystatin C</strong><strong style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">&nbsp;</strong>= 135 x (Scr/<em>A</em>)<em><sup>B</sup></em> x (Scys/<em>C</em>)<em><sup>D</sup></em> x 0.9961<sup>age</sup> x (0.963 if female), where <em>A</em>, <em>B</em>, <em>C</em>, and <em>D</em> are the following:<strong></strong></p>\n<p>Female:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>Scr &le;0.7</strong></p>\n</td>\n<td>\n<p><strong>Scr &gt;0.7</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scys &le;0.8</strong></p>\n</td>\n<td>\n<p><em>A</em> = 0.7</p>\n<p><em>B</em> = -0.219</p>\n<p><em>C</em> = 0.8</p>\n<p><em>D</em> = -0.323</p>\n</td>\n<td>\n<p><em>A</em> = 0.7</p>\n<p><em>B</em> = -0.544</p>\n<p><em>C</em> = 0.8</p>\n<p><em>D</em> = -0.323</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scys &gt;0.8</strong></p>\n</td>\n<td>\n<p><em>A</em> = 0.7</p>\n<p><em>B</em> = -0.219</p>\n<p><em>C</em> = 0.8</p>\n<p><em>D</em> = -0.778</p>\n</td>\n<td>\n<p><em></em></p>\n<p><em>A</em> = 0.7</p>\n<p><em>B</em> = -0.544</p>\n<p><em>C</em> = 0.8</p>\n<p><em>D</em> = -0.778</p>\n<p></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>Male:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>Scr &le;0.9</strong></p>\n</td>\n<td>\n<p><strong>Scr &gt;0.9</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scys &le;0.8</strong></p>\n</td>\n<td>\n<p><em>A</em> = 0.9</p>\n<p><em>B</em> = -0.144</p>\n<p><em>C</em> = 0.8</p>\n<p><em>D</em> = -0.323</p>\n</td>\n<td>\n<p><em>A</em> = 0.9</p>\n<p><em>B</em> = -0.544</p>\n<p><em>C</em> = 0.8</p>\n<p><em>D</em> = -0.323</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scys &gt;0.8</strong></p>\n</td>\n<td>\n<p><em>A</em> = 0.9</p>\n<p><em>B</em> = -0.144</p>\n<p><em>C</em> = 0.8</p>\n<p><em>D</em> = -0.778</p>\n</td>\n<td>\n<p><em></em></p>\n<p><em>A</em> = 0.9</p>\n<p><em>B</em> = -0.544</p>\n<p><em>C</em> = 0.8</p>\n<p><em>D</em> = -0.778</p>\n<p></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><strong>2009</strong>&nbsp;<strong>CKD-EPI Creatinine </strong>= <em>A</em> &times; (Scr/<em>B</em>)<sup><em>C</em></sup> &times; 0.993<sup>age</sup> &times; (1.159 if black*), where <em>A,</em> <em>B</em>, and <em>C</em> are the following:</p>\n<table>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p><strong>Female</strong></p>\n</td>\n<td colspan=\"2\">\n<p><strong>Male</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scr &le;0.7</strong></p>\n</td>\n<td>\n<p><em>A</em> = 144</p>\n<p><em>B</em> = 0.7</p>\n<p><em>C</em> = -0.329</p>\n</td>\n<td>\n<p><strong>Scr &le;0.9</strong></p>\n</td>\n<td>\n<p><em>A</em> = 141</p>\n<p><em>B</em> = 0.9</p>\n<p><em>C</em> = -0.411</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scr &gt;0.7</strong></p>\n</td>\n<td>\n<p><em>A</em> = 144</p>\n<p><em>B</em> = 0.7</p>\n<p><em>C</em> = -1.209</p>\n</td>\n<td>\n<p><strong>Scr &gt;0.9</strong></p>\n</td>\n<td>\n<p><em>A</em> = 141</p>\n<p><em>B</em> = 0.9</p>\n<p><em>C</em> = -1.209</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>\n<p><strong>2012 CKD-EPI Cystatin C </strong>= 133 &times; (Scys/0.8)<sup><em>A</em></sup> &times; 0.996<sup>age</sup> &times; <em>B,</em> where <em>A </em>and <em>B </em>are the following:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>Female</strong></p>\n</td>\n<td>\n<p><strong>Male</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scys &le;0.8</strong></p>\n</td>\n<td>\n<p><em>A</em> = -0.499</p>\n<p><em>B</em> = 0.932</p>\n</td>\n<td>\n<p><em>A</em> = -0.499</p>\n<p><em>B</em> = 1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scys &gt;0.8</strong></p>\n</td>\n<td>\n<p><em>A</em> = -1.328</p>\n<p><em>B</em> = 0.932</p>\n</td>\n<td>\n<p><em>A</em> = -1.328</p>\n<p><em>B</em> = 1</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>\n<p><strong>2012 CKD-EPI Creatinine-Cystatin C</strong>&nbsp;= <em>A</em> &times; (Scr/<em>B)</em><sup><em>C</em></sup> &times; (Scys/0.8)<sup><em>D</em></sup> &times; 0.995<sup>age</sup> &times; (1.08 if black*), where <em>A, B, C, </em>and <em>D</em> are the following:<strong><br></strong></p>\n<p><strong>Female:</strong></p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>Scr &le;0.7</strong></p>\n</td>\n<td>\n<p><strong>Scr &gt;0.7</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scys &le;0.8</strong></p>\n</td>\n<td>\n<p><em>A</em> = 130</p>\n<p><em>B</em> = 0.7</p>\n<p><em>C</em> = -0.248</p>\n<p><em>D</em> = -0.375</p>\n</td>\n<td>\n<p><em>A</em> = 130</p>\n<p><em>B</em> = 0.7</p>\n<p><em>C</em> = -0.601</p>\n<p><em>D</em> = -0.375</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scys &gt;0.8</strong></p>\n</td>\n<td>\n<p><em>A</em> = 130</p>\n<p><em>B</em> = 0.7</p>\n<p><em>C</em> = -0.248</p>\n<p><em>D</em> = -0.711</p>\n</td>\n<td>\n<p><em>A</em> = 130</p>\n<p><em>B</em> = 0.7</p>\n<p><em>C</em> = -0.601</p>\n<p><em>D</em> = -0.711</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Male:</strong></p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>Scr &le;0.9</strong></p>\n</td>\n<td>\n<p><strong>Scr &gt;0.9</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scys &le;0.8</strong></p>\n</td>\n<td>\n<p><em>A</em> = 135</p>\n<p><em>B</em> = 0.9</p>\n<p><em>C</em> = -0.207</p>\n<p><em>D</em> = -0.375</p>\n</td>\n<td>\n<p><em>A</em> = 135</p>\n<p><em>B</em> = 0.9</p>\n<p><em>C</em> = -0.601</p>\n<p><em>D</em> = -0.375</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Scys &gt;0.8</strong></p>\n</td>\n<td>\n<p><em>A</em> = 135</p>\n<p><em>B</em> = 0.9</p>\n<p><em>C</em> = -0.207</p>\n<p><em>D</em> = -0.711</p>\n</td>\n<td>\n<p><em>A</em> = 135</p>\n<p><em>B</em> = 0.9</p>\n<p><em>C</em> = -0.601</p>\n<p><em>D</em> = -0.711</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>Scr, serum creatinine, mg/dL. Scys, serum cystatin C, mg/L.</p>\n<p>*Race may/may not provide better estimates of GFR; optional.&nbsp;<a target=\"_blank\" data-stringify-link=\"https://www.mdcalc.com/race\" delay=\"150\" data-sk=\"tooltip_parent\" href=\"https://www.mdcalc.com/race\" rel=\"noopener noreferrer\">See here</a>&nbsp;for more on our approach to addressing race and bias on MDCalc.</p>",
+        "facts": "<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/creatinine-clearance-table.png\" class=\"alignnone size-full wp-image-1839\" alt=\"creatinine clearance table\"></div>\n<p>From&nbsp;<a href=\"https://kdigo.org/wp-content/uploads/2017/02/KDIGO_2012_CKD_GL.pdf\" target=\"_blank\" rel=\"noopener\">KDIGO 2012 Clinical Practice Guideline</a>.</p>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Creatinine",
+                "unit": "cr",
+                "error_min": "0.01",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "88.4",
+                "normal_max_si": "115",
+                "normal_max_us": "1.3",
+                "normal_min_si": "62",
+                "normal_min_us": "0.7",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Serum cystatin C",
+                "unit": "serum_cystatinc",
+                "error_min": "0",
+                "error_max": "30",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "0.98",
+                "normal_max_us": "0.98",
+                "normal_min_si": "0.51",
+                "normal_min_us": "0.51",
+                "units_si": "mg/L",
+                "units_us": "mg/L"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Extremity Edema",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus",
+            "Kidney Failure",
+            "Renal Failure"
+        ],
+        "logic": "//outputs\nvar calc_output = [];\n\n//user inputs\nvar gender = parseFloat(gender);\nvar race = parseFloat(race) || 0;\nvar age = parseFloat(age);\nvar calc = parseFloat(calc);\nvar scr = parseFloat(scr);\nvar scys = parseFloat(scys);\n\nif (UOMSYSTEM == false) {\n\tscr = scr / 88.4;\n}\n\n//calculation for CDK-EPI Creatinine\nif(calc == 0){\n\tvar u_cr;\n\tif(gender == 0){\t\t\t//if female\n\t\tif(scr <= 0.7){\n\t\t\tu_cr = 144 * Math.pow(scr/0.7, -0.329) * Math.pow(0.993, age); \n\t\t}else{\n\t\t\tu_cr = 144 * Math.pow(scr/0.7, -1.209) * Math.pow(0.993, age); \n\t\t}\n\t}else{\t\t\t\t\t//if male\n\t\tif (scr <= 0.9){\n\t\t\tu_cr = 141 * Math.pow(scr/0.9, -0.411) * Math.pow(0.993, age); \n\t\t}else{\n\t\t\tu_cr = 141 * Math.pow(scr/0.9, -1.209) * Math.pow(0.993, age); \n\t\t}\n\t}\n\n\tif(race == 1){  //patient is black\n\t\tu_cr = u_cr * 1.159;\n\t} else if(race == 0){  //patient is black\n\t\tvar u_cr_range = u_cr * 1.159;\n      u_cr_range = u_cr_range.toFixed(0);\n\t} \n\tvar stage;\n\tu_cr = u_cr.toFixed(0);\nif (u_cr >= 90) {\n\tstage = 'Stage I';\n}\nelse if (u_cr >= 60 && u_cr < 90) {\n\tstage = 'Stage II';\n}\nelse if (u_cr >= 30 && u_cr < 60) {\n\t\tif (u_cr >= 30 && u_cr < 45){\n          stage = 'Stage IIIb';\n        } else {\n          stage = 'Stage IIIa';\n        }\n}\nelse if (u_cr >= 15 && u_cr < 30) {\n\tstage = 'Stage IV';\n}\nelse {\n\tstage = 'Stage V';\n}\n\nif (race == 0) {\n\tvar stage_range;\n\tif (u_cr_range >= 90) {\n\tstage_range = 'Stage I';\n}\nelse if (u_cr_range >= 60 && u_cr_range < 90) {\n\tstage_range = 'Stage II';\n}\nelse if (u_cr_range >= 30 && u_cr_range < 60) {\n\t\tif (u_cr_range >= 30 && u_cr_range < 45){\n          stage_range = 'Stage IIIb';\n        } else {\n          stage_range = 'Stage IIIa';\n        }\n}\nelse if (u_cr_range >= 15 && u_cr_range < 30) {\n\tstage_range = 'Stage IV';\n}\nelse {\n\tstage_range = 'Stage V';\n}\nif (stage != stage_range) {\n\t\tstage = stage_range+'-'+stage;\n\t}\n}\n}\n//calculation for CDK-EPI Cystatin C\nif(calc == 1){\n\tvar u_cys;\n\tif(scys <= 0.8){\n\t\tu_cys = 133 * Math.pow(scys/0.8, -0.499) * Math.pow(0.996, age);\n\t}else{\n\t\tu_cys = 133 * Math.pow(scys/0.8, -1.328) * Math.pow(0.996, age);\n\t}\n\tif(gender == 0){\t\t//if patient is female\n\t\tu_cys = u_cys * 0.932;\n\t}\n\tvar stage;\n\tu_cys = u_cys.toFixed(0);\n\tif (u_cys >= 90) {\n\t\tstage = 'Stage I';\n\t}\n\telse if (u_cys >= 60 && u_cys < 90) {\n\t\tstage = 'Stage II';\n\t}\n  \telse if (u_cys >= 30 && u_cys < 60) {\n\t\tif (u_cys >= 30 && u_cys < 45){\n          stage = 'Stage IIIb';\n        } else {\n          stage = 'Stage IIIa';\n        }\n  \t}\n\telse if (u_cys >= 15 && u_cys < 30) {\n\t\tstage = 'Stage IV';\n\t}\n\telse {\n\t\tstage = 'Stage V';\n\t}\n}\n\n//calculation for CKD-EPI Creatinine Cystatin C\nif(calc == 2){\n\tvar u_both;\n\tif(gender == 0){\t\t\t//if female\n\t\tif(scr <= 0.7){\n\t\t\tif (scys <=0.8){\n\t\t\t\tu_both = 130 * Math.pow(scr/0.7, -0.248) * Math.pow(scys/0.8, -0.375) * Math.pow(0.995, age);\n\t\t\t}else{\n\t\t\t\tu_both = 130 * Math.pow(scr/0.7, -0.248) * Math.pow(scys/0.8, -0.711) * Math.pow(0.995, age);\n\t\t\t}\n\t\t}else{\n\t\t\tif (scys <=0.8){\n\t\t\t\tu_both = 130 * Math.pow(scr/0.7, -0.601) * Math.pow(scys/0.8, -0.375) * Math.pow(0.995, age);\n\t\t\t}else{\n\t\t\t\tu_both = 130 * Math.pow(scr/0.7, -0.601) * Math.pow(scys/0.8, -0.711) * Math.pow(0.995, age);\n\t\t\t}\n\t\t}\n\t}else{\t\t\t\t\t\t//if male\n\t\tif(scr <= 0.9){\n\t\t\tif (scys <=0.8){\n\t\t\t\tu_both = 135 * Math.pow(scr/0.9, -0.207) * Math.pow(scys/0.8, -0.375) * Math.pow(0.995, age);\n\t\t\t}else{\n\t\t\t\tu_both = 135 * Math.pow(scr/0.9, -0.207) * Math.pow(scys/0.8, -0.711) * Math.pow(0.995, age);\n\t\t\t}\n\t\t}else{\n\t\t\tif (scys <=0.8){\n\t\t\t\tu_both = 135 * Math.pow(scr/0.9, -0.601) * Math.pow(scys/0.8, -0.375) * Math.pow(0.995, age);\n\t\t\t}else{\n\t\t\t\tu_both = 135 * Math.pow(scr/0.9, -0.601) * Math.pow(scys/0.8, -0.711) * Math.pow(0.995, age);\n\t\t\t}\n\t\t}\n\t}\n\n\tif(race == 1){  //patient is black\n\t\tu_both = u_both * 1.08;\n\t} if(race == 0){  //patient is black\n\t\tvar u_both_range = u_both * 1.08;\n      u_both_range = u_both_range.toFixed(0);\n\t} \nvar stage;\n\tu_both = u_both.toFixed(0);\n\tif (u_both >= 90) {\n\tstage = 'Stage I';\n\t}\n\telse if (u_both >= 60 && u_both < 90) {\n\t\tstage = 'Stage II';\n\t}\n\telse if (u_both >= 30 && u_both < 60) {\n\t\tif (u_both >= 30 && u_both < 45){\n          stage = 'Stage IIIb';\n        } else {\n          stage = 'Stage IIIa';\n        }\n    }\n\telse if (u_both >= 15 && u_both < 30) {\n\t\tstage = 'Stage IV';\n\t}\n\telse {\n\t\tstage = 'Stage V';\n\t}\n\tif (race == 0) {\n\t\tvar stage_range;\n\t\tif (u_both_range >= 90) {\n\t\tstage_range = 'Stage I';\n\t\t}\n\t\telse if (u_both_range >= 60 && u_both_range < 90) {\n\t\t\tstage_range = 'Stage II';\n\t\t}\n\t\telse if (u_both_range >= 30 && u_both_range < 60) {\n\t\t\tif (u_both_range >= 30 && u_both_range < 45){\n\t          stage_range = 'Stage IIIb';\n\t        } else {\n\t          stage_range = 'Stage IIIa';\n\t        }\n\t    }\n\t\telse if (u_both_range >= 15 && u_both_range < 30) {\n\t\t\tstage_range = 'Stage IV';\n\t\t}\n\t\telse {\n\t\t\tstage_range = 'Stage V';\n\t\t}\n\tif (stage != stage_range) {\n\t\tstage = stage_range+'-'+stage;\n\t}\n\t}\n}\n\nif(calc == 3){\nvar u_cr;\n\tif(gender == 0){\t\t\t//if female\n\t\tif(scr <= 0.7){\n\t\t\tu_cr = 142 * Math.pow(scr/0.7, -0.241) * Math.pow(0.9938, age) * 1.012; \n\t\t}if(scr > 0.7){\n\t\t\tu_cr = 142 * Math.pow(scr/0.7, -1.2) * Math.pow(0.9938, age) * 1.012; \n\t\t}\n\t}\n\tif(gender == 1){      //if male\n\tif(scr <= 0.9){\n\t\t\tu_cr = 142 * Math.pow(scr/0.9, -0.302) * Math.pow(0.9938, age); \n\t\t}if(scr > 0.9){\n\t\t\tu_cr = 142 * Math.pow(scr/0.9, -1.2) * Math.pow(0.9938, age); \n\t\t}\n\t}\n\tvar stage;\n\tu_cr = u_cr.toFixed(0);\n\tif (u_cr >= 90) {\n\t\tstage = 'Stage I';\n\t}\n\telse if (u_cr >= 60 && u_cr < 90) {\n\t\tstage = 'Stage II';\n\t}\n\telse if (u_cr >= 30 && u_cr < 60) {\n\t\t\tif (u_cr >= 30 && u_cr < 45){\n\t          stage = 'Stage IIIb';\n\t        } else {\n\t          stage = 'Stage IIIa';\n\t        }\n\t}\n\telse if (u_cr >= 15 && u_cr < 30) {\n\t\tstage = 'Stage IV';\n\t}\n\telse {\n\t\tstage = 'Stage V';\n\t}\n}\n\n//calculation for CKD-EPI Creatinine Cystatin C\nif(calc == 4){\nvar u_cys;\n\tif(gender == 0){\t\t\t//if female\n\t\tif(scr <= 0.7){\n\t\t\tif(scys <= 0.8){\n\t\t\tu_cys = 135 * Math.pow(scr/0.7, -0.219) * Math.pow(scys/0.8, -0.323) * Math.pow(0.9961, age) * 0.963;\n\t\t\t}\n\t\t\tif(scys > 0.8){\n\t\t\tu_cys = 135 * Math.pow(scr/0.7, -0.219) * Math.pow(scys/0.8, -0.778) * Math.pow(0.9961, age) * 0.963;\n\t\t\t}\n\t\t}if(scr > 0.7){\n\t\t\tif(scys <= 0.8){\n\t\t\tu_cys = 135 * Math.pow(scr/0.7, -0.544) * Math.pow(scys/0.8, -0.323) * Math.pow(0.9961, age) * 0.963;\n\t\t\t}\n\t\t\tif(scys > 0.8){\n\t\t\tu_cys = 135 * Math.pow(scr/0.7, -0.544) * Math.pow(scys/0.8, -0.778) * Math.pow(0.9961, age) * 0.963;\n\t\t\t}\n\t\t}\n    }\n\tif(gender == 1){      //if male\n\t\tif(scr <= 0.9){\n\t\t\tif(scys <= 0.8){\n\t\t\tu_cys = 135 * Math.pow(scr/0.9, -0.144) * Math.pow(scys/0.8, -0.323) * Math.pow(0.9961, age);\n\t\t\t}\n\t\t\tif(scys > 0.8){\n\t\t\tu_cys = 135 * Math.pow(scr/0.9, -0.144) * Math.pow(scys/0.8, -0.778) * Math.pow(0.9961, age);\n\t\t\t}\n\t\t}if(scr > 0.9){\n\t\t\tif(scys <= 0.8){\n\t\t\tu_cys = 135 * Math.pow(scr/0.9, -0.544) * Math.pow(scys/0.8, -0.323) * Math.pow(0.9961, age);\n\t\t\t}\n\t\t\tif(scys > 0.8){\n\t\t\tu_cys = 135 * Math.pow(scr/0.9, -0.544) * Math.pow(scys/0.8, -0.778) * Math.pow(0.9961, age);\n\t\t\t}\n\t\t}\n\t}\n\tvar stage;\n\tu_cys = u_cys.toFixed(0);\n\tif (u_cys >= 90) {\n\t\tstage = 'Stage I';\n\t}\n\telse if (u_cys >= 60 && u_cys < 90) {\n\t\tstage = 'Stage II';\n\t}\n  \telse if (u_cys >= 30 && u_cys < 60) {\n\t\tif (u_cys >= 30 && u_cys < 45){\n          stage = 'Stage IIIb';\n        } else {\n          stage = 'Stage IIIa';\n        }\n  \t}\n\telse if (u_cys >= 15 && u_cys < 30) {\n\t\tstage = 'Stage IV';\n\t}\n\telse {\n\t\tstage = 'Stage V';\n\t}\n\n}\n\n//result for user\nif(calc ==0 && race != 0){\n\tcalc_output.push({\n\tname: 'mini',\n\tvalue: u_cr,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'GFR'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (creatinine)',\n\tvalue: u_cr,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'Estimated GFR by CKD-EPI Creatinine'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (stage)',\n\tvalue: stage,\n\tvalue_text: '',\n\tmessage: 'CKD stage by CKD-EPI Creatinine'\n\t});\n}\nif(calc ==0 && race == 0){\n\tcalc_output.push({\n\tname: 'mini',\n\tvalue: u_cr + \"-\" + u_cr_range,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'GFR'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (creatinine)',\n\tvalue: u_cr + \"-\" + u_cr_range,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'Estimated GFR by CKD-EPI Creatinine'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (stage)',\n\tvalue: stage,\n\tvalue_text: '',\n\tmessage: 'CKD stage by CKD-EPI Creatinine'\n\t});\n}\nif(calc ==1){\n\tcalc_output.push({\n\tname: 'mini',\n\tvalue: u_cys,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'GFR'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (cystatin)',\n\tvalue: u_cys,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'Estimated GFR by CKD-EPI Cystatin C'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (stage)',\n\tvalue: stage,\n\tvalue_text: '',\n\tmessage: 'CKD stage by CKD-EPI Creatinine'\n\t});\n}\nif (calc ==2 && race != 0){\n\tcalc_output.push({\n\tname: 'mini',\n\tvalue: u_both,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'GFR'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (creatinine-cys)',\n\tvalue: u_both,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'Estimated GFR by CKD-EPI Creatinine-Cystatin C'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (stage)',\n\tvalue: stage,\n\tvalue_text: '',\n\tmessage: 'CKD stage by CKD-EPI Creatinine'\n\t});\n}\nif (calc ==2 && race == 0){\n\tcalc_output.push({\n\tname: 'mini',\n\tvalue: u_both + \"-\" + u_both_range,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'GFR'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (creatinine-cys)',\n\tvalue: u_both + \"-\" + u_both_range,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'Estimated GFR by CKD-EPI Creatinine-Cystatin C'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (stage)',\n\tvalue: stage,\n\tvalue_text: '',\n\tmessage: 'CKD stage by CKD-EPI Creatinine'\n\t});\n}\nif(calc == 3){\n\tcalc_output.push({\n\tname: 'mini',\n\tvalue: u_cr,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'GFR'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (creatinine)',\n\tvalue: u_cr,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'Estimated GFR by 2021 CKD-EPI Creatinine'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (stage)',\n\tvalue: stage,\n\tvalue_text: '',\n\tmessage: 'CKD stage by CKD-EPI Creatinine'\n\t});\n}\nif(calc == 4){\n\tcalc_output.push({\n\tname: 'mini',\n\tvalue: u_cys,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'GFR'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (cystatin)',\n\tvalue: u_cys,\n\tvalue_text: 'ml/min/1.73 m\\u00B2',\n\tmessage: 'Estimated GFR by 2021 CKD-EPI Creatinine-Cystatin C'\n\t});\n\tcalc_output.push({\n\tname: '3939_CKD-EPI Equations for GFR_result (stage)',\n\tvalue: stage,\n\tvalue_text: '',\n\tmessage: 'CKD stage by CKD-EPI Creatinine'\n\t});\n}\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Equation</p>",
+                "mdcalc_info_concept": null,
+                "name": "calc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "2021 CKD-EPI Creatinine",
+                        "value": 3
+                    },
+                    {
+                        "label": "2021 CKD-EPI Creatinine-Cystatin C",
+                        "value": 4
+                    },
+                    {
+                        "label": "2009 CKD-EPI Creatinine",
+                        "value": 0
+                    },
+                    {
+                        "label": "2012 CKD-EPI Cystatin C",
+                        "value": 1
+                    },
+                    {
+                        "label": "2012 CKD-EPI Creatinine–Cystatin C",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "md_calc_info_concept": null,
+                "name": "gender",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "calc == 0 || calc == 2 || calc == 3 || calc == 4",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Serum creatinine</p>",
+                "name": "scr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cr"
+            },
+            {
+                "conditionality": "calc == 1 || calc == 2 || calc == 4",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Serum cystatin C</p>",
+                "name": "scys",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "serum_cystatinc"
+            },
+            {
+                "conditionality": "calc == 0 || calc == 2",
+                "default": null,
+                "label_en": "<p>Race</p>",
+                "mdcalc_info_concept": null,
+                "name": "race",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Black",
+                        "value": 1
+                    },
+                    {
+                        "label": "Non-black",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Race may/may not provide better estimates of GFR; optional",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "CKD",
+            "CKD EPI",
+            "kidney failure",
+            "renal failure",
+            "chronic renal failure",
+            "CRF",
+            "GFR",
+            "glomerular filtration rate",
+            "cystatin C",
+            "cystatin",
+            "creatinine",
+            "cr",
+            "scr",
+            "egfr",
+            "estimated gfr"
+        ],
+        "specialty": [
+            "Nephrology",
+            "Pharmacy"
+        ]
+    }
+}

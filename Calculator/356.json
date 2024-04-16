@@ -1,0 +1,198 @@
+{
+    "id": "356",
+    "title": "Revised Cardiac Risk Index for Pre-Operative Risk",
+    "desc": "The Revised Cardiac Risk Index for Pre-Operative Risk Estimates risk of cardiac complications after surgery.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/904659",
+                "text": "Goldman L, Caldera DL, Nussbaum SR, Southwick FS, Krogstad D, Murray B, Burke DS, O'Malley TA, Goroll AH, Caplan CH, Nolan J, Carabello B, Slater EE. Multifactorial index of cardiac risk in noncardiac surgical procedures. N Engl J Med. 1977 Oct 20;297(16):845-50."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18586440",
+                "text": "Rajagopalan S, Croal BL, Bachoo P, Hillis GS, Cuthbertson BH, Brittenden J. N-terminal pro B-type natriuretic peptide is an independent predictor of postoperative myocardial injury in patients undergoing major vascular surgery. J Vasc Surg. 2008;48(4):912-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24076282",
+                "text": "Rodseth RN, Biccard BM, Le manach Y, et al. The prognostic value of pre-operative and post-operative B-type natriuretic peptides in patients undergoing noncardiac surgery: B-type natriuretic peptide and N-terminal fragment of pro-B-type natriuretic peptide: a systematic review and individual patient data meta-analysis. J Am Coll Cardiol. 2014;63(2):170-80."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29900874",
+                "text": "Devereaux PJ, Duceppe E, Guyatt G, et al. Dabigatran in patients with myocardial injury after non-cardiac surgery (MANAGE): an international, randomised, placebo-controlled trial. Lancet. 2018;391(10137):2325-2334."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Risk factor</strong></p>\n</td>\n<td>\n<p><strong>Description</strong></p>\n</td>\n<td>\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Elevated-risk surgery*</p>\n</td>\n<td>\n<p>Intraperitoneal; intrathoracic; suprainguinal vascular</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>History of ischemic heart disease</p>\n</td>\n<td>\n<p>History of myocardial infarction (MI); history of positive exercise test; current chest pain considered due to myocardial ischemia; use of nitrate therapy or ECG with pathological Q waves</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>History of congestive heart failure</p>\n</td>\n<td>\n<p>Pulmonary edema, bilateral rales or S3 gallop; paroxysmal nocturnal dyspnea; chest x-ray (CXR) showing pulmonary vascular redistribution</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>History of cerebrovascular disease</p>\n</td>\n<td>\n<p>Prior transient ischemic attack (TIA) or stroke</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Pre-operative treatment with insulin</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Pre-operative creatinine &gt;2 mg/dL / 176.8 &micro;mol/L</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*See <a href=\"https://pubmed.ncbi.nlm.nih.gov/25085962/\" target=\"_blank\" rel=\"noopener\">2014 ACC/AHA Guideline</a>.</p>",
+        "facts": "<p><span>Interpretation:</span></p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>RCRI Score</strong></p>\n</td>\n<td>\n<p><strong>Risk of major cardiac event (95% CI)*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>0</span></p>\n</td>\n<td>\n<p><span>3.9% (2.8-5.4%)</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>1</span></p>\n</td>\n<td>\n<p><span>6.0% (4.9-7.4%)</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>2</span></p>\n</td>\n<td>\n<p><span>10.1% (8.1-12.6%)</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>&ge;3</span></p>\n</td>\n<td>\n<p><span>15% (11.1-20.0%)</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><span>*Defined as death, myocardial infarction, or cardiac arrest at 30 days after noncardiac surgery (from <a href=\"https://www.onlinecjc.ca/article/S0828-282X(16)30980-1/abstract\" target=\"_blank\" rel=\"noopener\">Duceppe 2017</a>).</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain"
+        ],
+        "disease_treated": [
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\nvar u = (parseFloat(surgery) + \n\tparseFloat(heart_disease) + \n\tparseFloat(heart_failure) + \n\tparseFloat(cerebrovasclar_disease) + \n\tparseFloat(pre_op_insulin) + \n\tparseFloat(pre_op_creatinine));\n\nvar msg, riskclass;\n\nif (u == 0) {\n    msg = '3.9';\n    riskclass = 'Class I Risk';\n} else if (u == 1) {\n    msg = '6.0';\n    riskclass = 'Class II Risk';\n} else if (u == 2) {\n    msg = '10.1';\n    riskclass = 'Class III Risk';\n} else if (u > 2) {\n    msg = '15.0';\n    riskclass = 'Class IV Risk';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: riskclass\n});\ncalc_output.push({\n    name: '1739_Revised Cardiac Risk Index_result (score)',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: riskclass\n});\ncalc_output.push({\n    name: '1739_Revised Cardiac Risk Index_result (risk)',\n    value: msg,\n    value_text: '%',\n    message: '30-day risk of death, MI, or cardiac arrest<br/><br/>From Duceppe 2017. These numbers are higher than those from the original study (Lee 1999). See Evidence for details.'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Elevated-risk surgery",
+                "md_calc_info_concept": null,
+                "name": "surgery",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Intraperitoneal; intrathoracic; suprainguinal vascular (see <a href=\"https://pubmed.ncbi.nlm.nih.gov/25085962/\" target=\"_blank\" rel=\"noopener\">2014 ACC/AHA Guideline</a>)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of ischemic heart disease",
+                "md_calc_info_concept": null,
+                "name": "heart_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "History of myocardial infarction (MI); history of positive exercise test; current chest pain considered due to myocardial ischemia; use of nitrate therapy or ECG with pathological Q waves",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of congestive heart failure",
+                "md_calc_info_concept": null,
+                "name": "heart_failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Pulmonary edema, bilateral rales or S3 gallop; paroxysmal nocturnal dyspnea; chest x-ray (CXR) showing pulmonary vascular redistribution",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of cerebrovascular disease",
+                "md_calc_info_concept": null,
+                "name": "cerebrovasclar_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Prior transient ischemic attack (TIA) or stroke",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pre-operative treatment with insulin",
+                "md_calc_info_concept": null,
+                "name": "pre_op_insulin",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pre-operative creatinine >2 mg/dL / 176.8 µmol/L",
+                "md_calc_info_concept": null,
+                "name": "pre_op_creatinine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "goldman",
+            "pre-op",
+            "preop",
+            "RCRI",
+            "lee index",
+            "rcri",
+            "revised",
+            "revised cardiac",
+            "revised cardiac risk",
+            "Revised Cardiac Risk Index for Pre-Operative Risk",
+            "Revised Cardiac Risk Index",
+            "pre op",
+            "pre op risk",
+            "cardiac risk index",
+            "cardiac risk"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Cardiology",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Orthopedics",
+            "Primary Care",
+            "Surgery (General)"
+        ]
+    }
+}

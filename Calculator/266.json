@@ -1,0 +1,156 @@
+{
+    "id": "266",
+    "title": "Abuse Assessment Screen (AAS)",
+    "desc": "The Abuse Assessment Screen (AAS) detects domestic abuse (intimate partner violence) in pregnant and nonpregnant women in healthcare settings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/1593739/",
+                "text": "McFarlane J, Parker B, Soeken K, Bullock L. Assessing for abuse during pregnancy. Severity and frequency of injuries and associated entry into prenatal care. JAMA. 1992;267(23):3176-3178."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The AAS result is determined according to the following points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%;\"><colgroup><col style=\"width: 60.068259385665534%;\"><col style=\"width: 21.843003412969285%;\"><col style=\"width: 17.918088737201366%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Have you ever been emotionally or physically abused by your partner or someone important to you?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Within the last year, have you been hit, slapped, kicked, or otherwise physically hurt by your partner or someone important to you?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Within the last year, has anyone forced you to have sexual activities?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Are you afraid of your partner or any one of the following: husband/wife, ex-husband/ex-wife, boyfriend/girlfriend, stranger?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>If pregnant, have you been hit, slapped, kicked, or otherwise physically hurt by your partner or someone important to you during your pregnancy?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p>A &ldquo;yes&rdquo; answer to any of the screening questions is considered a positive screening result.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "Altered Mental Status",
+            "Anxious",
+            "Depressed",
+            "Injury/Trauma",
+            "Loss of Appetite",
+            "Preventive Care/Screening",
+            "Suicidal",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Public Health"
+        ],
+        "logic": "var calc_output = [];\n\nvar one = parseFloat(one);\nvar two = parseFloat(two);\nvar three = parseFloat(three);\nvar four = parseFloat(four);\nvar five = parseFloat(five);\n\nvar result;\n\nif (one == 1 || two == 1 || three == 1 || four == 1 || five == 1) {\n    result = 'Positive';\n} else {\n    result = 'Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: '',\n    message: 'Screening result'\n});\ncalc_output.push({\n    name: 'result',\n    value: result,\n    value_text: '',\n    message: 'Screening result'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Have you ever been emotionally or physically abused by your partner or someone important to you?</p>",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Within the last year, have you been hit, slapped, kicked, or otherwise physically hurt by your partner or someone important to you?</p>",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Within the last year, has anyone forced you to have sexual activities?</p>",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Are you afraid of your partner or any one of the following: husband/wife, ex-husband/ex-wife, boyfriend/girlfriend, stranger?</p>",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>If pregnant, have you been hit, slapped, kicked, or otherwise physically hurt by your partner or someone important to you during your pregnancy?</p>",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Abuse Assessment Screen (AAS)",
+            "aas",
+            "abuse",
+            "abuse screening",
+            "abuse screening tool",
+            "domestic abuse",
+            "domestic abuse screening",
+            "domestic violence",
+            "domestic violence screening",
+            "IPV",
+            "intimate partner violence"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "OB-Gyn",
+            "OB-Gyn"
+        ]
+    }
+}

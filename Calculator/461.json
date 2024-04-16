@@ -1,0 +1,402 @@
+{
+    "id": "461",
+    "title": "RIPASA Score for Acute Appendicitis",
+    "desc": "The RIPASA Score for Acute Appendicitis diagnoses appendicitis with lab values and clinical findings, specifically for Asian populations.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://smj.sma.org.sg/5103/5103a4.pdf",
+                "text": "Chong CF, Adi MI, Thien A, Suyoi A, Mackie AJ, Tin AS, Tripathi S, Jaman NH, Tan KK, Kok KY, Mathew VV, Paw O, Chua HB, Yapp SK. Development of the RIPASA score: a new appendicitis scoring system for the diagnosis of acute appendicitis. Singapore Med J. 2010 Mar;51(3):220-5."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21633767",
+                "text": "Chong CF, Thien A, Mackie AJ, Tin AS, Tripathi S, Ahmad MA, Tan LT, Ang SH, Telisinghe PU. Comparison of RIPASA and Alvarado scores for the diagnosis of acute appendicitis. Singapore Med J. 2011 May;52(5):340-5."
+            }
+        ],
+        "evidence": "<p>Addition of selected criteria.</p>",
+        "facts": "<p>The cutoff value of 7.5 points was 98% sensitive and 81% specific for diagnosis of appendicitis.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Appendicitis"
+        ],
+        "logic": "var calc_output = [];\nvar sex = parseFloat(sex);\nvar age = parseFloat(age);\nvar foreign = parseFloat(foreign);\nvar rifpain = parseFloat(rifpain);\nvar rifmig = parseFloat(rifmig);\nvar ano = parseFloat(ano);\nvar nv = parseFloat(nv);\nvar dur = parseFloat(dur);\nvar rifttp = parseFloat(rifttp);\nvar guard = parseFloat(guard);\nvar reb = parseFloat(reb);\nvar rovsing = parseFloat(rovsing);\nvar temp = parseFloat(temp);\nvar wbc = parseFloat(wbc);\nvar urine = parseFloat(urine);\nvar score = sex + age + foreign + rifttp + rifmig + rifpain + ano + nv + dur + guard + reb + rovsing + temp + wbc + urine;\nvar msg, mini_msg;\n\nswitch (true) {\n    case (score < 7.5):\n        mini_msg = \"Unlikely appendicitis.\";\n        msg = \"<br/><br/>The cutoff value of 7.5 points was 98% sensitive and 81% specific for diagnosis of appendicitis.\";\n        break;\n    case (score >= 7.5):\n        mini_msg = \"Likely appendicitis.\";\n        msg = \"<br/><br/>The cutoff value of 7.5 points was 98% sensitive and 81% specific for diagnosis of appendicitis.\";\n        break;\n    default:\n        msg = \"error \";\n};\n\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3166_RIPASA Score_result',\n    value: score,\n    value_text: 'points',\n    message: mini_msg+msg\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Demographic Information",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0.5
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤40",
+                        "value": 1
+                    },
+                    {
+                        "label": ">40",
+                        "value": 0.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Foreign national",
+                "md_calc_info_concept": null,
+                "name": "foreign",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "See <a href = \"#pearls-pitfalls\">Pearls/Pitfalls</a> for clarification",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Symtoms",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Right iliac fossa (RIF) pain",
+                "md_calc_info_concept": null,
+                "name": "rifpain",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pain migration to RIF",
+                "md_calc_info_concept": null,
+                "name": "rifmig",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anorexia",
+                "md_calc_info_concept": null,
+                "name": "ano",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nausea & vomiting",
+                "md_calc_info_concept": null,
+                "name": "nv",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Duration of symptoms",
+                "mdcalc_info_concept": null,
+                "name": "dur",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤48 hrs",
+                        "value": 1
+                    },
+                    {
+                        "label": ">48 hrs",
+                        "value": 0.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Signs",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "RIF tenderness",
+                "md_calc_info_concept": null,
+                "name": "rifttp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Guarding",
+                "md_calc_info_concept": null,
+                "name": "guard",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Rebound tenderness",
+                "md_calc_info_concept": null,
+                "name": "reb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Rovsing sign",
+                "md_calc_info_concept": null,
+                "name": "rovsing",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Temperature between 37°C and 39°C",
+                "md_calc_info_concept": null,
+                "name": "temp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Labs",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Elevated white blood cell count",
+                "md_calc_info_concept": null,
+                "name": "wbc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Negative urine analysis (abscence of blood, WBCs, bacteria)",
+                "md_calc_info_concept": null,
+                "name": "urine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "asian",
+            "appy",
+            "appendicitis",
+            "ripasa",
+            "RIPASA Score",
+            "RIPASA Score for Acute Appendicitis"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Gastroenterology",
+            "Surgery (General)"
+        ]
+    }
+}

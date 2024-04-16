@@ -1,0 +1,127 @@
+{
+    "id": "617",
+    "title": "Bova Score for Pulmonary Embolism Complications",
+    "desc": "The Bova Score for Pulmonary Embolism Complications predicts 30-day risk of PE-related complications in hemodynamically stable patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24696111 ",
+                "text": "Bova C, Sanchez O, Prandoni P, et al. Identification of intermediate-risk patients with acute symptomatic pulmonary embolism. Eur Respir J. 2014;44(3):694-703."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26582806",
+                "text": "Keller K, Beule J, Balzer JO, Dippold W. Modified Bova score for risk stratification and short-term outcome in acute pulmonary embolism. Neth J Med. 2015;73(9):410-6."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td>&nbsp;</td> <td> <p><strong>0 points</strong></p> </td> <td> <p><strong>1 point</strong></p> </td> <td> <p><strong>2 points</strong></p> </td> </tr> <tr> <td> <p>Systolic BP</p> </td> <td> <p>&gt;100 mm Hg</p> </td> <td> <p>--</p> </td> <td> <p>90-100 mmHg</p> </td> </tr> <tr> <td> <p>Elevated cardiac troponin*</p> </td> <td> <p>No</p> </td> <td> <p>--</p> </td> <td> <p>Yes</p> </td> </tr> <tr> <td> <p><abbr title=\"Right ventricular\">RV</abbr> dysfunction**</p> </td> <td> <p>No</p> </td> <td> <p>--</p> </td> <td> <p>Yes</p> </td> </tr> <tr> <td> <p>Heart rate, beats/min</p> </td> <td> <p>&lt;110</p> </td> <td> <p>≥110</p> </td> <td> <p>--</p> </td> </tr> </tbody> </table> <p>*Based on standard manufacturer assays and cutoff values.</p> <p>**On TTE: Right to left ventricular (RV/LV) ratio &gt;0.9, systolic pulmonary artery pressure (sPAP) &gt;30, RV end diastolic diameter &gt;30mm, RV dilation, or free wall hypokinesis. On CT:&nbsp;RV/LV ratio &gt;1 based on short axis diameter measurements.</p> </div>",
+        "facts": "<p>Interpretation:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>Bova Score</strong></p> </td> <td> <p><strong>Stage</strong></p> </td> <td> <p><strong>PE-related complications*</strong></p> </td> <td> <p><strong>PE-related mortality</strong></p> </td> </tr> <tr> <td> <p>0–2</p> </td> <td> <p>I (Low risk)</p> </td> <td> <p>4.4%</p> </td> <td> <p>3.1%</p> </td> </tr> <tr> <td> <p>3–4</p> </td> <td> <p>II (Intermediate risk)</p> </td> <td> <p>18%</p> </td> <td> <p>6.8%</p> </td> </tr> <tr> <td> <p>&gt;4</p> </td> <td> <p>III (High risk)</p> </td> <td> <p>42%</p> </td> <td> <p>10%</p> </td> </tr> </tbody> </table> </div> <p>*Defined as a composite including death from PE, hemodynamic collapse,&nbsp;or recurrent nonfatal PE. Hemodynamic collapse = systolic BP &lt;90 mm Hg for at least 15 min or need for catecholamines, thrombolysis, endotracheal intubation, or CPR.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar score = parseFloat(bp) + parseFloat(trop) + parseFloat(rv) + parseFloat(hr);\n\n//interpretation\nvar stage, comp, mort, risk;\nif(score < 3){\n\tstage = 'I';\n\tcomp = '4.4';\n\tmort = '3.1';\n    risk = 'Low';\n\n}else if(score < 5){\n\tstage = 'II';\n\tcomp = '18';\n\tmort = '6.8';\n    risk = 'Intermediate';\n\n}else{\n\tstage = 'III';\n\tcomp = '42';\n    risk = 'High';\n    mort = '10';\n} \n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Bova Score'\n});\ncalc_output.push({\n    name: 'Stage',\n    value: 'Stage ' + stage,\n    value_text: '',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: 'PE',\n    value: comp,\n    value_text: '%',\n    message: 'PE-related complications (death from PE, hemodynamic collapse, or recurrent nonfatal PE) at 30 days<br/><br/>'+mort+'% PE-related mortality at 30 days'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Systolic BP",
+                "name": "bp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">100 mm Hg",
+                        "value": 0
+                    },
+                    {
+                        "label": "90-100 mmHg",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "If sBP <90, patient not eligible for Bova scoring",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Elevated cardiac troponin",
+                "name": "trop",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Standard assay and lab cutoff value",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Right ventricular'>RV</abbr> dysfunction",
+                "name": "rv",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "On TTE: RV/LV ratio >0.9, sPAP >30, RV end diastolic diameter >30mm, RV dilation, or free wall hypokinesis; on CT: RV/LV ratio >1 (short axis diameter)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Heart rate, beats/min",
+                "name": "hr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<110",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥110",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "bova",
+            "vte",
+            "pe",
+            "dvt"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

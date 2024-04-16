@@ -1,0 +1,213 @@
+{
+    "id": "411",
+    "title": "Manchester Score for Prognosis in Small Cell Lung Cancer",
+    "desc": "The Manchester Score for Prognosis in Small Cell Lung Cancer predicts 2 year survival of small cell lung cancer.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3026969",
+                "text": "Cerny, T; Blair V, Anderson H et al. Pretreatment prognostic factors and scoring system in 407 small-cell lung cancer patients. International Journal of Cancer. 1987, (2): 146–149."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9261523",
+                "text": "Maestu, I; Pastor M, Gómez-Codina J et al. (Jun 1997). Pretreatment prognostic factors for survival in small-cell lung cancer: a new prognostic index and validation of three known prognostic indices on 341 patients .Annals of Oncology 8 (6): 547–553. doi:10.1023/A:1008212826956. PMID 9261523."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24102014",
+                "text": "Zarogoulidis P, et al. Intensive care unit and lung cancer: when should we intubate? J Thorac Dis. 2013 Sep;5 Suppl 4:S407-12. doi: 10.3978/j.issn.2072-1439.2013.08.15."
+            }
+        ],
+        "evidence": "<p>Addition of assigned points. If Karnofsky Performance Scale &lt;60, item is assigned 1 point.</p>",
+        "facts": "<p>Original Study:</p>\n<ul>\n<li>407 patients with SCLC, seen between 1979 and 1985.</li>\n<li>All patients received short-term intensive regimens (cyclophosphamide, etoposide and methotrexate or ifosfamide and etoposide, both followed by thoracic irradiation if complete response was noted).</li>\n</ul>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th><strong>Manchester score</strong></th>\n<th><strong>Prognostic group</strong></th>\n<th><strong>Two year survival (%)</strong></th>\n</tr>\n<tr>\n<td>&le;1</td>\n<td>Good</td>\n<td>16.2</td>\n</tr>\n<tr>\n<td>2 - 3</td>\n<td>Medium</td>\n<td>2.5</td>\n</tr>\n<tr>\n<td>&ge;4</td>\n<td>Poor</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Lung Cancer"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(ldh) + parseFloat(na) + parseFloat(alkPhos) + parseFloat(bicarb) + parseFloat(stage) + parseFloat(karnofsky);\nvar prog = '';\nif (u == 0 || u == 1) {prog = '16.2%';}\n    if (u == 2 || u == 3) {prog = '2.5%';}\n        if (u >= 4) {prog = '0%';}\nvar msg = 'Two-year survival: ~' + prog;\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: '2142_Manchester Score_result',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Serum LDH > upper limit of normal",
+                "md_calc_info_concept": null,
+                "name": "ldh",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Serum Na < 132 mmol/L",
+                "md_calc_info_concept": null,
+                "name": "na",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Serum alkaline phosphatase > 1.5x the upper limit of normal",
+                "md_calc_info_concept": null,
+                "name": "alkPhos",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Serum bicarbonate < 24",
+                "md_calc_info_concept": null,
+                "name": "bicarb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Extensive stage disease",
+                "md_calc_info_concept": null,
+                "name": "stage",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Karnofsky Performance Status",
+                "mdcalc_info_concept": null,
+                "name": "karnofsky",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "100 -- Normal. No complaints. No evidence of disease.",
+                        "value": 0
+                    },
+                    {
+                        "label": "90 -- Able to carry on normal activity. Minor signs or symptoms of disease.",
+                        "value": 0
+                    },
+                    {
+                        "label": "80 -- Normal activity with effort. Some signs or symptoms of disease.",
+                        "value": 0
+                    },
+                    {
+                        "label": "70 -- Cares for self. Unable to carry on normal activity or to do active work.",
+                        "value": 0
+                    },
+                    {
+                        "label": "60 -- Requires occasional assistance, but is able to care for most of his/her personal needs.",
+                        "value": 0
+                    },
+                    {
+                        "label": "50 -- Requires considerable assistance and frequent medical care.",
+                        "value": 1
+                    },
+                    {
+                        "label": "40 -- Disabled. Requires special care and assistance.",
+                        "value": 1
+                    },
+                    {
+                        "label": "30 -- Severely disabled. Hospital admission is indicated although death not imminent.",
+                        "value": 1
+                    },
+                    {
+                        "label": "20 -- Very sick. Hospital admission necessary. Active supportive treatment necessary.",
+                        "value": 1
+                    },
+                    {
+                        "label": "10 -- Moribund. Fatal processes progressing rapidly.",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "ca",
+            "small cell lung cancer",
+            "survival",
+            "prognosis"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Palliative Care/Hospice",
+            "Pulmonology"
+        ]
+    }
+}

@@ -1,0 +1,120 @@
+{
+    "id": "560",
+    "title": "Endotracheal Tube (ETT) Depth and Tidal Volume Calculator",
+    "desc": "The Endotracheal Tube (ETT) Depth and Tidal Volume Calculator estimates depth of optimal ETT placement and target tidal volume  by height.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10793162",
+                "text": "ARDSnet investigators.  Ventilation with lower tidal volumes as compared with traditional tidal volumes for acute lung injury and the acute respiratory distress syndrome.  N Engl J Med.  2000; May;342(18): 1301-1308."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16518983",
+                "text": "Techanivate A, Kumwilaisak K, Samranrean S. Estimation of the proper length of orotracheal intubation by Chula formula. J Med Assoc Thai. 2005 Dec;88(12):1838-46"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://emcrit.org/pulmcrit/endotracheal-tube-depth/",
+                "text": "PulmCrit: Devil in the details: Endotracheal tube depth"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21057614",
+                "text": "Pak HJ, Hong BH, Lee WH. Assessment of airway length of Korean adults and children for otolaryngology and ophthalmic surgery using a fiberoptic bronchoscope. Korean J Anesthesiol. 2010 Oct;59(4):249-55. doi: 10.4097/kjae.2010.59.4.249. Epub 2010 Oct 21."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18497600",
+                "text": "Hunyady AI, Pieters B, Johnston TA, Jonmarker C. Front teeth-to-carina distance in children undergoing cardiac catheterization. Anesthesiology. 2008 Jun;108(6):1004-8. doi: 10.1097/ALN.0b013e3181730288."
+            }
+        ],
+        "evidence": "<p><strong>Chula formula:</strong> ETT depth = 0.1 * [height (cm)] + 4</p>\n<p><strong>Additional formulas:</strong></p>\n<ul>\n<li><calculator id=\"68\">Ideal body weight</calculator> (IBW), men = 50 kg + 2.3 * [height (in) &ndash; 60]</li>\n<li>IBW, women = 45.5 kg + 2.3 * [height (in) &ndash; 60]</li>\n<li>Usual tidal volume target = 6-8 (mL/kg)*IBW</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Height (Adult)",
+                "unit": "ht_adult",
+                "error_min": "48",
+                "error_max": "90",
+                "warn_min": "48",
+                "warn_max": "80",
+                "conversion": "2.54",
+                "normal_max_si": "213",
+                "normal_max_us": "84",
+                "normal_min_si": "152",
+                "normal_min_us": "60",
+                "units_si": "cm",
+                "units_us": "in"
+            }
+        ],
+        "primary_complains": [
+            "Agitation",
+            "Dyspnea",
+            "Injury/Trauma",
+            "Shortness of Breath",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Respiratory Distress",
+            "Trauma"
+        ],
+        "logic": "  var calc_output = [];\n  var height = parseFloat(height);\n  var gender  = parseFloat(gender);\n  var ibw;\n  var tv;\n\n  if (UOMSYSTEM == true) { // US units\n    height = parseFloat(height)\n  }\n  else { // SI units\n    height = parseFloat(height) / 2.54\n  }\n\n  if (height >= 60 && gender == 0) { // women taller than 60 inches\n  \tibw = (45.5 + 2.3 * (height - 60))\n  } \n  if (height <= 60 && gender == 0) { // women 60 inches or shorter\n  \tibw = 45.5\n  } \n  if (height >= 60 && gender == 1) { // men taller than 60 inches\n  \tibw = (50 + 2.3 * (height - 60))\n  } \n  if (height <= 60 && gender == 1) { // men 60 inches or shorter\n  \tibw = 50\n  } \n\n  var depth = (0.1 * height * 2.54 + 4);\n\n  calc_output.push({\n    name: 'mini',\n    value: depth.toFixed(0),\n    value_text: ' cm',\n    message: 'ETT depth'\n  });\n  calc_output.push({\n    name: '3928_ETT Depth and Tidal Volume_result (depth)',\n    value: depth.toFixed(0),\n    value_text: ' cm',\n    message: 'ETT depth from front teeth'\n  });\n  calc_output.push({\n    name: '3928_ETT Depth and Tidal Volume_result (target 6)',\n    value: 6 * ibw.toFixed(0),\n    value_text: ' mL',\n    message: 'Tidal volume if target is 6 mL/kg, IBW '  + ibw.toFixed(0) + ' kg'\n  });\n    calc_output.push({\n    name: '3928_ETT Depth and Tidal Volume_result (target 8)',\n    value: 8 * ibw.toFixed(0),\n    value_text: ' mL',\n    message: 'Tidal volume if target is 8 mL/kg, IBW ' + ibw.toFixed(0) + ' kg'\n  });",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Height",
+                "name": "height",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht_adult"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Gender",
+                "md_calc_info_concept": null,
+                "name": "gender",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "intubation",
+            "intubate",
+            "endotracheal",
+            "ET tube",
+            "ETT",
+            "depth",
+            "tidal volume",
+            "ARDS",
+            "ARDSNet",
+            "lung protective ventilation",
+            "mechanical ventilation",
+            "chula formula",
+            "chula"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Internal Medicine",
+            "Surgery (Trauma)"
+        ]
+    }
+}

@@ -1,0 +1,65 @@
+{
+    "id": "247",
+    "title": "Immune-Related Adverse Events for Lung Toxicity - Pneumonitis",
+    "desc": "The Immune-Related Adverse Events for Lung Toxicity - Pneumonitis grades severity of pneumonitis secondary to immune checkpoint inhibitor therapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29442540 ",
+                "text": "Brahmer JR, Lacchetti C, Schneider BJ, et al. Management of Immune-Related Adverse Events in Patients Treated With Immune Checkpoint Inhibitor Therapy: American Society of Clinical Oncology Clinical Practice Guideline. J Clin Oncol. 2018;36(17):1714-1768."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%; height: 375px;\"><colgroup><col style=\"width: 83.8473%;\" /><col style=\"width: 16.1527%;\" /></colgroup>\n<tbody>\n<tr style=\"height: 75px;\">\n<td style=\"height: 75px;\">\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n<td style=\"height: 75px;\">\n<p dir=\"ltr\"><strong>Pneumonitis grade</strong></p>\n</td>\n</tr>\n<tr style=\"height: 75px;\">\n<td style=\"height: 75px;\">\n<p dir=\"ltr\">Asymptomatic, confined to one lobe of the lung or &lt;25% of lung parenchyma, clinical, or diagnostic observations only</p>\n</td>\n<td style=\"height: 75px;\">\n<p dir=\"ltr\">G1</p>\n</td>\n</tr>\n<tr style=\"height: 75px;\">\n<td style=\"height: 75px;\">\n<p dir=\"ltr\">Symptomatic, involves more than one lobe of the lung or 25-50% of lung parenchyma, medical intervention indicated, limiting instrumental ADL</p>\n</td>\n<td style=\"height: 75px;\">\n<p dir=\"ltr\">G2</p>\n</td>\n</tr>\n<tr style=\"height: 75px;\">\n<td style=\"height: 75px;\">\n<p dir=\"ltr\">Severe symptoms, hospitalization required, involves all lung lobes or &gt;50% of lung parenchyma, limiting self-care ADL, oxygen indicated</p>\n</td>\n<td style=\"height: 75px;\">\n<p dir=\"ltr\">G3</p>\n</td>\n</tr>\n<tr style=\"height: 75px;\">\n<td style=\"height: 75px;\">\n<p dir=\"ltr\">Life-threatening respiratory compromise, urgent intervention indicated (intubation)&nbsp;</p>\n</td>\n<td style=\"height: 75px;\">\n<p dir=\"ltr\">G4</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">See Next Steps for details on management.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Cough",
+            "Fatigue",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Pneumonitis"
+        ],
+        "logic": "var calc_output = [];\n\nvar grading = parseFloat(grading);\nvar rec;\n\nswitch (grading) {\n  case 1:\n    rec = 'Hold ICPi temporarily; repeat CT in 3-4 weeks; consider resuming ICPi if improved/resolved radiographically; monitor weekly with H&P, pulse oximetry and optional CXR; treat as grade 2 if no improvement; see Next Steps for details';\n    break;\n  case 2:\n    rec = 'Hold ICPi until resolution to Grade ≤ 1; start prednisone 1-2 mg/kg ; consider bronchoscopy with BAL; consider empirical antibiotics; monitor every 3 days with H&P, pulse oximetry and optional CXR; treat as Grade 3 if no improvement in 48-72 hours; see Next Steps for details';\n    break;\n  case 3:\n    rec = 'Permanently discontinue ICPi; hospitalize the patient; start empirical antibiotics; start (methyl)prednisolone IV 1-2 mg/kg/d; if no improvement after 48h, consider infliximab, mycophenolate mofetil or IVIG; taper steroids over 4-6w; consult pulmonary and infectious diseases if necessary; offer bronchoscopy with BAL ± transbronchial biopsy; see Next Steps for details';\n    break;\n  case 4:\n    rec = 'Permanently discontinue ICPi; hospitalize the patient; start empirical antibiotics; start (methyl)prednisolone IV 1-2 mg/kg/d; if no improvement after 48h, consider infliximab, mycophenolate mofetil or IVIG; taper steroids over 4-6w; consult pulmonary and infectious diseases if necessary; offer bronchoscopy with BAL ± transbronchial biopsy; see Next Steps for details';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: 'G'+grading,\n    value_text: '',\n    message: 'Pneumonitis grade'   \n});\ncalc_output.push({\n    name: 'Score',\n    value: 'G'+grading,\n    value_text: '',\n    message: 'Pneumonitis grade'   \n});\ncalc_output.push({\n    name: 'risk1',\n    value: '', \n    value_text: '',\n    message: rec\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Criteria",
+                "name": "grading",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Asymptomatic, confined to one lobe of the lung or <25% of lung parenchyma, clinical, or diagnostic observations only",
+                        "value": 1
+                    },
+                    {
+                        "label": "Symptomatic, involves more than one lobe of the lung or 25-50% of lung parenchyma, medical intervention indicated, limiting instrumental ADL",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe symptoms, hospitalization required, involves all lung lobes or >50% of lung parenchyma, limiting self-care ADL, oxygen indicated",
+                        "value": 3
+                    },
+                    {
+                        "label": "Life-threatening respiratory compromise, urgent intervention indicated (intubation) ",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Immune Related Adverse Events, irae, pneumonitis, immune checkpoint inhibitor therapy, ICPi therapy, ASCO guideline, ASCO"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

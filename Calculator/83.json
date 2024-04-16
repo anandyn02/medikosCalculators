@@ -1,0 +1,176 @@
+{
+    "id": "83",
+    "title": "GALAD Model for Hepatocellular Carcinoma (HCC)",
+    "desc": "The GALAD Model for Hepatocellular Carcinoma (HCC) diagnoses HCC based on serum biomarkers.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24220911",
+                "text": "Johnson PJ, Pirrie SJ, Cox TF, et al. The detection of hepatocellular carcinoma using a prospectively developed and validated model based on serological biomarkers. Cancer Epidemiol Biomarkers Prev. 2014;23(1):144-53."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21132575",
+                "text": "Kumada T, Toyoda H, Kiriyama S, et al. Predictive value of tumor markers for hepatocarcinogenesis in patients with hepatitis C virus. J Gastroenterol. 2011;46(4):536-44."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">GALAD Score = -10.08 + 0.09 x A + 1.67 x G + 2.34 log<sub>10</sub>(AF) + 0.04 x L + 1.33 x log<sub>10</sub>(D)</p>\n<p dir=\"ltr\">Where variables are as follows:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"72\"><col width=\"226\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Value</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>G</strong>ender</p>\n</td>\n<td>\n<p dir=\"ltr\">0 if female</p>\n<p dir=\"ltr\">1 if male</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>A</strong>ge</p>\n</td>\n<td>\n<p dir=\"ltr\">Age, years</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">AFP-<strong>L</strong>3</p>\n</td>\n<td>\n<p dir=\"ltr\">Alpha fetoprotein L3, %</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>AF</strong>P</p>\n</td>\n<td>\n<p dir=\"ltr\">Alpha fetoprotein, ng/mL</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>D</strong>CP</p>\n</td>\n<td>\n<p dir=\"ltr\">Des-carboxy-prothrombin, ng/mL</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<p dir=\"ltr\">Probability of concurrent HCC in this CLD patient = exp(Z) / (1 + exp(Z))</p>\n<p dir=\"ltr\">Where Z = GALAD Score</p>",
+        "estimation": [
+            {
+                "name": "AFP_L3",
+                "unit": "afp_l3",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "10",
+                "normal_max_us": "10",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "AFP",
+                "unit": "afp",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "6",
+                "conversion": "1",
+                "normal_max_si": "6",
+                "normal_max_us": "6",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "ng/mL",
+                "units_us": "ng/mL"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "DCP",
+                "unit": "dcp",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "7.5",
+                "conversion": "1",
+                "normal_max_si": "7.5",
+                "normal_max_us": "7.5",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "ng/mL",
+                "units_us": "ng/mL"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Jaundice",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Hepatocellular Carcinoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar afp13 = parseFloat(afpl3);\nvar afp = parseFloat(afp);\nvar dcp = parseFloat(dcp);\nvar gender = parseFloat(gender);\n\nvar score = -10.08 + 0.09*age + 1.67*gender + 2.34*Math.log10(afp) + 0.04*afpl3 + 1.33*Math.log10(dcp); \n\nvar prob = (Math.exp(score) / (1 + Math.exp(score)))*100;\n\n//results\n\ncalc_output.push({\n   name: 'mini',\n   value: prob.toFixed(2),\n   value_text: '%',\n   message:'Probability of concurrent HCC'\n});\ncalc_output.push({\n    name: '10094_GALAD Model for HCC_result (score)',\n    value: score.toFixed(2),\n    value_text: 'points',\n    message: 'GALAD Score'\n});\ncalc_output.push({\n    name: '10094_GALAD Model for HCC_result (risk)',\n    value: prob.toFixed(2),\n    value_text: '%',\n    message: 'Probability of concurrent HCC in this CLD patient'\n});\n\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Gender",
+                "md_calc_info_concept": null,
+                "name": "gender",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Alpha fetoprotein L3 (AFP-L3)",
+                "name": "afpl3",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "afp_l3"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Alpha fetoprotein (AFP)",
+                "name": "afp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "afp"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Des-carboxy-prothrombin (DCP)",
+                "name": "dcp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "dcp"
+            }
+        ],
+        "can_search": [
+            "Chronic liver disease",
+            "CLD",
+            "GALAD score",
+            "HCC diagnosis"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

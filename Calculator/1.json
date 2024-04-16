@@ -1,0 +1,142 @@
+{
+    "id": "1",
+    "title": "Fatty Liver Index",
+    "desc": "The Fatty Liver Index diagnoses fatty liver using labs and exam findings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://bmcgastroenterol.biomedcentral.com/articles/10.1186/1471-230X-6-33 ",
+                "text": "Bedogni G, Bellentani S, Miglioli L, et al. The Fatty Liver Index: a simple and accurate predictor of hepatic steatosis in the general population. BMC Gastroenterol. 2006;6:33."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Fatty Liver Index (FLI) = e<sup>y</sup> / (1 + e<sup>y</sup>) &times; 100</p>\n<p>Where y = 0.953 &times; ln(triglycerides, mg/dL) + 0.139 &times; BMI, kg/m<sup>2</sup> + 0.718 &times; ln (GGT, U/L) + 0.053 &times; waist circumference, cm &ndash; 15.745</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"126\" /><col width=\"126\" /><col width=\"200\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Fatty Liver Index</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Diagnosis</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;30</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">Fatty liver ruled out (LR- = 0.2)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">30 to &lt;60</p>\n</td>\n<td>\n<p dir=\"ltr\">Indeterminate</p>\n</td>\n<td>\n<p dir=\"ltr\">Fatty liver neither ruled in nor ruled out</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;60</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">Fatty liver ruled in (LR+ = 4.3)</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-5cbef7af-e000-52c5-9e85-e54946e7918c\"></span><span id=\"docs-internal-guid-5cbef7af-e000-52c5-9e85-e54946e7918c\"><br /></span></p>",
+        "estimation": [
+            {
+                "name": "Body Mass Index",
+                "unit": "BMI",
+                "error_min": "0",
+                "error_max": "50",
+                "warn_min": "10",
+                "warn_max": "30",
+                "conversion": "1",
+                "normal_max_si": "25",
+                "normal_max_us": "25",
+                "normal_min_si": "20",
+                "normal_min_us": "20",
+                "units_si": "kg/m²",
+                "units_us": "kg/m²"
+            },
+            {
+                "name": "Aspartate Aminotransferase",
+                "unit": "AST",
+                "error_min": "1",
+                "error_max": "10000",
+                "warn_min": "4",
+                "warn_max": "4000",
+                "conversion": "1",
+                "normal_max_si": "41",
+                "normal_max_us": "41",
+                "normal_min_si": "15",
+                "normal_min_us": "15",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "Triglycerides",
+                "unit": "trig",
+                "error_min": "0",
+                "error_max": "400",
+                "warn_min": "0",
+                "warn_max": "300",
+                "conversion": "0.0113",
+                "normal_max_si": "1.7",
+                "normal_max_us": "150",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Waist Circumference",
+                "unit": "waist_circumference",
+                "error_min": "0",
+                "error_max": "150",
+                "warn_min": "10",
+                "warn_max": "120",
+                "conversion": "2.54",
+                "normal_max_si": "94",
+                "normal_max_us": "37",
+                "normal_min_si": "64",
+                "normal_min_us": "25",
+                "units_si": "cm",
+                "units_us": "in"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Abdominal Pain",
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Hepatitis",
+            "Hepatocellular Carcinoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar bmi = parseFloat(bmi);\nvar circ = parseFloat(circ);\nvar trig = parseFloat(trig);\nvar ggt = parseFloat(ggt);\n\nif (UOMSYSTEM == true) {\n\tcirc = circ / 0.39370079;\n    trig = trig;\n}\nelse {\n\tcirc = circ;\n  \ttrig = trig*88.57;\n}\n\nvar y = 0.953 * Math.log(trig) + 0.139 * bmi + 0.718 * Math.log(ggt) + 0.053 * circ - 15.745;\nvar fli = Math.exp(y) / (1 + Math.exp(y)) * 100;\n\nvar risk, msg;\n\nif (fli.toFixed(0) < 30) {\n\trisk = 'Low';\n\tmsg = 'Fatty liver ruled out (LR- = 0.2)';\n}\nelse if (fli.toFixed(0) >= 30 && fli.toFixed(0) < 60) {\n\trisk = 'Indeterminate';\n\tmsg = 'Fatty liver neither ruled in nor ruled out';\n}\nelse if (fli.toFixed(0) >= 60) {\n\trisk = 'High';\n\tmsg = 'Fatty liver ruled in (LR+ = 4.3)';\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: fli.toFixed(0),\n   value_text: '',\n   message: risk + ' risk'\n});\ncalc_output.push({\n   name: 'FLI',\n   value: fli.toFixed(0),\n   value_text: '',\n   message: 'Fatty Liver Index'\n});\ncalc_output.push({\n   name: 'FLI',\n   value: risk,\n   value_text: 'risk',\n   message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<abbr title='Body mass index'><calculator id='29'>BMI</calculator></abbr>",
+                "name": "bmi",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "BMI"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Waist circumference",
+                "name": "circ",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "waist_circumference"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<abbr title='Gamma glutamyl transpeptidase'>GGT</abbr>",
+                "name": "ggt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "AST"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Triglycerides",
+                "name": "trig",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "trig"
+            }
+        ],
+        "can_search": [
+            "Nafld",
+            "nash",
+            "FLI",
+            "ASH"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hepatology",
+            "Internal Medicine"
+        ]
+    }
+}

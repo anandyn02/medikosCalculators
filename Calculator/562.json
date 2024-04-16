@@ -1,0 +1,307 @@
+{
+    "id": "562",
+    "title": "Australian Type 2 Diabetes Risk (AUSDRISK) Assessment Tool",
+    "desc": "AUSDRISK estimates risk of developing type 2 diabetes in Australian patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20170456",
+                "text": "Chen L, Magliano DJ, Balkau B, Colagiuri S, Zimmet PZ, Tonkin AM, Mitchell P, Phillips PJ, Shaw JE. AUSDRISK: an Australian Type 2 Diabetes Risk Assessment Tool based on demographic, lifestyle and simple anthropometric measures. Med J Aust. 2010 Feb 15;192(4):197-202."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12062857",
+                "text": "Dunstan DW, Zimmet PZ, Welborn TA, et al. The Australian Diabetes, Obesity and Lifestyle Study (AusDiab)--methods and response rates. Diabetes Res Clin Pract. 2002;57(2):119-29."
+            }
+        ],
+        "evidence": "<p>&nbsp;</p> <table> <tbody> <tr> <td colspan=\"2\"> <p><strong>Variable</strong></p> </td> <td> <p><strong>Points</strong></p> </td> </tr> <tr> <td> <p><strong>Age</strong></p> </td> <td> <p>25-34</p> <p>35-44</p> <p>45-54</p> <p>55-64</p> <p>≥65</p> </td> <td> <p>0</p> <p>2</p> <p>4</p> <p>6</p> <p>8</p> </td> </tr> <tr> <td> <p><strong>Sex</strong></p> </td> <td> <p>Female</p> <p>Male</p> </td> <td> <p>0</p> <p>3</p> </td> </tr> <tr> <td> <p><strong>Ethnicity</strong></p> <p>Also used to determine waist circumference categories; see below</p> </td> <td> <p>Southern European</p> <p>Asian</p> <p>Aboriginal/Torres Strait Islander</p> <p>Pacific Islander</p> <p>Other</p> </td> <td> <p>2</p> <p>2</p> <p>2</p> <p>2</p> <p>0</p> </td> </tr> <tr> <td> <p><strong>Parental history of diabetes</strong></p> </td> <td> <p>No</p> <p>Yes</p> </td> <td> <p>0</p> <p>3</p> </td> </tr> <tr> <td> <p><strong>History of high blood glucose*</strong></p> </td> <td> <p>No</p> <p>Yes</p> </td> <td> <p>0</p> <p>6</p> </td> </tr> <tr> <td> <p><strong>Use of antihypertensive medications</strong></p> </td> <td> <p>No</p> <p>Yes</p> </td> <td> <p>0</p> <p>2</p> </td> </tr> <tr> <td> <p><strong>Current smoker</strong></p> </td> <td> <p>No</p> <p>Yes</p> </td> <td> <p>0</p> <p>2</p> </td> </tr> <tr> <td> <p><strong>Physical inactivity**</strong></p> </td> <td> <p>No</p> <p>Yes</p> </td> <td> <p>0</p> <p>2</p> </td> </tr> <tr> <td> <p><strong>Waist circumference***</strong></p> </td> <td> <p>Category 1</p> <p>Category 2</p> <p>Category 3</p> </td> <td> <p>0</p> <p>4</p> <p>7</p> </td> </tr> <tr> <td> <p><strong>BMI</strong></p> <p><em>Note</em>: In the study, several models were tested in terms of quantifying obesity; per first author Dr. Lei Chen, the addition of BMI does not significantly increase discriminatory power (see Creator Insights for further detail), but may be used in cases where waist circumference cannot be accurately measured.</p> </td> <td> <p>Normal (&lt;25)</p> <p>Overweight (25 to less than 30)</p> <p>Obese (30 to less than 35)</p> <p>Morbidly obese (≥35)</p> </td> <td> <p>0</p> <p>3</p> <p>6</p> <p>8</p> </td> </tr> </tbody> </table> <p>*Patients were asked if they had ever been told their glucose level was high, including during pregnancy for women.</p> <p>**Physical inactivity&nbsp;was defined as less than 150 minutes per week of walking (if continuous and ≥10 minutes) and/or moderate or vigorous activity.</p> <p>***For Aboriginal/Torres Strait Islander or Asian&nbsp;background:</p> <ul> <li>Category 1: &lt;90 cm (men), &lt;80 cm (women)</li> <li>Category 2: 90–99 cm (men), 80–89 cm (women)</li> <li>Category 3: ≥100 cm (men), ≥90 cm (women)</li> </ul> <p>For&nbsp;Southern European, Pacific Islander, or other:</p> <ul> <li>Category 1: &lt;102 cm (men), &lt;88 cm (women)</li> <li>Category 2: 102–109 cm (men), &nbsp;88–99 cm (women)</li> <li>Category 3: ≥110 cm (men), ≥100 cm (women)</li> </ul> <p>From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/20170456\" target=\"_blank\">Chen 2010</a>.</p>",
+        "facts": "<p>&nbsp;</p> <table> <tbody> <tr> <td> <p><strong>AUSDRISK Score</strong></p> </td> <td> <p><strong>5-year Risk* of Type 2 DM </strong></p> </td> </tr> <tr> <td> <p>&lt;5</p> </td> <td>1 in 100</td> </tr> <tr> <td> <p>6-8</p> </td> <td>1 in 50</td> </tr> <tr> <td> <p>9-11</p> </td> <td>1 in 30</td> </tr> <tr> <td> <p>12-15</p> </td> <td> <p>1 in 14</p> </td> </tr> <tr> <td> <p>16-19</p> </td> <td> <p>1 in 7</p> </td> </tr> <tr> <td> <p>&gt;20</p> </td> <td> <p>1 in 3</p> </td> </tr> </tbody> </table> <p><br>May overestimate risk in patients &lt;25 years old and may underestimate risk in Aboriginal and Torres Strait Islanders.</p> <p>From <a href=\"http://www.racgp.org.au/download/Documents/Guidelines/Diabetes/2015diabetesmanagement.pdf\" target=\"_blank\">General Practice Management Guidelines of Type 2 DM, Royal Australian College of General Practitioners 2016</a>.</p>",
+        "estimation": [
+            {
+                "name": "Waist Circumference",
+                "unit": "waist_circumference",
+                "error_min": "0",
+                "error_max": "150",
+                "warn_min": "10",
+                "warn_max": "120",
+                "conversion": "2.54",
+                "normal_max_si": "94",
+                "normal_max_us": "37",
+                "normal_min_si": "64",
+                "normal_min_us": "25",
+                "units_si": "cm",
+                "units_us": "in"
+            }
+        ],
+        "primary_complains": [
+            "Preventive Care/Screening"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar sex = parseFloat(sex);\nvar ethnicity;\nvar ethnicity_points;\nvar famhx = parseFloat(famhx);\nvar highbg = parseFloat(highbg);\nvar htn = parseFloat(htn);\nvar smoker = parseFloat(smoker);\nvar inactive = parseFloat(inactive);\nvar waistcirc;\nvar waistcirc_risk;\nvar waistcirc_cat;\nvar bmi = parseFloat(bmi);\nvar msg;\nvar risk_5yr;\n\nif (UOMSYSTEM == true) { // US units, conversion needed\n\twaistcirc = parseFloat(waistcirc) * 2.54\n}\nelse {\n\twaistcirc = parseFloat(waistcirc)\n}\n\n// define ethnicities\nif (ethnicity == 0) { // other\n\tethnicity_points = 0\n}\nelse { // Southern European, Asian, Aboriginal, Pacific Islander\n\tethnicity_points = 2\n}\n\n// define waist circumference category risk\nif (ethnicity == 2 || ethnicity == 3) {\n\twaistcirc_risk = 'high'\n}\nif (ethnicity == 0 || ethnicity == 1 || ethnicity == 4) {\n\twaistcirc_risk = 'low'\n}\n\n// define waist circumference categories\n\n// waist circumference category 1: aboriginal or asian\nif (waistcirc_risk == 'high' && sex == 3 && waistcirc < 90) {\n\twaistcirc_cat = 0\n}\nelse if (sex == 0 && waistcirc < 80) {\n\twaistcirc_cat = 0\n}\n\n// waist circumference category 1: non-aboriginal non-asian\nif (waistcirc_risk == 'low' && sex == 3 && waistcirc < 102) {\n\twaistcirc_cat = 0\n}\nif (waistcirc_risk == 'low' && sex == 0 && waistcirc < 88) {\n\twaistcirc_cat = 0\n}\n\n// waist circumference category 2: aboriginal or asian\nif (waistcirc_risk == 'high' && sex == 3 && waistcirc >= 90 && waistcirc < 100) {\n\twaistcirc_cat = 4\n}\nif (waistcirc_risk == 'high' && sex == 0 && waistcirc >= 80 && waistcirc < 90) {\n\twaistcirc_cat = 4\n}\n\n// waist circumference category 2: non-aboriginal non-asian\nif (waistcirc_risk == 'low' && sex == 3 && waistcirc >= 102 && waistcirc < 110) {\n\twaistcirc_cat = 4\n}\nif (waistcirc_risk == 'low' && sex == 0 && waistcirc >= 88 && waistcirc < 100) {\n\twaistcirc_cat = 4\n}\n\n// waist circumference category 3: aboriginal or asian\nif (waistcirc_risk == 'high' && sex == 3 && waistcirc >= 100) {\n\twaistcirc_cat = 7\n}\nif (waistcirc_risk == 'high' && sex == 0 && waistcirc >= 90) {\n\twaistcirc_cat = 7\n}\n\n// waist circumference category 3: non-aboriginal non-asian\nif (waistcirc_risk == 'low' && sex == 3 && waistcirc >= 110) {\n\twaistcirc_cat = 7\n}\nif (waistcirc_risk == 'low' && sex == 0 && waistcirc >= 100) {\n\twaistcirc_cat = 7\n}\n\nvar opt = parseFloat(options);\nif(opt == 2){\n\tvar risk = age + sex + famhx + highbg + htn + smoker + inactive + bmi + ethnicity_points + waistcirc_cat; \t\n}\nif(opt == 0){\n\tvar risk = age + sex + famhx + highbg + htn + smoker + inactive + ethnicity_points + waistcirc_cat; \n}\nif(opt == 1){\n\tvar risk = age + sex + famhx + highbg + htn + smoker + inactive + bmi + ethnicity_points; \n}\n\n\n\nif (risk <= 5) {\n\trisk_5yr = '1 in 100'\n\tmsg = ''\n}\nif (risk >= 6 && risk <= 8) {\n\trisk_5yr = '1 in 50'\n\tmsg = ''\n}\nif (risk >= 9 && risk <= 11) {\n\trisk_5yr = '1 in 30'\n\tmsg = ''\n}\nif (risk >= 12 && risk <= 15) {\n\trisk_5yr = '1 in 14'\n\tmsg = 'High risk. Investigate for possible diabetes.'\n}\nif (risk >= 16 && risk <= 19) {\n\trisk_5yr = '1 in 7'\n\tmsg = 'High risk. Investigate for possible diabetes.'\n}\nif (risk >= 20) {\n\trisk_5yr = '1 in 3'\n\tmsg = 'High risk. Investigate for possible diabetes.'\n}\n\ncalc_output.push({ // message on app\n    name: 'mini',\n    value: risk,\n    value_text: ' points',\n    message: '' \n});\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: ' points',\n    message: msg \n});\ncalc_output.push({\n    name: 'risk_5yr',\n    value: risk_5yr,\n    value_text: '',\n    message: '5-year risk of developing Type 2 DM'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age (years)",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "25-34",
+                        "value": 0
+                    },
+                    {
+                        "label": "35-44",
+                        "value": 2
+                    },
+                    {
+                        "label": "45-54",
+                        "value": 4
+                    },
+                    {
+                        "label": "55-64",
+                        "value": 6
+                    },
+                    {
+                        "label": "≥65",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Ethnicity",
+                "name": "ethnicity",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Southern European",
+                        "value": 1
+                    },
+                    {
+                        "label": "Asian",
+                        "value": 2
+                    },
+                    {
+                        "label": "Aboriginal/Torres Strait Islander",
+                        "value": 3
+                    },
+                    {
+                        "label": "Pacific Islander",
+                        "value": 4
+                    },
+                    {
+                        "label": "Other",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Parental history of diabetes",
+                "name": "famhx",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of high blood glucose",
+                "name": "highbg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask patient if they have ever been told their blood glucose is high, including during pregnancy for women",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Use of antihypertensive medications",
+                "name": "htn",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Current smoker",
+                "name": "smoker",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Physical inactivity",
+                "name": "inactive",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Less than 150 minutes per week of walking (if continuous and ≥10 minutes) and/or moderate or vigorous activity.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Obesity parameter",
+                "name": "options",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Waist circumference",
+                        "value": 0
+                    },
+                    {
+                        "label": "BMI",
+                        "value": 1
+                    },
+                    {
+                        "label": "Both",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Study recommendation: waist circumference",
+                "type": "radio"
+            },
+            {
+                "conditionality": "options == 0 || options ==2",
+                "default": null,
+                "label_en": "Waist circumference",
+                "name": "waistcirc",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "waist_circumference"
+            },
+            {
+                "conditionality": "options == 1 || options ==2",
+                "default": null,
+                "label_en": "<calculator id='29'>BMI</calculator>",
+                "name": "bmi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal (<25)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Overweight (25–29.9)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Obese (30–34.9)",
+                        "value": 6
+                    },
+                    {
+                        "label": "Morbidly obese (≥35)",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "ausdrisk",
+            "australian",
+            "diabetes",
+            "dm",
+            "t2dm",
+            "type 2 diabetes",
+            "aus d risk"
+        ],
+        "specialty": [
+            "Endocrinology",
+            "Family Practice",
+            "Primary Care"
+        ]
+    }
+}

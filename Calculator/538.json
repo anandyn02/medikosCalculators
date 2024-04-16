@@ -1,0 +1,181 @@
+{
+    "id": "538",
+    "title": "Risk of Paradoxical Embolism (RoPE) Score",
+    "desc": "The RoPE Score identifies stroke-related versus incidental patent foramen ovale (PFO) in patients with cryptogenic stroke.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23864310",
+                "text": "Kent DM, Ruthazer R, Weimar C, Mas JL, Serena J, Homma S, Di Angelantonio E, Di Tullio MR, Lutz JS, Elkind MS, Griffith J, Jaigobin C, Mattle HP, Michel P, Mono ML, Nedeltchev K, Papetti F, Thaler DE. An index to identify stroke-related vs incidental patent foramen ovale in cryptogenic stroke. Neurology. 2013 Aug 13;81(7):619-25. doi: 10.1212/WNL.0b013e3182a08d59. Epub 2013 Jul 17."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4117365/",
+                "text": "Thaler DE, Ruthazer R, Weimar C, Mas JL, Serena J, Di Angelantonio E, Papetti F, Homma S, Mattle HP, Nedeltchev K, Mono ML, Jaigobin C, Michel P, Elkind MS, Di Tullio MR, Lutz JS, Griffith J, Kent DM. Recurrent stroke predictors differ in medically treated patients with pathogenic vs. other PFOs. Neurology. 2014 Jul 15;83(3):221-6. doi: 10.1212/WNL.0000000000000589. Epub 2014 Jun 13."
+            }
+        ],
+        "evidence": "<table>\n<tbody>\n<tr>\n<th>Characteristic</th>\n<th>Points</th>\n</tr>\n<tr>\n<td>No history of hypertension</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>No history of diabetes</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>No history of stroke or TIA</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Nonsmoker</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Cortical infarct on imaging</td>\n<td>+1</td>\n</tr>\n<tr>\n<td colspan=\"2\">Age in years</td>\n</tr>\n<tr>\n<td>18-29</td>\n<td>+5</td>\n</tr>\n<tr>\n<td>30-39</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>40-49</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>50-59</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>60-69</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>&ge;70</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<table>\n<tbody>\n<tr>\n<th>RoPE score</th>\n<th>PFO-attributable fraction (95% CI)</th>\n<th>Estimated stroke/TIA recurrence at 2 years</th>\n</tr>\n<tr>\n<td>0-3</td>\n<td>0% (0&ndash;4)</td>\n<td>20% (12&ndash;28)</td>\n</tr>\n<tr>\n<td>4</td>\n<td>38% (25&ndash;48)</td>\n<td>12% (6&ndash;18)</td>\n</tr>\n<tr>\n<td>5</td>\n<td>34% (21&ndash;45)</td>\n<td>7% (3&ndash;11)</td>\n</tr>\n<tr>\n<td>6</td>\n<td>62% (54&ndash;68)</td>\n<td>8% (4&ndash;12)</td>\n</tr>\n<tr>\n<td>7</td>\n<td>72% (66&ndash;76)</td>\n<td>6% (2&ndash;10)</td>\n</tr>\n<tr>\n<td>8</td>\n<td>84% (79&ndash;87)</td>\n<td>6% (2&ndash;10)</td>\n</tr>\n<tr>\n<td>9-10</td>\n<td>88% (83&ndash;91)</td>\n<td>2% (0&ndash;4)</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Headache"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar agescore, pfo, stroke, stroke_msg, pfo_msg;\nvar u;\nif (age >= 18 && age <= 29) {\n    agescore = 5;\n}\nif (age >= 30 && age <= 39) {\n    agescore = 4;\n}\nif (age >= 40 && age <= 49) {\n    agescore = 3;\n}\nif (age >= 50 && age <= 59) {\n    agescore = 2\n}\nif (age >= 60 && age <= 69) {\n    agescore = 1;\n}\nif (age >= 70) {\n    agescore = 0;\n}\n\nif (age < 18) {\n    pfo = '';\n    stroke = '';\n    pfo_msg = 'This patient is not in the appropriate age range for this calculator.';\n    stroke_msg = 'This patient is not in the appropriate age range for this calculator.';\n    u = 'N/A';\n} else {\n    u = agescore + parseFloat(htn) + parseFloat(dm) + parseFloat(tia) + parseFloat(nonsmoker) + parseFloat(infarct)\n    var pfo_msg = ' chance that stroke is due to PFO.';\n    var stroke_msg = ' risk of 2 year recurrence of stroke/TIA.';\n    if (u <= 3) {\n        pfo = '0%';\n        stroke = '20%';\n    }\n    if (u == 4) {\n        pfo = '38%';\n        stroke = '12%';\n    }\n    if (u == 5) {\n        pfo = '34%';\n        stroke = '7%';\n    }\n    if (u == 6) {\n        pfo = '62%';\n        stroke = '8%';\n    }\n    if (u == 7) {\n        pfo = '72%';\n        stroke = '6%';\n    }\n    if (u == 8) {\n        pfo = '84%';\n        stroke = '6%';\n    }\n    if (u >= 9) {\n        pfo = '88%';\n        stroke = '2%';\n\n    }\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: pfo + pfo_msg\n});\ncalc_output.push({\n    name: '3902_RoPE Score_result',\n    value: u,\n    value_text: 'points',\n    message: pfo + pfo_msg + (pfo_msg == stroke_msg ? \"\" : \"<br/><br/>\" + stroke + stroke_msg)\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of hypertension",
+                "md_calc_info_concept": null,
+                "name": "htn",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of diabetes",
+                "md_calc_info_concept": null,
+                "name": "dm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of stroke or TIA",
+                "md_calc_info_concept": null,
+                "name": "tia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Smoker",
+                "md_calc_info_concept": null,
+                "name": "nonsmoker",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Cortical infarct on imaging",
+                "md_calc_info_concept": null,
+                "name": "infarct",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            }
+        ],
+        "can_search": [
+            "RoPE score",
+            "RoPE",
+            "paradoxical embolism",
+            "embolic stroke",
+            "ischemic stroke",
+            "PFO"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Neurology"
+        ]
+    }
+}

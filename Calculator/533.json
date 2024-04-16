@@ -1,0 +1,138 @@
+{
+    "id": "533",
+    "title": "Revised Multiple Myeloma International Staging System (R-ISS)",
+    "desc": "The Revised multiple Myeloma International Staging System (ISS) stages multiple myeloma patients based on genetics and routine lab values in conjunction with the original ISS.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jco.ascopubs.org/content/33/26/2863",
+                "text": "Palumbo A, et. al. Revised International Staging System for Multiple Myeloma: a Report From International Myeloma Working Group. JCO 2015; 33: 2863-2869."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.myeloma.org/publications",
+                "text": "International Myeloma Foundation. International Staging System. April 2002."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">First, assign ISS stage:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"107\"><col width=\"60\"><col width=\"66\"><col width=\"73\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\" rowspan=\"2\"></td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Serum albumin, g/dL</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><em>&ge;3.5 </em></p>\n</td>\n<td>\n<p dir=\"ltr\"><em>&lt;3.5</em></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><strong>Serum &beta;2 microglobulin, mg/L</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><em>&lt;3.5</em></p>\n</td>\n<td>\n<p dir=\"ltr\">ISS I</p>\n</td>\n<td>\n<p dir=\"ltr\">ISS II</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><em>3.5-5.4</em></p>\n</td>\n<td>\n<p dir=\"ltr\">ISS II</p>\n</td>\n<td>\n<p dir=\"ltr\">ISS II</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><em>&ge;5.5</em></p>\n</td>\n<td>\n<p dir=\"ltr\">ISS III</p>\n</td>\n<td>\n<p dir=\"ltr\">ISS III</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>\n<p dir=\"ltr\">Then, stage R-ISS according to iFISH and LDH:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"91\"><col width=\"90\"><col width=\"88\"><col width=\"91\"><col width=\"45\"></colgroup>\n<tbody>\n<tr>\n<td rowspan=\"2\"></td>\n<td colspan=\"2\"><br>\n<p dir=\"ltr\"><strong>High-risk cytogenetic abnormalities by iFISH*</strong></p>\n</td>\n<td colspan=\"2\" rowspan=\"2\"></td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><em>No</em></p>\n</td>\n<td>\n<p dir=\"ltr\"><em>Yes</em></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>ISS I</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">R-ISS I</p>\n</td>\n<td>\n<p dir=\"ltr\">R-ISS II</p>\n</td>\n<td>\n<p dir=\"ltr\"><em>Normal</em></p>\n</td>\n<td rowspan=\"6\">\n<p dir=\"ltr\"><strong>LDH</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">R-ISS II</p>\n</td>\n<td>\n<p dir=\"ltr\">R-ISS II</p>\n</td>\n<td>\n<p dir=\"ltr\"><em>High</em></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>ISS II</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">R-ISS II</p>\n</td>\n<td>\n<p dir=\"ltr\">R-ISS II</p>\n</td>\n<td>\n<p dir=\"ltr\"><em>Normal</em></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">R-ISS II</p>\n</td>\n<td>\n<p dir=\"ltr\">R-ISS II</p>\n</td>\n<td>\n<p dir=\"ltr\"><em>High</em></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>ISS III</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">R-ISS II</p>\n</td>\n<td>\n<p dir=\"ltr\">R-ISS III</p>\n</td>\n<td>\n<p dir=\"ltr\"><em>Normal</em></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">R-ISS III</p>\n</td>\n<td>\n<p dir=\"ltr\">R-ISS III</p>\n</td>\n<td>\n<p dir=\"ltr\"><em>High</em></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>\n<p dir=\"ltr\">*High-risk&nbsp;= presence of del(17p) and/or translocation t(4;14) and/or translocation t(14;16).</p>",
+        "facts": "<p><strong>R-ISS interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>R-ISS Stage</th>\n<th>Median progression-free survival</th>\n</tr>\n<tr>\n<td>I</td>\n<td>66 months</td>\n</tr>\n<tr>\n<td>II</td>\n<td>42 months</td>\n</tr>\n<tr>\n<td>III</td>\n<td>29 months</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Hematologic Malignancy",
+            "Multiple Myeloma"
+        ],
+        "logic": "var calc_output = [];\n\nvar micro = parseFloat(micro);\nvar alb = parseFloat(alb);\nvar ca = parseFloat(ca);\nvar ldh = parseFloat(ldh);\n\nvar iss_stage\n\nif (micro == 0) {\n\tif (alb == 1) { // normal (high) albumin\n\t\tiss_stage = 1\n\t} else if (alb == 0) { // abnormal (low) albumin\n\t\tiss_stage = 2\n\t}\n} else if (micro == 1) {\n\tiss_stage = 2\n} else if (micro == 2) {\n\tiss_stage = 3\n}\n\nvar riss;\n\nif (iss_stage == 1 && (ca + ldh == 0)) {\n\triss = 'R-ISS Stage I'\n} else if (iss_stage == 1 && (ca + ldh > 0)) {\n\triss = 'R-ISS Stage II'\n} else if (iss_stage == 2) {\n\triss = 'R-ISS Stage II'\n} else if (iss_stage == 3 && (ca + ldh == 0)) {\n\triss = 'R-ISS Stage II'\n} else if (iss_stage == 3 && (ca + ldh > 0)) {\n\triss = 'R-ISS Stage III'\n}\n\nvar pfs\n\nif (riss == 'R-ISS Stage I') {\n\tpfs = 66 \n} \nif (riss == 'R-ISS Stage II') {\n\tpfs = 42\n}\nif (riss == 'R-ISS Stage III') {\n\tpfs = 29\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: riss,\n    value_text: ' ',\n    message: \"Multiple Myeloma\"\n});\ncalc_output.push({\n    name: '3842_Revised Myeloma ISS_result',\n    value: riss,\n    value_text: ' ',\n    message: pfs + ' months median progression-free survival'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Serum β2 microglobulin",
+                "mdcalc_info_concept": null,
+                "name": "micro",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<3.5 mg/L",
+                        "value": 0
+                    },
+                    {
+                        "label": "3.5-5.4  mg/L",
+                        "value": 1
+                    },
+                    {
+                        "label": ">5.4 mg/L",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Serum albumin",
+                "mdcalc_info_concept": null,
+                "name": "alb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<3.5 g/dL",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥3.5 g/dL",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "CA by iFISH",
+                "mdcalc_info_concept": null,
+                "name": "ca",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Standard risk",
+                        "value": 0
+                    },
+                    {
+                        "label": "High risk",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "High risk defined as: presence of del(17p) and/or translocation t(4;14) and/or translocation t(14;16)",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "LDH",
+                "mdcalc_info_concept": null,
+                "name": "ldh",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal (< upper limit of normal)",
+                        "value": 0
+                    },
+                    {
+                        "label": "High (> upper limit of normal)",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "myeloma",
+            "microglobulin",
+            "albumin",
+            "multiple myeloma",
+            "mm",
+            "riss",
+            "revised myeloma"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Internal Medicine"
+        ]
+    }
+}

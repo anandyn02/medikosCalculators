@@ -1,0 +1,102 @@
+{
+    "id": "121",
+    "title": "Brain Metastasis Velocity (BMV) Model",
+    "desc": "The Brain Metastasis Velocity Model predicts overall survival after initial distant brain failure (DBF) following radiosurgery.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.redjournal.org/article/S0360-3016(17)30238-9/fulltext",
+                "text": "Farris M, Mctyre ER, Cramer CK, et al. Brain Metastasis Velocity: A Novel Prognostic Metric Predictive of Overall Survival and Freedom From Whole-Brain Radiation Therapy After Distant Brain Failure Following Upfront Radiosurgery Alone. Int J Radiat Oncol Biol Phys. 2017;98(1):131-141."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">BMV, per year&nbsp;= x / y,</p>\n<p dir=\"ltr\">where the variables are as follows:</p>\n<p dir=\"ltr\">x = number of new brain metastases since initial&nbsp;SRS</p>\n<p dir=\"ltr\">y = total time interval between initial SRS and appearance of new brain metastases, in years</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"99\"><col width=\"165\"><col width=\"182\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>BMV</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Median overall survival</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;4</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">12.4 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4-13</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">8.2 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;13</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">4.3 months</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-afce6e03-7fff-4d46-386a-27fc8f946cb3\"><span id=\"docs-internal-guid-afce6e03-7fff-4d46-386a-27fc8f946cb3\">From&nbsp;<a href=\"https://www.redjournal.org/article/S0360-3016(17)30238-9/fulltext\" target=\"_blank\" rel=\"noopener\">Farris et al (2017)</a>.</span></span></p>",
+        "estimation": [
+            {
+                "name": "Time up to 10 years",
+                "unit": "time_years_limit10",
+                "error_min": "0",
+                "error_max": "10",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "metastases",
+                "unit": "metastases",
+                "error_min": "0",
+                "error_max": "20",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "metastases",
+                "units_us": "metastases"
+            }
+        ],
+        "primary_complains": [
+            "Cancer"
+        ],
+        "disease_treated": [
+            "Cancer"
+        ],
+        "logic": "var calc_output = [];\nvar time = parseFloat(time);\nvar number = parseFloat(number);\n\nnumber = Math.round(number);\nvar score = number/time;\nscore = score.toFixed(1);\n\nvar risk, os; \n\nif (score < 4) {\n  risk = 'Low';\n  os = '12.4';\n} else if (score >= 4 && score <= 13) {\n  risk = 'Intermediate';\n  os = '8.2';\n} else if (score > 13) {\n  risk = 'High';\n  os = '4.3';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: os, \n    value_text: 'months',\n    message: 'Median overall survival'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'per year',\n    message: 'BMV'   \n});\ncalc_output.push({\n    name: 'risk1',\n    value: risk, \n    value_text: 'risk',\n    message: 'Risk group'\n});\ncalc_output.push({\n    name: 'risk1',\n    value: os, \n    value_text: 'months',\n    message: 'Median overall survival'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Number of new brain metastases",
+                "name": "number",
+                "optional": false,
+                "tips_en": "Since initial <abbr title =\"Stereotactic radiosurgery\">SRS</abbr>; enter as a whole number",
+                "type": "textbox",
+                "unit": "metastases"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Time interval between initial SRS and appearance of new brain metastases",
+                "name": "time",
+                "optional": false,
+                "tips_en": "If 18 months, enter 1.5, etc",
+                "type": "textbox",
+                "unit": "time_years_limit10"
+            }
+        ],
+        "can_search": [
+            "Distant brain failure",
+            "survival",
+            "brain metastasis velocity model",
+            "bmv",
+            "bmv model",
+            "SRS",
+            "radiosurgery",
+            "WBRT",
+            "radiation therapy",
+            "stereotactic radiosurgery",
+            "metastases"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Neurology",
+            "Neurosurgery",
+            "Radiation Oncology",
+            "Radiology"
+        ]
+    }
+}

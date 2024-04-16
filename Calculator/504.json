@@ -1,0 +1,168 @@
+{
+    "id": "504",
+    "title": "Revised Natural History Model for Primary Sclerosing Cholangitis",
+    "desc": "The Revised Natural History Model for Primary Sclerosing Cholangitis estimates survival probability of a patient with primary sclerosing cholangitis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10907383",
+                "text": "Kim WR, et. al. A revised natural history model for primary sclerosing cholangitis. Mayo Clinic Proceedings 2000;75:688-694."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Risk Score = 0.03*(age [y]) + 0.54*log<sub>e</sub>(bilirubin [mg/dL]) + 0.54*log<sub>e</sub>(aspartate aminotransferase [U/L]) + 1.24*(variceal bleeding [Y=1,N=0]) - 0.84*(albumin [g/dL])</p>",
+        "facts": "<ul>\n<li>Scores &le;0 - low risk group.</li>\n<li>Scores 0-2 - intermediate risk group.</li>\n<li>Scores &gt;2 - high risk group.</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Bilirubin",
+                "unit": "bili",
+                "error_min": "1E-8",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "17.104",
+                "normal_max_si": "32.49",
+                "normal_max_us": "1.9",
+                "normal_min_si": "5.13",
+                "normal_min_us": "0.3",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Aspartate Aminotransferase",
+                "unit": "AST",
+                "error_min": "1",
+                "error_max": "10000",
+                "warn_min": "4",
+                "warn_max": "4000",
+                "conversion": "1",
+                "normal_max_si": "41",
+                "normal_max_us": "41",
+                "normal_min_si": "15",
+                "normal_min_us": "15",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Autoimmune Disorders",
+            "Cholangitis"
+        ],
+        "logic": "var calc_output = [];\nif (UOMSYSTEM == true) {\n  var bili = parseFloat(bili);\n  var alb = parseFloat(alb);\n}\n\nif (UOMSYSTEM == false) {\n  var bili = parseFloat(bili) / 17.104;\n  var alb = parseFloat(alb) / 10;\n\n  // these are now converted to US units, so now do a check to make sure they're not <1, otherwise set to 1\n\n}\n\nvar age = parseFloat(age);\nvar ast = parseFloat(ast);\nvar varic = parseFloat(varic);\n\nvar u =0.03*age + 0.54*Math.log(bili) + 0.54*Math.log(ast) + 1.24*varic - 0.84*alb;\n\nvar surv = 100*(Math.pow(0.833,Math.exp(u-1)));;\nvar risk;\nvar rg = 'Risk Group';\n\nif (u <= 0) { risk='Low'; } \nelse if (u > 0 && u < 2) { risk='Intermediate'; }\nelse if (u > 2) { risk='High'; }\n\ncalc_output.push({\n  name: 'mini',\n  value: '',\n  value_text: '',\n  message: risk+' '+rg\n});\ncalc_output.push({\n  name: '3676_RNHMPSC_result',\n  value: risk,\n  value_text: rg,\n  message: u.toFixed(2) + ' points, ' + surv.toFixed(1) + '% survival at 4 years'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Bilirubin",
+                "name": "bili",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bili"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Aspartate aminotransferase (AST)",
+                "name": "ast",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "AST"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Variceal bleeding",
+                "md_calc_info_concept": null,
+                "name": "varic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Albumin",
+                "name": "alb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            }
+        ],
+        "can_search": [
+            "mayo score for PSC",
+            "psc"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

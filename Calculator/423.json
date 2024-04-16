@@ -1,0 +1,302 @@
+{
+    "id": "423",
+    "title": "Simple Disease Activity Index (SDAI) for Rheumatoid Arthritis",
+    "desc": "The Simple Disease Activity Index (SDAI) for Rheumatoid Arthritis determines severity of rheumatoid arthritis using clinical and laboratory data.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://rheumatology.oxfordjournals.org/content/42/2/244.full.pdf+html",
+                "text": "Smolen JS, et al. A simplified disease activity index for rheumatoid arthritis for use in clinical practiceRheumatology (2003) 42 (2): 244-257 doi:10.1093/rheumatology/keg072."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>SDAI = Tender Joint Count + Swollen Joint Count + CRP, mg/dL + Patient Global Activity + Provider Global Activity</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: left;\">\n<p>SDAI</p>\n</th>\n<th style=\"text-align: left;\">Disease Severity</th>\n</tr>\n<tr>\n<td>\n<p>&le;3.3</p>\n</td>\n<td>Remission</td>\n</tr>\n<tr>\n<td>\n<p>&gt;3.3-11.0</p>\n</td>\n<td>Low</td>\n</tr>\n<tr>\n<td>\n<p>&gt;11.0-26.0</p>\n</td>\n<td>Moderate</td>\n</tr>\n<tr>\n<td>\n<p>&gt;26.0</p>\n</td>\n<td>High</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "crp_dl",
+                "unit": "crp_dl",
+                "error_min": "0",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "0.1",
+                "normal_max_si": "0.3",
+                "normal_max_us": "3",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mg/dL",
+                "units_us": "mg/L"
+            },
+            {
+                "name": "Joint count",
+                "unit": "joint_count",
+                "error_min": "-1",
+                "error_max": "28",
+                "warn_min": "0",
+                "warn_max": "25",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "joints",
+                "units_us": "joints"
+            }
+        ],
+        "primary_complains": [
+            "Joint Pain"
+        ],
+        "disease_treated": [
+            "Rheumatoid Arthritis"
+        ],
+        "logic": "var calc_output = [];\nvar tender = parseFloat(tender);\nvar swollen = parseFloat(swollen);\nvar pt = parseFloat(pt);\nvar md = parseFloat(md);\nvar crp \n\nif (UOMSYSTEM == true) { \n  crp = parseFloat(crp)/10;\n}\nelse {\n  crp = parseFloat(crp);\n}\n\nvar msg, mini_msg;\nvar value = pt + md + crp + tender + swollen\n\nif (value <= 3.3) {\n  mini_msg='Remission';\n    msg = \"Remission of RA per SDAI\";\n} else if (value > 3.3 && value <= 11) {\n  mini_msg='Low Severity';\n    msg = \"Low Severity of of RA per SDAI\";\n} else if (value > 11 && value <= 26) {\n  mini_msg='Moderate Severity';\n    msg = \"Moderate Severity of RA per SDAI\";\n} else if (value > 26) {\n  mini_msg='High Severity';\n    msg = \"High Severity of RA per SDAI\";\n}\n\n\ncalc_output.push({ \n  name: 'mini', \n  value: value.toFixed(1), \n  value_text: 'points', \n  message: mini_msg \n});\ncalc_output.push({ \n  name: '2194_SDAI for RA_result', \n  value: value.toFixed(1), \n  value_text: 'points', \n  message: msg + '<br/><br/><guideline id = \"10123\">ACR guideline</guideline>'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Tender joint count",
+                "name": "tender",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "joint_count"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Swollen joint count",
+                "name": "swollen",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "joint_count"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "C-reactive protein (CRP)",
+                "name": "crp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "crp_dl"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ask the patient: considering all the ways arthritis affects you, how well are you doing?",
+                "mdcalc_info_concept": null,
+                "name": "pt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0.0 - Very well",
+                        "value": 0
+                    },
+                    {
+                        "label": "0.5",
+                        "value": 0.5
+                    },
+                    {
+                        "label": "1.0",
+                        "value": 1
+                    },
+                    {
+                        "label": "1.5",
+                        "value": 1.5
+                    },
+                    {
+                        "label": "2.0",
+                        "value": 2
+                    },
+                    {
+                        "label": "2.5",
+                        "value": 2.5
+                    },
+                    {
+                        "label": "3.0",
+                        "value": 3
+                    },
+                    {
+                        "label": "3.5",
+                        "value": 3.5
+                    },
+                    {
+                        "label": "4.0",
+                        "value": 4
+                    },
+                    {
+                        "label": "4.5",
+                        "value": 4.5
+                    },
+                    {
+                        "label": "5.0",
+                        "value": 5
+                    },
+                    {
+                        "label": "5.5",
+                        "value": 5.5
+                    },
+                    {
+                        "label": "6.0",
+                        "value": 6
+                    },
+                    {
+                        "label": "6.5",
+                        "value": 6.5
+                    },
+                    {
+                        "label": "7.0",
+                        "value": 7
+                    },
+                    {
+                        "label": "7.5",
+                        "value": 7.5
+                    },
+                    {
+                        "label": "8.0",
+                        "value": 8
+                    },
+                    {
+                        "label": "8.5",
+                        "value": 8.5
+                    },
+                    {
+                        "label": "9.0",
+                        "value": 9
+                    },
+                    {
+                        "label": "9.5",
+                        "value": 9.5
+                    },
+                    {
+                        "label": "10.0 - Very poor",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Per medical opinion: considering all the ways arthritis affects the patient, how well are they doing?",
+                "mdcalc_info_concept": null,
+                "name": "md",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0.0 - Very well",
+                        "value": 0
+                    },
+                    {
+                        "label": "0.5",
+                        "value": 0.5
+                    },
+                    {
+                        "label": "1.0",
+                        "value": 1
+                    },
+                    {
+                        "label": "1.5",
+                        "value": 1.5
+                    },
+                    {
+                        "label": "2.0",
+                        "value": 2
+                    },
+                    {
+                        "label": "2.5",
+                        "value": 2.5
+                    },
+                    {
+                        "label": "3.0",
+                        "value": 3
+                    },
+                    {
+                        "label": "3.5",
+                        "value": 3.5
+                    },
+                    {
+                        "label": "4.0",
+                        "value": 4
+                    },
+                    {
+                        "label": "4.5",
+                        "value": 4.5
+                    },
+                    {
+                        "label": "5.0",
+                        "value": 5
+                    },
+                    {
+                        "label": "5.5",
+                        "value": 5.5
+                    },
+                    {
+                        "label": "6.0",
+                        "value": 6
+                    },
+                    {
+                        "label": "6.5",
+                        "value": 6.5
+                    },
+                    {
+                        "label": "7.0",
+                        "value": 7
+                    },
+                    {
+                        "label": "7.5",
+                        "value": 7.5
+                    },
+                    {
+                        "label": "8.0",
+                        "value": 8
+                    },
+                    {
+                        "label": "8.5",
+                        "value": 8.5
+                    },
+                    {
+                        "label": "9.0",
+                        "value": 9
+                    },
+                    {
+                        "label": "9.5",
+                        "value": 9.5
+                    },
+                    {
+                        "label": "10.0 - Very poor",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "RA",
+            "rheum",
+            "rheumatoid arthritis",
+            "simple",
+            "clinical",
+            "lab",
+            "crp"
+        ],
+        "specialty": [
+            "Orthopedics",
+            "Rheumatology"
+        ]
+    }
+}

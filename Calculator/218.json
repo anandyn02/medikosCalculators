@@ -1,0 +1,135 @@
+{
+    "id": "218",
+    "title": "Rome IV Diagnostic Criteria for Proctalgia Fugax",
+    "desc": "The Rome IV Criteria for Proctalgia Fugax provides criteria for diagnosis of proctalgia fugax.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5035713/",
+                "text": "Rao SS, Bharucha AE, Chiarioni G, et al. Functional Anorectal Disorders. Gastroenterology. 2016; 150: 1430-1442."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31407463/",
+                "text": "Carrington EV, Heinrich H, Knowles CH, et al. The international anorectal physiology working group (Iapwg) recommendations: Standardized testing protocol and the London classification for disorders of anorectal function. Neurogastroenterol Motil. 2020;32(1):e13679."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/17164968/",
+                "text": "de Parades V, Etienney I, Bauer P, Taouk M, Atienza P. Proctalgia fugax: demographic and clinical characteristics. What every doctor should know from a prospective study of 54 patients. Dis Colon Rectum. 2007 Jun;50(6):893-8."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/20556402/",
+                "text": "Jeyarajah S, Chow A, Ziprin P, Tilney H, Purkayastha S. Proctalgia fugax, an evidence-based management pathway. Int J Colorectal Dis. 2010 Sep;25(9):1037-46."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for proctalgia fugax,* patient must have the following:</p>\n<ol>\n<li>Recurrent episodes of pain localized to the rectum and unrelated to defecation.</li>\n<li>Episodes last from seconds to minutes, with a maximum duration of 30 minutes.</li>\n<li>There is no anorectal pain between episodes.</li>\n<li>Exclusion of other causes of rectal pain, such as inflammatory bowel disease, intramuscular abscess and fissure, thrombosed hemorrhoids, prostatitis, coccygodynia, and major structural alterations of the pelvic floor.</li>\n</ol>\n<p>*Defined as sudden, severe pain in the rectal area, lasting for a few seconds to several minutes (rarely up to 30 minutes), and then disappearing completely.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Anorectal Pain"
+        ],
+        "disease_treated": [
+            "Functional Anorectal Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four);\n\nvar diag;\n\nvar msg= 'Diagnosis for proctalgia fugax as per Rome IV criteria';\nvar minimsg= 'Diagnosis for proctalgia fugax';\n\nif (criteria==4) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Proctalgia Fugax',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recurrent episodes of pain localized to the rectum and unrelated to defecation",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Episodes last from seconds to minutes, with a maximum duration of 30 minutes",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    },
+                    {
+                        "label": "No",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "There is no anorectal pain between episodes",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Exclusion of other causes of rectal pain, such as inflammatory bowel disease, intramuscular abscess and fissure, thrombosed hemorrhoids, prostatitis, coccygodynia, and major structural alterations of the pelvic floor",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Proctalgia Fugax, Rome IV for Proctalgia Fugax, rome iv proctalgia fugax, proctalgia fugax, rome proctalgia fugax, proctalgia fugax rome, proctalgia fugax rome iv, rome 4 for proctalgia fugax, rome 4 proctalgia fugax"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

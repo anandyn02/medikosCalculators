@@ -1,0 +1,153 @@
+{
+    "id": "354",
+    "title": "BISAP Score for Pancreatitis Mortality",
+    "desc": "The BISAP Score for Pancreatitis Mortality predicts mortality risk in pancreatitis with fewer variables than Ranson's.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18519429",
+                "text": "Wu BU, Johannes RS, Sun X, Tabak Y, Conwell DL, Banks PA. The early prediction of mortality in acute pancreatitis: a large population-based study. Gut. 2008;57(12):1698-703."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the selected points.</p>",
+        "facts": "<p>Increasing BISAP scores also correlate with pancreatitis severity and risk of necrotic pancreatitis. The BISAP performed similarly to more extensive scores, like <calculator id=\"89\">Ranson&rsquo;s Criteria</calculator> and <calculator id=\"1868\">APACHE-II.</calculator></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Pancreatitis"
+        ],
+        "logic": "var calc_output = [];\nvar msg = '';\nvar mini_msg = '';\nvar u = parseFloat(bun_25) + parseFloat(mental_status) + parseFloat(sirs_criteria) + parseFloat(age_60) + parseFloat(pleural_effusion);\nif (u == 0) { msg = 'Patients with a BISAP Score of 0 had <1% risk of mortality, and one study stratified patients with a score \\u22642, given a mortality risk of 1.9%.';\n    mini_msg = '<1% risk of mortality.'; }\nif (u > 0) { msg = 'Patients with a BISAP Score >0 had an increasing risk of mortality, with mortality increasing significantly with a score of 3 or greater. A score of 5 had a mortality rate of 22%.';\n    mini_msg = 'Increasing risk of mortality.'; } \n    \ncalc_output.push({ \n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '1735_BISAP Score_result', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: msg });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "BUN >25 mg/dL (8.92 mmol/L)",
+                "md_calc_info_concept": null,
+                "name": "bun_25",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Impaired mental status",
+                "md_calc_info_concept": null,
+                "name": "mental_status",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Defined as disorientation, lethargy, somnolence, coma or stupor",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='1096'>≥2 SIRS Criteria</calculator>",
+                "md_calc_info_concept": null,
+                "name": "sirs_criteria",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >60 years",
+                "md_calc_info_concept": null,
+                "name": "age_60",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pleural effusion present",
+                "md_calc_info_concept": null,
+                "name": "pleural_effusion",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ranson"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

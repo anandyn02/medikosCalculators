@@ -1,0 +1,341 @@
+{
+    "id": "625",
+    "title": "Short Michigan Alcoholism Screening Test (SMAST)",
+    "desc": "The Short Michigan Alcoholism Screening Test screens for alcohol abuse.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/238068 ",
+                "text": "Selzer ML, Vinokur A, Van rooijen L. A self-administered Short Michigan Alcoholism Screening Test (SMAST). J Stud Alcohol. 1975;36(1):117-26."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/5565851 ",
+                "text": "Selzer ML. The Michigan alcoholism screening test: the quest for a new diagnostic instrument. Am J Psychiatry. 1971;127(12):1653-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6746949",
+                "text": "Zung BJ. Reliability and validity of the short mast among psychiatric inpatients. J Clin Psychol. 1984;40(1):347-50."
+            }
+        ],
+        "evidence": "<p><span>Addition of the selected points (ask the patient the following):</span></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Patient feels they are a normal drinker (i.e., that they drink less than or the same amount as most people)</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Spouse or other near relative has worried or complained about patient&rsquo;s drinking</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Patient has ever felt guilty about drinking</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Friends/relatives think patient is a normal drinker</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Patient is able to stop drinking when they want</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Patient has ever attended an Alcoholics Anonymous meeting</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Drinking has ever created problems with spouse or other near relative</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Patient has gotten into trouble at work because of drinking</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Patient has neglected family, obligations, or work for &ge;2 days in a row because of drinking</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Patient has ever sought help for drinking</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Patient has ever been in a hospital because of drinking</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Patient has ever been arrested for driving while intoxicated</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Patient has ever been arrested for other drunken behavior (even if only a few hours)</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p><span>Interpretation:</span></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>SMAST Score</strong></p>\n</td>\n<td>\n<p><strong>Interpretation</strong></p>\n</td>\n<td>\n<p><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>0&ndash;2</span></p>\n</td>\n<td>\n<p><span>Low risk, no apparent problem</span></p>\n</td>\n<td>\n<p><span>Repeat screening as needed</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>3</span></p>\n</td>\n<td>\n<p><span>Borderline risk, potential early alcohol problem</span></p>\n</td>\n<td>\n<p><span>Consider further investigation</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>&ge;4</span></p>\n</td>\n<td>\n<p><span>High risk, likely alcohol abuse</span></p>\n</td>\n<td>\n<p><span>Full assessment recommended</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Injury/Trauma",
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Alcoholism"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs - addition of points\nvar score = parseFloat(feels) + parseFloat(spouse) + parseFloat(guilty) + parseFloat(think) + parseFloat(able) + parseFloat(aa) + parseFloat(problems) + parseFloat(trouble) + parseFloat(row) + parseFloat(help) + parseFloat(hospital) + parseFloat(dui) + parseFloat(arrested);\n\n//interpretation\nvar risk = \"Low\";\nvar rec = \"No apparent problem. Repeat screening as needed.\";\nif(score === 3){\n\trisk = \"Borderline\";\n\trec = \"Potential early alcohol problem. Consider further investigation.\";\n}else if(score > 3){\n\trisk = \"High\";\n\trec = \"Likely alcohol abuse. Full assessment recommended.\";\n}\n\nvar pt = \"points\";\nif(score === 1){\n\tpt = \"point\";\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: pt,\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '4013_SMAST_result',\n    value: score,\n    value_text: pt,\n    message: 'SMAST Score'\n});\ncalc_output.push({\n    name: '4013_SMAST_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: rec\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient feels they are a normal drinker",
+                "md_calc_info_concept": null,
+                "name": "feels",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    },
+                    {
+                        "label": "No",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "That they drink less than or the same amount as most people",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Spouse or other near relative has worried or complained about patient’s drinking",
+                "md_calc_info_concept": null,
+                "name": "spouse",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient has ever felt guilty about drinking",
+                "md_calc_info_concept": null,
+                "name": "guilty",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Friends/relatives think patient is a normal drinker",
+                "md_calc_info_concept": null,
+                "name": "think",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    },
+                    {
+                        "label": "No",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient is able to stop drinking when they want",
+                "md_calc_info_concept": null,
+                "name": "able",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    },
+                    {
+                        "label": "No",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient has ever attended an Alcoholics Anonymous meeting",
+                "md_calc_info_concept": null,
+                "name": "aa",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Drinking has ever created problems with spouse or other near relative",
+                "md_calc_info_concept": null,
+                "name": "problems",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient has gotten into trouble at work because of drinking",
+                "md_calc_info_concept": null,
+                "name": "trouble",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient has neglected family, obligations, or work for ≥2 days in a row because of drinking",
+                "md_calc_info_concept": null,
+                "name": "row",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient has ever sought help for drinking",
+                "md_calc_info_concept": null,
+                "name": "help",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient has ever been in a hospital because of drinking",
+                "md_calc_info_concept": null,
+                "name": "hospital",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient has ever been arrested for driving while intoxicated",
+                "md_calc_info_concept": null,
+                "name": "dui",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient has ever been arrested for other drunken behavior",
+                "md_calc_info_concept": null,
+                "name": "arrested",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Even if only a few hours",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "SMAST",
+            "MAST",
+            "smast",
+            "short michigan test",
+            "michigan screening",
+            "etoh",
+            "Short Michigan Alcoholism Screening Test",
+            "alcohol",
+            "alcohol abuse",
+            "alcoholism",
+            "alcohol assessment"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Psychiatry"
+        ]
+    }
+}

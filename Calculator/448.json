@@ -1,0 +1,234 @@
+{
+    "id": "448",
+    "title": "NAFLD (Non-Alcoholic Fatty Liver Disease) Fibrosis Score",
+    "desc": "The NAFLD (Non-Alcoholic Fatty Liver Disease) Fibrosis Score estimates amount of scarring in the liver based on several laboratory tests.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17393509",
+                "text": "Angulo P, Hui JM, Marchesini G, Bugianesi E, George J, Farrell GC, Enders F, Saksena S, Burt AD, Bida JP, Lindor K, Sanderson SO, Lenzi M, Adams LA, Kench J, Therneau TM, Day CP. The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD. Hepatology. 2007 Apr;45(4):846-54. PMID: 17393509."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28834467",
+                "text": "Tapper EB, Lok AS. Use of Liver Imaging and Biopsy in Clinical Practice. N Engl J Med. 2017;377(8):756-768."
+            }
+        ],
+        "evidence": "<p>NAFLD Score = -1.675 + (0.037*age [years]) + (0.094*BMI [kg/m<sup>2</sup>]) + (1.13*IFG/diabetes [yes = 1, no = 0]) + (0.99*AST/ALT ratio) &ndash; (0.013*platelet count [&times;10<sup>9</sup>/L]) &ndash; (0.66*albumin [g/dl])</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>NAFLD Score</th>\n<th>Correlated Fibrosis Severity</th>\n</tr>\n<tr>\n<td>&lt; -1.455</td>\n<td>F0-F2</td>\n</tr>\n<tr>\n<td>-1.455 &ndash; 0.675</td>\n<td>Indeterminant score</td>\n</tr>\n<tr>\n<td>&gt; 0.675</td>\n<td>F3-F4</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>Fibrosis Severity Scale</p>\n<ul>\n<li>F0 = no fibrosis</li>\n<li>F1 = mild fibrosis</li>\n<li>F2 = moderate fibrosis</li>\n<li>F3 = severe fibrosis</li>\n<li>F4 = cirrhosis</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "Alanine Aminotransferase",
+                "unit": "ALT",
+                "error_min": "1",
+                "error_max": "1000",
+                "warn_min": "4",
+                "warn_max": "400",
+                "conversion": "1",
+                "normal_max_si": "35",
+                "normal_max_us": "35",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Body Mass Index",
+                "unit": "BMI",
+                "error_min": "0",
+                "error_max": "50",
+                "warn_min": "10",
+                "warn_max": "30",
+                "conversion": "1",
+                "normal_max_si": "25",
+                "normal_max_us": "25",
+                "normal_min_si": "20",
+                "normal_min_us": "20",
+                "units_si": "kg/m²",
+                "units_us": "kg/m²"
+            },
+            {
+                "name": "Aspartate Aminotransferase",
+                "unit": "AST",
+                "error_min": "1",
+                "error_max": "10000",
+                "warn_min": "4",
+                "warn_max": "4000",
+                "conversion": "1",
+                "normal_max_si": "41",
+                "normal_max_us": "41",
+                "normal_min_si": "15",
+                "normal_min_us": "15",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "Platelet Count",
+                "unit": "plt",
+                "error_min": "1",
+                "error_max": "3200",
+                "warn_min": "10",
+                "warn_max": "750",
+                "conversion": "1",
+                "normal_max_si": "350",
+                "normal_max_us": "350",
+                "normal_min_si": "150",
+                "normal_min_us": "150",
+                "units_si": "× 10⁹/L",
+                "units_us": "× 10³/µL"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Cirrhosis",
+            "Diabetes Mellitus",
+            "Hepatitis"
+        ],
+        "logic": "var calc_output = [];\nvar age = parseFloat(age)\nvar ifg = parseFloat(ifg);\nvar ast = parseFloat(ast);\nvar alt = parseFloat(alt);\nvar platelets = parseFloat(platelets);\n\nvar astalt = ast/alt;\n\nif (UOMSYSTEM == true) {\n    var alb = parseFloat(alb);\n}\n\nif (UOMSYSTEM == false) {\n    var alb = parseFloat(alb) / 10;\n}\n\nvar u, score;\nvar msg = 'Correlated Fibrosis Severity: ';\n\nu = -1.675 + (0.037 * age) + (0.094 * bmi) + (1.13 * ifg) + (0.99 * astalt) - (0.013 * platelets) - (0.66 * alb)\nif (u < -1.455) {\n    score = 'F0-F2'\n} else if (u >= -1.455 && u <= 0.675) {\n    score = 'Indeterminant score';\n} else if (u > 0.675) {\n    score = 'F3-F4';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(2),\n    value_text: 'points',\n    message: score\n});\ncalc_output.push({\n    name: '3081_NAFLD Fibrosis Score_result',\n    value: u.toFixed(2),\n    value_text: 'points',\n    message: msg + score\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "BMI",
+                "name": "bmi",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "BMI"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Impaired fasting glucose/diabetes",
+                "md_calc_info_concept": null,
+                "name": "ifg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<abbr title='Aspartate aminotransferase'>AST</abbr>",
+                "name": "ast",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "AST"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<abbr title='Alanine aminotransferase'>ALT</abbr>",
+                "name": "alt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ALT"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Platelet count",
+                "name": "platelets",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Albumin",
+                "name": "alb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            }
+        ],
+        "can_search": [
+            "hepatic",
+            "nafld",
+            "fibrosis",
+            "cirrhosis",
+            "prognosis",
+            "calculation",
+            "hepatitis"
+        ],
+        "specialty": [
+            "Endocrinology",
+            "Gastroenterology",
+            "Hepatology",
+            "Internal Medicine"
+        ]
+    }
+}

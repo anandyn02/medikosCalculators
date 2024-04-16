@@ -1,0 +1,189 @@
+{
+    "id": "147",
+    "title": "PLASMIC Score for TTP",
+    "desc": "The PLASMIC Score for TTP predicts ADAMTS-13 deficiency in suspected TTP with high discrimination.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28259520",
+                "text": "Bendapudi PK, Hurwitz S, Fry A, et al. Derivation and external validation of the PLASMIC score for rapid assessment of adults with thrombotic microangiopathies: a cohort study. Lancet Haematol. 2017;4(4):e157-e164."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"245\" /><col width=\"108\" /><col width=\"96\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>0 points</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>1 point</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>P</strong>latelet count &lt;30 x 10<sup>9</sup>/L</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Hemo<strong>l</strong>ysis*</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>A</strong>ctive cancer**</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">History of solid-organ or <strong>s</strong>tem-cell transplant</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>M</strong>CV &lt;9.0 x 10<sup>-14</sup> L (&lt;90 fL)&nbsp;</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>I</strong>NR &lt;1.5</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>C</strong>reatinine &lt;2.0 mg/dL (176.8 &mu;mol/L)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-19a2a9ce-7fff-19b1-d408-701c23c7d0b5\">*Reticulocyte count &gt;2.5%, haptoglobin undetectable, or indirect bilirubin &gt;2.0 mg/dL (34.2 &micro;mol/L).</p>\n<p>**Treated for cancer within the past year.</p>\n<p dir=\"ltr\">From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/28259520\" target=\"_blank\">Bendapudi 2017</a>.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"127\" /><col width=\"127\" /><col width=\"195\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>PLASMIC Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of severe ADAMTS13 deficiency*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-4</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-7</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">72%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Severe deficiency was defined as ADAMTS13 activity level &lt;15%.</p>\n<p><span id=\"docs-internal-guid-c07889b3-7fff-ae8c-2ec9-e099682cbf8c\">From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/29064619\" target=\"_blank\">Li 2018</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue",
+            "Fever"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Thrombocytopenia",
+            "Thrombotic Thrombocytopenic Purpura"
+        ],
+        "logic": "var calc_output = [];\nvar platelet = parseFloat(platelet); \nvar reticulocyte = parseFloat(reticulocyte);     \nvar cancer = parseFloat(cancer); \nvar history = parseFloat(history); \nvar mcv = parseFloat(mcv); \nvar inr = parseFloat(inr); \nvar cr = parseFloat(cr); \n\nvar score = platelet + reticulocyte + cancer + history + mcv + inr + cr;\n\nvar risk1, risk2;\n\nif (score >= 0 && score <=4) {\n\trisk1 = 'Low';\n\trisk2 = 0;\n} else if (score == 5) {\n\trisk1 = 'Intermediate';\n\trisk2 = 6;\n} else if (score >= 6) {\n\trisk1 = 'High';\n\trisk2 = 72;\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk1 + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'PLASMIC Score'   \n    });\ncalc_output.push({\n    name: 'risk1',\n    value: risk1, \n    value_text: 'risk',\n    message: 'Risk group'\n});\ncalc_output.push({\n    name: 'risk2',\n    value: risk2, \n    value_text: '%',\n    message: 'Risk of severe ADAMTS13 deficiency (defined as ADAMTS13 activity level <15%)'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Platelet count <30 x 10<sup>9</sup>/L",
+                "name": "platelet",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemolysis",
+                "name": "reticulocyte",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Reticulocyte count >2.5%, haptoglobin undetectable, or indirect bilirubin >2.0 mg/dL (34.2 µmol/L)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Active cancer",
+                "name": "cancer",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Treated for cancer within the past year",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "History of solid-organ or stem-cell transplant",
+                "name": "history",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title = \"Mean corpuscular volume\">MCV</abbr> <9.0 x 10<sup>-14</sup> L (<90 fL)",
+                "name": "mcv",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title = \"International normalized ratio\">INR</abbr>  <1.5",
+                "name": "inr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Creatinine <2.0 mg/dL (176.8 μmol/L)",
+                "name": "cr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Thrombotic thrombocytopenic purpura",
+            "TTP",
+            "plasmic",
+            "plasmic score",
+            "purpura",
+            "thrombocytopenia",
+            "hemolytic anemia",
+            "ADAMTS13",
+            "plasma",
+            "mcv",
+            "inr"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

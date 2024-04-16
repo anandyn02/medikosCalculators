@@ -1,0 +1,93 @@
+{
+    "id": "653",
+    "title": "Antivenom Dosing Algorithm",
+    "desc": "Antivenom Dosing doses antivenom for snake bites.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21291549",
+                "text": "Lavonas EJ, Ruha AM, Banner W, et al. Unified treatment algorithm for the management of crotaline snakebite in the United States: results of an evidence-informed consensus workshop. BMC Emerg Med. 2011;11:2."
+            },
+            {
+                "href": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=1163&sectionid=64552562",
+                "text": "Hoffman R, Howland MA, Lewin N et al. Goldfrank's Toxicologic Emergencies, Tenth Edition. McGraw-Hill Education / Medical; 2014."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29774760",
+                "text": "Pham HX, Mullins ME. Safety of nonsteroidal anti-inflammatory drugs in copperhead snakebite patients. Clin Toxicol (Phila). 2018;56(11):1121-1127."
+            }
+        ],
+        "evidence": "<p>Algorithm, as follows:</p> <ol> <li><strong>Are there signs of envenomation?</strong> Signs include: <ul> <li>Swelling, tenderness, redness, ecchymosis, or blebs at bite site.</li> <li>Elevated protime, decreased fibrinogen or platelets.</li> <li>Systemic signs (hypotension, bleeding beyond puncture site, refractory vomiting, diarrhea, angioedema, neurotoxicity).</li> </ul> </li> </ol> <p>If YES, proceed to 2.</p> <p>If NO, this is an apparent dry bite or no bite. Observe patient ≥8 hours, repeat labs prior to discharge, and do not administer antivenom.</p> <ol start=\"2\"> <li><strong>Check for indications for antivenom:</strong> <ul> <li>Swelling that is more than minimal and is progressing.</li> <li>Elevated protime, decreased fibrinogen or platelets.</li> <li>Any systemic signs.</li> </ul> </li> </ol> <p>If YES, proceed to 3.</p> <p>If NO, this is an apparent minor envenomation. Observe patient 12-24 hours, repeat labs at 4-6 hrs and prior to discharge, and do not administer antivenom.</p> <ol start=\"3\"> <li><strong>Administer antivenom:</strong> <ul> <li>Establish IV access, give IV fluids.</li> <li>Mix 4-6 vials of crotaline Fab antivenom in 250 mL NS and infuse over 1 hour.</li> <li>Increase dose to 6-8 vials for patients in shock or with serious active bleeding.</li> <li>Reexamine after 1 hour, and proceed to 4.</li> </ul> </li> </ol> <ol start=\"4\"> <li><strong>Check for control of envenomation (after initial antivenom):</strong> <ul> <li>Swelling and tenderness not progressing.</li> <li>Protime, fibrinogen, platelets normal or clearly improving.</li> <li>Clinically stable.</li> <li>Neurotoxicity resolved or clearly improving.</li> </ul> </li> </ol> <p>If YES, monitor patient and perform serial examinations and maintenance therapy (2 vials of antivenom every 6 hours x 3 doses (given 6, 12, and 18 hours after initial control).&nbsp;Maintenance therapy may not be needed if close observation by physician expert is available.</p> <p>If NO, then repeat antivenom until control is achieved.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\n\nvar signs = parseFloat(signs)\nvar indications = parseFloat(indications)\nvar control = parseFloat(control)\n\n\nvar result, msg, rec\n\nif (signs == 0) {\n        result = 'No antivenom';\n        msg = 'Apparent dry bite/no bite'\n        rec = 'Recommendation: observe patient ≥8 hours, repeat labs prior to discharge, and do not administer antivenom.'\n}\nelse {\n    if (indications == 1) {\n        result = 'Give antivenom'\n        msg = 'Envenomation with indication for antivenom'\n        rec = 'Mix 4-6 vials (6-8 vials if shock or serious active bleeding) of crotaline Fab antivenom in 250 mL NS; infuse over 1 hour.'\n    }\n    else {\n        result = 'No antivenom';\n        msg = 'Apparent minor envenomation'\n        rec = 'Observe patient 12-24 hours, repeat labs at 4-6 hours and prior to discharge, and do not administer antivenom.'\n    } \n    // else {\n    //         if (control == 1) {\n    //             result = 'Give antivenom';\n    //             msg = 'Monitor patient. Perform serial examinations, maintenance therapy.'\n    //             msg2 = 'Establish IV access, give IV fluids. Mix 4-6 vials of crotaline Fab antivenom in 250 mL NS and infuse over 1 hour (or 6-8 vials if shock or serious active bleeding.'\n    //         }\n    //         else {\n    //             result = 'Repeat antivenom until initial control achieved';\n    //             msg = 'Establish IV access, give IV fluids, mix 4-6 vials of crotaline Fab antivenom in 250 ml NS and infuse over 1 hour. Increase dose to 6-8 vials for patients in shock or with serious active bleeding, reexamine after 1 hour.'\n    //         }\n    //     }\n    }\ncalc_output.push({ \n    name: 'mini', \n    value: result, \n    value_text: '', \n    message: '' \n});\ncalc_output.push({ \n    name: 'Antivenom Dosing', \n    value: result, \n    value_text: '', \n    message: msg \n});\ncalc_output.push({ \n    name: 'Recommendation', \n    value: ' ', \n    value_text: '', \n    message: rec \n});\n\nif (result == 'Give antivenom') {\ncalc_output.push({ \n    name: 'Next steps', \n    value: ' ', \n    value_text: '', \n    message: 'Re-examine after 1 hour. If envenomation controlled, monitor patient, perform serial examinations, and give maintenance therapy (2 vials of antivenom every 6 hours x 3 doses). See Evidence for details.'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Are there signs of envenomation?",
+                "name": "signs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Swelling, tenderness, redness, ecchymosis, or blebs at bite site; elevated protime, decreased fibrinogen or platelets; systemic signs (hypotension, bleeding beyond puncture site, refractory vomiting, diarrhea, angioedema, neurotoxicity)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "signs == 1",
+                "default": null,
+                "label_en": "Are there indications for antivenom?",
+                "name": "indications",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Swelling that is moderate, severe, and/or progressing; elevated protime, decreased fibrinogen or platelets; any systemic signs",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Antivenom",
+            "ASV",
+            "snake bite",
+            "envenomation",
+            "venom",
+            "Crotalidae Polyvalent Immune Fab",
+            "snakebite",
+            "crotalid"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pharmacy",
+            "Toxicology"
+        ]
+    }
+}

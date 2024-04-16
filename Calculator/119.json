@@ -1,0 +1,153 @@
+{
+    "id": "119",
+    "title": "McDonald Criteria for Multiple Sclerosis (2017 Revision)",
+    "desc": "The McDonald Criteria for Multiple Sclerosis (2017 Revision) diagnosis multiple sclerosis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.thelancet.com/journals/laneur/article/PIIS1474-4422(17)30470-2/fulltext",
+                "text": "Thompson AJ, Banwell BL, Barkhof F, et al. Diagnosis of multiple sclerosis: 2017 revisions of the McDonald criteria. Lancet Neurol. 2017."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p><strong>McDonald Criteria (2017):</strong></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Clinical attacks*</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Number of lesions with objective clinical evidence**</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Additional data needed for diagnosis of MS</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">&ge;2</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;2</p>\n</td>\n<td>\n<p dir=\"ltr\">No additional tests required to demonstrate dissemination in space and time</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1 (as well as clear-cut historical evidence of a previous attack involving a lesion in a distinct anatomical location)</p>\n</td>\n<td>\n<p dir=\"ltr\">No additional tests required to demonstrate dissemination in space and time</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">Dissemination in space demonstrated by an additional clinical attack implicating a different CNS site or by MRI</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;2</p>\n</td>\n<td>\n<p dir=\"ltr\">Dissemination in time demonstrated by additional clinical attack or MRI, or presence of CSF-specific oligoclonal bands</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">Dissemination in space demonstrated by an additional clinical attack implicating a different CNS site or by MRI and dissemination in time demonstrated by additional clinical attack or MRI, or presence of CSF-specific oligoclonal bands</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*&ldquo;Clinical attack&rdquo; = monophasic clinical episode with patient-reported symptoms and objective findings reflecting inflammatory demyelinating CNS event (focal or multifocal), subacute or acute, for &ge;24 hrs, with or without recovery, and no fever or infection present. Attack, relapse, exacerbation, and clinically isolated syndrome (first episode) are all synonymous.</p>\n<p dir=\"ltr\">**&ldquo;Objective clinical evidence&rdquo; = abnormality on neurologic exam, imaging (MRI or optical coherence tomography), or visual evoked potentials, corresponding to anatomical location suggested by symptoms.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Multiple Sclerosis"
+        ],
+        "logic": "//define vars\nvar historical = historical || 0;\nvar data1 = data1 || 0;\nvar data2 = data2 || 0;\n\nvar calc_output = [];\nvar attacks = parseFloat(attacks);\nvar lesions = parseFloat(lesions);\nvar historical = parseFloat(historical);\nvar data1 = parseFloat(data1);\nvar data2 = parseFloat(data2);\n\nvar diag;\n\n//criteria\nif (attacks == 0) {\n  if (lesions == 0) {\n    diag = \"Definite MS\";\n  } else if (lesions == 1 && historical == 1) {\n    diag = \"Definite MS\";\n  } else if (lesions == 1 && historical == 0 && data1 == 1) {\n    diag = \"Definite MS\";\n  } else if (lesions == 1 && historical == 0 && data1 == 0) {\n    diag = \"Not MS\";\n  }\n} else if (attacks == 1) {\n  if (lesions == 0 && data2 == 1) {\n    diag = \"Definite MS\";\n  } else if (lesions == 0 && data2 == 0) {\n    diag = \"Not MS\";\n  } else if (lesions == 1 && data2 + data1 == 2) {\n    diag = \"Definite MS\";\n  } else if (lesions == 1 && data2 + data1 != 2) {\n    diag = \"Not MS\";\n  }\n} \n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: '2017 McDonald Criteria for MS'\n});\ncalc_output.push({\n    name: 'Score',\n    value: diag,\n    value_text: '',\n    message: '2017 McDonald Criteria for MS'   \n});",
+        "inputs": [
+            {
+                "subheading": "Clinical attacks",
+                "subheading_instructions": "Must have ≥1 clinical attack",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Number of clinical attacks",
+                "name": "attacks",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥2",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "“Clinical attack” = monophasic clinical episode with patient-reported symptoms and objective findings reflecting inflammatory demyelinating CNS event (focal or multifocal), subacute or acute, for ≥24 hrs, with or without recovery, and no fever or infection present; attack, relapse, exacerbation, and clinically isolated syndrome (first episode) are all synonymous",
+                "type": "radio"
+            },
+            {
+                "subheading": "Lesions",
+                "subheading_instructions": "Must have ≥1 lesion",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Number of lesions with objective clinical evidence",
+                "name": "lesions",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥2",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "“Objective clinical evidence” = abnormality on neurologic exam, imaging (MRI or optical coherence tomography), or visual evoked potentials, corresponding to anatomical location suggested by symptoms",
+                "type": "radio"
+            },
+            {
+                "conditionality": "attacks == 0 && lesions == 1",
+                "label_en": "Historical evidence of a previous attack involving a lesion in a distinct anatomical location",
+                "name": "historical",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "subheading": "Additional data",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "attacks == 1",
+                "label_en": "Dissemination in time demonstrated by additional clinical attack or MRI, or presence of CSF-specific oligoclonal bands",
+                "name": "data2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "conditionality": "(attacks == 1 && lesions == 1) || (attacks == 0 && lesions == 1 && historical == 0)",
+                "label_en": "Dissemination in space demonstrated by an additional clinical attack implicating a different CNS site or by MRI",
+                "name": "data1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "MS",
+            "Mcdonald",
+            "MRI",
+            "dissemination",
+            "time",
+            "space",
+            "multiple sclerosis",
+            "Mcdonald criteria",
+            "2017"
+        ],
+        "specialty": [
+            "Neurology",
+            "Radiology"
+        ]
+    }
+}

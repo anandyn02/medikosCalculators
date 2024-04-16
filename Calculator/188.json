@@ -1,0 +1,108 @@
+{
+    "id": "188",
+    "title": "Static Lung Compliance (Cstat) Calculation",
+    "desc": "The Static Compliance (Cstat) Calculation calculates pressure needed to overcome elastic resistance to ventilation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/13473164",
+                "text": "Marshall R. The physical properties of the lungs in relation to the subdivisions of lung volume. Clin Sci. 1957;16(3):507-15."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Static lung compliance (Cstat),&nbsp;mL/cm H<sub>2</sub>O = Corrected/delivered tidal volume (&Delta;V), mL / (Plateau pressure (P<sub>plat</sub>),&nbsp;cm H<sub>2</sub>O &ndash; PEEP, cm H<sub>2</sub>O)</p>",
+        "facts": "<p>Interpretation:</p>\n<p>Normal static lung compliance is 50-100 mL/cm H<sub>2</sub>O.</p>",
+        "estimation": [
+            {
+                "name": "cm_water",
+                "unit": "cm_water",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "cm H₂O",
+                "units_us": "cm H₂O"
+            },
+            {
+                "name": "Volume",
+                "unit": "volume",
+                "error_min": "0",
+                "error_max": "20000",
+                "warn_min": "1",
+                "warn_max": "5000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL",
+                "units_us": "mL"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output = [];\n\nvar peep = parseFloat(peep);\nvar pressure = parseFloat(pressure);\nvar vol = parseFloat(vol);\n\nvar cstat = vol/(pressure-peep);\n\ncstat = cstat.toFixed(1);\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: cstat,\n    value_text: 'mL/cm H₂O',\n    message: 'Static Lung Compliance (Cstat)',\n});\ncalc_output.push({\n    name: '10289_Static Lung Compliance_result',\n    value: cstat,\n    value_text: 'mL/cm H₂O',\n    message: 'Static Lung Compliance (Cstat)<br/><br/>Normal static lung compliance is 50-100 mL/cm H₂O',\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Corrected/delivered tidal volume (&Delta;V)</p>",
+                "name": "vol",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "volume"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Plateau pressure (P<sub>plat</sub>)</p>",
+                "name": "pressure",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cm_water"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>PEEP</p>",
+                "name": "peep",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cm_water"
+            }
+        ],
+        "can_search": [
+            "Static Compliance (Cstat) Calculation, cstat calculation, cstat, static compliance, compliance, ventilation pressure, lung compliance, ventilation, ventilator, ventilator pressure, elastic resistance, resistance, lung resistance, lung pressure, covid19, covid-19, covid 19, covid, coronavirus"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

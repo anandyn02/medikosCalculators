@@ -1,0 +1,258 @@
+{
+    "id": "345",
+    "title": "THRIVE Score for Stroke Outcome",
+    "desc": "The THRIVE Score for Stroke Outcome estimates prognosis after an acute ischemic stroke.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20223889",
+                "text": "Flint AC, Cullen SP, Faigeles BS, Rao VA. Predicting long-term outcome after endovascular stroke treatment: the totaled health risks in vascular events score. AJNR Am J Neuroradiol. 2010 Aug;31(7):1192-6. doi: 10.3174/ajnr.A2050. Epub 2010 Mar 11. PubMed PMID: 20223889."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25042855",
+                "text": "Flint AC, Gupta R, Smith WS, Kamel H, Faigeles BS, Cullen SP, Rao VA, Bath PM, Wahlgren N, Ahmed N, Donnan GA; SITS International and VISTA-plus investigators. The THRIVE score predicts symptomatic intracerebral hemorrhage after intravenous tPA administration in SITS-MOST. Int J Stroke. 2014 Aug;9(6):705-10. doi: 10.1111/ijs.12335. Epub 2014 Jul 15. PubMed PMID: 25042855."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/26045081/",
+                "text": "Flint AC, Rao VA, Chan SL, et al. Improved ischemic stroke outcome prediction using model estimation of outcome probability: the THRIVE-c calculation. Int J Stroke. 2015;10(6):815-821."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/35319310/",
+                "text": "Flint AC, Chan SL, Edwards NJ, et al. Outcome prediction in large vessel occlusion ischemic stroke with or without endovascular stroke treatment: THRIVE-EVT. Int J Stroke. 2023;18(3):331-337."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>The THRIVE Score is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 87.3592%;\"><colgroup><col style=\"width: 48.048%;\"><col style=\"width: 33.033%;\"><col style=\"width: 18.9189%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><span>Age</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&le;59</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>60-79</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;80</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><span><calculator id=\"715\">NIH Stroke Scale (NIHSS)</calculator></span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&le;10</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>11-20</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;21</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>History of hypertension</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>History of diabetes mellitus</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>History of atrial fibrillation</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span>The probability of good outcome is calculated by the following:</span></p>\n<p dir=\"ltr\"><span>CDS = Hypertension + Diabetes + Atrial Fibrillation</span></p>\n<ul>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>If CDS = 1, then CDS1 = 1, CDS2 = 0, and CDS3 = 0</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>If CDS = 2, then CDS1 = 0, CDS2 = 1, and CDS3 = 0</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>If CDS = 3, then CDS1 = 0, CDS2 = 0, and CDS3 = 1</span></p>\n</li>\n</ul>\n<p dir=\"ltr\"><span>If LVO = No or unknown,</span></p>\n<ul>\n<li dir=\"ltr\"><span>x = 4.942 &ndash; 0.035*Age &ndash; 0.190*NIHSS &ndash; 0.105*CDS1 &ndash; 0.408*CDS2 &ndash; 0.702*CDS3</span></li>\n</ul>\n<p dir=\"ltr\"><span>If LVO = Yes and ASPECTS = Unknown,</span></p>\n<ul>\n<li dir=\"ltr\"><span>With EVT: x = 2.864 &ndash; 0.025*Age &ndash; 0.106*NIHSS &ndash; 0.469*CDS1 &ndash; 0.502*CDS2 &ndash; 1.665*CDS3 + 0.753*1</span></li>\n<li dir=\"ltr\"><span>Without EVT: x = 2.864 &ndash; 0.025*Age &ndash; 0.106*NIHSS &ndash; 0.469*CDS1 &ndash; 0.502*CDS2 &ndash; 1.665*CDS3 + 0.753*0</span><span><b></b></span></li>\n</ul>\n<p dir=\"ltr\"><span>If LVO = YES and ASPECTS value entered,</span></p>\n<ul>\n<li dir=\"ltr\"><span>With EVT: x = 1.828 &ndash; 0.031*Age &ndash; 0.097*NIHSS &ndash; 0.462*CDS1 &ndash; 0.419*CDS2 &ndash; 1.798*CDS3 + 0.848*1 + 0.153*ASPECTS</span></li>\n<li dir=\"ltr\"><span>Without EVT: x = 1.828 &ndash; 0.031*Age &ndash; 0.097*NIHSS &ndash; 0.462*CDS1 &ndash; 0.419*CDS2 &ndash; 1.798*CDS3 + 0.848*0 + 0.153*ASPECTS</span><span><b></b></span></li>\n</ul>\n<p dir=\"ltr\"><span>Probability of good outcome = 1/(1+e</span><sup><span>-x</span></sup><span>)</span></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Age in years",
+                "unit": "age_years_imm",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": " years",
+                "units_us": " years"
+            },
+            {
+                "name": "NIH Stroke Scale",
+                "unit": "nihss",
+                "error_min": "0",
+                "error_max": "42",
+                "warn_min": "0",
+                "warn_max": "42",
+                "conversion": "1",
+                "normal_max_si": "42",
+                "normal_max_us": "42",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "points",
+                "units_us": "points"
+            }
+        ],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar nihss = parseFloat(nihss);\nvar ht = parseFloat(ht);\nvar db = parseFloat(db);\nvar af = parseFloat(af);\nvar lvo = parseFloat(lvo);\nvar aspects = parseFloat(aspects);\n\nvar age_s;\nif (age <= 59) {\n    age_s = 0;\n} else if (age < 80) {\n    age_s = 1;\n} else if (age >= 80) {\n    age_s = 2;\n}\n\nvar nihss_s;\nif (nihss <= 10) {\n    nihss_s = 0;\n} else if (nihss <= 20) {\n    nihss_s = 2;\n} else if (nihss > 20) {\n    nihss_s = 4;\n}\n\nvar score = age_s + nihss_s + ht + db + af;\n\nvar cds = ht + db + af;\nvar cds1 = 0;\nvar cds2 = 0;\nvar cds3 = 0;\nif (cds == 1) {\n    cds1 = 1;\n} else if (cds == 2) {\n    cds2 = 1;\n} else if (cds == 3) {\n    cds3 = 1;\n}\n\nif (lvo == 0) {\n    var x = 4.942 - 0.035*age - 0.190*nihss - 0.105*cds1 - 0.408*cds2 - 0.702*cds3;\n    var prob = 1/(1+Math.exp(-x))*100\n    if (prob < 1) {\n        prob = prob.toFixed(1);\n    } else {\n        prob = Math.floor(prob);\n    }\n\n    calc_output.push({\n        name: 'mini',\n        value: score,\n        value_text: 'points',\n        message: prob + '% chance of good outcome'\n    });\n    calc_output.push({\n        name: '1706_THRIVE Score_result (score)',\n        value: score,\n        value_text: 'points',\n        message: 'THRIVE Score'\n    });\n    calc_output.push({\n        name: '1706_THRIVE Score_result (outcome)',\n        value: prob,\n        value_text: '%',\n        message: 'Chance of good outcome (Modified Rankin 0-2) at 90 days predicted by THRIVE-c'\n    });\n} else if (lvo == 1) {\n    var evt;\n    var no_evt;\n    if (aspects == -1) {\n        evt = 2.864 - 0.025*age - 0.106*nihss - 0.469*cds1 - 0.502*cds2 - 1.665*cds3 + 0.753*1;\n        no_evt = 2.864 - 0.025*age - 0.106*nihss - 0.469*cds1 - 0.502*cds2 - 1.665*cds3 + 0.753*0;\n    } else if (aspects >=0) {\n        evt = 1.828 - 0.031*age - 0.097*nihss - 0.462*cds1 - 0.419*cds2 - 1.798*cds3 + 0.848*1 + 0.153*aspects;\n        no_evt = 1.828 - 0.031*age - 0.097*nihss - 0.462*cds1 - 0.419*cds2 - 1.798*cds3 + 0.848*0 + 0.153*aspects;\n    }\n    var evt_prob = 1/(1+Math.exp(-evt))*100;\n    var no_evt_prob = 1/(1+Math.exp(-no_evt))*100;\n    if (evt_prob < 1) {\n        evt_prob = evt_prob.toFixed(1);\n    } else {\n        evt_prob = Math.floor(evt_prob);\n    }\n    if (no_evt_prob < 1) {\n        no_evt_prob = no_evt_prob.toFixed(1);\n    } else {\n        no_evt_prob = Math.floor(no_evt_prob);\n    }\n    calc_output.push({\n        name: 'mini',\n        value: score,\n        value_text: 'points',\n        message: 'THRIVE Score'\n    })\n    calc_output.push({\n        name: '1706_THRIVE Score_result (score)',\n        value: score,\n        value_text: 'points',\n        message: 'THRIVE Score'\n    });\n    calc_output.push({\n        name: '1706_THRIVE Score_result (outcome)',\n        value: '',\n        value_text: '',\n        message: 'Chance of good outcome (Modified Rankin 0-2) at 90 days:<br/><br/>' + evt_prob + '% with endovascular treatment (EVT)<br/>' + no_evt_prob + '% without endovascular treatment (EVT)<br/><br/>Predicted by THRIVE-EVT'\n    })\n}\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_years_imm"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p><calculator id=\"715\">NIH Stroke Scale (NIHSS)</calculator></p>",
+                "name": "nihss",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "nihss"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>History of hypertension</p>",
+                "md_calc_info_concept": null,
+                "name": "ht",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>History of diabetes mellitus</p>",
+                "md_calc_info_concept": null,
+                "name": "db",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>History of atrial fibrillation</p>",
+                "md_calc_info_concept": null,
+                "name": "af",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Large vessel occlusion (LVO)</p>",
+                "md_calc_info_concept": null,
+                "name": "lvo",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No or unknown",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p><calculator id=\"3164\">ASPECTS</calculator></p>",
+                "mdcalc_info_concept": null,
+                "name": "aspects",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Unknown",
+                        "value": -1
+                    },
+                    {
+                        "label": "10",
+                        "value": 10
+                    },
+                    {
+                        "label": "9",
+                        "value": 9
+                    },
+                    {
+                        "label": "8",
+                        "value": 8
+                    },
+                    {
+                        "label": "7",
+                        "value": 7
+                    },
+                    {
+                        "label": "6",
+                        "value": 6
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "0",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "stroke",
+            "tpa",
+            "neuro",
+            "tia",
+            "cva"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology"
+        ]
+    }
+}

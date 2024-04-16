@@ -1,0 +1,602 @@
+{
+    "id": "276",
+    "title": "Current Opioid Misuse Measure (COMM)",
+    "desc": "The Current Opioid Misuse Measure (COMM) identifies potential medication misuse in patients who are on long-term opioid therapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/17493754/",
+                "text": "Butler SF, Budman SH, Fernandez KC, et al. Development and validation of the current opioid misuse measure. Pain. 2007;130(1-2):144-156."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The COMM is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%; height: 4698px;\"><colgroup><col style=\"width: 53.7542662116041%;\"><col style=\"width: 26.279863481228666%;\"><col style=\"width: 19.795221843003414%;\"></colgroup>\n<tbody>\n<tr style=\"height: 54px;\">\n<td colspan=\"2\" style=\"height: 54px;\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td colspan=\"3\" style=\"height: 54px;\">\n<p dir=\"ltr\"><strong>Ask the patient: In the past 30 days&hellip;</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you had trouble with thinking clearly or had memory problems?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often do people complain that you are not completing necessary tasks (i.e., doing things that need to be done, such as going to class, work, or appointments)?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you had to go to someone other than your prescribing physician to get sufficient pain relief from your medications (i.e., another doctor, the Emergency Room)?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you taken your medications differently from how they are prescribed?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you seriously thought about hurting yourself?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How much of your time was spent thinking about opioid medications (having enough, taking them, dosing schedule, etc.)?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you been in an argument?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you had trouble controlling your anger (e.g., road rage, screaming, etc.)?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you needed to take pain medications belonging to someone else?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you been worried about how you're handling your medications?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have others been worried about how you're handling your medications?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you had to make an emergency phone call or show up at the clinic without an appointment?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you gotten angry with people?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you had to take more of your medication than prescribed?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you borrowed pain medication from someone else?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you used your pain medicine for symptoms other than for pain (e.g., to help you sleep, improve your mood, or relieve stress)?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"5\" style=\"height: 270px;\">\n<p dir=\"ltr\"><span>How often have you had to visit the Emergency Room?</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Seldom</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Sometimes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Very often</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span></p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col width=\"183\"><col width=\"265\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>COMM</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Identification</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&lt;9</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Not misusing or abusing medications</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;9</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Misusing or abusing medications</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chronic Pain",
+            "Constipation",
+            "Depressed",
+            "Fatigue",
+            "Loss of Appetite",
+            "Nausea",
+            "Pain",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Any/All"
+        ],
+        "logic": "var calc_output = [];\n\nvar q1 = parseFloat(q1);\nvar q2 = parseFloat(q2);\nvar q3 = parseFloat(q3);\nvar q4 = parseFloat(q4);\nvar q5 = parseFloat(q5);\nvar q6 = parseFloat(q6);\nvar q7 = parseFloat(q7);\nvar q8 = parseFloat(q8);\nvar q9 = parseFloat(q9);\nvar q10 = parseFloat(q10);\nvar q11 = parseFloat(q11);\nvar q12 = parseFloat(q12);\nvar q13 = parseFloat(q13);\nvar q14 = parseFloat(q14);\nvar q15 = parseFloat(q15);\nvar q16 = parseFloat(q16);\nvar q17 = parseFloat(q17);\n\nvar score = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10 + q11 + q12 + q13 + q14 + q15 + q16 + q17;\n\nvar result;\n\nif (score < 9) {\n    result = 'Behavior indicates misuse or abuse of opioid medication is unlikely.';\n} else {\n    result = 'Behavior indicates misuse or abuse of opioid medication may be likely.';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'COMM<br/><br/>' + result\n});\ncalc_output.push({\n    name: 'COMM',\n    value: score,\n    value_text: 'points',\n    message: 'COMM<br/><br/>' + result\n});",
+        "inputs": [
+            {
+                "subheading": "Ask the patient: In the past 30 days…",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you had trouble with thinking clearly or had memory problems?</p>",
+                "name": "q1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often do people complain that you are not completing necessary tasks?</p>",
+                "name": "q2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "i.e., doing things that need to be done, such as going to class, work, or appointments",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you had to go to someone other than your prescribing physician to get sufficient pain relief from your medications?</p>",
+                "name": "q3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "i.e., another doctor, the Emergency Room",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you taken your medications differently from how they are prescribed?</p>",
+                "name": "q4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you seriously thought about hurting yourself?</p>",
+                "name": "q5",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How much of your time was spent thinking about opioid medications?</p>",
+                "name": "q6",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "i.e., having enough, taking them, dosing schedule, etc.",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you been in an argument?</p>",
+                "name": "q7",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you had trouble controlling your anger?</p>",
+                "name": "q8",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g., road rage, screaming, etc.",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you needed to take pain medications belonging to someone else?</p>",
+                "name": "q9",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you been worried about how you're handling your medications?</p>",
+                "name": "q10",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have others been worried about how you're handling your medications?</p>",
+                "name": "q11",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you had to make an emergency phone call or show up at the clinic without an appointment?</p>",
+                "name": "q12",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you gotten angry with people?</p>",
+                "name": "q13",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you had to take more of your medication than prescribed?</p>",
+                "name": "q14",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you borrowed pain medication from someone else?</p>",
+                "name": "q15",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you used your pain medicine for symptoms other than for pain?</p>",
+                "name": "q16",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g., to help you sleep, improve your mood, or relieve stress",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>How often have you had to visit the Emergency Room?</p>",
+                "name": "q17",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Seldom",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Current Opioid Misuse Measure (COMM)",
+            "comm",
+            "opioids",
+            "opioid misuse",
+            "medication misuse",
+            "current medication misuse",
+            "current opioid misuse",
+            "opioid misuse measure"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pain Management",
+            "Primary Care"
+        ]
+    }
+}

@@ -1,0 +1,121 @@
+{
+    "id": "573",
+    "title": "Urinary Protein Excretion Estimation",
+    "desc": "The Urinary Protein Excretion Estimation quantifies 24-hour proteinuria using protein/creatinine ratio from a single urine sample.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6656849",
+                "text": "Ginsberg JM, Chang BS, Matarese RA, Garella S. Use of single voided urine samples to estimate quantitative proteinuria. N Engl J Med. 1983 Dec 22;309(25):1543-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2370089",
+                "text": "Siwach SB, Kalra OP, Sharma R, Singh V, Chopra JS. Estimation of 24 hour protein excretion from single random urine specimen. Indian J Med Res. 1990 Apr;92:105-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3555378",
+                "text": "Schwab SJ, Christensen RL, Dougherty K, Klahr S. Quantitation of proteinuria by the use of protein-to-creatinine ratios in single urine samples. Arch Intern Med. 1987 May;147(5):943-4."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6726514",
+                "text": "Houser M. Assessment of proteinuria using random urine samples. J Pediatr. 1984 Jun;104(6):845-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12015502",
+                "text": "Neithardt AB, Dooley SL, Borensztajn J. Prediction of 24-hour protein excretion in pregnancy with a single voided urine protein-to-creatinine ratio. Am J Obstet Gynecol. 2002;186(5):883-6."
+            }
+        ],
+        "evidence": "<p>24-hour Urinary Protein Excretion Estimation = Urine Protein / Urine Creatinine</p>\n<p>Urine protein/creatinine ratio in mg per g approximates protein excretion in mg per 24 hours.</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p>UPEE &lt;0.2 g/day</p>\n</td>\n<td>\n<p>Within normal limits</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>UPEE 0.2&ndash;3.5 g/day</p>\n</td>\n<td>\n<p>Investigate further</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>UPEE &gt;3.5 g/day</p>\n</td>\n<td>\n<p>Nephrotic range</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [
+            {
+                "name": "Urine protein, random",
+                "unit": "urine_protein",
+                "error_min": "0",
+                "error_max": "650",
+                "warn_min": "0",
+                "warn_max": "200",
+                "conversion": "10",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mg/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Urine creatinine, random",
+                "unit": "urine_cr",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0",
+                "warn_max": "500",
+                "conversion": "88.42",
+                "normal_max_si": "0.37",
+                "normal_max_us": "370",
+                "normal_min_si": "0.02",
+                "normal_min_us": "20",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Dysuria"
+        ],
+        "disease_treated": [
+            "Renal Failure"
+        ],
+        "logic": "//outputs\nvar calc_output = [];\n\n//user inputs\nif (UOMSYSTEM == false) {\nvar pro = parseFloat(pro)/10;\nvar cre = parseFloat(cre) / (88.42*1000);\n}\n\nif (UOMSYSTEM == true) {\nvar pro = parseFloat(pro);\nvar cre = parseFloat(cre) / 1000;\n}\n\n\n//calculation\nvar u = pro / cre;\n\nvar msg;\nif (u < 200){\n\tmsg = \"Within normal limits.\";\n}\nif (u >= 200 && u <= 3500){\n\tmsg = \"Elevated urinary protein. Investigate further.\";\n}\nif (u > 3500){\n\tmsg = \"Nephrotic range.\";\n}\n\nvar upee = u/1000;\n\n//result user sees\ncalc_output.push({\nname: 'mini',\nvalue: upee.toFixed(1),\nvalue_text: 'g/day',\nmessage: '24 hour UPEE'\n});\n\ncalc_output.push({\nname: '3945_Urinary Protein Excretion Estimation_result (ratio)',\nvalue: u.toFixed(0),\nvalue_text: 'mg/g',\nmessage: 'Urine protein/creatinine ratio'\n});\n\ncalc_output.push({\nname: '3945_Urinary Protein Excretion Estimation_result (UPEE)',\nvalue: upee.toFixed(1),\nvalue_text: 'g/day',\nmessage: 'Estimated 24 hour urinary protein excretion<br/><br/>' + msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Urine protein",
+                "name": "pro",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "urine_protein"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Urine creatinine",
+                "name": "cre",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "urine_cr"
+            }
+        ],
+        "can_search": [
+            "proteins",
+            "urine",
+            "excreted",
+            "pee",
+            "creatinine",
+            "Spot Urine Protein to Urine Creatinine Ratio",
+            "spot urine creatinine",
+            "spot urine",
+            " protein creatinine ratio",
+            "protein/creatinine ratio",
+            "upee",
+            "urine protein",
+            "proteinuria"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Neurology"
+        ]
+    }
+}

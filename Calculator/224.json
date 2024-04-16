@@ -1,0 +1,170 @@
+{
+    "id": "224",
+    "title": "Rome IV Diagnostic Criteria for Child Abdominal Migraine",
+    "desc": "The Rome IV Criteria for Child Abdominal Migraine provides criteria for diagnosis of child abdominal migraine.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7104693/",
+                "text": "Hyams J, Di lorenzo C, Forbes D, et al. Childhood functional gastrointestinal disorders: child/adolescent. Gastroenterology. 2006;130(5):1527-37."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/29733088/",
+                "text": "Mani J, Madani S. Pediatric abdominal migraine: current perspectives on a lesser known entity. Pediatric Health Med Ther. 2018 Apr 24;9:47-58. doi: 10.2147/PHMT.S127210. PMID: 29733088; PMCID: PMC5923275."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for child abdominal migraine, patient must have the following (&ge;2 occurrences at least 6 months prior):</p>\n<ol>\n<li>Paroxysmal episodes of intense, acute periumbilical, midline, or diffuse abdominal pain lasting &ge;1 hour (should be the most severe and distressing symptom).</li>\n<li>Episodes are separated by weeks to months.</li>\n<li>The pain is incapacitating and interferes with normal activities.</li>\n<li>Stereotypical pattern and symptoms in the individual patient.</li>\n<li>The pain is associated with &ge;2 of the following:\n<ol>\n<li>Anorexia.</li>\n<li>Nausea.</li>\n<li>Vomiting.</li>\n<li>Headache.</li>\n<li>Photophobia.</li>\n<li>Pallor.</li>\n</ol>\n</li>\n<li>After appropriate evaluation, the symptoms cannot be fully explained by another medical condition.&nbsp;</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Headache",
+            "Nausea",
+            "Anorexia"
+        ],
+        "disease_treated": [
+            "Child/Adolescent Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria1=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(five)+parseFloat(eleven);\n\nvar diag;\n\nvar msg= 'Diagnosis for child abdominal migraine as per Rome IV criteria';\nvar minimsg= 'Diagnosis for abdominal migraine';\n\nif (criteria1==6) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Child Abdominal Migraine',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "≥2 occurrences at least 6 months prior",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Paroxysmal episodes of intense, acute periumbilical, midline, or diffuse abdominal pain lasting ≥1 hour (should be the most severe and distressing symptom)",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Episodes are separated by weeks to months",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "The pain is incapacitating and interferes with normal activities",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stereotypical pattern and symptoms in the individual patient",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "The pain is associated with ≥2 of the following:",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Anorexia, nausea, vomiting, headache, photophobia, or pallor",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "After appropriate evaluation, the symptoms cannot be fully explained by another medical condition",
+                "name": "eleven",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Child Abdominal Migraine, Rome IV for Child Abdominal Migraine, rome iv abdominal migraine, rome iv child abdominal migraine, rome, rome 4 for child abdominal migraine, rome 4 abdominal migraine, rome abdominal migraine, abdominal migraine"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

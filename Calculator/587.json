@@ -1,0 +1,173 @@
+{
+    "id": "587",
+    "title": "ASTRAL Score for Ischemic Stroke",
+    "desc": "ASTRAL Score for Ischemic Stroke predicts 90-day poor outcome in patients with acute ischemic stroke.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22649218",
+                "text": "Ntaios G, Faouzi M, Ferrari J, Lang W, Vemmos K, Michel P. An integer-based score to predict functional outcome in acute ischemic stroke: the ASTRAL score. Neurology. 2012;78(24):1916-22."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:&nbsp;</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong><u>A</u>ge</strong></p>\n</td>\n<td>\n<p>1 point for every 5 years</p>\n</td>\n<td>&nbsp;--</td>\n</tr>\n<tr>\n<td>\n<p><strong><u>S</u>everity</strong></p>\n</td>\n<td>\n<p>1 point for every admission NIHSS point</p>\n</td>\n<td>&nbsp;--</td>\n</tr>\n<tr>\n<td>\n<p><strong><u>T</u>ime delay between symptom onset or last proof of good health and admission</strong></p>\n</td>\n<td>\n<p>2 points if &gt;3 hours</p>\n</td>\n<td>\n<p>0 points if &le;3 hours</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong><u>R</u>ange of visual fields (new visual field defect)</strong></p>\n</td>\n<td>\n<p>2 points if yes</p>\n</td>\n<td>\n<p>0 points if no</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Glucose at <u>a</u>dmission</strong></p>\n</td>\n<td>\n<p>1 point if &gt;7.3 or &lt;3.7 mmol/L</p>\n</td>\n<td>\n<p>0 points if 3.7-7.3 mmol</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong><u>L</u>evel of consciousness</strong></p>\n</td>\n<td>\n<p>3 points if impaired</p>\n</td>\n<td>\n<p>0 points if normal</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "NIH Stroke Scale",
+                "unit": "nihss",
+                "error_min": "0",
+                "error_max": "42",
+                "warn_min": "0",
+                "warn_max": "42",
+                "conversion": "1",
+                "normal_max_si": "42",
+                "normal_max_us": "42",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "points",
+                "units_us": "points"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Neurologic Deficit",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar age = parseFloat(age);\nvar severe = parseFloat(severe);\nvar time = parseFloat(time);\nvar defect = parseFloat(defect);\nvar glucose = parseFloat(glucose);\nvar loc = parseFloat(loc);\n\n//calculation\nvar points = Math.floor(age / 5) + severe + time + defect + glucose + loc;\n// var sens;\n// var spec;\nvar prob;\n\nif(points < 7){\n    prob = '<1.6';\n}else if(points > 50){\n    prob = '>97.1';\n}else{\n    var dict = {\n        '7': 1.6,\n        '8': 2.0,\n        '9': 2.3,\n        '10': 2.8,\n        '11': 3.3,\n        '12': 3.9,\n        '13': 4.6,\n        '14': 5.4,\n        '15': 6.4,\n        '16': 7.6,\n        '17': 8.9,\n        '18': 10.5,\n        '19': 12.2,\n        '20': 14.3,\n        '21': 16.6,\n        '22': 19.2,\n        '23': 22.1,\n        '24': 25.2,\n        '25': 28.7,\n        '26': 32.5,\n        '27': 36.5,\n        '28': 40.7,\n        '29': 45.0,\n        '30': 49.3,\n        '31': 53.8,\n        '32': 58.2,\n        '33': 62.4,\n        '34': 66.4,\n        '35': 70.3,\n        '36': 73.8,\n        '37': 77.1,\n        '38': 80.1,\n        '39': 82.7,\n        '40': 85.1,\n        '41': 87.2,\n        '42': 89.0,\n        '43': 90.7,\n        '44': 92.1,\n        '45': 93.3,\n        '46': 94.3,\n        '47': 95.2,\n        '48': 95.9,\n        '49': 96.6,\n        '50': 97.1\n    }\n\n    for(var key in dict){\n        if(key === points.toString()){\n            prob = dict[key].toString();\n        }\n    }\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: points,\n    value_text: 'points',\n    message: 'ASTRAL Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: points,\n    value_text: 'points',\n    message: 'ASTRAL Score'\n});\ncalc_output.push({\n    name: 'Interpretation',\n    value: prob,\n    value_text: '%',\n    message: '90-day risk of poor outcome (mRS 3–6)'\n});\n\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><abbr title=\"NIH Stroke Scale\">NIHSS</abbr><calculator id=\"715\"> Score</calculator></p>",
+                "name": "severe",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "nihss"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>&gt;3 hrs from symptom onset (or last time seen WITHOUT stroke symptoms) to admission</p>",
+                "name": "time",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Any new visual field defect</p>",
+                "name": "defect",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Admission glucose &gt;131 mg/dL (7.3 mmol/L) or &lt;66 mg/dL (3.7 mmol/L)</p>",
+                "name": "glucose",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Impaired consciousness</p>",
+                "name": "loc",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "astral",
+            "athens",
+            "stroke score",
+            "cva",
+            "tia",
+            "ischemic stroke",
+            "brain attack"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care (Neurologic)",
+            "Neurology"
+        ]
+    }
+}

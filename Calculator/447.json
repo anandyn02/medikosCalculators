@@ -1,0 +1,349 @@
+{
+    "id": "447",
+    "title": "ASAS Criteria for Axial Spondyloarthritis (SpA)",
+    "desc": "The ASAS Criteria for Axial Spondyloarthritis (SpA) diagnoses axial spondyloarthritis according to Assessment of Spondyloarthritis International Society (ASAS) criteria.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://ard.bmj.com/content/annrheumdis/68/6/777.full.pdf ",
+                "text": "Rudwaleit M, Van Der Heijde D, Landewé R, et al. The development of Assessment of SpondyloArthritis international Society classification criteria for axial spondyloarthritis (part II): validation and final selection. Ann Rheum Dis. 2009;68(6):777-83."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6231933 ",
+                "text": "Van Der Linden S, Valkenburg HA, Cats A. Evaluation of diagnostic criteria for ankylosing spondylitis. A proposal for modification of the New York criteria. Arthritis Rheum. 1984;27(4):361-8."
+            }
+        ],
+        "evidence": "<p><strong>Entry criterion:</strong></p>\n<p>Back pain &ge;3 months and age at onset &lt;45 years</p>\n<p><strong>Required criteria:</strong></p>\n<p>Sacroiliitis on imaging* plus &ge;1 SpA feature, or</p>\n<p>HLA-B27 plus &ge;2 additional SpA features</p>\n<p><strong>SpA features:</strong></p>\n<ul>\n<li>Inflammatory back pain</li>\n<li>Arthritis</li>\n<li>Enthesitis (heel)</li>\n<li>Uveitis</li>\n<li>Dactylitis</li>\n<li>Psoriasis</li>\n<li>Crohn&rsquo;s disease or ulcerative colitis</li>\n<li>Good response to NSAIDs</li>\n<li>Family history of SpA</li>\n<li>HLA-B27</li>\n<li>Elevated CRP</li>\n</ul>\n<p>*Active (acute) inflammation on MRI highly suggestive of SpA-associated sacroiliitis, or definite radiographic sacroiliitis according to modified New York criteria (bilateral grade 2-4 sacroiliitis or unilateral grade 3-4 sacroiliitis, <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/6231933\" target=\"_blank\" rel=\"noopener\">Van Der Linden 1984</a>).</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Pain"
+        ],
+        "disease_treated": [
+            "Rheumatoid Arthritis"
+        ],
+        "logic": "var calc_output = [];\n\nvar backpain = parseFloat(backpain)\nvar required = parseFloat(required)\nvar ibp = parseFloat(ibp)\nvar arthritis = parseFloat(arthritis)\nvar enthesitis = parseFloat(enthesitis)\nvar uveitis = parseFloat(uveitis)\nvar dactylitis = parseFloat(dactylitis)\nvar psoriasis = parseFloat(psoriasis)\nvar crohns = parseFloat(crohns)\nvar nsaids = parseFloat(nsaids)\nvar famhx = parseFloat(famhx)\nvar crp = parseFloat(crp)\n\nif (required == 0) {\n\tvar hla = parseFloat(hla)\n}\nelse if (required == 1) {\n\tvar hla = 0\n}\n\nvar sum = ibp + arthritis + enthesitis + uveitis + dactylitis + psoriasis + crohns + nsaids + famhx + hla + crp\n\nvar result = ''\nvar msg = ''\n\nif (backpain == 0) {\n\tresult = 'Not axial SpA'\n\tmsg = 'Entry criterion not fulfilled'\n}\nif (backpain == 1) {\n\tif (required == 0) { // SI on imaging\n\t\tif (sum >= 1) {\n\t\t\tresult = 'Axial SpA'\n\t\t\tmsg = 'Fulfills ASAS criteria for SpA diagnosis'\n\t\t}\n\t\telse if (sum < 1) {\n\t\t\tresult = 'Not axial SpA'\n\t\t\tmsg = 'ASAS criteria for SpA diagnosis not fulfilled'\n\t\t}\n\t}\n\telse if (required == 1) { // HLA positive\n\t\tif (sum >= 2) {\n\t\t\tresult = 'Axial SpA'\n\t\t\tmsg = 'Fulfills ASAS criteria for SpA diagnosis'\n\t\t}\n\t\telse if (sum < 2) {\n\t\t\tresult = 'Not axial SpA'\n\t\t\tmsg = 'ASAS criteria for SpA diagnosis not fulfilled'\n\t\t}\n\t}\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: result,\n   value_text: '',\n   message: ''\n});\ncalc_output.push({\n   name: '306_ASAS Criteria for Axial SpA_result',\n   value: result,\n   value_text: '',\n   message: msg\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Entry Criterion",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Back pain ≥3 months and age at onset <45 years",
+                "md_calc_info_concept": null,
+                "name": "backpain",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Required Criteria",
+                "subheading_instructions": "1 is required",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "backpain == 1",
+                "default": null,
+                "label_en": "Either of the following:",
+                "mdcalc_info_concept": null,
+                "name": "required",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Sacroiliitis on imaging",
+                        "value": 0
+                    },
+                    {
+                        "label": "HLA-B27",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Sacroiliitis on imaging = active (acute) inflammation on MRI highly suggestive of SpA-associated sacroiliitis, or definite radiographic sacroiliitis according to modified New York criteria",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "SpA Features",
+                "subheading_instructions": "?1 required if sacroiliitis on imaging; ?2 features other than HLA-B27 if HLA-B27 positive",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "required >= 0 && backpain == 1",
+                "default": 0,
+                "label_en": "Inflammatory back pain",
+                "md_calc_info_concept": null,
+                "name": "ibp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "At least 4/5 present: (1) age at onset <40 years, (2) insidious onset, (3) improvement with exercise, (4) no improvement with rest, (5) pain at night with improvement upon getting up",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "required >= 0 && backpain == 1",
+                "default": 0,
+                "label_en": "Arthritis",
+                "md_calc_info_concept": null,
+                "name": "arthritis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Past or present active synovitis (peripheral) diagnosed by a physician",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "required >= 0 && backpain == 1",
+                "default": 0,
+                "label_en": "Enthesitis (heel)",
+                "md_calc_info_concept": null,
+                "name": "enthesitis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Past or present spontaneous pain or tenderness at Achilles insertion or plantar fascia at calcaneus",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "required >= 0 && backpain == 1",
+                "default": 0,
+                "label_en": "Uveitis",
+                "md_calc_info_concept": null,
+                "name": "uveitis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Past or present uveitis anterior, confirmed by an ophthalmologist",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "required >= 0 && backpain == 1",
+                "default": 0,
+                "label_en": "Dactylitis",
+                "md_calc_info_concept": null,
+                "name": "dactylitis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Past or present, diagnosed by a physician",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "required >= 0 && backpain == 1",
+                "default": 0,
+                "label_en": "Psoriasis",
+                "md_calc_info_concept": null,
+                "name": "psoriasis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Past or present, diagnosed by a physician",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "required >= 0 && backpain == 1",
+                "default": 0,
+                "label_en": "Crohn's disease or ulcerative colitis",
+                "md_calc_info_concept": null,
+                "name": "crohns",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "required >= 0 && backpain == 1",
+                "default": 0,
+                "label_en": "Good response to NSAIDs",
+                "md_calc_info_concept": null,
+                "name": "nsaids",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Resolution or improvement of back pain 24–48 hrs after full dose of NSAID",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "required >= 0 && backpain == 1",
+                "default": 0,
+                "label_en": "Family history of SpA",
+                "md_calc_info_concept": null,
+                "name": "famhx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": " Presence in 1st- or 2nd-degree relatives of any of the following: (1) ankylosing spondylitis, (2) psoriasis, (3) acute uveitis, (4) reactive arthritis, (5) IBD",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "required == 0",
+                "default": 0,
+                "label_en": "HLA-B27",
+                "md_calc_info_concept": null,
+                "name": "hla",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "required >= 0 && backpain == 1",
+                "default": 0,
+                "label_en": "Elevated CRP",
+                "md_calc_info_concept": null,
+                "name": "crp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "After exclusion of other causes for elevated CRP",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Spondyloarthritis",
+            "spa",
+            "spondylitis",
+            "sacroiliitis",
+            "Assessment of Spondyloarthritis International Society",
+            "si joint"
+        ],
+        "specialty": [
+            "Rheumatology"
+        ]
+    }
+}

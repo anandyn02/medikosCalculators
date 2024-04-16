@@ -1,0 +1,120 @@
+{
+    "id": "497",
+    "title": "Behavioral Observational Pain Scale (BOPS) for Post-Op Pediatric Pain",
+    "desc": "The Behavioral Observational Pain Scale (BOPS) is a post-operative pain measurement scale for children aged 1-7 years.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8895225",
+                "text": "Anand KJ, Craig KD. New perspectives on definition of pain. Pain 1996; 67:3-6."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<p>Pain assessments should be performed:</p>\n<ul>\n<li>Every 3 hours</li>\n<li>15-20 minutes after IV administration of analgesics</li>\n<li>30-45 minutes after oral/rectal administration</li>\n</ul>\n<p><strong>Consider analgesia for scores &ge; 3.</strong></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Anxious",
+            "Pain"
+        ],
+        "disease_treated": [
+            "Acute Pain",
+            "Anxiety"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(face) + parseFloat(verbal) + parseFloat(body);\nvar msg, mini_msg, reassess;\n\nif (u <= 2) {\n    mini_msg = \"Minimal or no pain\";\n    msg = \"Minimal or no pain.\";\n    reassess = \"<br/><br/> Consider reassessing after 30 minutes.\";\n} else if (u >= 3) {\n    mini_msg = \"Significant pain present\";\n    msg = \"Significant pain present.\";\n    reassess = \"<br/><br/>Consider analgesia and reassess afterward.\";\n}\n\ncalc_output.push({ name: 'mini', value: u, value_text: 'points', message: mini_msg });\ncalc_output.push({ name: '3625_Behavioral Observational Pain Scale_result', value: u, value_text: 'points', message: msg + reassess });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Facial expression",
+                "mdcalc_info_concept": null,
+                "name": "face",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Neutral/positive facial expression, composed, calm",
+                        "value": 0
+                    },
+                    {
+                        "label": "Negative facial expression, concerned",
+                        "value": 1
+                    },
+                    {
+                        "label": "Negative facial expression, grimace, distorted face",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Verbalization",
+                "mdcalc_info_concept": null,
+                "name": "verbal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal conversation, laugh, crow",
+                        "value": 0
+                    },
+                    {
+                        "label": "Completely quiet, sobbing and/or complaining but not because of pain",
+                        "value": 1
+                    },
+                    {
+                        "label": "Crying, screaming and/or complaining about pain",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Body position",
+                "mdcalc_info_concept": null,
+                "name": "body",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Inactive, laying, relaxed with all extremities or sitting, walking",
+                        "value": 0
+                    },
+                    {
+                        "label": "Restless movements, shifting fashion and/or touching wound or wound area",
+                        "value": 1
+                    },
+                    {
+                        "label": "Lying rigid and/or drawn up with arms and legs to the body",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "peds",
+            "child",
+            "pediatrics",
+            "pain"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pain Management",
+            "Pediatrics",
+            "Surgery (General)"
+        ]
+    }
+}

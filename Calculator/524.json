@@ -1,0 +1,189 @@
+{
+    "id": "524",
+    "title": "Modified Response Evaluation Criteria in Solid Tumors (mRECIST)",
+    "desc": "The mRECIST Criteria Measures treatment response, specifically to cytotoxic drugs, based on tumor shrinkage.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jnci.oxfordjournals.org/content/100/10/698.long",
+                "text": "Llovet JM, Di Bisceglie AM, Bruix J, Kramer BS, Lencioni R, Zhu AX, Sherman M, Schwartz M, Lotze M, Talwalkar J, Gores GJ; Panel of Experts in HCC-Design Clinical Trials. Design and endpoints of clinical trials in hepatocellular carcinoma.J Natl Cancer Inst. 2008 May 21;100(10):698-711. doi: 10.1093/jnci/djn134. Epub 2008 May 13."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubs.rsna.org/doi/pdf/10.1148/rg.335125214",
+                "text": "Tirkes T, Hollar MA, Tann M, Kohli MD, Akisik F, Sandrasegaran K. Response criteria in oncologic imaging: review of traditional and new criteria. Radiographics. 2013 Sep-Oct;33(5):1323-41. doi: 10.1148/rg.335125214."
+            },
+            {
+                "href": "https://www.aasld.org/sites/default/files/guideline_documents/HCCUpdate2010.pdf",
+                "text": "Bruix J, Sherman M; American Association for the Study of Liver Diseases. Management of hepatocellular carcinoma: an update.Hepatology. 2011 Mar;53(3):1020-2. doi: 10.1002/hep.24199."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7459811",
+                "text": "Miller AB, Hoogstraten B, Staquet M, Winkler A. Reporting results of cancer treatment. Cancer 1981;47(1):207-214."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20175033",
+                "text": "Lencioni R, Llovet JM. Modified RECIST (mRECIST) assessment for hepatocellular carcinoma. Semin Liver Dis. 2010;30(1):52-60."
+            }
+        ],
+        "evidence": "<p><span>Responses are defined as the following (RECIST is listed for comparison):</span></p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>RECIST</strong></p>\n</td>\n<td>\n<p><strong>mRECIST</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Complete response</strong></p>\n</td>\n<td>\n<p><span>Disappearance of all target lesions</span></p>\n</td>\n<td>\n<p><span>Disappearance of any intratumoral arterial enhancement in all target lesions</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Partial response</strong></p>\n</td>\n<td>\n<p><span>At least a 30% decrease in the sum of diameters of target lesions, taking as reference the baseline sum of the diameters of target lesions</span></p>\n</td>\n<td>\n<p><span>&thinsp;At least a 30% decrease in the sum of diameters of viable (enhancement in the arterial phase) target lesions, taking as reference the baseline sum of the diameters of target lesions</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Stable disease</strong></p>\n</td>\n<td>\n<p><span>Any cases that do not qualify for either partial response or progressive disease</span></p>\n</td>\n<td>\n<p><span>Any cases that do not qualify for either partial response or progressive disease</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Progressive disease</strong></p>\n</td>\n<td>\n<p><span>An increase of at least 20% in the sum of the diameters of target lesions, taking as reference the smallest sum of the diameters of target lesions recorded since treatment started</span></p>\n</td>\n<td>\n<p><span>An increase of at least 20% in the sum of the diameters of viable (enhancing) target lesions, taking as reference the smallest sum of the diameters of viable (enhancing) target lesions recorded since treatment started</span></p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Length",
+                "unit": "length_si_mm",
+                "error_min": "0",
+                "error_max": "10000",
+                "warn_min": "0.1",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mm",
+                "units_us": "mm"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Hepatocellular Carcinoma"
+        ],
+        "logic": "var b2 = parseFloat(b2) || 0\nvar b3 = parseFloat(b3) || 0\nvar b4 = parseFloat(b4) || 0\nvar b5 = parseFloat(b5) || 0\nvar c2 = parseFloat(c2) || 0\nvar c3 = parseFloat(c3) || 0\nvar c4 = parseFloat(c4) || 0\nvar c5 = parseFloat(c5) || 0\n\nvar calc_output = [];\n\nvar a = parseFloat(b1);\nvar b = b2;\nvar c = b3;\nvar d = b4;\nvar e = b5;\nvar f = parseFloat(c1);\nvar g = c2;\nvar h = c3;\nvar i = c4;\nvar j = c5;\nvar k = (a + b + c + d + e);\nvar l = (f + g + h + i + j);\n\nvar diff = l - k;\nvar change = ((l - k) / k) * 100;\n\nvar r = (f + g + h + i + j);\n\nvar rb = (a + b + c + d + e);\n\nvar T;\nvar type;\n\nif (rb == 0 && a == 0 && f > 0) {\n  T = 'Progressive';\n  type = ' disease';\n}\nelse if (rb == 0 && b == 0 && g > 0) {\n  T = 'Progressive';\n  type = ' disease';\n}\nelse if (rb == 0 && c == 0 && h > 0) {\n  T = 'Progressive';\n  type = ' disease';\n}\nelse if (rb == 0 && d == 0 && i > 0) {\n  T = 'Progressive';\n  type = ' disease';\n}\nelse if (rb == 0 && e == 0 && j > 0) {\n  T = 'Progressive';\n  type = ' disease';\n}\nelse if (l == 0) {\n  T = 'Complete';\n  type = ' response';\n}\nelse if (r == 0) {\n  T = 'Complete';\n  type = ' response';\n}\nelse if (change >= +20 && diff >= 5) {\n  T = 'Progressive';\n  type = ' disease';\n}\nelse if (change <= -30) {\n  T = 'Partial';\n  type = ' response';\n}\nelse if (change > -30) {\n  T = 'Stable';\n  type = ' disease';\n}\n\n\ncalc_output.push({ \n  name: 'mini', \n  value: T, \n  value_text: type, \n  message: '' \n});\ncalc_output.push({ \n  name: '3824_mRECIST_result', \n  value: T + type, \n  value_text: '', \n  message: 'Hepatocellular Carcinoma' \n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Tumor 1 size at baseline</p>",
+                "name": "b1",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Tumor 1 current size</p>",
+                "name": "c1",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "b1 != null && c1 != null",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Tumor 2 size at baseline</p>",
+                "name": "b2",
+                "optional": true,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "b1 != null && c1 != null",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Tumor 2 current size</p>",
+                "name": "c2",
+                "optional": true,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "b2 != null && c2 != null",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Tumor 3 size at baseline</p>",
+                "name": "b3",
+                "optional": true,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "b2 != null && c2 != null",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Tumor 3 current size</p>",
+                "name": "c3",
+                "optional": true,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "b3 != null && c3 != null",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Tumor 4 size at baseline</p>",
+                "name": "b4",
+                "optional": true,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "b3 != null && c3 != null",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Tumor 4 current size</p>",
+                "name": "c4",
+                "optional": true,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "b4 != null && c4 != null",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Tumor 5 size at baseline</p>",
+                "name": "b5",
+                "optional": true,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "b4 != null && c4 != null",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Tumor 5 current size</p>",
+                "name": "c5",
+                "optional": true,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            }
+        ],
+        "can_search": [
+            "hcc"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

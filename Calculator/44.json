@@ -1,0 +1,504 @@
+{
+    "id": "44",
+    "title": "Modified Finnegan Neonatal Abstinence Score (NAS)",
+    "desc": "The Modified Finnegan Neonatal Abstinence Score stratifies severity of opioid withdrawal in newborns. ",
+    "data": {
+        "orgreference": [
+            {
+                "text": "Finnegan LP. Neonatal abstinence syndrome: assessment and pharmacotherapy. In: Nelson N, editor. Current therapy in neonatal-perinatal medicine. 2 ed. Ontario: BC Decker. 1990:262–70."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<table><colgroup><col width=\"*\" /><col width=\"212\" /><col width=\"86\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p><strong>Central nervous system disturbances</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Cry</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Excessive high-pitched cry &lt;5 minutes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Continuous high-pitched cry &gt;5 minutes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Sleep</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Sleeps &lt;3 hours after feeding</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Sleeps &lt;2 hours after feeding</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Sleeps &lt;1 hour after feeding</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Moro reflex</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Hyperactive</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Markedly hyperactive</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Tremors</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Mild tremors when disturbed</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate-severe tremors when disturbed</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Mild tremors when undisturbed</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate-severe tremors when undisturbed</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Increased muscle tone</p>\n<p dir=\"ltr\"></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Excoriation (e.g. chin, knees, elbow, toes, nose)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Myoclonic jerks (twitching/jerking of limbs)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Generalized convulsions</p>\n<p dir=\"ltr\"></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p><strong>Metabolism, vasomotor, and respiratory disturbances</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Sweating</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Hyperthermia</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">37.2-38.3&ordm;C (99.0-100.9&ordm;F)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;38.3&ordm;C (&gt;100.9&ordm;F)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Frequent yawning (&gt;3-4 times per scoring interval)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Mottling</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Nasal stuffiness</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Sneezing (&gt;3-4 times per scoring interval)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Nasal flaring</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Respiratory rate</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;60 breaths/minute, no retractions</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;60 breaths/minute with retractions</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Gastrointestinal disturbances</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Excessive sucking</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Poor feeding (infrequent/uncoordinated suck)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Regurgitation</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;2 times during/post feeding</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Projectile vomiting</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Stools</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Loose (curds/seedy)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Watery (water ring on diaper around stool)</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p dir=\"ltr\"><span id=\"docs-internal-guid-bff3cb7d-7fff-ef51-15d6-62d2f85df3f2\">&nbsp;</p>\n<p><span id=\"docs-internal-guid-b950aa09-7fff-1cdc-d1c9-ac950ee94f3d\"><span id=\"docs-internal-guid-b950aa09-7fff-1cdc-d1c9-ac950ee94f3d\"><span id=\"docs-internal-guid-b950aa09-7fff-1cdc-d1c9-ac950ee94f3d\">&nbsp;</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Substance Withdrawal"
+        ],
+        "logic": "var calc_output = [];\n\nvar cry = parseFloat(cry);\nvar sleep = parseFloat(sleep);\nvar moro = parseFloat(moro);\nvar tremors = parseFloat(tremors);\nvar muscle = parseFloat(muscle);\nvar excoriation = parseFloat(excoriation);\nvar jerks = parseFloat(jerks);\nvar convulsions = parseFloat(convulsions);\nvar sweating = parseFloat(sweating);\nvar fever = parseFloat(fever);\nvar yawning = parseFloat(yawning);\nvar mot = parseFloat(mot);\nvar stuff = parseFloat(stuff);\nvar sneezing = parseFloat(sneezing);\nvar nasal = parseFloat(nasal);\nvar rr = parseFloat(rr);\nvar sucking = parseFloat(sucking);\nvar feeding = parseFloat(feeding);\nvar regurg = parseFloat(regurg);\nvar projectile = parseFloat(proj);\nvar stools = parseFloat(stools);\n\nvar score = cry +\nsleep +\nmoro +\ntremors +\nmuscle +\nexcoriation +\njerks +\nconvulsions +\nsweating +\nfever +\nyawning +\nmot +\nstuff +\nsneezing +\nnasal +\nrr +\nsucking +\nfeeding +\nregurg +\nprojectile +\nstools; \n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'Neonatal Abstinence Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Neonatal Abstinence Score <br/><br/>One study (Kocherlakota 2014) suggests: (1) monitor NAS every 3-4 hours, (2) for two consecutive scores ≥12 or three consecutive scores ≥8, initiate pharmacologic treatment'\n});",
+        "inputs": [
+            {
+                "subheading": "Central nervous system disturbances",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cry",
+                "name": "cry",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Excessive high-pitched cry <5 min",
+                        "value": 2
+                    },
+                    {
+                        "label": "Continuous high-pitched cry >5 min",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sleep",
+                "name": "sleep",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Sleeps <3 hrs after feeding",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sleeps <2 hrs after feeding",
+                        "value": 2
+                    },
+                    {
+                        "label": "Sleeps <1 hour after feeding",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Moro reflex",
+                "name": "moro",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Hyperactive",
+                        "value": 2
+                    },
+                    {
+                        "label": "Markedly hyperactive",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tremors",
+                "name": "tremors",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild tremors when disturbed",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate-severe tremors when disturbed",
+                        "value": 2
+                    },
+                    {
+                        "label": "Mild tremors when undisturbed",
+                        "value": 3
+                    },
+                    {
+                        "label": "Moderate-severe tremors when undisturbed",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Increased muscle tone",
+                "name": "muscle",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Excoriation",
+                "name": "excoriation",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. chin, knees, elbows, toes, nose",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Myoclonic jerks",
+                "name": "jerks",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Twitching/jerking of limbs",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Generalized convulsions",
+                "name": "convulsions",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "subheading": "Metabolism, vasomotor, and respiratory disturbances",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sweating",
+                "name": "sweating",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hyperthermia",
+                "name": "fever",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "37.2-38.3ºC (99.0-100.9ºF)",
+                        "value": 1
+                    },
+                    {
+                        "label": ">38.3ºC (>100.9ºF)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Frequent yawning",
+                "name": "yawning",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": ">3-4 times per scoring interval",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Mottling",
+                "name": "mot",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nasal stuffiness ",
+                "name": "stuff",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sneezing",
+                "name": "sneezing",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": ">3-4 times per scoring interval",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nasal flaring",
+                "name": "nasal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Respiratory rate",
+                "name": "rr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": ">60 breaths/minute, no retractions",
+                        "value": 1
+                    },
+                    {
+                        "label": ">60 breaths/minute with retractions",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "subheading": "Gastrointestinal disturbances",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Excessive Sucking",
+                "name": "sucking",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Poor feeding",
+                "name": "feeding",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Infrequent/uncoordinated suck",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Regurgitation",
+                "name": "regurg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥2 times during/post feeding",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Projectile vomiting",
+                "name": "proj",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stools",
+                "name": "stools",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Loose (curds/seedy)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Watery (water ring on diaper around stool)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "neonatal drug withdrawal",
+            "Finnegan score",
+            "neonatal abstinence syndrome",
+            "NAS",
+            "Finnegan",
+            "neonatal abstinence score"
+        ],
+        "specialty": [
+            "Critical Care (Neonatal)",
+            "OB-Gyn",
+            "Pediatrics",
+            "Pediatric Subspecialty",
+            "Toxicology"
+        ]
+    }
+}

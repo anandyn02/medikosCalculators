@@ -1,0 +1,292 @@
+{
+    "id": "348",
+    "title": "GAD-7 (General Anxiety Disorder-7)",
+    "desc": "The GAD-7 (General Anxiety Disorder-7) measures severity of anxiety, mainly in outpatients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16717171",
+                "text": "Spitzer RL, Kroenke K, Williams JB, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. Arch Intern Med. 2006 May 22;166(10):1092-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17339617",
+                "text": "Kroenke K, Spitzer RL, Williams JBW, Monahan PO, Löwe B. Anxiety disorders in primary care: prevalence, impairment, comorbidity, and detection. Ann Intern Med 2007;146:317- 325."
+            }
+        ],
+        "evidence": "<p>0-21 score, with 0-3 points for each of seven questions.</p>",
+        "facts": "<p>For all questions, answer with one of the following:</p>\n<ul>\n<li>Not at all = 0</li>\n<li>Several days = +1</li>\n<li>More than half the days = +2</li>\n<li>Nearly every day = +3</li>\n</ul>\n<p>The last question of the GAD-7 is a good indicator of patient's global impairment, though not included in the final calculation of points.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Anxious"
+        ],
+        "disease_treated": [
+            "Anxiety",
+            "Depression/Suicidality"
+        ],
+        "logic": "var calc_output = [];\nvar problems_difficult = parseFloat(problems_difficult);\nvar v = parseFloat(nervous) + parseFloat(control_worrying) + parseFloat(worrying) + parseFloat(trouble_relaxing) + parseFloat(restless) + parseFloat(irritable) + parseFloat(afraid);\nvar text = '';\nvar textAppend = '';\nvar mini_text = '';\nif (v < 5) { text = 'No anxiety disorder.';\n    mini_text = 'No anxiety disorder.' }\nif (v > 4 && v < 10) { text = 'Mild anxiety disorder.';\n    mini_text = 'Mild anxiety disorder.' }\nif (v > 9 && v < 15) { text = 'Moderate anxiety disorder.';\n    mini_text = 'Moderate anxiety disorder.' }\nif (v > 14) { text = 'Severe anxiety disorder.';\n    mini_text = 'Severe anxiety disorder.' }\nif (v == 8 || v == 9) { textAppend += '<br/><br/>Some studies that applied GAD-7 to Panic Disorder, Social Phobia, and PTSD would use a cutoff of 8, such that this would be Moderate Anxiety. See Next Steps section for more information.'; }\nif (v > 0 && problems_difficult == 0) { textAppend += '<br/><br/>Functionally, the patient does not report limitations due to their symptoms.' }\nif (v > 0 && problems_difficult == 1) { textAppend += '<br/><br/>Functionally, the patient is \\u201csomewhat\\u201d having difficulty with life tasks due to their symptoms.' }\nif (v > 0 && problems_difficult == 2) { textAppend += '<br/><br/>Functionally, the patient finds it is \\u201cvery difficult\\u201d to perform life tasks due to their symptoms.' }\nif (v > 0 && problems_difficult == 3) { textAppend += '<br/><br/>Functionally, the patient finds it is \\u201cextremely difficult\\u201d to perform life tasks due to their symptoms.' }\nif (v == 0) {textAppend = ' ';}\ncalc_output.push({ \n    name: 'mini', \n    value: v.toFixed(0), \n    value_text: 'points', \n    message: mini_text \n});\ncalc_output.push({ \n    name: '1727_GAD-7_result', \n    value: v.toFixed(0), \n    value_text: 'points', \n    message: text + textAppend \n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<p><strong>Ask the patient:</strong> how often have they been bothered by the following over the past 2 weeks?</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Feeling nervous, anxious, or on edge</p>",
+                "mdcalc_info_concept": null,
+                "name": "nervous",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Not being able to stop or control worrying</p>",
+                "mdcalc_info_concept": null,
+                "name": "control_worrying",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Worrying too much about different things</p>",
+                "mdcalc_info_concept": null,
+                "name": "worrying",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Trouble relaxing</p>",
+                "mdcalc_info_concept": null,
+                "name": "trouble_relaxing",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Being so restless that it's hard to sit still</p>",
+                "mdcalc_info_concept": null,
+                "name": "restless",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Becoming easily annoyed or irritable</p>",
+                "mdcalc_info_concept": null,
+                "name": "irritable",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Feeling afraid as if something awful might happen</p>",
+                "mdcalc_info_concept": null,
+                "name": "afraid",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "(afraid + irritable + restless + trouble_relaxing + worrying + control_worrying + nervous) > 0",
+                "default": null,
+                "label_en": "<p>Ask the patient: how difficult have these problems made it to do work, take care of things at home, or get along with other people?</p>",
+                "mdcalc_info_concept": null,
+                "name": "problems_difficult",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Somewhat difficult",
+                        "value": 1
+                    },
+                    {
+                        "label": "Very difficult",
+                        "value": 2
+                    },
+                    {
+                        "label": "Extremely difficult",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Optional, not included in final score but may help assess global impairment",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "gad",
+            "anxious",
+            "psych",
+            "gad7",
+            "gad-7"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Internal Medicine",
+            "Primary Care",
+            "Psychiatry"
+        ]
+    }
+}

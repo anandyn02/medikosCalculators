@@ -1,0 +1,259 @@
+{
+    "id": "709",
+    "title": "HAS-BLED Score for Major Bleeding Risk",
+    "desc": "The HAS-BLED Score for Major bleeding risk estimates risk of major bleeding for patients on anticoagulation to assess quality of atrial fibrillation care.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20299623",
+                "text": "Pisters R, Lane DA, Nieuwlaat R, et al. A Novel User-Friendly Score (Has-Bled) To Assess 1-Year Risk Of Major Bleeding In Patients With Atrial Fibrillation: The Euro Heart Survey. Chest. 2010;138(5):1093-1100."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<table cellspacing=\"0\" cellpadding=\"0\">\n<tbody>\n<tr>\n<td valign=\"top\">\n<p><strong>Variable</strong></p>\n</td>\n<td valign=\"top\">\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Hypertension</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Renal disease (dialysis, transplant, Cr &gt;2.26 mg/dL or 200 &micro;mol/L)</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Liver disease (cirrhosis or bilirubin &gt;2x normal with AST/ALT/AP &gt;3x normal)</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Stroke history</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Prior major bleeding or predisposition to bleeding</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Labile INR (unstable/high INRs, time in therapeutic range &lt;60%)</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Elderly (age &gt;65)</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Medication usage predisposing to bleeding (aspirin, clopidogrel, NSAIDs)</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td valign=\"top\">\n<p>Alcohol usage (&ge;8 drinks/week)</p>\n</td>\n<td valign=\"top\">\n<p>1</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>Note:&nbsp;HAS-BLED is an acronym for&nbsp;Hypertension,&nbsp;Abnormal liver/renal function,&nbsp;Stroke history,&nbsp;Bleeding predisposition,&nbsp;Labile INR,&nbsp;Elderly,&nbsp;Drug/alcohol usage.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>HAS-BLED Score</strong></p>\n</td>\n<td><strong>Risk group</strong></td>\n<td><b>Risk&nbsp;of major bleeding**</b></td>\n<td><b>Bleeds per 100 patient-years***</b></td>\n<td><strong>Recommendation</strong></td>\n</tr>\n<tr>\n<td>\n<p>0</p>\n</td>\n<td rowspan=\"2\">Relatively low</td>\n<td>0.9%</td>\n<td>1.13</td>\n<td rowspan=\"2\">Anticoagulation should be considered</td>\n</tr>\n<tr>\n<td>\n<p>1</p>\n</td>\n<td>3.4%</td>\n<td>1.02</td>\n</tr>\n<tr>\n<td>\n<p>2</p>\n</td>\n<td>Moderate</td>\n<td>4.1%</td>\n<td>1.88</td>\n<td>Anticoagulation can be considered</td>\n</tr>\n<tr>\n<td>\n<p>3</p>\n</td>\n<td rowspan=\"3\">High</td>\n<td>5.8%</td>\n<td>3.72</td>\n<td rowspan=\"4\">Alternatives to anticoagulation should be considered</td>\n</tr>\n<tr>\n<td>\n<p>4</p>\n</td>\n<td>8.9%</td>\n<td>8.70</td>\n</tr>\n<tr>\n<td>\n<p>5</p>\n</td>\n<td>9.1%</td>\n<td>12.50</td>\n</tr>\n<tr>\n<td>\n<p>&gt;5*</p>\n</td>\n<td>Very high&nbsp;</td>\n<td>-</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>*Scores greater than 5 were too rare to determine risk, but are likely over 10%.</p>\n<p>**Risk figures&nbsp;from <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/21111555\" target=\"_blank\" rel=\"noopener\">Lip 2011</a>.</p>\n<p>***Risk figures from&nbsp;<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/20299623\" target=\"_blank\" rel=\"noopener\">Pisters&nbsp;2010</a>.</p>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding",
+            "Palpitations",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Arrhythmia",
+            "Atrial Fibrillation",
+            "Bleeding/Hemorrhage",
+            "GI Bleeding",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output=[]; \nvar msg,recs=''; \nvar mini_msg=''; \nvar u=parseInt(hypertension)+parseInt(renal_disease)+parseInt(liver_disease)+parseInt(stroke)+parseInt(bleeding_predisposition)+parseInt(labile_inr)+parseInt(age_65)+parseInt(medication_usage)+parseInt(alcohol_drug_use); \nif(u==0){\n\tmsg='Risk was 0.9% in one validation study (Lip 2011) and 1.13 bleeds per 100 patient-years in another validation study (Pisters 2010).';\n\trecs='Anticoagulation should be considered: Patient has a relatively low risk for major bleeding (~1/100 patient-years).';\n\tmini_msg='Relatively low risk of major bleeding.'\n} \nif(u==1){\n\tmsg='Risk was 3.4% in one validation study (Lip 2011) and 1.02 bleeds per 100 patient-years in another validation study (Pisters 2010).';\n\trecs='Anticoagulation should be considered: Patient has a relatively low risk for major bleeding (~1/100 patient-years).';\n\tmini_msg='Relatively low risk of major bleeding.'\n} \nif(u==2){\n\tmsg='Risk was 4.1% in one validation study (Lip 2011) and 1.88 bleeds per 100 patient-years in another validation study (Pisters 2010).';\n\trecs='Anticoagulation can be considered, however patient does have moderate risk for major bleeding (~2/100 patient-years).';\n\tmini_msg='Moderate risk of major bleeding.'\n} \nif(u>2){\n\trecs='Alternatives to anticoagulation should be considered: Patient is at high risk for major bleeding.'\n}  \nif(u==3){\n\tmsg='Risk was 5.8% in one validation study (Lip 2011) and 3.72 bleeds per 100 patient-years in another validation study (Pisters 2010).';\n\tmini_msg='High risk of major bleeding.'\n} \nif(u==4){\n\tmsg='Risk was 8.9% in one validation study (Lip 2011) and 8.70 bleeds per 100 patient-years in another validation study (Pisters 2010).';\n\tmini_msg='High risk of major bleeding.'\n} \nif(u==5){\n\tmsg='Risk was 9.1% in one validation study (Lip 2011) and 12.50 bleeds per 100 patient-years in another validation study (Pisters 2010).';\n\tmini_msg='High risk of major bleeding.'\n} \nif(u>5){\n\tmsg='Scores greater than 5 were too rare to determine risk, but are likely over 10%.';\n\tmini_msg='Very high risk of major bleeding.'\n\trecs='Alternatives to anticoagulation should be considered: Patient is at very high risk for major bleeding.'} \n \ncalc_output.push({\n\tname:'mini',\n\tvalue:u,\n\tvalue_text:'points',\n\tmessage:mini_msg\n}); \ncalc_output.push({\n\tname:'807_HAS-BLED Score_result',\n\tvalue:u,\n\tvalue_text:'points',\n\tmessage:msg+'<br/><br/>'+recs\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hypertension",
+                "md_calc_info_concept": null,
+                "name": "hypertension",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Uncontrolled, >160 mmHg systolic",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Renal disease",
+                "md_calc_info_concept": null,
+                "name": "renal_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Dialysis, transplant, Cr >2.26 mg/dL or >200 µmol/L",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Liver disease",
+                "md_calc_info_concept": null,
+                "name": "liver_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Cirrhosis or bilirubin >2x normal with AST/ALT/AP >3x normal",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stroke history",
+                "md_calc_info_concept": null,
+                "name": "stroke",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Prior major bleeding or predisposition to bleeding",
+                "md_calc_info_concept": null,
+                "name": "bleeding_predisposition",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Labile INR",
+                "md_calc_info_concept": null,
+                "name": "labile_inr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Unstable/high INRs, time in therapeutic range <60%",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >65",
+                "md_calc_info_concept": null,
+                "name": "age_65",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Medication usage predisposing to bleeding",
+                "md_calc_info_concept": null,
+                "name": "medication_usage",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Aspirin, clopidogrel, NSAIDs",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Alcohol use",
+                "md_calc_info_concept": null,
+                "name": "alcohol_drug_use",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "≥8 drinks/week",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "hemorrhage",
+            "anticoagulation",
+            "afib",
+            "cva",
+            "stroke",
+            "atrial fibrillation",
+            "stroke risk",
+            "hasbled",
+            "has",
+            "has-bled",
+            "bleeding risk",
+            "HAS-BLED Score for Major Bleeding Risk",
+            "has bled score",
+            "has bled",
+            "major bleeding"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Primary Care"
+        ]
+    }
+}

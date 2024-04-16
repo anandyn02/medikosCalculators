@@ -1,0 +1,370 @@
+{
+    "id": "509",
+    "title": "Framingham Heart Failure Diagnostic Criteria",
+    "desc": "The Framingham Heart Failure Criteria diagnose heart failure based on major and minor criteria.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.nejm.org/doi/full/10.1056/NEJM197112232852601",
+                "text": "McKee PA, Castelli WP, McNamara PM, Kannel WB. The natural history of congestive heart failure: the Framingham study. N Engl J Med. 1971 Dec 23;285(26):1441-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Diagnosis of HF requires 2&nbsp;major criteria OR 1 major and&nbsp;2 minor criteria:</p>\n<p><strong>Major criteria</strong></p>\n<ul>\n<li>Acute pulmonary edema.</li>\n<li>Cardiomegaly.</li>\n<li>Hepatojugular reflux.</li>\n<li>Neck vein distention.</li>\n<li>Paroxysmal nocturnal dyspnea or orthopnea.</li>\n<li>Pulmonary rales.</li>\n<li>Third heart sound&nbsp;(S3 gallop rhythm).<strong><br></strong></li>\n<li>Weight loss &gt;4.5 kg in 5 days in response to treatment.</li>\n</ul>\n<p><strong>Minor criteria</strong></p>\n<ul>\n<li>Ankle edema.</li>\n<li>Dyspnea on exertion.</li>\n<li>Hepatomegaly.</li>\n<li>Nocturnal cough.</li>\n<li>Pleural effusion.</li>\n<li>Tachycardia (HR &gt;120)</li>\n</ul>\n<p>&nbsp;</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Extremity Edema",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Congestive Heart Failure",
+            "Heart Failure"
+        ],
+        "logic": "var calc_output = [];\n\n        var major = parseFloat(ape) + parseFloat(cardiomegaly) + parseFloat(hepjug) + parseFloat(nvd) + parseFloat(dysporth) + parseFloat(rales) + parseFloat(s3) + parseFloat(weightloss);\n        var minor = parseFloat(edema) + parseFloat(dyspexert) + parseFloat(hepatomegaly) + parseFloat(noccough) + parseFloat(pleff) + parseFloat(tachy);\n        var msg;\n        var string;\n\n        if (major >= 2 && minor >= 0) {\n            string = 'Positive';\n            msg = 'Diagnosis of Heart Failure';\n        } else if (major == 0 && minor <= 2) {\n            string = 'Negative';\n            msg = 'Diagnosis of Heart Failure';\n        } else if (major == 1 && minor > 1) {\n            string = 'Positive';\n            msg = 'Diagnosis of Heart Failure';\n        } else {\n            string = 'Negative';\n            msg = 'Diagnosis of Heart Failure';\n        }\n\ncalc_output.push({ name: 'mini', value: string, value_text: '', message: msg });\ncalc_output.push({ \n    name: '3800_Framingham HF Criteria_result', \n    value: string, \n    value_text: '', \n    message: msg });",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Major Criteria",
+                "subheading_instructions": "2+ required for positive diagnosis (or 1, plus 2 minor)",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acute pulmonary edema",
+                "md_calc_info_concept": null,
+                "name": "ape",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cardiomegaly",
+                "md_calc_info_concept": null,
+                "name": "cardiomegaly",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hepatojugular reflux",
+                "md_calc_info_concept": null,
+                "name": "hepjug",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Neck vein distention",
+                "md_calc_info_concept": null,
+                "name": "nvd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Paroxysmal nocturnal dyspnea or orthopnea",
+                "md_calc_info_concept": null,
+                "name": "dysporth",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pulmonary rales",
+                "md_calc_info_concept": null,
+                "name": "rales",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Third heart sound (S3 gallop rhythm)",
+                "md_calc_info_concept": null,
+                "name": "s3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Weight loss  >4.5 kg in 5 days in response to treatment",
+                "md_calc_info_concept": null,
+                "name": "weightloss",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Minor Criteria",
+                "subheading_instructions": "2+ required for positive diagnosis (or 2 major)",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ankle edema",
+                "md_calc_info_concept": null,
+                "name": "edema",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Dyspnea on exertion",
+                "md_calc_info_concept": null,
+                "name": "dyspexert",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hepatomegaly",
+                "md_calc_info_concept": null,
+                "name": "hepatomegaly",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nocturnal cough",
+                "md_calc_info_concept": null,
+                "name": "noccough",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pleural effusion",
+                "md_calc_info_concept": null,
+                "name": "pleff",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tachycardia (HR >120)",
+                "md_calc_info_concept": null,
+                "name": "tachy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Heart failure",
+            "congestive heart failure",
+            "HF",
+            "CHF",
+            "Framingham"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Primary Care"
+        ]
+    }
+}

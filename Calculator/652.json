@@ -1,0 +1,150 @@
+{
+    "id": "652",
+    "title": "Brugada Criteria for Ventricular Tachycardia",
+    "desc": "The Brugada Criteria diagnoses ventricular tachycardia on EKG.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://circ.ahajournals.org/content/circulationaha/83/5/1649.full.pdf ",
+                "text": "Brugada P, Brugada J, Mont L, Smeets J, Andries EW. A new approach to the differential diagnosis of a regular tachycardia with a wide QRS complex. Circulation. 1991;83(5):1649-59."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8572445 ",
+                "text": "Herbert ME, Votey SR, Morgan MT, Cameron P, Dziukas L. Failure to agree on the electrocardiographic diagnosis of ventricular tachycardia. Ann Emerg Med. 1996;27(1):35-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18180024 ",
+                "text": "Vereckei A, Duray G, Szénási G, Altemose GT, Miller JM. New algorithm using only lead aVR for differential diagnosis of wide QRS complex tachycardia. Heart Rhythm. 2008;5(1):89-98."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3348347/ ",
+                "text": "Baxi RP, Hart KW, Vereckei A, et al. Vereckei criteria used as a diagnostic tool by emergency medicine residents to distinguish between ventricular tachycardia and supra-ventricular tachycardia with aberrancy. J Cardiol. 2012;59(3):307-12."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4711501/ ",
+                "text": "Garner JB, Miller JM. Wide Complex Tachycardia - Ventricular Tachycardia or Not Ventricular Tachycardia, That Remains the Question. Arrhythm Electrophysiol Rev. 2013;2(1):23-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9082671 ",
+                "text": "Grimm W, Menz V, Hoffmann J, Maisch B. [Value of old and new electrocardiography criteria for differential diagnosis between ventricular tachycardia and supraventricular tachycardia with bundle branch block]. Z Kardiol. 1996;85(12):932-42."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25995387 ",
+                "text": "Jastrzebski M, Sasaki K, Kukla P, Fijorek K, Stec S, Czarnecka D. The ventricular tachycardia score: a novel approach to electrocardiographic diagnosis of ventricular tachycardia. Europace. 2016;18(4):578-84."
+            }
+        ],
+        "evidence": "<p><img src='http://cdn-web-img.mdcalc.com/content/Brugada_diagram.png' width='100%' alt='Brugada algorithm' /></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Anxious",
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Arrhythmia"
+        ],
+        "logic": "var calc_output = [];\nvar mini_msg = '';\nvar msg = '';\nvar absentcomplex, rsinterval, dissociation, morphology\nif (absentcomplex == 1) {\n        mini_msg = 'VT';\n        msg = 'ACLS protocol recommends amiodarone and preparing for synchronized cardioversion'\n    }\nelse {\n    if (rsinterval == 1) {\n        mini_msg = 'VT';\n        msg = 'ACLS protocol recommends amiodarone and preparing for synchronized cardioversion'\n    } \n    else {\n        if (dissociation == 1) {\n            mini_msg = 'VT';\n            msg = 'ACLS protocol recommends amiodarone and preparing for synchronized cardioversion'\n        }\n        else {\n            if (morphology == 1) {\n                mini_msg = 'VT';\n                msg = 'ACLS protocol recommends amiodarone and preparing for synchronized cardioversion'\n            } \n            else {\n                mini_msg = 'SVT';\n                msg = 'Refer to ACLS protocol for treatment options (see Next Steps)'\n            }\n        }\n    } \n    }  \ncalc_output.push({ \n    name: 'mini', \n    value: mini_msg, \n    value_text: '', \n    message: '' \n});\ncalc_output.push({ \n    name: 'Brugada Criteria', \n    value: mini_msg, \n    value_text: '', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Absence of an RS complex in all precordial leads",
+                "name": "absentcomplex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "All QRS complexes completely upright or completely downward in precordial leads",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "absentcomplex == 0",
+                "default": null,
+                "label_en": "R to S interval >100 ms in one precordial lead",
+                "name": "rsinterval",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Distance between R and S waves in each precordial lead",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "absentcomplex == 0 && rsinterval == 0",
+                "default": null,
+                "label_en": "Atrioventricular dissociation",
+                "name": "dissociation",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "P waves seen at different rates than QRS complex",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "absentcomplex == 0 && rsinterval == 0 && dissociation == 0",
+                "default": null,
+                "label_en": "Morphology criteria for VT present in both precordial leads V1-2 and V6",
+                "name": "morphology",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "VT is frequently either in a right bundle branch block pattern (upright in V1) or a left bundle branch block pattern (downward in V1)",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Brugada criteria",
+            "wide complex tachycardia",
+            "wide QRS-complex tachycardia",
+            "electrocardiography",
+            "EKG criteria",
+            "ventricular tachycardia",
+            "wct",
+            "supraventricular tachycardia with aberrant conduction",
+            "brugada algorithm"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

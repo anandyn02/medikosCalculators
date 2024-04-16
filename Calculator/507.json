@@ -1,0 +1,325 @@
+{
+    "id": "507",
+    "title": "Pediatric Glasgow Coma Scale (pGCS)",
+    "desc": "The Pediatric Glasgow Coma Scale (PGCS) assesses the mental state of child patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=3951884",
+                "text": "James HE. Neurologic Evaluation and Support in the Child with an Acute Brain Insult. Pediatric Annals Pediatr Ann, 1986; 15(1), 16-22."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3135935",
+                "text": "Reilly PL, et al. Assessing the conscious level in infants and young children: a paediatric version of the Glasgow Coma Scale. Childs Nerv Syst. 1988 Feb;4(1):30-3"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16141014",
+                "text": "Holmes JF, et al. Performance of thepediatric glasgow coma scale in children with blunt head trauma. Acad Emerg Med. 2005 Sep;12(9):814-9"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=12707528",
+                "text": "Healey C, et al. Improving the Glasgow Coma Scale Score: Motor Score Alone Is a Better Predictor. The Journal of Trauma: Injury, Infection, and Critical Care; 2003, 54(4), 671-680."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=16178024%5Buid%5D",
+                "text": "Wijdicks EF, et al. Validation of a new coma scale: The FOUR score. Annals of Neurology; 2005, 58(4), 585-593."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21845490",
+                "text": "Sadaka F, et al. The FOUR Score Predicts Outcome in Patients After Traumatic Brain Injury. Neurocritical Care; 2011, 16(1), 95-101."
+            },
+            {
+                "href": "https://www.nursingtimes.net/Journals/2014/10/10/n/p/l/141015Forty-years-on-updating-the-Glasgow-coma-scale.pdf",
+                "text": "Teasdale G. Forty years on: updating the Glasgow Coma Scale. Nursing Times; 2014, 110: 42, 12-16."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4136544",
+                "text": "Teasdale G, Jennett B.Assessment of coma and impaired consciousness. A practical scale. Lancet. 1974 Jul 13;2(7872):81-4."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=1933914",
+                "text": "Simpson D, et al. Head injuries in infants and young children: The value of the Paediatric Coma Scale. Child's Nervous System; 1991, 7(4)."
+            }
+        ],
+        "evidence": "",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>Scores of &ge;13 suggests minor head injury.</li>\n<li>Score of 9-12 suggests moderate head injury.</li>\n<li>Score of &le;8 suggests severe head injury.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Head Injury",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Ingestion/Overdose",
+            "Meningitis",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\n\nvar eye, verbal, motor\n\nage == 0 ? eye = parseFloat(eyePed) : eye = parseFloat(eyeInfant)\nage == 0 ? verbal = parseFloat(verbalPed) : verbal = parseFloat(verbalInfant)\nage == 0 ? motor = parseFloat(motorPed) : motor = parseFloat(motorInfant)\n\n// SCORE (total points)\nvar score = eye + motor + verbal\n\n// SCALE (individual components)\nvar eye_scale, verbal_scale, motor_scale\n\neye == 0 ? eye_scale = 'NT' : eye_scale = eye\n\nverbal == 0 ? verbal_scale = 'NT' : verbal_scale = verbal\n\nmotor == 0 ? motor_scale = 'NT' : motor_scale = motor\n\nvar scale = 'E(' + eye_scale + ') ' + 'V(' + verbal_scale + ') ' + 'M(' + motor_scale + ') ' \n\nvar scale_msg, score_msg\n\nage == 0 ? scale_msg = 'Glasgow Coma Scale' : scale_msg = 'Pediatric Glasgow Coma Scale'\nage == 0 ? score_msg = 'Glasgow Coma Score' : score_msg = 'Pediatric Glasgow Coma Score'\n\n\nif (eye == 0 || verbal == 0 || motor == 0) {\n  calc_output.push({ \n    name: 'mini', \n    value: scale, \n    value_text: '', \n    message: scale_msg\n  }); \n  calc_output.push({ \n    name: '3702_Pediatric GCS_result', \n    value: '', \n    value_text: '', \n    message: score_msg + ' cannot be calculated (one or more components not testable)'\n  });\n}\nelse {\n  calc_output.push({ \n    name: 'mini', \n    value: score, \n    value_text: 'points', \n    message: score_msg \n  }); \n  calc_output.push({ \n    name: '3702_Pediatric GCS_result (score)', \n    value: score, \n    value_text: 'points', \n    message: score_msg\n  });\n}\n  calc_output.push({ \n    name: '3702_Pediatric GCS_result (scale)', \n    value: scale,\n    value_text: '', \n    message: scale_msg\n  });\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤2 years",
+                        "value": 1
+                    },
+                    {
+                        "label": ">2 years",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 0",
+                "default": null,
+                "label_en": "Eye Opening",
+                "mdcalc_info_concept": null,
+                "name": "eyePed",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Open spontaneously (+4)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Open to verbal stimuli (+3)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Open to pain only (+2)",
+                        "value": 2
+                    },
+                    {
+                        "label": "No response (+1)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Not testable due to trauma, edema, etc (NT)",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 1",
+                "default": null,
+                "label_en": "Eye Opening",
+                "mdcalc_info_concept": null,
+                "name": "eyeInfant",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Open spontaneously",
+                        "value": 4
+                    },
+                    {
+                        "label": "Open to verbal stimuli",
+                        "value": 3
+                    },
+                    {
+                        "label": "Open to pain only",
+                        "value": 2
+                    },
+                    {
+                        "label": "No response",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 0",
+                "default": null,
+                "label_en": "Verbal Response",
+                "mdcalc_info_concept": null,
+                "name": "verbalPed",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Oriented/appropriate (+5)",
+                        "value": 5
+                    },
+                    {
+                        "label": "Confused (+4)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Inappropriate words (+3)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Incomprehensible words/sounds (+2)",
+                        "value": 2
+                    },
+                    {
+                        "label": "No response (+1)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Not testable because intubated, etc (NT)",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 1",
+                "default": null,
+                "label_en": "Verbal Response",
+                "mdcalc_info_concept": null,
+                "name": "verbalInfant",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Coos, babbles",
+                        "value": 5
+                    },
+                    {
+                        "label": "Irritable cries",
+                        "value": 4
+                    },
+                    {
+                        "label": "Cries in response to pain",
+                        "value": 3
+                    },
+                    {
+                        "label": "Moans in response to pain",
+                        "value": 2
+                    },
+                    {
+                        "label": "No response",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 0",
+                "default": null,
+                "label_en": "Motor Response",
+                "mdcalc_info_concept": null,
+                "name": "motorPed",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Obeys commands (+6)",
+                        "value": 6
+                    },
+                    {
+                        "label": "Localizes to pain (+5)",
+                        "value": 5
+                    },
+                    {
+                        "label": "Withdraws to pain (+4)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Flexor posturing to pain (+3)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Extensor posturing to pain (+2)",
+                        "value": 2
+                    },
+                    {
+                        "label": "No response (+1)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Not testable because sedation/paralysis, etc (NT)",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 1",
+                "default": null,
+                "label_en": "Motor Response",
+                "mdcalc_info_concept": null,
+                "name": "motorInfant",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Moves spontaneously/purposefully",
+                        "value": 6
+                    },
+                    {
+                        "label": "Withdraws to touch",
+                        "value": 5
+                    },
+                    {
+                        "label": "Withdraws to pain",
+                        "value": 4
+                    },
+                    {
+                        "label": "Flexor posturing to pain",
+                        "value": 3
+                    },
+                    {
+                        "label": "Extensor posturing to pain",
+                        "value": 2
+                    },
+                    {
+                        "label": "No response",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "GCS",
+            "glasgow",
+            "coma",
+            "TBI",
+            "eye",
+            "verbal",
+            "motor",
+            "head injury",
+            "LOC",
+            "pediatrics",
+            "pediatric gcs",
+            "pediatric glasgow"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Pediatrics",
+            "Surgery (Trauma)",
+            "Toxicology"
+        ]
+    }
+}

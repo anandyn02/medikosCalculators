@@ -1,0 +1,118 @@
+{
+    "id": "189",
+    "title": "IV Drip Rate Calculator",
+    "desc": "The IV Drip Rate Calculator calculates IV infusion rate using drip counting when IV pumps are unavailable. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/books/NBK430836/",
+                "text": "Gage CB, Toney-Butler TJ. Dose Calculation. Treasure Island (FL): StatPearls Publishing. 2020."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>IV Drip Rate, gtts/min = (Volume to be given, mL x Drop factor*, gtts/mL) / Time, min</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><b>*Common drop factors for IV tubing sets:</b></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">60 gtts/mL minidrip drip set</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10 gtts/mL regular drip set</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">15 gtts/mL regular drip set</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">20 gtts/mL regular drip set</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "minutes",
+                "unit": "min",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "min",
+                "units_us": "min"
+            },
+            {
+                "name": "gtts/mL",
+                "unit": "drip factor",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "gtts/mL",
+                "units_us": "gtts/mL"
+            },
+            {
+                "name": "Volume",
+                "unit": "volume",
+                "error_min": "0",
+                "error_max": "20000",
+                "warn_min": "1",
+                "warn_max": "5000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL",
+                "units_us": "mL"
+            }
+        ],
+        "primary_complains": [
+            "Any/All"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output = [];\n\nvar volume = parseFloat(vol);\nvar drop = parseFloat(drop);\nvar time = parseFloat(time);\nvar n = (vol*drop)/time;\nvar rate = n.toFixed(0);\n    \ncalc_output.push({\n    name: 'mini',\n    value: rate,\n    value_text: 'gtts/min',\n    message: 'IV Drip Rate'\n});\ncalc_output.push({\n    name: '10290_IV Drip Rate_result',\n    value: rate,\n    value_text: 'gtts/min',\n    message: 'IV Drip Rate'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Volume to be given</p>",
+                "name": "vol",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "volume"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Drop factor</p>",
+                "name": "drop",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "drip factor"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Time</p>",
+                "name": "time",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "min"
+            }
+        ],
+        "can_search": [
+            "IV Drip Rate Calculator, iv drip, drip rate, covid, covid-19, covid19, covid 19, coronavirus, IV infusion rate"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

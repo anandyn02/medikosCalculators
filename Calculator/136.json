@@ -1,0 +1,109 @@
+{
+    "id": "136",
+    "title": "Pack Years Calculator",
+    "desc": "The Pack Years Calculator calculates pack years in patients who smoke.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20029977",
+                "text": "Janjigian YY, Mcdonnell K, Kris MG, et al. Pack-years of cigarette smoking as a prognostic factor in patients with stage IIIB/IV nonsmall cell lung cancer. Cancer. 2010;116(3):670-5."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Pack years = number of packs of cigarettes smoked per day x number of years the patient has smoked</p>\n<p dir=\"ltr\">Note: 1 pack = 20 cigarettes.</p>\n<p dir=\"ltr\">From <a href=\"https://www.cancer.gov/dictionary?CdrID=306510\" target=\"_blank\" rel=\"noopener\">National Cancer Institute</a>.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:<span id=\"docs-internal-guid-59b030d9-7fff-a944-b290-6ccdff3d3786\">&nbsp;</span></p>\n<p dir=\"ltr\">More pack years correlates with higher lung disease risk, including lung cancer. Consider screening with low-dose CT in adult patients ages 50-80 years with &ge;20 pack year history of smoking and who currently smoke or have quit within the last 15 years.&nbsp;Counsel patients on smoking cessation.</p>",
+        "estimation": [
+            {
+                "name": "years",
+                "unit": "time_years",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "packs",
+                "unit": "packs",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "packs",
+                "units_us": "packs"
+            }
+        ],
+        "primary_complains": [
+            "Anxious",
+            "Chest Pain",
+            "Shortness of Breath",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Drug/Alcohol Use",
+            "Lung Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar years = parseFloat(years);\nvar packs = parseFloat(packs);\n\nvar score = years*packs;\n\nscore = score.toFixed(0);\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'pack years',\n    message: 'More pack years correlates with higher lung disease risk'\n});\ncalc_output.push({\n    name: '10187_Pack Years_result',\n    value: score,\n    value_text: 'pack years',\n    message: 'More pack years correlates with higher lung disease risk, including lung cancer; consider screening with low-dose CT in patients ≥55 years with ≥30 pack year history; counsel patients on smoking cessation'   \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Packs of cigarettes smoked per day</p>",
+                "name": "packs",
+                "optional": false,
+                "tips_en": "1 pack = 20 cigarettes (e.g. enter 2 for 40 cigarettes/day)",
+                "type": "textbox",
+                "unit": "packs"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Years the patient has smoked</p>",
+                "name": "years",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "time_years"
+            }
+        ],
+        "can_search": [
+            "Pack years",
+            "pack year calculator",
+            "smoking",
+            "tobacco",
+            "lung cancer",
+            "non small cell lung cancer",
+            "NSCLC",
+            "non-small cell lung cancer"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

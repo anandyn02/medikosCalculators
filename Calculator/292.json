@@ -1,0 +1,210 @@
+{
+    "id": "292",
+    "title": "Therapy-Disability-Neurology (TDN) Grade",
+    "desc": "The Therapy-Disability-Neurology (TDN) Grade classifies severity of adverse events after neurosurgery.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/33887774/",
+                "text": "Terrapon APR, Zattra CM, Voglis S, et al. Adverse events in neurosurgery: the novel therapy-disability-neurology grade. Neurosurgery. 2021;89(2):236-245."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/34993147/",
+                "text": "Gómez Vecchio T, Corell A, Buvarp D, Rydén I, Smits A, Jakola AS. Classification of adverse events following surgery in patients with diffuse lower-grade gliomas. Front Oncol. 2021;11:792878."
+            }
+        ],
+        "evidence": "",
+        "facts": "<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/TDN%20Grade%20Flowchart.png\" class=\"alignnone size-full wp-image-1839\" alt=\"\"></div>\n<p>*Allowed therapeutic modalities are antiemetics, antipyretics, analgesics, diuretics, electrolytes, and bedside opening of wound infections. Any other pharmacological therapeutic regimen are second grade severity criteria.</p>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Headache",
+            "Nausea",
+            "Numbness",
+            "Pain",
+            "Vomiting",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Amyotrophic Lateral Sclerosis",
+            "Bleeding/Hemorrhage",
+            "Cancer",
+            "Epilepsy",
+            "Hereditary Hemorrhagic Telangiectasia",
+            "Intracranial Hemorrhage",
+            "Multiple Sclerosis",
+            "Parkinson's Disease",
+            "Seizure Disorder",
+            "Stroke/TIA",
+            "Subarachnoid Hemorrhage",
+            "Lymphoma",
+            "Intracranial Aneurysm"
+        ],
+        "logic": "var calc_output = [];\n\nvar therapy = parseFloat(therapy);\nvar d1 = parseFloat(d1);\nvar d2 = parseFloat(d2);\nvar d3 = parseFloat(d3);\nvar neuro = parseFloat(neuro);\n\nvar grade;\nvar t;\nvar d;\nvar n;\n\nif (neuro == 0) {\n    grade = 'Grade 1';\n}\nif (therapy == 1 || d2 == 0 || neuro == 1) {\n    grade = 'Grade 2';\n}\nif (therapy == 2 || d3 == 0) {\n    grade = 'Grade 3';\n}\nif (therapy == 3 || d3 == 1) {\n    grade = 'Grade 4';\n}\nif (therapy == 4) {\n    grade = 'Grade 5';\n    t = 'T5';\n    d = 'D5';\n    n = 'N2';\n}\n\nif (therapy == 0) {\n    t = 'T1';\n} else if (therapy == 1) {\n    t = 'T2';\n} else if (therapy == 2) {\n    t = 'T3';\n} else if (therapy == 3) {\n    t = 'T4';\n}\n\nif (d1 == 0) {\n    d = 'D1';\n} else if (d2 == 0) {\n    d = 'D2';\n} else if (d3 == 0) {\n    d = 'D3';\n} else if (d3 == 1) {\n    d = 'D4';\n}\n\nif (neuro == 0) {\n    n = 'N1';\n} else if (neuro == 1) {\n    n = 'N2';\n}\n\nvar tdn = t + d + n;\n\ncalc_output.push({\n    name: 'mini',\n    value: grade + ', ' + tdn,\n    value_text: '',\n    message: 'TDN Grade'\n});\ncalc_output.push({\n    name: 'TDN Grade',\n    value: grade + ', ' + tdn,\n    value_text: '',\n    message: 'TDN Grade'\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Therapy",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Adverse event:</p>",
+                "mdcalc_info_concept": null,
+                "name": "therapy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not requiring any treatment or intervention other than those allowed*",
+                        "value": 0
+                    },
+                    {
+                        "label": "Requiring pharmacological treatment, blood transfusion or total parenteral nutrition",
+                        "value": 1
+                    },
+                    {
+                        "label": "Requiring surgical, endoscopic, or radiologic intervention",
+                        "value": 2
+                    },
+                    {
+                        "label": "Life-threatening and requiring management in intensive care",
+                        "value": 3
+                    },
+                    {
+                        "label": "Resulting in death",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "*Allowed therapeutic modalities are antiemetics, antipyretics, analgesics, diuretics, electrolytes, and bedside opening of wound infections.",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Disability",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "therapy != null && therapy < 4",
+                "default": null,
+                "label_en": "<p><span data-metadata=\"&lt;!--(figmeta)eyJmaWxlS2V5IjoiUmd6M3d4dVFQU2xHUmV5cW1EZlU1YiIsInBhc3RlSUQiOjE0NzYxNjk4MzQsImRhdGFUeXBlIjoic2NlbmUifQo=(/figmeta)--&gt;\"></span><span>Is the adverse event hindering at least one activity of daily living?</span></p>",
+                "mdcalc_info_concept": null,
+                "name": "d1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "d1 == 1",
+                "default": null,
+                "label_en": "<p>Is the adverse event hindering walking, preventing the patient from attending their own bodily needs?</p>",
+                "mdcalc_info_concept": null,
+                "name": "d2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "d2 == 1",
+                "default": null,
+                "label_en": "<p>Is the adverse event leaving the patient bedridden, in need of constant help, incontinent?</p>",
+                "mdcalc_info_concept": null,
+                "name": "d3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Neurology",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "d1 == 0 || d2 == 0 || d3 == 0 || d3 == 1",
+                "default": null,
+                "label_en": "<p>Is the adverse event resulting in any new neurological deficit?</p>",
+                "mdcalc_info_concept": null,
+                "name": "neuro",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Therapy-Disability-Neurology (TDN) Grade",
+            "TDN grade",
+            "therapy",
+            "disability",
+            "neurology",
+            "therapy disability neurology grade",
+            "neurosurgery",
+            "adverse events"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

@@ -1,0 +1,114 @@
+{
+    "id": "134",
+    "title": "HINTS for Stroke in Acute Vestibular Syndrome",
+    "desc": "The HINTS for Stroke in Acute Vestibular Syndrome diagnoses stroke in patients with acute vestibular syndrome (AVS).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19762709",
+                "text": "Kattah JC, Talkad AV, Wang DZ, Hsieh YH, Newman-Toker DE. HINTS to diagnose stroke in the acute vestibular syndrome: three-step bedside oculomotor examination more sensitive than early MRI diffusion-weighted imaging. Stroke. 2009;40(11):3504-10."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://www.ncbi.nlm.nih.gov/pubmed/24127701",
+                "text": "Newman-Toker DE, Kerber KA, Hsieh Y-H, et al. HINTS outperforms ABCD2 to screen for stroke in acute continuous vertigo and dizziness. Goldstein JN, ed. Acad Emerg Med. 2013;20(10):986-996."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><a href=\"https://vimeo.com/133033089\" target=\"_blank\">See video with instructions from the authors here</a>.</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"200\" /><col width=\"248\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Test</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Result</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Horizontal head impulse test (h-HIT)</p>\n</td>\n<td>\n<p dir=\"ltr\">Abnormal</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Normal/untestable</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Observation of nystagmus</p>\n</td>\n<td>\n<p dir=\"ltr\">Direction-fixed horizontal nystagmus</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Direction-changing horizontal/untestable nystagmus</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Test of skew</p>\n</td>\n<td>\n<p dir=\"ltr\">Absent skew deviation</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Present/untestable skew deviation</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-6b1077e0-7fff-5d71-b0fa-e3521c4d9d90\"></p>\n<p dir=\"ltr\">HINTS = Head Impulse, Nystagmus, Test of Skew</p>",
+        "facts": "<p dir=\"ltr\"><strong>HINTS exam is benign:</strong></p>\n<p dir=\"ltr\">Abnormal h-HIT <em>plus</em> direction-fixed horizontal nystagmus <em>plus</em> absent skew deviation</p>\n<p></p>\n<p dir=\"ltr\"><strong>HINTS exam is dangerous:</strong></p>\n<p>Normal/untestable h-HIT <em>or</em> direction-changing horizontal/untestable nystagmus <em>or</em> present/untestable skew deviation</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dizziness",
+            "Nausea",
+            "Vertigo",
+            "Vomiting",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar hit = parseFloat(hit);\nvar nys = parseFloat(nys);\nvar skew = parseFloat(skew);\n\nvar score = hit + nys + skew;\nvar diag;\n\nif (score == 0) {\n  diag = 'Typically benign';\n} else {\n  diag = 'Typically dangerous';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: 'Diagnosis by HINTS exam, according to symptoms'\n});\ncalc_output.push({\n    name: 'Score',\n    value: diag,\n    value_text: '',\n    message: 'Diagnosis by HINTS exam, according to symptoms'   \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Horizontal head impulse test (h-HIT)",
+                "name": "hit",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Abnormal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Normal/untestable ",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Observation of nystagmus",
+                "name": "nys",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Direction-fixed horizontal nystagmus",
+                        "value": 0
+                    },
+                    {
+                        "label": "Direction-changing horizontal/untestable nystagmus",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Test of skew",
+                "name": "skew",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent skew deviation",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present/untestable skew deviation",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Avs",
+            "Acute Vestibular Syndrome",
+            "hints",
+            "stroke",
+            "stroke diagnosis",
+            "vertigo",
+            "head impulse",
+            "hhit",
+            "h-hit",
+            "nystagmus"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

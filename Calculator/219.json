@@ -1,0 +1,124 @@
+{
+    "id": "219",
+    "title": "Rome IV Diagnostic Criteria for Child Cyclic Vomiting Syndrome ",
+    "desc": "The Rome IV Criteria for Child Cyclic Vomiting Syndrome provides criteria for diagnosis of child cyclic vomiting syndrome.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7104693/",
+                "text": "Hyams J, Di lorenzo C, Forbes D, et al. Childhood functional gastrointestinal disorders: child/adolescent. Gastroenterology. 2006;130(5):1527-37."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>To fulfill the Rome IV criteria for child cyclic vomiting syndrome, patient must have the following:</p>\n<ol>\n<li>The occurrence of &ge;2 periods of intense, unremitting nausea and paroxysmal vomiting, lasting hours to days within a 6-month period.</li>\n<li>Episodes are stereotypical in each patient.</li>\n<li>Episodes are separated by weeks to months with return to baseline health between episodes.</li>\n<li>After appropriate medical evaluation, the symptoms cannot be attributed to another condition.</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue",
+            "Nausea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Child/Adolescent Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four);\n\nvar diag;\n\nvar msg= 'Diagnosis for child cyclic vomiting syndrome as per Rome IV criteria';\nvar minimsg= 'Diagnosis for child cyclic vomiting syndrome';\n\nif (criteria==4) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Cyclic Vomiting Syndrome',\n    value: diag,\n    value_text:'',\n    message:msg\n});\n",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "The occurrence of ≥2 periods of intense, unremitting nausea and paroxysmal vomiting, lasting hours to days within a 6-month period",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Episodes are stereotypical in each patient",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Episodes are separated by weeks to months with return to baseline health between episodes",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "After appropriate medical evaluation, the symptoms cannot be attributed to another condition",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Child Cyclic Vomiting Syndrome, Rome IV for Child Cyclic Vomiting Syndrome, Rome IV child cyclic vomiting syndrome, cyclic vomiting syndrome, cyclic vomiting syndrome rome, rome cvs, rome cyclic vomiting syndrome, rome child cyclic vomiting syndrome, rome iv cvs, cvs rome, rome cvs, rome iv child cvs, rome child cvs, rome 4 for child cyclic vomiting syndrome, rome 4 child cyclic vomiting syndrome, rome 4 cyclic vomiting syndrome, rome 4 cvs, rome 4 child cvs"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

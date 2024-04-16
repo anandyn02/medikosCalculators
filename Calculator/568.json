@@ -1,0 +1,83 @@
+{
+    "id": "568",
+    "title": "tPA (Alteplase) Dosing for Ischemic Stroke Calculator",
+    "desc": "The tPA (Tissue Plasminogen Activator) Dosing for Stroke Calculator doses tPA for stroke.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2015/103172s5203lbl.pdf",
+                "text": "Alteplase package insert."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9368550",
+                "text": "Intracerebral hemorrhage after intravenous t-PA therapy for ischemic stroke. The NINDS t-PA Stroke Study Group. Stroke. 1997;28(11):2109-18."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>tPA dosing is calculated by the following:</span><b></b></p>\n<p dir=\"ltr\"><span>Dose, mg = 0.9*(Weight, kg)</span><b></b></p>\n<p dir=\"ltr\"><span>Administer 10% of the total dose as an initial IV bolus over 1 minute and the remainder infused over 60 minutes.</span><b></b></p>\n<p dir=\"ltr\"><span>Waste, mg = 100 - (Bolus, mg + Infusion, mg)</span><b></b></p>\n<p dir=\"ltr\"><span>Note: Total maximum dose is 90 mg.</span></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight, adult",
+                "unit": "wt_adult",
+                "error_min": "55",
+                "error_max": "620",
+                "warn_min": "55",
+                "warn_max": "300",
+                "conversion": "0.453592",
+                "normal_max_si": "113",
+                "normal_max_us": "250",
+                "normal_min_si": "45",
+                "normal_min_us": "100",
+                "units_si": "kg",
+                "units_us": "lbs"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Seizure",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar weight = parseFloat(weight)\n\n// need US units for weight\nif (UOMSYSTEM == true) {\n  weight = parseFloat(weight) / 2.2;\n}\n\nif (weight > 100) {\n\tweight_adj = 100\n}\nelse {\n\tweight_adj = weight\n}\n\nvar bolus = weight_adj * 0.09\nvar infusion = weight_adj * 0.81\nvar waste = 100 - (bolus + infusion)\n\ncalc_output.push({\n\tname: 'mini',\n\tvalue: bolus.toFixed(1),\n\tvalue_text: 'mg bolus',\n\tmessage: infusion.toFixed(1) + ' mg infusion',\n});\ncalc_output.push({\n\tname: '3940_tPA Dosing for Stroke Calculator_result (bolus)',\n\tvalue: bolus.toFixed(1),\n\tvalue_text: 'mg',\n\tmessage: 'Bolus dose, given IV over 1 min',\n});\ncalc_output.push({\n\tname: '3940_tPA Dosing for Stroke Calculator_result (infusion)',\n\tvalue: infusion.toFixed(1),\n\tvalue_text: 'mg',\n\tmessage: 'Infusion, given IV over 60 mins',\n});\ncalc_output.push({\n\tname: '3940_tPA Dosing for Stroke Calculator_result (waste)',\n\tvalue: waste.toFixed(1),\n\tvalue_text: 'mg',\n\tmessage: 'Waste, to be discarded',\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt_adult"
+            }
+        ],
+        "can_search": [
+            "Tpa",
+            "alteplase",
+            "rt-tpa",
+            "rtpa",
+            "rttpa",
+            "stroke",
+            "cva",
+            "tia",
+            "thrombolysis",
+            "thrombectomy",
+            "tpa dosing",
+            "tpa dose",
+            "nihss"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Neurology",
+            "Pharmacy"
+        ]
+    }
+}

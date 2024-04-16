@@ -1,0 +1,483 @@
+{
+    "id": "53",
+    "title": "Color Vision Screening (Ishihara Test)",
+    "desc": "The Color Vision Screening (Ishihara Test) assesses red-green color blindness. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.dfis.ubi.pt/~hgil/P.V.2/Ishihara/Ishihara.24.Plate.TEST.Book.pdf",
+                "text": "S. Ishihara, Tests for color-blindness (Handaya, Tokyo, Hongo Harukicho, 1917)."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1841573 ",
+                "text": "Optic Neuritis Study Group. The clinical profile of optic neuritis. Experience of the Optic Neuritis Treatment Trial. Arch Ophthalmol. 1991 Dec;109(12):1673-8. "
+            }
+        ],
+        "evidence": "<p>X means that the plate cannot be read. Dashes denote that the reading is indefinite.</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"56\"><col width=\"88\"><col width=\"51\"><col width=\"42\"><col width=\"57\"><col width=\"38\"><col width=\"85\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Plate number</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Normal patient</strong></p>\n</td>\n<td colspan=\"4\">\n<p dir=\"ltr\"><b>Red-green color deficiency</b></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Total color blindness</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">12</p>\n</td>\n<td colspan=\"4\">\n<p dir=\"ltr\">12</p>\n</td>\n<td>\n<p dir=\"ltr\">12</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n<td colspan=\"4\">\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">X</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td colspan=\"4\">\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">X</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">29</p>\n</td>\n<td colspan=\"4\">\n<p dir=\"ltr\">70</p>\n</td>\n<td>\n<p dir=\"ltr\">X</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">74</p>\n</td>\n<td colspan=\"4\">\n<p dir=\"ltr\">21</p>\n</td>\n<td>\n<p dir=\"ltr\">X</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n<td colspan=\"4\">\n<p dir=\"ltr\">X</p>\n</td>\n<td>\n<p dir=\"ltr\">X</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n<td>\n<p dir=\"ltr\">45</p>\n</td>\n<td colspan=\"4\">\n<p dir=\"ltr\">X</p>\n</td>\n<td>\n<p dir=\"ltr\">X</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td colspan=\"4\">\n<p dir=\"ltr\">X</p>\n</td>\n<td>\n<p dir=\"ltr\">X</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">9</p>\n</td>\n<td>\n<p dir=\"ltr\">16</p>\n</td>\n<td colspan=\"4\">\n<p dir=\"ltr\">X</p>\n</td>\n<td>\n<p dir=\"ltr\">X</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\"></td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Protan</strong></p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Deutan</strong></p>\n</td>\n<td rowspan=\"2\">\n<p dir=\"ltr\"></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Strong</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Mild</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Strong</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Mild</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n<td>\n<p dir=\"ltr\">35</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">(3)5*</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">3(5)*</p>\n</td>\n<td>\n<p dir=\"ltr\">-</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">11</p>\n</td>\n<td>\n<p dir=\"ltr\">96</p>\n</td>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n<td>\n<p dir=\"ltr\">(9)6*</p>\n</td>\n<td>\n<p dir=\"ltr\">9</p>\n</td>\n<td>\n<p dir=\"ltr\">9(6)*</p>\n</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n<p>*The numbers in parentheses indicate they can be read but are comparatively unclear.</p>\n</div>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Any/All",
+            "Vision Loss"
+        ],
+        "disease_treated": [
+            "Any/All"
+        ],
+        "logic": "var calc_output = [];\n\nvar plate1 = parseFloat(twelve);\nvar plate2 = parseFloat(eight);\nvar plate3 = parseFloat(five);\nvar plate4 = parseFloat(twentynine);\nvar plate5 = parseFloat(seventyfour);\nvar plate6 = parseFloat(seven);\nvar plate7 = parseFloat(fortyfive);\nvar plate8 = parseFloat(two);\nvar plate9 = parseFloat(sixteen);\nvar plate10 = parseFloat(thirtyfive);\nvar plate11 = parseFloat(ninetysix);\n\nvar diagnosis;\nvar msg = 'Ishihara test diagnosis';\n\nif (plate1 == 12 && plate2 == 8 && plate3 == 5 && plate4 == 29 && plate5 == 74 && plate6 == 7 && plate7 == 45 && plate8 == 2 && plate9 == 16 && plate10 == 35 && plate11 == 96) {\n\tdiagnosis = 'Normal vision';\n}\nelse if (plate1 == 12 && plate2 == 3 && plate3 == 2 && plate4 == 70 && plate5 == 21 && plate6 == 0 && plate7 == 0 && plate8 == 0 && plate9 == 0) {\n\tif (plate10 == 5 && plate11 == 6) {\n      diagnosis = 'Red-green color deficiency';\n      msg = 'Strong protan color blindness';\n\t} else if (plate10 == 3 && plate11 == 9) {\n      diagnosis = 'Red-green color deficiency';\n      msg = 'Strong deutan color blindness';\n\t} else if (plate10 == 35 && plate11 == 96 && q1 == 1 && q2 == 1) {\n      diagnosis = 'Red-green color deficiency';\n      msg = 'Mild deutan color blindness';\n\t} else if (plate10 == 35 && plate11 == 96 && q1 == 2 && q2 == 2) {\n      diagnosis = 'Red-green color deficiency';\n      msg = 'Mild protan color blindness';\n\t} else {\n      diagnosis = 'Not definite';\n    }\n}\nelse if (plate1 == 12 && plate2 == 0 && plate3 == 0 && plate4 == 0 && plate5 == 0 && plate6 == 0 && plate7 == 0 && plate8 == 0 && plate9 == 0) {\n\tdiagnosis = 'Total color blindness';\n} else {\n\tdiagnosis = 'Not definite';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: diagnosis,\n    value_text: '',\n    message: msg \n});\ncalc_output.push({\n    name: 'diagnosis',\n    value: diagnosis,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara12.png\" width = \"50%\"> "
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "twelve",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "12",
+                        "value": 12
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara8.png\" width = \"50%\">"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "eight",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "8",
+                        "value": 8
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara5.png\" width = \"50%\">"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "five",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara29.png\" width = \"50%\">"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "twentynine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "29",
+                        "value": 29
+                    },
+                    {
+                        "label": "70",
+                        "value": 70
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara74.png\" width = \"50%\"> "
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "seventyfour",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "74",
+                        "value": 74
+                    },
+                    {
+                        "label": "21",
+                        "value": 21
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara7.png\" width = \"50%\"> "
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "seven",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "7",
+                        "value": 7
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara45.png\" width = \"50%\">"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "fortyfive",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "45",
+                        "value": 45
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara2.png\" width = \"50%\"> "
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "two",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara16.png\" width = \"50%\">"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "sixteen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "16",
+                        "value": 16
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara35.png\" width = \"50%\">"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "thirtyfive",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "35",
+                        "value": 35
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "thirtyfive == 35",
+                "default": null,
+                "label_en": "Are both digits equally clear?",
+                "mdcalc_info_concept": null,
+                "name": "q1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Left number is more clear",
+                        "value": 1
+                    },
+                    {
+                        "label": "Right number is more clear",
+                        "value": 2
+                    },
+                    {
+                        "label": "Both are clear",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara96.png\" width = \"50%\">"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "What number does the patient see?",
+                "mdcalc_info_concept": null,
+                "name": "ninetysix",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "6",
+                        "value": 6
+                    },
+                    {
+                        "label": "9",
+                        "value": 9
+                    },
+                    {
+                        "label": "96",
+                        "value": 96
+                    },
+                    {
+                        "label": "Other number",
+                        "value": 1
+                    },
+                    {
+                        "label": "Plate cannot be read",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "ninetysix == 96",
+                "default": null,
+                "label_en": "Are both digits equally clear?",
+                "mdcalc_info_concept": null,
+                "name": "q2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Left number is more clear",
+                        "value": 1
+                    },
+                    {
+                        "label": "Right number is more clear",
+                        "value": 2
+                    },
+                    {
+                        "label": "Both are clear",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Ishihara test",
+            "color blind test",
+            "color vision screening",
+            "colorblind",
+            "colorblindness",
+            "color blindness"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Ophthalmology",
+            "Primary Care"
+        ]
+    }
+}

@@ -1,0 +1,191 @@
+{
+    "id": "443",
+    "title": "Mekhail Extension of the Motzer Score",
+    "desc": "The Mekhail Extension of the Motzer Score predicts metastatic renal cell carcinoma (RCC) survival, more accurately than the Motzer Score.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://ascopubs.org/doi/full/10.1200/jco.2005.05.179",
+                "text": "Mekhail TM, Abou-jawde RM, Boumerhi G, et al. Validation and extension of the Memorial Sloan-Kettering prognostic factors model for survival in patients with previously untreated metastatic renal cell carcinoma. J Clin Oncol. 2005;23(4):832-41."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10561319 ",
+                "text": "Motzer RJ, Mazumdar M, Bacik J, Berg W, Amsterdam A, Ferrara J. Survival and prognostic stratification of 670 patients with advanced renal cell carcinoma. J Clin Oncol. 1999;17(8):2530-40."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11773181",
+                "text": "Motzer RJ, Bacik J, Murphy BA, Russo P, Mazumdar M. Interferon-alfa as a comparative treatment for clinical trials of new therapies against advanced renal cell carcinoma. J Clin Oncol 2002 Jan 1;20(1):289-96."
+            }
+        ],
+        "evidence": "<p><span>Addition of selected points:</span></p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>LDH &gt;1.5&times; upper limit of normal</strong></p>\n<p><span>Normal: 140 U/L</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Hgb &lt;lower limit of normal</strong></p>\n<p><span>Normal: &lt;12 g/dL (120 g/L)</span></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Corrected serum calcium &gt;10 mg/dL (3 mmol/L)</strong></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Time from initial diagnosis to systemic treatment &lt;1 year</strong></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Prior treatment with radiation</strong></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>&ge;2 sites of metastasis</strong></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><br><br></p>",
+        "facts": "<p>Criteria are the same as the <calculator id=\"2153\">Motzer Score</calculator>, with Karnofsky performance status excluded and with two additions:</p>\n<ol>\n<li>Prior treatment with radiation.</li>\n<li>&ge;2 sites of metastasis.</li>\n</ol>\n<p>Risk groups and correlated median survival also differ from the Motzer Score:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Score</strong></p>\n</td>\n<td>\n<p><strong>Risk</strong></p>\n</td>\n<td>\n<p><strong>Median Survival</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>0-1</strong></p>\n</td>\n<td>\n<p>Favorable</p>\n</td>\n<td>\n<p>28 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>2</strong></p>\n</td>\n<td>\n<p>Intermediate</p>\n</td>\n<td>\n<p>14 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>&ge;3</strong></p>\n</td>\n<td>\n<p>Poor</p>\n</td>\n<td>\n<p>5 months</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Flank Pain",
+            "Hematuria",
+            "Mass"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Renal Cell Carcinoma",
+            "Renal Failure"
+        ],
+        "logic": "var calc_output = [];\n\nvar msg = '';\nvar group = '';\nvar survival;\nvar u = parseFloat(ldh) + parseFloat(hgb) + parseFloat(ca) + parseFloat(time) + parseFloat(radiation) + parseFloat(mets);\n\n        if (u <= 1) {\n            group = 'Favorable'; \n            survival = '28';\n        } \n        if (u == 2) {\n            group = 'Intermediate'; \n            survival = '14';\n        } \n        if (u >= 3) {\n            group = 'Poor'; \n            survival = '5';\n        } \n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg \n});\ncalc_output.push({ \n\tname: '3007_Mekhail Extension_result (score)', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: 'Mekhail Score'\n});\ncalc_output.push({ \n\tname: '3007_Mekhail Extension_result (survival)', \n\tvalue: group, \n\tvalue_text: 'prognosis', \n\tmessage: survival + ' months median survival'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><abbr title=\"Lactate dehydrogenase\">LDH</abbr> &gt;1.5&times; upper limit of normal</p>",
+                "md_calc_info_concept": null,
+                "name": "ldh",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Normal: 140 U/L",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Hemoglobin &lt;lower limit of normal</p>",
+                "md_calc_info_concept": null,
+                "name": "hgb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Normal: <12 g/dL (120 g/L)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Corrected serum calcium &gt;10 mg/dL (2.5 mmol/L)</p>",
+                "md_calc_info_concept": null,
+                "name": "ca",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Time from initial diagnosis to systemic treatment &lt;1 year</p>",
+                "md_calc_info_concept": null,
+                "name": "time",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Prior treatment with radiation</p>",
+                "md_calc_info_concept": null,
+                "name": "radiation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>&ge;2 sites of metastasis</p>",
+                "md_calc_info_concept": null,
+                "name": "mets",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "mekhail",
+            "ccf",
+            "cleveland clinic foundation criteria",
+            "RCC",
+            "cleveland",
+            "motzer",
+            "face",
+            "mikhail",
+            "cleveland clinic",
+            "CCF"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Urology"
+        ]
+    }
+}

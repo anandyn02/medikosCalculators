@@ -1,0 +1,106 @@
+{
+    "id": "527",
+    "title": "Acute Decompensated Heart Failure National Registry (ADHERE) Algorithm",
+    "desc": "The Acute Decompensated Heart Failure National Registry (ADHERE) Algorithm estimates in-hospital mortality in admitted patients with acute decompensated HF.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jamanetwork.com/journals/jama/fullarticle/200287",
+                "text": "Fonarow GC, et al. Risk stratification for in-hospital mortality in acutely decompensated heart failure: classification and regression tree analysis. JAMA. 2005 Feb 2;293(5):572-80."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/lace.png\" alt=\"\"></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Extremity Edema",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Heart Failure"
+        ],
+        "logic": "var cr = cr || 0\n\n\nvar calc_output = [];\n\nvar bun = parseFloat(bun);\nvar sbp = parseFloat(sbp);\ncr = parseFloat(cr);\n\nvar risk = '';\nvar mortGroup = '';\n\nif (bun == 0) {\n    if (sbp == 0) {\n        risk = 'Low Risk';\n        mortGroup = '2.1-2.3% Mortality Risk from ADHF';\n    }\n    if (sbp == 1) {\n        risk = 'Intermediate Risk';\n        mortGroup = '5.5-13.2% Mortality Risk from ADHF';\n    }\n}\n\nif (bun == 1) {\n    risk = 'Intermediate Risk';\n    mortGroup = '5.5-13.2% Mortality Risk from ADHF';\n}\n\n\nif (bun == 1 && cr == 1 && sbp == 1) {\n    risk = 'High Risk';\n    mortGroup = '19.8-21.9% Mortality Risk from ADHF';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: '',\n    value_text: '',\n    message: risk\n});\ncalc_output.push({\n    name: '3828_ADHERE Algorithm_result',\n    value: risk,\n    value_text: '',\n    message: mortGroup\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>BUN &ge;43 mg/dL (15.35 mmol/L)</p>",
+                "md_calc_info_concept": null,
+                "name": "bun",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>sBP &lt;115 mmHg</p>",
+                "md_calc_info_concept": null,
+                "name": "sbp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "bun == 1 && sbp == 1",
+                "default": null,
+                "label_en": "<p>Creatinine &ge;2.75 mg/dl (243.1 mmol/L)</p>",
+                "md_calc_info_concept": null,
+                "name": "cr",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Hf",
+            "adhf"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

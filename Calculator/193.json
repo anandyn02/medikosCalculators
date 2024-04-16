@@ -1,0 +1,82 @@
+{
+    "id": "193",
+    "title": "Rome IV Diagnostic Criteria for Belching Disorders",
+    "desc": "The Rome IV Criteria for Belching Disorders provides criteria for diagnosis of excessive supragastric or gastric belching.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27147122",
+                "text": "Stanghellini V, Chan FK, Hasler WL, et al. Gastroduodenal Disorders. Gastroenterology. 2016;150(6):1380-92."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">To fulfill the Rome IV criteria for belching disorders,* patient must have the following (for 3 months prior with symptom onset &ge;6 months ago):</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Excessive supragastric belching: Bothersome (i.e., severe enough to impact on usual activities) belching <strong>from the esophagus</strong> more than 3 days a week.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Excessive gastric belching: Bothersome (i.e., severe enough to impact on usual activities) belching <strong>from the stomach</strong> more than 3 days a week.</p>\n</li>\n</ol>\n<p dir=\"ltr\">*Note:</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Supragastric belching is supported by observing frequent, repetitive belching.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Gastric belching has no established clinical correlate.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Objective intraluminal impedance measurement can be used to distinguish supragastric from gastric belching.</p>\n</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Belching"
+        ],
+        "disease_treated": [
+            "Gastroduodenal Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output = [];\n\nvar eso = parseFloat(one);\nvar sto = parseFloat(two);\n\nvar diag;\nvar msg;\nvar minimsg;\nvar diag1;\nvar msg1;\nvar minimsg1;\n\nif (eso==1) {\n  diag = 'Positive';\n  msg = 'Diagnosis for excessive supragastric belching';\n  minimsg = ' for excessive supragastric belching. ';\n} else if (eso==0) {\n  diag = 'Negative';\n  msg = 'Diagnosis for excessive supragastric belching';\n  minimsg = ' for excessive supragastric belching. ';\n}\n\nif (sto==1) {\n  diag1 = 'Positive';\n  msg1 = 'Diagnosis for excessive gastric belching';\n  minimsg1 = ' for excessive gastric belching.';\n} else if (sto==0) {\n  diag1 = 'Negative';\n  msg1 = 'Diagnosis for excessive gastric belching';\n  minimsg1 = ' for excessive gastric belching.';\n}  \n\n\ncalc_output.push({\n  name: 'mini',\n  value: '',\n  value_text: '',\n  message: diag + minimsg + diag1+ minimsg1\n});\ncalc_output.push({\n  name: 'Rome IV for excessive supragastric belching',\n  value: diag,\n  value_text: '',\n  message: msg\n});\ncalc_output.push({\n  name: 'Rome IV for excessive gastric belching',\n  value: diag1,\n  value_text: '',\n  message: msg1\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bothersome (i.e., severe enough to impact on usual activities) belching <b>from the esophagus</b> more than 3 days a week",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bothersome (i.e., severe enough to impact on usual activities) belching <b>from the stomach </b> more than 3 days a week",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Belching Disorders, Rome IV for Belching Disorders, Rome IV belching, belching disorders, belching, belching rome, belching rome iv, rome iv for belching, rome belching, rome iv belching, rome for belching, rome 4 belching, rome 4 for belching, rome iv criteria, rome 4 criteria, belching disorder diagnosis, belching disorders diagnosis"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

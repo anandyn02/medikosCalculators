@@ -1,0 +1,103 @@
+{
+    "id": "238",
+    "title": "Modified Sgarbossa's Criteria for MI in Left Bundle Branch Block",
+    "desc": "The Modified Sgarbossa's Criteria for MI in Left Bundle Branch Block diagnoses acute MI in patients with prior LBBB.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://www.ncbi.nlm.nih.gov/pubmed/8559200?dopt=Abstract",
+                "text": "Sgarbossa EB, Pinski SL, Barbagelata A, Underwood DA, Gates KB, Topol EJ, Califf RM, Wagner GS. Electrocardiographic diagnosis of evolving acute myocardial infarction in the presence of left bundle-branch block. GUSTO-1 (Global Utilization of Streptokinase and Tissue Plasminogen Activator for Occluded Coronary Arteries) Investigators. N Engl J Med. 1996 Feb 22;334(8):481-7. Erratum in: N Engl J Med 1996 Apr 4;334(14):931. PubMed PMID: 8559200."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://www.ncbi.nlm.nih.gov/pubmed/24016487",
+                "text": "Cai Q, Mehta N, Sgarbossa EB, Pinski SL, Wagner GS, Califf RM, Barbagelata A. The left bundle-branch block puzzle in the 2013 ST-elevation myocardial infarction guideline: from falsely declaring emergency to denying reperfusion in a high-risk population. Are the Sgarbossa Criteria ready for prime time? Am Heart J. 2013 Sep;166(3):409-13. doi: 10.1016/j.ahj.2013.03.032. Epub 2013 Aug 6. PubMed PMID: 24016487."
+            }
+        ],
+        "evidence": "<p>Modified Sgarbossa's Criteria are met if any criteria are positive.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output=[]; \nvar msg=''; \nvar mini_msg=''; \nvar u=parseFloat(concordant_st_elevation)+parseFloat(concordant_st_depression)+parseFloat(discordant_st_elevation);\n\nif(u>=1) {\n  var result = 'Positive';\n}\nif(u==0) {\n  var result = 'Negative';\n}\n\ncalc_output.push({\n  name:'mini',\n  value:result,\n  value_text:\"\",\n  message:\"Diagnosis by Modified Sgarbossa's Criteria\"\n}); \n\ncalc_output.push({\n  name:\"Sgarbossa's Criteria for MI\",\n  value:result,\n  value_text:\"\",\n  message:\"Diagnosis by Modified Sgarbossa's Criteria<br/><br/>Modified Sgarbossa's Criteria are met if any criteria are positive\"\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Concordant ST elevation ≥1 mm in leads with a positive QRS complex",
+                "name": "concordant_st_elevation",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Concordant ST depression ≥1 mm in V1-V3",
+                "name": "concordant_st_depression",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "ST Elevation at the J-point, relative to QRS onset, is at least 1 mm AND has an amplitude at least 25% of the preceding S-wave",
+                "name": "discordant_st_elevation",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "An ST/S ratio of 0.20 is also very high and almost as specific as a 0.25 ratio",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Modified Sgarbossa's Criteria for MI in Left Bundle Branch Block, Modified Sgarbossa's Criteria for MI, Sgarbossa's Criteria for MI in Left Bundle Branch Block, sgarbossa LBBB, sgarbossa MI, sgarbossa, sgarbossa MI LBBB, sgarbossa STEMI, sgarbossa MI calc, sgarbossa stemi calc, sgarbossa LBB calc, sgarbossa score, sgarbossa criteria, MI calc, stemi calc, stemi risk, MI LBBB risk score, MI LBB risk calc, left bundle branch block calc, left bundle branch block sgarbossa, left bundle branch block MI, left bundle branch block ACS calc, left bundle branch block criteria MI, Sgarbossa ACS, Sgarbossa ACS calc, Sgarbossa ACS criteria"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

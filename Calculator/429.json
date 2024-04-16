@@ -1,0 +1,169 @@
+{
+    "id": "429",
+    "title": "Fibrosis-4 (FIB-4) Index for Liver Fibrosis",
+    "desc": "The Fibrosis-4 (FIB-4) Index for Liver Fibrosis is a non-invasive scoring system based on several laboratory tests that help to estimate the amount of scarring in the liver.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/10.1002/hep.21178/full",
+                "text": "Sterling RK, Lissen E, Clumeck N, et. al. Development of a simple noninvasive index to predict significant fibrosis patients with HIV/HCV co-infection. Hepatology 2006;43:1317-1325."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19523535",
+                "text": "Shah AG, Lydecker A, Murray K, et al. Comparison of noninvasive markers of fibrosis in patients with nonalcoholic fatty liver disease. Clin Gastroenterol Hepatol. 2009;7(10):1104-12."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28834467",
+                "text": "Tapper EB, Lok AS. Use of Liver Imaging and Biopsy in Clinical Practice. N Engl J Med. 2017;377(8):756-768."
+            }
+        ],
+        "evidence": "<p>FIB-4 Score = (Age* x AST) / (Platelets x &radic;(ALT))</p>\n<p>*Use with caution in patients &lt;35&nbsp;or &gt;65&nbsp;years old, as the score has been shown to be less reliable in these patients.</p>",
+        "facts": "<p>Interpretation:</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/fib-4.png\" width=\"100%\"></p>\n<p>*\"Advanced fibrosis\" was defined as METAVIR stage F3-F4 (<a href=\"https://boris.unibe.ch/93541/1/Age%20as%20a%20Confounding%20Factor%20for%20the%20Accurate.pdf\" target=\"_blank\" rel=\"noopener\">McPherson 2017</a>).</p>\n<table width=\"306\">\n<tbody>\n<tr>\n<td>\n<p><strong>FIB-4 Score</strong></p>\n</td>\n<td><strong>Approximate fibrosis stage*</strong></td>\n</tr>\n<tr>\n<td>\n<p>&lt;1.45</p>\n</td>\n<td>\n<p>0-1</p>\n<p>&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>1.45-3.25</p>\n</td>\n<td>2-3</td>\n</tr>\n<tr>\n<td>\n<p>&gt;3.25</p>\n</td>\n<td>4-6</td>\n</tr>\n</tbody>\n</table>\n<p>*Based on Ishak fibrosis&nbsp;staging&nbsp;(<a href=\"https://onlinelibrary.wiley.com/doi/10.1002/hep.21178/full\" target=\"_blank\" rel=\"noopener\">Sterling et al 2006</a>).</p>",
+        "estimation": [
+            {
+                "name": "Alanine Aminotransferase",
+                "unit": "ALT",
+                "error_min": "1",
+                "error_max": "1000",
+                "warn_min": "4",
+                "warn_max": "400",
+                "conversion": "1",
+                "normal_max_si": "35",
+                "normal_max_us": "35",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Aspartate Aminotransferase",
+                "unit": "AST",
+                "error_min": "1",
+                "error_max": "10000",
+                "warn_min": "4",
+                "warn_max": "4000",
+                "conversion": "1",
+                "normal_max_si": "41",
+                "normal_max_us": "41",
+                "normal_min_si": "15",
+                "normal_min_us": "15",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "Platelet Count",
+                "unit": "plt",
+                "error_min": "1",
+                "error_max": "3200",
+                "warn_min": "10",
+                "warn_max": "750",
+                "conversion": "1",
+                "normal_max_si": "350",
+                "normal_max_us": "350",
+                "normal_min_si": "150",
+                "normal_min_us": "150",
+                "units_si": "× 10⁹/L",
+                "units_us": "× 10³/µL"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Agitation",
+            "AMS",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cirrhosis",
+            "Hepatitis",
+            "HIV/AIDS"
+        ],
+        "logic": "var calc_output = [];\nvar age = parseFloat(age);\nvar ast = parseFloat(ast);\nvar plt = parseFloat(plt);\nvar alt = parseFloat(alt);\n\nvar u = (age * ast) / (plt * Math.sqrt(alt));\nvar msg, mini_msg;\n\nu = u.toFixed(2);\n\nif(age <= 35) {\n    msg = 'Use alternative fibrosis assessment';\n} else if(age > 35 && age < 65) {\n    if (u < 1.3) {\n        msg = \"Advanced fibrosis excluded\";\n    } else if (u >= 1.3 && u <= 2.67) {\n        msg = \"Further investigation needed\";\n    } else if (u > 2.67) {\n        msg = \"Advanced fibrosis (METAVIR stage F3-F4) likely (McPherson 2017)\";\n    }\n} else if (age >= 65) {\n    if (u < 2.0) {\n        msg = \"Advanced fibrosis excluded\";\n    } else if (u >= 2.0 && u <= 2.67) {\n        msg = \"Further investigation needed\";\n    } else if (u > 2.67) {\n        msg = \"Advanced fibrosis (METAVIR stage F3-F4) likely (McPherson 2017)\";\n    }\n}\n\nvar stage;\nif (u < 1.45) {\n  stage = 'Approximate fibrosis stage: Ishak 0-1 (Sterling et al 2006)';\n} else if (u >= 1.45 && u <= 3.25) {\n  stage = 'Approximate fibrosis stage: Ishak 2-3 (Sterling et al 2006)';\n} else if (u > 3.25) {\n  stage = 'Approximate fibrosis stage: Ishak 4-6 (Sterling et al 2006)';\n} \n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: '2200_FIB-4_result',\n    value: u,\n    value_text: 'points',\n    message: msg + '<br/>' + stage\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "Use with caution in patients <35 or >65 years old, as the score has been shown to be less reliable in these patients",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "AST",
+                "name": "ast",
+                "optional": false,
+                "tips_en": "Aspartate aminotransferase",
+                "type": "textbox",
+                "unit": "AST"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "ALT",
+                "name": "alt",
+                "optional": false,
+                "tips_en": "Alanine aminotransferase",
+                "type": "textbox",
+                "unit": "ALT"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Platelet count",
+                "name": "plt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plt"
+            }
+        ],
+        "can_search": [
+            "fibrosis",
+            "cirrhosis",
+            "fib",
+            "fib4",
+            "fib-4",
+            "hepatic",
+            "calculation",
+            "hepatitis",
+            "HCV",
+            "HIV",
+            "fib 4"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hepatology",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

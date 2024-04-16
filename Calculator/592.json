@@ -1,0 +1,98 @@
+{
+    "id": "592",
+    "title": "Schwab and England Activities of Daily Living (ADL) Scale",
+    "desc": "The Schwab and England Activities of Daily Living (ADL) Scale grades functional status in patients with Parkinson’s.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "",
+                "text": "Schwab RS, England AC. Projection Technique for Evaluating Surgery in Parkinson’s Disease. In: Gillingham JF and Donaldson IML, Eds, Third Symposium on Parkinson’s Disease, Edinburgh, Livingstone 1969: 152-157."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27193358",
+                "text": "Shulman LM, Armstrong M, Ellis T, et al. Disability Rating Scales in Parkinson's Disease: Critique and Recommendations. Mov Disord. 2016;31(10):1455-1465."
+            }
+        ],
+        "evidence": "<p>Select patient’s level of independence:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p>Completely independent: able to do all chores without difficulty; essentially normal; unaware of any difficulty</p> </td> <td> <p>100%</p> </td> </tr> <tr> <td> <p>Completely independent: able to do all chores with some difficulty (may take twice as long); beginning to be aware of difficulty</p> </td> <td> <p>90%</p> </td> </tr> <tr> <td> <p>Mostly independent: chores takes twice as long; conscious of difficulty</p> </td> <td> <p>80%</p> </td> </tr> <tr> <td> <p>Not completely independent: more difficulty with some chores; takes 3-4x longer for some</p> </td> <td> <p>70%</p> </td> </tr> <tr> <td> <p>Some dependency: can do most chores but exceedingly slowly and with much effort; makes errors; some chores impossible</p> </td> <td> <p>60%</p> </td> </tr> <tr> <td> <p>More dependent: needs help with half of chores; is slower and has difficulty with everything</p> </td> <td> <p>50%</p> </td> </tr> <tr> <td> <p>Heavily dependent: can assist with all chores but does few alone</p> </td> <td> <p>40%</p> </td> </tr> <tr> <td> <p>Mostly dependent: with effort, can sometimes do a few chores alone or begin alone; much help needed</p> </td> <td> <p>30%</p> </td> </tr> <tr> <td> <p>Severely dependent: can help slighly with some chores but nothing alone</p> </td> <td> <p>20%</p> </td> </tr> <tr> <td> <p>Completely dependent: helpless; complete invalid</p> </td> <td> <p>10%</p> </td> </tr> <tr> <td> <p>Bedridden: vegetative functions such as swallowing, bladder and bowel functions impaired</p> </td> <td> <p>0%</p> </td> </tr> </tbody> </table> </div>",
+        "facts": "<p>Interpretation:<br>Higher score indicates greater functional independence.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Anxious",
+            "Depressed",
+            "Muscle Stiffness",
+            "Pain"
+        ],
+        "disease_treated": [
+            "Parkinson's Disease"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar level = parseFloat(level);\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: level + '%',\n    value_text: '',\n    message: 'Schwab and England Scale'\n});\ncalc_output.push({\n    name: '',\n    value: level,\n    value_text: '%',\n    message: 'Schwab and England Scale'\n});\ncalc_output.push({\n    name: 'Interpretation',\n    value: '',\n    value_text: '',\n    message: 'Higher score indicates greater functional independence.'\n});",
+        "inputs": [
+            {
+                "label_en": "Level of independence",
+                "name": "level",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Completely independent: able to do all chores without difficulty; essentially normal; unaware of any difficulty",
+                        "value": 100
+                    },
+                    {
+                        "label": "Completely independent: able to do all chores with some difficulty (may take twice as long); beginning to be aware of difficulty",
+                        "value": 90
+                    },
+                    {
+                        "label": "Mostly independent: chores takes twice as long; conscious of difficulty",
+                        "value": 80
+                    },
+                    {
+                        "label": "Not completely independent: more difficulty with some chores; takes 3-4x longer for some",
+                        "value": 70
+                    },
+                    {
+                        "label": "Some dependency: can do most chores but exceedingly slowly and with much effort; makes errors; some chores impossible",
+                        "value": 60
+                    },
+                    {
+                        "label": "More dependent: needs help with half of chores; is slower and has difficulty with everything",
+                        "value": 50
+                    },
+                    {
+                        "label": "Heavily dependent: can assist with all chores but does few alone",
+                        "value": 40
+                    },
+                    {
+                        "label": "Mostly dependent: with effort, can sometimes do a few chores alone or begin alone; much help needed",
+                        "value": 30
+                    },
+                    {
+                        "label": "Severely dependent: can help slighly with some chores but nothing alone",
+                        "value": 20
+                    },
+                    {
+                        "label": "Completely dependent: helpless; complete invalid",
+                        "value": 10
+                    },
+                    {
+                        "label": "Bedridden: vegetative functions such as swallowing, bladder and bowel functions impaired",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "schwab",
+            "england",
+            "shwab",
+            "schwab and england",
+            "parkingson",
+            "parkinsons"
+        ],
+        "specialty": [
+            "Neurology"
+        ]
+    }
+}

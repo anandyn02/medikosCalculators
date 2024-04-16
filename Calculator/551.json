@@ -1,0 +1,165 @@
+{
+    "id": "551",
+    "title": "BODE Index for COPD Survival",
+    "desc": "The BODE Index for COPD Survival predicts survival in COPD patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa021322#t=article",
+                "text": "Celli BR. The Body-Mass Index, Airflow Obstruction, Dyspnea, and Exercise Capacity Index in Chronic Obstructive Pulmonary Disease. New England Journal of Medicine. 2004; 350:10;1005-1012 doi:10.1056/NEJMoa021322."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3342669",
+                "text": "Mahler DA, Wells CK. Evaluation of clinical methods for rating dyspnea. Chest. 1988 Mar;93(3):580-6."
+            }
+        ],
+        "evidence": "<p><span>Addition of the selected points:</span></p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n<td>\n<p><strong>2 points</strong></p>\n</td>\n<td>\n<p><strong>3 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>FEV</strong><sub>1</sub><strong> (% of predicted)</strong></p>\n</td>\n<td>\n<p><span>&ge;65</span></p>\n</td>\n<td>\n<p><span>50&ndash;64</span></p>\n</td>\n<td>\n<p><span>36&ndash;49</span></p>\n</td>\n<td>\n<p><span>&le;35</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong><calculator id=\"3983\">6 Minute Walk Distance</calculator> (m)</strong></p>\n</td>\n<td>\n<p><span>&ge;350</span></p>\n</td>\n<td>\n<p><span>250&ndash;349</span></p>\n</td>\n<td>\n<p><span>150&ndash;249</span></p>\n</td>\n<td>\n<p><span>&le;149</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong><abbr title=\"Modified Medical Research Council\">mMRC</abbr><calculator id=\"4006\"> Dyspnea Scale</calculator></strong></p>\n</td>\n<td>\n<p><span>0&ndash;1</span></p>\n</td>\n<td>\n<p><span>2</span></p>\n</td>\n<td>\n<p><span>3</span></p>\n</td>\n<td>\n<p><span>4</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong><calculator id=\"29\">BMI</calculator></strong></p>\n</td>\n<td>\n<p><span>&gt;21</span></p>\n</td>\n<td>\n<p><span>&le;21</span></p>\n</td>\n<td>\n<p><span>--</span></p>\n</td>\n<td>\n<p><span>--</span></p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>BODE Index</strong></p>\n</td>\n<td>\n<p><strong>4-year survival</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0&ndash;2</p>\n</td>\n<td>\n<p>80%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>3&ndash;4</p>\n</td>\n<td>\n<p>67%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>5&ndash;6</p>\n</td>\n<td>\n<p>57%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>7&ndash;10</p>\n</td>\n<td>\n<p>18%</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>Survival estimates based on Kaplan-Meier curves from <a href=\"https://www.nejm.org/doi/full/10.1056/NEJMoa021322#t=article\" target=\"_blank\" rel=\"noopener\">Celli 2004</a>:</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/bodeindex-curves.png\" width=\"100%\"></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Asthma",
+            "COPD"
+        ],
+        "logic": "var calc_output = [];\nvar fev = parseFloat(fev);\nvar walking = parseFloat(walking);\nvar dyspnea = parseFloat(dyspnea);\nvar bmi = parseFloat(bmi);\nvar score = fev + walking + dyspnea + bmi;\nvar msg = ' Estimated 4-year survival';\nvar perc;\n\n    if (score >= 0 && score <= 2){\n        perc = \"80\";\n    }\n        \n    if (score >= 3 && score <= 4){\n        perc = \"67\";\n    }\n        \n    if (score >= 5 && score <= 6){\n        perc = \"57\";\n    }\n        \n    if (score >= 7){\n        perc = \"18\";\n    }\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: perc + '% ' + msg\n});\ncalc_output.push({\n    name: '3916_BODE Index_result (score)',\n    value: score,\n    value_text: 'points',\n    message: ''\n});\ncalc_output.push({\n    name: '3916_BODE Index_result (survival)',\n    value: perc,\n    value_text: '%',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "FEV₁ (% of predicted)",
+                "mdcalc_info_concept": null,
+                "name": "fev",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥65%",
+                        "value": 0
+                    },
+                    {
+                        "label": "50-64%",
+                        "value": 1
+                    },
+                    {
+                        "label": "36-49%",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤35%",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='3983'>6 Minute Walk Distance</calculator>",
+                "mdcalc_info_concept": null,
+                "name": "walking",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥350 m (383 yds)",
+                        "value": 0
+                    },
+                    {
+                        "label": "250-349 m (273-382 yds)",
+                        "value": 1
+                    },
+                    {
+                        "label": "150-249 m (164-272 yds)",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤149 m (163 yds)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='4006'><abbr title='Modified Medical Research Council'>mMRC</abbr> Dyspnea Scale</calculator>",
+                "mdcalc_info_concept": null,
+                "name": "dyspnea",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Dyspnea only with strenuous exercise",
+                        "value": 0
+                    },
+                    {
+                        "label": "Dyspnea when hurrying or walking up a slight hill",
+                        "value": 0
+                    },
+                    {
+                        "label": "Walks slower than people of same age because of dyspnea or stops for breath when walking at own pace",
+                        "value": 1
+                    },
+                    {
+                        "label": "Stops for breath after walking 100 yards (91 m) or after a few minutes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Too dyspneic to leave house or breathless when dressing",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='29'><abbr title='Body Mass Index'>BMI</abbr></calculator> (kg/m²)",
+                "md_calc_info_concept": null,
+                "name": "bmi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">21",
+                        "value": 0
+                    },
+                    {
+                        "label": "≤21",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "COPD",
+            "asthma",
+            "mortality",
+            "survival",
+            "prognosis",
+            "emphysema"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

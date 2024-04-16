@@ -1,0 +1,91 @@
+{
+    "id": "65",
+    "title": "Stanford Sleepiness Scale",
+    "desc": "The Stanford Sleepiness Scale quantifies the progressive stages of sleepiness.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1469-8986.1973.tb00801.x ",
+                "text": "Hoddes E, Zarcone V, Smythe H, Phillips R, Dement WC. Quantification of sleepiness: a new approach. Psychophysiology. 1973;10(4):431-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=8731494 ",
+                "text": "Mitler MM, Miller JC. Methods of testing for sleepiness [corrected]. Behav Med. 1996;21(4):171-83."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7232973 ",
+                "text": "Herscovitch J, Broughton R. Sensitivity of the stanford sleepiness scale to the effects of cumulative partial sleep deprivation and recovery oversleeping. Sleep. 1981;4(1):83-91."
+            },
+            {
+                "href": "https://link.springer.com/chapter/10.1007%2F978-1-4419-9893-4_91",
+                "text": "Shahid A, Wilkinson K, Marcu S, Shapiro CM, eds. Stanford Sleepiness Scale. STOP, THAT and One Hundred Other Sleep Scales. Springer New York. pp. 369–370."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Selection of the appropriate description:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"224\" /><col width=\"68\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Sleepiness descriptions</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Stanford Sleepiness Score</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Feeling active and vital, alert, wide awake</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Functioning at a high level but not at a peak, able to concentrate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Relaxed, awake, not at full alertness, responsive</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">A little foggy, not at a peak, let down</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Foggy, beginning to lose interest in remaining awake, slowed down</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Sleepy, prefer to be laying down, fighting sleep, woozy</p>\n</td>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Almost in reverie, sleep onset soon, lost struggle to remain awake</p>\n</td>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p><strong>Interpretation</strong>:</p>\n<p><strong></strong>Higher scores indicate greater sleepiness.&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue"
+        ],
+        "disease_treated": [
+            "Obstructive Sleep Apnea"
+        ],
+        "logic": "var calc_output = [];\n\nvar score = parseFloat(sleepy) \n \n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'Higher scores = more sleepy'\n    });\ncalc_output.push({\n    name: 'sleepy',\n    value: score,\n    value_text: 'points',\n    message: 'Higher scores indicate greater sleepiness'\n    });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "Sleepiness descriptions ",
+                "name": "sleepy",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Feeling active and vital, alert, wide awake",
+                        "value": 1
+                    },
+                    {
+                        "label": "Functioning at a high level but not at a peak, able to concentrate ",
+                        "value": 2
+                    },
+                    {
+                        "label": "Relaxed, awake, not at full alertness, responsive",
+                        "value": 3
+                    },
+                    {
+                        "label": "A little foggy, not at a peak, let down",
+                        "value": 4
+                    },
+                    {
+                        "label": "Foggy, beginning to lose interest in remaining awake, slowed down",
+                        "value": 5
+                    },
+                    {
+                        "label": "Sleepy, prefer to be laying down, fighting sleep, woozy",
+                        "value": 6
+                    },
+                    {
+                        "label": "Almost in reverie, sleep onset soon, lost struggle to remain awake",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "SSS",
+            "sleep scale",
+            "sleepiness scale",
+            "Stanford sleepiness scale"
+        ],
+        "specialty": [
+            "Internal Medicine",
+            "Family Practice",
+            "Neurology",
+            "Psychiatry",
+            "Sleep Medicine",
+            "Anesthesiology"
+        ]
+    }
+}

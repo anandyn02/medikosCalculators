@@ -1,0 +1,166 @@
+{
+    "id": "535",
+    "title": "Functional Outcome in Patients With Primary Intracerebral Hemorrhage (FUNC) Score",
+    "desc": "The FUNC Score identifies patients with ICH who will attain functional independence and assists in clinical decision-making.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://stroke.ahajournals.org/content/39/8/2304.full",
+                "text": "Rost NS, et. al. Prediction of Functional Outcome in Patients With Primary Intracerebral Hemorrhage: The FUNC Score. Stroke. 2008; 39:2304-2309, doi:10.1161/STROKEAHA.107.512202"
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of assigned points.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<table style=\"width: 68.94197952218431%; height: 154px;\">\n<tbody>\n<tr style=\"height: 22px;\">\n<th rowspan=\"2\" style=\"width: 23.112623762376238%; height: 44px;\">FUNC Score</th>\n<th colspan=\"2\" style=\"width: 66.38691212871288%; height: 22px;\">Functional Independence at 90 Days</th>\n</tr>\n<tr style=\"height: 22px;\">\n<th style=\"width: 31.71410891089109%; height: 22px;\">Entire Cohort</th>\n<th style=\"width: 34.67280321782179%; height: 22px;\">Survivors Only</th>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 23.112623762376238%; height: 22px;\">0-4</td>\n<td style=\"width: 31.71410891089109%; height: 22px;\">0%</td>\n<td style=\"width: 34.67280321782179%; height: 22px;\">0%</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 23.112623762376238%; height: 22px;\">5-7</td>\n<td style=\"width: 31.71410891089109%; height: 22px;\">13%</td>\n<td style=\"width: 34.67280321782179%; height: 22px;\">29%</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 23.112623762376238%; height: 22px;\">8</td>\n<td style=\"width: 31.71410891089109%; height: 22px;\">42%</td>\n<td style=\"width: 34.67280321782179%; height: 22px;\">48%</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 23.112623762376238%; height: 22px;\">9-10</td>\n<td style=\"width: 31.71410891089109%; height: 22px;\">66%</td>\n<td style=\"width: 34.67280321782179%; height: 22px;\">75%</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 23.112623762376238%; height: 22px;\">11</td>\n<td style=\"width: 31.71410891089109%; height: 22px;\">82%</td>\n<td style=\"width: 34.67280321782179%; height: 22px;\">95%</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Headache",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Intracranial Hemorrhage",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(ichvol) + parseFloat(age) + parseFloat(location) + parseFloat(gcs) + parseFloat(cog);\n\nvar msg;\n\nif (u <= 4) {\n    msg = 'Entire cohort: 0% probability of functional independence at 90 days<br/>Survivors only: 0% probability of functional independence at 90 days';\n} else if (u <= 7) {\n    msg = 'Entire cohort: 13% probability of functional independence at 90 days<br/>Survivors only: 29% probability of functional independence at 90 days';\n} else if (u == 8) {\n    msg = 'Entire cohort: 42% probability of functional independence at 90 days<br/>Survivors only: 48% probability of functional independence at 90 days';\n} else if (u <= 10) {\n    msg = 'Entire cohort: 66% probability of functional independence at 90 days<br/>Survivors only: 75% probability of functional independence at 90 days';\n} else {\n    msg = 'Entire cohort: 82% probability of functional independence at 90 days<br/>Survivors only: 95% probability of functional independence at 90 days';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: '3883_FUNC Score_result',\n    value: u,\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>ICH volume (cm&sup3;)</p>",
+                "mdcalc_info_concept": null,
+                "name": "ichvol",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<30",
+                        "value": 4
+                    },
+                    {
+                        "label": "30-60",
+                        "value": 2
+                    },
+                    {
+                        "label": ">60",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Age</p>",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<70",
+                        "value": 2
+                    },
+                    {
+                        "label": "70-79",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥80",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>ICH location</p>",
+                "mdcalc_info_concept": null,
+                "name": "location",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Lobar",
+                        "value": 2
+                    },
+                    {
+                        "label": "Deep",
+                        "value": 1
+                    },
+                    {
+                        "label": "Infratentorial",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>GCS score</p>",
+                "mdcalc_info_concept": null,
+                "name": "gcs",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥9",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤8",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Pre-ICH cognitive impairment</p>",
+                "md_calc_info_concept": null,
+                "name": "cog",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ICH",
+            "SAH",
+            "stroke",
+            "neuro",
+            "mortality",
+            "death"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Radiology",
+            "Surgery (General)"
+        ]
+    }
+}

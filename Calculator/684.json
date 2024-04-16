@@ -1,0 +1,208 @@
+{
+    "id": "684",
+    "title": "New Orleans/Charity Head Trauma/Injury Rule",
+    "desc": "The New Orleans/Charity Head Trauma/Injury Rule Offers criteria for which patients are unlikely to require imaging after head trauma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10891517",
+                "text": "Haydel MJ, Preston CA, Mills TJ, Luber S, Blaudeau E, DeBlieux PM. Indications for computed tomography in patients with minor head injury. N Engl J Med. 2000 Jul 13;343(2):100-5."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16189365",
+                "text": "Smits M, Dippel DW, de Haan GG, Dekker HM, Vos PE, Kool DR, Nederkoorn PJ, Hofman PA, Twijnstra A, Tanghe HL, Hunink MG. External validation of the Canadian CT Head Rule and the New Orleans Criteria for CT scanning in patients with minor head injury. JAMA. 2005 Sep 28;294(12):1519-25."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22251188",
+                "text": "Papa L, Stiell IG, Clement CM, Pawlowicz A, Wolfram A, Braga C, Draviam S, Wells GA. Performance of the Canadian CT Head Rule and the New Orleans Criteria for predicting any traumatic intracranial injury on computed tomography in a United States Level I trauma center. Acad Emerg Med. 2012 Jan;19(1):2-10. doi: 10.1111/j.1553-2712.2011.01247.x."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22921164",
+                "text": "Bouida W, Marghli S, Souissi S, Ksibi H, Methammem M, Haguiga H, Khedher S, Boubaker H, Beltaief K, Grissa MH, Trimech MN, Kerkeni W, Chebili N, Halila I, Rejeb I, Boukef R, Rekik N, Bouhaja B, Letaief M, Nouira S. Prediction value of the Canadian CT head rule and the New Orleans criteria for positive head CT scan and acute neurosurgical procedures in minor head trauma: a multicenter external validation study. Ann Emerg Med. 2013 May;61(5):521-7. doi: 10.1016/j.annemergmed.2012.07.016. Epub 2012 Aug 22."
+            }
+        ],
+        "evidence": "<p>Series of Yes/No Questions, as above.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Head Injury",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\nvar msg = '';\nvar mini_msg = '';\nvar headache = parseInt(headache);\nvar vomiting = parseInt(vomiting);\nvar age_60 = parseInt(age_60);\nvar alcohol_drug_intoxication = parseInt(alcohol_drug_intoxication);\nvar amnesia = parseInt(amnesia);\nvar visible_trauma = parseInt(visible_trauma);\nvar seizure = parseInt(seizure);\n\nvar u = headache + vomiting + age_60 + alcohol_drug_intoxication + amnesia + visible_trauma + seizure;\n\nif (u > 0) {\n    mini_msg = 'CT necessary';\n    msg = 'The New Orleans Head CT Rule suggests a head CT is necessary for this patient to rule out an intracranial traumatic finding (sensitivity 97-100%).'\n}\nif (u == 0) {\n    mini_msg = 'CT <u>not</u> necessary';\n    msg = 'The New Orleans Head CT Rule suggests a head CT is NOT necessary for this patient to rule out an intracranial traumatic finding (sensitivity 97-100%).'\n}\ncalc_output.push({\n    name: 'mini',\n    value: ' ',\n    value_text: ' ',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '604_New Orleans Head CT Rule_result',\n    value: ' ',\n    value_text: ' ',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Headache",
+                "md_calc_info_concept": null,
+                "name": "headache",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Vomiting",
+                "md_calc_info_concept": null,
+                "name": "vomiting",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age > 60",
+                "md_calc_info_concept": null,
+                "name": "age_60",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Alcohol or drug intoxication",
+                "md_calc_info_concept": null,
+                "name": "alcohol_drug_intoxication",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Persisent anterograde amnesia (short-term memory deficits)",
+                "md_calc_info_concept": null,
+                "name": "amnesia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Visible trauma above the clavicle",
+                "md_calc_info_concept": null,
+                "name": "visible_trauma",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Seizure",
+                "md_calc_info_concept": null,
+                "name": "seizure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "noc",
+            "head trauma",
+            "new orleans",
+            "Charity Head Trauma",
+            "NOC head rule",
+            "new orleans criteria"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Neurology",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

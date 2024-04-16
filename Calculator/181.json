@@ -1,0 +1,534 @@
+{
+    "id": "181",
+    "title": "Lung Injury Prediction Score (LIPS)",
+    "desc": "The Lung Injury Prediction Score (LIPS) identifies patients at high risk for developing acute lung injury (ALI).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/20562130/",
+                "text": "Trillo-Alvarez C, Cartin-Ceba R, Kor DJ, et al. Acute lung injury prediction score: derivation and validation in a population-based sample. Eur Respir J. 2011;37(3):604-609."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>The LIPS is calculated by the addition of the selected points:</p>\n<table width=\"357\" height=\"287\">\n<tbody>\n<tr>\n<td>\n<p><strong>Variable</strong></p>\n</td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p><strong>Predisposing conditions</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Shock</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>Aspiration</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>Sepsis</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Pneumonia</p>\n</td>\n<td>1.5</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p><strong>High-risk surgery:</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Orthopedic spine</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Acute abdomen</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>Cardiac</p>\n</td>\n<td>2.5</td>\n</tr>\n<tr>\n<td>\n<p>Aortic vascular</p>\n</td>\n<td>3.5</td>\n</tr>\n<tr>\n<td>\n<p>If emergency surgery</p>\n</td>\n<td>1.5</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p><strong>High-risk trauma:</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Traumatic brain injury</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>Smoke inhalation</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>Near drowning</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>Lung contusion</p>\n</td>\n<td>1.5</td>\n</tr>\n<tr>\n<td>\n<p>Multiple fractures</p>\n</td>\n<td>1.5</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p><strong>Risk modifiers</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Alcohol abuse</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Obesity (BMI &gt;30)</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Hypoalbuminemia</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Chemotherapy</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>FiO<sub>2</sub> &gt;0.35 (&gt;4 L/min)</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>Tachypnea (respiratory rate &gt;30)</p>\n</td>\n<td>1.5</td>\n</tr>\n<tr>\n<td>\n<p>SpO<sub>2</sub> &lt;95%</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Acidosis (pH &lt;7.35)</p>\n</td>\n<td>1.5</td>\n</tr>\n<tr>\n<td>\n<p>Diabetes mellitus (only if sepsis)</p>\n</td>\n<td>-1</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<table width=\"367\" height=\"58\" style=\"width: 337px;\">\n<tbody>\n<tr>\n<td style=\"width: 73.0781px;\">\n<p><strong>LIPS</strong></p>\n</td>\n<td style=\"width: 235.328px;\"><strong>Risk of acute lung injury</strong></td>\n</tr>\n<tr>\n<td style=\"width: 73.0781px;\">\n<p>&le;4</p>\n</td>\n<td style=\"width: 235.328px;\">Low</td>\n</tr>\n<tr>\n<td style=\"width: 73.0781px;\">\n<p>&gt;4*</p>\n</td>\n<td style=\"width: 235.328px;\">High</td>\n</tr>\n</tbody>\n</table>\n<p>*At a cutoff of 4, positive and negative likelihood ratios (95% CI) for development of ALI were 3.1 and 0.4, respectively, with a sensitivity of 69% and specificity of 78% (<a href=\"https://www.atsjournals.org/doi/full/10.1164/rccm.201004-0549OC\" target=\"_blank\" rel=\"noopener\">Gajic 2011</a>).</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(five)+parseFloat(six)+parseFloat(seven)+parseFloat(eight)+parseFloat(nine)+parseFloat(ten)+parseFloat(eleven)+parseFloat(twelve)+parseFloat(thirteen)+parseFloat(fourteen)+parseFloat(fifteen)+parseFloat(sixteen)+parseFloat(seventeen)+parseFloat(eighteen)+parseFloat(nineteen)+parseFloat(twenty)+parseFloat(twentyone)+parseFloat(twentytwo)+parseFloat(twentythree);\n\nvar level;\nvar risk;\n\nif (criteria<=4) {\n  risk='Low';\n} \n\nif (criteria>4) {\n  risk='High';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text: 'points',\n    message: risk + ' risk',\n});\ncalc_output.push({\n    name: 'criteria',\n    value: criteria,\n    value_text: 'points',\n    message: 'LIPS Score',\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk, \n    value_text: 'risk',\n    message: 'Risk of acute lung injury',\n});",
+        "inputs": [
+            {
+                "subheading": "<b>Predisposing conditions:</b>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Shock",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Aspiration",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sepsis",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pneumonia",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "<b>High-risk surgery:</b>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Orthopedic spine",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acute abdomen",
+                "name": "six",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cardiac",
+                "name": "seven",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Aortic vascular",
+                "name": "eight",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "If emergency surgery",
+                "name": "nine",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "<b>High-risk trauma:</b>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Traumatic brain injury",
+                "name": "ten",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Smoke inhalation",
+                "name": "eleven",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Near drowning",
+                "name": "twelve",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lung contusion",
+                "name": "thirteen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Multiple fractures",
+                "name": "fourteen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "<b>Risk modifiers:</b>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Alcohol abuse",
+                "name": "fifteen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Obesity (BMI >30)",
+                "name": "sixteen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hypoalbuminemia",
+                "name": "seventeen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chemotherapy",
+                "name": "eighteen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "FiO<sub>2</sub> >0.35 (>4 L/min)",
+                "name": "nineteen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tachypnea (respiratory rate >30)",
+                "name": "twenty",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "SpO<sub>2</sub> <95%",
+                "name": "twentyone",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acidosis (pH <7.35)",
+                "name": "twentytwo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Diabetes mellitus (only if sepsis)",
+                "name": "twentythree",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Lung Injury Prediction Score (LIPS)",
+            "lips",
+            "ali",
+            "acute lung injury risk",
+            "acute lung injury prediction",
+            "lung injury risk",
+            "lung injury prediction",
+            "coronavirus",
+            "corona virus",
+            "covid-19",
+            "covid 19",
+            "covid19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

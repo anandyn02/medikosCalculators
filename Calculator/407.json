@@ -1,0 +1,141 @@
+{
+    "id": "407",
+    "title": "Urine Output and Fluid Balance",
+    "desc": "The Urine Output and Fluid Balance calculates urine output over a 24 hour period and fluid balance based on urine output (assuming no other fluid losses).",
+    "data": {
+        "orgreference": [
+            {
+                "href": null,
+                "text": "Israni AK, Kasiske BL. Laboratory assessment of kidney disease: glomerular filtration rate, urinalysis, and proteinuria. In: Teal MW, Chertow GM, Marsden PA, Skorecki K, Yu ASL, Brenner BM, eds. Brenner &amp; Rector's The Kidney"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.sickkids.ca/Nursing/Education-and-learning/Nursing-Student-Orientation/module-two-clinical-care/hydrationassessment/index.html",
+                "text": "Hydration Assessment. The Hospital for Sick Children (SickKids). 2014"
+            }
+        ],
+        "evidence": "<p>Urine output [cc/kg/hr] = Actual[cc/day] / (weight [kg]*24)</p>",
+        "facts": "<p>The normal range for 24-hour urine volume is 800 to 2000 milliliters per day (with a normal fluid intake of about 2 liters per day).</p>\n<ul>\n<li>Oliguria is urine output &lt; 500 mL in 24 h (0.5 mL/kg/h) in an adult.</li>\n<li>Oliguria is urine output &lt; 1 L in 24 h (1 mL/kg/h) in a child.</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Volume",
+                "unit": "volume",
+                "error_min": "0",
+                "error_max": "20000",
+                "warn_min": "1",
+                "warn_max": "5000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL",
+                "units_us": "mL"
+            },
+            {
+                "name": "Hours",
+                "unit": "time",
+                "error_min": "0",
+                "error_max": "72",
+                "warn_min": "0.999",
+                "warn_max": "24.001",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "hours",
+                "units_us": "hours"
+            }
+        ],
+        "primary_complains": [
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Congestive Heart Failure",
+            "Sepsis"
+        ],
+        "logic": "var calc_output = [];\nvar v, ins, bal;\nvar wt = parseFloat(wt);\nv = parseFloat(uop) / wt / parseFloat(hrs);;\nins = parseFloat(ins);\nbal = ins - uop;\n\n// No conversion necessary, as wt is only convertable unit.\n\n// Don't unconvert\ncalc_output.push({\n    name: 'mini',\n    value: v.toFixed(1),\n    value_text: 'cc/kg/hr',\n    message: 'Normal Adult Output: 0.5-1.0 cc/kg/hr; Normal Peds Output: 1.0-2.0 cc/kg/hr'\n});\ncalc_output.push({\n    name: '2074_Urine Output_result (output)',\n    value: v.toFixed(1),\n    value_text: 'cc/kg/hr',\n    message: 'Normal output for adult patients: 0.5-1.0 cc/kg/hr<br/>Normal output for pediatric patients: 1.0-2.0 cc/kg/hr'\n});\ncalc_output.push({\n    name: '2074_Urine Output_result (balance)',\n    value: bal.toFixed(0),\n    value_text: 'mL',\n    message: 'Fluid Balance'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "wt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Total urine output",
+                "name": "uop",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "volume"
+            },
+            {
+                "conditionality": "",
+                "default": 24,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hours",
+                "name": "hrs",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "time"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Fluid intake",
+                "name": "ins",
+                "optional": true,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "volume"
+            }
+        ],
+        "can_search": [
+            "urine",
+            "pee",
+            "oliguria"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatrics",
+            "Surgery (General)",
+            "Urology"
+        ]
+    }
+}

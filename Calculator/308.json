@@ -1,0 +1,144 @@
+{
+    "id": "308",
+    "title": "Vesicoureteral Reflux Index (VURx)",
+    "desc": "The Vesicoureteral Reflux Index (VURx) predicts resolution of VUR in children.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/25511573/",
+                "text": "Kirsch AJ, Arlen AM, Leong T, et al. Vesicoureteral reflux index (Vurx): a novel tool to predict primary reflux improvement and resolution in children less than 2 years of age. J Pediatr Urol. 2014;10(6):1249-1254."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.auanews.net/issues/articles/2021/november-2021/the-vcug-for-vur-looking-beyond-the-reflux",
+                "text": "Lovin JM, Kirsch AJ. The vcug for vur: looking beyond the reflux - american urological association. AUA News."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>The VURx is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 87.5289%;\"><colgroup><col style=\"width: 42.5714%;\"><col style=\"width: 40.5714%;\"><col style=\"width: 16.8571%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Gender</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Male</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Female</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><span>VUR timing</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Voiding</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Late filling</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Early to mid filling</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Ureteral anomalies</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Absent</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Present</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>VUR grade</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Low to moderate</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>High</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 60.5081%;\"><colgroup><col style=\"width: 35.2169%;\"><col style=\"width: 64.7831%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>VURx</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Rate of Resolution</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>89%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>69%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>53%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>16%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>5-6</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>11%</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Constipation",
+            "Dysuria",
+            "Fever",
+            "Polyuria",
+            "Urinary Incontinence"
+        ],
+        "disease_treated": [
+            "Vesicoureteral Reflux"
+        ],
+        "logic": "var calc_output = [];\n\nvar gender = parseFloat(gender);\nvar time = parseFloat(time);\nvar anomaly = parseFloat(anomaly);\nvar grade = parseFloat(grade);\n\nvar index = gender + time + anomaly + grade;\n\nvar rate;\n\nif (index == 1) {\n    rate = 89;\n} else if (index == 2) {\n    rate = 69;\n} else if (index == 3) {\n    rate = 53;\n} else if (index == 4) {\n    rate = 16;\n} else {\n    rate = 11;\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: index,\n    value_text: 'points',\n    message: rate + '% rate of resolution'\n});\ncalc_output.push({\n    name: 'Index',\n    value: index,\n    value_text: 'points',\n    message: 'VURx'\n});\ncalc_output.push({\n    name: 'Resolution',\n    value: rate,\n    value_text: '%',\n    message: 'Rate of resolution'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Gender</p>",
+                "mdcalc_info_concept": null,
+                "name": "gender",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>VUR timing</p>",
+                "mdcalc_info_concept": null,
+                "name": "time",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Voiding",
+                        "value": 1
+                    },
+                    {
+                        "label": "Late filling",
+                        "value": 2
+                    },
+                    {
+                        "label": "Early to mid filling",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Ureteral anomalies</p>",
+                "mdcalc_info_concept": null,
+                "name": "anomaly",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>VUR grade</p>",
+                "mdcalc_info_concept": null,
+                "name": "grade",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Low to moderate",
+                        "value": 0
+                    },
+                    {
+                        "label": "High",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Vesicoureteral Reflux Index (VURx)",
+            "vurx",
+            "reflux",
+            "vur",
+            "primary reflux",
+            "Vesicoureteral Reflux",
+            "resolution",
+            "reflux resolution"
+        ],
+        "specialty": [
+            "Nephrology",
+            "Pediatrics",
+            "Primary Care",
+            "Urology"
+        ]
+    }
+}

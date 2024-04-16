@@ -1,0 +1,133 @@
+{
+    "id": "388",
+    "title": "Absolute Neutrophil Count (ANC)",
+    "desc": "The Absolute Neutrophil Count (ANC) is frequently used to assess neutropenic fever in chemotherapy patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17709921",
+                "text": "Al-Gwaiz LA, Babay HH. The diagnostic value of absolute neutrophil count, band count and morphologic changes of neutrophils in predicting bacterial infections. Med Princ Pract. 2007;16(5):344–7. doi:10.1159/000104806."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10944139/",
+                "text": "Klastersky J, et. al. The Multinational Association for Supportive Care in Cancer risk index: A multinational scoring system for identifying low-risk febrile neutropenic cancer patients. J Clin Oncol. 2000 Aug;18(16):3038-51."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25559804",
+                "text": "Carmona-Bayonas A, et al. Prediction of serious complications in patients with seemingly stable febrile neutropenia: validation of theClinical Index of Stable Febrile Neutropenia in a prospective cohort of patients from the FINITE study. J Clin Oncol. 2015 Feb 10;33(5):465-71. doi: 10.1200/JCO.2014.57.2347. Epub 2015 Jan 5."
+            }
+        ],
+        "evidence": "<p>Absolute neutrophil count = 10 x WBC count x (%&nbsp;<abbr title=\"Polymorphonuclear neutrophils\">PMNs</abbr>&nbsp;+ % bands)</p>\n<p>Note: assumes WBC count in 1,000s (i.e., x 10&sup3; cells/&micro;L, also equivalent to x 10&sup3; cells/mm&sup3;).</p>\n<p>Example, normal patient:</p>\n<ul>\n<li>CBC shows WBC 9.2 (units are x 10&sup3; cells/&micro;L), 33% neutrophils, and 1% bands.</li>\n<li>ANC = 10 x 9.2 x (33 + 1)</li>\n<li>ANC = 10 x 9.2 x 34</li>\n<li>ANC = 3,128 cells/&micro;L &rarr; normal, no neutropenia</li>\n</ul>\n<p>Example, neutropenic patient:</p>\n<ul>\n<li>CBC shows WBC 1.0 (units are x 10&sup3; cells/&micro;L), 11% neutrophils, and 5% bands.</li>\n<li>ANC = 10 x&nbsp;1 x (11 + 5)</li>\n<li>ANC = 160 cells/&micro;L &rarr; severe neutropenia</li>\n</ul>\n<p></p>",
+        "facts": "<p>Neutropenia: ANC &lt;1,500 cells/mm<sup>3</sup></p>\n<ul>\n<li>Mild neutropenia: 1,000-1,500 cells/mm&sup3;</li>\n<li>Moderate neutropenia: 500-999 cells/mm&sup3;</li>\n<li>Severe neutropenia: &lt;500 cells/mm&sup3;</li>\n</ul>\n<p>Neutrophilia: ANC &gt;7,700 cells/mm<sup>3</sup></p>",
+        "estimation": [
+            {
+                "name": "% Bands",
+                "unit": "band",
+                "error_min": "-0.01",
+                "error_max": "100.01",
+                "warn_min": "0",
+                "warn_max": "30",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "% Neutrophils",
+                "unit": "neut",
+                "error_min": "-0.01",
+                "error_max": "100.01",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "White Blood Cell Count",
+                "unit": "wbc",
+                "error_min": "0.0001",
+                "error_max": "500",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10.7",
+                "normal_max_us": "10.7",
+                "normal_min_si": "3.7",
+                "normal_min_us": "3.7",
+                "units_si": "× 10⁹ cells/L",
+                "units_us": "× 10³ cells/µL"
+            }
+        ],
+        "primary_complains": [
+            "Fever"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy"
+        ],
+        "logic": "var calc_output = [];\n\nvar v = 10 * parseFloat(white_blood_cell_count) * (parseFloat(bands) +\n  parseFloat(neutrophils));\nvar msg;\n\nif (v < 500) {\n  msg = 'Severe';\n}\nif (v >= 500 && v < 1000) {\n  msg = 'Moderate';\n}\nif (v >= 1000 && v < 1500) {\n  msg = 'Mild';\n}\nif (v >= 1500 && v <= 7700) {\n  msg = 'Normal; no'\n}\nif (v > 7700) {\n  msg = 'Neutrophilia'\n}\n\nif (v <= 7700) {\n  calc_output.push({\n    name: 'mini',\n    value: v,\n    value_text: 'cells/µL',\n    message: msg + ' neutropenia'\n  });\n} else {\n  calc_output.push({\n    name: 'mini',\n    value: v,\n    value_text: 'cells/µL',\n    message: 'High ANC'\n  });\n}\ncalc_output.push({\n  name: '19_Absolute Neutrophil Count_result',\n  value: v,\n  value_text: 'cells/µL',\n  message: 'Absolute Neutrophil Count'\n});\nif (v < 1500) {\ncalc_output.push({\n  name: '19_Absolute Neutrophil Count_interpretation',\n  value: msg,\n  value_text: 'neutropenia',\n  message: ''\n});\n} else if (v <= 7700) {\n  calc_output.push({\n  name: '19_Absolute Neutrophil Count_interpretation',\n  value: 'Normal',\n  value_text: '',\n  message: 'No neutropenia'\n  });\n} else {\n  calc_output.push({\n    name: '19_Absolute Neutrophil Count_interpretation',\n    value: 'High ANC',\n    value_text: '',\n    message: msg\n  });\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>% neutrophils</p>",
+                "name": "neutrophils",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "neut"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>% bands</p>",
+                "name": "bands",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "band"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p><abbr title=\"White blood cell\">WBC</abbr> count</p>",
+                "name": "white_blood_cell_count",
+                "optional": false,
+                "tips_en": "Per 1000. Enter as 8.4, not 8400",
+                "type": "textbox",
+                "unit": "wbc"
+            }
+        ],
+        "can_search": [
+            "cancer",
+            "fever",
+            "chemo",
+            "anc"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Palliative Care/Hospice"
+        ]
+    }
+}

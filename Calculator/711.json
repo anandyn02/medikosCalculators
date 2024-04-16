@@ -1,0 +1,124 @@
+{
+    "id": "711",
+    "title": "Pediatric Ins and Outs",
+    "desc": "The Pediatric Ins and Outs (per kg and per hour) calculates fluid status in volume per weight & volume per weight per time, for pediatrics.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3460795/",
+                "text": "Meyers RS. Pediatric Fluid and Electrolyte Therapy. The Journal of Pediatric Pharmacology and Therapeutics : JPPT. 2009;14(4):204-211. doi:10.5863/1551-6776-14.4.204."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Often on inpatient pediatrics services, ins are recorded as mL/kg and outs are recorded as mL/kg/hour.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Volume",
+                "unit": "volume",
+                "error_min": "0",
+                "error_max": "20000",
+                "warn_min": "1",
+                "warn_max": "5000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL",
+                "units_us": "mL"
+            },
+            {
+                "name": "Hours",
+                "unit": "time",
+                "error_min": "0",
+                "error_max": "72",
+                "warn_min": "0.999",
+                "warn_max": "24.001",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "hours",
+                "units_us": "hours"
+            }
+        ],
+        "primary_complains": [
+            "Diarrhea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Dehydration",
+            "Gastroenteritis",
+            "Sepsis"
+        ],
+        "logic": "var calc_output=[]; \n\nvar weight = parseFloat(weight); \nvar vpw=volume/weight;\nvar vpwh=vpw/hours; \n\ncalc_output.push({\n    name:'mini',\n    value:vpw.toFixed(1),\n    value_text:'mL/kg',\n    message:'Volume Per Weight'\n}); \ncalc_output.push({\n    name:'85_Pediatric Ins and Outs_result (per weight)',\n    value:vpw.toFixed(1),\n    value_text:'mL/kg',\n    message:'Volume Per Weight'\n}); \ncalc_output.push({\n    name:'85_Pediatric Ins and Outs)_result (per hour)',\n    value:vpwh.toFixed(1),\n    value_text:'mL/kg/hour',\n    message:'Volume Per Weight Per Hour'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Volume to be calculated",
+                "name": "volume",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "volume"
+            },
+            {
+                "conditionality": null,
+                "default": 24,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Period of time",
+                "name": "hours",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "time"
+            }
+        ],
+        "can_search": [
+            "peds"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neonatal)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Nephrology",
+            "Pediatric Subspecialty",
+            "Pediatrics",
+            "Pulmonology"
+        ]
+    }
+}

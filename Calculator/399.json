@@ -1,0 +1,162 @@
+{
+    "id": "399",
+    "title": "SEDAN Score for Post-tPA Hemorrhage",
+    "desc": "The SEDAN score assesses symptomatic intracerebral hemorrhage (sICH) risk after thrombolysis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22522478",
+                "text": "Strbian D, Engelter S, Michel P, Meretoja A, Sekoranja L, Ahlhelm FJ, Mustanoja S, Kuzmanovic I, Sairanen T, Forss N, Cordier M, Lyrer P, Kaste M, Tatlisumak T.Symptomatic intracranial hemorrhage after stroke thrombolysis: the SEDAN score. Ann Neurol. 2012 May;71(5):634-41. doi: 10.1002/ana.23546."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25171393",
+                "text": "Van Hooff RJ, et al. Validation assessment of risk tools to predict outcome after thrombolytic therapy for acute ischemic stroke.Clin Neurol Neurosurg. 2014 Oct;125:189-93. doi: 10.1016/j.clineuro.2014.08.011. Epub 2014 Aug 15."
+            }
+        ],
+        "evidence": "<p>Addition of assigned points, as above.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: left;\">SEDAN Score</th>\n<th style=\"text-align: left;\">Risk of Symptomatic ICH</th>\n</tr>\n<tr>\n<td>0</td>\n<td>1.6%</td>\n</tr>\n<tr>\n<td>1</td>\n<td>3.3%</td>\n</tr>\n<tr>\n<td>2</td>\n<td>5.4%</td>\n</tr>\n<tr>\n<td>3</td>\n<td>8.8%</td>\n</tr>\n<tr>\n<td>4</td>\n<td>12.3%</td>\n</tr>\n<tr>\n<td>5</td>\n<td>16.9%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(gluc) + parseFloat(infarct) + parseFloat(ct) + parseFloat(age) + parseFloat(nihss);\nvar msg = '';\nvar mini_msg = '';\n\nif (u == 0) {\n    msg = '1.6% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '1.6% risk of symptomatic ICH.'\n} else if (u == 1) {\n    msg = '3.3% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '3.3% risk of symptomatic ICH.'\n} else if (u == 2) {\n    msg = '5.4% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '5.4% risk of symptomatic ICH.'\n} else if (u == 3) {\n    msg = '8.8% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '8.8% risk of symptomatic ICH.'\n} else if (u == 4) {\n    msg = '12.3% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '12.3% risk of symptomatic ICH.'\n} else if (u >= 5) {\n    msg = '16.9% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '16.9% risk of symptomatic ICH.'\n}\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '2039_Sedan Score_result',\n    value: u,\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Blood sugar",
+                "mdcalc_info_concept": null,
+                "name": "gluc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<145 mg/dL (8.1 mmol/L)",
+                        "value": 0
+                    },
+                    {
+                        "label": "145-216 mg/dL (8.1–12.0 mmol/L)",
+                        "value": 1
+                    },
+                    {
+                        "label": ">216 mg/dL (12.0 mmol/L)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Early infarct signs on initial CT",
+                "md_calc_info_concept": null,
+                "name": "infarct",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Hypoattenuation comprising <1/3 of the middle cerebral artery territory; obscuration of the lentiform nucleus or Sylvian fissure; loss of basal ganglion outline or insular ribbon; cortical sulcal effacement",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hyperdense cerebral artery sign on initial CT",
+                "md_calc_info_concept": null,
+                "name": "ct",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age > 75 years",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='715'>NIH Stroke Scale (NIHSS)</calculator> ≥ 10",
+                "md_calc_info_concept": null,
+                "name": "nihss",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "SEDAN",
+            "Stroke",
+            "CT scan",
+            "blood sugar",
+            "glucose",
+            "hyperdense",
+            "age",
+            "NIHSS",
+            "tpa"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

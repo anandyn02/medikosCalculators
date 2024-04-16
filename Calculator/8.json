@@ -1,0 +1,114 @@
+{
+    "id": "8",
+    "title": "Revised Schwartz Equation for Glomerular Filtration Rate (GFR) (2009)",
+    "desc": "The Schwartz Equation for Glomerular Filtration Rate (GFR) estimates GFR in pediatric patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19158356 ",
+                "text": "Schwartz GJ, Muñoz A, Schneider MF, et al. New equations to estimate GFR in children with CKD. J Am Soc Nephrol. 2009;20(3):629-37."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6726515 ",
+                "text": "Schwartz GJ, Feld LG, Langford DJ. A simple estimate of glomerular filtration rate in full-term infants during the first year of life. J Pediatr. 1984;104(6):849-54."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5500331/ ",
+                "text": "Zheng K, Gong M, Qin Y, et al. Validation of glomerular filtration rate-estimating equations in Chinese children. PLoS ONE. 2017;12(7):e0180565."
+            },
+            {
+                "href": "https://cjasn.asnjournals.org/content/4/11/1832.full ",
+                "text": "Schwartz GJ, Work DF. Measurement and estimation of GFR in children and adolescents. Clin J Am Soc Nephrol. 2009;4(11):1832-43."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><strong>Revised Schwartz equation:</strong></p>\n<p dir=\"ltr\">Estimated GFR, mL/min/1.73 m<sup>2</sup> = k &times; height, cm / serum creatinine, mg/dL</p>\n<p dir=\"ltr\">where k = 0.413</p>\n<p dir=\"ltr\">Note: the original version of the Schwartz equation used different values for k based on age and sex. For historical interest, they are listed here:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"173\"><col width=\"68\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Patient type</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>k</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Preterm and small for gestational age (SGA) infants &lt;1 year</p>\n</td>\n<td>\n<p dir=\"ltr\">0.33</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Term infant age &le;1 year</p>\n</td>\n<td>\n<p dir=\"ltr\">0.45</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Child (female or male)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.55</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Adolescent female</p>\n</td>\n<td>\n<p dir=\"ltr\">0.55</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Adolescent male</p>\n</td>\n<td>\n<p dir=\"ltr\">0.7</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-473e0796-2704-5c01-3c97-93ad5e2616fe\"></span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>GFR, mL/min/1.73 m&sup2;</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>CKD&nbsp;stage</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Severity</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;90</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">60-89</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">Mild</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">45-59</p>\n</td>\n<td>\n<p dir=\"ltr\">3a</p>\n</td>\n<td>\n<p dir=\"ltr\">Mild-moderate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">30-44</p>\n</td>\n<td>\n<p dir=\"ltr\">3b</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate-severe</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">15-29</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;15</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">End-stage</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>For reference, age-specific normal ranges for GFR are provided here. Standard CKD&nbsp;staging (e.g. for&nbsp;medication dose adjustments) is as above.</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"142\"><col width=\"139\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Age</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>GFR normal range, mL/min/1.73 m&sup2;</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4-28 days</p>\n</td>\n<td>\n<p dir=\"ltr\">26-68</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1-6 months</p>\n</td>\n<td>\n<p dir=\"ltr\">39-114</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-12 months</p>\n</td>\n<td>\n<p dir=\"ltr\">49-157</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">12-30 months</p>\n</td>\n<td>\n<p dir=\"ltr\">67-231</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">30 months-5 years</p>\n</td>\n<td>\n<p dir=\"ltr\">92-292</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5-10 years</p>\n</td>\n<td>\n<p dir=\"ltr\">79-251</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10-15 years</p>\n</td>\n<td>\n<p dir=\"ltr\">73-220</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">15-25 years</p>\n</td>\n<td>\n<p dir=\"ltr\">86-206</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>From <a href=\"https://pubmed.ncbi.nlm.nih.gov/2025537/\" target=\"_blank\" rel=\"noopener\">Heilbron et al 1991 </a>and <a href=\"https://jnm.snmjournals.org/content/50/supplement_2/1375\" target=\"_blank\" rel=\"noopener\">Du 2009</a>.</p>\n</div>\n<p><span id=\"docs-internal-guid-473e0796-2704-d54a-f7ce-c4b8c48851b8\"></span><span id=\"docs-internal-guid-473e0796-2704-d54a-f7ce-c4b8c48851b8\"><br></span></p>",
+        "estimation": [
+            {
+                "name": "Creatinine",
+                "unit": "cr",
+                "error_min": "0.01",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "88.4",
+                "normal_max_si": "115",
+                "normal_max_us": "1.3",
+                "normal_min_si": "62",
+                "normal_min_us": "0.7",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Height (peds)",
+                "unit": "ht_peds_htn",
+                "error_min": "10",
+                "error_max": "200",
+                "warn_min": "10",
+                "warn_max": "240",
+                "conversion": "2.54",
+                "normal_max_si": "203",
+                "normal_max_us": "80",
+                "normal_min_si": "63",
+                "normal_min_us": "25",
+                "units_si": "cm",
+                "units_us": "in"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Dysuria",
+            "Extremity Edema",
+            "Hematuria"
+        ],
+        "disease_treated": [
+            "Renal Failure"
+        ],
+        "logic": "var calc_output = [];\n\nif (UOMSYSTEM == true) {\n  ht = ht * 2.54\n  cr = cr\n}\nelse {\n  ht = ht\n  cr = cr / 88.4\n}\n\nvar gfr = 0.413 * parseFloat(ht) / cr\n\nvar stage, msg\n\nif (gfr.toFixed(0) >= 90) {\n  stage = 'Stage 1'\n  msg = 'Normal'\n}\nelse if (gfr.toFixed(0) >= 60 && gfr.toFixed(0) <= 89) {\n  stage = 'Stage 2'\n  msg = 'Mild CKD'\n}\nelse if (gfr.toFixed(0) >= 45 && gfr.toFixed(0) <= 59) {\n  stage = 'Stage 3a'\n  msg = 'Mild-moderate CKD'\n}\nelse if (gfr.toFixed(0) >= 30 && gfr.toFixed(0) <= 44) {\n  stage = 'Stage 3b'\n  msg = 'Moderate-severe CKD'\n}\nelse if (gfr.toFixed(0) >= 15 && gfr.toFixed(0) <= 29) {\n  stage = 'Stage 4'\n  msg = 'Severe CKD'\n}\nelse if (gfr.toFixed(0) < 15) {\n  stage = 'Stage 5'\n  msg = 'End-stage renal disease'\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: gfr.toFixed(0),\n   value_text: 'mL/min/1.73 m²',\n   message: ''\n});\ncalc_output.push({\n   name: '10008_Revised Schwartz Equation (2009)_result (eGFR)',\n   value: gfr.toFixed(0),\n   value_text: 'mL/min/1.73 m²',\n   message: 'Estimated GFR'\n});\ncalc_output.push({\n   name: '10008_Revised Schwartz Equation (2009)_result (stage)',\n   value: stage,\n   value_text: '',\n   message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Height",
+                "name": "ht",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht_peds_htn"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Serum creatinine",
+                "name": "cr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cr"
+            }
+        ],
+        "can_search": [
+            "schwarz",
+            "shwarz",
+            "schwartz formula",
+            "proteinuria",
+            "oliguria",
+            "creatinine",
+            "egfr",
+            "estimated gfr"
+        ],
+        "specialty": [
+            "Critical Care (Pediatric)",
+            "Nephrology",
+            "Pediatric Subspecialty",
+            "Pediatrics",
+            "Pharmacy"
+        ]
+    }
+}

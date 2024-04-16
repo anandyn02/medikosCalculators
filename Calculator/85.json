@@ -1,0 +1,257 @@
+{
+    "id": "85",
+    "title": "PROMISE Score for Malignant Pleural Effusion",
+    "desc": "The PROMISE Score for Malignant Pleural Effusion predicts 3-month mortality in patients with malignant pleural effusion.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(18)30294-8/fulltext",
+                "text": "Psallidas I, Kanellakis NI, Gerry S, et al. Development and validation of response markers to predict survival and pleurodesis success in patients with malignant pleural effusion (PROMISE): a multicohort analysis. Lancet Oncol. 2018;19(7):930-939."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points.&nbsp;TIMP1 is required to calculate biological PROMISE Score.</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"152\" /><col width=\"85\" /><col width=\"108\" /><col width=\"103\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong></strong></p>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n<p dir=\"ltr\"><strong></strong></p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Clinical PROMISE Score&nbsp;</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Biological PROMISE Score (with TIMP1)</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Previous chemotherapy*</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Previous radiotherapy*</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Hemoglobin, g/dL</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;16</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">14 to &lt;16</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">12 to &lt;14</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10 to &lt;12</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;10</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Serum white blood cell count, 10⁹ cells/L</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;4</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4 to &lt;6.3</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6.3 to &lt;10</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10 to &lt;15.8</p>\n</td>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;15.8</p>\n</td>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n<td>\n<p dir=\"ltr\">9</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">C-reactive protein, IU/L</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;3</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3 to &lt;10</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10 to &lt;32</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">32 to &lt;100</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;100</p>\n</td>\n<td>\n<p dir=\"ltr\">11</p>\n</td>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">ECOG performance status</p>\n</td>\n<td>\n<p dir=\"ltr\">0-1</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2-4</p>\n</td>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Cancer type</p>\n</td>\n<td>\n<p dir=\"ltr\">Mesothelioma</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">All other types of cancer</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Lung</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">TIMP1**, ng/mg protein</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;40</p>\n</td>\n<td>\n<p dir=\"ltr\">-</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">40 to &lt;160</p>\n</td>\n<td>\n<p dir=\"ltr\">-</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;160</p>\n</td>\n<td>\n<p dir=\"ltr\">-</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*At any time.</p>\n<p dir=\"ltr\">**Optional, for calculating Biological PROMISE Score.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Clinical PROMISE Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Biological PROMISE Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>3-month mortality</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-20</p>\n</td>\n<td>\n<p dir=\"ltr\">0-20</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;25%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">21-27</p>\n</td>\n<td>\n<p dir=\"ltr\">21-28</p>\n</td>\n<td>\n<p dir=\"ltr\">25 to &lt;50%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">28-35</p>\n</td>\n<td>\n<p dir=\"ltr\">29-37</p>\n</td>\n<td>\n<p dir=\"ltr\">50 to &lt;75%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;35</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;37</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;75%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-6695fb06-7fff-8071-1c63-4914ebcf2eeb\"></span><span id=\"docs-internal-guid-6695fb06-7fff-8071-1c63-4914ebcf2eeb\"><br /></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Cancer",
+            "Chest Pain",
+            "Cough",
+            "Fatigue",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Pleural Effusion"
+        ],
+        "logic": "var calc_output = [];\n\nvar cancer = parseFloat(cancer);\nvar ecog = parseFloat(ecog);\nvar crp = parseFloat(crp);\nvar wbc = parseFloat(wbc);\nvar hb = parseFloat(hb);\nvar radio = parseFloat(radio);\nvar chemo = parseFloat(chemo);\n\nif (timp == -1) {\n  if (chemo == 3) {\n    chemo = 4;\n  }\n  if (wbc == 9) {\n    wbc = 10;\n  }\n  if (crp == 10) {\n    crp = 11;\n  }\n  if (cancer == 5) {\n    cancer = 4\n  }\n  if (cancer == 6) {\n    cancer = 5\n  }\n  \n  var score = cancer + ecog + crp + wbc + hb + radio + chemo;\n  var msg = 'Clinical PROMISE Score';\n} else {\n\n  var score = cancer + ecog + crp + wbc + hb + radio + chemo + timp;\n  var msg = 'Biological PROMISE Score';\n}\n\nvar risk1;\n\nif (timp == -1) {\n  if (score >= 0 && score <= 20) {\n  \trisk1 = '<25';\n  }\n  else if (score >= 21 && score <= 27) { \n  \trisk1 = '25 to <50';\n  }\n  else if (score >= 28 && score <= 35) { \n  \trisk1 = '50 to <75';\n  }\n  else if (score > 35) { \n  \trisk1 = '≥75';\n  }\n} else {\n  if (score >= 0 && score <= 20) {\n      risk1 = '<25';\n  }\n  else if (score >= 21 && score <= 28) { \n      risk1 = '25 to <50';\n  }\n  else if (score >= 29 && score <= 37) { \n      risk1 = '50 to <75';\n  }\n  else if (score > 37) { \n      risk1 = '≥75';\n  }\n}\n\n//results\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk1 + '% risk of mortality at 3 months'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: 'Score',\n    value: risk1,\n    value_text: '%',\n    message: 'Risk of mortality at 3 months'  \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Previous chemotherapy",
+                "name": "chemo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "At any time",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Previous radiotherapy",
+                "name": "radio",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "At any time",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemoglobin, g/dL",
+                "name": "hb",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥16",
+                        "value": 0
+                    },
+                    {
+                        "label": "14 to <16",
+                        "value": 1
+                    },
+                    {
+                        "label": "12 to <14",
+                        "value": 2
+                    },
+                    {
+                        "label": "10 to <12",
+                        "value": 3
+                    },
+                    {
+                        "label": "<10",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Serum WBC count, 10⁹ cells/L",
+                "name": "wbc",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<4",
+                        "value": 0
+                    },
+                    {
+                        "label": "4 to <6.3",
+                        "value": 2
+                    },
+                    {
+                        "label": "6.3 to <10",
+                        "value": 4
+                    },
+                    {
+                        "label": "10 to <15.8",
+                        "value": 7
+                    },
+                    {
+                        "label": "≥15.8",
+                        "value": 9
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "C-reactive protein, IU/L",
+                "name": "crp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<3",
+                        "value": 0
+                    },
+                    {
+                        "label": "3 to <10",
+                        "value": 3
+                    },
+                    {
+                        "label": "10 to <32",
+                        "value": 5
+                    },
+                    {
+                        "label": "32 to <100",
+                        "value": 8
+                    },
+                    {
+                        "label": "≥100",
+                        "value": 10
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id = '3170'>ECOG</calculator> performance status",
+                "name": "ecog",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0-1",
+                        "value": 0
+                    },
+                    {
+                        "label": "2-4",
+                        "value": 7
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cancer type",
+                "name": "cancer",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Mesothelioma",
+                        "value": 0
+                    },
+                    {
+                        "label": "All other types of cancer",
+                        "value": 5
+                    },
+                    {
+                        "label": "Lung",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title = 'Tissue inhibitor of metalloproteinases 1'>TIMP1</abbr>, ng/mg protein",
+                "name": "timp",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Unknown",
+                        "value": -1
+                    },
+                    {
+                        "label": "<40",
+                        "value": 0
+                    },
+                    {
+                        "label": "40 to <160",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥160",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Optional, for calculating the Biological PROMISE Score",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "MPE",
+            "mpe survival",
+            "mpe mortality",
+            "pleurodesis"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

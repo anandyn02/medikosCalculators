@@ -1,0 +1,106 @@
+{
+    "id": "454",
+    "title": "HOMA-IR (Homeostatic Model Assessment for Insulin Resistance)",
+    "desc": "The HOMA-IR (Homeostatic Model Assessment for Insulin Resistance) approximates insulin resistance.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3899825",
+                "text": "Matthews DR, Hosker JP, Rudenski AS, Naylor BA, Treacher DF, Turner RC. Homeostasis model assessment: insulin resistance and beta-cell function from fasting plasma glucose and insulin concentrations in man. Diabetologia. 1985 Jul;28(7):412-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.scielo.br/scielo.php?script=sci_arttext&pid=S0004-28032010000200009&lng=en&nrm=iso&tlng=en",
+                "text": "Salgado AL, Carvalho Ld, Oliveira AC, Santos VN, Vieira JG, Parise ER. Insulin resistance index (HOMA-IR) in the differentiation of patients with non-alcoholic fatty liver disease and healthy individuals. Arq Gastroenterol. 2010 Apr-Jun;47(2):165-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24530467",
+                "text": "Tohidi M, Ghasemi A, Hadaegh F, Derakhshan A, Chary A, Azizi F. Clin Biochem. Age- and sex-specific reference values for fasting serum insulin levels and insulin resistance/sensitivity indices in healthy Iranian adults: Tehran Lipid and Glucose Study. 2014 Apr;47(6):432-8. doi: 10.1016/j.clinbiochem.2014.02.007. Epub 2014 Feb 14."
+            }
+        ],
+        "evidence": "<p>Score = (Fasting insulin, uIU/mL)*(Fasting glucose, mg/dL) / 405</p>",
+        "facts": "<p>The HOMA-IR is used to measure severity of insulin resistance, though normal insulin resistance varies depending on the population. Common reference levels for HOMA-IR insulin resistance range from 0.7 - 2.</p>",
+        "estimation": [
+            {
+                "name": "Glucose",
+                "unit": "glu",
+                "error_min": "1",
+                "error_max": "1600",
+                "warn_min": "50",
+                "warn_max": "1000",
+                "conversion": "0.0555",
+                "normal_max_si": "5.8",
+                "normal_max_us": "105",
+                "normal_min_si": "3.9",
+                "normal_min_us": "70",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Insulin",
+                "unit": "Insulin",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "1",
+                "warn_max": "50",
+                "conversion": "6",
+                "normal_max_si": "150",
+                "normal_max_us": "25",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "pmol/L",
+                "units_us": "μIU/mL"
+            }
+        ],
+        "primary_complains": [
+            "Dizziness"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus"
+        ],
+        "logic": "var calc_output = [];\n\nif (UOMSYSTEM == true) { // US units\n    var glucose = parseFloat(glucose);\n    var insulin = parseFloat(insulin);\n}\n\nif (UOMSYSTEM == false) { // SI units so convert to US units\n    var glucose = parseFloat(glucose) / 0.0555;\n    var insulin = parseFloat(insulin)/6\n}\n\nvar u = (insulin * glucose);\nv = u / 405;\n\nmsg = 'Several studies suggest a cut-off of >2 for any insulin resistance, but \"normal\" values appear to vary greatly by population.';\nmini_msg = '>2 points suggest insulin resistance';\n\n    calc_output.push({\n        name: 'mini',\n        value: v.toFixed(1),\n        value_text: '',\n        message: mini_msg\n    });\n    calc_output.push({\n        name: '3120_HOMA-IR_result',\n        value: v.toFixed(1),\n        value_text: '',\n        message: msg\n    });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Insulin</p>",
+                "name": "insulin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "Insulin"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Glucose</p>",
+                "name": "glucose",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "glu"
+            }
+        ],
+        "can_search": [
+            "HOMA",
+            "IR",
+            "insulin",
+            "beta cells",
+            "insulin resistence",
+            "Diabetes"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Gastroenterology",
+            "Hepatology",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

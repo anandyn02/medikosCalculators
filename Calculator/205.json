@@ -1,0 +1,146 @@
+{
+    "id": "205",
+    "title": "Rome IV Diagnostic Criteria for Centrally Mediated Abdominal Pain Syndrome (CAPS)",
+    "desc": "The Rome IV Criteria for Centrally Mediated Abdominal Pain Syndrome (CAPS) provides criteria for diagnosis of centrally mediated abdominal pain syndrome (CAPS).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144628",
+                "text": "Keefer L, Drossman DA, Guthrie E, et al. Centrally Mediated Disorders of Gastrointestinal Pain. Gastroenterology. 2016;1408-1419."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/30950110",
+                "text": "Kilgallon E, Vasant DH, Green D, et al. Chronic continuous abdominal pain: evaluation of diagnostic features, iatrogenesis and drug treatments in a cohort of 103 patients. Aliment Pharmacol Ther. 2019;49(10):1282-1292."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for centrally mediated abdominal pain syndrome,* patient must have all of the following (for 3 months prior with symptom onset &ge;6 months ago):</p>\n<ol>\n<li>Continuous or nearly continuous abdominal pain.</li>\n<li>No or only occasional relationship of pain with physiological events (e.g. eating, defecation, or menses).**</li>\n<li>Pain limits some aspect of daily functioning.***</li>\n<li>The pain is not feigned.</li>\n<li>Pain is not explained by another structural or functional gastrointestinal disorder, or other medical condition.</li>\n</ol>\n<p>*CAPS is typically associated with psychiatric comorbidity, but there is no specific profile that can be used for diagnosis.</p>\n<p>**Some degree of gastrointestinal dysfunction may be present.</p>\n<p>***Daily function could include impairments in work, intimacy, social/leisure, family life, and caregiving for self or others.</p>\n<p></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output = [];\n\nvar one = parseFloat(one);\nvar two = parseFloat(two);\nvar three = parseFloat(three);\nvar four = parseFloat(four);\nvar five = parseFloat(five);\n\n\nvar total = one + two + three + four + five;\n\nvar diag;\n\nvar msg = 'Diagnosis for  centrally mediated abdominal pain syndrome as per Rome IV criteria';\nvar minimsg = 'Diagnosis for  centrally mediated abdominal pain syndrome';\n\n\nif (total == 5) {\n  diag = 'Positive';\n} else {\n  diag = 'Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for CAPS',\n    value: diag,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Continuous or nearly continuous abdominal pain",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No or only occasional relationship of pain with physiological events (e.g. eating, defecation, or menses)",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Some degree of gastrointestinal dysfunction may be present",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pain limits some aspect of daily functioning",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Daily function could include impairments in work, intimacy, social/leisure, family life, and caregiving for self or others",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "The pain is not feigned",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pain is not explained by another structural or functional gastrointestinal disorder, or other medical condition",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Centrally Mediated Abdominal Pain Syndrome (CAPS), Rome IV for Centrally Mediated Abdominal Pain Syndrome, rome iv caps, rome iv for caps, rome for caps, rome caps, caps, centrally mediated abdominal pain syndrome, rome iv centrally mediated abdominal pain syndrome, abdominal pain, abdominal pain syndrome, caps rome, caps rome iv"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

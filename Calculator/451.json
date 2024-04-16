@@ -1,0 +1,119 @@
+{
+    "id": "451",
+    "title": "Calcium Correction for Hypoalbuminemia",
+    "desc": "The Calcium Correction for Hypoalbuminemia calculates a corrected calcium level for patients with hypoalbuminemia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1587636/",
+                "text": "Payne RB, Little AJ, Williams RB, Milner JR. Interpretation of Serum Calcium in Patients with Abnormal Serum Proteins. British Medical Journal. 1973;4(5893):643-646"
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Corrected Calcium = (0.8 * (Normal Albumin - Pt's Albumin)) + Serum Ca</p>\n<p><em>Note:</em>&nbsp;formula assumes albumin units in<strong> g/dL</strong>.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Calcium",
+                "unit": "ca",
+                "error_min": "4",
+                "error_max": "18",
+                "warn_min": "6",
+                "warn_max": "13",
+                "conversion": "0.25",
+                "normal_max_si": "2.625",
+                "normal_max_us": "10.5",
+                "normal_min_si": "2.25",
+                "normal_min_us": "9",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "AMS",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Cirrhosis",
+            "Hepatitis",
+            "Hypocalcemia"
+        ],
+        "logic": "var calc_output = [];\n\nvar webLanguage = webLanguage || \"english\"\n\n\nif (UOMSYSTEM == true) { // US units\n    var normal_albumin = parseFloat(normal_albumin);\n    var albumin = parseFloat(albumin);\n    var calcium = parseFloat(calcium);\n  \t\n}\n\nif (UOMSYSTEM == false) { // SI units so convert to US units\n    var normal_albumin = parseFloat(normal_albumin) / 10;\n    var albumin = parseFloat(albumin) / 10;\n    var calcium = parseFloat(calcium) / 0.25;\n  \t\n}\n\n// units are now all in US units, so only one equation is needed\n\nvar u, units;\nu = (0.8 * (normal_albumin - albumin) + calcium);\nunits = '';\n\nif (UOMSYSTEM == true) { // US units, u already in US, no change\n    units = 'mg/dL';\n} else if (UOMSYSTEM == false) { // need US units, convert u and units unit\n    u = u * 0.25;\n    units = 'mmol/L';\n}\n\n\n\nvar message = \"\";\nif (webLanguage == \"webProduction-chinese-traditional\") {\n\n    message = 'æ ¡æ­£éé£é¢å­';\n\n} else if (webLanguage == \"webProduction-chinese-simplified\") {\n\n    message = 'æ ¡æ­£è¿éç¦»å­';\n\n} else if (webLanguage == \"webProduction-spanish\") {\n\n    message = 'Calcio corregido';\n\n} else {\n\n    message = 'Corrected Calcium';\n}\n\nif (UOMSYSTEM == true) {\n  \tvar siconversion = u * 0.25;\n\tvar conversion_text = 'Equivalent to ' + siconversion.toFixed(1) + ' mmol/L';\n}\n\nif (UOMSYSTEM == false) {\n\tvar usconversion = u * 4;\n\tvar conversion_text = 'Equivalent to ' + usconversion.toFixed(1) + ' mg/dL';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(1),\n    value_text: units,\n    message: message\n});\ncalc_output.push({\n    name: '31_Ca Correction for Albumin_result',\n    value: u.toFixed(1),\n    value_text: units,\n    message: message  + '<br/><br/>' + conversion_text\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Calcium</p>",
+                "name": "calcium",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ca"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Albumin</p>",
+                "name": "albumin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Normal albumin: 4 g/dL or 40 g/L</p>",
+                "name": "normal_albumin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            }
+        ],
+        "can_search": [
+            "lytes",
+            "electrolytes",
+            "albumin",
+            "ca correction",
+            "ca corrected"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Family Practice",
+            "Geriatrics",
+            "Hematology and Oncology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatrics",
+            "Primary Care"
+        ]
+    }
+}

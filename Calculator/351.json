@@ -1,0 +1,263 @@
+{
+    "id": "351",
+    "title": "Duke Criteria for Infective Endocarditis",
+    "desc": "The Duke Criteria for Infective Endocarditis provides standardized diagnostic criteria for endocarditis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8154507",
+                "text": "Durack DT, Lukes AS, Bright DK. New criteria for diagnosis of infective endocarditis: utilization of specific echocardiographic findings. Duke Endocarditis Service. Am J Med. 1994 Mar;96(3):200-9. PubMed PMID: 8154507."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10770721",
+                "text": "Li JS, Sexton DJ, Mick N, Nettles R, Fowler VG Jr, Ryan T, Bashore T, Corey GR. Proposed modifications to the Duke criteria for the diagnosis of infective endocarditis. Clin Infect Dis. 2000 Apr;30(4):633-8. Epub 2000 Apr 3. PubMed PMID: 10770721."
+            }
+        ],
+        "evidence": "<p>Selection of the appropriate criteria.</p>",
+        "facts": "<p>These are technically the &ldquo;modified&rdquo; or &ldquo;revised&rdquo; Duke Criteria, which were updated in 2000. The updates included:</p>\n<ul>\n<li>&ldquo;Possible&rdquo; IE modified to include patients having 1 major and 1 minor criterion, or 3 minor criteria.</li>\n<li>Nosocomially acquired<em> Staphylococcus aureus</em> bacteremia &nbsp;also included.</li>\n<li><em>Coxiella burnetii</em> criteria mentioned above included.</li>\n<li>Trans-esophageal echocardiography (TEE) &nbsp;recommended for patients with prosthetic valves, rated at least &ldquo;possible&rdquo; by clinical criteria, or complicated IE (paravalvular abcess); Trans-thoracic echocardiography (TTE) in other patients.</li>\n<li>Echocardiographic minor criteria eliminated.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Endocarditis"
+        ],
+        "logic": "var calc_output = [];\nvar path = 0;\nvar major = 0;\nvar minor = 0;\nvar msg = '';\nvar value_txt;\npath = parseFloat(microorganisms) + parseFloat(lesions);\nmajor = parseFloat(endocarditis) + parseFloat(evidence_endocardial);\nminor = parseFloat(heart_condition_injection_drug) + parseFloat(fever) + parseFloat(vascular) + parseFloat(immunologic) + parseFloat(microbiological);\nif (path > 0) { \n\tmsg += 'This patient meets pathologic criteria for definite infective endocarditis.';\n    value_txt = 'Definite' \n} else if ((major > 1) || (major > 0 && minor > 2) || (minor > 4)) { \n\tmsg += 'This patient meets clinical criteria for definite infective endocarditis.';\n    value_txt = 'Definite' \n} else if ((major > 0 && minor > 0) || (minor > 2)) { \n\tmsg += 'This patient meets clinical criteria for possible infective endocarditis.';\n    value_txt = 'Possible' \n} else { \n\tmsg += 'Endocarditis is typically rejected as a diagnosis when: (1) Firm alternate diagnosis explaining evidence of infective endocarditis; (2) Resolution of infective endocarditis syndrome with antibiotic therapy for \\u22654 days; (3) No pathologic evidence of infective endocarditis at surgery or autopsy, with antibiotic therapy for \\u22644 days; (4) Does not meet criteria for possible infective endocarditis, as above.';\n    value_txt = 'Rejected' }\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: value_txt, \n\tvalue_text: '', \n\tmessage: 'See Next Steps for full criteria.' \n});\ncalc_output.push({ \n\tname: '1731_Duke Criteria for IE_result', \n\tvalue: value_txt, \n\tvalue_text: '', \n\tmessage: 'See Next Steps for full criteria.'\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Pathological Criteria",
+                "subheading_instructions": "If either is positive, diagnosis is definite (see Evidence for exceptions)",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Microorganisms in a vegetation",
+                "md_calc_info_concept": null,
+                "name": "microorganisms",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Demonstrated by culture or histologic examination of a vegetation, a vegetation that has embolized, or an intracardiac abscess specimen.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pathologic Lesions",
+                "md_calc_info_concept": null,
+                "name": "lesions",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Vegetation or intracardiac abscess confirmed by histologic examination showing active endocarditis.",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Major Clinical Criteria",
+                "subheading_instructions": "If both are positive, diagnosis is definite (see Evidence for exceptions)",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Blood cultures positive for endocarditis",
+                "md_calc_info_concept": null,
+                "name": "endocarditis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Typical microorganisms consistent with IE from 2 separate blood cultures, microorganisms consistent with IE from persistently positive blood cultures, single positive blood culture for Coxiella burnetii or antiphase I IgG antibody titer >1:800.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Evidence of endocardial involvement",
+                "md_calc_info_concept": null,
+                "name": "evidence_endocardial",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Echocardiogram positive for IE, abscess, new partial dehiscence of prosthetic valve, new valvular regurgitation. Note: Worsening or changing of pre-existing murmur NOT sufficient.",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Minor Clinical Criteria",
+                "subheading_instructions": "If all are positive, diagnosis is definite (see Evidence for exceptions)",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Predisposing heart condition or injection drug use",
+                "md_calc_info_concept": null,
+                "name": "heart_condition_injection_drug",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Fever",
+                "md_calc_info_concept": null,
+                "name": "fever",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Vascular phenomena",
+                "md_calc_info_concept": null,
+                "name": "vascular",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Major arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, and Janeway’s lesions.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Immunologic phenomena",
+                "md_calc_info_concept": null,
+                "name": "immunologic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Glomerulonephritis, Osler’s nodes, Roth’s spots, and rheumatoid factor.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Microbiological evidence",
+                "md_calc_info_concept": null,
+                "name": "microbiological",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Positive blood culture but does not meet a major criterion as noted above or serological evidence of active infection with organism consistent with IE.",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ie",
+            "murmur"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine"
+        ]
+    }
+}

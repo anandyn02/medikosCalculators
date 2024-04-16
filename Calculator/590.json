@@ -1,0 +1,179 @@
+{
+    "id": "590",
+    "title": "HEART Pathway for Early Discharge in Acute Chest Pain",
+    "desc": "The HEART Pathway for Early Discharge in Acute Chest Pain identifies emergency department patients with acute chest pain for early discharge.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25737484",
+                "text": "Mahler SA, Riley RF, Hiestand BC, et al. The HEART Pathway randomized trial: identifying emergency department patients with acute chest pain for early discharge. Circ Cardiovasc Qual Outcomes. 2015;8(2):195-203."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://annals.org/aim/article/2622872/effect-using-heart-score-patients-chest-pain-emergency-department-stepped  ",
+                "text": "Poldervaart JM, Reitsma JB, Backus BE, et al. Effect of Using the HEART Score in Patients With Chest Pain in the Emergency Department: A Stepped-Wedge, Cluster Randomized Trial. Ann Intern Med. 2017;"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27765481 ",
+                "text": "Riley RF, Miller CD, Russell GB, et al. Cost analysis of the History, ECG, Age, Risk factors, and initial Troponin (HEART) Pathway randomized control trial. Am J Emerg Med. 2017;35(1):77-81."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28087371 ",
+                "text": "Mahler SA, Stopyra JP, Apple FS, et al. Use of the HEART Pathway with high sensitivity cardiac troponins: A secondary analysis. Clin Biochem. 2017;"
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n<td>\n<p><strong>2 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>History</strong><strong><sup>1</sup></strong></p>\n</td>\n<td>\n<p>Slightly suspicious</p>\n</td>\n<td>\n<p>Moderately suspicious</p>\n</td>\n<td>\n<p>Highly suspicious</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>EKG</strong></p>\n</td>\n<td>\n<p>Normal</p>\n</td>\n<td>\n<p>Non-specific repolarization disturbance<sup>2</sup></p>\n</td>\n<td>\n<p>Significant ST depression<sup>3</sup></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Age (years)</strong></p>\n</td>\n<td>\n<p>&lt;45</p>\n</td>\n<td>\n<p>45-64</p>\n</td>\n<td>\n<p>&ge;65</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Risk factors</strong><strong><sup>4</sup></strong></p>\n</td>\n<td>\n<p>No known risk factors</p>\n</td>\n<td>\n<p>1-2 risk factors</p>\n</td>\n<td>\n<p>&ge;3 risk factors or history of atherosclerotic disease</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Initial troponin</strong><strong><sup>5</sup></strong></p>\n</td>\n<td>\n<p>&le;normal limit</p>\n</td>\n<td>\n<p>1-3x normal limit</p>\n</td>\n<td>\n<p>&gt;3x normal limit</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<ol>\n<li>e.g. Retrosternal pain, pressure, radiation to jaw/left shoulder/arms, duration 5&ndash;15 min, initiated by exercise/cold/emotion, perspiration, nausea/vomiting, reaction on nitrates within mins, patient recognizes symptoms.&nbsp;Low risk features of chest pain include: well localized, sharp, non-exertional, no diaphoresis, no nausea or vomiting, and reproducible with palpation.</li>\n<li>LBBB, typical changes suggesting LVH, repolarization disorders suggesting digoxin, unchanged known repolarization disorders.</li>\n<li>Significant ST-segment depression or elevation without LBBB, LVH, or digoxin.</li>\n<li>HTN, hypercholesterolemia, DM, obesity (BMI &gt;30 kg/m&sup2;), smoking (current, or smoking cessation &le;3 mo), positive family history (parent or sibling with CVD before age 65).</li>\n<li>Use local assays and corresponding cutoffs.</li>\n</ol>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>HEART Score</strong></p>\n</td>\n<td>\n<p><strong>Initial troponin</strong></p>\n</td>\n<td>\n<p><strong>Risk</strong></p>\n</td>\n<td>\n<p><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>&le;3</p>\n</td>\n<td>\n<p>0 points</p>\n</td>\n<td>\n<p>Low (0.9-1.7% 30-day MACE)</p>\n</td>\n<td>\n<p>Repeat troponin at 3 hours and if negative, discharge home with outpatient follow-up.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>1-2 points</p>\n</td>\n<td>\n<p>High (12-65% 30-day MACE)</p>\n</td>\n<td>\n<p>Cardiology consultation and admission recommended. Further testing indicated.</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>&ge;4</p>\n</td>\n<td>\n<p>0 points</p>\n</td>\n<td>\n<p>High (12-65% 30-day MACE)</p>\n</td>\n<td>\n<p>Admit to hospital or observation. Further testing indicated.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>1-2 points</p>\n</td>\n<td>\n<p>High (12-65% 30-day MACE)</p>\n</td>\n<td>\n<p>Cardiology consultation and admission recommended. Further testing indicated.</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain"
+        ],
+        "disease_treated": [
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\n\n\n\n//addition of points\nvar v = parseInt(history) + parseInt(ekg) + parseInt(age) + parseInt(risk_factors) + parseInt(troponin);\n\n\n//interpretation\nvar risk, risk2, rec;\nif (v < 4) { \n\tif(troponin == 0){\n\t\trisk = 'Low';\n\t\trisk2 = '0.9-1.7% 30-day MACE';\n    \trec = 'Repeat troponin at 3 hours and if negative, discharge home with outpatient follow-up.'; \n    }else if(0 < troponin < 3){\n    \trisk = 'High';\n    \trisk2 = '12-65% 30-day MACE';\n    \trec = 'Cardiology consultation and admission recommended. Further testing indicated.';\n    }\n    \n}\nif (v > 3) { \n\trisk = 'High';\n    risk2 = '12-65% 30-day MACE';\n    if(troponin == 0){\n    \trec = 'Admit to hospital or observation. Further testing indicated.'; \n    }else if(0 < troponin < 3){\n    \trec = 'Cardiology consultation and admission recommended. Further testing indicated.';\n    }\n}\n\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: risk, \n\tvalue_text: 'risk', \n\tmessage: risk2\n});\ncalc_output.push({ \n\tname: 'HEART Score', \n\tvalue: v, \n\tvalue_text: 'points', \n\tmessage: 'HEART Pathway Score'\n});\ncalc_output.push({ \n\tname: 'Risk', \n\tvalue: risk, \n\tvalue_text: 'risk', \n\tmessage: risk2 + '<br/><br/>' + rec\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History",
+                "mdcalc_info_concept": null,
+                "name": "history",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Slightly suspicious",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderately suspicious",
+                        "value": 1
+                    },
+                    {
+                        "label": "Highly suspicious",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "EKG",
+                "mdcalc_info_concept": null,
+                "name": "ekg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Non-specific repolarization disturbance",
+                        "value": 1
+                    },
+                    {
+                        "label": "Significant ST depression",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "1 point: No ST depression but LBBB, LVH, repolarization changes (ex: digoxin); 2 points: ST depression/elevation not due to LBBB, LVH, or digoxin",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<45",
+                        "value": 0
+                    },
+                    {
+                        "label": "45-64",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥65",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Risk factors",
+                "mdcalc_info_concept": null,
+                "name": "risk_factors",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No known risk factors",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-2 risk factors",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥3 risk factors or history of atherosclerotic disease",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Risk factors: HTN, hypercholesterolemia, DM, obesity (BMI >30 kg/m<sup>2</sup>), smoking (current, or smoking cessation ≤3 mo), positive family history (parent or sibling with CVD before age 65); atherosclerotic disease: prior MI, PCI/CABG, CVA/TIA, or peripheral arterial disease",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Initial troponin",
+                "mdcalc_info_concept": null,
+                "name": "troponin",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤normal limit",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-3x normal limit",
+                        "value": 1
+                    },
+                    {
+                        "label": ">3x normal limit",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Use local assays and corresponding cutoffs",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Heart",
+            "heart score",
+            "heart path",
+            "rule out"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine"
+        ]
+    }
+}

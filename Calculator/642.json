@@ -1,0 +1,167 @@
+{
+    "id": "642",
+    "title": "Hypoglycemia Risk Score",
+    "desc": "The Hypoglycemia Risk Score predicts 12-month risk of hypoglycemic episodes in T2DM patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2649265",
+                "text": "Karter AJ, Warton EM, Lipska KJ, et al. Development and Validation of a Tool to Identify Patients With Type 2 Diabetes at High Risk of Hypoglycemia-Related Emergency Department or Hospital Use. JAMA Intern Med. 2017;177(10):1461-1470."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Select option for each input and see Facts &amp; Figures for interpretation:</p> <table> <tbody> <tr> <td> <p><strong>Input</strong></p> </td> <td colspan=\"4\"> <p><strong>Options</strong></p> </td> </tr> <tr> <td> <p>Hypoglycemia admissions*</p> </td> <td> <p>0</p> </td> <td colspan=\"2\"> <p>1-2</p> </td> <td> <p>≥3</p> </td> </tr> <tr> <td> <p>ED visits, last 12 months**</p> </td> <td> <p>&lt;2</p> </td> <td colspan=\"2\"> <p>≥2</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Insulin use</p> </td> <td> <p>No</p> </td> <td colspan=\"2\"> <p>Yes</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Sulfonylurea use</p> </td> <td> <p>No</p> </td> <td colspan=\"2\"> <p>Yes</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Severe or end-stage kidney disease (eGFR ≤29 by <calculator id=\"3939\">CKD-EPI Creatinine</calculator>)</p> </td> <td> <p>No</p> </td> <td colspan=\"2\"> <p>Yes</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Age</p> </td> <td> <p>&lt;77 years</p> </td> <td colspan=\"2\"> <p>≥77 years</p> </td> <td> <p>--</p> </td> </tr> </tbody> </table> <p>*ED visit or hospital admission for hypoglycemia at any time.</p> <p>**For any reason.</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;<strong>Variables</strong></td>\n<td>\n<p><strong>Risk category</strong></p>\n</td>\n<td>\n<p><b>Risk of hypoglycemia admission in 12 months</b><strong>*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;3 previous hypoglycemia admissions, OR</p>\n</td>\n<td rowspan=\"2\">\n<p>High</p>\n</td>\n<td rowspan=\"2\">\n<p>&gt;5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>1-2 previous hypoglycemia admission(s) + insulin use</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0 previous hypoglycemia admissions + no insulin use + no sulfonylurea use, OR</p>\n</td>\n<td rowspan=\"3\">\n<p>Low</p>\n</td>\n<td rowspan=\"3\">\n<p>&lt;1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0 previous hypoglycemia admissions + no insulin use + sulfonylurea use + age &lt;77 years + no severe or end-stage kidney disease, OR</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0 previous hypoglycemia admissions + insulin use + age &lt;77 years + &lt;2 ED visits</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>All other risk factor combinations</p>\n</td>\n<td>\n<p>Intermediate</p>\n</td>\n<td>\n<p>1-5%</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Dizziness",
+            "Fatigue",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus"
+        ],
+        "logic": "var calc_output = [];\n\nvar msg, minimsg; \n\n// Declare vars\n\nvar hypoglycemia = parseFloat(hypoglycemia);\nvar emergencydept = parseFloat(emergencydept);\nvar insulin = parseFloat(insulin);\nvar sulfonylurea = parseFloat(sulfonylurea);\nvar kidney = parseFloat(kidney);\nvar age = parseFloat(age);\n\nif ((hypoglycemia == 2) || (hypoglycemia == 1 && insulin == 1)) {\n    msg = 'High'\n    minimsg = '>5% risk of hypoglycemia admission in 12 months'\n}\nelse if (hypoglycemia + insulin + sulfonylurea == 0) {\n   msg = 'Low'\n    minimsg = '<1% risk of hypoglycemia admission in 12 months'\n}\nelse if ((hypoglycemia + insulin + age + kidney == 0) && (sulfonylurea == 1)) {\n   msg = 'Low'\n    minimsg = '<1% risk of hypoglycemia admission in 12 months'\n}\nelse if ((hypoglycemia + age + emergencydept == 0) && (insulin == 1)) {\n   msg = 'Low'\n    minimsg = '<1% risk of hypoglycemia admission in 12 months'\n}\nelse {\n    msg = 'Intermediate'\n    minimsg = '1-5% risk of hypoglycemia admission in 12 months'\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: msg,\n   value_text: 'risk',\n   message: minimsg\n});\ncalc_output.push({\n   name: 'result',\n   value: msg,\n   value_text: 'risk',\n   message: minimsg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "History of ED or hospital admission due to hypoglycemia",
+                "name": "hypoglycemia",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-2",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥3",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Primary diagnosis of hypoglycemia in ED or principle diagnosis of hypoglycemia in hospital",
+                "type": "radio"
+            },
+            {
+                "conditionality": "hypoglycemia == 0 || hypoglycemia == 1",
+                "default": null,
+                "label_en": "ED visits, last 12 months",
+                "name": "emergencydept",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥2",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "For any reason",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hypoglycemia == 0 || hypoglycemia == 1",
+                "default": null,
+                "label_en": "Insulin use",
+                "name": "insulin",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hypoglycemia == 0 || hypoglycemia == 1",
+                "default": null,
+                "label_en": "Sulfonylurea use",
+                "name": "sulfonylurea",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hypoglycemia == 0 || hypoglycemia == 1",
+                "default": null,
+                "label_en": "Severe or end-stage kidney disease",
+                "name": "kidney",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "eGFR ≤29 by <calculator id='3939'>CKD-EPI Creatinine</calculator>",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hypoglycemia == 0 || hypoglycemia == 1",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<77 years",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥77 years",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Hypoglycemia Risk Stratification",
+            "Hypoglycemia risk",
+            "T2D",
+            "T2DM",
+            "Type 2 Diabetes"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Endocrinology",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

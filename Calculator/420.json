@@ -1,0 +1,213 @@
+{
+    "id": "420",
+    "title": "Disease Activity Score-28 for Rheumatoid Arthritis with ESR (DAS28-ESR)",
+    "desc": "The Disease Activity Score-28 for Rheumatoid Arthritis with ESR (DAS28-ESR) describes severity of rheumatoid arthritis using clinical and laboratory data.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2256738/",
+                "text": "van der Heijde DM, van 't Hof MA, van Riel PL, et al. Judging disease activity in clinical practice in rheumatoid arthritis: first step in the development of a disease activity score. Annals of the Rheumatic Diseases. 1990;49(11):916-920."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://rheumatology.oxfordjournals.org/content/49/8/1521.full",
+                "text": "Hensor EMA, et al. Discrepancies in categorizing rheumatoid arthritis patients by DAS-28(ESR) and DAS-28(CRP): can they be reduced?Rheumatology (2010) 49 (8): 1521-1529 first published online April 30, 2010doi:10.1093/rheumatology/keq117"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3731741/",
+                "text": "Khan NA, Spencer HJ, Abda EA, et al. Patient’s global assessment of disease activity and patient’s assessment of general health for rheumatoid arthritis activity assessment: are they equivalent? Annals of the rheumatic diseases. 2012;71(12):1942-1949. doi:10.1136/annrheumdis-2011-201142."
+            }
+        ],
+        "evidence": "<p>DAS28-ESR= (0.56*&radic;(Tender Joint Count)+0.28*&radic;(Swollen Joint Count)+0.7*ln(ESR)+0.014*(global health))</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>DAS28 Score Range</th>\n<th>Disease Severity</th>\n</tr>\n<tr>\n<td>&lt; 2.6</td>\n<td>Remission</td>\n</tr>\n<tr>\n<td>&ge; 2.6 - &lt; 3.2</td>\n<td>Low</td>\n</tr>\n<tr>\n<td>&ge; 3.2 - &le; 5.1</td>\n<td>Moderate</td>\n</tr>\n<tr>\n<td>&gt; 5.1</td>\n<td>High</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "CRP",
+                "unit": "esr",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "50",
+                "conversion": "1",
+                "normal_max_si": "20",
+                "normal_max_us": "20",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mm/hr",
+                "units_us": "mm/hr"
+            },
+            {
+                "name": "Joint count",
+                "unit": "joint_count",
+                "error_min": "-1",
+                "error_max": "28",
+                "warn_min": "0",
+                "warn_max": "25",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "joints",
+                "units_us": "joints"
+            }
+        ],
+        "primary_complains": [
+            "Joint Pain"
+        ],
+        "disease_treated": [
+            "Rheumatoid Arthritis"
+        ],
+        "logic": "var calc_output = [];\nvar tender = parseFloat(tender);\nvar swollen = parseFloat(swollen);\nvar pga = parseFloat(pga)*10;\nvar esr = parseFloat(esr);\nvar units = 'points';\nvar msg, mini_msg;\nvar value = (0.56*Math.sqrt(tender))+(0.28*Math.sqrt(swollen))+(0.7*Math.log(esr))+(0.014*pga);\nif (value < 2.6) {mini_msg='Remission'; msg=\"Remission of RA per DAS28-ESR\";}\nelse if (value >= 2.6 && value < 3.2) {mini_msg='Low Severity'; msg=\"Low severity of of RA per DAS28-ESR\";}\nelse if (value >= 3.2 && value <= 5.1) {mini_msg='Moderate Severity'; msg=\"Moderate severity of RA per DAS28-ESR\";}\nelse if (value > 5.1)  {mini_msg='High Severity'; msg=\"High severity of RA per DAS28-ESR\";}\n\n\ncalc_output.push({ \n    name: 'mini', \n    value: value.toFixed(1), \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '2176_DAS28-ESR_result', \n    value: value.toFixed(1), \n    value_text: 'points', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Tender Joint Count",
+                "name": "tender",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "joint_count"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Swollen Joint Count",
+                "name": "swollen",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "joint_count"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Erythrocyte Sedimentation Rate (ESR)",
+                "name": "esr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "esr"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Global Health</p>",
+                "mdcalc_info_concept": null,
+                "name": "pga",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0.0 - Very Well",
+                        "value": 0
+                    },
+                    {
+                        "label": "0.5",
+                        "value": 0.5
+                    },
+                    {
+                        "label": "1.0",
+                        "value": 1
+                    },
+                    {
+                        "label": "1.5",
+                        "value": 1.5
+                    },
+                    {
+                        "label": "2.0",
+                        "value": 2
+                    },
+                    {
+                        "label": "2.5",
+                        "value": 2.5
+                    },
+                    {
+                        "label": "3.0",
+                        "value": 3
+                    },
+                    {
+                        "label": "3.5",
+                        "value": 3.5
+                    },
+                    {
+                        "label": "4.0",
+                        "value": 4
+                    },
+                    {
+                        "label": "4.5",
+                        "value": 4.5
+                    },
+                    {
+                        "label": "5.0",
+                        "value": 5
+                    },
+                    {
+                        "label": "5.5",
+                        "value": 5.5
+                    },
+                    {
+                        "label": "6.0",
+                        "value": 6
+                    },
+                    {
+                        "label": "6.5",
+                        "value": 6.5
+                    },
+                    {
+                        "label": "7.0",
+                        "value": 7
+                    },
+                    {
+                        "label": "7.5",
+                        "value": 7.5
+                    },
+                    {
+                        "label": "8.0",
+                        "value": 8
+                    },
+                    {
+                        "label": "8.5",
+                        "value": 8.5
+                    },
+                    {
+                        "label": "9.0",
+                        "value": 9
+                    },
+                    {
+                        "label": "9.5",
+                        "value": 9.5
+                    },
+                    {
+                        "label": "10.0 - Very Poor",
+                        "value": 10
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "crp",
+            "esr",
+            "erythrocyte sedimentation rate",
+            "global health",
+            "rheum",
+            "arthritis",
+            "RA"
+        ],
+        "specialty": [
+            "Orthopedics",
+            "Rheumatology"
+        ]
+    }
+}

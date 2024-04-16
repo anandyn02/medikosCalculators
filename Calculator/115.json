@@ -1,0 +1,302 @@
+{
+    "id": "115",
+    "title": "DSM-5 Criteria for Binge Eating Disorder",
+    "desc": "The DSM-5 Criteria for Binge Eating Disorder is a set of diagnostic criteria for binge eating disorder (BED).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.psychiatry.org/psychiatrists/practice/dsm",
+                "text": "American Psychiatric Association: Desk Reference to the Diagnostic Criteria From DSM-5. Arlington, VA, American Psychiatric Association, 2013."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p><b>DSM-5 Criteria for Binge Eating Disorder (must have all A-E below):</b></p>\n<table style=\"border-collapse: collapse; width: 100%; height: 700px; border-style: none;\">\n<tbody>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 96.5101%; height: 22.3984px;\"><strong>Criteria</strong></td>\n</tr>\n<tr style=\"height: 255.984px;\">\n<td style=\"width: 96.5101%; height: 255.984px;\"><strong>A. Recurrent episodes of binge eating. </strong>An episode of binge eating is characterized by both of the following:\n<ol>\n<li dir=\"ltr\">Eating within a discrete period of time (e.g., within any 2-hour period), an amount of food that is definitely larger than what most people would eat in a similar period of time under similar circumstances.</li>\n<li dir=\"ltr\">A sense of lack of control over eating during the episode (e.g., a feeling that one cannot stop eating or control what or how much one is eating).</li>\n</ol>\n</td>\n</tr>\n<tr style=\"height: 227.984px;\">\n<td style=\"width: 96.5101%; height: 227.984px;\"><strong>B. The binge eating episodes are associated with&nbsp;</strong><b>&ge;3 of the following:</b>\n<ol>\n<li dir=\"ltr\">Eating much more rapidly than normal.</li>\n<li dir=\"ltr\">Eating until feeling uncomfortably full.</li>\n<li dir=\"ltr\">Eating large amounts of food when not feeling physically hungry.</li>\n<li dir=\"ltr\">Eating alone because of feeling embarrassed by how much one is eating.</li>\n<li dir=\"ltr\">Feeling disgusted with oneself, depressed, or very guilty afterward.</li>\n</ol>\n</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"width: 96.5101%; height: 44.7969px;\"><strong>C. Marked distress regarding binge eating is present.</strong></td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"width: 96.5101%; height: 44.7969px;\"><strong>D. The binge eating occurs, on average, at least once a week for 3 months.</strong></td>\n</tr>\n<tr style=\"height: 111.992px;\">\n<td style=\"width: 96.5101%; height: 111.992px;\"><strong>E. The binge eating is not associated with the recurrent use of inappropriate compensatory behavior as in bulimia nervosa and does not occur exclusively during the course of bulimia nervosa or anorexia nervosa.</strong></td>\n</tr>\n</tbody>\n</table>\n<p></p>",
+        "facts": "<p>Interpretation:</p>\n<table style=\"width: 100%; height: 176.391px; border-width: 1px; border-style: none;\">\n<tbody>\n<tr style=\"height: 56.8906px;\">\n<td style=\"width: 46.6281%; height: 56.8906px;\"><b>Binge Eating Episodes per Week</b></td>\n<td style=\"width: 46.6281%; height: 56.8906px;\"><strong>Level of Severity</strong></td>\n</tr>\n<tr style=\"height: 29.8672px;\">\n<td style=\"width: 46.6281%; height: 29.8672px;\">1-3</td>\n<td style=\"width: 46.6281%; height: 29.8672px;\">Mild</td>\n</tr>\n<tr style=\"height: 29.8672px;\">\n<td style=\"width: 46.6281%; height: 29.8672px;\">4-7</td>\n<td style=\"width: 46.6281%; height: 29.8672px;\">Moderate</td>\n</tr>\n<tr style=\"height: 29.8672px;\">\n<td style=\"width: 46.6281%; height: 29.8672px;\">8-13</td>\n<td style=\"width: 46.6281%; height: 29.8672px;\">Severe</td>\n</tr>\n<tr style=\"height: 29.8984px;\">\n<td style=\"width: 46.6281%; height: 29.8984px;\">&ge;14</td>\n<td style=\"width: 46.6281%; height: 29.8984px;\">Extreme</td>\n</tr>\n</tbody>\n</table>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Agitation",
+            "Anxious",
+            "Bloating",
+            "Constipation",
+            "Depressed",
+            "Diarrhea",
+            "Nausea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Eating Disorder"
+        ],
+        "logic": "var calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\nvar e = parseFloat(e);\nvar f = parseFloat(f);\nvar g = parseFloat(g);\nvar h = parseFloat(h);\nvar i = parseFloat(i);\nvar j = parseFloat(j);\nvar episodes = parseFloat(episodes);\n\nvar s1 = a + b + h + i + j;\nvar s2 = c + d + e + f + g;\n\nvar diagnosis;\n\nif (s1 == 5 && s2 >= 3) {\n    diagnosis = 'Positive';\n} else {\n    diagnosis = 'Not positive';\n}\n\nvar severity;\n\nif (episodes == 1) {\n    severity = 'Mild';\n} else if (episodes == 2) {\n    severity = 'Moderate';\n} else if (episodes == 3) {\n    severity = 'Severe';\n} else if (episodes == 4) {\n    severity = 'Extreme';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diagnosis,\n    value_text: '',\n    message: diagnosis + ' for BED'\n});\ncalc_output.push({\n    name: 'Diagnosis',\n    value: diagnosis,\n    value_text: '',\n    message: diagnosis + ' for BED by DSM-5 Criteria'\n});\n\nif (episodes > 0) {\n    calc_output.push({\n        name: 'Severity',\n        value: severity,\n        value_text: '',\n        message: 'Level of severity'\n    });\n}\n",
+        "inputs": [
+            {
+                "subheading": "Recurrent episodes of binge eating",
+                "subheading_instructions": "An episode of binge eating is characterized by both of the following:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Eating within a discrete period of time (e.g., within any 2-hour period), an amount of food that is definitely larger than what most people would eat in a similar period of time under similar circumstances</p>",
+                "name": "a",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>A sense of lack of control over eating during the episode (e.g., a feeling that one cannot stop eating or control what or how much one is eating)</p>",
+                "name": "b",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": null,
+                "subheading_instructions": "The binge eating episodes are associated with ≥3 of the following:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Eating much more rapidly than normal</p>",
+                "name": "c",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Eating until feeling uncomfortably full</p>",
+                "name": "d",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Eating large amounts of food when not feeling physically hungry</p>",
+                "name": "e",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Eating alone because of feeling embarrassed by how much one is eating</p>",
+                "name": "f",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Feeling disgusted with oneself, depressed, or very guilty afterward</p>",
+                "name": "g",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": null,
+                "subheading_instructions": "Additional required criteria",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Marked distress regarding binge eating is present</p>",
+                "name": "h",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>The binge eating occurs, on average, at least once a week for 3 months</p>",
+                "name": "i",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>The binge eating is not associated with the recurrent use of inappropriate compensatory behavior as in bulimia nervosa and does not occur exclusively during the course of bulimia nervosa or anorexia nervosa</p>",
+                "name": "j",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Binge eating episodes per week</p>",
+                "name": "episodes",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "1-3",
+                        "value": 1
+                    },
+                    {
+                        "label": "4-7",
+                        "value": 2
+                    },
+                    {
+                        "label": "8-13",
+                        "value": 3
+                    },
+                    {
+                        "label": "≥14",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "DSM-5 Criteria for Binge Eating Disorder",
+            "dsm5",
+            "dsm 5",
+            "dsm-5",
+            "dsm-v",
+            "dsmv",
+            "dsm v",
+            "dsm criteria",
+            "bed",
+            "binge eating disorder"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Psychiatry"
+        ]
+    }
+}

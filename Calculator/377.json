@@ -1,0 +1,194 @@
+{
+    "id": "377",
+    "title": "Vancouver Chest Pain Rule",
+    "desc": "The Vancouver Chest Pain Rule identifies chest pain patients who are at low risk for adverse event and are safe for early discharge.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24626115",
+                "text": "Scheuermeyer FX, Wong H, Yu E, Boychuk B, Innes G, Grafstein E, Gin K, Christenson J. Development and validation of a prediction rule for early discharge of low-risk emergency department patients with potential ischemic chest pain. CJEM. 2014;16(2):106-119."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p><strong>Step-wise analysis of EKG, biomarker, history and physical exam; if all questions are answered &ldquo;No,&rdquo; the patient is low-risk by the Vancouver Chest Pain Rule. </strong></p>",
+        "facts": "<p>Step 1: If no to all, move to Step 2. Otherwise proceed with standard chest pain evaluation:</p>\n<ul>\n<li>Abnormal initial EKG?</li>\n<li>Positive troponin at 2 hours?</li>\n<li>Prior ACS or nitrate use?</li>\n</ul>\n<p>Step 2: If yes, proceed to early discharge. If no, move to Step 3.</p>\n<ul>\n<li>Does palpation reproduce pain?</li>\n</ul>\n<p>Step 3: If no to all, proceed with early discharge. Otherwise proceed with standard chest pain evaluation.</p>\n<ul>\n<li>Age &ge;50?</li>\n<li>Does pain radiate to neck, jaw, or left arm</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\nvar mini_msg = '';\nabnormal_ecg = parseFloat(abnormal_ecg);\ntroponin = parseFloat(troponin);\nacs_nitrate_use = parseFloat(acs_nitrate_use);\npalpation = parseFloat(palpation);\nage_50 = parseFloat(age_50);\npain_radiate = parseFloat(pain_radiate);\nvar u = 1;\nmsg = '';\nif (abnormal_ecg + troponin + acs_nitrate_use >= 1) {\n    mini_msg = 'Standard Evaluation';\n    msg = 'This patient is not a candidate for early discharge and should receive a standard chest pain evaluation.'\n} else {\n    if (palpation == 1) {\n        mini_msg = 'Low Risk. Step 3 Not Required.';\n        msg = 'If chest pain is reproducible in Step 2, this patient is at low risk for adverse event and is a candidate for early discharge, and does not require Step 3 questions.'\n    } else {\n        if (age_50 + pain_radiate <= 2) {\n            mini_msg = 'Standard evaluation';\n            msg = 'This patient is not a candidate for early discharge and should receive a standard chest pain evaluation.'\n        }\n        if (age_50 + pain_radiate == 0) {\n            mini_msg = 'Low risk';\n            msg = 'This patient is at low risk for adverse event and is a candidate for early discharge.'\n        }\n    }\n}\ncalc_output.push({\n    name: 'mini',\n    value: ' ',\n    value_text: ' ',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '1856_Vancouver Chest Pain Rule_result',\n    value: mini_msg,\n    value_text: ' ',\n    message: msg\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Step One",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abnormal initial EKG",
+                "md_calc_info_concept": null,
+                "name": "abnormal_ecg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "ST elevation, ST depression >0.5mm, Q waves, LVH, paced rhythm, or LBBB",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Positive troponin at 2 hours",
+                "md_calc_info_concept": null,
+                "name": "troponin",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Prior ACS or nitrate use",
+                "md_calc_info_concept": null,
+                "name": "acs_nitrate_use",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Step Two",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Does palpation reproduce pain?",
+                "md_calc_info_concept": null,
+                "name": "palpation",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Step Three",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age 50 and above?",
+                "md_calc_info_concept": null,
+                "name": "age_50",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Does pain radiate to neck, jaw, or left arm?",
+                "md_calc_info_concept": null,
+                "name": "pain_radiate",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "cp",
+            "acs",
+            "mi",
+            "rule-out",
+            "dc",
+            "stemi",
+            "nstemi",
+            "troponin"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine"
+        ]
+    }
+}

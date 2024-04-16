@@ -1,0 +1,129 @@
+{
+    "id": "643",
+    "title": "Plasma Dosage",
+    "desc": "Plasma Volume and Dosing calculates plasma volume and doses plasma for transfusion.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2689068/",
+                "text": "Liumbruno G, Bennardello F, Lattanzio A, Piccoli P, Rossetti G. Recommendations for the transfusion of plasma and platelets. Blood Transfus. 2009;7(2):132-50."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://ebooks.aabb.org/product/technical-manual-18th-edition",
+                "text": "Roback JD. Technical Manual. American Association of Blood Banks (AABB); 2014."
+            }
+        ],
+        "evidence": "<p>Total plasma dosage, mL = desired plasma dosage, mL/kg &times; weight, kg</p>\n<p>Note the following:</p>\n<ul>\n<li>Desired plasma dosage ranges from 10 to 20 mL/kg.</li>\n<li>This dose is expected to increase the level of coagulation factors by 20% immediately after infusion.</li>\n<li>A recommended standard dose of FFP is 10 mL/kg, but doses up to 15 or 20 mL/kg may be justified based on the clinical situation.</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Plasma unit content",
+                "unit": "plasma_unit",
+                "error_min": "0",
+                "error_max": "500",
+                "warn_min": "0",
+                "warn_max": "500",
+                "conversion": "1",
+                "normal_max_si": "500",
+                "normal_max_us": "500",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL",
+                "units_us": "mL"
+            },
+            {
+                "name": "Desired plasma dose",
+                "unit": "plasma_dose",
+                "error_min": "10",
+                "error_max": "20",
+                "warn_min": "10",
+                "warn_max": "20",
+                "conversion": "1",
+                "normal_max_si": "20",
+                "normal_max_us": "20",
+                "normal_min_si": "10",
+                "normal_min_us": "10",
+                "units_si": "mL/kg",
+                "units_us": "mL/kg"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Bleeding/Hemorrhage",
+            "Hematologic Malignancy",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar weight = parseFloat(weight)\n\n//equations\nvar plasma = dose * weight / unit // plasma dose in units\n\nvar ml = dose * weight // plasma dose in mL\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: plasma.toFixed(0).toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\"),\n    value_text: 'units',\n    message: 'Plasma dose'\n});\ncalc_output.push({\n    name: '4033_Plasma Dosage_result (dose, units)',\n    value: plasma.toFixed(0).toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\"),\n    value_text: 'units',\n    message: 'Plasma dose for transfusion'\n});\ncalc_output.push({\n    name: '4033_Plasma Dosage_result (dose, mL)',\n    value: ml.toFixed(0).toString().replace(/\\B(?=(\\d{3})+(?!\\d))/g, \",\"),\n    value_text: 'mL',\n    message: 'Plasma dose for transfusion'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Patient weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": 10,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Desired plasma dosage",
+                "name": "dose",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plasma_dose"
+            },
+            {
+                "conditionality": "",
+                "default": 200,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Unit volume",
+                "name": "unit",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plasma_unit"
+            }
+        ],
+        "can_search": [
+            "ffp",
+            "fresh frozen plasma",
+            "plasma",
+            "transfusion"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Pathology",
+            "Pharmacy",
+            "Transfusion Medicine"
+        ]
+    }
+}

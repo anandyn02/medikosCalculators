@@ -1,0 +1,127 @@
+{
+    "id": "692",
+    "title": "Ideal Body Weight and Adjusted Body Weight",
+    "desc": "The Ideal Body Weight calculator calculates ideal body weight by the Devine formula.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://journals.sagepub.com/doi/10.1177/106002807400801104",
+                "text": "Devine BJ. Gentamicin therapy. Drug Intell Clin Pharm. 1974;8:650–655."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6782117/",
+                "text": "Kang K, Absher R, Farrington E, Ackley R, So TY. Evaluation of different methods used to calculate ideal body weight in the pediatric population. J Pediatr Pharmacol Ther. 2019;24(5):421-430."
+            }
+        ],
+        "evidence": "<p>Ideal Body Weight (Devine formula):</p>\n<ul>\n<li>Ideal body weight (IBW) (men) = 50 kg + 2.3 kg&nbsp;x (height, in - 60)</li>\n<li>Ideal body weight (IBW) (women) = 45.5 kg + 2.3 kg x&nbsp; (height, in - 60)</li>\n<li>Note: this formula is only an approximation, and is generally only applicable for people 60 inches (5 foot) tall or greater.&nbsp;For patients under 5 feet, one commonly-used modification is to subtract 2-5 lbs for each inch below 60 inches&nbsp;(written communication with leading expert Dr. Manjunath Pai, 2018).</li>\n</ul>\n<div>Adjusted Body Weight (ABW), for use in obese patients (where actual body weight &gt;&nbsp;IBW):</div>\n<ul>\n<li>ABW = IBW&nbsp;+ 0.4 x (actual body weight - IBW)</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Height",
+                "unit": "ht",
+                "error_min": "0",
+                "error_max": "90",
+                "warn_min": "5",
+                "warn_max": "80",
+                "conversion": "2.54",
+                "normal_max_si": "213",
+                "normal_max_us": "84",
+                "normal_min_si": "152",
+                "normal_min_us": "60",
+                "units_si": "cm",
+                "units_us": "in"
+            }
+        ],
+        "primary_complains": [
+            "Preventive Care/Screening"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus",
+            "Hypertension",
+            "Obesity"
+        ],
+        "logic": "var calc_output = [];\nvar u, v, p, q, units;\nvar ht;\nvar abw = parseFloat(abw);\nvar height = parseFloat(height)/2.54;\n//needs immediate conversion from cm to inches for ht variable, and toggle units are always cm\nif (height > 60) {\n    ht = height - 60;\n} else {\n    ht = 0;\n}\nif (parseFloat(sex) == 1) {\n    v = 45.5 + (ht * 2.3);\n} else {\n    v = 50 + (ht * 2.3);\n}\nif (parseFloat(sex) == 1) {\n    p = 2.20462 * (45.5 + (ht * 2.3));\n} else {\n    p = 2.20462 * (50 + (ht * 2.3));\n}\n\nvar ABW, q_2, ABW_2, secunit_q, secunit_abw;\n\nABW = v + 0.4*(abw - v);\n\nif (UOMSYSTEM == false){\n    q = v;\n  \tabw = abw;\n    ABW = ABW;\n    units = 'kg';\n    q_2 = v*2.20462;\n    ABW_2 = ABW*2.20462;\n    secunit_q = '<br/><br/>Equivalent to ' + q_2.toFixed(0) + ' lbs';\n    secunit_abw = '<br/><br/>Equivalent to ' + ABW_2.toFixed(0) + ' lbs';\n}\nif (UOMSYSTEM == true){\n    q = p;\n  \tABW = ABW*2.20462;\n  \tabw = abw*2.20462;\n    units = 'lbs';\n    q_2 = p*0.453592;\n    ABW_2 = ABW*0.453592;\n    secunit_q = '<br/><br/>Equivalent to ' + q_2.toFixed(0) + ' kg';\n    secunit_abw = '<br/><br/>Equivalent to ' + ABW_2.toFixed(0) + ' kg';\n}\n\nif (abw > 0) {\n  var ratio = abw.toFixed(0)/q.toFixed(0);\n  var ratio_perc = ratio*100;\n  ratio = ratio.toFixed(1);\n  ratio_perc = ratio_perc.toFixed(0);\n  if (abw.toFixed(0) == q.toFixed(0)) {\n    var msg = '<br/><br/>Actual body weight is equal to ideal body weight';\n  } else {\n    var msg = '<br/><br/>Actual body weight is '+ratio_perc+'% ('+ratio+'x) ideal body weight';\n  }\n} else {\n  var msg = '';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: q.toFixed(0),\n    value_text: units,\n    message: 'Ideal Body Weight'\n});\ncalc_output.push({\n    name: '68_IBW & ABW_result (IBW)',\n    value: q.toFixed(0),\n    value_text: units,\n    message: 'Ideal Body Weight'+ secunit_q + msg\n});\nif (abw > q.toFixed(0)){\ncalc_output.push({\n    name: '68_IBW & ABW_result (ABW)',\n    value: ABW.toFixed(0),\n    value_text: units,\n    message: 'Adjusted Body Weight'+ secunit_abw\n});\n}\nif (abw > 0 && abw <= q.toFixed(0)){\ncalc_output.push({\n    name: '68_IBW & ABW_result (ABW)',\n    value: '',\n    value_text: '',\n    message: 'Adjusted body weight only applicable if actual body weight is greater than ideal body weight'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 1
+                    },
+                    {
+                        "label": "Male",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Height",
+                "name": "height",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Actual body weight",
+                "name": "abw",
+                "optional": true,
+                "tips_en": "Optional, for calculating adjusted body weight in obese patients",
+                "type": "textbox",
+                "unit": "wt"
+            }
+        ],
+        "can_search": [
+            "obesity",
+            "ibw",
+            "devine formula"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatrics",
+            "Pharmacy",
+            "Primary Care",
+            "Pulmonology"
+        ]
+    }
+}

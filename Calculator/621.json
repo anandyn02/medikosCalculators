@@ -1,0 +1,139 @@
+{
+    "id": "621",
+    "title": "Cincinnati Prehospital Stroke Severity Scale (CP-SSS)",
+    "desc": "The Cincinnati Prehospital Stroke Severity Scale (CP-SSS) predicts large vessel occlusion (LVO) and severe stroke in patients with stroke symptoms.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25899242 ",
+                "text": "Katz BS, Mcmullan JT, Sucharew H, Adeoye O, Broderick JP. Design and validation of a prehospital scale to predict stroke severity: Cincinnati Prehospital Stroke Severity Scale. Stroke. 2015;46(6):1508-12."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15017018",
+                "text": "Combined intravenous and intra-arterial recanalization for acute ischemic stroke: the Interventional Management of Stroke Study. Stroke. 2004;35(4):904-11."
+            }
+        ],
+        "evidence": "<p><span>Addition of the selected points:</span></p> <div class=\"table-responsive\"> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><span>Conjugate gaze deviation</span></p> </td> <td> <p><span>2 points</span></p> </td> </tr> <tr> <td> <p><span>Incorrectly answers ≥1 of two “level of consciousness” questions on <calculator id=\"715\">NIHSS</calculator> (age or current month) AND does not follow ≥1 of the two commands (close eyes, open/close hand)*</span></p> </td> <td> <p><span>1 point</span></p> </td> </tr> <tr> <td> <p><span>Cannot hold arm (either or both) up for 10 seconds before arm(s) falls to bed**</span></p> </td> <td> <p><span>1 point</span></p> </td> </tr> </tbody> </table> </div> </div> <p><span><br>*i.e., ≥1 on the NIHSS item for Level of Consciousness 1b and 1c.</span></p> <p><span>**i.e., ≥2 on the NIHSS item for Motor Arm.</span></p>",
+        "facts": "<p><span>Interpretation:</span></p> <table> <tbody> <tr> <td> <p><strong>CP-SSS</strong></p> </td> <td> <p><strong>LVO and NIHSS</strong></p> </td> </tr> <tr> <td> <p><span>0–1</span></p> </td> <td> <p><span>LVO and NIHSS ≥15 less likely</span></p> </td> </tr> <tr> <td> <p><span>2–4</span></p> </td> <td> <p><span>LVO and NIHSS ≥15 likely</span></p> </td> </tr> </tbody> </table>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Neurologic Deficit",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs - addition of correct points\nvar score = parseFloat(gaze) + parseFloat(instruct);\n//Incorrectly answers ≥1 of two “level of consciousness” questions on NIHSS (age or current month) AND does not follow ≥1 of the two commands (close eyes, open/close hand)\nvar ask = parseFloat(ask);\nvar close = parseFloat(close);\nif(ask > 0 && close > 0){\n\tscore = score + 1;\n}\n\n//interpretation\nvar i, rec;\nif(score < 2){\n\ti = 'LVO and NIHSS ≥15 less likely.';\n    rec = ''\n}\nelse {\n    i = 'LVO and NIHSS ≥15 likely. ';\n    rec = 'Consider initiating full workup and treatment for LVO as appropriate, including CT angiogram (see Management for details).'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: i\n});\ncalc_output.push({\n    name: 'Result',\n    value: score,\n    value_text: 'points',\n    message: i + rec\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Conjugate gaze deviation",
+                "name": "gaze",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Ask patient age and current month",
+                "name": "ask",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Both correct",
+                        "value": 0
+                    },
+                    {
+                        "label": "One correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Neither correct",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Ask patient to close eyes and open/close hand",
+                "name": "close",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Follows both commands",
+                        "value": 0
+                    },
+                    {
+                        "label": "Follows one command",
+                        "value": 1
+                    },
+                    {
+                        "label": "Follows neither command",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Instruct patient to hold arm (either or both) up for 10 seconds",
+                "name": "instruct",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Can do",
+                        "value": 0
+                    },
+                    {
+                        "label": "Cannot do",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "stroke",
+            "ischemia stroke",
+            "cva",
+            "gcs",
+            "stroke scale",
+            "cp-ss",
+            "ems",
+            "field",
+            "prehospital",
+            "paramedic",
+            "emt"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

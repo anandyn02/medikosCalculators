@@ -1,0 +1,402 @@
+{
+    "id": "478",
+    "title": "Crohn's Disease Activity Index (CDAI)",
+    "desc": "The Crohn's Disease Activity Index (CDAI) determines the current severity of Crohn’s disease.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1248701",
+                "text": "Best WR, Becktel JM, Singleton JW, Kern F Jr. Development of a Crohn's disease activity index. National Cooperative Crohn's Disease Study. Gastroenterology. 1976 Mar;70(3):439-44."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Amount</th>\n<th>Answer</th>\n<th>Multiplier</th>\n</tr>\n<tr>\n<td>Number<br>of<br>liquid<br>stools</td>\n<td>Sum, past 7 days</td>\n<td>&nbsp;</td>\n<td>&times;2</td>\n</tr>\n<tr>\n<td>Abdominal<br>pain</td>\n<td>Average daily rating &times; 7</td>\n<td>0 = None<br>1 = Mild<br>2 = Moderate<br>3 = Severe</td>\n<td>&times;5</td>\n</tr>\n<tr>\n<td>General<br>well-being</td>\n<td>Average daily rating &times; 7</td>\n<td>0 = Generally well<br>1 = Slightly under par<br>2 = Poor<br>3 = Very poor<br>4 = Terrible</td>\n<td>&times;7</td>\n</tr>\n<tr>\n<td>Extra-<br>intestinal/<br>physical complaints*</td>\n<td>Number of complications listed</td>\n<td>0 = No,<br>1 = Yes*</td>\n<td>&times;20</td>\n</tr>\n<tr>\n<td>Antidiarrheal drugs</td>\n<td>Use in the previous 7 days</td>\n<td>0 = No<br>1 = Yes</td>\n<td>&times;30</td>\n</tr>\n<tr>\n<td>Abdominal mass</td>\n<td>&nbsp;</td>\n<td>0 = No<br>2 = Questionable,<br>5 = Definite</td>\n<td>&times;10</td>\n</tr>\n<tr>\n<td>Hematocrit</td>\n<td>Expected &ndash; observed hematocrit</td>\n<td>Men: 47% observed,<br>Women: 42% observed</td>\n<td>&times;6</td>\n</tr>\n<tr>\n<td>Body weight</td>\n<td>% below&nbsp;ideal weight</td>\n<td>(Ideal - observed) / ideal &times; 100</td>\n<td>&times;1</td>\n</tr>\n</tbody>\n</table>\n<p>*Arthritis/arthralgia, mucocutaneous lesions (e.g. erythema nodosum, aphthous ulcers), iritis/uveitis, anal disease (fissure, fistula, etc), external fistula (enterocutaneous, vesicle, vaginal, etc), fever over 37.8&deg;C</p>\n</div>\n<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>CDAI &lt;150 is a marker of remission of Crohn&rsquo;s disease.</li>\n<li>CDAI &gt;450 is a marker of severe Crohn's disease.</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "Sum",
+                "unit": "sum_wellbeing",
+                "error_min": "0",
+                "error_max": "4",
+                "warn_min": "0",
+                "warn_max": "4",
+                "conversion": "1",
+                "normal_max_si": "4",
+                "normal_max_us": "4",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "rating",
+                "units_us": "rating"
+            },
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Hematocrit",
+                "unit": "hct",
+                "error_min": "1",
+                "error_max": "70",
+                "warn_min": "20",
+                "warn_max": "55",
+                "conversion": "1",
+                "normal_max_si": "51",
+                "normal_max_us": "51",
+                "normal_min_si": "36",
+                "normal_min_us": "36",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Sum",
+                "unit": "sum_abd",
+                "error_min": "0",
+                "error_max": "3",
+                "warn_min": "0",
+                "warn_max": "3",
+                "conversion": "1",
+                "normal_max_si": "3",
+                "normal_max_us": "3",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "rating",
+                "units_us": "rating"
+            },
+            {
+                "name": "Stools",
+                "unit": "stools",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "60",
+                "conversion": "1",
+                "normal_max_si": "2",
+                "normal_max_us": "2",
+                "normal_min_si": "0.5",
+                "normal_min_us": "0.5",
+                "units_si": "stools",
+                "units_us": "stools"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Crohn's Disease",
+            "GI Bleeding",
+            "Inflammatory Bowel Disease"
+        ],
+        "logic": "var calc_output = [];\n\nvar stool = parseFloat(stool) * 2\nvar abdp = parseFloat(abdp) * 5 * 7;\nvar well = parseFloat(well) * 7 * 7;\nvar abdm = parseFloat(abdm) * 10;\nvar extra = parseFloat(arth) + parseFloat(irit) + parseFloat(eryth) + parseFloat(anal) + parseFloat(fist) + parseFloat(fev)\nvar extra = extra * 20\nvar antid = parseFloat(antid) * 30\n\nvar sexVal;\nif (parseFloat(sex) == 1) { // male\n    sexVal = 47; \n    } \nelse { \n    sexVal = 42; // female\n    }\nvar hem = sexVal - parseFloat(hem);\nhem = hem * 6\n\nvar ibwt = parseFloat(ibw);\n\nvar obsWt = parseFloat(wt);\nvar ratio = (ibwt - obsWt) / ibwt * 100;\n\n\nvar score = stool + abdp + well + extra + antid + abdm + hem + ratio;\n\nvar msg, mini_msg;\n\nif (score < 150) {\n    mini_msg = 'Remission';\n    msg = \"CDAI <150 is used as a marker of remission of Crohn's disease.\";\n}\nif (score >= 150 && score <= 450) {\n    mini_msg = \"Active Crohn's Disease\";\n    msg = \"CDAI of 150-450 is used as a marker of active Crohn's disease. The higher the score, the more severe the disease activity.\";\n}\nif (score > 450) {\n    mini_msg = \"Severe Crohn's disease\";\n    msg = \"CDAI >450 is used as marker of severe Crohn's disease.\";\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score.toFixed(0),\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: \"3318_Crohn's Disease Activity Index_result\",\n    value: score.toFixed(0),\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "wt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Ideal body weight",
+                "name": "ibw",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Total number of soft/liquid stools in the last 7 days",
+                "name": "stool",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "stools"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Abdominal pain",
+                "name": "abdp",
+                "optional": false,
+                "tips_en": "Average daily rating in the past 7 days: 0 = none, 1 = mild, 2 = moderate, 3 = severe",
+                "type": "textbox",
+                "unit": "sum_abd"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "General well-being",
+                "name": "well",
+                "optional": false,
+                "tips_en": "Average daily rating in the past 7 days: 0 = generally well, 1 = slightly under par, 2 = poor, 3 = very poor, 4 = terrible",
+                "type": "textbox",
+                "unit": "sum_wellbeing"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Anti-diarrhea drug use",
+                "md_calc_info_concept": null,
+                "name": "antid",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Abdominal mass",
+                "mdcalc_info_concept": null,
+                "name": "abdm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Questionable",
+                        "value": 2
+                    },
+                    {
+                        "label": "Definite",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hematocrit",
+                "name": "hem",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hct"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Extraintestinal Findings/Complications",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Arthritis/arthralgias",
+                "md_calc_info_concept": null,
+                "name": "arth",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Iritis/uveitis",
+                "md_calc_info_concept": null,
+                "name": "irit",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Erythema nodosum, pyoderma gangrenosum, or apthous stomatitis",
+                "md_calc_info_concept": null,
+                "name": "eryth",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anal fissure, fistula, or abscess",
+                "md_calc_info_concept": null,
+                "name": "anal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Other fistula",
+                "md_calc_info_concept": null,
+                "name": "fist",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Fever/temperature > 100°F/37.8°C",
+                "md_calc_info_concept": null,
+                "name": "fev",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "crohn’s disease",
+            "hematocrit",
+            "CDAI",
+            "diarrhea",
+            "diagnosis",
+            "crohns disease",
+            "crohns",
+            "Crohn's Disease Activity Index (CDAI)"
+        ],
+        "specialty": [
+            "Endocrinology",
+            "Family Practice",
+            "Gastroenterology",
+            "Internal Medicine"
+        ]
+    }
+}

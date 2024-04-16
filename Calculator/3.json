@@ -1,0 +1,220 @@
+{
+    "id": "3",
+    "title": "Rome IV Diagnostic Criteria for Functional Constipation",
+    "desc": "The Rome IV Criteria for Constipation provides criteria for diagnosis of constipation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144617",
+                "text": "Drossman DA. Functional Gastrointestinal Disorders: History, Pathophysiology, Clinical Features and Rome IV. Gastroenterology. 2016; 150(6):1262-1279."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144627 ",
+                "text": "Mearin F, Lacy BE, Chang L, et al. Bowel Disorders. Gastroenterology. 2016; 150(6):1393-1407."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4760857/ ",
+                "text": "Chumpitazi BP, Self MM, Czyzewski DI, Cejka S, Swank PR, Shulman RJ. Bristol Stool Form Scale reliability and agreement decreases when determining Rome III stool form designations. Neurogastroenterol Motil. 2016;28(3):443-8."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">The following three criteria must be fulfilled for the last 3 months with symptom onset &ge;6 months ago:</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Must have &ge;2 of the following, each for &gt;1/4 (25%) of defecations except (f):</p>\n</li>\n<ol style=\"list-style-type: lower-latin;\">\n<li dir=\"ltr\">\n<p dir=\"ltr\">Straining.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Lumpy or hard stools (form 1 or 2 on the Bristol Stool Form Scale - see below).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Sensation of incomplete evacuation.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Sensation of anorectal obstruction/blockage.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Manual maneuvers to facilitate defecation (e.g. digital evacuation, pelvic floor support).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">&lt;3 spontaneous bowel movements per week.</p>\n</li>\n</ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Loose stools rarely present without use of laxatives.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Does not meet <calculator id=\"4007\">Rome IV Criteria for IBS.</calculator></p>\n</li>\n</ol>\n<p dir=\"ltr\"><strong>Bristol Stool Form Scale:</strong></p>\n<p dir=\"ltr\"><img src=\"https://cdn-web-img.mdcalc.com/content/romeiv-bristol.gif\" alt=\"\" width=\"100%\" height=\"auto\" /></p>\n<p dir=\"ltr\"><span id=\"docs-internal-guid-f138cc41-f8ec-fbf9-f023-47b76d500ad4\">From <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4760857/\" target=\"_blank\" rel=\"noopener\">Chumpitazi 2016</a>.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Constipation"
+        ],
+        "disease_treated": [
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output = [];\n\nvar crit1;\nif (parseFloat(strain) + parseFloat(lumpy) + parseFloat(evacuation) + parseFloat(blockage) + parseFloat(manual) + parseFloat(spontaneous) >= 2) {\n  crit1 = 1; \n  }\nelse {\n  crit1 = 0;\n  }\n\nvar result, msg, mini;\nif (crit1 + parseFloat(laxative) + parseFloat(ibs) == 3) {\n  result = 'Positive';\n  msg = 'Likely diagnosis of functional constipation. Consider initiating treatment.';\n  mini = 'Likely functional constipation';\n}\nelse {\n  result = 'Negative';\n  msg = 'Symptoms unlikely to be caused by functional constipation. Consider further assessment as clinically indicated.';\n  mini = 'Unlikely functional constipation';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: '',\n    message: mini\n});\ncalc_output.push({\n    name: 'Result',\n    value: result,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have ≥2 of the following:",
+                "subheading_instructions": "For ≥3 months prior with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Straining",
+                "name": "strain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "For >1/4 (25%) of defecations",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lumpy or hard stools ",
+                "name": "lumpy",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Form 1 of 2 on the <calculator id=\"10017\">Bristol Stool Form Scale</calculator>; for >1/4 (25%) of defecations",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sensation of incomplete evacuation",
+                "name": "evacuation",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "For >1/4 (25%) of defecations",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sensation of anorectal obstruction/blockage",
+                "name": "blockage",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "For >1/4 (25%) of defecations",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Manual maneuvers to facilitate defecation",
+                "name": "manual",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "E.g. digital evacuation, pelvic floor support; for >1/4 (25%) of defecations",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<3 spontaneous bowel movements per week",
+                "name": "spontaneous",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Must have both of the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Loose stools rarely present without use of laxatives",
+                "name": "laxative",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Does NOT meet <calculator id=\"4007\">Rome IV Criteria for IBS</calculator>",
+                "name": "ibs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "constipation",
+            "rome",
+            "rome 4",
+            "functional  constipation",
+            "Rome IV Diagnostic Criteria for Functional Constipation",
+            "rome iv for functional  constipation"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

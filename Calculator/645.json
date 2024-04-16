@@ -1,0 +1,127 @@
+{
+    "id": "645",
+    "title": "Pediatric Trauma BIG Score",
+    "desc": "The Pediatric Trauma BIG Score stratifies severity of illness and predicts mortality in pediatric patients after trauma. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21422095 ",
+                "text": "Borgman MA, Maegele M, Wade CE, Blackbourne LH, Spinella PC. Pediatric Trauma BIG Score: Predicting Mortality in Children After Military and Civilian Trauma. Pediatrics. 2011 Apr;127(4):e892-7.\t\t"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://www.jpeds.com/article/S0022-3476(15)00677-0/fulltext ",
+                "text": "Borgman MA, Spinella PC. What is the Big Deal about the BIG Score?. J Pediatr. 2015;167(3):513-4."
+            }
+        ],
+        "evidence": "<p>Pediatric BIG Score = (base deficit) + (2.5 × INR) + (15 - GCS)</p>",
+        "facts": "<p>Predicted in-hospital mortality = 1/(1 + e<sup>-B</sup>), where B = 0.2 × (BIG Score) – 5.208</p> <p>Note: Pediatric BIG Score of 26 (i.e., base deficit 10, INR 3.6, GCS 8) predicts a mortality of 50% with a positive predictive value of 65%, negative predictive value of 93%, and specificity of 99% (<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/21422095\" target=\"_blank\">Borgman 2011</a>).</p> <p><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/26118931\" target=\"_blank\">Davis et al</a> (2015) report the optimal BIG Score cutoff as 16. Mortality with cutoff &lt;16 was 3/496 (0.6%, 95% CI 0.001-0.007) vs ≥16 which was 47/125 (ROC 38%, 95% CI 0.15-0.7) with p &lt;0.0001. </p>",
+        "estimation": [
+            {
+                "name": "Base deficit",
+                "unit": "base_deficit",
+                "error_min": "0",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "2",
+                "normal_max_us": "2",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            },
+            {
+                "name": "Glasgow Coma Scale",
+                "unit": "gcs",
+                "error_min": "3",
+                "error_max": "16",
+                "warn_min": "3",
+                "warn_max": "15",
+                "conversion": "1",
+                "normal_max_si": "15",
+                "normal_max_us": "15",
+                "normal_min_si": "3",
+                "normal_min_us": "3",
+                "units_si": "points",
+                "units_us": "points"
+            },
+            {
+                "name": "INR",
+                "unit": "inr",
+                "error_min": "0.1",
+                "error_max": "20",
+                "warn_min": "0.5",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "1.2",
+                "normal_max_us": "1.2",
+                "normal_min_si": "0.8",
+                "normal_min_us": "0.8",
+                "units_si": " ",
+                "units_us": " "
+            }
+        ],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar deficit = parseFloat(deficit)\nvar inr = parseFloat(inr)\nvar gcs = parseFloat(gcs)\n\n\nvar big_score = deficit + (2.5 * inr) + (15 - gcs)\n\nvar b = 0.2 * big_score - 5.208\n\nvar mort = 1/(1 + Math.exp(-b)) * 100\n\nvar msg; \nif (big_score < 16.0) {\n    msg = ' Scores ≤16 were associated with lower mortality.'\n}\nelse {\n    msg = ' Scores >16 were associated with the highest mortality.'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: big_score.toFixed(2),\n    value_text: '',\n    message: 'Pediatric BIG Score'\n});\ncalc_output.push({\n    name: 'mortality',\n    value: mort.toFixed(1),\n    value_text: '%',\n    message: 'Predicted in-hospital mortality.' + msg\n});\ncalc_output.push({\n    name: 'big score',\n    value: big_score.toFixed(2),\n    value_text: '',\n    message: 'Pediatric BIG Score'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Base deficit",
+                "name": "deficit",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "base_deficit"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "INR",
+                "name": "inr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "inr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<calculator id='64'>GCS</calculator>",
+                "name": "gcs",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "gcs"
+            }
+        ],
+        "can_search": [
+            "Trauma",
+            "blunt trauma",
+            "penetrating trauma",
+            "pediatric trauma",
+            "BIG Score",
+            "mortality",
+            "base deficit",
+            "Glasgow Coma Scale",
+            "international normalized ratio",
+            "pediatric big"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (Trauma)"
+        ]
+    }
+}

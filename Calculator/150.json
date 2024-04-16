@@ -1,0 +1,140 @@
+{
+    "id": "150",
+    "title": "ISTH Criteria for Disseminated Intravascular Coagulation (DIC)",
+    "desc": "The ISTH Criteria for Disseminated Intravascular Coagulation (DIC) diagnoses disseminated intravascular coagulation (DIC).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11816725",
+                "text": "Taylor FB, Toh CH, Hoots WK, Wada H, Levi M. Towards definition, clinical and laboratory criteria, and a scoring system for disseminated intravascular coagulation. Thromb Haemost. 2001;86(5):1327-30."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17096704",
+                "text": "Toh CH, Hoots WK. The scoring system of the Scientific and Standardisation Committee on Disseminated Intravascular Coagulation of the International Society on Thrombosis and Haemostasis: a 5-year overview. J Thromb Haemost. 2007;5(3):604-6."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Diagnostic criteria for overt DIC (patient has to have an underlying disorder known to be associated with overt DIC to use this algorithm):</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"236\"><col width=\"141\"><col width=\"72\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Platelet count, cells x 10<sup>9</sup>/L</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;100</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">50 to &lt;100</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;50</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Elevated levels of a fibrin-related marker* (e.g. D-dimer, fibrin degradation products)</p>\n</td>\n<td>\n<p dir=\"ltr\">No increase</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate increase</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe increase</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Prolonged <abbr title=\"Prothrombin time\">PT</abbr>, seconds</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;3</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3 to &lt;6</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;6</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Fibrinogen level, g/L</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;1</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;1</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*Use lab-specific cutoff values.</p>\n<p><span style=\"font-size: 10pt; font-family: Arial; color: #0000ff; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;\">&nbsp;</span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"87\"><col width=\"361\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Diagnosis</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;5</p>\n</td>\n<td>\n<p dir=\"ltr\">Not suggestive&nbsp;of overt DIC, may be non-overt DIC; repeat within next 1-2 days and manage clinically as appropriate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;5</p>\n</td>\n<td>\n<p dir=\"ltr\">Compatible with overt DIC; treat for DIC as appropriate and repeat scoring daily</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-5d91b5ad-7fff-4fc9-ed84-c4f8e3ab657b\"><span id=\"docs-internal-guid-5d91b5ad-7fff-4fc9-ed84-c4f8e3ab657b\">&nbsp;</span></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding"
+        ],
+        "disease_treated": [
+            "Bleeding/Hemorrhage",
+            "Coronavirus",
+            "COVID-19",
+            "Thrombocytopenia"
+        ],
+        "logic": "var calc_output = [];\n\nvar platelet = parseFloat(platelet);\nvar marker = parseFloat(marker);\nvar pt = parseFloat(pt);\nvar fib = parseFloat(fib);\n\nvar score = platelet + marker + pt + fib;\n\nvar diag;\nif (score >= 5) {\n  diag = 'Compatible with overt DIC; treat for DIC as appropriate and repeat scoring daily';\n} else {\n  diag = 'Not suggestive of overt DIC, may be non-overt DIC; repeat within next 1-2 days and manage clinically as appropriate';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: diag\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: diag   \n});\n",
+        "inputs": [
+            {
+                "subheading": "Diagnostic criteria for overt DIC",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Platelet count, cells x 10<sup>9</sup>/L</p>",
+                "name": "platelet",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥100",
+                        "value": 0
+                    },
+                    {
+                        "label": "50 to <100",
+                        "value": 1
+                    },
+                    {
+                        "label": "<50",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Elevated levels of a fibrin-related marker (e.g. D-dimer, fibrin degradation products)</p>",
+                "name": "marker",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No increase",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderate increase",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe increase",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Use lab-specific cutoff values",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Prolonged <abbr title=\"Prothrombin time\">PT</abbr>, seconds</p>",
+                "name": "pt",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<3",
+                        "value": 0
+                    },
+                    {
+                        "label": "3 to <6",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥6",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Fibrinogen level, g/L</p>",
+                "name": "fib",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥1",
+                        "value": 0
+                    },
+                    {
+                        "label": "<1",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Disseminated Intravascular Coagulation, DIC, DIC score, coagulation, covid19, covid 19, covid-19, covid, coronavirus"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

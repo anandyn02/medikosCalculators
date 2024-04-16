@@ -1,0 +1,234 @@
+{
+    "id": "669",
+    "title": "Sickle Cell RBC Exchange Volume",
+    "desc": "RBC Exchange Replacement Volume estimates the volume of donor RBCs to use during automated RBC exchange for patients with sickle cell disease.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/nlmcatalog/101666102",
+                "text": "Brecher ME, Shaz BH, Schwartz J. Look This Up, Too! A Quick Reference in Apheresis. 3rd Ed. AABB Press, Bethesda MD 2013."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p><span>RBC replacement volume = RBC volume &times; ln (HbS, initial / HbS, goal) / donor Hct</span></p>\n<p><span>Where RBC volume = <calculator id=\"4065\">total blood volume</calculator> &times; patient Hct</span></p>\n<p><span>Note: HbS and Hct are in whole % (i.e., 30%, not 0.3).&nbsp;RBC units assume 350 mL per unit and are rounded up to the nearest whole unit.</span></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Goal HbS",
+                "unit": "hct_sickle_goal",
+                "error_min": "1",
+                "error_max": "30",
+                "warn_min": "1",
+                "warn_max": "30",
+                "conversion": "1",
+                "normal_max_si": "30",
+                "normal_max_us": "30",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Height",
+                "unit": "ht",
+                "error_min": "0",
+                "error_max": "90",
+                "warn_min": "5",
+                "warn_max": "80",
+                "conversion": "2.54",
+                "normal_max_si": "213",
+                "normal_max_us": "84",
+                "normal_min_si": "152",
+                "normal_min_us": "60",
+                "units_si": "cm",
+                "units_us": "in"
+            },
+            {
+                "name": "Hct, sickle cell pt",
+                "unit": "hct_sickle",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "10",
+                "warn_max": "40",
+                "conversion": "1",
+                "normal_max_si": "30",
+                "normal_max_us": "30",
+                "normal_min_si": "20",
+                "normal_min_us": "20",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Initial HbS",
+                "unit": "hct_sickle_init",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "20",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "20",
+                "normal_min_us": "20",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Donor Hct",
+                "unit": "hct_sickle_donor",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "55",
+                "warn_max": "85",
+                "conversion": "1",
+                "normal_max_si": "85",
+                "normal_max_us": "85",
+                "normal_min_si": "55",
+                "normal_min_us": "55",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Sickle Cell Disease"
+        ],
+        "logic": "var calc_output = [];\n\nvar height = parseFloat(height)\nvar weight = parseFloat(weight)\nvar hct = parseFloat(hct)\nvar sex = parseFloat(sex)\nvar hct_donor = parseFloat(hct_donor)\nvar hgbs_initial = parseFloat(hgbs_initial)\nvar hgbs_goal = parseFloat(hgbs_goal)\n\nvar tbv\n\nif (sex\t== 0) { // male\n\ttbv = 0.3669 * Math.pow(height / 100, 3) + 0.03219 * weight + 0.6041\n}\nelse {\n\ttbv = 0.3561 * Math.pow(height / 100, 3) + 0.03308 * weight + 0.1833\n}\n\nvar rbc = tbv * 1000 * hct \n\nvar rbc_exchange = rbc * Math.log(hgbs_initial/hgbs_goal) / hct_donor\n\nvar units = rbc_exchange / 350\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: rbc_exchange.toFixed(0),\n    value_text: 'mL',\n    message: 'RBC exchange'\n});\ncalc_output.push({\n    name: '4066_Sickle Cell RBC Exchange Volume_result (RBC)',\n    value: rbc_exchange.toFixed(0),\n    value_text: 'mL',\n    message: 'RBC exchange replacement volume'\n});\ncalc_output.push({\n    name: '4066_Sickle Cell RBC Exchange Volume_result (units)',\n    value: units.toFixed(0),\n    value_text: 'units',\n    message: 'Approximate number of units, assuming 350 mL RBCs per unit'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Patient sex",
+                "mdcalc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Patient height",
+                "name": "height",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Patient weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Patient hematocrit",
+                "name": "hct",
+                "optional": false,
+                "tips_en": "\"Normal\" indicates likely normal ranges for sickle cell patients",
+                "type": "textbox",
+                "unit": "hct_sickle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Patient's initial HgbS",
+                "name": "hgbs_initial",
+                "optional": false,
+                "tips_en": "If exchange is required for acute complication and pre-exchange HgbS % is unknown, can presume 100% HgbS",
+                "type": "textbox",
+                "unit": "hct_sickle_init"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Goal HgbS",
+                "name": "hgbs_goal",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hct_sickle_goal"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hematocrit of transfused RBCs",
+                "name": "hct_donor",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hct_sickle_donor"
+            }
+        ],
+        "can_search": [
+            "rbc",
+            "exchange",
+            "replacement",
+            "blood volume",
+            "sickle cell",
+            "transfusion"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pathology",
+            "Surgery (Trauma)",
+            "Transfusion Medicine"
+        ]
+    }
+}

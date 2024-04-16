@@ -1,0 +1,201 @@
+{
+    "id": "303",
+    "title": "Primary Care PTSD Screen for DSM-5 (PC-PTSD-5)",
+    "desc": "Primary Care PTSD Screen for DSM-5 (PC-PTSD-5) screens for PTSD in primary care populations.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27170304/",
+                "text": "Prins A, Bovin MJ, Smolenski DJ, et al. The primary care ptsd screen for dsm-5 (PC-PTSD-5): development and evaluation within a veteran primary care sample. J Gen Intern Med. 2016;31(10):1206-1211."
+            },
+            {
+                "href": "https://www.ptsd.va.gov/professional/articles/article-pdf/id26676.pdf",
+                "text": "Prins A, Ouimette P, Kimerling R, et al. The primary care PTSD screen (Pc–ptsd): development and operating characteristics. Prim Care Psych. 2004;9(1):9-14."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>Examples of traumatic events include:</span></p>\n<ul>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>A serious accident or fire.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>A physical or sexual assault or abuse.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>An earthquake or flood.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>A war.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Seeing someone be killed or seriously injured.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Having a loved one die through homicide or suicide.</span></p>\n</li>\n</ul>\n<p dir=\"ltr\"><span>First, ask the patient: Have you ever experienced this kind of event?</span><b></b><span></span></p>\n<p dir=\"ltr\"><span>If no, the PC-PTSD-5 Score = 0.</span></p>\n<p dir=\"ltr\"><span>If yes, the PC-PTSD-5 Score is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%;\"><colgroup><col style=\"width: 60.4413%;\"><col style=\"width: 19.8828%;\"><col style=\"width: 19.6759%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>In the past month have you&hellip;</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Had nightmares about the event(s) or thought about the event(s) when you did not want to?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Tried hard not to think about the event(s) or went out of your way to avoid situations that reminded you of the event(s)?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Been constantly on guard, watchful, or easily startled?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Felt numb or detached from people, activities, or your surroundings?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Felt guilty or unable to stop blaming yourself or others for the event(s) or any problems the event(s) may have caused?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col><col></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>PC-PTSD-5 Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Screening Result</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&lt;4</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Negative</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;4</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Positive</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "Altered Mental Status",
+            "Anxious",
+            "Depressed",
+            "Loss of Appetite",
+            "Preventive Care/Screening",
+            "Suicidal",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Posttraumatic Stress Disorder",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar q1 = parseFloat(q1);\nvar q2 = parseFloat(q2);\nvar q3 = parseFloat(q3);\nvar q4 = parseFloat(q4);\nvar q5 = parseFloat(q5);\nvar q6 = parseFloat(q6);\n\nvar score;\n\nif (q1 == 0) {\n    score = 0;\n} else {\n    score = q2 + q3 + q4 + q5 + q6;\n}\n\nvar result;\nif (score < 4) {\n    result = 'Negative screen';\n} else {\n    result = 'Positive screen';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: result\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'PC-PTSD-5 Score'\n});\ncalc_output.push({\n    name: 'Result',\n    value: result,\n    value_text: '',\n    message: 'Screening result'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Have you ever experienced a traumatic event?</p>",
+                "mdcalc_info_concept": null,
+                "name": "q1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Examples of traumatic events include: <li>A serious accident or fire.</li><li>A physical or sexual assault or abuse.</li><li>An earthquake or flood.</li><li>A war.</li><li>Seeing someone be killed or seriously injured.</li><li>Having a loved one die through homicide or suicide.",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<b>In the past month have you…</b>",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "q1 == 1",
+                "default": 0,
+                "label_en": "<p>Had nightmares about the event(s) or thought about the event(s) when you did not want to?</p>",
+                "mdcalc_info_concept": null,
+                "name": "q2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "q1 == 1",
+                "default": 0,
+                "label_en": "<p>Tried hard not to think about the event(s) or went out of your way to avoid situations that reminded you of the event(s)?</p>",
+                "mdcalc_info_concept": null,
+                "name": "q3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "q1 == 1",
+                "default": 0,
+                "label_en": "<p>Been constantly on guard, watchful, or easily startled?</p>",
+                "mdcalc_info_concept": null,
+                "name": "q4",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "q1 == 1",
+                "default": 0,
+                "label_en": "<p>Felt numb or detached from people, activities, or your surroundings?</p>",
+                "mdcalc_info_concept": null,
+                "name": "q5",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "q1 == 1",
+                "default": 0,
+                "label_en": "<p>Felt guilty or unable to stop blaming yourself or others for the event(s) or any problems the event(s) may have caused?</p>",
+                "mdcalc_info_concept": null,
+                "name": "q6",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Primary Care PTSD Screen for DSM-5 (PC-PTSD-5)",
+            "PC-PTSD-5",
+            "ptsd",
+            "post traumatic stress disorder",
+            "pc ptsd",
+            "ptsd screening",
+            "pc ptsd 5",
+            "Primary Care PTSD Screen for DSM-V (PC-PTSD-V)",
+            "PC-PTSD-V",
+            "pc ptsd V",
+            "posttraumatic stress disorder",
+            "dsm 5",
+            "dsm  v",
+            "dsm-5",
+            "dsm-v"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Psychiatry"
+        ]
+    }
+}

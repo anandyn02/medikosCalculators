@@ -1,0 +1,87 @@
+{
+    "id": "428",
+    "title": "Disease Steps for Multiple Sclerosis",
+    "desc": "The Disease Steps for Multiple Sclerosis (MS) evaluates MS disease progression based on patient’s ambulatory ability.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10516779",
+                "text": "Hohol MJ, Orav EJ, Weiner HL. Disease steps in multiple sclerosis: a longitudinal study comparing disease steps and EDSS to evaluate disease progression. Mult Scler. 1999 Oct;5(5):349-54."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.nationalmssociety.org/NationalMSSociety/media/MSNationalFiles/Brochures/10-2-3-28-Disease_Steps_Form.pdf",
+                "text": "National MS Society. Disease Steps for MS Form."
+            }
+        ],
+        "evidence": "<p>Selection of appropriate criteria per patient&rsquo;s ability.</p>",
+        "facts": "<ul>\n<li><strong>Normal:</strong> functionally normal with no limitations on activity or lifestyle. Patients may have minor abnormality on examination, such as nystagmus or an extensor plantar. The course is relapsing-remitting with a return to baseline with or without treatment. These patients are not treated with any ongoing symptomatic therapy for MS.</li>\n<li><strong>Mild disability:</strong> mild symptoms or signs. These patients have mild but definite findings such as sensory abnormalities, mild bladder impairment, minor incoordination, weakness, or fatigue. There is no visible abnormality of gait. The pattern of disease is relapsingremitting, but patients may not have a full return to baseline following attacks. These patients may use ongoing symptomatic therapy such as amantadine, baclofen, or oxybutynin.</li>\n<li><strong>Moderate disability:</strong> the main feature is a visibly abnormal gait, but patients do not require ambulation aids. The pattern of disease is relapsing-remitting or progressive.</li>\n<li><strong>Early cane:</strong> intermittent use of cane (or other forms of unilateral support including splint, brace, or crutch). These patients use unilateral support primarily for longer distances, but are able to walk at least 25 feet without it. The pattern of disease is relapsing-remitting or progressive.</li>\n<li><strong>Late cane:</strong> these patients are dependent on a cane or other forms of unilateral support and cannot walk 25 feet without such support (eg, these patients may hang on to furniture inside their homes or touch the wall when walking in clinic). Patients may use a scooter for greater distances (eg, malls). The pattern of disease is relapsing remitting or progressive.</li>\n<li><strong>Bilateral support:</strong> patients require bilateral support to walk 25 feet (eg, two canes or two crutches or a walker). They may use a scooter for greater distances. The pattern of disease is relapsing-remitting or progressive.</li>\n<li><strong>Confined to wheelchair:</strong> patients are essentially confined to a wheelchair or scooter. They may be able to take a few steps but are unable to ambulate 25 feet, even with bilateral support. They may show further progression including worsening hand function or inability to transfer independently.</li>\n<li><strong>Unclassifiable:</strong> this category is used for patients who do not fit the above classification (eg, significant cognitive or visual impairment, overwhelming fatigue, or significant bowel or bladder impairment in an otherwise minimally impaired patient).</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Numbness",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Multiple Sclerosis"
+        ],
+        "logic": "var calc_output = [];\nvar msg = '';\nvar crit = '';\nvar mini_msg = '';\nvar msgAppend = '';\nvar u = parseInt(diseasesteps);\nif (u == 0) { mini_msg = 'Normal';\n    msg = 'Functionally normal with no limitations on activity or lifestyle.';\n    msgAppend = ' Patients may have minor abnormality on examination, such as nystagmus or an extensor plantar. The course is relapsing-remitting with a return to baseline with or without treatment. These patients are not treated with any ongoing symptomatic therapy for MS.'; }\nif (u == 1) { mini_msg = 'Mild Disability';\n    msg = 'Mild symptoms or signs.';\n    msgAppend = ' These patients have mild but definite findings such as sensory abnormalities, mild bladder impairment, minor incoordination, weakness, or fatigue. There is no visible abnormality of gait. The pattern of disease is relapsing remitting, but patients may not have a full return to baseline following attacks. These patients may use ongoing symptomatic therapy such as amantadine, baclofen, or oxybutynin.'; }\nif (u == 2) { mini_msg = 'Moderate Disability';\n    msg = 'The main feature is a visibly abnormal gait.';\n    msgAppend = ' Patients do not require ambulation aids. The pattern of disease is relapsing-remitting or progressive.'; }\nif (u == 3) { mini_msg = 'Early Cane';\n    msg = 'Intermittent use of cane (or other forms of unilateral support including splint, brace, or crutch).';\n    msgAppend = ' These patients use unilateral support primarily for longer distances, but are able to walk at least 25 feet without it. The pattern of disease is relapsing-remitting or progressive.'; }\nif (u == 4) { mini_msg = 'Late Cane';\n    msg = 'Patients are dependent on a cane or other forms of unilateral support.';\n    msgAppend = ' Patients cannot walk 25 feet without such support (e.g., these patients may hang on to furniture inside their homes or touch the wall when walking in clinic). Patients may use a scooter for greater distances (e.g., malls). The pattern of disease is relapsing remitting or progressive.'; }\nif (u == 5) { mini_msg = 'Bilateral Support';\n    msg = 'Patients require bilateral support to walk 25 feet (e.g., two canes or two crutches or a walker).';\n    msgAppend = ' They may use a scooter for greater distances. The pattern of disease is relapsing-remitting or progressive.'; }\nif (u == 6) { mini_msg = 'Confined to Wheelchair';\n    msg = 'Patients are essentially confined to a wheelchair or scooter.'\n    msgAppend = ' They may be able to take a few steps but are unable to ambulate 25 feet, even with bilateral support. They may show further progression including worsening hand function or inability to transfer independently.'; }\nif (u == 7) { mini_msg = 'Unclassifiable';\n    msg = 'This category is used for patients who do not fit the above classification.';\n    msgAppend = ' (e.g., significant cognitive or visual impairment, overwhelming fatigue, or significant bowel or bladder impairment in an otherwise minimally impaired patient).'; }\n\ncalc_output.push({\n    name: 'mini', \n    value: '', \n    value_text: '', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '2199_Disease Steps for MS_result', \n    value: mini_msg, \n    value_text: '', \n    message: msg + msgAppend \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Patient's Ambulatory Ability",
+                "mdcalc_info_concept": null,
+                "name": "diseasesteps",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild disability",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate disability",
+                        "value": 2
+                    },
+                    {
+                        "label": "Early cane",
+                        "value": 3
+                    },
+                    {
+                        "label": "Late cane",
+                        "value": 4
+                    },
+                    {
+                        "label": "Bilateral support",
+                        "value": 5
+                    },
+                    {
+                        "label": "Confined to wheelchair",
+                        "value": 6
+                    },
+                    {
+                        "label": "Unclassifiable",
+                        "value": 7
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "ambulation",
+            "walking",
+            "steps",
+            "MS"
+        ],
+        "specialty": [
+            "Neurology"
+        ]
+    }
+}

@@ -1,0 +1,134 @@
+{
+    "id": "406",
+    "title": "D'Amico Risk Classification for Prostate Cancer",
+    "desc": "The D'Amico Risk Classification for Prostate Cancer assesses 5 year failure of treatment based on clinical factors.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jama.jamanetwork.com/article.aspx?articleid=187980",
+                "text": "D'Amico AV, Whittington R, Malkowicz S, et al. Biochemical Outcome After Radical Prostatectomy, External Beam Radiation Therapy, or Interstitial Radiation Therapy for Clinically Localized Prostate Cancer. JAMA.1998;280(11):969-974. doi:10.1001/jama.280.11.969."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3328553/",
+                "text": "Rodrigues G, Warde P, Pickles T, et al. Pre-treatment risk stratification of prostate cancer patients: A critical review. Canadian Urological Association Journal. 2012;6(2):121-127. doi:10.5489/cuaj.11085."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1472896/",
+                "text": "Moul JW. The Evolving Definition of Advanced Prostate Cancer. Reviews in Urology. 2004;6(Suppl 8):S10-S17"
+            }
+        ],
+        "evidence": "<p>Risk calculated by combination of above factors.</p>",
+        "facts": "<p><b>Low risk: </b></p>\n<ul>\n<li><calculator id=\"2048\">Gleason Score</calculator> &lt;6&nbsp;<b>and</b></li>\n<li>PSA &lt;10 ng/ml <b>and</b></li>\n<li>Clinical stage T1c or T2a</li>\n</ul>\n<p><b>Intermediate risk: </b></p>\n<ul>\n<li><calculator id=\"2048\">Gleason Score</calculator> of 7 <b>or</b></li>\n<li>PSA of 10-20 ng/ml</li>\n<li>Clinical stage T2b</li>\n</ul>\n<p><b>High risk: </b></p>\n<ul>\n<li><calculator id=\"2048\">Gleason Score</calculator> &gt;8&nbsp;<b>or</b></li>\n<li>PSA &gt;20 ng/ml <b>or</b></li>\n<li>Clinical stage T2c or T3</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Hematuria",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer"
+        ],
+        "logic": "var calc_output = [];\nvar psa = parseFloat(psa);\nvar gleason = parseFloat(gleason);\nvar stage = parseFloat(stage);\nvar msg = '';\nvar valuetxt = '';\nif (psa == 1 && gleason == 1 && stage == 1) { msg = '<25% failure at 5 years post treatment.';\n    valuetxt = 'Low' }\nif (psa == 2 || gleason == 2 || stage == 2) { msg = '25-50% failure at 5 years post treatment.';\n    valuetxt = 'Intermediate' }\nif (psa == 3 || gleason == 3 || stage == 3) { msg = '>50% failure at 5 years post treatment.';\n    valuetxt = 'High' }\n\ncalc_output.push({ \n    name: 'mini', \n    value:'', \n    value_text: ' ', \n    message: valuetxt+' risk of recurrence.' \n});\ncalc_output.push({ \n    name: \"2049_D'Amico Classification_result\", \n    value: valuetxt, \n    value_text: '', \n    message:' Risk of recurrence.<br/><br/>'+msg \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "PSA level",
+                "mdcalc_info_concept": null,
+                "name": "psa",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<10 ng/mL",
+                        "value": 1
+                    },
+                    {
+                        "label": "10-20 ng/mL",
+                        "value": 2
+                    },
+                    {
+                        "label": ">20 ng/mL",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<calculator id='2048'>Gleason Score</calculator>",
+                "mdcalc_info_concept": null,
+                "name": "gleason",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤6",
+                        "value": 1
+                    },
+                    {
+                        "label": "7",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥8",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Clinical stage",
+                "mdcalc_info_concept": null,
+                "name": "stage",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "T1-T2a",
+                        "value": 1
+                    },
+                    {
+                        "label": "T2b",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥T2c",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "d'amico",
+            "damico",
+            "dam",
+            "prostate",
+            "CA",
+            "cancer",
+            "oncology",
+            "gleason",
+            "PSA",
+            "t2c",
+            "t3",
+            "t2b",
+            "t1c",
+            "t2a"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Urology"
+        ]
+    }
+}

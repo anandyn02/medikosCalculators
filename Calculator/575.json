@@ -1,0 +1,187 @@
+{
+    "id": "575",
+    "title": "EGSYS (Evaluation of Guidelines in SYncope Study) Score for Syncope",
+    "desc": "The EGSYS Score for Syncope identifies cardiac causes of syncope.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18519550 ",
+                "text": "Del Rosso A, Ungar A, Maggi R, et al. Clinical predictors of cardiac syncope at initial evaluation in patients referred urgently to a general hospital: the EGSYS score. Heart. 2008;94(12):1620-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://bmcemergmed.biomedcentral.com/articles/10.1186/1471-227X-14-8 ",
+                "text": "Thiruganasambandamoorthy V, Stiell IG, Sivilotti ML, et al. Risk stratification of adult emergency department syncope patients to predict short-term serious outcomes after discharge (RiSEDS) study. BMC Emerg Med. 2014;14:8."
+            },
+            {
+                "href": "https://jamanetwork.com/journals/jama/fullarticle/2736568",
+                "text": "Albassam OT, Redelmeier RJ, Shadowitz S, Husain AM, Simel D, Etchells EE. Did This Patient Have Cardiac Syncope?: The Rational Clinical Examination Systematic Review. JAMA. 2019;321(24):2448-2457."
+            }
+        ],
+        "evidence": "<p><span>Addition of the selected points:</span></p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Finding</strong></p>\n</td>\n<td>\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Abnormal EKG<sup>1</sup> and/or heart disease<sup>2</sup></span></p>\n</td>\n<td>\n<p><span>+3 </span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Palpitations before syncope</span></p>\n</td>\n<td>\n<p><span>+4</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Syncope during effort </span></p>\n</td>\n<td>\n<p><span>+3</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Syncope in supine position</span></p>\n</td>\n<td>\n<p><span>+2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Autonomic prodromes<sup>3</sup></span></p>\n</td>\n<td>\n<p><span>-1</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Predisposing and/or precipitating factors<sup>4</sup></span></p>\n</td>\n<td>\n<p><span>-1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n<ol>\n<li>Sinus bradycardia, AV block &gt;1st degree, BBB, acute or old MI, SVT or VT,&nbsp;<span>left or right ventricular hypertrophy, ventricular preexcitation, long QT, or Brugada pattern.</span></li>\n<li><span>Previous clinical or laboratory diagnosis of any form of&nbsp;</span><span>structural heart disease, including ischemic heart disease, valvular dysfunction, myocardiopathies and congenital heart disease; previous diagnosis or clinical evidence of CHF; physical signs of structural heart disease. </span></li>\n<li><span>Nausea/vomiting.</span></li>\n<li><span>Warm or crowded place, prolonged orthostasis, fear/pain/other emotion.</span></li>\n</ol>",
+        "facts": "<p><span>Interpretation:</span></p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>EGSYS </strong></p>\n</td>\n<td>\n<p><strong>Interpretation</strong></p>\n</td>\n<td>\n<p><strong>Mortality at 21&ndash;24 months</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span> &ge;3</span></p>\n</td>\n<td>\n<p><span>Cardiac syncope likely (95% sensitive)</span></p>\n</td>\n<td>\n<p><span>17%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>&lt;3 </span></p>\n</td>\n<td>\n<p><span>Cardiac syncope less likely</span></p>\n</td>\n<td>\n<p><span>3%</span></p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Dizziness",
+            "Seizure",
+            "Syncope"
+        ],
+        "disease_treated": [
+            "Atrial Fibrillation",
+            "Myocardial Infarction",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar ecg = parseFloat(ecg);\nvar palp = parseFloat(palp);\nvar eff = parseFloat(eff);\nvar sup = parseFloat(sup);\nvar auto = parseFloat(auto);\nvar predis = parseFloat(predis);\n\n//calculation\nvar u = ecg + palp + eff+ sup + auto + predis;\n\n//interpretation\nvar msg, mort, risk\nif(u >= 3 ){\n\tmsg = 'Cardiac syncope likely (95% sensitivity)'\n    mort = '17% mortality at 21-24 months for EGSYS ≥3'\n    risk = 'Likely'\n}else{\n\tmsg = 'Cardiac syncope less likely'\n    mort = '3% mortality at 21-24 months for EGSYS <3'\n    risk = 'Unlikely'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: risk + ' cardiac syncope'\n});\ncalc_output.push({\n    name: 'Score',\n    value: u,\n    value_text: 'points',\n    message: msg + '<br/>' + mort\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abnormal EKG and/or heart disease",
+                "md_calc_info_concept": null,
+                "name": "ecg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Abnl EKG includes common findings like sinus bradycardia, BBB, LVH as well as others; Heart disease includes ischemic/valvular/structural disease, heart failure",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Palpitations before syncope",
+                "md_calc_info_concept": null,
+                "name": "palp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Syncope during effort ",
+                "md_calc_info_concept": null,
+                "name": "eff",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Syncope in supine position",
+                "md_calc_info_concept": null,
+                "name": "sup",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Autonomic prodromes",
+                "md_calc_info_concept": null,
+                "name": "auto",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Nausea/vomiting",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Predisposing and/or precipitating factors",
+                "md_calc_info_concept": null,
+                "name": "predis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Warm or crowded place, prolonged orthostasis, fear/pain/other emotion",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "EGSYS",
+            "Evaluation of of Guidelines in Syncope Study",
+            "syncope",
+            "syncope score",
+            "fainting",
+            "vasovagal",
+            "LOC",
+            "stroke risk"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

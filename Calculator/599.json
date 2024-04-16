@@ -1,0 +1,208 @@
+{
+    "id": "599",
+    "title": "Appendicitis Inflammatory Response (AIR) Score",
+    "desc": "The Appendicitis Inflammatory Response Score diagnoses appendicitis based on clinical and laboratory findings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://link.springer.com/article/10.1007/s00268-008-9649-y",
+                "text": "Andersson M, Andersson RE. The appendicitis inflammatory response score: a tool for the diagnosis of acute appendicitis that outperforms the Alvarado score. World J Surg. 2008;32(8):1843-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3299622/ ",
+                "text": "Ohle R, O'reilly F, O'brien KK, Fahey T, Dimitrov BD. The Alvarado score for predicting acute appendicitis: a systematic review. BMC Med. 2011;9:139."
+            }
+        ],
+        "evidence": "<p>Addition of selected points:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td rowspan=\"2\">\n<p><strong>Vomiting</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p><strong>RIF pain</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p><strong>Rebound tenderness </strong></p>\n</td>\n<td>\n<p>None</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Light</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Medium</p>\n</td>\n<td>\n<p>+2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Strong</p>\n</td>\n<td>\n<p>+3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p><strong>Temp </strong><strong>&ge;101.3&ordm;F (38.5&ordm;C)</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p><strong>Polymorphonuclear leukocytes</strong></p>\n</td>\n<td>\n<p>&lt;70%</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>70&ndash;84%</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;85%</p>\n</td>\n<td>\n<p>+2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p><strong>WBC count, &times;10<sup>9</sup></strong><strong>/L</strong></p>\n</td>\n<td>\n<p>&lt;10</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>10.0&ndash;14.9</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;15</p>\n</td>\n<td>\n<p>+2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p><strong>CRP level, mg/L</strong></p>\n</td>\n<td>\n<p>&lt;10</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>10&ndash;49</p>\n</td>\n<td>\n<p>+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;50</p>\n</td>\n<td>\n<p>+2</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p>Interpretation:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>AIR Score</strong></p>\n</td>\n<td>\n<p><strong>Risk</strong></p>\n</td>\n<td>\n<p><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0&ndash;4</p>\n</td>\n<td>\n<p>Low</p>\n</td>\n<td>\n<p>Outpatient follow-up (if unaltered general condition)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>5&ndash;8</p>\n</td>\n<td>\n<p>Indeterminate</p>\n</td>\n<td>\n<p>In-hospital active observation with serial re-exams, imaging, or diagnostic laparoscopy, according to local practice</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>9&ndash;12</p>\n</td>\n<td>\n<p>High</p>\n</td>\n<td>\n<p>Surgical exploration</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Pain",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Appendicitis"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs - addition of selected points\nvar score = parseFloat(vomit) + parseFloat(pain) + parseFloat(rebound) + parseFloat(body) + parseFloat(poly) + parseFloat(wbc) + parseFloat(crp);\n\n//interpretation\nvar prob, rec;\nif(score < 5){\n\tprob = 'Low';\n\trec = 'Outpatient follow-up (if unaltered general condition)';\n}\nif(score > 4 && score < 9){\n\tprob = 'Indeterminate';\n\trec = 'In-hospital active observation with serial re-exams, imaging, or diagnostic laparoscopy, according to local practice';\n}\nif(score > 8 && score < 13){\n\tprob = 'High';\n\trec = 'Surgical exploration recommended';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: prob\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'AIR Score'\n});\ncalc_output.push({\n    name: 'interpretation',\n    value: prob,\n    value_text: 'risk',\n    message: rec\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Vomiting",
+                "name": "vomit",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Right iliac fossa'>RIF</abbr> pain",
+                "name": "pain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Rebound tenderness",
+                "name": "rebound",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Light",
+                        "value": 1
+                    },
+                    {
+                        "label": "Medium",
+                        "value": 2
+                    },
+                    {
+                        "label": "Strong",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Temp ≥101.3ºF (38.5ºC)",
+                "name": "body",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Polymorphonuclear leukocytes",
+                "name": "poly",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<70%",
+                        "value": 0
+                    },
+                    {
+                        "label": "70-84%",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥85%",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "WBC count, ×10⁹/L",
+                "name": "wbc",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<10",
+                        "value": 0
+                    },
+                    {
+                        "label": "10.0–14.9",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥15",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='C-reactive protein'>CRP</abbr> level, mg/L",
+                "name": "crp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<10",
+                        "value": 0
+                    },
+                    {
+                        "label": "10–49",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥50",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "appendicitis",
+            "appy",
+            "appendectomy",
+            "appendicectomy",
+            "air",
+            "alvarado",
+            "acute appendicitis",
+            "air score"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Pediatrics",
+            "Surgery (General)"
+        ]
+    }
+}

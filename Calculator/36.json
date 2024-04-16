@@ -1,0 +1,157 @@
+{
+    "id": "36",
+    "title": "Duval/CIBMTR Score for Acute Myelogenous Leukemia (AML) Survival",
+    "desc": "The Duval Score for Acute Myelogenous Leukemia (AML) Survival predicts the transplantation survival of AML for patients in complete remission. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2917308/pdf/zlj3730.pdf ",
+                "text": "Duval M, Klein JP, He W, et al. Hematopoietic stem-cell transplantation for acute leukemia in relapse or primary induction failure. J Clin Oncol. 2010;28(23):3730-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2212610/ ",
+                "text": "Armand P, Kim HT, Cutler CS, et al. A prognostic score for patients with acute leukemia or myelodysplastic syndromes undergoing allogeneic stem cell transplantation. Biol Blood Marrow Transplant. 2008;14(1):28-35."
+            },
+            {
+                "href": "https://jamanetwork.com/journals/jamaoncology/fullarticle/2652906",
+                "text": "Sorror ML, Storer BE, Fathi AT, et al. Development and Validation of a Novel Acute Myeloid Leukemia-Composite Model to Estimate Risks of Mortality. JAMA Oncol. 2017;3(12):1675-1682. "
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td><br />\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>0 Points </strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>1 Point </strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>2 Points </strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Disease group</p>\n</td>\n<td>\n<p dir=\"ltr\">Primary induction failure or duration of first complete remission &gt;6 months</p>\n</td>\n<td>\n<p dir=\"ltr\">Duration of first complete remission &lt;6 months</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Cytogenetics prior to HSCT</p>\n</td>\n<td>\n<p dir=\"ltr\">Good or intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">Poor</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">HLA match group</p>\n</td>\n<td>\n<p dir=\"ltr\">HLA identical sibling or well matched or partially matched unrelated</p>\n</td>\n<td>\n<p dir=\"ltr\">Mismatched unrelated</p>\n</td>\n<td>\n<p dir=\"ltr\">Related other than HLA identical sibling</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Circulating blasts*</p>\n</td>\n<td>\n<p dir=\"ltr\">Absent</p>\n</td>\n<td>\n<p dir=\"ltr\">Present</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Karnofsky or Lansky&nbsp;scale</p>\n</td>\n<td>\n<p dir=\"ltr\">90-100</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;90</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span id=\"docs-internal-guid-774f7d32-f24e-22e1-de60-732b589ac343\"></span></p>\n<p dir=\"ltr\">*At the time of transplant.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"118\" /><col width=\"119\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Duval Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>3-year overall survival after transplantation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">42%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">28%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">15%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;3</p>\n</td>\n<td>\n<p dir=\"ltr\">6%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-da334acd-28a6-0f0d-4be0-3f2c4baf8618\">From <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2917308/pdf/zlj3730.pdf\" target=\"_blank\">Duval 2010</a>.</span></p>\n<p><span></span></p>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue",
+            "Fever",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Hematologic Malignancy"
+        ],
+        "logic": "var calc_output = [];\n\nvar disease = parseFloat(disease)\nvar cytogenetics = parseFloat(cytogenetics)\nvar hla = parseFloat(hla)\nvar blasts = parseFloat(blasts)\nvar karnofsky = parseFloat(karnofsky)\n\nvar score = disease + cytogenetics + hla + blasts + karnofsky\n\nvar survival \n\n\nif (score == 0) {\n    survival = '42' \n}    \nelse if (score == 1) { \n    survival = '28'\n}\nelse if (score == 2){\n    survival = '15'\n} \nelse if (score >= 3) {\n    survival = '6'\n}\n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: survival + '% overall survival' \n    });\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Duval Score'\n    });\ncalc_output.push({\n    name: 'survival',\n    value: survival, \n    value_text: '%',\n    message: '3-year overall survival after transplantation'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Disease group",
+                "name": "disease",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Primary induction failure or duration of first complete remission >6 months",
+                        "value": 0
+                    },
+                    {
+                        "label": "Duration of first complete remission <6 months",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cytogenetics prior to HSCT",
+                "name": "cytogenetics",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Good or intermediate ",
+                        "value": 0
+                    },
+                    {
+                        "label": "Poor",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": " <abbr title='Human leukocyte antigen'>HLA</abbr> match group",
+                "name": "hla",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "HLA identical sibling or well matched or partially matched unrelated",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mismatched unrelated",
+                        "value": 1
+                    },
+                    {
+                        "label": "Related other than HLA identical sibling",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Circulating blasts ",
+                "name": "blasts",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "At the time of transplant",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id=\"3168\">Karnofsky</calculator> or <calculator id=\"3176\">Lanksy</calculator> scale",
+                "name": "karnofsky",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "90-100",
+                        "value": 0
+                    },
+                    {
+                        "label": "<90",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Duval Score",
+            "Hematopoietic stem cell transplant",
+            "Duval survival score",
+            " AML survival",
+            "Acute myelogenous leukemia score"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Family Practice",
+            "Internal Medicine",
+            "Primary Care",
+            "Radiation Oncology"
+        ]
+    }
+}

@@ -1,0 +1,219 @@
+{
+    "id": "581",
+    "title": "CATCH (Canadian Assessment of Tomography for Childhood Head injury) Rule",
+    "desc": "The CATCH (Canadian Assessment of Tomography for Childhood Head injury) Rule predicts clinically significant head injuries in children.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/20142371/",
+                "text": "Osmond MH, Klassen TP, Wells GA, et al. CATCH: a clinical decision rule for the use of computed tomography in children with minor head injury. CMAJ. 2010;182(4):341-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(17)30555-X/abstract ",
+                "text": "Babl FE, Borland ML, Phillips N, et al. Accuracy of PECARN, CATCH, and CHALICE head injury decision rules in children: a prospective cohort study. Lancet. 2017."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25492544",
+                "text": "Babl FE, Bressan S. Physician practice and PECARN rule outperform CATCH and CHALICE rules based on the detection of traumatic brain injury as defined by PECARN. Ann Emerg Med 2014;64:145–52.e5. doi: 10.1136/ebmed-2014-110090 "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24635987 ",
+                "text": "Easter JS, Bakes K, Dhaliwal J, Miller M, Caruso E, Haukoos JS. Comparison of PECARN, CATCH, and CHALICE rules for children with minor head injury: a prospective cohort study. Ann Emerg Med. 2014;64(2):145-52, 152.e1-5."
+            }
+        ],
+        "evidence": "<p>CT of the head is required only for children with minor head injury* and any one of the following findings:</p>\n<p><strong>High risk (need for neurologic intervention)</strong></p>\n<ul>\n<li><abbr title=\"Glasgow Coma Scale\"><calculator id=\"64\">GCS</calculator></abbr>&nbsp;&lt;15 at two hours after injury.</li>\n<li>Suspected open or depressed skull fracture.</li>\n<li>History of worsening headache.</li>\n<li>Irritability on examination.</li>\n</ul>\n<p><strong>Medium risk (brain injury on CT scan)</strong></p>\n<ul>\n<li>Any sign of basal skull fracture (e.g., hemotympanum, &ldquo;raccoon&rdquo; eyes, otorrhea or rhinorrhea of the cerebrospinal fluid, Battle&rsquo;s sign).</li>\n<li>Large, boggy hematoma of the scalp.</li>\n<li>Dangerous mechanism of injury (e.g., motor vehicle collision, fall from &ge;3 ft (91 cm) or 5 stairs, fall from bicycle with no helmet).</li>\n</ul>\n<p>*Minor head injury is defined as injury within the past 24 hours associated with witnessed loss of consciousness, definite amnesia, witnessed disorientation, persistent vomiting (more than one episode) or persistent irritability (in a child &lt;2&nbsp;years) with GCS 13&ndash;15.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Dizziness",
+            "Headache",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar gcs = parseFloat(gcs) ? 1 : 0;\nvar susopen = parseFloat(susopen) ? 1 : 0;\nvar hx = parseFloat(hx) ? 1 : 0;\nvar irrit = parseFloat(irrit) ? 1 : 0;\n\nvar basal = parseFloat(basal) ? 1 : 0;\nvar boggy = parseFloat(boggy) ? 1 : 0;\nvar moi = parseFloat(moi) ? 1 : 0;\n\nvar req = \"CT not necessary.\";\nvar result = \"Low\";\nvar high = 0;\nvar medium = 0;\nvar sens = ''\n\n\nhigh = gcs + susopen + hx + irrit;\nmedium = basal + boggy + moi; \n\n\tif (high > 0){\n\tresult = \"High\";\n\treq = \"Consider CT.\"\n\tsens = \"100% sensitive for need for neurologic intervention.\";\n\t}\n\n\tif (medium > 0 && high == 0){\n\tresult = \"Medium\";\n\treq = \"Consider CT.\"\n\tsens = \"98.1% sensitive for brain injury on CT.\";\n\t}\n\n\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: 'risk',\n    message: req\n});\ncalc_output.push({\n    name: '3954_CATCH Rule_result',\n    value: result,\n    value_text: 'risk',\n    message: req + '<br/>' + sens\n});\n\n\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<calculator id='64'>GCS</calculator> <15 at 2 hrs after injury",
+                "md_calc_info_concept": null,
+                "name": "gcs",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Suspected open or depressed skull fracture",
+                "md_calc_info_concept": null,
+                "name": "susopen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "History of worsening headache",
+                "md_calc_info_concept": null,
+                "name": "hx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Irritability on exam</p>",
+                "md_calc_info_concept": null,
+                "name": "irrit",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Any sign of basal skull fracture</p>",
+                "md_calc_info_concept": null,
+                "name": "basal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Hemotympanum, raccoon eyes, <abbr title='Cerebrospinal Fluid'>CSF</abbr> otorrhea or rhinorrhea, Battle’s sign",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Large boggy scalp hematoma</p>",
+                "md_calc_info_concept": null,
+                "name": "boggy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Dangerous mechanism of injury ",
+                "md_calc_info_concept": null,
+                "name": "moi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "<abbr title='Motor Vehicle Collision'>MVC</abbr>, fall from ≥3 ft (91 cm) or 5 stairs, fall from bicycle with no helmet",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "head trauma",
+            "trauma",
+            "head injury",
+            "CT head",
+            "trauma imaging",
+            "intracranial hemorrhange",
+            "intracranial bleed",
+            "pediatrics",
+            "peds",
+            "peds trauma",
+            "child",
+            "children",
+            "catch rule"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Pediatrics",
+            "Radiology"
+        ]
+    }
+}

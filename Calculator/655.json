@@ -1,0 +1,295 @@
+{
+    "id": "655",
+    "title": "Drug Resistance in Pneumonia (DRIP) Score",
+    "desc": "The DRIP Score predicts risk for community-acquired pneumonia due to drug-resistant pathogens (CAP-DRP).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://aac.asm.org/content/early/2016/02/02/AAC.03071-15.full.pdf+html",
+                "text": "Webb BJ, Dascomb K, Stenehjem E, et al. Derivation and Multicenter Validation of the Drug Resistance in Pneumonia Clinical Prediction Score. Antimicrob Agents Chemother. 2016;60(5):2652-63."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Risk Factor</strong></p>\n</td>\n<td>\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p><strong>Major </strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Antibiotic use within 60 days</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Long term care resident*</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Tube feeding**</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Prior drug-resistant pneumonia within 1 year</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p><strong>Minor</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Prior hospitalization&nbsp; within 60 days</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Chronic pulmonary disease</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Poor functional status***</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>H2 blocker or PPI within 14 days</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Active wound care at time of admission</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>MRSA colonization within 1 year</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Including long term acute care, skilled nursing, and inpatient rehabilitation but not assisted living or group home facilities.</p>\n<p>**Nasogastric, nasojejunal, or percutaneous gastrostomy.</p>\n<p>***<calculator id=\"3168\">Karnofsky Performance Status</calculator> &lt;70 or non-ambulatory status.</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>DRIP Score</strong></p>\n</td>\n<td>\n<p><strong>Interpretation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&lt;4</p>\n</td>\n<td>\n<p>Low risk of drug-resistant pneumonia. Consider treating without extended-spectrum antibiotics.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;4</p>\n</td>\n<td>\n<p>High risk of drug-resistant pneumonia. Extended-spectrum antibiotics likely necessary.</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Chest Pain",
+            "Cough",
+            "Dyspnea",
+            "Fatigue",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia"
+        ],
+        "logic": "var calc_output = [];\nvar antibiotic, longterm, tube, pneumonia, hospitalization, pulmonary, status, gastric, wound, mrsa;\n\nvar u = parseFloat(antibiotic) + parseFloat(longterm) + parseFloat(tube) + parseFloat(pneumonia) + parseFloat(hospitalization) + parseFloat(pulmonary) + parseFloat(status) + parseFloat(gastric) + parseFloat(wound) + parseFloat(mrsa);\n\nvar risk, msg;\n\nif (u < 4) {\n    risk = 'Low'\n    msg = 'Scores <4 were associated with lower risk of drug-resistant pneumonia. Consider treating without extended-spectrum antibiotics.'\n}\nif (u >= 4) {\n    risk = 'High'\n    msg = 'Scores ≥4 were associated with higher risk of drug-resistant pneumonia. Extended-spectrum antibiotics likely necessary.'\n}\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: risk \n});\ncalc_output.push({ \n\tname: 'DRIP Score', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: 'DRIP Score' \n});\ncalc_output.push({ \n\tname: 'Risk', \n\tvalue: risk, \n\tvalue_text: 'risk', \n\tmessage: msg \n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Major Risk Factors",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Antibiotic use within 60 days</p>",
+                "md_calc_info_concept": null,
+                "name": "antibiotic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Long term care resident</p>",
+                "md_calc_info_concept": null,
+                "name": "longterm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Not including assisted living or group home facilities",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Tube feeding</p>",
+                "md_calc_info_concept": null,
+                "name": "tube",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "NG, nasojejunal, or PEG",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Prior drug-resistant pneumonia diagnosis within 1 year</p>",
+                "md_calc_info_concept": null,
+                "name": "pneumonia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Minor Risk Factors",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hospitalization within 60 days</p>",
+                "md_calc_info_concept": null,
+                "name": "hospitalization",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Chronic pulmonary disease</p>",
+                "md_calc_info_concept": null,
+                "name": "pulmonary",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Poor functional status</p>",
+                "md_calc_info_concept": null,
+                "name": "status",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<calculator id='3168'>Karnofsky Performance Status</calculator> <70 or non-ambulatory status",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>H2 blocker or PPI within 14 days</p>",
+                "md_calc_info_concept": null,
+                "name": "gastric",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Active wound care at time of admission</p>",
+                "md_calc_info_concept": null,
+                "name": "wound",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>MRSA colonization within 1 year</p>",
+                "md_calc_info_concept": null,
+                "name": "mrsa",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "pneumonia",
+            "DRP",
+            "CAP-DRP",
+            "community-acquired pneumonia",
+            "HCAP",
+            "DRIP score",
+            "antibiotics",
+            "antibiotic resistance",
+            "covid",
+            "coronavirus",
+            "covid-19",
+            "covid 19",
+            "covid19"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Primary Care",
+            "Pulmonology"
+        ]
+    }
+}

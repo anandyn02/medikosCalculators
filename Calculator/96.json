@@ -1,0 +1,157 @@
+{
+    "id": "96",
+    "title": "STONE Score for Uncomplicated Ureteral Stone",
+    "desc": "The STONE Score risk stratifies non-febrile ED patients to give a likelihood that their symptoms are being caused by a ureteral stone.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3966515/ ",
+                "text": "Moore CL, Bomann S, Daniels B, et al. Derivation and validation of a clinical prediction rule for uncomplicated ureteral stone--the STONE score: retrospective and prospective observational cohort studies. BMJ. 2014;348:g2191."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://www.choosingwisely.org/clinician-lists/acep-ct-of-abdomen-and-pelvis-for-ed-patients-under-50/ ",
+                "text": "Choosing Wisely: Ten Things Physicians and Patients Should Question. American College of Emergency Physicians. October 27, 2014. Accessed October 23, 2018."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<p><span id=\"docs-internal-guid-ea5f6e7d-7fff-df17-897e-4ac9713eb3fd\"></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"231\" /><col width=\"142\" /><col width=\"76\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Sex</p>\n</td>\n<td>\n<p dir=\"ltr\">Male</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Female</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Duration of pain prior to presentation</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;24 hours</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-24 hours</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;6 hours</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Nausea and vomiting</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Nausea alone</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Vomiting</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"></p>\n<p dir=\"ltr\">Hematuria on urine dipstick</p>\n</td>\n<td>\n<p dir=\"ltr\">Absent</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Present</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Race*</td>\n<td>\n<p dir=\"ltr\">Black</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>Non-black</td>\n<td>3</td>\n</tr>\n</tbody>\n</table>\n<p>*Race may/may not provide better estimates of HIV prevalence; optional.&nbsp;<a target=\"_blank\" data-stringify-link=\"https://www.mdcalc.com/race\" delay=\"150\" data-sk=\"tooltip_parent\" href=\"https://www.mdcalc.com/race\" rel=\"noopener noreferrer\">See here</a>&nbsp;for more on our approach to addressing race and bias on MDCalc.</p>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"65\" /><col width=\"88\" /><col width=\"112\" /><col width=\"184\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>STONE Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of having ureteral stone</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Note</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-5</p>\n</td>\n<td>\n<p dir=\"ltr\">Low risk</p>\n</td>\n<td>\n<p dir=\"ltr\">9.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">Diagnostic decisions should be based on the other diagnoses being considered.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-9</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate risk</p>\n</td>\n<td>\n<p dir=\"ltr\">51.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">Ultrasound performed after hydration and demonstrating hydronephrosis would increase the likelihood that this patient's symptoms are being caused by a kidney stone, and may decrease the patient's cumulative radiation exposure.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10-13</p>\n</td>\n<td>\n<p dir=\"ltr\">High risk</p>\n</td>\n<td>\n<p dir=\"ltr\">88.6%</p>\n</td>\n<td>\n<p dir=\"ltr\">If clinically improving and low concern for alternative pathology, this patient could initially be managed conservatively without a CT scan. Low-dose CT would be appropriate if stone localization is needed.</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>Note: Within each group, higher score indicates higher likelihood of a stone.<br /><span id=\"docs-internal-guid-3ae073ad-7fff-f2d7-88b6-4a31be705e7d\"></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Dysuria",
+            "Flank Pain",
+            "Hematuria",
+            "Nausea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Kidney Stone"
+        ],
+        "logic": "var calc_output = [];\n\nvar sex = parseFloat(sex);\nvar pain = parseFloat(pain);\nvar race = parseFloat(race) || -1;\nvar nausea = parseFloat(nausea);\nvar hematuria = parseFloat(hematuria);\nvar risk_group;\nvar risk_percent;\n\nif (race==4||race==1){\n  var score = sex + pain + race + nausea + hematuria - 1;\n  if (score <= 5){\n\trisk_group = 'Low';\n\trisk_percent = '9.2';\n}\nelse if (score <=9 && score >=6){\n\trisk_group = 'Moderate';\n\trisk_percent = '51.3';\n}\nelse if (score >= 10){\n\trisk_group = 'High';\n\trisk_percent = '88.6';\n}\n}\n\nif (race==-1){\n var score1 = sex + pain + nausea + hematuria;\n var score2 = sex + pain + nausea + hematuria + 3;\n var score = score1+\"-\"+score2;\n  if (score1 <= 5 && score2 <= 5){\n\trisk_group = 'Low';\n\trisk_percent = '9.2';\n}\nelse if (score1 <= 9 && score1 >= 6 && score2 <= 9 && score2 >= 6){\n\trisk_group = 'Moderate';\n\trisk_percent = '51.3';\n}\nelse if (score1 >= 10 && score2 >= 10){\n\trisk_group = 'High';\n\trisk_percent = '88.6';\n}\nelse if (score1 <= 5 && score2 <= 9 && score2 >=6){\n\trisk_group = 'Low to Moderate';\n\trisk_percent = '9.2-51.3';\n}\nelse if (score1 <= 9 && score1 >= 6 && score2 >= 10){\n\trisk_group = 'Moderate to High';\n\trisk_percent = '51.3-88.6';\n}\n}\n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk_group + ' risk'\n    });\ncalc_output.push({\n\tname: 'score',\n\tvalue: score,\n\tvalue_text: 'points',\n\tmessage: 'STONE Score'\n\t});\ncalc_output.push({\n\tname: 'risk_group',\n\tvalue: risk_group,\n\tvalue_text: ' risk',\n\tmessage: ''\n\t});\ncalc_output.push({\n\tname: 'risk_percent',\n\tvalue: risk_percent,\n\tvalue_text: '%',\n\tmessage: 'Risk of having ureteral stone'\n\t});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Duration of pain prior to presentation",
+                "name": "pain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">24 hours",
+                        "value": 0
+                    },
+                    {
+                        "label": "6-24 hours",
+                        "value": 1
+                    },
+                    {
+                        "label": "<6 hours",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nausea and vomiting",
+                "name": "nausea",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Nausea alone",
+                        "value": 1
+                    },
+                    {
+                        "label": "Nausea and vomiting",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hematuria on urine dipstick",
+                "name": "hematuria",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Race",
+                "name": "race",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Non-Caucasian",
+                        "value": 1
+                    },
+                    {
+                        "label": "Caucasian",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Race may/may not provide better estimates of stone; optional",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Stone score",
+            "kidney stone"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Primary Care",
+            "Urology"
+        ]
+    }
+}

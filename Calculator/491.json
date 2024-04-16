@@ -1,0 +1,222 @@
+{
+    "id": "491",
+    "title": "PERC Rule for Pulmonary Embolism",
+    "desc": "The PERC Rule for Pulmonary Embolism Rules out PE if no criteria are present and pre-test probability is ≤15%.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15304025",
+                "text": "Kline JA, et al. Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism. J Thromb Haemost 2004; 2: 1247–55."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>If any of the following is/are present, PE cannot be ruled out:</p>\n<ul>\n<li>Age &ge;50.</li>\n<li>HR &ge;100.</li>\n<li>O₂ sat on room air&nbsp;&lt;95%.</li>\n<li>Unilateral leg swelling.</li>\n<li>Hemoptysis.</li>\n<li>Recent trauma or surgery.</li>\n<li>Prior PE or DVT.</li>\n<li>Hormone use (oral contraceptives, hormone replacement or estrogenic hormones use in males or female patients).</li>\n</ul>",
+        "facts": "<p>If any criteria are positive, the PERC rule is not satisfied and cannot be used to rule out PE in this patient.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output=[]; \n\nvar calc_msg=''; \nvar mini_msg=''; \nvar yesno=''; \nvar output_score=(parseInt(age)+parseInt(hr)+parseInt(o2)+parseInt(dvt_pe_history)+parseInt(trauma)+parseInt(hemoptysis)+parseInt(estrogen)+parseInt(leg_swelling)); \nif (output_score == 0) { \n    yesno = 'Yes'; \n    calc_msg = 'No need for further workup, as <2% chance of PE.<br/><br/>If no criteria are positive and clinician\\u2019s pre-test probability is <15%, PERC Rule criteria are satisfied.'; \n    mini_msg='PE can be ruled out.'; \n} else { \n    yesno = 'No'; \n    calc_msg = 'If any criteria are positive, the PERC rule cannot be used to rule out PE in this patient.'; \n    mini_msg='PE cannot be ruled out.'; \n} \n\ncalc_output.push({\n    name:'mini',\n    value:yesno,\n    value_text:' ',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'347_PERC Rule_result',\n    value:output_score,\n    value_text:'criteria',\n    message:calc_msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥50",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "HR ≥100",
+                "md_calc_info_concept": null,
+                "name": "hr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "O₂ sat on room air <95%",
+                "md_calc_info_concept": null,
+                "name": "o2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Unilateral leg swelling",
+                "md_calc_info_concept": null,
+                "name": "leg_swelling",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemoptysis",
+                "md_calc_info_concept": null,
+                "name": "hemoptysis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recent surgery or trauma",
+                "md_calc_info_concept": null,
+                "name": "trauma",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Surgery or trauma ≤4 weeks ago requiring treatment with general anesthesia",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Prior PE or DVT",
+                "md_calc_info_concept": null,
+                "name": "dvt_pe_history",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hormone use",
+                "md_calc_info_concept": null,
+                "name": "estrogen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Oral contraceptives, hormone replacement or estrogenic hormones use in males or female patients",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "pe",
+            "pulmonary embolism",
+            "dvt"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Pulmonology",
+            "Surgery (General)"
+        ]
+    }
+}

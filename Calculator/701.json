@@ -1,0 +1,109 @@
+{
+    "id": "701",
+    "title": "Mean Arterial Pressure (MAP)",
+    "desc": "The Mean Arterial Pressure (MAP) calculates mean arterial pressure from measured systolic and diastolic blood pressure values.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24736333",
+                "text": "Magder SA. The highs and lows of blood pressure: toward meaningful clinical targets in patients with shock. Crit Care Med. 2014;42(5):1241–1251."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23835589",
+                "text": "Walsh M, Devereaux PJ, et. al. Relationship between Intraoperative Mean Arterial Pressure and Clinical Outcomes after Noncardiac Surgery: Toward an Empirical Definition of Hypotension. Anesthesiology 2013;119(3):507-515. doi: 10.1097/ALN.0b013e3182a10e26."
+            }
+        ],
+        "evidence": "<p>Mean Arterial Pressure = 1/3*(SBP) + 2/3*(DBP)</p>",
+        "facts": "<ul>\n<li>A MAP &ge;60 mmHg is believed to be needed to maintain adequate tissue perfusion.</li>\n<li>A MAP &ge;65 mmHg is recommended in patients with severe sepsis and septic shock by the Surviving Sepsis Campaign Guidelines Committee.</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Diastolic BP",
+                "unit": "dbp",
+                "error_min": "10",
+                "error_max": "200",
+                "warn_min": "20",
+                "warn_max": "180",
+                "conversion": "1",
+                "normal_max_si": "80",
+                "normal_max_us": "80",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Dizziness"
+        ],
+        "disease_treated": [
+            "Bleeding/Hemorrhage",
+            "Hypertension",
+            "Intracranial Hemorrhage",
+            "Sepsis",
+            "Subarachnoid Hemorrhage",
+            "Trauma"
+        ],
+        "logic": "var calc_output=[];\n\nvar u = (2/3)*diastolic_blood_pressure + (1/3)*systolic_blood_pressure;  \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'mm Hg',\n    message:'MAP'\n}); \ncalc_output.push({\n    name:'74_Mean Arterial Pressure_result',\n    value:u.toFixed(0),\n    value_text:'mm Hg',\n    message:'Mean Arterial Pressure (MAP)'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Systolic BP",
+                "name": "systolic_blood_pressure",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Diastolic BP",
+                "name": "diastolic_blood_pressure",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "dbp"
+            }
+        ],
+        "can_search": [
+            "bp",
+            "hypertension",
+            "blood pressure"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Cardiology",
+            "Critical Care",
+            "Critical Care (Neonatal)",
+            "Critical Care (Neurologic)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (Trauma)"
+        ]
+    }
+}

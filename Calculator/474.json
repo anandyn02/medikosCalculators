@@ -1,0 +1,84 @@
+{
+    "id": "474",
+    "title": "Prognostic Index for Cancer Outcomes",
+    "desc": "The Prognostic Index for Cancer Outcomes predicts cancer mortality from serum biomarkers.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2913830/",
+                "text": "Kasymjanova G, MacDonald N, Agulnik JS, et al. The predictive value of pre-treatment inflammatory markers in advanced non-small-cell lung cancer. Current Oncology. 2010;17(4):52-58."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Selection of appropriate levels of serum biomarkers.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy"
+        ],
+        "logic": "var calc_output = [];\nvar crp = parseFloat(crp);\nvar wbc = parseFloat(wbc);\nvar string1, string2;\nif (crp == 0 && wbc == 0) {\n    string1 = '0';\n    string2 = 'Good Prognosis';\n}\nif (crp == 1 && wbc == 0) {\n    string1 = '1';\n    string2 = 'Intermediate Prognosis';\n}\nif (crp == 0 && wbc == 1) {\n    string1 = '1';\n    string2 = 'Intermediate Prognosis';\n}\nif (crp == 1 && wbc == 1) {\n    string1 = '2';\n    string2 = 'Poor Prognosis';\n}\ncalc_output.push({ name: 'mini', value: string1, value_text: ' ', message: string2 });\ncalc_output.push({ name: '3313_Prognostic Index for Cancer_result', value: string1, value_text: ' ', message: string2 });",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>CRP</p>",
+                "mdcalc_info_concept": null,
+                "name": "crp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "CRP ≤10 mg/L",
+                        "value": 0
+                    },
+                    {
+                        "label": "CRP >10 mg/L",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>White blood cell count</p>",
+                "mdcalc_info_concept": null,
+                "name": "wbc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "WBC ≤11 x 10⁹/L",
+                        "value": 0
+                    },
+                    {
+                        "label": "WBC >11 x 10⁹/L",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "cancer",
+            "prog",
+            "wbc",
+            "crp"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Radiation Oncology"
+        ]
+    }
+}

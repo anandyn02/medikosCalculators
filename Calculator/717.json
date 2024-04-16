@@ -1,0 +1,226 @@
+{
+    "id": "717",
+    "title": "TIMI Risk Score for STEMI",
+    "desc": "The TIMI Risk Score for STEMI estimates 30-day mortality in patients with STEMI.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11044416",
+                "text": " David A. Morrow, et. al. TIMI Risk Score for ST-Elevation Myocardial Infarction: A Convenient, Bedside, Clinical Score for Risk Assessment at Presentation: An Intravenous nPA for Treatment of Infarcting Myocardium Early II Trial Substudy Circulation. 2000; 102: 2031-2037 doi: 10.1161/01.CIR.102.17.2031"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the assigned points.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Value</th>\n</tr>\n<tr>\n<td>Age &lt; 65 years</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Age 65-74</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Age &ge; 75</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>DM or Hypertension or Angina</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Systolic BP &lt; 100 mmHg</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>Heart Rate &gt; 100</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Killip Class II-IV</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Weight &lt; 67kg (147.7 lbs)</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Anterior ST Elevation or LBBB</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Time to Treatment &gt; 4 hours</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output=[]; \n\nvar u=parseInt(age)+parseInt(dm_hypertension_angina)+parseInt(systolic_blood_pressure_100)+parseInt(heart_rate_100)+parseInt(killip_class)+parseInt(weight_67kg)+parseInt(anterior_st_elevation_lbbb)+parseInt(treatment_time_4hrs); \n\nvar msg='';\nvar mini_msg='';\n\nif(u==0){\n    msg='0.8% risk of all-cause mortality at 30 days.';\n    mini_msg='0.8% 30-day mortality risk.'\n} else if(u==1){\n    msg='1.6% risk of all-cause mortality at 30 days.';\n    mini_msg='1.6% 30-day mortality risk.'\n} else if(u==2){\n    msg='2.2% risk of all-cause mortality at 30 days.';\n    mini_msg='2.2% 30-day mortality risk.'\n} else if(u==3){\n    msg='4.4% risk of all-cause mortality at 30 days.';\n    mini_msg='4.4% 30-day mortality risk.'\n} else if(u==4){\n    msg='7.3% risk of all-cause mortality at 30 days.';\n    mini_msg='7.3% 30-day mortality risk.'\n} else if(u==5){\n    msg='12.4% risk of all-cause mortality at 30 days.';\n    mini_msg='12.4% 30-day mortality risk.'\n} else if(u==6){\n    msg='16.1% risk of all-cause mortality at 30 days.';\n    mini_msg='16.1% 30-day mortality risk.'\n} else if(u==7){\n    msg='23.4% risk of all-cause mortality at 30 days.';\n    mini_msg='23.4% 30-day mortality risk.'\n} else if(u==8){\n    msg='26.8% risk of all-cause mortality at 30 days.';\n    mini_msg='26.8% 30-day mortality risk.'\n} else if(u>8){\n    msg='35.9% risk of all-cause mortality at 30 days.';\n    mini_msg='35.9% 30-day mortality risk.'\n}\n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'99_TIMI STEMI_result',\n    value:u,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "< 65 years",
+                        "value": 0
+                    },
+                    {
+                        "label": "65-74",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥ 75",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Diabetes, Hypertension or Angina",
+                "md_calc_info_concept": null,
+                "name": "dm_hypertension_angina",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Systolic BP < 100 mmHg",
+                "md_calc_info_concept": null,
+                "name": "systolic_blood_pressure_100",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Heart rate > 100",
+                "md_calc_info_concept": null,
+                "name": "heart_rate_100",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Killip Class II-IV",
+                "md_calc_info_concept": null,
+                "name": "killip_class",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "JVD or any pulmonary exam findings of CHF",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Weight < 67kg (147.7 lbs)",
+                "md_calc_info_concept": null,
+                "name": "weight_67kg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anterior ST Elevation or LBBB",
+                "md_calc_info_concept": null,
+                "name": "anterior_st_elevation_lbbb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Time to treatment > 4 hours",
+                "md_calc_info_concept": null,
+                "name": "treatment_time_4hrs",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "STEMI",
+            "mortality",
+            "STE",
+            "LBBB"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

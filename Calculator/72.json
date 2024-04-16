@@ -1,0 +1,112 @@
+{
+    "id": "72",
+    "title": "WPSS (WHO classification-based Prognostic Scoring System) for Myelodysplastic Syndrome",
+    "desc": "The WPSS (WHO classification-based Prognostic Scoring System) for Myelodysplastic Syndrome evaluates the prognosis of patients with MDS.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://www.bloodjournal.org/content/106/11/788?sso-checked=true ",
+                "text": "Malcovati L, et al. A WHO Classification-Based Prognostic Scoring System (WPSS) for Predicting Survival in Myelodysplastic Syndromes. Blood. 2005; 106(11)."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Prognostic variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>0 points</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>1 point</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>2 points</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>3 points </strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">WHO category</p>\n</td>\n<td>\n<p dir=\"ltr\">Refractory anemia (RA), refractory anemia with ringed sideroblasts (RARS), or myelodysplastic syndrome with isolated del (5q)</p>\n</td>\n<td>\n<p dir=\"ltr\">Refractory cytopenia with multilineage dysplasia (RCMD), or refractory cytopenia with multilineage dysplasia and ringed sideroblasts (RCMD-RS)</p>\n</td>\n<td>\n<p dir=\"ltr\">Refractory anemia with excess of blasts, 2-4% blasts in peripheral blood (RAEB-1)</p>\n</td>\n<td>\n<p dir=\"ltr\">Refractory anemia with excess of blasts,&nbsp;5-19% blasts in peripheral blood (RAEB-2)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Karyotype*</p>\n</td>\n<td>\n<p dir=\"ltr\">Good</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">Poor</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Transfusion requirement**</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">Regular</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>\u0001*Karyotype is defined as follows: good = normal, &ndash;Y, del(5q), del(20q); poor = complex (\u0001&ge;3 abnormalities), chromosome 7 anomalies; and intermediate = all other abnormalities.</p>\n<p>**Transfusion requirement is defined as having at least one RBC transfusion every 8 weeks over a period of 4 months.</p>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"60\" /><col width=\"107\" /><col width=\"115\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>WPSS Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Median survival</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">Very low</p>\n</td>\n<td>\n<p dir=\"ltr\">141 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">66&nbsp;months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">48 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3-4</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">26 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5-6</p>\n</td>\n<td>\n<p dir=\"ltr\">Very high</p>\n</td>\n<td>\n<p dir=\"ltr\">9&nbsp;months</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Hematologic Malignancy"
+        ],
+        "logic": "var calc_output = [];\n\nvar who = parseFloat(who);\nvar karyotype = parseFloat(karyotype);\nvar transfusion = parseFloat(transfusion);\n\nvar score = who + karyotype + transfusion;\n\nvar risk = ''\nvar survival = ''\n\nif (score == 0) {\n\trisk = 'Very low';\n\tsurvival = '141';\n}\nelse if (score == 1) {\n\trisk = 'Low';\n\tsurvival = '66';\n}\nelse if (score == 2) {\n\trisk = 'Intermediate';\n\tsurvival = '48';\n}\nelse if (score == 3 || score == 4) {\n\trisk = 'High';\n\tsurvival = '26';\n}\nelse {\n\trisk = 'Very high';\n\tsurvival = '9';\n}\n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: ' risk',\n    message: survival + ' months median survival'\n    });\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'WPSS for MDS'\n    });\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '',\n    message: 'Risk group'  \n    });\ncalc_output.push({\n    name: 'survival',\n    value: survival,\n    value_text: 'months',\n    message: 'Median survival'\n    });\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "WHO category",
+                "name": "who",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Refractory anemia (RA), refractory anemia with ringed sideroblasts (RARS), or myelodysplastic syndrome with isolated del (5q)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Refractory cytopenia with multilineage dysplasia (RCMD), or refractory cytopenia with multilineage dysplasia and ringed sideroblasts (RCMD-RS)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Refractory anemia with excess of blasts, 2-4% blasts in peripheral blood (RAEB-1)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Refractory anemia with excess of blasts, 5-19% blasts in peripheral blood (RAEB-2)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Karyotype",
+                "name": "karyotype",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Good",
+                        "value": 0
+                    },
+                    {
+                        "label": "Intermediate",
+                        "value": 1
+                    },
+                    {
+                        "label": "Poor",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Defined as follows: good = normal, –Y, del(5q), del(20q); poor = complex (\u0001≥3 abnormalities), chromosome 7 anomalies; and intermediate = all other abnormalities",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Transfusion requirement",
+                "name": "transfusion",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Regular",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Defined as having at least one RBC transfusion every 8 weeks over a period of 4 months",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "MDS",
+            "WHO MDS scoring",
+            "WPSS",
+            "Myelodysplastic Syndrome"
+        ],
+        "specialty": [
+            "Hematology and Oncology"
+        ]
+    }
+}

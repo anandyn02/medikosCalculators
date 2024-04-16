@@ -1,0 +1,154 @@
+{
+    "id": "589",
+    "title": "PECARN Pediatric Intra-Abdominal Injury (IAI) Algorithm",
+    "desc": "The PECARN Pediatric Intra-Abdominal Injury Algorithm identifies children at very low risk of clinically important blunt abdominal injuries.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23375510",
+                "text": "Holmes JF, Lillis K, Monroe D, et al. Identifying children at very low risk of clinically important blunt abdominal injuries. Ann Emerg Med. 2013;62(2):107-116.e2."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18046031",
+                "text": "Brenner DJ, Hall EJ. Computed Tomography - an increasing source of radiation exposure.  N Engl J Med. 2007;357(22):2277-84."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24238315 ",
+                "text": "Nishijima DK, Yang Z, Clark JA, Kuppermann N, Holmes JF, Melnikow J. A cost-effectiveness analysis comparing a clinical decision rule versus usual care to risk stratify children for intra-abdominal injury after blunt torso trauma. Acad Emerg Med. 2013;20(11):1131-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26302354",
+                "text": "Mahajan P, Kuppermann N, Tunik M, Yen K, Atabaki SM, Lee LK, Ellison AM, Bonsu BK, Olsen CS, Cook L, Kwok MY, Lillis K, Holmes JF.  Comparison of Clinician Suspicion Versus a Clinical Prediction Rule in Identifying Children at Risk for Intra-Abdominal Injuries After Blunt Torso Trauma.  Acad Emerg Med. 2015; 22(9): 1034-1041."
+            }
+        ],
+        "evidence": "<p><img src=\"https://cdn-web-img.mdcalc.com/cme/PECARN-IAI-formula.png\" alt=\"\" width=\"100%\"></p>",
+        "facts": "<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Sensitivity</strong></p>\n</td>\n<td>\n<p>97.0%</p>\n<p>(95% CI 93.7&ndash;98.9%)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Specificity</strong></p>\n</td>\n<td>\n<p>42.5%</p>\n<p>(95% CI 41.6&ndash;43.4%)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Negative predictive value</strong></p>\n</td>\n<td>\n<p>99.9%</p>\n<p>(95% CI 99.7&ndash;100%)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Positive predictive value</strong></p>\n</td>\n<td>\n<p>2.8%</p>\n<p>(95% CI 2.4&ndash;3.2%)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Negative likelihood ratio</strong></p>\n</td>\n<td>\n<p>0.07</p>\n<p>(95% CI 0.03&ndash;0.15)</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Flank Pain",
+            "Pain",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Acute Pain",
+            "Fracture",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar evidence = parseFloat(evidence);\nvar gcs = parseFloat(gcs);\nvar abd = parseFloat(abd);\nvar thora = parseFloat(thora);\n\n//add up the points\n//var u = evidence + gcs + abd + thora + co + breath + vomit;\n\n//interpretation\nvar risk, percent, msg;\n\nif (evidence == 1 || gcs == 1) {\n\trisk = 'Not very low';\n\tpercent = 5.4;\n    msg = 'Proceed with standard workup, including CT abdomen as indicated.'\n} else if (abd == 1) {\n    risk = 'Not very low';\n    percent = 1.4;\n    msg = 'Proceed with standard workup, including CT abdomen as indicated.'; \n} else if (thora == 1) {\n\trisk = 'Not very low';\n\tpercent = '0.7';\n    msg = 'Proceed with standard workup, including CT abdomen as indicated.';\n} else {\n    risk = 'Very low';\n\tpercent = '0.1';\n    msg = 'Consider deferring CT abdomen.';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: ' risk',\n    message: percent + '% risk of intra-abdominal injury requiring intervention'\n});\ncalc_output.push({\n    name: '3971_PECARN IAI_result',\n    value: percent,\n    value_text: '%',\n    message: 'Risk of intra-abdominal injury requiring intervention'\n});\ncalc_output.push({\n    name: '3971_PECARN IAI_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: msg\n});\n\n\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Evidence of abdominal wall trauma or seatbelt sign",
+                "md_calc_info_concept": null,
+                "name": "evidence",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "evidence == 0",
+                "default": null,
+                "label_en": "GCS <14 and blunt abdominal trauma",
+                "md_calc_info_concept": null,
+                "name": "gcs",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "evidence == 0 && gcs == 0",
+                "default": null,
+                "label_en": "<p>Abdominal tenderness</p>",
+                "md_calc_info_concept": null,
+                "name": "abd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "evidence == 0 && gcs == 0 && abd == 0",
+                "default": null,
+                "label_en": "<p>&ge;1 of the following:</p>\n<ul>\n<li>Thoracic wall trauma</li>\n<li>Complaint of abdominal pain</li>\n<li>Decreased breath sounds</li>\n<li>Vomiting</li>\n</ul>",
+                "md_calc_info_concept": null,
+                "name": "thora",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "pecarn",
+            "iai",
+            "intra abdominal",
+            "intraabdominal",
+            "intre-abdominal",
+            "blunt abdominal injury",
+            "abdonminal injury",
+            "trauma",
+            "abdominal trauma",
+            "abdomen pediatric trauma",
+            "pediatric abdomen",
+            "pediatric abdominal trauma",
+            "abdominal pain"
+        ],
+        "specialty": [
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Pediatric Subspecialty",
+            "Pediatrics",
+            "Surgery (Trauma)"
+        ]
+    }
+}

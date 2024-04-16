@@ -1,0 +1,137 @@
+{
+    "id": "639",
+    "title": "Blast Lung Injury Severity Score",
+    "desc": "The Blast Lung Injury Severity Score criteria stratifies explosion-related lung injury into 3 categories.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9925079 ",
+                "text": "Pizov R, Oppenheim-Eden A, Matot I, Weiss YG, Eidelman LA, Rivkind AI, Sprung CL. Blast lung injury from an explosion on a civilian bus. Chest. 1999 Jan;115(1):165-72."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26072319",
+                "text": "Matthews ZR, Koyfman, A. Blast Injuries. J Emerg Med. 2015 Oct;49(4):573-87."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28203741",
+                "text": "Scott TE, Kirkman E, Haque M, Gibb IE, Mahoney P, Hardman JG. Primary blast lung injury – a review. Br J Anaesth. 2017 Mar 1;118(3):311-316."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8970558",
+                "text": "Leibovici D, Gofrit ON, Stein M, Shapira SC, Noga Y, Heruti RJ, Shemer J. Blast injuries: bus versus open-air bombings—a comparative study of injuries in survivors of open-air versus confined-space explosions. J Trauma. 1996 Dec;41(6):1030-5."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10424917",
+                "text": "Leibovici D, Gofrit ON, Shapira SC. Eardrum Perforation in Explosion Survivors: Is It a Marker of Pulmonary Blast Injury?. Ann Emerg Med. 1999 Aug;34(2):168-172."
+            },
+            {
+                "href": "http://jramc.bmj.com/content/163/5/333?rss=1",
+                "text": "Ballivet de Regloix S, Crambert A, Maurin O, Lisan Q, Marty S, Pons Y. Blast injury of the ear by massive explosion: a review of 41 cases. J R Army Med Corps. 2017 Oct:163(5):333-338. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27481095",
+                "text": "Cannon JW, Hofmann LJ, Glasgow SC, Potter BK, Rodriguez CJ, Cancio LC, Rasmussen TE, Fries CA, Davis MR, Jezior JR, Mullins RJ, Elster EA. Dismounted Complex Blast Injuries: A Comprehensive Review of the Modern Combat Experience. J Am Coll Surg. 2016 Oct;223(4):652-664.e8."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p> <table> <tbody> <tr> <td>&nbsp;</td> <td> <p><strong>Value</strong></p> </td> <td> <p><strong>Points</strong></p> </td> </tr> <tr> <td rowspan=\"3\"> <p><strong>PaO</strong><strong>₂</strong><strong>/FiO</strong><strong>₂</strong></p> </td> <td> <p>&gt;200</p> </td> <td> <p>0</p> </td> </tr> <tr> <td> <p>60 to 200</p> </td> <td> <p>1</p> </td> </tr> <tr> <td> <p>&lt;60</p> </td> <td> <p>2</p> </td> </tr> <tr> <td rowspan=\"3\"> <p><strong>Chest x-ray</strong></p> </td> <td> <p>Localized lung infiltrates</p> </td> <td> <p>0</p> </td> </tr> <tr> <td> <p>Bilateral or unilateral lung infiltrates</p> </td> <td> <p>1</p> </td> </tr> <tr> <td> <p>Massive bilateral lung infiltrates</p> </td> <td> <p>2</p> </td> </tr> <tr> <td rowspan=\"2\"> <p><strong>Bronchial pleural fistula</strong></p> </td> <td> <p>No</p> </td> <td> <p>0</p> </td> </tr> <tr> <td> <p>Yes</p> </td> <td> <p>1</p> </td> </tr> </tbody> </table>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>BLI Severity Score</strong></p> </td> <td> <p><strong>Severity</strong></p> </td> <td> <p><strong>ARDS Risk (ARDS 24 hrs post-injury)*</strong></p> </td> <td> <p><strong>BLI-associated mortality*</strong></p> </td> </tr> <tr> <td> <p>0</p> </td> <td> <p>Mild</p> </td> <td> <p>~0%</p> </td> <td> <p>~0**</p> </td> </tr> <tr> <td> <p>1-4</p> </td> <td> <p>Moderate</p> </td> <td> <p>33%</p> </td> <td> <p>~0%</p> </td> </tr> <tr> <td> <p>5</p> </td> <td> <p>Severe</p> </td> <td> <p>100%</p> </td> <td> <p>75%</p> </td> </tr> </tbody> </table> <p>*From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/9925079\" target=\"_blank\">Pizov et al 1999</a>. Note the study was small (n = 10 patients). A more recent study by <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/16307948\" target=\"_blank\">Avidan et al</a>&nbsp;in 2005 saw 1 mortality out of 29 patients but not primarily due to pulmonary issues.</p> <p>**One patient with mild BLI died from head injury.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(ratio) + parseFloat(chest) + parseFloat(bronchial);\nvar msg = '';\nvar mini_msg = '';\nif (u == 0) {\n    msg = '~0% ARDS risk at 24 hrs post injury';\n    mini_msg = 'Mild'\n}\nif (u == 1 || u == 2 || u == 3 || u == 4) {\n    msg = '33% ARDS risk';\n    mini_msg = 'Moderate'\n}\nif (u == 5) {\n    msg = '100% ARDS risk';\n    mini_msg = 'Severe'\n}\n\ncalc_output.push({ name: 'mini', value: u, value_text: 'points', message: mini_msg });\ncalc_output.push({ name: 'BLI Severity Score', value: u, value_text: 'points', message: 'Blast Lung Injury Severity Score' });\ncalc_output.push({ name: 'ARDS risk', value: mini_msg, value_text: '', message: msg + ' (see Evidence for details)' });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "PaO₂/FiO₂",
+                "name": "ratio",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">200",
+                        "value": 0
+                    },
+                    {
+                        "label": "60 to 200",
+                        "value": 1
+                    },
+                    {
+                        "label": "<60",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Chest x-ray",
+                "name": "chest",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Localized lung infiltrates",
+                        "value": 0
+                    },
+                    {
+                        "label": "Bilateral or unilateral lung infiltrates",
+                        "value": 1
+                    },
+                    {
+                        "label": "Massive bilateral lung infiltrates",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Bronchial pleural fistula",
+                "name": "bronchial",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "blast injury",
+            "blast lung injury",
+            "BLI",
+            "severity score",
+            "trauma",
+            "injury",
+            "explosion-related injuries",
+            "explosive-related injuries"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (Trauma)"
+        ]
+    }
+}

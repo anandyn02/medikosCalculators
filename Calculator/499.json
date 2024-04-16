@@ -1,0 +1,229 @@
+{
+    "id": "499",
+    "title": "Abbey Pain Scale for Dementia Patients",
+    "desc": "The Abbey Pain Scale assesses pain in patients with dementia and other cognitive impairments.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14966439/",
+                "text": "Abbey J, et al. The Abbey pain scale: a 1-minute numerical indicator for people with end-stage dementia. Int J Palliat Nurs. 2004 Jan;10(1):6-13"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"144\"><col width=\"93\"><col width=\"61\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><strong>Vocalization</strong></p>\n<p dir=\"ltr\">Whimpering, crying</p>\n</td>\n<td>\n<p dir=\"ltr\">Absent</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Mild</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Facial expression</p>\n<p dir=\"ltr\">Tense, frowning, grimacing, frightened</p>\n</td>\n<td>\n<p dir=\"ltr\">Absent</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Mild</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><strong>Body language</strong></p>\n<p dir=\"ltr\">Fidgeting, rocking, guarding, withdrawn</p>\n</td>\n<td>\n<p dir=\"ltr\">Absent</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Mild</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><strong>Physiological changes</strong></p>\n<p dir=\"ltr\">Temp, pulse or BP elevations, diaphoresis, flushing/pallor</p>\n</td>\n<td>\n<p dir=\"ltr\">Absent</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Mild</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><strong>Physical changes</strong></p>\n<p dir=\"ltr\">Skin tears, pressure sores, arthritis, contractures, previous injuries</p>\n</td>\n<td>\n<p dir=\"ltr\">Absent</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Mild</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-123cf8b3-6e87-14f4-ef08-19060d670fbb\"></span><span id=\"docs-internal-guid-123cf8b3-6e87-14f4-ef08-19060d670fbb\"><br></span></p>",
+        "facts": "<p><b>Score interpretation:</b></p>\n<ul>\n<li>Scores &le;2 indicate no pain.</li>\n<li>Scores 3-7 indicate mild pain.</li>\n<li>Scores 8-13 indicate moderate pain.</li>\n<li>Scores &ge;14 indicate severe pain.</li>\n</ul>\n<p><strong>Note:</strong> all scores can be classified by type of pain: acute, chronic and acute on chronic.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS"
+        ],
+        "disease_treated": [
+            "Dementia"
+        ],
+        "logic": "var calc_output = [];\nvar v = parseFloat(vocal) + parseFloat(face) + parseFloat(body) + parseFloat(physio) + parseFloat(physical);\nvar text, typetext;\nvar type = parseFloat(type);\n\n\nif (v <= 2) {text = 'No';}\nif (v >= 3 && v <= 7) {text = 'Mild';}\nif (v >= 8 && v <= 13) {text = 'Moderate';}\nif (v >= 14) {text = 'Severe';}\n\nif (v >= 3) {\n    if (type == 1) {text += ' chronic';}\n\n    if (type == 2) {text += ' acute';}\n\n    if (type == 3) {text += ' acute on chronic';}\n} else {\n    if (type == 1) {text += ' ';}\n\n    if (type == 2) {text += ' ';}\n\n    if (type == 3) {text += ' ';}\n}\n\ncalc_output.push({ name: 'mini', value: v, value_text: 'points', message: text + ' pain' });\ncalc_output.push({ name: '3627_Abbey Pain Scale_result', value: v, value_text: 'points', message: text + ' pain' });",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Vocalization",
+                "mdcalc_info_concept": null,
+                "name": "vocal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Whimpering, crying",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Facial expression",
+                "mdcalc_info_concept": null,
+                "name": "face",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Tense, frowning, grimacing, frightened",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Body language",
+                "mdcalc_info_concept": null,
+                "name": "body",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Fidgeting, rocking, guarding, withdrawn",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Physiological changes",
+                "mdcalc_info_concept": null,
+                "name": "physio",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Temp, pulse or BP elevations, diaphoresis, flushing/pallor",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Physical changes",
+                "mdcalc_info_concept": null,
+                "name": "physical",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Skin tears, pressure sores, arthritis, contractures, previous injuries",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "If score ?3, use options for categorization and management of pain.",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "vocal+face+body+physio+physical >= 3",
+                "default": null,
+                "label_en": "Type of pain",
+                "mdcalc_info_concept": null,
+                "name": "type",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Chronic",
+                        "value": 1
+                    },
+                    {
+                        "label": "Acute",
+                        "value": 2
+                    },
+                    {
+                        "label": "Acute on chronic",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "dementia",
+            "cognitive",
+            "impairment",
+            "pain"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Palliative Care/Hospice"
+        ]
+    }
+}

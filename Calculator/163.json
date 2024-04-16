@@ -1,0 +1,171 @@
+{
+    "id": "163",
+    "title": "Truelove and Witts Severity Index for Ulcerative Colitis",
+    "desc": "The Truelove and Witts Severity Index for Ulcerative Colitis stratifies severity of ulcerative colitis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/13260656",
+                "text": "Truelove SC, Witts LJ. Cortisone in ulcerative colitis; final report on a therapeutic trial. Br Med J. 1955;2(4947):1041-8."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Diagnosis is mild when all six criteria are satisfied.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Diagnosis is severe when criteria for frequency of&nbsp;bowel movement and &ge;1 features of systemic upset (bolded) are satisfied.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Diagnosis is moderate when variables fall between these criteria.</p>\n</li>\n</ul>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Severity of&nbsp;</strong><b>ulcerative colitis</b></p>\n<div dir=\"ltr\" style=\"margin-left: 0pt;\"></div>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Mild</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Moderate</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Severe</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Bowel movements per day</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;4</p>\n</td>\n<td>\n<p dir=\"ltr\">4-5</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;6</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Blood in stool</p>\n</td>\n<td>\n<p dir=\"ltr\">None or no more than small amounts of blood</p>\n</td>\n<td>\n<p dir=\"ltr\">Between mild and severe</p>\n</td>\n<td>\n<p dir=\"ltr\">Visible blood</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Pyrexia</strong>*</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Pulse &gt;90 bpm</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Anemia</strong>**</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><b>Erythrocyte sedimentation rate</b><strong>, mm/hr</strong></p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\">&le;30</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;30</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Defined as temperature &ge;100.04&deg;F (37.8&deg;C).</p>\n<p dir=\"ltr\">**Defined as hemoglobin &le;10.5 g/dL (105 g/L).</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Blood in Stool",
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Colitis",
+            "GI Bleeding",
+            "Inflammatory Bowel Disease"
+        ],
+        "logic": "var calc_output = [];\n\nvar bowel = parseFloat(bowel);\nvar blood = parseFloat(blood);\nvar pyr = parseFloat(pyr);\nvar hr = parseFloat(hr);\nvar an = parseFloat(an);\nvar esr = parseFloat(esr);\n\nvar diag;\nif (bowel == 2 && (pyr + hr + an + esr) > 0) {\n  diag = 'Severe';\n} else if ((bowel + blood + pyr + hr + an + esr) == 0) {\n  diag = 'Mild';\n} else {\n  diag = 'Moderate';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: 'Severity of ulcerative colitis'\n});\ncalc_output.push({\n    name: 'Score',\n    value: diag,\n    value_text: '',\n    message: 'Severity of ulcerative colitis'   \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bowel movements per day",
+                "name": "bowel",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<4",
+                        "value": 0
+                    },
+                    {
+                        "label": "4-5",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥6",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Blood in stool",
+                "name": "blood",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or no more than small amounts of blood",
+                        "value": 0
+                    },
+                    {
+                        "label": "Between mild and severe",
+                        "value": 1
+                    },
+                    {
+                        "label": "Visible blood",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pyrexia",
+                "name": "pyr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Defined as temperature ≥100.04°F (37.8°C)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pulse >90 bpm",
+                "name": "hr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anemia",
+                "name": "an",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Defined as hemoglobin ≤10.5 g/dL (105 g/L)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Erythrocyte sedimentation rate, mm/hr",
+                "name": "esr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤30",
+                        "value": 0
+                    },
+                    {
+                        "label": ">30",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "UC",
+            "ulcerative colitis",
+            "ulcerative colitis severity",
+            "Truelove and Witts",
+            "ulcerative colitis severity index",
+            "truelove witts"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

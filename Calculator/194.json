@@ -1,0 +1,103 @@
+{
+    "id": "194",
+    "title": "Rome IV Diagnostic Criteria for Chronic Nausea Vomiting Syndrome (CNVS)",
+    "desc": "The Rome IV Criteria for Chronic Nausea Vomiting Syndrome (CNVS) provides criteria for diagnosis of chronic nausea vomiting syndrome (CNVS).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27147122",
+                "text": "Stanghellini V, Chan FK, Hasler WL, et al. Gastroduodenal Disorders. Gastroenterology. 2016;150(6):1380-92."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">To fulfill the Rome IV criteria for chronic nausea vomiting syndrome, patient must have the following (for the last 3 months with symptom onset &ge;6 months ago):</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Bothersome (i.e., severe enough to impact on usual activities) nausea, occurring at least 1 day per week and/or &ge;1 vomiting episodes per week.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Self-induced vomiting, eating disorders, regurgitation, or <calculator id=\"10292\">rumination</calculator> are excluded.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">No evidence of organic, systemic, or metabolic diseases that is likely to explain the symptoms on routine investigations (including at upper endoscopy).</p>\n</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Nausea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Gastroduodenal Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output = [];\n\nvar total=parseFloat(one)+parseFloat(two)+parseFloat(three);\n\nvar diag;\n\nvar msg = 'Diagnosis for chronic nausea vomiting syndrome as per Rome IV criteria';\nvar minimsg= 'Diagnosis for chronic nausea vomiting syndrome';\n \n\nif (total==3) {\n \tdiag = 'Positive';\n}\nelse {\n  \tdiag= 'Negative';\n}\n  \n  \tcalc_output.push({\n    \tname: 'mini',\n    \tvalue: diag,\n    \tvalue_text: '',\n    \tmessage: minimsg\n});\n\tcalc_output.push({\n    \tname: 'Rome IV for chronic nausea vomiting syndrome',\n    \tvalue: diag,\n    \tvalue_text: '',\n    \tmessage: msg\n});\n\n\n",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For the last 3 months with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bothersome (i.e., severe enough to impact on usual activities) nausea, occurring at least 1 day per week and/or ≥1 vomiting episodes per week",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Self-induced vomiting, eating disorders, regurgitation, or <calculator id=\"10292\">rumination</calculator>  are excluded",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No evidence of organic, systemic, or metabolic diseases that is likely to explain the symptoms on routine investigations (including at upper endoscopy)",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Chronic Nausea Vomiting Syndrome (CNVS), Rome IV Criteria for Chronic Nausea Vomiting Syndrome, Rome IV for CNVS, CNVS, chronic nausea vomiting syndrome, chronic nausea, chronic vomiting, rome iv cnvs, rome iv for cnvs, rome 4 cnvs, rome 4 for cnvs, rome iv nausea, rome iv, vomiting"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

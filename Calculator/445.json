@@ -1,0 +1,202 @@
+{
+    "id": "445",
+    "title": "UCLA Integrated Staging System (UISS) for Renal Cell Carcinoma (RCC)",
+    "desc": "UCLA Integrated Staging System (UISS) for Renal Cell Carcinoma (RCC) provides 5-year disease-free prognosis for localized and metastatic RCC.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12454113",
+                "text": "Zisman A,Pantuck AJ,Wieder J, et al. Risk group assessment and clinical outcome algorithm to predict the natural history of patients with surgically resected renal cell carcinoma. J Clin Oncol. 2002; 20: 4559–4566."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://annonc.oxfordjournals.org/content/23/suppl_7/vii65.full",
+                "text": "Escudier B, Eisen T, Porta C, et al. Renal cell carcinoma: ESMO clinical practice guidelines for diagnosis, treatment and follow-up. Ann Oncol, 2012; 23(suppl 7):vii65–vii71."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<p><strong>Localized disease (Any T, N0M0)</strong></p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>T stage</strong></p>\n</td>\n<td>\n<p><strong><calculator id=\"3012\">Nuclear grade</calculator></strong></p>\n</td>\n<td>\n<p><strong><calculator id=\"3170\">ECOG PS</calculator></strong></p>\n</td>\n<td>\n<p><strong>Risk</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p>T1</p>\n</td>\n<td rowspan=\"2\">\n<p>Fuhrman 1-2</p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;1</p>\n</td>\n<td rowspan=\"6\">\n<p>Intermediate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Fuhrman 3-4</p>\n</td>\n<td>\n<p>Any</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>T2</p>\n</td>\n<td>\n<p>Any</p>\n</td>\n<td>\n<p>Any</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p>T3</p>\n</td>\n<td rowspan=\"2\">\n<p>Fuhrman 1</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>Fuhrman &gt;1</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;1</p>\n</td>\n<td>\n<p>High</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><strong><br>Metastatic disease (N1, N2, or M1)</strong></p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>N/M stage</strong></p>\n</td>\n<td>\n<p><strong><calculator id=\"3012\">Nuclear grade</calculator></strong></p>\n</td>\n<td>\n<p><strong><calculator id=\"3170\">ECOG PS</calculator></strong></p>\n</td>\n<td>\n<p><strong>Risk</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>N1M0</p>\n</td>\n<td>\n<p>Any</p>\n</td>\n<td>\n<p>Any</p>\n</td>\n<td>\n<p>Low</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"7\">\n<p>N2M0/M1</p>\n</td>\n<td rowspan=\"2\">\n<p>Fuhrman 1</p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;1</p>\n</td>\n<td>\n<p>Intermediate</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>Fuhrman 2</p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;1</p>\n</td>\n<td rowspan=\"3\">\n<p>Intermediate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Fuhrman 3</p>\n</td>\n<td>\n<p>Any</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>Fuhrman 4</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;1</p>\n</td>\n<td>\n<p>High</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Disease Type</th>\n<th>Risk Group</th>\n<th>Five-year disease-specific survival</th>\n</tr>\n<tr>\n<td rowspan=\"3\">Local Disease</td>\n<td>Low</td>\n<td>91.1%</td>\n</tr>\n<tr>\n<td>Intermediate</td>\n<td>80.4%</td>\n</tr>\n<tr>\n<td>High</td>\n<td>54.7%</td>\n</tr>\n<tr>\n<td rowspan=\"3\">Metastatic Disease</td>\n<td>Low</td>\n<td>32%</td>\n</tr>\n<tr>\n<td>Intermediate</td>\n<td>19.5%</td>\n</tr>\n<tr>\n<td>High</td>\n<td>0%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Flank Pain",
+            "Hematuria"
+        ],
+        "disease_treated": [
+            "Renal Cell Carcinoma"
+        ],
+        "logic": "var t = t || 0\nvar n = n || 0\nvar m = m || 0\n\nvar calc_output = [];\nvar disease = parseInt(disease);\nt = parseInt(t);\nn = parseInt(n);\nm = parseInt(m);\nvar fuhrman = parseInt(fuhrman);\nvar ecog = parseInt(ecog);\nvar survstring = ' Five Year survival';\nvar value = '';\nvar msg = '';\nvar u;\n\nif (disease == 1) {\n    u = t + fuhrman + ecog;\n} else if (disease == 2) {\n    u = n + m + fuhrman + ecog;\n}\n\nif (disease == 1) {\n    if (t == 1 && fuhrman <= 2 && ecog == 0) {\n        value = '91.1%';\n        msg = 'Low Risk';\n    } else if (t == 1 && fuhrman <= 2 && ecog == 1) {\n        value = '80.4%';\n        msg = 'Moderate Risk';\n    } else if (t == 1 && fuhrman > 1 && fuhrman <= 4 && ecog >= 0) {\n        value = '80.4%';\n        msg = 'Moderate Risk';\n    } else if (t == 2) {\n        value = '80.4%';\n        msg = 'Moderate Risk';\n    } else if (t == 3 && fuhrman == 1 && ecog >= 0) {\n        value = '80.4%';\n        msg = 'Moderate Risk';\n    } else if (t == 3 && fuhrman > 1 && ecog == 0) {\n        value = '80.4%';\n        msg = 'Moderate Risk';\n    } else if (t == 3 && fuhrman > 1 && ecog >= 1) {\n        value = '54.7%';\n        msg = 'High Risk';\n    } else if (t == 4) {\n        value = '54.7%';\n        msg = 'High Risk';\n    } \n}\nelse if (disease == 2) {\n    if (n == 1 && m == 0 && fuhrman > 0 && ecog >= 0) {\n        value = '32%';\n        msg = 'Low Risk';\n    } else if (n == 2 && m >= 0 && fuhrman >= 1 && fuhrman <= 2 && ecog == 0) {\n        value = '32%';\n        msg = 'Low Risk';\n    } else if (n == 2 && m >= 0 && fuhrman >= 1 && fuhrman <= 2 && ecog == 1) {\n        value = '19.5%';\n        msg = 'Moderate Risk';\n    } else if (n == 1 && m >= 0 && fuhrman >= 1 && fuhrman <= 2 && ecog >= 0) {\n        value = '19.5%';\n        msg = 'Moderate Risk';\n    } else if (n == 1 && m >= 0 && fuhrman >= 3 && fuhrman <= 4 && ecog >= 0) {\n        value = '19.5%';\n        msg = 'Moderate Risk';\n    } else if (n == 2 && m >= 0 && fuhrman == 3 && ecog >= 0) {\n        value = '19.5%';\n        msg = 'Moderate Risk';\n    } else if (n == 2 && m >= 0 && fuhrman == 4 && ecog == 0) {\n        value = '19.5%';\n        msg = 'Moderate Risk';\n    } else if (n == 2 && m >= 0 && fuhrman == 4 && ecog == 1) {\n        value = '0%';\n        msg = 'High Risk';\n    }\n}\n\ncalc_output.push({ \n    name: 'mini', \n    value: msg, \n    value_text: ' ', \n    message: ' '\n});\ncalc_output.push({ \n    name: '3009_UISS for RCC_result', \n    value: msg, \n    value_text: ' ', \n    message: value + survstring \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Type of disease present",
+                "md_calc_info_concept": null,
+                "name": "disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Metastatic",
+                        "value": 2
+                    },
+                    {
+                        "label": "Localized",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "UISS Criteria",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "disease == 1",
+                "default": null,
+                "label_en": "Localized disease - T stage",
+                "mdcalc_info_concept": null,
+                "name": "t",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "T1",
+                        "value": 1
+                    },
+                    {
+                        "label": "T2",
+                        "value": 2
+                    },
+                    {
+                        "label": "T3",
+                        "value": 3
+                    },
+                    {
+                        "label": "T4",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "disease == 2",
+                "default": null,
+                "label_en": "Metastatic disease - N stage",
+                "mdcalc_info_concept": null,
+                "name": "n",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "N1",
+                        "value": 1
+                    },
+                    {
+                        "label": "N2",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "disease == 2",
+                "default": null,
+                "label_en": "Metastatic disease - M stage",
+                "mdcalc_info_concept": null,
+                "name": "m",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "M0",
+                        "value": 0
+                    },
+                    {
+                        "label": "M1",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<calculator id='3012'>Fuhrman nuclear grade</calculator>",
+                "mdcalc_info_concept": null,
+                "name": "fuhrman",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "I",
+                        "value": 1
+                    },
+                    {
+                        "label": "II",
+                        "value": 2
+                    },
+                    {
+                        "label": "III",
+                        "value": 3
+                    },
+                    {
+                        "label": "IV",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<calculator id='3170'>ECOG Performance Status</calculator>",
+                "mdcalc_info_concept": null,
+                "name": "ecog",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥1",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "UCLA",
+            "RCC",
+            "localized",
+            "mets",
+            "metastatic",
+            "UISS"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Urology"
+        ]
+    }
+}

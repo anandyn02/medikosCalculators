@@ -1,0 +1,200 @@
+{
+    "id": "81",
+    "title": "Benzodiazepine Conversion Calculator",
+    "desc": "The benzodiazepine conversion calculator adjusts doses between converting oral benzodiazepines.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://books.google.com/books?id=z0AqKQAACAAJ&newbks=0&hl=en&source=newbks_fb",
+                "text": "Gelenberg AJ, Bassuk, EL. Practitioner's Guide to Psychoactive Drugs. 4th Edition. Springer, 1997. "
+            },
+            {
+                "href": "https://www.benzo.org.uk/manual/index.htm",
+                "text": "Ashton H. Benzodiazepines: How they work and how to withdraw. The Ashton Manual, 2002."
+            },
+            {
+                "href": "https://students.aiu.edu/submissions/profiles/resources/onlineBook/P4d5d5_Substance_Use_Disorders.pdf",
+                "text": "Gitlow S. Practical Guides in Psychiatry: Substance Use Disorders, 2nd Edition. Lippincott Williams & Wilkins, 2006."
+            },
+            {
+                "href": "https://www.google.com/books/edition/Cambridge_Textbook_of_Effective_Treatmen/HLPXELjTgdEC?hl=en",
+                "text": "Tyrer PJ, Silk KR. Cambridge Textbook of Effective Treatments in Psychiatry. Cambridge University Press, 2008."
+            },
+            {
+                "href": "https://academic.oup.com/book/30037",
+                "text": "Latt N, Conigrave K, Saunders JB, Marshall EJ, Nutt D. Addition Medicine, 2nd Edition. Oxford Specialist Handbooks, 2009."
+            },
+            {
+                "href": "https://www.wolterskluwer.com/en/solutions/ovid/handbook-of-psychiatric-drug-therapy-4882?",
+                "text": "Labatte LA, Fava M, Rosenbaum JF, Arana GW. Handbook of Psychiatric Drug Therapy, 6th Edition. Lippincott Williams & Wilkins, 2010."
+            },
+            {
+                "href": "",
+                "text": "LORazepam [package insert]. Corona (CA): Watson Laboratories, 2010."
+            },
+            {
+                "href": "",
+                "text": "DiazePAM [package insert]. San Francisco (CA): Genentech Laboratories, 2016."
+            },
+            {
+                "href": "https://pubengine2.s3.eu-central-1.amazonaws.com/preview/99.110005/9781616764968_preview.pdf",
+                "text": "Procyshyn RM, Bezchlibnyk-Butler KZ, Jeffries JJ. Clinical Handbook of Psychotropic Drugs, 22nd Edition. Hogrefe, 2017."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"165\"><col width=\"136\"><col width=\"113\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Benzodiazepine</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Duration of action</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">ALPRAZolam (Xanax)</p>\n</td>\n<td>\n<p dir=\"ltr\">Short</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">ChlordiazePOXIDE (Librium)</p>\n</td>\n<td>\n<p dir=\"ltr\">Long</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">DiazePAM (Valium)</p>\n</td>\n<td>\n<p dir=\"ltr\">Long</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">ClonazePAM (KlonoPIN)</p>\n</td>\n<td>\n<p dir=\"ltr\">Long</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">LORazepam (Ativan)</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Oxazepam (Serax)</p>\n</td>\n<td>\n<p dir=\"ltr\">Short</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Temazepam (Restoril)</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Triazolam (Halcion)</p>\n</td>\n<td>\n<p dir=\"ltr\">Short</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>\n<p><strong>Conversion factors (highlighted cell is used for example below):</strong></p>\n<p><strong><img src=\"https://cdn-web-img.mdcalc.com/content/benzo3.png\" width=\"100%\"></strong></p>\n<p dir=\"ltr\"><strong>Example (highlighted&nbsp;cell):</strong></p>\n<p dir=\"ltr\">To convert 1 mg Xanax to Librium, multiply 1 mg x 25. For a range of equipotent doses, multiply by 15 and 50.</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">1 mg Xanax &asymp; 25 mg Librium</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">15-50 mg &asymp; range of Librium dose equipotent to 1 mg Xanax</p>\n</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Dosage",
+                "unit": "drugmg",
+                "error_min": "-1",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mg",
+                "units_us": "mg"
+            }
+        ],
+        "primary_complains": [
+            "Anxious",
+            "Seizure"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Anxiety",
+            "Dementia",
+            "Depression/Suicidality",
+            "Epilepsy",
+            "Seizure Disorder"
+        ],
+        "logic": "var calc_output = [];\n\nvar from = parseFloat(from);\nvar dose = parseFloat(dose);\nvar to = parseFloat(to);\nvar conversion;\nvar conversion_lower;\nvar conversion_upper;\nvar name_from;\nvar name_to;\n\nif(from == 0){name_from = 'Xanax'}\n\telse if(from == 1){name_from = 'Librium'}\n\telse if(from == 2){name_from = 'Valium'}\n\telse if(from == 3){name_from = 'Klonopin'}\n\telse if(from == 4){name_from = 'Ativan'}\n\telse if(from == 5){name_from = 'Serax'}\n\telse if(from == 6){name_from = 'Restoril'}\n\telse if(from == 7){name_from = 'Halcion'}\n\nif(to == 0){name_to = 'Xanax'}\n\telse if(to == 1){name_to = 'Librium'}\n\telse if(to == 2){name_to = 'Valium'}\n\telse if(to == 3){name_to = 'Klonopin'}\n\telse if(to == 4){name_to = 'Ativan'}\n\telse if(to == 5){name_to = 'Serax'}\n\telse if(to == 6){name_to = 'Restoril'}\n\telse if(to == 7){name_to = 'Halcion'}\n\n//********Xanax (0) to 0-7********//\nif (from == 0 && to == 0) {\n\tconversion = 1\n\tconversion_lower = 1\n\tconversion_upper = 1\n\t}\nelse if (from == 0 && to == 1) {\n\tconversion = 25\n\tconversion_lower = 15\n\tconversion_upper = 50 \n\t}\nelse if (from == 0 && to == 2) {\n\tconversion = 10\n\tconversion_lower = 5 \n\tconversion_upper = 20\n\t} \nelse if (from == 0 && to == 3) {\n\tconversion = 2\n\tconversion_lower = 0.5\n\tconversion_upper =  4\n\t}\nelse if (from == 0 && to == 4) {\n\tconversion = 2\n\tconversion_lower = 1 \n\tconversion_upper = 4 \n\t}\nelse if (from == 0 && to == 5) {\n\tconversion = 20\n\tconversion_lower = 5 \n\tconversion_upper = 40\n\t}\nelse if (from == 0 && to == 6) {\n\tconversion = 20\n\tconversion_lower = 5\n\tconversion_upper = 40 \n\t}\nelse if (from == 0 && to == 7) {\n\tconversion = 0.5\n\tconversion_lower = 1\n\tconversion_upper = 0.25\n\t}\n\n//********librium (1) to 0-7********//\nelse if (from == 1 && to == 0) {\n\tconversion = 0.04\n\tconversion_lower = 0.06667\n\tconversion_upper = 0.02 \n\t} \nelse if (from == 1 && to == 1) {\n\tconversion = 1\n\tconversion_lower = 1\n\tconversion_upper = 1\n}\t\nelse if (from == 1 && to == 2) {\n\tconversion = 1/3;\n\tconversion_lower = 1/1.25;\n\tconversion_upper = 1/5;\n\t}\nelse if (from == 1 && to == 3) {\n\tconversion = 0.05;\n\tconversion_lower = 0.16; \n\tconversion_upper = 0.02;\n\t}\nelse if (from == 1 && to == 4) {\n\tconversion = 0.1\n\tconversion_lower = 0.16\n\tconversion_upper = 0.04 \n\t}\nelse if (from == 1 && to == 5) {\n\tconversion = 0.5\n\tconversion_lower = 0.2 \n\tconversion_upper =  1.6\n\t}\nelse if (from == 1 && to == 6) {\n\tconversion = 0.5\n\tconversion_lower = 0.2\n\tconversion_upper = 1.6\n\t}\nelse if (from == 1 && to == 7) {\n\tconversion = 0.013333\n\tconversion_lower = 0.04\n\tconversion_upper = 0.01\n\t}\t\n//********valium (2) to 0-7********//\nelse if (from == 2 && to == 0) {\n\tconversion = 0.1;\n\tconversion_lower = 0.2;\n\tconversion_upper = 0.05; \n\t} \nelse if (from == 2 && to == 1) {\n\tconversion = 3\n\tconversion_lower = 1.25\n\tconversion_upper = 5\n}\t\nelse if (from == 2 && to == 2) {\n\tconversion = 1\n\tconversion_lower = 1\n\tconversion_upper = 1\n\t}\nelse if (from == 2 && to == 3) {\n\tconversion = 0.1\n\tconversion_lower = 0.4\n\tconversion_upper =  0.05\n\t}\nelse if (from == 2 && to == 4) {\n\tconversion = 0.16667\n\tconversion_lower = 0.4\n\tconversion_upper = 0.1\n\t}\nelse if (from == 2 && to == 5) {\n\tconversion = 2\n\tconversion_lower = 0.5\n\tconversion_upper =  4\n\t}\nelse if (from == 2 && to == 6) {\n\tconversion = 2\n\tconversion_lower = 0.5\n\tconversion_upper = 4\n\t}\nelse if (from == 2 && to == 7) {\n\tconversion = 0.05\n\tconversion_lower = 0.1\n\tconversion_upper = 0.025\n\t}\n\n\n//******** klonopin (3) to 0-7********//\nelse if (from == 3 && to == 0) {\n\tconversion = 0.5\n\tconversion_lower = 2\n\tconversion_upper = 0.25\n\t} \nelse if (from == 3 && to == 1) {\n\tconversion = 20\n\tconversion_lower = 6.25\n\tconversion_upper = 50\n}\t\nelse if (from == 3 && to == 2) {\n\tconversion = 10\n\tconversion_lower = 2.5\n\tconversion_upper = 20\n\t}\nelse if (from == 3 && to == 3) {\n\tconversion = 1\n\tconversion_lower = 1\n\tconversion_upper = 1\n\t}\nelse if (from == 3 && to == 4) {\n\tconversion = 2\n\tconversion_lower = 0.5\n\tconversion_upper = 4\n\t}\nelse if (from == 3 && to == 5) {\n\tconversion = 20\n\tconversion_lower = 2.5\n\tconversion_upper =  40\n\t}\nelse if (from == 3 && to == 6) {\n\tconversion = 20\n\tconversion_lower = 2.5\n\tconversion_upper = 40\n\t}\nelse if (from == 3 && to == 7) {\n\tconversion = 0.25\n\tconversion_lower = 1\n\tconversion_upper = 0.125\n\t}\n\n//******** ativan (4) to 0-7********//\nelse if (from == 4 && to == 0) {\n\tconversion = 0.5\n\tconversion_lower = 1\n\tconversion_upper = 0.25\n\t} \nelse if (from == 4 && to == 1) {\n\tconversion = 10\n\tconversion_lower = 6.25\n\tconversion_upper = 25\n}\t\nelse if (from == 4 && to == 2) {\n\tconversion = 6\n\tconversion_lower = 2.5\n\tconversion_upper = 10\n\t}\nelse if (from == 4 && to == 3) {\n\tconversion = 0.5\n\tconversion_lower = 2\n\tconversion_upper = 0.25\n\t}\nelse if (from == 4 && to == 4) {\n\tconversion = 1\n\tconversion_lower = 1\n\tconversion_upper = 1\n\t}\nelse if (from == 4 && to == 5) {\n\tconversion = 10\n\tconversion_lower = 2.5\n\tconversion_upper =  20\n\t}\nelse if (from == 4 && to == 6) {\n\tconversion = 10\n\tconversion_lower = 2.5\n\tconversion_upper = 20\n\t}\nelse if (from == 4 && to == 7) {\n\tconversion = 0.25\n\tconversion_lower = 0.5\n\tconversion_upper = 0.125\n\t}\n\n//******** serax (5) to 0-7********//\nelse if (from == 5 && to == 0) {\n\tconversion = 0.05\n\tconversion_lower = 0.2\n\tconversion_upper = 0.025\n\t} \nelse if (from == 5 && to == 1) {\n\tconversion = 2\n\tconversion_lower = 5\n\tconversion_upper = 0.625\n}\t\nelse if (from == 5 && to == 2) {\n\tconversion = 0.5\n\tconversion_lower = 2\n\tconversion_upper = 0.25\n\t}\nelse if (from == 5 && to == 3) {\n\tconversion = 0.05\n\tconversion_lower = 0.4\n\tconversion_upper = 0.025\n\t}\nelse if (from == 5 && to == 4) {\n\tconversion = 0.1\n\tconversion_lower = 0.4\n\tconversion_upper = 0.05\n\t}\nelse if (from == 5 && to == 5) {\n\tconversion = 1\n\tconversion_lower = 1\n\tconversion_upper = 1\n\t}\nelse if (from == 5 && to == 6) {\n\tconversion = 1\n\tconversion_lower = 0.25\n\tconversion_upper = 4\n\t}\nelse if (from == 5 && to == 7) {\n\tconversion = 0.025\n\tconversion_lower = 0.1\n\tconversion_upper = 0.0125\n\t}\n\n//******** Restoril (6) to 0-7********//\nelse if (from == 6 && to == 0) {\n\tconversion = 0.05\n\tconversion_lower = 0.2\n\tconversion_upper = 0.025\n\t} \nelse if (from == 6 && to == 1) {\n\tconversion = 2\n\tconversion_lower = 5\n\tconversion_upper = 0.625\n}\t\nelse if (from == 6 && to == 2) {\n\tconversion = 0.5\n\tconversion_lower = 2\n\tconversion_upper = 0.25\n\t}\nelse if (from == 6 && to == 3) {\n\tconversion = 0.05\n\tconversion_lower = 0.4\n\tconversion_upper = 0.025\n\t}\nelse if (from == 6 && to == 4) {\n\tconversion = 0.1\n\tconversion_lower = 0.4\n\tconversion_upper = 0.05\n\t}\nelse if (from == 6 && to == 5) {\n\tconversion = 1\n\tconversion_lower = 4\n\tconversion_upper = 0.25\n\t}\nelse if (from == 6 && to == 6) {\n\tconversion = 1\n\tconversion_lower = 1\n\tconversion_upper = 1\n\t}\nelse if (from == 6 && to == 7) {\n\tconversion = 0.025\n\tconversion_lower = 0.1\n\tconversion_upper = 0.0125\n\t}\t\n\n//******** Halcion (7) to 0-7********//\nelse if (from == 7 && to == 0) {\n\tconversion = 2\n\tconversion_lower = 1\n\tconversion_upper = 4\n\t} \nelse if (from == 7 && to == 1) {\n\tconversion = 75\n\tconversion_lower = 25\n\tconversion_upper = 100\n}\t\nelse if (from == 7 && to == 2) {\n\tconversion = 20\n\tconversion_lower = 10\n\tconversion_upper = 40\n\t}\nelse if (from == 7 && to == 3) {\n\tconversion = 4\n\tconversion_lower = 1\n\tconversion_upper = 8\n\t}\nelse if (from == 7 && to == 4) {\n\tconversion = 4\n\tconversion_lower = 2\n\tconversion_upper = 8\n\t}\nelse if (from == 7 && to == 5) {\n\tconversion = 40\n\tconversion_lower = 10\n\tconversion_upper = 80\n\t}\nelse if (from == 7 && to == 6) {\n\tconversion = 40\n\tconversion_lower = 10\n\tconversion_upper = 80\n\t}\t\nelse if (from == 7 && to == 7) {\n\tconversion = 1\n\tconversion_lower = 1\n\tconversion_upper = 1\n\t}\n\nvar new_dose = dose * conversion;\nvar range_lower = dose * conversion_lower;\nvar range_upper = dose * conversion_upper;\n\tif(range_lower < range_upper){\n\tvar range = range_lower.toFixed(1) + '-' + range_upper.toFixed(1);}\n\telse{var range = range_upper.toFixed(1) + '-' + range_lower.toFixed(1);}\n\n\t// Math.floor(num)  ex Math.floor(1.3) => 1 or maybe 1.0\n\t// Math.ceil\n\n\n//results \nif (from !== to) {\n  calc_output.push({\n      name: 'mini',\n      value: new_dose.toFixed(1),\n      value_text: 'mg',\n      message: range + ' mg'\n      });\n}\nif (from !== to) {\n  calc_output.push({\n      name: '10091_Benzodiazepine Conversion Calculator_result (dose)',\n      value: new_dose.toFixed(1),\n      value_text: 'mg',\n      message: name_to + ' dose equivalent to ' + dose + ' mg ' + name_from\n      });\n}\nif (from !== to) {\n  calc_output.push({\n      name: '10091_Benzodiazepine Conversion Calculator_result (range)',\n      value: range,\n      value_text: 'mg',\n      message: 'Range of ' + name_to + ' dose equivalent to ' + dose + ' mg ' + name_from\n      });\n}\nif (from == to) {\n  calc_output.push({\n      name: 'mini',\n      value: 'N/A',\n      value_text:'',\n      message: 'Conversion not applicable if converting between the same benzodiazepine'\n      });\n}\nif (from == to) {\n  calc_output.push({\n      name: '10091_Benzodiazepine Conversion Calculator_result',\n      value: 'N/A',\n      value_text: '',\n      message: 'Conversion not applicable if converting between the same benzodiazepine'\n      });\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Converting from:</p>",
+                "mdcalc_info_concept": null,
+                "name": "from",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "ALPRAZolam (Xanax)",
+                        "value": 0
+                    },
+                    {
+                        "label": "ChlordiazePOXIDE (Librium)",
+                        "value": 1
+                    },
+                    {
+                        "label": "DiazePAM (Valium)",
+                        "value": 2
+                    },
+                    {
+                        "label": "ClonazePAM (KlonoPIN)",
+                        "value": 3
+                    },
+                    {
+                        "label": "LORazepam (Ativan)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Oxazepam (Serax)",
+                        "value": 5
+                    },
+                    {
+                        "label": "Temazepam (Restoril)",
+                        "value": 6
+                    },
+                    {
+                        "label": "Triazolam (Halcion)",
+                        "value": 7
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Total daily drug dosage (mg)</p>",
+                "name": "dose",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "drugmg"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Converting to:</p>",
+                "mdcalc_info_concept": null,
+                "name": "to",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "ALPRAZolam (Xanax)",
+                        "value": 0
+                    },
+                    {
+                        "label": " ChlordiazePOXIDE (Librium)",
+                        "value": 1
+                    },
+                    {
+                        "label": "DiazePAM (Valium)",
+                        "value": 2
+                    },
+                    {
+                        "label": "ClonazePAM (KlonoPIN)",
+                        "value": 3
+                    },
+                    {
+                        "label": "LORazepam (Ativan)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Oxazepam (Serax)",
+                        "value": 5
+                    },
+                    {
+                        "label": "Temazepam (Restoril)",
+                        "value": 6
+                    },
+                    {
+                        "label": "Triazolam (Halcion)",
+                        "value": 7
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Benzodiazepine",
+            "conversion calculator",
+            "benzo conversion"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pharmacy",
+            "Primary Care",
+            "Psychiatry",
+            "Toxicology"
+        ]
+    }
+}

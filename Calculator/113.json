@@ -1,0 +1,219 @@
+{
+    "id": "113",
+    "title": "El-Ganzouri Risk Index (EGRI) for Difficult Airway",
+    "desc": "The El-Ganzouri Risk Index (EGRI) for Difficult Airway predicts risk of difficult airway.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8638791",
+                "text": "El-ganzouri AR, Mccarthy RJ, Tuman KJ, Tanck EN, Ivankovich AD. Preoperative airway assessment: predictive value of a multivariate risk index. Anesth Analg. 1996;82(6):1197-204."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://academic.oup.com/bja/article/99/6/906/247661",
+                "text": "Cortellazzi P, Minati L, Falcone C, Lamperti M, Caldiroli D. Predictive value of the El-Ganzouri multivariate risk index for difficult tracheal intubation: a comparison of Glidescope videolaryngoscopy and conventional Macintosh laryngoscopy. Br J Anaesth. 2007;99(6):906-11."
+            },
+            {
+                "href": "http://www.asaabstracts.com/strands/asaabstracts/abstract.htm?year=2016&index=15&absnum=4388",
+                "text": "Bicalho GP, Bessa RC, Carneiro FS, et al. A Prospective Evaluation of Three Multivariate Models for Prediction of Difficult Tracheal Intubation. In: Proceedings from the American Society of Anesthesiologists; October 22, 2016; Chicago, IL. Abstract 1179."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"176\" /><col width=\"194\" /><col width=\"79\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Mouth opening</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;4 cm</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;4 cm</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Thyromental distance</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;6.5 cm</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6.0-6.5 cm</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;6.0 cm</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><calculator id=\"3989\">Modified Mallampati Classification</calculator></p>\n</td>\n<td>\n<p dir=\"ltr\">I (soft palate, fauces, uvula, and pillars seen)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">II (soft palate, fauces, and uvula seen)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">III (soft palate and base of uvula&nbsp;seen)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">IV (soft palate not visible)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Neck movement</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;90&deg;</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">80-90&deg;</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;80&deg;</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Ability to prognath (advance lower jaw forward)</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n<p dir=\"ltr\"></p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Weight</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;90 kg (198.4 lbs)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">90-110 kg (198.4-242.5 lbs)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;110 kg (242.5 lbs)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">History of difficult intubation</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Questionable</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Definite</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span id=\"docs-internal-guid-62d493e3-7fff-7ec1-b176-bb50ebac2cd1\"><span id=\"docs-internal-guid-62d493e3-7fff-7ec1-b176-bb50ebac2cd1\">&nbsp;</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>EGRI</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of difficult airway</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;4</p>\n</td>\n<td>\n<p dir=\"ltr\">High (93.8% specificity)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;4</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-d0973fc3-7fff-2c3d-c219-81bfb1d775ff\"><span id=\"docs-internal-guid-d0973fc3-7fff-2c3d-c219-81bfb1d775ff\">&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output = [];\n\nvar mouth = parseFloat(mouth);\nvar thyro = parseFloat(thyro);\nvar mclass = parseFloat(mclass);\nvar neck = parseFloat(neck);\nvar prog = parseFloat(prog);\nvar neck = parseFloat(neck);\nvar body = parseFloat(body);\nvar history = parseFloat(history);\n\nvar score = mouth + thyro + mclass + neck + prog + body + history;\n\nvar risk1, msg;\n\nif (score < 4) {\n  risk1 = 'Low';\n  msg = '';\n}\nelse {\n  risk1 = 'High';\n  msg = '93.8% specificity';\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk1 + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'EGRI'   \n    });\ncalc_output.push({\n    name: 'risk1',\n    value: risk1, \n    value_text: 'risk',\n    message: 'Risk of difficult airway<br/><br/>' + msg\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Mouth opening",
+                "name": "mouth",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥4 cm",
+                        "value": 0
+                    },
+                    {
+                        "label": "<4 cm",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Thyromental distance",
+                "name": "thyro",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">6.5 cm",
+                        "value": 0
+                    },
+                    {
+                        "label": "6.0-6.5 cm",
+                        "value": 1
+                    },
+                    {
+                        "label": "<6.0 cm",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id=\"3989\">Modified Mallampati Classification</calculator>",
+                "name": "mclass",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "I (soft palate, fauces, uvula, and pillars seen)",
+                        "value": 0
+                    },
+                    {
+                        "label": "II (soft palate, fauces, and uvula seen)",
+                        "value": 1
+                    },
+                    {
+                        "label": "III (soft palate and base of uvula seen)",
+                        "value": 2
+                    },
+                    {
+                        "label": "IV (soft palate not visible)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Neck movement",
+                "name": "neck",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">90°",
+                        "value": 0
+                    },
+                    {
+                        "label": "80-90°",
+                        "value": 1
+                    },
+                    {
+                        "label": "<80°",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ability to prognath (advance lower jaw forward)",
+                "name": "prog",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    },
+                    {
+                        "label": "No",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Weight",
+                "name": "body",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<90 kg (198.4 lbs)",
+                        "value": 0
+                    },
+                    {
+                        "label": "90-110 kg (198.4-242.5 lbs)",
+                        "value": 1
+                    },
+                    {
+                        "label": ">110 kg (242.5 lbs)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of difficult intubation",
+                "name": "history",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Questionable",
+                        "value": 1
+                    },
+                    {
+                        "label": "Definite",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Difficult airway",
+            "risk of difficult airway",
+            "Difficult airway risk",
+            "el ganzouri",
+            "egri",
+            "El-Ganzouri Risk Index",
+            "El Ganzouri Risk Index",
+            "difficult intubation",
+            "intubation",
+            "tracheal"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Pulmonology",
+            "Surgery (Trauma)"
+        ]
+    }
+}

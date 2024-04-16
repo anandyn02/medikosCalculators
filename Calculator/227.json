@@ -1,0 +1,107 @@
+{
+    "id": "227",
+    "title": "Rome IV Diagnostic Criteria for Child Non-retentive Fecal Incontinence",
+    "desc": "The Rome IV Criteria for Child Nonretentive Fecal Incontinence provides criteria for diagnosis of child nonretentive fecal incontinence.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7104693/",
+                "text": "Hyams J, Di lorenzo C, Forbes D, et al. Childhood functional gastrointestinal disorders: child/adolescent. Gastroenterology. 2006;130(5):1527-37."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24345831/",
+                "text": "Tabbers MM, DiLorenzo C, Berger MY, et al. Evaluation and treatment of functional constipation in infants and children: evidence-based recommendations from ESPGHAN and NASPGHAN. J Pediatr Gastroenterol Nutr. 2014;58(2):258-274."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for child non-retentive fecal incontinence, patients must have a developmental age &ge;4 years and have the following ( &ge;1 month prior):</p>\n<ol>\n<li>Defecation into places inappropriate to the sociocultural context.</li>\n<li>No evidence of fecal retention.</li>\n<li>After appropriate medical evaluation, the fecal incontinence cannot be explained by another medical condition.</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Fecal Incontinence"
+        ],
+        "disease_treated": [
+            "Child/Adolescent Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three);\n\nvar diag;\n\nvar msg= 'Diagnosis for child non-retentive fecal incontinence as per Rome IV criteria';\nvar minimsg= 'Diagnosis for child fecal incontinence';\n\nif (criteria==3) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Child Fecal Incontinence',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "(for ≥1 month prior in patients with a developmental age ≥4 years)",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Defecation into places inappropriate to the sociocultural context",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No evidence of fecal retention",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "After appropriate medical evaluation, the fecal incontinence cannot be explained by another medical condition",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Child Nonretentive Fecal Incontinence, Rome IV for Fecal Incontinence, rome iv child nonretentive fecal incontinence, nonretentive fecal incontinence, rome iv fecal incontinence, rome fecal incontinence, rome, fecal incontinence, rome 4 for child nonretentive fecal incontinence, rome 4 non retentive fecal incontinence, rome 4 fecal incontinence"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

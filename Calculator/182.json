@@ -1,0 +1,193 @@
+{
+    "id": "182",
+    "title": "PREdiction of Survival on ECMO Therapy (PRESET) Score",
+    "desc": "The PREdiction of Survival on ECMO Therapy (PRESET) Score predicts survival after ECMO for acute respiratory distress syndrome.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5728043/",
+                "text": "Hilder M, Herbstreit F, Adamzik M, et al. Comparison of mortality prediction models in acute respiratory distress syndrome undergoing extracorporeal membrane oxygenation and development of a novel prediction score: the PREdiction of Survival on ECMO Therapy-Score (PRESET-Score). Crit Care. 2017;21(1):301."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>The PRESET Score is calculated by the addition of the selected points:</p>\n<table width=\"583\" height=\"330\">\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p><strong>Variable</strong></p>\n</td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td rowspan=\"5\">Mean arterial pressure, mmHg</td>\n<td>\n<p>&gt;100</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>91-100</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>81-90</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>71-80</p>\n</td>\n<td>3</td>\n</tr>\n<tr>\n<td>\n<p>&le;70</p>\n</td>\n<td>4</td>\n</tr>\n<tr>\n<td rowspan=\"5\"><br>Lactate concentration, mmol/L<br><br></td>\n<td>\n<p>&le;1.50</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>1.51-3.00</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>3.01-6.00</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>6.01-10.00</p>\n</td>\n<td>3</td>\n</tr>\n<tr>\n<td>\n<p>&gt;10.00</p>\n</td>\n<td>4</td>\n</tr>\n<tr>\n<td rowspan=\"4\">pH<sub>a</sub></td>\n<td>\n<p>&gt;7.300</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>7.201-7.300</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>7.101-7.200</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>&le;7.100</p>\n</td>\n<td>3</td>\n</tr>\n<tr>\n<td rowspan=\"3\">Platelet concentration, x 1000 cells/&mu;l</td>\n<td>\n<p>&gt;200</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>101-200</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>&le;100</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"3\">Hospital days pre-ECMO</td>\n<td>\n<p>&le;2</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>3-7</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>&gt;7</p>\n</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<table width=\"387\" height=\"92\">\n<tbody>\n<tr>\n<td>\n<p><strong>PRESET Score</strong></p>\n</td>\n<td><strong>Risk class</strong></td>\n<td><strong>ICU mortality</strong></td>\n</tr>\n<tr>\n<td>\n<p>0-5</p>\n</td>\n<td>Class I</td>\n<td>26%</td>\n</tr>\n<tr>\n<td>\n<p>6-9</p>\n</td>\n<td>Class II</td>\n<td>68%</td>\n</tr>\n<tr>\n<td>\n<p>10-15</p>\n</td>\n<td>Class III</td>\n<td>93%</td>\n</tr>\n</tbody>\n</table>\n<p>From&nbsp;<a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5728043/\" target=\"_blank\" rel=\"noopener\">Hilder 2017</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Acute Respiratory Distress Syndrome",
+            "Coronavirus",
+            "COVID-19",
+            "Respiratory Distress",
+            "Respiratory Failure"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(five);\n\nvar score;\nvar clase;\nvar ICU;\n\n\nif (criteria>=0 && criteria<=5) {\n  clase='Class I';\n  ICU='26';\n}\n\nif (criteria>=6 && criteria<=9) {\n  clase='Class II';\n  ICU='68';\n}\n\n\nif (criteria>=10 && criteria<=15) {\n  clase='Class III';\n  ICU='93';\n}\n\n//results\n\ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text: 'points',\n    message: ICU + '% ICU mortality',\n});\ncalc_output.push({\n    name: 'criteria',\n    value: criteria,\n    value_text: 'points',\n    message: 'PRESET Score',\n});\ncalc_output.push({\n    name: 'clase',\n    value: clase,\n    value_text: '',\n    message: 'Risk class',\n});\ncalc_output.push({\n    name: 'ICU',\n    value: ICU,\n    value_text: '%',\n    message: 'ICU mortality',\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Mean arterial pressure, mmHg",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">100",
+                        "value": 0
+                    },
+                    {
+                        "label": "91-100",
+                        "value": 1
+                    },
+                    {
+                        "label": "81-90",
+                        "value": 2
+                    },
+                    {
+                        "label": "71-80",
+                        "value": 3
+                    },
+                    {
+                        "label": "≤70",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lactate concentration, mmol/L",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤1.50",
+                        "value": 0
+                    },
+                    {
+                        "label": "1.51-3.00",
+                        "value": 1
+                    },
+                    {
+                        "label": "3.01-6.00",
+                        "value": 2
+                    },
+                    {
+                        "label": "6.01-10.00",
+                        "value": 3
+                    },
+                    {
+                        "label": ">10.00",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "pH<sub>a</sub>",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">7.300",
+                        "value": 0
+                    },
+                    {
+                        "label": "7.201-7.300",
+                        "value": 1
+                    },
+                    {
+                        "label": "7.101-7.200",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤7.100",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Platelet concentration, x 1000 cells/μl",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">200",
+                        "value": 0
+                    },
+                    {
+                        "label": "101-200",
+                        "value": 1
+                    },
+                    {
+                        "label": "≤100",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hospital days pre-ECMO",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤2",
+                        "value": 0
+                    },
+                    {
+                        "label": "3-7",
+                        "value": 1
+                    },
+                    {
+                        "label": ">7",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "PRESET Score",
+            "preset",
+            "PREdiction of Survival on ECMO Therapy (PRESET) Score",
+            "ecmo",
+            "ards",
+            "acute respiratory distress syndrome",
+            "ecmo survival",
+            "ecmo mortality",
+            "coronaivirus",
+            "corona virus",
+            "covid-19",
+            "covid 19",
+            "covid19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

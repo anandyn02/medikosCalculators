@@ -1,0 +1,430 @@
+{
+    "id": "414",
+    "title": "Expanded Disability Status Scale (EDSS) / Functional Systems Score (FSS)",
+    "desc": "The Expanded Disability Status Scale (EDSS) and the Functional Systems Score (FSS) together describe severity of disability in patients with MS.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6685237",
+                "text": "Kurtzke JF. Rating neurologic impairment in multiple sclerosis: an expanded disability status scale (EDSS). Neurology. 1983 Nov;33(11):1444-52."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p><strong>EDSS:</strong> Points assigned based on level of disability.</p>\n<p><strong>FSS:</strong> Addition of selected points within body system.</p>\n<ul>\n<li>The Expanded Disability Status Scale (EDSS) works together with the Functional Systems Scale (FSS) to measure MS disease progression.</li>\n<li>The EDSS assesses the disability status of MS patients on a scale from 0 to 10.</li>\n<li>Scores from 0 to 3.5 are determined by deficits in eight Functional Systems (FS) in patients who do not have any impairment of ambulation.</li>\n<li>Scores from 4.0 to 10.0 are determined both by ambulatory ability and FS deficits, which typically correlate with each other.</li>\n<li>Some providers use only the ambulatory score to determine the overall EDSS score between 4.0 and 10.0.</li>\n<li>In situations when there is subjectivity and FS deficits do not correspond to a specific EDSS level, a range is provided.</li>\n</ul>",
+        "facts": "<ul>\n<li>Score of 1.0 to 4.5 -- Normal ambulation.</li>\n<li>Score of 5.0 to 9.5 -- Impaired ambulation.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Numbness",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Multiple Sclerosis"
+        ],
+        "logic": "var calc_output = [];\n\nvar ambulation = parseFloat(ambulation);\nvar pyramidal = parseFloat(pyramidal);\nvar cerebellar = parseFloat(cerebellar);\nvar brainstem = parseFloat(brainstem);\nvar sensory = parseFloat(sensory);\nvar bowelAndBladder = parseFloat(bowelAndBladder);\nvar visual_input = parseFloat(visual_input);\nvar cerebral = parseFloat(cerebral);\nvar other = parseFloat(other);\n\n\nvar fs = [pyramidal, cerebellar, brainstem, sensory, bowelAndBladder, visual_input, cerebral, other];\n\nvar fsScore = 0;\nvar uncertain = false;\n\nvar g = [];\n\nfor (var i = 0; i < 7; i++) {\n    g[i] = fs.filter(function(val) {\n        return i == val;\n    }).length;\n}\n\nfunction compare(a, b) {\n    for (var i = 0; i < a.length; i++) {\n        var toEval = \"(\" + a[i] + b[i] + \")\";\n        if (!(eval(toEval))) {\n            return false;\n        }\n    }\n    return true;\n}\n\nswitch (true) {\n\n    // 4 or more G4 or higher\n    case ((g[4] + g[5] + g[6]) >= 4):\n        fsScore = [9.0, 10.0];\n        break;\n\n        // 3 or more G4 or higher\n    case ((g[4] + g[5] + g[6]) >= 3):\n        fsScore = [8.0, 9.0];\n        break;\n\n        // More than 1 G4 or pyramidal G5 alone. Higher combos will be caught above. \n    case (((g[4] + g[5] + g[6]) > 1) || (pyramidal == 5)):\n        fsScore = [7.0, 8.0];\n        break;\n\n        // More than 2 G3 or higher\n    case ((g[3] + g[4] + g[5] + g[6]) > 2):\n        fsScore = [6.0, 6.5];\n        break;\n\n        // 1 G5 and rest G0 or G1\n    case (compare(g, [\">=0\", \">=0\", \"==0\", \"==0\", \"==0\", \"==1\", \"==0\"])):\n        fsScore = [5.0, 5.5];\n        break;\n\n        // 1 G4 and rest G0 or G1\n    case (compare(g, [\">=0\", \">=0\", \"==0\", \"==0\", \"==1\", \"==0\", \"==0\"])):\n        fsScore = [4.0, 4.5];\n        break;\n\n        // 1 G3 and 1 G2\n        // 1 G3 and 2 G2\n        // 2 G3 and rest G0 or G1 (** wording is ambig here)\n        // 5 G2 and rest G0 or G1\n    case (\n        (compare(g, [\">=0\", \">=0\", \"==1\", \"==1\", \"==0\", \"==0\", \"==0\"])) ||\n        (compare(g, [\">=0\", \">=0\", \"==2\", \"==1\", \"==0\", \"==0\", \"==0\"])) ||\n        (compare(g, [\">=0\", \">=0\", \"==0\", \"==2\", \"==0\", \"==0\", \"==0\"])) ||\n        (compare(g, [\">=0\", \">=0\", \"==5\", \"==0\", \"==0\", \"==0\", \"==0\"]))\n    ):\n        fsScore = [3.5, 3.5];\n        break;\n\n        // 1 G3, the rest G0 or G1\n        // 3 G2, the rest G0 or G1\n        // 4 G2, the rest G0 or G1\n    case (\n        (compare(g, [\">=0\", \">=0\", \"==0\", \"==1\", \"==0\", \"==0\", \"==0\"])) ||\n        (compare(g, [\">=0\", \">=0\", \"==3\", \"==0\", \"==0\", \"==0\", \"==0\"])) ||\n        (compare(g, [\">=0\", \">=0\", \"==4\", \"==0\", \"==0\", \"==0\", \"==0\"]))\n    ):\n        fsScore = [3.0, 3.0];\n        break;\n\n        // 2 G2, the rest G0 or G1\n    case (compare(g, [\">=0\", \">=0\", \"==2\", \"==0\", \"==0\", \"==0\", \"==0\"])):\n        fsScore = [2.5, 2.5];\n        break;\n\n\n        // 1 G2, the rest G0 or G1\n    case (compare(g, [\">=0\", \">=0\", \"==1\", \"==0\", \"==0\", \"==0\", \"==0\"])):\n        fsScore = [2.0, 2.0];\n        break;\n\n        // More than 2 G1, the rest G0, if cerebral == 1\n        // More than 1 G1, the rest G0, if cerebral == 0\n    case (\n        ((compare(g, [\">=0\", \">2\", \"==0\", \"==0\", \"==0\", \"==0\", \"==0\"])) && (cerebral == 1)) ||\n        ((compare(g, [\">=0\", \">1\", \"==0\", \"==0\", \"==0\", \"==0\", \"==0\"])) && (cerebral === 0))\n    ):\n        fsScore = [1.5, 1.5];\n        break;\n\n        // 7 G0 and 1 G1 if cerebral == 0\n        // 6 G0 and 2 G1 if cerebral == 1\n    case (\n        ((g[0] == 6) && (g[1] == 2) && (cerebral == 1)) ||\n        ((g[0] == 7) && (g[1] == 1) && (cerebral === 0))\n    ):\n        fsScore = [1.0, 1.0];\n        break;\n\n        // 7 G0 and cerebral G1 or 8G0    \n    case (\n        ((g[0] == 7) && (g[1] == 1) && (cerebral == 1)) ||\n        (g[0] == 8)\n    ):\n        fsScore = [0.0, 0.0];\n        break;\n\n        // If score falls to the bottom, there is too little information contained in EDSS to codify it based on FS. However, it is likely that the patient will have ambulatory findings that will inform the DSS and help the clinician arrive at the correct score. \n    default:\n        fsScore = [4.0, 10.0];\n        var uncertain = true;\n}\n\n\nif (fsScore[0] == fsScore[1]) {\n    fsScore = fsScore[0];\n} else {\n    fsScore = String(fsScore[0]) + \" to \" + String(fsScore[1]);\n}\n\nmini_msg += score\nmsg += score;\n\nif (ambulation >= 4) {\n    var score = ambulation;\n} else {\n    var score = fsScore;\n}\n\nvar mini_msg = \"EDSS: \" + score;\nvar msg = \"Ambulation Score: \" + ambulation + \"<br/>\" + \"<br/>Functional Systems Score: \" + fsScore;\n\n\nif (uncertain == true) {\n    msg += \"<br/><br/>This combination of FS deficits is not explicitly defined in the EDSS. Please refer to the original text.\";\n}\n\nvar amb;\nif (score <= 4.5) {\n    amb = 'Normal'\n} else{\n    amb = 'Impaired'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '2146_EDSS/FSS for MS_result',\n    value: score,\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: '2146_EDSS/FSS for MS_interpretation',\n    value: amb,\n    value_text: '',\n    message: 'Level of ambulation'\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Expanded Disability Status",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ambulation",
+                "mdcalc_info_concept": null,
+                "name": "ambulation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Fully ambulatory",
+                        "value": 0
+                    },
+                    {
+                        "label": "Fully ambulatory, self-sufficient, up 12 hours a day despite relatively severe disability. Able to walk ≥500 meters without aid/rest.",
+                        "value": 4
+                    },
+                    {
+                        "label": "Fully ambulatory, able to work a full day, may require minimal assistance. Able to walk ≥300 meters without aid/rest.",
+                        "value": 4.5
+                    },
+                    {
+                        "label": "Ambulatory for 200 meters without aid/rest; disability that impairs full daily activities (eg, to work full day without special provisions).",
+                        "value": 5
+                    },
+                    {
+                        "label": "Ambulatory for 100 meters without aid/rest; disability precludes full daily activities.",
+                        "value": 5.5
+                    },
+                    {
+                        "label": "Intermittent or unilateral constant assistance required to walk 100 meters, with/without resting.",
+                        "value": 6
+                    },
+                    {
+                        "label": "Constant bilateral assistance (canes, crutches, or braces) required to walk 20 meters without resting.",
+                        "value": 6.5
+                    },
+                    {
+                        "label": "Unable to walk >5 meters even with aid; (restricted to wheelchair); wheels self in standard wheelchair and transfers alone.",
+                        "value": 7
+                    },
+                    {
+                        "label": "Unable to take more than steps; restricted to wheelchair; may need aid in transfer; wheels self but cannot use standard wheelchair a full day; may require motorized wheelchair.",
+                        "value": 7.5
+                    },
+                    {
+                        "label": "Restricted to bed/chair or perambulated in wheelchair, but may be out of bed itself much of the day; retains many self-care functions; generally has effective use of arms.",
+                        "value": 8
+                    },
+                    {
+                        "label": "Restricted to bed much of the day; has some effective use of arms; retains some self-care functions.",
+                        "value": 8.5
+                    },
+                    {
+                        "label": "Helpless bed patient; can communicate and eat.",
+                        "value": 9
+                    },
+                    {
+                        "label": "Totally helpless bed patient; unable to communicate effectively or eat/swallow.",
+                        "value": 9.5
+                    },
+                    {
+                        "label": "Death due to MS.",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Functional Systems",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pyramidal",
+                "mdcalc_info_concept": null,
+                "name": "pyramidal",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Abnormal signs without disability",
+                        "value": 1
+                    },
+                    {
+                        "label": "Minimal disability",
+                        "value": 2
+                    },
+                    {
+                        "label": "Mild or moderate paraparesis or hemiparesis; severe monoparesis",
+                        "value": 3
+                    },
+                    {
+                        "label": "Marked paraparesis or hemiparesis; moderate quadriparesis; or monoplegia",
+                        "value": 4
+                    },
+                    {
+                        "label": "Paraplegia, hemiplegia, or marked quadriparesis",
+                        "value": 5
+                    },
+                    {
+                        "label": "Quadriplegia",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cerebellar",
+                "mdcalc_info_concept": null,
+                "name": "cerebellar",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Abnormal signs without disability",
+                        "value": 1
+                    },
+                    {
+                        "label": "Mild ataxia",
+                        "value": 2
+                    },
+                    {
+                        "label": "Moderate truncal or limb ataxia",
+                        "value": 3
+                    },
+                    {
+                        "label": "Severe ataxia, all limbs",
+                        "value": 4
+                    },
+                    {
+                        "label": "Unable to perform coordinated movements due to ataxia",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Brainstem",
+                "mdcalc_info_concept": null,
+                "name": "brainstem",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Signs only",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate nystagmus or other mild disability",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe nystagmus, marked extraocular weakness, or moderate disability of other cranial nerves",
+                        "value": 3
+                    },
+                    {
+                        "label": "Marked dysarthria or other marked disability",
+                        "value": 4
+                    },
+                    {
+                        "label": "Inability to swallow or speak",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sensory",
+                "mdcalc_info_concept": null,
+                "name": "sensory",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Vibration or figure-writing decrease only, in 1-2 limbs",
+                        "value": 1
+                    },
+                    {
+                        "label": "Mild decrease in touch, pain or position sense, and/or moderate decrease in vibration in 1-2 limbs; or vibratory decrease alone in 3-4 limbs",
+                        "value": 2
+                    },
+                    {
+                        "label": "Moderate decrease in touch, pain or position sense, and/or lost vibration in 1-2 limbs; or mild decrease in touch, pain and/or moderate decrease in all proprioceptive tests in 3-4 limbs",
+                        "value": 3
+                    },
+                    {
+                        "label": "Marked decrease in touch or pain or loss of proprioception, alone or combined, in 1-2 limbs; or moderate decrease in touch, pain and/or severe proprioceptive decrease in >2 limbs",
+                        "value": 4
+                    },
+                    {
+                        "label": "Loss of sensation in 1-2 limbs; or moderate decrease in touch, pain and/or loss of proprioception for most of the body below the head",
+                        "value": 5
+                    },
+                    {
+                        "label": "Sensation essentially lost below the head",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bowel and bladder",
+                "mdcalc_info_concept": null,
+                "name": "bowelAndBladder",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild urinary hesitancy, urgency, or retention",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate hesitancy, urgency, retention of bowel or bladder, or rare urinary incontinence",
+                        "value": 2
+                    },
+                    {
+                        "label": "Frequent urinary incontinence",
+                        "value": 3
+                    },
+                    {
+                        "label": "In need of almost constant catheterization",
+                        "value": 4
+                    },
+                    {
+                        "label": "Loss of bladder function",
+                        "value": 5
+                    },
+                    {
+                        "label": "Loss of bowel and bladder function",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Visual",
+                "mdcalc_info_concept": null,
+                "name": "visual_input",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Scotoma with visual acuity (corrected) better than 20/30",
+                        "value": 1
+                    },
+                    {
+                        "label": "Worse eye with scotoma with maximal visual acuity (corrected) of 20/30 to 20/59",
+                        "value": 2
+                    },
+                    {
+                        "label": "Worse eye with large scotoma, or moderate decrease in fields, but with maximal visual acuity (corrected) of 20/60 to 20/99",
+                        "value": 3
+                    },
+                    {
+                        "label": "Worse eye with marked decrease of fields and maximal visual acuity (corrected) of 20/100-20/200; grade 3 plus maximal acuity of better eye of ≤20/60",
+                        "value": 4
+                    },
+                    {
+                        "label": "Worse eye with maximal visual acuity (corrected) less than 20/200; grade 4 plus maximal acuity of better eye of 20/60 or less",
+                        "value": 5
+                    },
+                    {
+                        "label": "Grade 5 plus maximal visual acuity of better eye of 20/60 or less",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cerebral",
+                "mdcalc_info_concept": null,
+                "name": "cerebral",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mood alteration only (Does not affect DSS score)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Mild decrease in mentation",
+                        "value": 2
+                    },
+                    {
+                        "label": "Moderate decrease in mentation",
+                        "value": 3
+                    },
+                    {
+                        "label": "Marked decrease in mentation (chronic brain syndrome -- moderate)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Dementia or chronic brain syndrome -- severe or incompetent",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Other",
+                "mdcalc_info_concept": null,
+                "name": "other",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Any other neurologic findings attributed to MS",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "MS",
+            "multiple sclerosis",
+            "FSS",
+            "functional",
+            "systems"
+        ],
+        "specialty": [
+            "Neurology"
+        ]
+    }
+}

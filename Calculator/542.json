@@ -1,0 +1,110 @@
+{
+    "id": "542",
+    "title": "EUTOS Score for Chronic Myelogenous Leukemia (CML)",
+    "desc": "EUTOS Score predicts survival of CML based on clinical and lab information.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21536864",
+                "text": "Hasford J, Baccarani M, Hoffmann V, Guilhot J, Saussele S, Rosti G, Guilhot F, Porkka K, Ossenkoppele G, Lindoerfer D, Simonsson B, Pfirrmann M, Hehlmann R. Predicting complete cytogenetic response and subsequent progression-free survival in 2060 patients with CML on imatinib treatment: the EUTOS score. Blood. 2011 Jul 21;118(3):686-92. doi: 10.1182/blood-2010-12-319038. Epub 2011 May 2."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21900102 ",
+                "text": "Marin D, Ibrahim AR, Goldman JM. European Treatment and Outcome Study (EUTOS) score for chronic myeloid leukemia still requires more confirmation. J Clin Oncol 2011;29:3944–5. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22431574 ",
+                "text": "Jabbour E, Cortes J, Nazha A, O’Brien S, Quintas-Cardama A, Pierce S, Garcia-Manero G, Kantarjian H. EUTOS score is not predictive for survival and outcome in patients with early chronic phase chronic myeloid leukemia treated with tyrosine kinase inhibitors: a single institution experience. Blood 2012;119:4524–6."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24450386 ",
+                "text": "Yamamoto E, Fujisawa S, Hagihara M, et al. European Treatment and Outcome Study score does not predict imatinib treatment response and outcome in chronic myeloid leukemia patients. Cancer Sci. 2014;105(1):105-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26416462 ",
+                "text": "Pfirrmann M, Baccarani M, Saussele S, et al. Prognosis of long-term survival considering disease-specific death in patients with chronic myeloid leukemia. Leukemia. 2016;30(1):48-56."
+            }
+        ],
+        "evidence": "<p>EUTOS Score = (7 &times; basophil) + (4 &times; spleen), where</p>\n<ul>\n<li>&ldquo;Basophil&rdquo; is basophils as a percentage of peripheral blood leukocytes, and</li>\n<li>&ldquo;Spleen&rdquo; is spleen size palpable below left costal margin, in cm.</li>\n</ul>\n<p>Probability of <strong><em>not </em></strong>achieving complete cytogenic response (CCyR) at 18 months = x / (1 + x), where x = exp(&minus;2.1007 + 0.0700 &times; basophils + 0.0402 &times; spleen size)</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>EUTOS Score</strong></p>\n</td>\n<td>\n<p><strong>Risk category</strong></p>\n</td>\n<td>\n<p><strong>5 year progression-free survival*</strong></p>\n</td>\n<td>\n<p><strong>CCyR at 18 months*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&le;87</p>\n</td>\n<td>\n<p>Low</p>\n</td>\n<td>\n<p>90%</p>\n</td>\n<td>\n<p>86%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&gt;87</p>\n</td>\n<td>\n<p>High</p>\n</td>\n<td>\n<p>82%</p>\n</td>\n<td>\n<p>66%</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Response rates based on imatinib treatment only.<br>CCyR, complete cytogenetic response rate.</p>",
+        "estimation": [
+            {
+                "name": "% Basophils",
+                "unit": "basophils",
+                "error_min": "-0.01",
+                "error_max": "100.01",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "2",
+                "normal_max_us": "2",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Max distance of spleen from costal margin",
+                "unit": "spleen",
+                "error_min": "0",
+                "error_max": "20",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "0.39370079",
+                "normal_max_si": "5",
+                "normal_max_us": "12.7",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "in",
+                "units_us": "cm"
+            }
+        ],
+        "primary_complains": [
+            "Lymphadenopathy"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Hematologic Malignancy",
+            "Leukemia/Lymphoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar spl = parseFloat(spl);\nvar baso = parseFloat(baso);\nif (UOMSYSTEM == false) {\n  spl = spl*2.54;\n}\n\nvar msg, mini_msg;\nvar score = (7 * baso) + (4 * spl);\n\nvar x = Math.exp(-2.1007 + (0.0700 * baso) + (0.0402 * spl));\nnoCCgR = x / (1 + x);\nnoCCgR = parseInt(noCCgR * 100);\n\nvar msg = 'Estimated probability of <u>not</u> achieving complete cytogenic response at 18 months: ' + noCCgR + '%';\nvar msg1;\nvar msg2;\nvar msg3;\n\nswitch (true) {\n    case (score < 87):\n        mini_msg = 'Low risk group';\n        msg1 = 'Low';\n        msg2 = '86%';   //CCyR at 18 months\n        msg3 = '90';  // % 5-year PFS\n        break;\n    case (score >= 87):\n        mini_msg = 'High risk group';\n        msg1 = 'High';\n        msg2 = '66%';       //CCyR at 18 months\n        msg3 = '82';      // % 5-year PFS\n        break;\n    default:\n        console.log('error');\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score.toFixed(0),\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3906_EUTOS Score_result (score)',\n    value: score.toFixed(0),\n    value_text: 'points',\n    message: 'EUTOS Score'\n});\ncalc_output.push({\n    name: '3906_EUTOS Score_interpretation',\n    value: msg1,\n    value_text: 'risk',\n    message: msg3 + '% 5-year progression-free survival <br/>' + msg2 + ' complete cytogenic response (CCyR) at 18 months'\n});\ncalc_output.push({\n    name: '3906_EUTOS Score_result (risk)',\n    value: noCCgR,\n    value_text: '%',\n    message: 'Likelihood of NOT achieving CCyR'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Spleen size</p>",
+                "name": "spl",
+                "optional": false,
+                "tips_en": "Maximum distance palpable below costal margin",
+                "type": "textbox",
+                "unit": "spleen"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>% basophils</p>",
+                "name": "baso",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basophils"
+            }
+        ],
+        "can_search": [
+            "survival",
+            "platelets",
+            "basophil",
+            "tyrosine kinase"
+        ],
+        "specialty": [
+            "Hematology and Oncology"
+        ]
+    }
+}

@@ -1,0 +1,102 @@
+{
+    "id": "172",
+    "title": "Rome IV Diagnostic Criteria for Functional Abdominal Bloating/Distension",
+    "desc": "The Rome IV Criteria for Functional Abdominal Bloating/Distension provides criteria for diagnosis of functional abdominal bloating or distension.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27144627/",
+                "text": "Lacy BE, Mearin F, Chang L. et al. Bowel disorders. Gastroenterology. 2016;150:1393-1407."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">To fulfill the Rome IV criteria for functional abdominal bloating/distension, patient must have the following (for 3 months prior with symptom onset &ge;6 months ago):</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Recurrent bloating and/or distension&nbsp;occurring, on average, &ge;1 day per week.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Abdominal bloating and/or distension&nbsp;predominates over other symptoms (mild pain related to bloating may be present as well as minor bowel movement abnormalities).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">There are insufficient criteria for a diagnosis of <calculator id=\"4007\">irritable bowel syndrome</calculator>, <calculator id=\"10003\">functional constipation</calculator>, <calculator id=\"10271\">functional diarrhea</calculator>, or postprandial distress syndrome.</p>\n</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Bloating",
+            "Distention"
+        ],
+        "disease_treated": [
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output = [];\n\nvar bloating = parseFloat(bloating);\nvar other = parseFloat(other);\nvar predominates = parseFloat(predominates);\n\nvar total = bloating + other + predominates;\n\nvar diag;\n\nvar msg = 'Diagnosis for functional abdominal bloating/distension as per Rome IV criteria';\nvar minimsg = 'Diagnosis for functional abdominal bloating/distension';\n\n\nif (total == 3) {\n  diag = 'Positive';\n} else {\n  diag = 'Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Diarrhea',\n    value: diag,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Recurrent bloating and/or distension occurring, on average, &ge;1 day per week</p>",
+                "name": "bloating",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Abdominal bloating and/or distension predominates over other symptoms</p>",
+                "name": "predominates",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Mild pain related to bloating may be present as well as minor bowel movement abnormalities",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>There are insufficient criteria for a diagnosis of <calculator id=\"4007\">irritable bowel syndrome</calculator>, <calculator id=\"10003\">functional constipation</calculator>, <calculator id=\"10271\">functional diarrhea</calculator>, or postprandial distress syndrome</p>",
+                "name": "other",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Abdominal bloating, distention, functional abdominal bloating, functional abdominal distention, Rome IV Criteria, Rome IV Criteria for Functional Abdominal Bloating/Distension, Rome IV for Abdominal Bloating/Distension, Rome IV Criteria for Abdominal Bloating/Distension, Rome IV for Functional Abdominal Bloating/Distension, rome 4, Abdominal bloating/distention diagnosis, fab, fad"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

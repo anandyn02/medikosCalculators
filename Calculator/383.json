@@ -1,0 +1,277 @@
+{
+    "id": "383",
+    "title": "National Early Warning Score (NEWS)",
+    "desc": "The National Early Warning Score (NEWS) determines the degree of illness of a patient using six physiological findings and one observation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.rcplondon.ac.uk/sites/default/files/documents/national-early-warning-score-standardising-assessment-acute-illness-severity-nhs.pdf",
+                "text": "Royal College of Physicians. National Early Warning Score (NEWS) Standardising the assessment of acute-illness severity in the NHS. Report of a working party. London: RCP, 2012."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20637974",
+                "text": "Prytherch D, Smith GB, Schmidt PE, Featherstone PI. ViEWS – towards a national Early Warning Score for detecting adult inpatient deterioration. Resuscitation 2010;81:932–7."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points; points assigned below:</p>",
+        "facts": "<p>See formula table, below.</p>\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Point Value</th>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Respiratory Rate (breaths per minute)</strong></td>\n</tr>\n<tr>\n<td>&le;8</td>\n<td>3</td>\n</tr>\n<tr>\n<td>9-11</td>\n<td>1</td>\n</tr>\n<tr>\n<td>12-20</td>\n<td>0</td>\n</tr>\n<tr>\n<td>21-24</td>\n<td>2</td>\n</tr>\n<tr>\n<td>&ge;25</td>\n<td>3</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Oxygen Saturation (%)</strong></td>\n</tr>\n<tr>\n<td>&le;91</td>\n<td>3</td>\n</tr>\n<tr>\n<td>92-93</td>\n<td>2</td>\n</tr>\n<tr>\n<td>94-95</td>\n<td>1</td>\n</tr>\n<tr>\n<td>&ge;96</td>\n<td>0</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Any Supplemental Oxygen</strong></td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Temperature in &deg;C (&deg;F)</strong></td>\n</tr>\n<tr>\n<td>&le;35.0 (95)</td>\n<td>3</td>\n</tr>\n<tr>\n<td>35.1-36.0 (95.1-96.8)</td>\n<td>1</td>\n</tr>\n<tr>\n<td>36.1-38.0 (96.9-100.4)</td>\n<td>0</td>\n</tr>\n<tr>\n<td>38.1-39.0 (100.5-102.2)</td>\n<td>1</td>\n</tr>\n<tr>\n<td>&ge;39.1 (&ge;102.3)</td>\n<td>2</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Systolic BP</strong></td>\n</tr>\n<tr>\n<td>&le;90</td>\n<td>3</td>\n</tr>\n<tr>\n<td>91-100</td>\n<td>2</td>\n</tr>\n<tr>\n<td>101-110</td>\n<td>1</td>\n</tr>\n<tr>\n<td>111-219</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&ge;220</td>\n<td>3</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Heart Rate (beats per minute)</strong></td>\n</tr>\n<tr>\n<td>&le;40</td>\n<td>3</td>\n</tr>\n<tr>\n<td>41-50</td>\n<td>1</td>\n</tr>\n<tr>\n<td>51-90</td>\n<td>0</td>\n</tr>\n<tr>\n<td>91-110</td>\n<td>1</td>\n</tr>\n<tr>\n<td>111-130</td>\n<td>2</td>\n</tr>\n<tr>\n<td>&ge;131</td>\n<td>3</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong><abbr title=\"Alert, Voice, Pain, Unresponsive\">AVPU</abbr></strong></td>\n</tr>\n<tr>\n<td>A</td>\n<td>0</td>\n</tr>\n<tr>\n<td>V, P, or U</td>\n<td>3</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Interpretation</strong></p>\n<ul>\n<li>A low score (NEWS 1&ndash;4) should prompt assessment by a competent registered nurse who should decide if a change to frequency of clinical monitoring or an escalation of clinical care is required.</li>\n<li>A medium score (ie NEWS of 5&ndash;6 or a RED score) should prompt an urgent review by a clinician skilled with competencies in the assessment of acute illness &ndash; usually a ward-based doctor or acute team nurse, who should consider whether escalation of care to a team with critical-care skills is required (ie critical care outreach team).\n<ul>\n<li>A RED score refers to an extreme variation in a single physiological parameter (i.e., a score of 3 on the NEWS chart in any one physiological parameter, colored RED to aid identification; e.g., heart rate</li>\n</ul>\n</li>\n<li>A high score (NEWS &ge;7) should prompt emergency assessment by a clinical team/critical care outreach team with critical-care competencies and usually transfer of the patient to a higher dependency care area.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Bleeding",
+            "Chest Pain",
+            "Fever",
+            "Seizure"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "CHF",
+            "Coronavirus",
+            "COVID-19",
+            "Endocarditis",
+            "Hyperglycemia",
+            "Hypernatremia",
+            "Hypertension",
+            "Myocardial Infarction",
+            "Respiratory Distress",
+            "Stroke/TIA",
+            "Trauma"
+        ],
+        "logic": "var calc_output=[]; \n\nvar respiratory_rate=parseFloat(respiratory_rate);\nvar oxygen=parseFloat(oxygen);\nvar oxygen_supplemental=parseFloat(oxygen_supplemental);\nvar temperature=parseFloat(temperature);\nvar systolic_bp=parseFloat(systolic_bp);\nvar heart_rate=parseFloat(heart_rate);\nvar avpu_score=parseFloat(avpu_score);\n\nvar u=respiratory_rate+oxygen+oxygen_supplemental+temperature+systolic_bp+heart_rate+avpu_score;\n\nvar msg=''; \nvar mini_msg=''; \n\nif(respiratory_rate==3||oxygen==3||oxygen_supplemental==3||temperature==3||systolic_bp==3||heart_rate==3||avpu_score==3){\n    msg='RED score<br/><br/>Assigned when an extreme variation in a single physiological parameter is present (i.e., a score of 3 in any one physiological parameter.<br/><br/>';\n    mini_msg='RED Score '\n} \nif(u>=7){\n    msg+='High score: Emergency assessment by a clinical/critical care outreach team with critical-care competencies and usually transfer of the patient to a higher dependency care area.';\n    mini_msg+='High Score'\n} else if(u==5||u==6){\n    msg+='Medium score: Urgent review by a clinician skilled with competencies in the assessment of acute illness.';\n    mini_msg+='Medium Score'\n} else if(u==0||u==1||u==2||u==3||u==4){\n    msg+='Low score: Assessment by a competent registered nurse who should decide if a change to frequency of clinical monitoring or an escalation of clinical care is required.';\n    mini_msg+='Low Score'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1873_NEWS Score_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Respiratory Rate</p>",
+                "mdcalc_info_concept": null,
+                "name": "respiratory_rate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤8",
+                        "value": 3
+                    },
+                    {
+                        "label": "9-11",
+                        "value": 1
+                    },
+                    {
+                        "label": "12-20",
+                        "value": 0
+                    },
+                    {
+                        "label": "21-24",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥25",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Oxygen Saturations</p>",
+                "mdcalc_info_concept": null,
+                "name": "oxygen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤91%",
+                        "value": 3
+                    },
+                    {
+                        "label": "92-93%",
+                        "value": 2
+                    },
+                    {
+                        "label": "94-95%",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥96%",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Any Supplemental Oxygen</p>",
+                "md_calc_info_concept": null,
+                "name": "oxygen_supplemental",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Temperature</p>",
+                "mdcalc_info_concept": null,
+                "name": "temperature",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤35°C / 95°F",
+                        "value": 3
+                    },
+                    {
+                        "label": "35.1-36°C / 95.1-96.8°F",
+                        "value": 1
+                    },
+                    {
+                        "label": "36.1-38°C / 96.9-100.4°F",
+                        "value": 0
+                    },
+                    {
+                        "label": "38.1-39°C / 100.5-102.2°F",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥39.1 °C / 102.3°F",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Systolic Blood Pressure</p>",
+                "mdcalc_info_concept": null,
+                "name": "systolic_bp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤90",
+                        "value": 3
+                    },
+                    {
+                        "label": "91-100",
+                        "value": 2
+                    },
+                    {
+                        "label": "101-110",
+                        "value": 1
+                    },
+                    {
+                        "label": "111-219",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥220",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Heart Rate</p>",
+                "mdcalc_info_concept": null,
+                "name": "heart_rate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤40",
+                        "value": 3
+                    },
+                    {
+                        "label": "41-50",
+                        "value": 1
+                    },
+                    {
+                        "label": "51-90",
+                        "value": 0
+                    },
+                    {
+                        "label": "91-110",
+                        "value": 1
+                    },
+                    {
+                        "label": "111-130",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥131",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>AVPU Score</p>",
+                "mdcalc_info_concept": null,
+                "name": "avpu_score",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "A",
+                        "value": 0
+                    },
+                    {
+                        "label": "V, P or U",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Alert, Voice, Pain, Unresponsive",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "NEWS",
+            "admission",
+            "mortality",
+            "covid",
+            "covid-19",
+            "covid19",
+            "covid 19",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (Trauma)"
+        ]
+    }
+}

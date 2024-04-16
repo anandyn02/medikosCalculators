@@ -1,0 +1,461 @@
+{
+    "id": "101",
+    "title": "Patient Activity Scale II (PAS II) for RA",
+    "desc": "The Patient Activity Scale (PAS) for RA quantifies severity of rheumatoid arthritis (RA) using patient-reported symptoms.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://www.jrheum.org/content/32/12/2410",
+                "text": "Wolfe F, Michaud K, Pincus T. A composite disease activity scale for clinical practice, observational studies, and clinical trials: the patient activity scale (PAS/PAS-II). J Rheumatol. 2005;32(12):2410-5."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.rheumatology.org/Portals/0/Files/Rheumatoid%20Arthritis%20Disease%20Activity%20Measures.pdf",
+                "text": "Anderson J, Caplan L, Yazdany J, et al. Rheumatoid arthritis disease activity measures: American College of Rheumatology recommendations for use in clinical practice. Arthritis Care Res (Hoboken). 2012;64(5):640-7."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">PAS II = (A x 3.33 + B + C) / 3, where</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">A = Health Assessment Questionnaire Disability Index II&nbsp;(HAQ-II), calculated by&nbsp;averaging selected points from table below.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">B = Pain Visual Analog Scale (ask patient to rate pain on a scale of 0-10, where 10 is the worst pain imaginable).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">C = Patient Global Assessment of Disease Activity (ask patient to rate how well they are doing in the past week considering all the ways their disease affects them on a scale of 0-10, where 10 is the worst).</p>\n</li>\n</ul>\n<p></p>\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Is the patient able to:</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Stand up from a straight chair</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Walk outdoors on flat ground</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Get on and off the toilet</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Reach and get down a 5-pound object (such as a bag of sugar) from just above&nbsp;the head</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Open car doors</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Do outside work (such as yard work)</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Wait in a line for 15 minutes</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Lift heavy objects</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Move heavy objects</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Go up 2 or more flights of stairs</p>\n</td>\n<td>\n<p dir=\"ltr\">Without any difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With some difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">With much difficulty</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unable</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>PAS II</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Disease activity</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0.00-0.25</p>\n</td>\n<td>\n<p dir=\"ltr\">Remission</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0.26-3.70</p>\n</td>\n<td>\n<p dir=\"ltr\">Low/minimal</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3.71-7.99</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8.00-10.00</p>\n</td>\n<td>\n<p dir=\"ltr\">High/severe</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-ddb71059-7fff-91e6-56c4-7328f8293f90\"></span><span id=\"docs-internal-guid-ddb71059-7fff-91e6-56c4-7328f8293f90\"><br /></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Joint Pain"
+        ],
+        "disease_treated": [
+            "Rheumatoid Arthritis"
+        ],
+        "logic": "//outputs\nvar calc_output = [];\n\n//user inputs\nvar haq = parseFloat(haq1) + parseFloat(haq2) + parseFloat(haq3) + parseFloat(haq4) + parseFloat(haq5) + parseFloat(haq6) + parseFloat(haq7) + parseFloat(haq8) + parseFloat(haq9) + parseFloat(haq10);\nhaq = haq/10;\nvar pain = parseFloat(pain);\nvar global = parseFloat(global);\nvar risk;\nvar msg;\n\n//final score\nvar score = (haq*3.33) + pain + global;\nscore = score/3;\nscore = score.toFixed(2);\n  \n//disease activity\nif (score <= 0.25 && score >= 0) {\n\trisk = 'Remission';\n  \tmsg = risk;\n} else if (score <= 3.70 && score >= 0.26) {\n\trisk = 'Low/minimal';\n  \tmsg = risk + \" disease activity\";\n} else if (score <= 7.99 && score >= 3.71) {\n\trisk = 'Moderate';\n  \tmsg = risk + \" disease activity\";\n} else {\n\trisk = 'High/severe';\n  \tmsg = risk + \" disease activity\";\n}\n\n//result for user \ncalc_output.push({\n\tname: 'mini',\n\tvalue: score,\n\tvalue_text: 'points',\n\tmessage: msg\n});\ncalc_output.push({\n\tname: 'group',\n\tvalue: score,\n\tvalue_text: 'points',\n\tmessage: 'PAS II'\n});\ncalc_output.push({\n\tname: 'ppf',\n\tvalue: risk,\n\tvalue_text: '',\n\tmessage: 'Disease activity<br/><br/><guideline id = \"10123\">ACR guideline</guideline>'\n});\n\n",
+        "inputs": [
+            {
+                "subheading": "Health Assessment Questionnaire Disability Index II (HAQ-II)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "subheading": "<strong>Is the patient able to:</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stand up from a straight chair",
+                "name": "haq3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Walk outdoors on flat ground",
+                "name": "haq4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Get on and off the toilet",
+                "name": "haq1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Reach and get down a 5-pound object (such as a bag of sugar) from just above the head",
+                "name": "haq6",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Open car doors",
+                "name": "haq2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Do outside work (such as yard work)",
+                "name": "haq8",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Wait in a line for 15 minutes",
+                "name": "haq5",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lift heavy objects",
+                "name": "haq9",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Move heavy objects",
+                "name": "haq10",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Go up 2 or more flights of stairs",
+                "name": "haq7",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Without any difficulty",
+                        "value": 0
+                    },
+                    {
+                        "label": "With some difficulty",
+                        "value": 1
+                    },
+                    {
+                        "label": "With much difficulty",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Pain Visual Analog Scale",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ask patient to rate pain on a scale of 0-10, where 10 is the worst pain imaginable",
+                "name": "pain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "6",
+                        "value": 6
+                    },
+                    {
+                        "label": "7",
+                        "value": 7
+                    },
+                    {
+                        "label": "8",
+                        "value": 8
+                    },
+                    {
+                        "label": "9",
+                        "value": 9
+                    },
+                    {
+                        "label": "10",
+                        "value": 10
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Patient Global Assessment of Disease Activity",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ask patient to rate how well they are doing in the past week considering all the ways their disease affects them on a scale of 0-10, where 10 is the worst",
+                "name": "global",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    },
+                    {
+                        "label": "6",
+                        "value": 6
+                    },
+                    {
+                        "label": "7",
+                        "value": 7
+                    },
+                    {
+                        "label": "8",
+                        "value": 8
+                    },
+                    {
+                        "label": "9",
+                        "value": 9
+                    },
+                    {
+                        "label": "10",
+                        "value": 10
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Disease activity",
+            "pain vas",
+            "haq-II",
+            "arthritis",
+            "patient global health",
+            "haq 2",
+            "haq II",
+            "haq2",
+            "haqII"
+        ],
+        "specialty": [
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Orthopedics",
+            "Primary Care",
+            "Rheumatology"
+        ]
+    }
+}

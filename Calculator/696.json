@@ -1,0 +1,142 @@
+{
+    "id": "696",
+    "title": "Canadian C-Spine Rule",
+    "desc": "The Canadian C-spine Rule Clinically clears cervical spine fracture without imaging.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11597285",
+                "text": "Stiell IG, Wells GA, Vandemheen KL, Clement CM, Lesiuk H, De Maio VJ, Laupacis A, Schull M, McKnight RD, Verbeek R, Brison R, Cass D, Dreyer J, Eisenhauer MA, Greenberg GH, MacPhail I, Morrison L, Reardon M, Worthington J. The Canadian C-spine rule for radiography in alert and stable trauma patients. JAMA. 2001 Oct 17;286(15):1841-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9176419",
+                "text": "Stiell IG, Wells GA, Vandemheen K, et al. Variation in emergency department use of cervical spine radiography for alert, stable trauma patients. CMAJ. 1997;156(11):1537-44."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12944893",
+                "text": "Bandiera, G., Stiell, I. G., Wells, G. A., et. al. The Canadian C-spine rule performs better than unstructured physician judgment. Annals of emergency medicine, 2003;42(3):395-402."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15039695",
+                "text": "Dickinson G, Stiell IG, Schull M, Brison R, Clement CM, Vandemheen KL, Cass D, McKnight D, Greenberg G, Worthington JR, Reardon M, Morrison L, Eisenhauer MA, Dreyer J, Wells GA. Retrospective application of the NEXUS low-risk criteria for cervical spine radiography in Canadian emergency departments. Ann Emerg Med. 2004;43(4):507-14."
+            },
+            {
+                "href": "https://www.annemergmed.com/article/S0196-0644(09)00241-8/abstract",
+                "text": "Vaillancourt, C., Stiell, I. G., et. al. The out-of-hospital validation of the Canadian C-Spine Rule by paramedics. Annals of emergency medicine, 2009;54(5):663-671."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/19875425/",
+                "text": "Stiell IG, Clement CM, Grimshaw J, et al. Implementation of the Canadian C-Spine Rule: prospective 12 centre cluster randomised trial. BMJ. 2009;339:b4146."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20457772",
+                "text": "Stiell IG, Clement CM, O'connor A, et al. Multicentre prospective validation of use of the Canadian C-Spine Rule by triage nurses in the emergency department. CMAJ. 2010;182(11):1173-9."
+            },
+            {
+                "href": "https://emj.bmj.com/content/28/10/873.short",
+                "text": "Coffey, F., Hewitt, S., et. al. Validation of the Canadian c-spine rule in the UK emergency department setting. Emergency Medicine Journal, 2011;28(10):873-876."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23048086",
+                "text": "Michaleff ZA, Maher CG, Verhagen AP, Rebbeck T, Lin CW. Accuracy of the Canadian C-spine rule and NEXUS to screen for clinically important cervical spine injury in patients following blunt trauma: a systematic review. CMAJ. 2012;184(16):E867-76."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23048086",
+                "text": "Michaleff ZA, Maher CG, Verhagen AP, Rebbeck T, Lin CW. Accuracy of the Canadian C-spine rule and NEXUS to screen for clinically important cervical spine injury in patients following blunt trauma: a systematic review. CMAJ. 2012;184(16):E867-76."
+            }
+        ],
+        "evidence": "<p>Algorithm of Yes/No questions from <em>The Canadian C-spine Rule</em> performs better than unstructured physician judgment.</p>",
+        "facts": "<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/canadian-c-spine.jpeg\" class=\"alignnone size-full wp-image-1839\" alt=\"canadian c spine work up algorithm\"></div>",
+        "estimation": [],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var low_risk_factor = low_risk_factor || 0;\nvar rotate_neck_45 = rotate_neck_45 || 0;\nvar calc_output = [];\nvar msg = '';\nvar mini_msg = '';\nvar txt = '';\nvar age_65 = parseFloat(age_65);\nlow_risk_factor = parseFloat(low_risk_factor);\nrotate_neck_45 = parseFloat(rotate_neck_45);\nif (age_65 === 2) {\n    msg = 'High risk patient. C-spine cannot be cleared clinically by these criteria. Imaging is recommended.';\n    mini_msg = 'High';\n    txt = 'Imaging recommended';\n} else if (age_65 === 1) {\n    msg = 'The Canadian C-Spine rule requires more information to provide a recommendation. Answer the next criteria.';\n    mini_msg = 'Unknown';\n    txt = ''\n    if (low_risk_factor === 2) {\n        if (rotate_neck_45 === 2) {\n            msg = 'C-spine can be cleared clinically by these criteria. No imaging is required.';\n            mini_msg = 'Low';\n        } else if (rotate_neck_45 === 1) {\n            msg = 'High risk patient due to inability to rotate neck. C-spine cannot be cleared clinically by these criteria. Imaging is recommended.';\n            mini_msg = 'High';\n        }\n    } else if (low_risk_factor === 1) {\n        msg = 'High risk patient due to lack of low-risk criteria. C-spine cannot be cleared clinically by these criteria. Imaging is recommended.';\n        mini_msg = 'High';\n    }\n}\ncalc_output.push({\n    name: 'mini',\n    value: mini_msg,\n    value_text: 'risk',\n    message: txt\n});\ncalc_output.push({\n    name: '696_Canadian C-Spine Rule_result',\n    value: mini_msg,\n    value_text: 'risk',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age ≥65 years, extremity paresthesias, or dangerous mechanism",
+                "md_calc_info_concept": null,
+                "name": "age_65",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Fall from ≥3 ft (0.9 m) / 5 stairs, axial load injury, high speed MVC/rollover/ejection, bicycle collision, motorized recreational vehicle",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age_65 == 1",
+                "default": null,
+                "label_en": "Low risk factor present",
+                "md_calc_info_concept": null,
+                "name": "low_risk_factor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Sitting position in the ED, ambulatory at any time, delayed (not immediate onset) neck pain, no midline tenderness. Simple rearend motor vehicle collision (MVC) (not simple if pushed into traffic, hit by bus/large truck, rollover, hit by high-speed vehicle)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "low_risk_factor == 2",
+                "default": null,
+                "label_en": "Able to actively rotate neck 45° left and right",
+                "md_calc_info_concept": null,
+                "name": "rotate_neck_45",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "trauma",
+            "cspine",
+            "neck",
+            "c-spine"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

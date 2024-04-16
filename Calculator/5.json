@@ -1,0 +1,122 @@
+{
+    "id": "5",
+    "title": "Cryoprecipitate Dosing for Fibrinogen Replacement",
+    "desc": "The Cryoprecipitated Antihemophilic Factor Dosing for Fibrinogen Replacement estimates volume of cryoprecipitate recommended for fibrinogen replacement.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://books.google.com/books/about/Technical_Manual.html?id=zLrWXwAACAAJ",
+                "text": "Roback JD. Technical Manual. American Association of Blood Banks (AABB); 2014."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.aabb.org/tm/coi/Documents/coi1017.pdf",
+                "text": "Circular of Information for the Use of Human Blood and Blood Components, version 10-2017"
+            }
+        ],
+        "evidence": "<p>Dose, units = desired fibrinogen increment, mg/dL &times; (plasma volume, mL / 100) / 250 mg/unit</p>\n<p>Where desired fibrinogen increment =&nbsp;goal fibrinogen &ndash;&nbsp;initial fibrinogen</p>\n<p>and plasma volume = (1 &ndash; hematocrit) &times; 70 mL/kg &times; weight, kg</p>\n<p>Note: the equation used here assumes a typical fibrinogen content of 250 mg per unit of cryo. As a biological product, fibrinogen content can vary somewhat from unit-to-unit, but should contain at least 150 mg / unit.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "fibrinogen",
+                "unit": "fibrinogen",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "400",
+                "normal_max_us": "400",
+                "normal_min_si": "150",
+                "normal_min_us": "150",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Volume",
+                "unit": "volume",
+                "error_min": "0",
+                "error_max": "20000",
+                "warn_min": "1",
+                "warn_max": "5000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL",
+                "units_us": "mL"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding"
+        ],
+        "disease_treated": [
+            "Bleeding/Hemorrhage",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar dose = (parseFloat(fibr_goal) - parseFloat(fibr_initial)) * pv / 100 / fibr_unit\n\nif (fibr_goal - fibr_initial > 0) {\ncalc_output.push({\n   name: 'mini',\n   value: dose.toFixed(0),\n   value_text: 'units',\n   message: 'Cryoprecipitate dose'\n});\ncalc_output.push({\n   name: '10005_Cryo Dosing (Fibrinogen Replacement)_result',\n   value: dose.toFixed(0),\n   value_text: 'units',\n   message: 'Cryoprecipitate dose'\n});\n}\nelse {\n  calc_output.push({\n   name: 'mini',\n   value: '',\n   value_text: '',\n   message: 'Goal fibrinogen should be higher than initial'\n});\ncalc_output.push({\n   name: '10005_Cryo Dosing (Fibrinogen Replacement)_result',\n   value: '',\n   value_text: '',\n   message: 'Goal fibrinogen should be higher than initial'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<calculator id='4065'>Plasma volume</calculator>",
+                "name": "pv",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "volume"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Initial fibrinogen",
+                "name": "fibr_initial",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "fibrinogen"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Goal fibrinogen",
+                "name": "fibr_goal",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "fibrinogen"
+            },
+            {
+                "conditionality": "",
+                "default": 250,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Fibrinogen content of unit",
+                "name": "fibr_unit",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "fibrinogen"
+            }
+        ],
+        "can_search": [
+            "Cryo",
+            "Fibrinogen replacement"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Hematology and Oncology",
+            "Pathology",
+            "Pharmacy",
+            "Transfusion Medicine"
+        ]
+    }
+}

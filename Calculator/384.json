@@ -1,0 +1,227 @@
+{
+    "id": "384",
+    "title": "Modified Early Warning Score (MEWS) for Clinical Deterioration",
+    "desc": "The Modified Early Warning Score (MEWS) etermines the degree of illness of a patient using 4 physiological findings and one observation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11588210",
+                "text": "Subbe CP, Kruger M, Rutherford P, Gemmel L. Validation of a modified Early Warning Score in medical admissions. QJM. 2001 Oct;94(10):521-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1963767/",
+                "text": "Gardner-Thorpe J, Love N, Wrightson J, Walsh S, Keeling N. The Value of Modified Early Warning Score (MEWS) in surgical in-patients: a prospective observational study. Ann R Coll Surg Engl. 2006;88(6):571–575."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points; points assigned below:</p>",
+        "facts": "<p>See formula table; below:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th><strong>Criteria</strong></th>\n<th><strong>Point Value</strong></th>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Systolic BP (mmHg)</strong></td>\n</tr>\n<tr>\n<td>&le;70</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>71-80</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>81-100</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>101-199</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&ge;200</td>\n<td>+2</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Heart rate (beats per minute)</strong></td>\n</tr>\n<tr>\n<td>&lt;40</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>41-50</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>51-100</td>\n<td>0</td>\n</tr>\n<tr>\n<td>101-110</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>11-129</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&gt;130</td>\n<td>+3</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Respiratory rate (breaths per minute)</strong></td>\n</tr>\n<tr>\n<td>&lt;9</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>9-14</td>\n<td>0</td>\n</tr>\n<tr>\n<td>15-20</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>21-29</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&gt;30</td>\n<td>+3</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>Temperature in &deg;C (&deg;F)</strong></td>\n</tr>\n<tr>\n<td>&lt;35 (&lt;95)</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>35.0&ndash;38.4 (95&ndash;101.12)</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&gt;38.5 (101.3)</td>\n<td>+2</td>\n</tr>\n<tr>\n<td colspan=\"2\"><strong>AVPU</strong></td>\n</tr>\n<tr>\n<td>Alert?</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Voice?</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Pain?</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Unresponsive?</td>\n<td>+3</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><strong>Interpretation</strong></p>\n<ul>\n<li>A score &ge;5 is statistically linked to increased likelihood of death or admission to an intensive care unit.</li>\n<li>For any single physiological parameter scored +3, consider higher level of care for patient.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Bleeding",
+            "Chest Pain",
+            "Fever",
+            "Seizure"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "CHF",
+            "Coronavirus",
+            "COVID-19",
+            "Endocarditis",
+            "Hyperglycemia",
+            "Hypernatremia",
+            "Hypertension",
+            "Myocardial Infarction",
+            "Respiratory Distress",
+            "Stroke/TIA",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\nsystolic_bp = parseInt(systolic_bp);\nheart_rate = parseInt(heart_rate);\nrespiratory_rate = parseInt(respiratory_rate);\ntemperature = parseInt(temperature);\navpu_score = parseInt(avpu_score);\nvar v = systolic_bp + heart_rate + respiratory_rate + temperature + avpu_score;\nvar msg = '';\nvar msgalt = '';\nvar mini_msg = '';\nif (v == 0 || v == 1 || v == 2) {\n    msg = '7.9% chance of ICU admission or death within 60 days.';\n    mini_msg = '7.9% chance of ICU admission.'\n} else if (v == 3 || v == 4) {\n    msg = '12.7% chance of ICU admission or death within 60 days.';\n    mini_msg = '12.7% chance of ICU admission.'\n} else if (v >= 5) {\n    msg = '30% chance of ICU admission or death within 60 days. Consider higher level of care.';\n    mini_msg = '30% chance of ICU admission.'\n}\nif (systolic_bp == 3 || heart_rate == 3 || respiratory_rate == 3 || temperature == 3 || avpu_score == 3) {\n    msgalt = 'For any single physiological parameter with assigned score of 3, consider higher level of care for patient.'\n}\ncalc_output.push({\n    name: 'mini',\n    value: v.toFixed(0),\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '1875_MEWS Score_result',\n    value: v.toFixed(0),\n    value_text: 'points',\n    message: msg + '<br/><br/>' + msgalt\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 3,
+                "label_en": "<p>Systolic BP</p>",
+                "mdcalc_info_concept": null,
+                "name": "systolic_bp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤70 mmHg",
+                        "value": 3
+                    },
+                    {
+                        "label": "71-80 mmHg",
+                        "value": 2
+                    },
+                    {
+                        "label": "81-100 mmHg",
+                        "value": 1
+                    },
+                    {
+                        "label": "101-199 mmHg",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥200 mmHg",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "<p>Heart rate</p>",
+                "mdcalc_info_concept": null,
+                "name": "heart_rate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<40 bpm",
+                        "value": 2
+                    },
+                    {
+                        "label": "41-50 bpm",
+                        "value": 1
+                    },
+                    {
+                        "label": "51-100 bpm",
+                        "value": 0
+                    },
+                    {
+                        "label": "101-110 bpm",
+                        "value": 1
+                    },
+                    {
+                        "label": "111-129 bpm",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥130 bpm",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "<p>Respiratory rate</p>",
+                "mdcalc_info_concept": null,
+                "name": "respiratory_rate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<9 bpm",
+                        "value": 2
+                    },
+                    {
+                        "label": "9-14 bpm",
+                        "value": 0
+                    },
+                    {
+                        "label": "15-20 bpm",
+                        "value": 1
+                    },
+                    {
+                        "label": "21-29 bpm",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥30 bpm",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "<p>Temperature</p>",
+                "mdcalc_info_concept": null,
+                "name": "temperature",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<35°C / 95°F",
+                        "value": 2
+                    },
+                    {
+                        "label": "35–38.4°C / 95–101.1°F",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥38.5°C / 101.3°F",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><abbr title=\"Alert, voice, pain, unresponsive\">AVPU</abbr> Score</p>",
+                "mdcalc_info_concept": null,
+                "name": "avpu_score",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Alert",
+                        "value": 0
+                    },
+                    {
+                        "label": "Reacts to voice",
+                        "value": 1
+                    },
+                    {
+                        "label": "Reacts to pain",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unresponsive",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "MEWS",
+            "modified",
+            "warning score",
+            "warning",
+            "covid19",
+            "covid",
+            "covid-19",
+            "covid 19",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (Trauma)"
+        ]
+    }
+}

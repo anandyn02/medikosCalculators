@@ -1,0 +1,166 @@
+{
+    "id": "631",
+    "title": "Intracerebral Hemorrhage (ICH) Score",
+    "desc": "The Intracerebral Hemorrhage (ICH) Score estimates mortality based on age and CT findings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11283388",
+                "text": "Hemphill JC 3rd, Bonovich DC, Besmertis L, Manley GT, Johnston SC. The ICH score: a simple, reliable grading scale for intracerebral hemorrhage. Stroke. 2001 Apr;32(4):891-7. PubMed PMID: 11283388."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)30392-0/abstract",
+                "text": "Baharoglu MI, Cordonnier C, Al-shahi salman R, et al. Platelet transfusion versus standard care after acute stroke due to spontaneous cerebral haemorrhage associated with antiplatelet therapy (PATCH): a randomised, open-label, phase 3 trial. Lancet. 2016;387(10038):2605-13."
+            }
+        ],
+        "evidence": "",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>ICH Score</th>\n<th>Mortality Rate</th>\n</tr>\n<tr>\n<td>0</td>\n<td>0%</td>\n</tr>\n<tr>\n<td>1</td>\n<td>13%</td>\n</tr>\n<tr>\n<td>2</td>\n<td>26%</td>\n</tr>\n<tr>\n<td>3</td>\n<td>72%</td>\n</tr>\n<tr>\n<td>4</td>\n<td>97%</td>\n</tr>\n<tr>\n<td>5</td>\n<td>100%</td>\n</tr>\n<tr>\n<td>6*</td>\n<td>100%</td>\n</tr>\n</tbody>\n</table>\n<p>*No patients in study score 6, but estimates 100%</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Headache"
+        ],
+        "disease_treated": [
+            "Intracranial Hemorrhage",
+            "Stroke/TIA",
+            "Subarachnoid Hemorrhage"
+        ],
+        "logic": "var calc_output = [];\nvar msg ='';\nvar u = parseInt(glasgow_coma_score) + parseInt(age_80) + parseInt(ich_volume_30) + parseInt(intraventricular_hemorrhage) + parseInt(infratentorial_hemorrhage);\nif (u == 0) { msg = '0% mortality.' }\nif (u == 1) { msg = '13% mortality.' }\nif (u == 2) { msg = '26% mortality.' }\nif (u == 3) { msg = '72% mortality.' }\nif (u == 4) { msg = '97% mortality.' }\nif (u == 5) { msg = '100% mortality.' }\nif (u == 6) { msg = 'Although no patients in the studies had scores of 6, the mortality is estimated to be 100%.' }\n  msg+='<br/><br/>Please note that the ICH score is primarily used as a clinical grading scale and communication tool.  It is not meant to provide prognostic information, and should not be used as a primary means to predict the outcomes of patients with ICH.';\ncalc_output.push({ \n  name: 'mini',\n  value: u, \n  value_text: 'points', \n  message: 'ICH Score' \n});\ncalc_output.push({ \n  name: '402_ICH Score_result', \n  value: u, \n  value_text: 'points', \n  message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "<calculator id='64'>Glasgow Coma Score</calculator>",
+                "mdcalc_info_concept": null,
+                "name": "glasgow_coma_score",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "3-4",
+                        "value": 2
+                    },
+                    {
+                        "label": "5-12",
+                        "value": 1
+                    },
+                    {
+                        "label": "13-15",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥80",
+                "md_calc_info_concept": null,
+                "name": "age_80",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='2031'>ICH volume</calculator> ≥30mL",
+                "md_calc_info_concept": null,
+                "name": "ich_volume_30",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intraventricular hemorrhage",
+                "md_calc_info_concept": null,
+                "name": "intraventricular_hemorrhage",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Infratentorial origin of hemorrhage",
+                "md_calc_info_concept": null,
+                "name": "infratentorial_hemorrhage",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ich",
+            "cva",
+            "stroke",
+            "tia",
+            "ich score",
+            "tpa"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Radiology",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

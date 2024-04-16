@@ -1,0 +1,327 @@
+{
+    "id": "284",
+    "title": "Precision Medicine for Cardiomyopathy (PRIMaCY) Score",
+    "desc": "The Precision Medicine for Cardiomyopathy (PRIMaCY) Score predicts sudden cardiac death (SCD) risk in pediatric patients with hypertrophic cardiomyopathy (HCM).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/32418493/",
+                "text": "Miron A, Lafreniere-Roula M, Steve Fan CP, et al. A validated model for sudden cardiac death risk prediction in pediatric hypertrophic cardiomyopathy. Circulation. 2020;142(3):217-229."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Risk is calculated using the clinical/genetic model from <a href=\"https://pubmed.ncbi.nlm.nih.gov/32418493/\" target=\"_blank\" rel=\"noopener\">Miron 2020</a> with the following variables:</p>\n<ul>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Age, years.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Height, cm.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Weight, kg.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Maximum interventricular septal diameter, mm.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Maximum left ventricular (LV) posterior wall diameter, mm.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Left atrial (LA) diameter at end-systole, mm.</span></p>\n<ul>\n<li dir=\"ltr\" aria-level=\"1\">See <a href=\"https://cdn-web-img.mdcalc.com/content/Determination-of-left-atrial-diameter-for-PRIMaCY-study-patients.pdf\" target=\"_blank\" rel=\"noopener\">here</a> for details on how to measure.</li>\n</ul>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Peak LV outflow tract gradient, mmHg.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>History of non-sustained ventricular tachycardia (NVT) in prior 6 months (yes or no).</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>History of unexplained syncope in prior 6 months (yes or no).</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Genotype status (not tested or tested).</span></p>\n<ul>\n<li dir=\"ltr\" aria-level=\"2\">\n<p dir=\"ltr\" role=\"presentation\"><span>If tested, mutation (negative, positive, or variant of uncertain significance).</span></p>\n</li>\n</ul>\n</li>\n</ul>",
+        "facts": "<p>Categorical predictors of 5-year SCD risk (only relevant to patients with these risk factors):</p>\n<table style=\"width: 100%; height: 54.7968px; border-width: 1px; border-style: none;\"><colgroup><col style=\"width: 50.1253%;\"><col style=\"width: 50.1253%;\"></colgroup>\n<tbody>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 22.3984px;\"><strong>Predictor</strong></td>\n<td style=\"height: 22.3984px;\"><strong>Hazard Ratios [95% CI]</strong></td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 22.3984px;\">Prior history of NVT</td>\n<td style=\"height: 22.3984px;\">2.87 [1.00, 6.57]</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"height: 10px;\">Prior history of syncope</td>\n<td style=\"height: 10px;\">7.40 [1.21, 32.81]</td>\n</tr>\n</tbody>\n</table>\n<p></p>\n<table style=\"width: 100%; height: 246.382px; border-width: 1px; border-style: none;\"><colgroup><col style=\"width: 50%;\"><col style=\"width: 50%;\"></colgroup>\n<tbody>\n<tr>\n<td><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/PRIMaCY/FIG3A.jpg\" width=\"100%\"></td>\n<td><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/PRIMaCY/FIG3B.jpg\" width=\"100%\"></td>\n</tr>\n<tr>\n<td><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/PRIMaCY/FIG3C.jpg\" width=\"100%\"></td>\n<td><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/PRIMaCY/FIG3D.jpg\" width=\"100%\"></td>\n</tr>\n<tr>\n<td><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/PRIMaCY/FIG3E.jpg\" width=\"100%\"></td>\n<td></td>\n</tr>\n<tr>\n<td><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/PRIMaCY/FIG3F.jpg\" width=\"100%\"></td>\n<td><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/PRIMaCY/FIG3G.jpg\" width=\"100%\"></td>\n</tr>\n</tbody>\n</table>\n<p>From <a href=\"https://pubmed.ncbi.nlm.nih.gov/32418493/\">Miron 2020</a>.</p>",
+        "estimation": [
+            {
+                "name": "LA Diameter",
+                "unit": "lad_primacy",
+                "error_min": "0",
+                "error_max": "60",
+                "warn_min": "5",
+                "warn_max": "55",
+                "conversion": "1",
+                "normal_max_si": "55",
+                "normal_max_us": "55",
+                "normal_min_si": "5",
+                "normal_min_us": "5",
+                "units_si": "mm",
+                "units_us": "mm"
+            },
+            {
+                "name": "Age (PRIMaCY)",
+                "unit": "age_primacy",
+                "error_min": "0",
+                "error_max": "18",
+                "warn_min": "0",
+                "warn_max": "18",
+                "conversion": "1",
+                "normal_max_si": "18",
+                "normal_max_us": "18",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Peak LV Outflow",
+                "unit": "plvo_primacy",
+                "error_min": "0",
+                "error_max": "240",
+                "warn_min": "0",
+                "warn_max": "210",
+                "conversion": "1",
+                "normal_max_si": "210",
+                "normal_max_us": "210",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmHg",
+                "units_us": "mmHg"
+            },
+            {
+                "name": "Interventricular Septal Diameter",
+                "unit": "isd_primacy",
+                "error_min": "0",
+                "error_max": "45",
+                "warn_min": "0.5",
+                "warn_max": "43",
+                "conversion": "1",
+                "normal_max_si": "43",
+                "normal_max_us": "43",
+                "normal_min_si": "0.5",
+                "normal_min_us": "0.5",
+                "units_si": "mm",
+                "units_us": "mm"
+            },
+            {
+                "name": "LV Diameter",
+                "unit": "lvd_primacy",
+                "error_min": "0",
+                "error_max": "65",
+                "warn_min": "0.5",
+                "warn_max": "60",
+                "conversion": "1",
+                "normal_max_si": "60",
+                "normal_max_us": "60",
+                "normal_min_si": "0.5",
+                "normal_min_us": "0.5",
+                "units_si": "mm",
+                "units_us": "mm"
+            },
+            {
+                "name": "Height (PRIMaCY)",
+                "unit": "height_primacy",
+                "error_min": "9.84252",
+                "error_max": "74.8031",
+                "warn_min": "9.84252",
+                "warn_max": "74.8031",
+                "conversion": "2.54",
+                "normal_max_si": "190",
+                "normal_max_us": "74.8",
+                "normal_min_si": "25",
+                "normal_min_us": "9.84",
+                "units_si": "cm",
+                "units_us": "in"
+            },
+            {
+                "name": "Weight (PRIMaCY)",
+                "unit": "weight_primacy",
+                "error_min": "2.20462",
+                "error_max": "330.693",
+                "warn_min": "2.20462",
+                "warn_max": "330.693",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330.7",
+                "normal_min_si": "1",
+                "normal_min_us": "2.2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            }
+        ],
+        "primary_complains": [
+            "Arrhythmia",
+            "Chest Pain",
+            "Dizziness",
+            "Fatigue",
+            "Shortness of Breath",
+            "Swelling"
+        ],
+        "disease_treated": [
+            "Hypertrophic Cardiomyopathy"
+        ],
+        "logic": "",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "age_yr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_primacy"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Height</p>",
+                "name": "hgt_cm",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "height_primacy"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Weight</p>",
+                "name": "wgt_kg",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "weight_primacy"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Maximum interventricular septal diameter, mm</p>",
+                "name": "ivsd_mm",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "isd_primacy"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Maximum left ventricular posterior wall diameter, mm</p>",
+                "name": "lvpwd_mm",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "lvd_primacy"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Left atrial diameter at end systole, mm</p>",
+                "name": "la_systole_mm",
+                "optional": false,
+                "tips_en": "Measured at end systole in parasternal long axis.<br/>See <a href=\"https://cdn-web-img.mdcalc.com/content/Determination-of-left-atrial-diameter-for-PRIMaCY-study-patients.pdf\" target=\"_blank\" rel=\"noopener\">here</a> for details on how to measure.",
+                "type": "textbox",
+                "unit": "lad_primacy"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Peak LV outflow tract gradient, mmHg</p>",
+                "name": "peak_grad_mmhg",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "plvo_primacy"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>History of nonsustained ventricular tachycardia in prior 6 months</p>",
+                "mdcalc_info_concept": null,
+                "name": "hx_nsvt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Defined as 3 consecutive ventricular ectopic beats at a rate of >120 bpm and <30 s in duration",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>History of unexplained syncope in prior 6 months</p>",
+                "mdcalc_info_concept": null,
+                "name": "hx_syncope",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Genotype status</p>",
+                "mdcalc_info_concept": null,
+                "name": "genotype_status",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not tested",
+                        "value": 0
+                    },
+                    {
+                        "label": "Tested",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "genotype_status == 1",
+                "default": null,
+                "label_en": "<p>Genotype positive</p>",
+                "mdcalc_info_concept": null,
+                "name": "mutation_any",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "i.e. pathogenic/likely pathogenic variant in a cardiomyopathy gene",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Precision Medicine for Cardiomyopathy (PRIMaCY) Score",
+            "primacy",
+            "precision medicine",
+            "cardiomyopathy",
+            "scd",
+            "sudden cardiac death",
+            "hypertrophic cardiomyopathy",
+            "hcm"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatrics"
+        ]
+    }
+}

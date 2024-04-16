@@ -1,0 +1,238 @@
+{
+    "id": "607",
+    "title": "Basic Statistics Calc",
+    "desc": "The Basic Statistics Calc calculates common epidemiologic values for diagnostic tests and treatments.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8019315",
+                "text": "Altman DG, Bland JM. Diagnostic tests. 1: Sensitivity and specificity. BMJ. 1994;308(6943):1552."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/445835",
+                "text": "Van der helm HJ, Hische EA. Application of Bayes's theorem to results of quantitative clinical chemical determinations. Clin Chem. 1979;25(6):985-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17407452",
+                "text": "Akobeng AK. Understanding diagnostic tests 1: sensitivity, specificity and predictive values. Acta Paediatr. 2007;96(3):338-41."
+            },
+            {
+                "href": "http://clinicalevidence.bmj.com/x/set/static/ebm/learn/665075.html",
+                "text": "How to calculate risk. In: Learn EBM: Understanding Risk. BMJ Clinical Evidence. 2012. Accessed 26 Jun 2017."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3374545",
+                "text": "Laupacis A, Sackett DL, Roberts RS. An assessment of clinically useful measures of the consequences of treatment. N Engl J Med. 1988;318(26):1728-33."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Note: Although the calculator uses percentages for clinical context (e.g. 67% instead of 0.67), formulae are displayed below in ratios for simplicity.</p> <p><strong>Diagnostic test:</strong></p> <div class=\"table-responsive\">&nbsp;</div> <p><img src=\"https://cdn-web-img.mdcalc.com/content/basic_stats_dx.png\" alt=\"\" width=\"519\" height=\"244\"><br>A = true positives</p> <p>B = false positives</p> <p>C = false negatives</p> <p>D = true negatives</p> <p>&nbsp;</p> <p>Prevalence (or pre-test probability) = (A + C) / (A + B + C + D)</p> <p>Sensitivity = A / (A + C)</p> <p>Specificity = D / (B + D)</p> <p>&nbsp;</p> <p>Negative likelihood ratio = (1 – sensitivity) / specificity</p> <p>Positive likelihood ratio = Sensitivity / (1 – specificity)</p> <p>&nbsp;</p> <p>Pre-test odds = Prevalence / (1 – prevalence)</p> <p>Post-test odds = Prevalence × likelihood ratio</p> <p>Post-test probability = Post-test odds / (1 + post-test odds)</p> <p>&nbsp;</p> <p>Positive predictive value = A / (A + B)</p> <ul> <li>Or, (sensitivity × prevalence) / [(sensitivity × prevalence) + (1 – specificity) × (1 – prevalence)</li> </ul> <p>Negative predictive value = D / (C + D)</p> <ul> <li>Or, specificity × (1 – prevalence) / [(1 – sensitivity) × prevalence + specificity × (1 – prevalence)]</li> </ul> <p>&nbsp;</p> <p><strong>Treatment</strong>:</p> <div class=\"table-responsive\"><img src=\"https://cdn-web-img.mdcalc.com/content/basic_stats_tx.png\" alt=\"\" width=\"519\" height=\"245\"></div> <p><br>Experimental event rate*, EER = A / (A + B)</p> <p>Control event rate**, CER = C / (C + D)</p> <p>&nbsp;</p> <p>Relative risk, RR = EER / CER</p> <p>Odds ratio, OR = (A / B) / (C / D)</p> <p>&nbsp;</p> <p>Absolute risk reduction, ARR = EER – CER</p> <p>Number needed to treat, NNT = 1 / ARR</p> <p>Relative risk reduction, RRR = ARR / CER</p> <p>&nbsp;</p> <p>*Risk of outcome (absolute risk) in the experimental group</p> <p>**Risk of outcome (absolute risk) in the control group.</p> <p>&nbsp;</p> <p>If ARR &lt;0, then it is an absolute risk <em>increase</em>.</p> <p>If NNT &lt;0, then it is the number needed to <em>harm</em>.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "percentages",
+                "unit": "basic_stats",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Patients",
+                "unit": "unitless",
+                "error_min": "-1",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": " ",
+                "units_us": " "
+            }
+        ],
+        "primary_complains": [
+            "Any/All"
+        ],
+        "disease_treated": [
+            "Any/All"
+        ],
+        "logic": "var calc_output = [];\n \n//user inputs\nvar type = parseFloat(type);\nvar inputs = parseFloat(inputs);\n\nif(type == 0){\t//for diagnosis\n\tif (inputs == 0 ){\n\t\tvar A = parseFloat(truePosZ);\n\t\tvar B = parseFloat(falsePosZ);\n\t\tvar C = parseFloat(falseNegZ);\n\t\tvar D = parseFloat(trueNegZ);\n\n\t\tvar preval = (A + C)/(A + B + C + D);\n\t\tvar sens = A / (A + C);\n\t\tvar spec = D / (B + D);\n\n\t\tvar pos_pred_value = (100*(A / (A + B)).toFixed(1)).toString()+ '%';\t\t//PPV / Positive predictive value, % = 100 × A / (A + B)\n\t\tvar neg_pred_value = (100*(D / (C + D)).toFixed(1)).toString()+ '%';\t\t//NPV / Negative predictive value, % = 100 × D / (C + D)*/\n\n\t\tvar neg_like_ratio = (1-sens)/spec;\t//Negative likelihood ratio = (1 – sensitivity) / specificity\n\t\tvar pos_like_ratio = (sens) / (1-spec);\t\t//Positive likelihood ratio = Sensitivity / (1 – specificity)\n\t}\n\n\tif (inputs == 1){\n\t\tvar preval = parseFloat(preval);\n\t\tvar sens = parseFloat(sens);\n\t\tvar spec = parseFloat(spec);\n\n\t\tvar pos_pred_value = ((((100*(sens*preval)/((sens*preval)+(100 - spec)*(100 - preval)))))).toFixed(1).toString()+ '%';\n\t\tvar neg_pred_value = ((100*spec*(100 - preval)/((100 - sens)*preval + spec*(100 - preval))).toFixed(1)).toString()+ '%';\n\n\t\tvar neg_like_ratio = (100-sens)/spec;\t//Negative likelihood ratio = (1 – sensitivity) / specificity\n\t\tvar pos_like_ratio = (sens) / (100-spec);\t\t//Positive likelihood ratio = Sensitivity / (1 – specificity)\n\t}\n\n\tvar pre_test_odds = preval / (100-preval); \t//Pre-test odds = Prevalence / (1 – prevalence)\n\tvar post_test_odds = pre_test_odds*pos_like_ratio; \t//Post-test odds = Prevalence × likelihood ratio\n\t\n\tvar pre_test_prob = ((preval).toFixed(1)).toString() + '%';\t\t\t\t\t\t\t//Pre-test probability = prevalence\n\tvar post_test_prob = ((100*(post_test_odds) / (1+post_test_odds)).toFixed(1)).toString() + '%';\t//Post-test probability = Post-test odds / (1 + post-test odds)\n\n\t//results\n\tcalc_output.push({\n\t    name: 'mini',\n\t    value: null,\n\t    value_text: '',\n\t    message: 'Tap arrow to see stats'\n\t});\n\tcalc_output.push({\n\t    name: 'Likelihood Ratio',\n\t    value: null,\n\t    value_text: '',\n\t    message: 'LR- = ' + (neg_like_ratio).toFixed(1) + '<br/>LR+ = ' + (pos_like_ratio).toFixed(1)\n\t});\n\tcalc_output.push({\n\t    name: 'Probability',\n\t    value: null,\n\t    value_text: '',\n\t    message: 'Pre-test probability = ' + pre_test_prob + '<br/>Post-test probability = ' + post_test_prob\n\t});\n\tcalc_output.push({\n\t    name: 'Predictive Value',\n\t    value: null,\n\t    value_text: '',\n\t    message: 'PPV = ' + pos_pred_value + '<br/>NPV = ' + neg_pred_value\n\t});\n\tif(inputs === 0){\n\t\tcalc_output.push({\n\t    name: 'prev sens spec',\n\t    value: null,\n\t    value_text: '',\n\t    message: 'Prevalence = ' + (100*preval).toFixed(1) + '%<br/>Sensitivity = ' + (100*sens).toFixed(1) + '%<br/>Specificity = ' + (100*spec).toFixed(1) + '%'\n\t});\n\t}\n}\n\nif (type == 1){\t\t//for treatment\n\tvar A = parseFloat(truePos);\n\tvar B = parseFloat(falsePos);\n\tvar C = parseFloat(falseNeg);\n\tvar D = parseFloat(trueNeg);\n\n\tvar risk_of_outcome_exp = (A / (A + B))*100;\t//EER\t//Risk of outcome (absolute risk), experimental group* = A / (A + B)\n\tvar risk_of_outcome_con = (C / (C + D))*100;\t//CER\t//Risk of outcome (absolute risk), control group** = C / (C + D)\n\n\tvar rel_risk = risk_of_outcome_exp/risk_of_outcome_con;\t\t//Relative risk, RR = EER / CER\n\tvar odds_ratio = (A / B) / (C / D);\t\t\t\t\t\t\t//Odds ratio, OR = (A / B) / (C / D)\n\n\tvar abs_risk_reduc = risk_of_outcome_exp-risk_of_outcome_con; \t//Absolute risk reduction, ARR = EER – CER\n\tvar num_needed = 100/abs_risk_reduc;\t\t\t\t\t\t//Number needed to treat, NNT = 1 / ARR\n\tvar rel_risk_reduc = 100*(abs_risk_reduc/risk_of_outcome_con);\t\t//Relative risk reduction, RRR = ARR / CER\n\n\t//results\n\tcalc_output.push({\n\t    name: 'mini',\n\t    value: null,\n\t    value_text: '',\n\t    message: 'Tap arrow to see stats'\n\t});\n\tcalc_output.push({\n\t    name: 'Risk of outcome',\n\t    value: null,\n\t    value_text: '',\n\t    message: 'EER = ' + ((risk_of_outcome_exp).toFixed(1)).toString() + '%' + '<br/>CER = ' + ((risk_of_outcome_con).toFixed(1)).toString() + '%'\n\t});\n\tcalc_output.push({\n\t    name: 'Risk',\n\t    value: null,\n\t    value_text: '',\n\t    message: 'RR = ' + (rel_risk).toFixed(1) + '<br/>OR = ' + (odds_ratio).toFixed(1)\n\t});\n\tcalc_output.push({\n\t    name: 'Probability',\n\t    value: null,\n\t    value_text: '',\n\t    message: 'ARR = ' + (abs_risk_reduc).toFixed(1) + '%' + '<br/>RRR = ' + (rel_risk_reduc).toFixed(1) + '%' + '<br/>NNT = ' + (num_needed).toFixed(1)\n\t});\n}\n\n\n\n\n",
+        "inputs": [
+            {
+                "type": "visual",
+                "visual": "<div class='authorimage'><img src='https://cdn-web-img.mdcalc.com/content/basic-stats.png'/></div>"
+            },
+            {
+                "label_en": "Select stats type",
+                "name": "type",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Diagnostic test",
+                        "value": 0
+                    },
+                    {
+                        "label": "Treatment",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "conditionality": "type == 0",
+                "label_en": "Type of inputs",
+                "name": "inputs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Prevalence, sensitivity, and specificity",
+                        "value": 1
+                    },
+                    {
+                        "label": "TP, FP, FN, TN",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "TP = true positives, FP = false positives, FN = false negatives, TN = true negatives",
+                "type": "radio"
+            },
+            {
+                "conditionality": "inputs==0",
+                "label_en": "True positives (TP)",
+                "name": "truePosZ",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "unitless"
+            },
+            {
+                "conditionality": "inputs==0",
+                "label_en": "False positives (FP)",
+                "name": "falsePosZ",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "unitless"
+            },
+            {
+                "conditionality": "inputs==0",
+                "label_en": "False negatives (FN)",
+                "name": "falseNegZ",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "unitless"
+            },
+            {
+                "conditionality": "inputs==0",
+                "label_en": "True negatives (TN)",
+                "name": "trueNegZ",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "unitless"
+            },
+            {
+                "conditionality": "type == 1",
+                "label_en": "# of experimental patients with expected outcome (A)",
+                "name": "truePos",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "unitless"
+            },
+            {
+                "conditionality": "type == 1",
+                "label_en": "# of experimental patients without expected outcome (B)",
+                "name": "falsePos",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "unitless"
+            },
+            {
+                "conditionality": "type == 1",
+                "label_en": "# of controls with expected outcome (C)",
+                "name": "falseNeg",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "unitless"
+            },
+            {
+                "conditionality": "type == 1",
+                "label_en": "# of controls without expected outcome (D)",
+                "name": "trueNeg",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "unitless"
+            },
+            {
+                "conditionality": "inputs == 1",
+                "label_en": "Prevalence (or pre-test probability), %",
+                "name": "preval",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "inputs == 1",
+                "label_en": "Sensitivity, %",
+                "name": "sens",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "inputs == 1",
+                "label_en": "Specificity, %",
+                "name": "spec",
+                "optional": false,
+                "show_points": false,
+                "type": "textbox",
+                "unit": "basic_stats"
+            }
+        ],
+        "can_search": [
+            "epidemiology",
+            "stats",
+            "statistics",
+            "sensitivity",
+            "specificity",
+            "likelihood ratio",
+            "positivie predictive value",
+            "negative predictive value",
+            "odds ratio",
+            "risk reduction",
+            "risk ratio",
+            "relative risk",
+            "relative risk increase",
+            "relative risk reduction",
+            "absolute risk reduction",
+            "absolute risk increase",
+            "number needed to treat",
+            "number needed to harm"
+        ],
+        "specialty": []
+    }
+}

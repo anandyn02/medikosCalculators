@@ -1,0 +1,144 @@
+{
+    "id": "442",
+    "title": "Body Mass Index (BMI) and Body Surface Area (BSA)",
+    "desc": "The BMI and BSA calculators estimate the Body Mass Index and Body Surface Area.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16768059",
+                "text": "Gadzik J. 'How much should I weigh?' Quetelet's equation, upper weight limits, and BMI prime.Connecticut Medicine. (2006). 70 (2): 81–8. PMID 16768059."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.who.int/bmi/index.jsp?introPage=intro_3.html",
+                "text": "BMI Classification. Global Database on Body Mass Index. World Health Organization. 2006. Retrieved July 27, 2012."
+            }
+        ],
+        "evidence": "<p>Body mass index, kg/m<sup>2</sup> = weight, kg / (height, m)<sup>2</sup></p>\n<p>Body surface area (the Mosteller formula), m<sup>2</sup> = [ Height, cm x Weight, kg&nbsp; / 3600 ]<sup>1/2</sup></p>",
+        "facts": "<table width=\"249\" height=\"132\">\n<tbody>\n<tr>\n<td><strong>BMI, kg/m<sup>2</sup></strong></td>\n<td colspan=\"2\"><strong>Weight</strong></td>\n</tr>\n<tr>\n<td>&lt;18.5</td>\n<td colspan=\"2\">Underweight</td>\n</tr>\n<tr>\n<td>18.5&ndash;24.9</td>\n<td colspan=\"2\">Normal weight</td>\n</tr>\n<tr>\n<td>25.0&ndash;29.9</td>\n<td colspan=\"2\">Overweight</td>\n</tr>\n<tr>\n<td>30.0&ndash;34.9</td>\n<td rowspan=\"3\">Obese<br><br></td>\n<td>Class 1</td>\n</tr>\n<tr>\n<td>35.0&ndash;39.9</td>\n<td>Class 2</td>\n</tr>\n<tr>\n<td>&ge;40.0</td>\n<td>Class 3</td>\n</tr>\n</tbody>\n</table>\n<p><strong></strong></p>",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Body Mass Index",
+                "unit": "BMI",
+                "error_min": "0",
+                "error_max": "50",
+                "warn_min": "10",
+                "warn_max": "30",
+                "conversion": "1",
+                "normal_max_si": "25",
+                "normal_max_us": "25",
+                "normal_min_si": "20",
+                "normal_min_us": "20",
+                "units_si": "kg/m²",
+                "units_us": "kg/m²"
+            },
+            {
+                "name": "Height",
+                "unit": "ht",
+                "error_min": "0",
+                "error_max": "90",
+                "warn_min": "5",
+                "warn_max": "80",
+                "conversion": "2.54",
+                "normal_max_si": "213",
+                "normal_max_us": "84",
+                "normal_min_si": "152",
+                "normal_min_us": "60",
+                "units_si": "cm",
+                "units_us": "in"
+            }
+        ],
+        "primary_complains": [
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Diabetes Mellitus",
+            "Obesity",
+            "Renal Failure"
+        ],
+        "logic": "var calc_output = [];\n// no UOMSYSTEM needed because the system auto-converts toggleables to SI units\nvar height = parseFloat(height) / 100; // height is in cm, we need it in m, so divide by 100, bc it's already converted from inches\nvar weight = parseFloat(weight); // weight is in kg, and system auto-converts lbs to kgs\nvar v = weight / Math.pow(height, 2);\nvar u = ((weight * height * 100) / 3600);\nu = Math.pow(u, 0.5);\nvar target = parseFloat(target);\nvar new_weight = target*Math.pow(height, 2);\nvar units;\nvar message;\n\nif (UOMSYSTEM == false){\nunits = 'kg';\nnew_weight = new_weight;}\nif (UOMSYSTEM == true){\nnew_weight = new_weight/0.453592;\nunits = 'lbs';}\n\nif (v.toFixed(1) < 18.5){\n  message = 'Underweight';\n}\nelse if (v.toFixed(1) >= 18.5 && v < 25){\n  message = 'Normal weight';\n}\nelse if (v.toFixed(1) >= 25 && v < 30){\n  message = 'Overweight';\n}\nelse if (v.toFixed(1) >= 30 && v < 35){\n  message = 'Class 1 obesity';\n}\nelse if (v.toFixed(1) >= 35 && v < 40){\n  message = 'Class 2 obesity';\n}\nelse if (v.toFixed(1) >= 40){\n  message = 'Class 3 obesity';\n}\n\ncalc_output.push({\n  name: 'mini',\n  value: v.toFixed(1),\n  value_text: 'kg/m\\u00B2',\n  message: 'Body Mass Index'\n});\ncalc_output.push({\n  name: '29_BMI & BSA_result (BMI)',\n  value: v.toFixed(1),\n  value_text: 'kg/m\\u00B2',\n  message: 'Body Mass Index (' + message + ')'\n});\ncalc_output.push({\n  name: '29_BMI & BSA_result (BSA)',\n  value: u.toFixed(2),\n  value_text: 'm\\u00B2',\n  message: 'Body Surface Area'\n});\nif (target > 0){\n  calc_output.push({\n  name: '29_BMI & BSA_result (target)',\n  value: new_weight.toFixed(0),\n  value_text: units,\n  message: 'Target weight for BMI ' + target + ' kg/m²'\n});}\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Weight</p>",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Height</p>",
+                "name": "height",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Target BMI</p>",
+                "name": "target",
+                "optional": true,
+                "tips_en": "Optional, to determine weight required to achieve target BMI",
+                "type": "textbox",
+                "unit": "BMI"
+            }
+        ],
+        "can_search": [
+            "weight",
+            "obesity",
+            "overweight",
+            "body mass index",
+            "surface area",
+            "bmi",
+            "bsa",
+            "BMI & BSA",
+            "body surface area",
+            "bmi and bsa"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Family Practice",
+            "Geriatrics",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "OB-Gyn",
+            "Pediatrics",
+            "Pharmacy",
+            "Primary Care",
+            "Radiation Oncology",
+            "Rehabilitation Medicine"
+        ]
+    }
+}

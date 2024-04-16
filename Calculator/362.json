@@ -1,0 +1,371 @@
+{
+    "id": "362",
+    "title": "Modified NIH Stroke Scale/Score (mNIHSS)",
+    "desc": "The Modified NIH Stroke Scale/Score (mNIHSS) calculates the shortened, validated version of NIH Stroke Scale for quantifying stroke severity.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11387492",
+                "text": "Lyden PD, Lu M, Levine SR, Brott TG, Broderick J; NINDS rtPA Stroke Study Group. A modified National Institutes of Health Stroke Scale for use in stroke clinical trials: preliminary reliability and validity. Stroke. 2001 Jun;32(6):1310-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2729912/",
+                "text": "Meyer BC, Lyden PD. The Modified National Institutes of Health Stroke Scale (mNIHSS): Its Time Has Come. Int J Stroke. Aug 2009; 4(4): 267–273. doi: 10.1111/j.1747-4949.2009.00294.x"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12574577",
+                "text": "Kasner SE, Cucchiara BL, McGarvey ML, Luciano JM, Liebeskind DS, Chalela JA. Modified National Institutes of Health Stroke Scale can be estimated from medical records. Stroke. 2003 Feb;34(2):568-70. PubMed PMID:12574577"
+            }
+        ],
+        "evidence": "<p>Addition of the selected points.</p>",
+        "facts": "<p>In 2001, <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/11387492\" target=\"_blank\" rel=\"noopener\">Lyden et. al</a> proposed to modify the NIH Stroke Scale, 'deleting poorly reproducible or redundant items (level of consciousness, face weakness, ataxia, dysarthria) and collapsing the sensory item into 2 responses,'' with the goal of both simplifying the scale, improving its reproducibility and providing more relevance to each assigned point.</p>\n<p>This modified NIH Stroke Scale (mNIHSS) has now been evaluated in several trials (see below) and has begun to achieve acceptance in the stroke community as a reliable tool &mdash; even more reliable and valid, in some studies, than the NIHSS itself (better Kappa scores, suggesting higher levels of agreement in point assignments between raters).</p>\n<p><strong>Language/Aphasia Test</strong></p>\n<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/dysarthria-test.jpeg\" alt=\"\"></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Headache",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output=[]; \nvar u=parseFloat(consciousness)+parseFloat(commands)+parseFloat(horizontal_movement)+parseFloat(visual_fields)+parseFloat(left_arm_drift)+parseFloat(right_arm_drift)+parseFloat(left_leg_drift)+parseFloat(right_leg_drift)+parseFloat(sensation)+parseFloat(language)+parseFloat(extinction); \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:'Modified NIH Stroke Scale'\n}); \ncalc_output.push({\n    name:'1756_mNIHSS_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:'Modified NIH Stroke Scale'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "1B: Level of consciousness/orientation questions",
+                "mdcalc_info_concept": null,
+                "name": "consciousness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Both questions correct",
+                        "value": 0
+                    },
+                    {
+                        "label": "1 question correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "0 questions correct",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask month and age",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "1C: Level of consciousness commands",
+                "mdcalc_info_concept": null,
+                "name": "commands",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Both tasks correct",
+                        "value": 0
+                    },
+                    {
+                        "label": "1 task correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "0 tasks correct",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "'Blink eyes' & 'squeeze hands' (pantomime commands if communication barrier)",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "2: Test horizontal extra-ocular movements",
+                "mdcalc_info_concept": null,
+                "name": "horizontal_movement",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Partial gaze palsy",
+                        "value": 1
+                    },
+                    {
+                        "label": "Total gaze palsy",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "3: Test visual fields",
+                "mdcalc_info_concept": null,
+                "name": "visual_fields",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No visual loss",
+                        "value": 0
+                    },
+                    {
+                        "label": "Partial hemianopia",
+                        "value": 1
+                    },
+                    {
+                        "label": "Complete hemianopia",
+                        "value": 2
+                    },
+                    {
+                        "label": "Bilateral hemianopia",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "5A: Test left arm motor drift",
+                "mdcalc_info_concept": null,
+                "name": "left_arm_drift",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No drift",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drift before 10 seconds",
+                        "value": 1
+                    },
+                    {
+                        "label": "Falls before 10 seconds",
+                        "value": 2
+                    },
+                    {
+                        "label": "No effort against gravity",
+                        "value": 3
+                    },
+                    {
+                        "label": "No movement",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "5B: Test right arm motor drift",
+                "mdcalc_info_concept": null,
+                "name": "right_arm_drift",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No drift",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drift before 10 seconds",
+                        "value": 1
+                    },
+                    {
+                        "label": "Falls before 10 seconds",
+                        "value": 2
+                    },
+                    {
+                        "label": "No effort against gravity",
+                        "value": 3
+                    },
+                    {
+                        "label": "No movement",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "6A: Test left leg motor drift",
+                "mdcalc_info_concept": null,
+                "name": "left_leg_drift",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No drift",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drift before 5 seconds",
+                        "value": 1
+                    },
+                    {
+                        "label": "Falls before 5 seconds",
+                        "value": 2
+                    },
+                    {
+                        "label": "No effort against gravity",
+                        "value": 3
+                    },
+                    {
+                        "label": "No movement",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "6B: Test right leg motor drift",
+                "mdcalc_info_concept": null,
+                "name": "right_leg_drift",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No drift",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drift before 5 seconds",
+                        "value": 1
+                    },
+                    {
+                        "label": "Falls before 5 seconds",
+                        "value": 2
+                    },
+                    {
+                        "label": "No effort against gravity",
+                        "value": 3
+                    },
+                    {
+                        "label": "No movement",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "8: Test sensation",
+                "mdcalc_info_concept": null,
+                "name": "sensation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal; no sensory loss",
+                        "value": 0
+                    },
+                    {
+                        "label": "Abnormal; sensory loss",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "9: Test language/aphasia",
+                "mdcalc_info_concept": null,
+                "name": "language",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal; no aphasia",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild aphasia",
+                        "value": 1
+                    },
+                    {
+                        "label": "Severe aphasia",
+                        "value": 2
+                    },
+                    {
+                        "label": "Mute/global aphasia",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Describe the scene; name the items; read the sentences (see <a href=\"#evidence\">Evidence</a>)",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "11: Test extinction/inattention/neglect",
+                "mdcalc_info_concept": null,
+                "name": "extinction",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "tia",
+            "cva",
+            "ich"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology"
+        ]
+    }
+}

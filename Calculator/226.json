@@ -1,0 +1,167 @@
+{
+    "id": "226",
+    "title": "Rome IV Diagnostic Criteria for Child Functional Constipation",
+    "desc": "The Rome IV Criteria for Child Functional Constipation provides criteria for diagnosis of child functional constipation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7104693/",
+                "text": "Hyams J, Di lorenzo C, Forbes D, et al. Childhood functional gastrointestinal disorders: child/adolescent. Gastroenterology. 2006;130(5):1527-37."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24345831/",
+                "text": "Tabbers MM, DiLorenzo C, Berger MY, et al. Evaluation and treatment of functional constipation in infants and children: evidence-based recommendations from ESPGHAN and NASPGHAN. J Pediatr Gastroenterol Nutr. 2014;58(2):258-274. "
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for child functional constipation, patient must have &ge;2 of the following (occurring &ge;1 time per week for a minimum of 1 month with insufficient criteria for a diagnosis of&nbsp;<calculator id=\"10328\">IBS</calculator>):</p>\n<ol>\n<li>&le;2 defecations in the toilet per week in a child of a developmental age of &ge;4 years.</li>\n<li>&ge;1 episode of fecal incontinence per week.</li>\n<li>History of retentive posturing or excessive volitional stool retention.</li>\n<li>History of painful or hard bowel movements.</li>\n<li>Presence of a large fecal mass in the rectum.</li>\n<li>History of large diameter stools that can obstruct the toilet.</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Constipation"
+        ],
+        "disease_treated": [
+            "Child/Adolescent Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(five)+parseFloat(six);\n\nvar diag;\n\nvar msg= 'Diagnosis for child functional constipation as per Rome IV criteria';\nvar minimsg= 'Diagnosis for child functional constipation';\n\nif (criteria>=2) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Child Constipation',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have ≥2 of the following:",
+                "subheading_instructions": "Occurring ≥1 time per week for a minimum of 1 month with insufficient criteria for a diagnosis of IBS",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "≤2 defecations in the toilet per week in a child of a developmental age of ≥4 years",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "≥1 episode of fecal incontinence per week",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of retentive posturing or excessive volitional stool retention",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of painful or hard bowel movements",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Presence of a large fecal mass in the rectum",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of large diameter stools that can obstruct the toilet",
+                "name": "six",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Child Functional Constipation, Rome IV for Constipation, rome iv child functional constipation, rome iv constipation, rome iv child constipation, rome 4 for child functional constipation, rome 4 child functional constipation, rome 4 child constipation, rome 4 constipation, child constipation, rome"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

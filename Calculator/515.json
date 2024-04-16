@@ -1,0 +1,157 @@
+{
+    "id": "515",
+    "title": "Estimated Ethanol (and Toxic Alcohol) Serum Concentration Based on Ingestion",
+    "desc": "The Estimated Ethanol (and Toxic Alcohol) serum concentration predicts ethanol concentration based on ingestion of alcohol.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://accessemergencymedicine.mhmedical.com/Content.aspx?bookId=1163&sectionId=65098321",
+                "text": "Yip L. Ethanol. In: Flomenbaum NE, Goldfrank LR, Hoffman RS et al, eds: Goldfrank’s Toxicologic Emergencies. New York NY, 2006."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19458366",
+                "text": "Brent J. Fomepizole for ethylene glycol and methanol poisoning. N Engl J Med. 2009 May 21;360(21):2216-23. doi: 10.1056/NEJMct0806112. Review. PubMed PMID: 19458366."
+            }
+        ],
+        "evidence": "<p>[C] = Dose / (Vd &times; Weight); where:</p>\n<ul>\n<li>[C] is serum concentration (mg/L).</li>\n<li>Dose is amount ingested (mg).</li>\n<li>Vd is volume of distribution (L/kg).</li>\n<li>Weight is patient body weight (kg).</li>\n</ul>\n<p>Example: a 3-year-old boy (15 kg) ingests 30 mL of windshield washer fluid (50% methanol). Maximal predicted serum methanol concentration:</p>\n<ul>\n<li>[C] = Dose / (Vd &times; Weight)</li>\n<li>Dose:\n<ul>\n<li>50% methanol = 50 g/100 mL = 500 mg/mL and</li>\n<li>500 mg/mL &times; 30 mL ingested = 15,000 mg methanol</li>\n</ul>\n</li>\n<li>[C] = 15,000 mg / (0.6 L/kg &times; 15 kg) = 1,667 mg/L</li>\n<li>1,667 mg/L &times; 1 L/10 dL = 167 mg/dL<br>(a concentration requiring treatment with fomepizole)</li>\n</ul>\n<p>Example: a 21-year-old man (70 kg) ingests 750 mL of 15% wine. Maximal predicted serum ethanol concentration:</p>\n<ul>\n<li>[C] = Dose / (Vd &times; Weight)</li>\n<li>Dose:\n<ul>\n<li>15% ethanol = 15 g/100 mL = 150 mg/mL and</li>\n<li>150 mg/mL &times; 750 mL ingested = 112,500 mg ethanol</li>\n</ul>\n</li>\n<li>[C] = 112,500 mg / (0.6 L/kg &times; 70 kg) = 2,679 mg/L</li>\n<li>2,679 mg/L &times; 1 L/10 dL = 268 mg/dL</li>\n</ul>",
+        "facts": "<p><strong>To convert mg/dL to mmol/L:</strong></p>\n<ul>\n<li>Ethanol: divide ethanol concentration in mg/dL by 4.6</li>\n<li>Methanol: divide methanol concentration in mg/dL by 3.2</li>\n<li>Ethylene glycol: divide ethylene glycol concentration in mg/dL by 6.2</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "percentages",
+                "unit": "basic_stats",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Volume",
+                "unit": "volume",
+                "error_min": "0",
+                "error_max": "20000",
+                "warn_min": "1",
+                "warn_max": "5000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL",
+                "units_us": "mL"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Drug/Alcohol Use"
+        ],
+        "logic": "var calc_output = [];\n\nvar weight = parseFloat(weight)\nvar percent = parseFloat(percent)\nvar amount = parseFloat(amount)\n\nvar c, dose\n\ndose = percent * 10 * amount\nc = dose / (0.6 * weight) * 0.1;\n\nvar type_name, conversion, treat\nif (type == 0) {\n    type_name = 'ethanol'\n    conversion = c/4.6\n    treat = ''\n}\nif (type == 1) {\n    type_name = 'methanol'\n    conversion = c/3.2\n    treat = '. Treatment with fomepizole recommended at methanol concentration ≥20 mg/dL (6.2 mmol/L). See Next Steps for details.'\n}\nif (type == 2) {\n    type_name = 'ethylene glycol'\n    conversion = c/6.2\n    treat = '. Treatment with fomepizole recommended at ethylene glycol concentration ≥20 mg/dL (3.2 mmol/L). See Next Steps for details.'\n}\nif (type == 3) {\n    type_name = 'diethylene glycol'\n    conversion = c/1\n    treat = '. Treatment with fomepizole recommended at any concentration of diethylene glycol. See Next Steps for details.'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: c.toFixed(0),\n    value_text: 'mg/dL',\n    message: 'Estimated serum concentration'\n});\ncalc_output.push({\n    name: '3813_Estimated EtOH_result (serum conc)', \n    value: c.toFixed(0),\n    value_text: 'mg/dL',\n    message: 'Estimated serum concentration<br/>(' + conversion.toFixed(1) + ' mmol/L)' + treat\n});\ncalc_output.push({\n    name: '3813_Estimated EtOH_result (dose)',\n    value: dose/1000,\n    value_text: 'g',\n    message: 'Dose of ' + type_name\n});\n// calc_output.push({\n//     name: 'rec',\n//     value: 'Treat'\n//     value_text: '',\n//     message: ''\n// });",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "% alcohol",
+                "name": "percent",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Amount ingested",
+                "name": "amount",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "volume"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Type of alcohol",
+                "mdcalc_info_concept": null,
+                "name": "type",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Ethanol",
+                        "value": 0
+                    },
+                    {
+                        "label": "Methanol",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ethylene glycol",
+                        "value": 2
+                    },
+                    {
+                        "label": "Diethylene glycol",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "ethanol",
+            "toxic alcohol",
+            "serum",
+            "concentration"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Pharmacy",
+            "Toxicology"
+        ]
+    }
+}

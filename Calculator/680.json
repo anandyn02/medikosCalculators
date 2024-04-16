@@ -1,0 +1,116 @@
+{
+    "id": "680",
+    "title": "Acetaminophen Overdose and NAC Dosing",
+    "desc": "The Acetaminophen Overdose and NAC dosing Calculates PO or IV dosing of N-acetylcysteine (NAC) for acetaminophen overdose.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7469629",
+                "text": "Rumack BH, Peterson RC, Koch GG, Amara IA. Acetaminophen overdose: 662 cases with evaluation of oral acetylcysteine treatment. Arch Intern Med. 1981;141:380-5."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/519312",
+                "text": "Prescott LF, Illingworth RN, Critchley JA, Stewart MJ, Adam RD, Proudfoot AT. Intravenous N-acetylcysteine: the treatment of choice for paracetamol poisoning. BMJ. 1979;2:1097-1100."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3059186",
+                "text": "Smilkstein MJ, Knapp GL, Kulig KW, Rumack BH. Efficacy of oral N-acetylcysteine in the treatment of acetaminophen overdose: Analysis of the National Multicenter Study. N Engl J Med. 1988;319:1557-62."
+            }
+        ],
+        "evidence": "<p>Actual body-weight dosing, starting with loading dose and then variable rates depending on PO vs. IV, as below.</p>\n<p><strong>PO</strong></p>\n<p>Loading dose is 140 mg/kg PO, then 17 more doses every 4 hours of 70 mg/kg PO. If patient vomits within 1 hour of dose, it must be repeated.</p>\n<p><strong>IV</strong></p>\n<p>Patients &ge;41 kg:</p>\n<ul>\n<li>Loading Dose: 150 mg/kg in 200 mL of diluent administered over 60 minutes.</li>\n<li>Dose 2: 50 mg/kg in 500 mL of diluent administered over 4 hours.</li>\n<li>Dose 3: 100 mg/kg in 1000 mL of diluent administered over 16 hours.</li>\n</ul>\n<p>Patients 21-40 kg</p>\n<ul>\n<li>Loading Dose: 150 mg/kg in 100 mL of diluent administered over 60 minutes.</li>\n<li>Dose 2: 50 mg/kg in 250 mL of diluent administered over 4 hours.</li>\n<li>Dose 3: 100 mg/kg in 500 mL of diluent administered over 16 hours.</li>\n</ul>\n<p>Patients 5-20 kg:</p>\n<ul>\n<li>Loading Dose: 150 mg/kg in 3 mL/kg of body weight of diluent administered over 60 minutes.</li>\n<li>Dose 2: 50 mg/kg in 7 mL/kg of body weight of diluent administered over 4 hours.</li>\n<li>Dose 3: 100 mg/kg in 14 mL/kg of body weight of diluent administered over 16 hours.</li>\n</ul>",
+        "facts": "<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/rumack-nomogram.png\" alt=\"\"></p>\n<ul>\n<li>Best if NAC started within 8-10 hours of ingestion, but may still be effective up to 24 hours after ingestion.</li>\n<li>May be given PO or IV.\n<ul>\n<li>Oral formulation (Mucomyst, generic) 140 mg/kg orally loading dose then 70 mg/kg orally every 4 hours for 68 hours (17 doses).</li>\n<li>IV formulation (Acetadote, or using oral solution) 150 mg/kg over 60 minutes, then 50 mg/kg over 4 hours (12.5 mg/kg/hr), then 100 mg/kg over 16 hours (6.25 mg/kg/hr).</li>\n</ul>\n</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Hepatitis",
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\nvar u, load, maint, msg, maint4hr, maint16hr, maint4hrvol, maint16hrvol;\nu = parseFloat(weight);\nif (nac_route == 1) {\n    load = Math.round(140 * u);\n    maint = Math.round(70 * u);\n    msg = 'PO Dosing: 72-Hour Regimen, 18 Doses Total<br/>Total of 1,330 mg/kg Delivered:<br/><br/>Loading Dose of: ' + load + ' mg PO, then<br/>Maintenance Dose: ' + maint + ' mg PO every 4 hours for a total of 72 hours.<br/><br/>Note: If the patient vomits within 1 hour of administration, dose must be repeated.'\n}\nif (nac_route == 0) {\n    if (u >= 100) { msg = 'The patient\\u2018s weight is outside the FDA\\u2018s dosing guidelines (>100kg). The manufacturer of IV Mucomyst recommends checking with a toxicologist for these patients.' }\n    if (u >= 40) {\n        load = Math.round(150 * u);\n        maint4hr = Math.round(50 * u);\n        maint16hr = Math.round(100 * u);\n        msg = 'IV Dosing: 21-Hour Regimen, \\u20183 Bag Dosing\\u2018<br/><br/>Loading Dose of: ' + load + ' mg IV in 200 mL of diluent over 60 min, then<br/>' + maint4hr + ' mg IV in 500 mL of diluent over 4 hr then<br/>' + maint16hr + ' mg IV in 1000 mL of diluent over 16 hr.'\n    }\n    if ((u > 20) && (u < 40)) {\n        load = Math.round(150 * u);\n        maint4hr = Math.round(50 * u);\n        maint16hr = Math.round(100 * u);\n        msg = 'IV Dosing: 21-Hour Regimen, \\u20183 Bag Dosing\\u2018<br/><br/>Loading Dose of: ' + load + ' mg IV in 100 mL of diluent over 60 min, then<br/>' + maint4hr + ' mg IV in 250 mL of diluent over 4 hr then<br/>' + maint16hr + ' mg IV in 500 mL of diluent over 16 hr.'\n    }\n    if (u <= 20) {\n        load = Math.round(150 * u);\n        loadvol = Math.round(3 * u);\n        maint4hr = Math.round(50 * u);\n        maint4hrvol = Math.round(7 * u);\n        maint16hr = Math.round(100 * u);\n        maint16hrvol = Math.round(14 * u);\n        msg = 'IV Dosing: 21-Hour Regimen, \\u201c3 Bag Dosing\\u201c<br/><br/>Loading Dose of: ' + load + ' mg IV in ' + loadvol + 'mL (3 mL/kg) of diluent over 60 min, then<br/>' + maint4hr + ' mg IV in ' + maint4hrvol + ' mL (7 mL/kg) of diluent over 4 hr then<br/>' + maint16hr + ' mg IV in ' + maint16hrvol + ' mL (14 mL/kg) of diluent over 16 hr.'\n    }\n};\ncalc_output.push({ \n    name: 'mini',\n    value: load, \n    value_text: ' mg', \n    message: 'Loading dose' \n});\ncalc_output.push({ \n    name: '568_NAC Dosing_result', \n    value: ' ', \n    value_text: ' ', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Route of N-Acetylcysteine (NAC)</p>",
+                "mdcalc_info_concept": null,
+                "name": "nac_route",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "IV",
+                        "value": 0
+                    },
+                    {
+                        "label": "PO",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/rumack-nomogram.png\" alt=\"\"></p>"
+            }
+        ],
+        "can_search": [
+            "tylenol",
+            "mucomyst",
+            "apap",
+            "acetaminophen",
+            "rumack-matthew nomogram",
+            "rumack",
+            "rumack matthew",
+            "rumack matthew nomogram"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatrics",
+            "Pharmacy",
+            "Primary Care",
+            "Toxicology"
+        ]
+    }
+}

@@ -1,0 +1,194 @@
+{
+    "id": "228",
+    "title": "Rome IV Diagnostic Criteria for Child Functional Dyspepsia",
+    "desc": "The Rome IV Criteria for Child Functional Dyspepsia provides criteria for diagnosis of child functional dyspepsia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7104693/",
+                "text": "Hyams J, Di lorenzo C, Forbes D, et al. Childhood functional gastrointestinal disorders: child/adolescent. Gastroenterology. 2006;130(5):1527-37."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><strong>Step 1. </strong>To fulfill the Rome IV criteria for child functional dyspepsia. Must fulfill both of the following &ge;4 days per month for with symptom onset &ge;2 months prior:</p>\n<ol>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\">&ge;1 of the following:</p>\n</li>\n<ol>\n<li dir=\"ltr\" aria-level=\"2\">\n<p dir=\"ltr\" role=\"presentation\">Postprandial fullness.</p>\n</li>\n<li dir=\"ltr\" aria-level=\"2\">\n<p dir=\"ltr\" role=\"presentation\">Early satiation.</p>\n</li>\n<li dir=\"ltr\" aria-level=\"2\">\n<p dir=\"ltr\" role=\"presentation\">Epigastric pain or burning not associated with defecation.</p>\n</li>\n</ol>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\">After appropriate evaluation, the symptoms cannot be fully explained by another medical condition.</p>\n</li>\n</ol>\n<p dir=\"ltr\"><strong>Step 2.</strong> If above criteria are met, then determine subtype.&nbsp;</p>\n<p dir=\"ltr\"><strong>Postprandial Distress Syndrome</strong></p>\n<p dir=\"ltr\">Must include one or both of the following:</p>\n<ol>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\">Bothersome postprandial fullness&nbsp; that prevents finishing a regular meal.</p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\">Bothersome early satiation that prevents finishing a regular meal.</p>\n</li>\n</ol>\n<p dir=\"ltr\">*Supportive criteria includes upper abdominal bloating, postprandial nausea, or excessive belching.</p>\n<p dir=\"ltr\"><strong>Epigastric Pain Syndrome</strong></p>\n<p dir=\"ltr\">Must include one or both of the following:</p>\n<ol>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\">Bothersome (severe enough to interfere with normal activities) pain or burning localized to the epigastrium.&nbsp;</p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\">The pain is not generalized or localized to other abdominal or chest regions and is not relieved by defecation or passage of flatus.</p>\n</li>\n</ol>\n<p dir=\"ltr\">*Supportive criteria include (a) burning quality of the pain but without a retrosternal component and (b) the pain commonly induced or relieved by ingestion of a meal but may occur while fasting.&nbsp;</p>\n<p dir=\"ltr\">**Note: patients may be positive for both postprandial distress syndrome AND epigastric pain syndrome</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Nausea",
+            "Vomiting",
+            "Heartburn"
+        ],
+        "disease_treated": [
+            "Child/Adolescent Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria1=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four);\nvar criteria2=parseFloat(five);\nvar criteria3=parseFloat(six)+parseFloat(seven);\n\nvar diag1;\n\nif (criteria1>=1) {\n  diag1='Positive';\n} else {\n  diag1='Negative';\n}\n\nvar msg;\nvar minimsg;\n\nif (criteria1>=1) {\n  if (criteria2==1 & criteria3 !=2) {\n    msg='Diagnosis for child functional dyspepsia as per Rome IV criteria<br/><br/>Fulfills additional criteria for child postprandial distress syndrome';\n    minimsg = ' diagnosis for child functional dyspepsia. Fulfills additional criteria for child postprandial distress syndrome.';\n  }\n\n  else if (criteria2!=1 & criteria3 ==2) {\n    msg='Diagnosis for child functional dyspepsia as per Rome IV criteria<br/><br/>Fulfills additional criteria for child epigastric pain syndrome';\n    minimsg = ' diagnosis for child functional dyspepsia. Fulfills additional criteria for child epigastric pain syndrome.';\n  }\n\n  else if (criteria2==1 & criteria3 ==2) {\n    msg='Diagnosis for child functional dyspepsia as per Rome IV criteria<br/><br/>Fulfills additional criteria for child postprandial distress syndrome and child epigastric pain syndrome';\n    minimsg = ' diagnosis for child functional dyspepsia. Fulfills additional criteria for child postprandial distress syndrome and child epigastric pain syndrome.';\n  }\n\n  else if (criteria2!=1 & criteria3 !=2) {\n    msg='Diagnosis for child functional dyspepsia as per Rome IV criteria<br/><br/>Does not fulfill additional criteria for child postprandial distress syndrome or child epigastric pain syndrome';\n    minimsg = ' diagnosis for child functional dyspepsia. Does not fulfill additional criteria for child postprandial distress syndrome or child epigastric pain syndrome.';\n  }\n} else {\n  msg='Diagnosis for child functional dyspepsia as per Rome IV criteria';\n  minimsg = ' diagnosis for child functional dyspepsia.';\n}\n  \ncalc_output.push({\n    name: 'mini',\n    value: '',\n    value_text:'',\n    message:diag1 + minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Child Functional Dyspepsia',\n    value: diag1,\n    value_text:'',\n    message: msg\n});\n\n\n",
+        "inputs": [
+            {
+                "subheading": "Must have ≥1 of the following:",
+                "subheading_instructions": "For ≥4 days per month for ≥2 months prior",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Postprandial fullness",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Early satiation",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Epigastric pain or burning not associated with defecation",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "After appropriate evaluation, the symptoms cannot be fully explained by another medical condition",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Additional criteria for child postprandial distress syndrome:",
+                "subheading_instructions": "Must have the following for ≥2 months prior",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bothersome postprandial fullness or early satiation that prevents finishing a regular meal",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Additional criteria for child epigastric pain syndrome:",
+                "subheading_instructions": "Must have the following for ≥2 months prior",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bothersome (severe enough to interfere with normal activities) pain or burning localized to the epigastrium",
+                "name": "six",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "The pain is not generalized or localized to other abdominal or chest regions and is not relieved by defecation or passage of flatus",
+                "name": "seven",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Child Functional Dyspepsia, Rome IV for Child Dyspepsia, rome iv child functional dyspepsia, rome iv functional dyspepsia, rome iv dyspepsia, rome 4 child functional dyspepsia, rome 4 functional dyspepsia, rome 4 dyspepsia, rome dyspepsia, rome child dyspepsia, rome, child dyspepsia, functional dyspepsia, dyspepsia"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

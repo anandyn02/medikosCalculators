@@ -1,0 +1,322 @@
+{
+    "id": "424",
+    "title": "ACR/EULAR Gout Classification Criteria",
+    "desc": "The ACR/EULAR Gout Classification Criteria aids in classification of likelihood of gout.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/10.1002/art.39254/full",
+                "text": "Neogi T, et al. 2015 Gout Classification Criteria: An American College of Rheumatology/European League Against Rheumatism Collaborative Initiative. Arthritis &amp; Rheumatology. 20015; 67: 2557–2568. doi: 10.1002/art.39254"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Joint Pain"
+        ],
+        "disease_treated": [
+            "Gout"
+        ],
+        "logic": "var bursa = bursa || 0\nvar charac = charac || 0\nvar decomp = decomp || 0\nvar imaging = imaging || 0\nvar synovial = synovial || 0\nvar time = time || 0\nvar tophus = tophus || 0\nvar urate = urate || 0\n\nvar calc_output = [];\nvar entry = parseInt(entry);\nvar sufficient = parseInt(sufficient);\nvar value = parseInt(bursa) + parseInt(charac) + parseInt(time) + parseInt(tophus) + parseInt(urate) + parseInt(synovial) + parseInt(decomp) + parseInt(imaging);\nvar msg = '';\nvar string;\nvar mini_msg = '';\nif (entry == 0 && sufficient == 0) {\n  string = '';\n  mini_msg='Not eligible';\n  msg = 'NOT eligible for scoring';\n  points ='';\n  }\nif (entry == 1 && sufficient == 1) {\n  string = '';\n  mini_msg= 'Positive';//\n  msg = 'Patient meets criteria for gout classification';//\n  points ='';\n  }\nif (entry == 0 && sufficient == 1) {\n  string = '';\n  mini_msg= 'Positive';//\n  msg = 'Patient meets criteria for gout classification';//\n  points ='';\n  }\n// if (entry == 1 && sufficient == 0 && value < 1){\n//   string = value.toFixed(0);\n//   mini_msg='Continue to Steps 2 and 3.';\n//   msg = 'This patient IS eligible for scoring. Continue to Steps 2 and 3.';\n//   points =' points';\n// }\nif (entry == 1 && sufficient == 0 && value < 8) {\n  string = value.toFixed(0);\n  mini_msg='Negative';\n  msg = ': Does not meet criteria for gout classification';\n  points =' points';\n}\nif (entry == 1 && sufficient == 0 && value >=8){\n  string = value.toFixed(0);\n  mini_msg= 'Positive';//\n  msg = ': Meets criteria for gout classification';//\n  points =' points';\n}\n// if (entry == 0 && sufficient == 0 && value > 0){\n//   string = 'N/A';\n//   mini_msg='Not eligible';\n//   msg = 'NOT eligible for scoring';\n//   points =' points';\n// }\ncalc_output.push({\n  name: 'mini',\n  value: mini_msg,\n  value_text: '',\n  message: string + points + msg\n});\ncalc_output.push({\n  name: '2195_ACR/EULAR Gout Criteria_result',\n  value: mini_msg,\n  value_text: '',\n  message: string + points + msg\n});\n",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Step One - Entry Criterion",
+                "subheading_instructions": "If yes, 7+ Classification Criteria required for positive diagnosis",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "≥1 episode of swelling, pain, or tenderness in a peripheral joint/bursa",
+                "md_calc_info_concept": null,
+                "name": "entry",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Step Two - Sufficient Criterion",
+                "subheading_instructions": "If yes, diagnosis is positive",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Presence of Monosodium Urate (MSU) crystals in a symptomatic joint, bursa, or tophus",
+                "md_calc_info_concept": null,
+                "name": "sufficient",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Step  Three - Classification Criteria",
+                "subheading_instructions": "7+ required for positive diagnosis",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "entry == 1 && sufficient == 0",
+                "default": 0,
+                "label_en": "Pattern of joint/bursa involvement during episodes",
+                "mdcalc_info_concept": null,
+                "name": "bursa",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Joint/bursa other than ankle, midfoot or 1st MTP (or involvement in a polyarthritis)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Ankle OR midfoot (as part of monoarticular/oligoarticular episode without 1st MTP)",
+                        "value": 1
+                    },
+                    {
+                        "label": "1st MTP (as part of monoarticular or oligoarticular episode)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "entry == 1 && sufficient == 0",
+                "default": 0,
+                "label_en": "How many characteristics during episode(s)?",
+                "mdcalc_info_concept": null,
+                "name": "charac",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No Characteristics",
+                        "value": 0
+                    },
+                    {
+                        "label": "One Characteristics",
+                        "value": 1
+                    },
+                    {
+                        "label": "Two Characteristics",
+                        "value": 2
+                    },
+                    {
+                        "label": "Three Characteristics",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Erythema overlying joint (reported or observed); can't bear touch or pressure to joint; great difficulty with walking or inability to use joint.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "entry == 1 && sufficient == 0",
+                "default": 0,
+                "label_en": "How many episodes with the following time-course?",
+                "mdcalc_info_concept": null,
+                "name": "time",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No typical episodes",
+                        "value": 0
+                    },
+                    {
+                        "label": "One typical episode",
+                        "value": 1
+                    },
+                    {
+                        "label": "Recurrent typical episodes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "≥2 time course symptoms, regardless of anti-inflammatory use: (1)Time to maximal pain < 24 hours; (2)Resolution of symptoms in ≤14 days; (3)Complete resolution (to baseline level) between symptomatic episodes.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "entry == 1 && sufficient == 0",
+                "default": 0,
+                "label_en": "Evidence of tophus",
+                "mdcalc_info_concept": null,
+                "name": "tophus",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Draining or chalk-like subcutaneous nodule, located in typical locations: joints, ears, olecranon bursae, finger pads, tendons (e.g., Achilles).",
+                "type": "radio"
+            },
+            {
+                "conditionality": "entry == 1 && sufficient == 0",
+                "default": 1,
+                "label_en": "Serum Urate",
+                "mdcalc_info_concept": null,
+                "name": "urate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "< 4mg/dL [< 0.24mM]",
+                        "value": -4
+                    },
+                    {
+                        "label": "≥ 4 or < 6mg/dL [≥ 0.24 or < 0.36mM]",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥ 6 or < 8mg/dL [≥ 0.36 or < 0.48mM]",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥ 8 or < 10mg/dL [≥ 0.48 or < 0.60mM]",
+                        "value": 3
+                    },
+                    {
+                        "label": "≥ 10mg/dL [≥ 0.60mM]",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "(Measured by uricase method.) Ideally scored when patient not taking urate-lowering treatment and patient was >4 weeks from an episode. If practical, retest under those conditions. Highest value irrespective of timing should be used.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "entry == 1 && sufficient == 0",
+                "default": 0,
+                "label_en": "Synovial fluid analysis of a symptomatic (ever) joint or bursa",
+                "mdcalc_info_concept": null,
+                "name": "synovial",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Negative for MSU",
+                        "value": -2
+                    },
+                    {
+                        "label": "Not done",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Should be assessed by a trained observer.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "entry == 1 && sufficient == 0",
+                "default": 0,
+                "label_en": "Imaging evidence of urate deposition in symptomatic joint/bursa",
+                "mdcalc_info_concept": null,
+                "name": "decomp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent or not done",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ultrasound: double-contour sign OR DECT: Demonstrates urate deposition.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "entry == 1 && sufficient == 0",
+                "default": 0,
+                "label_en": "Imaging evidence of gout-related joint damage",
+                "mdcalc_info_concept": null,
+                "name": "imaging",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "X-Ray of hands or feet with ≥1 erosion.",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "acr",
+            "eular",
+            "gout",
+            "dx",
+            "diagnosis",
+            "classification",
+            "urate",
+            "tophus",
+            "bursa",
+            "ACR-EULAR",
+            "ACR/EULAR",
+            "ACREULAR"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Orthopedics",
+            "Primary Care",
+            "Rheumatology"
+        ]
+    }
+}

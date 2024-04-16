@@ -1,0 +1,232 @@
+{
+    "id": "606",
+    "title": "STOP-BANG Score for Obstructive Sleep Apnea",
+    "desc": "The STOP-BANG Score for Obstructive Sleep Apnea screens for obstructive sleep apnea.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18431116 ",
+                "text": "Chung F, Yegneswaran B, Liao P, et al. STOP questionnaire: a tool to screen patients for obstructive sleep apnea. Anesthesiology. 2008;108(5):812-21."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points (for the first four, ask the patient):</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p>&nbsp;</p>\n</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Do you snore loudly? (Louder than talking or loud enough to be heard through closed doors)</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Do you often feel tired, fatigued, or sleepy during the daytime?</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Has anyone observed you stop breathing during sleep?</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Do you have (or are you being treated for) high blood pressure?</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>BMI</p>\n</td>\n<td>\n<p>&le;35 kg/m<sup>2</sup></p>\n</td>\n<td>\n<p>&gt;35 kg/m<sup>2</sup></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Age</p>\n</td>\n<td>\n<p>&le;50 years</p>\n</td>\n<td>\n<p>&gt;50 years</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Neck circumference</p>\n</td>\n<td>\n<p>&le;40 cm</p>\n</td>\n<td>\n<p>&gt;40 cm</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Gender</p>\n</td>\n<td>\n<p>Female</p>\n</td>\n<td>\n<p>Male</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p>Interpretation:</p>\n<table style=\"width: 80.8962%; height: 246.382px; border-width: 1px; border-style: none;\">\n<tbody>\n<tr>\n<td style=\"width: 37.1158%;\"><strong>STOP-BANG</strong></td>\n<td style=\"width: 62.8842%;\"><strong>Risk</strong></td>\n</tr>\n<tr>\n<td style=\"width: 37.1158%;\">0-2</td>\n<td style=\"width: 62.8842%;\">Low risk for moderate to severe OSA</td>\n</tr>\n<tr>\n<td style=\"width: 37.1158%;\">3-4</td>\n<td style=\"width: 62.8842%;\">Intermediate risk&nbsp;for moderate to severe&nbsp;OSA</td>\n</tr>\n<tr>\n<td style=\"width: 37.1158%;\">5-8</td>\n<td style=\"width: 62.8842%;\">High risk&nbsp;for moderate to severe&nbsp;OSA</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue"
+        ],
+        "disease_treated": [
+            "Obesity",
+            "Obstructive Sleep Apnea"
+        ],
+        "logic": "var calc_output = [];\n \n//user inputs\nvar score = parseFloat(snore) + parseFloat(tired) + parseFloat(observed) + parseFloat(pressure) + parseFloat(bmi) + parseFloat(age) + parseFloat(neck) + parseFloat(gender);\n\n//interpretation\nvar result;\nif(score <= 2){\n\tresult = 'Low';\n} else if (score <=4) {\n\tresult = 'Intermediate';\n} else {\n    result = 'High';\n}\n \n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: result + ' risk for moderate to severe OSA'\n});\ncalc_output.push({\n    name: '3992_STOP-BANG_result',\n    value: score,\n    value_text: 'points',\n    message: 'STOP-BANG'\n});\ncalc_output.push({\n    name: '3992_STOP-BANG_interpretation',\n    value: result,\n    value_text: '',\n    message: 'Risk for moderate to severe OSA'\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Ask the patient the following:",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Do you snore loudly?</p>",
+                "md_calc_info_concept": null,
+                "name": "snore",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Louder than talking or loud enough to be heard through closed doors",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Do you often feel tired, fatigued, or sleepy during the daytime?</p>",
+                "md_calc_info_concept": null,
+                "name": "tired",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Has anyone observed you stop breathing during sleep?</p>",
+                "md_calc_info_concept": null,
+                "name": "observed",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Do you have (or are you being treated for) high blood pressure?</p>",
+                "md_calc_info_concept": null,
+                "name": "pressure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Objective measures:",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><calculator id=\"29\">BMI</calculator></p>",
+                "md_calc_info_concept": null,
+                "name": "bmi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤35 kg/m²",
+                        "value": 0
+                    },
+                    {
+                        "label": ">35 kg/m²",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Age</p>",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤50 years",
+                        "value": 0
+                    },
+                    {
+                        "label": ">50 years",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Neck circumference</p>",
+                "md_calc_info_concept": null,
+                "name": "neck",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤40 cm",
+                        "value": 0
+                    },
+                    {
+                        "label": ">40 cm",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Gender</p>",
+                "md_calc_info_concept": null,
+                "name": "gender",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "stop bang",
+            "stop",
+            "osa",
+            "apnea",
+            "apnoea"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (General)"
+        ]
+    }
+}

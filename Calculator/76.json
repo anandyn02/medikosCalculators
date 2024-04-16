@@ -1,0 +1,140 @@
+{
+    "id": "76",
+    "title": "BARD Score for NAFLD Fibrosis",
+    "desc": "The BARD Score for NAFLD Fibrosis predicts the risk of advanced fibrosis for NAFLD patients. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18390575 ",
+                "text": "Harrison SA, Oliver D, Arnold HL, Gogia S, Neuschwander-tetri BA. Development and validation of a simple NAFLD clinical scoring system for identifying patients without advanced disease. Gut. 2008;57(10):1441-7. "
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><calculator id=\"29\">BMI</calculator> &ge;28</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><abbr title=\"Aspartate aminotransferase\">AST</abbr>/<abbr title=\"Alanine aminotransferase\">ALT</abbr> ratio &ge;0.8</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Diabetes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>BARD Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of advanced fibrosis </strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-1</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2-4</p>\n</td>\n<td>\n<p dir=\"ltr\">High*</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*Scores 2-4 were associated with odds ratio (OR) 17 (95% CI 9.2-31.9) and 96% NPV (<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/18390575\" target=\"_blank\">Harrison 2008</a>).</p>",
+        "estimation": [
+            {
+                "name": "Alanine Aminotransferase",
+                "unit": "ALT",
+                "error_min": "1",
+                "error_max": "1000",
+                "warn_min": "4",
+                "warn_max": "400",
+                "conversion": "1",
+                "normal_max_si": "35",
+                "normal_max_us": "35",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "Aspartate Aminotransferase",
+                "unit": "AST",
+                "error_min": "1",
+                "error_max": "10000",
+                "warn_min": "4",
+                "warn_max": "4000",
+                "conversion": "1",
+                "normal_max_si": "41",
+                "normal_max_us": "41",
+                "normal_min_si": "15",
+                "normal_min_us": "15",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Fatigue"
+        ],
+        "disease_treated": [
+            "Cirrhosis",
+            "Diabetes Mellitus",
+            "Obesity"
+        ],
+        "logic": "var calc_output = [];\n\nvar bmi = parseFloat(bmi);\nvar ast = parseFloat(ast);\nvar alt = parseFloat(alt);\nvar diabetes = parseFloat(diabetes);\n\nvar ratio = ast/alt;\n\nvar x;\n\nif (ratio >= 0.8) {\n    x = 2;\n}\nelse if (ratio < 0.8) {\n    x = 0;\n}\n\nvar score = bmi + x + diabetes; \n\nvar risk;\n\nif (score <= 1) {\n    risk = 'Low';\n}\nelse {\n    risk = 'High';\n}\n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk +' risk'\n    });\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'BARD Score'\n    });\nif (score <= 1) {\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: 'risk',\n    message: ''\n    });\n}\nelse { \ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: 'risk',\n    message: 'Scores 2-4 were associated with odds ratio 17 (see Evidence for details). In low risk patients (scores 0-1), consider avoiding biopsy.'\n    });\n}\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id = \"29\">BMI</calculator> ≥28",
+                "name": "bmi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<abbr title='Aspartate aminotransferase'>AST</abbr>",
+                "name": "ast",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "AST"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<abbr title='Alanine aminotransferase'>ALT</abbr>",
+                "name": "alt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ALT"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Diabetes",
+                "name": "diabetes",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "BARD",
+            "fibrosis",
+            "NAFLD",
+            "Bard NAFLD",
+            "Bard score"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Family Practice",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

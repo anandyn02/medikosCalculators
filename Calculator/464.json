@@ -1,0 +1,80 @@
+{
+    "id": "464",
+    "title": "Eastern Cooperative Oncology Group (ECOG) Performance Status",
+    "desc": "The ECOG Performance Status determines ability of patient to tolerate therapies in serious illness, specifically for chemotherapy, simpler than the Karnofsky Scale.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7165009",
+                "text": "Oken MM, Creech RH, Tormey DC, et al. Toxicity and response criteria of the Eastern Cooperative Oncology Group. Am. J. Clin. Oncol. 1982; 5 (6): 649–55. doi:10.1097/00000421-198212000-00014.PMID 7165009."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Score</th>\n<th>Description</th>\n</tr>\n<tr>\n<td>Asymptomatic</td>\n<td>0</td>\n<td>Fully active, able to carry on all predisease activities without restriction.</td>\n</tr>\n<tr>\n<td>Symptomatic but completely ambulatory</td>\n<td>1</td>\n<td>Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature. For example, light housework, office work.</td>\n</tr>\n<tr>\n<td>Symptomatic, &lt;50% in bed during the day</td>\n<td>2</td>\n<td>Ambulatory and capable of all self care but unable to carry out any work activities. Up and about more than 50% of waking hours.</td>\n</tr>\n<tr>\n<td>Symptomatic, &gt;50% in bed, but not bedbound</td>\n<td>3</td>\n<td>Capable of only limited self-care, confined to bed or chair 50% or more of waking hours.</td>\n</tr>\n<tr>\n<td>Bedbound</td>\n<td>4</td>\n<td>Completely disabled. Cannot carry on any self-care. Totally confined to bed or chair.</td>\n</tr>\n<tr>\n<td>Death</td>\n<td>5</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p><calculator id=\"3168\">Karnofsky</calculator> vs. ECOG</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>ECOG PERFORMANCE STATUS</th>\n<th><calculator id=\"3168\">KARNOFSKY PERFORMANCE STATUS</calculator></th>\n</tr>\n<tr>\n<td rowspan=\"2\">0&mdash;Fully active, able to carry on all pre-disease performance without restriction</td>\n<td>100&mdash;Normal, no complaints; no evidence of disease</td>\n</tr>\n<tr>\n<td>90&mdash;Able to carry on normal activity; minor signs or symptoms of disease</td>\n</tr>\n<tr>\n<td rowspan=\"2\">1&mdash;Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work</td>\n<td>80&mdash;Normal activity with effort, some signs or symptoms of disease</td>\n</tr>\n<tr>\n<td>70&mdash;Cares for self but unable to carry on normal activity or to do active work</td>\n</tr>\n<tr>\n<td rowspan=\"2\">2&mdash;Ambulatory and capable of all selfcare but unable to carry out any work activities; up and about more than 50% of waking hours</td>\n<td>60&mdash;Requires occasional assistance but is able to care for most of personal needs</td>\n</tr>\n<tr>\n<td>50&mdash;Requires considerable assistance and frequent medical care</td>\n</tr>\n<tr>\n<td rowspan=\"2\">3&mdash;Capable of only limited selfcare; confined to bed or chair more than 50% of waking hours</td>\n<td>40&mdash;Disabled; requires special care and assistance</td>\n</tr>\n<tr>\n<td>30&mdash;Severely disabled; hospitalization is indicated although death not imminent</td>\n</tr>\n<tr>\n<td rowspan=\"2\">4&mdash;Completely disabled; cannot carry on any selfcare; totally confined to bed or chair</td>\n<td>20&mdash;Very ill; hospitalization and active supportive care necessary</td>\n</tr>\n<tr>\n<td>10&mdash;Moribund</td>\n</tr>\n<tr>\n<td>5&mdash;Dead</td>\n<td>0&mdash;Dead</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy"
+        ],
+        "logic": "var calc_output = [];\n\n    var u;\n    var msg = '';\n    var mini_msg = '';\n    u = parseFloat(zubrod);\n    if (u == 0) { mini_msg='Fully active'; msg = 'Fully active, able to carry on all predisease activities without restriction.'; }\n    if (u == 1) { mini_msg='Restricted in strenuous activity'; msg = 'Restricted in strenuous activity, ambulatory and able to do light work.'; }\n    if (u == 2) { mini_msg='Capable of all self care'; msg = 'Capable of all self care, but no work activities, out of bed >50% of day.'; }\n    if (u == 3) { mini_msg='Capable of limited self-care'; msg = 'Capable of limited self-care, confined to bed or chair >50% of day.'; }\n    if (u == 4) { mini_msg='Completely disabled, no self-care'; msg = 'Completely disabled, no self-care, confined to bed or chair.'; }\n    if (u == 5) { mini_msg='Dead'; msg = 'Dead.'; }\n    var addmsg = 'See definitions of the ECOG/Zubrod Score in the About section.';\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3170_ECOG Performance Status_result',\n    value: u,\n    value_text: 'points',\n    message: msg+'<br/><br/>'+addmsg\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Patient description",
+                "mdcalc_info_concept": null,
+                "name": "zubrod",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Asymptomatic",
+                        "value": 0
+                    },
+                    {
+                        "label": "Symptomatic but completely ambulatory",
+                        "value": 1
+                    },
+                    {
+                        "label": "Symptomatic, <50% in bed during the day",
+                        "value": 2
+                    },
+                    {
+                        "label": "Symptomatic, >50% in bed, but not bedbound",
+                        "value": 3
+                    },
+                    {
+                        "label": "Bedbound",
+                        "value": 4
+                    },
+                    {
+                        "label": "Death",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "chemo",
+            "chemotherapy",
+            "ability",
+            "special care",
+            "ecog",
+            "who"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Palliative Care/Hospice",
+            "Radiation Oncology"
+        ]
+    }
+}

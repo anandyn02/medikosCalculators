@@ -1,0 +1,175 @@
+{
+    "id": "366",
+    "title": "RIETE Score for Risk of Hemorrhage in Pulmonary Embolism Treatment",
+    "desc": "The RIETE Score for Risk of Hemorrhage in PE Treatment determines the risk of major bleeding during anticoagulant therapy for pulmonary embolism.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18612534",
+                "text": "Ruíz-Giménez N, Suárez C, González R, Nieto JA, Todolí JA, Samperiz AL, Monreal M; RIETE Investigators. Predictive variables for major bleeding events in patients presenting with documented acute venous thromboembolism. Findings from the RIETE Registry.Thromb Haemost. 2008 Jul;100(1):26-31. doi: 10.1160/TH08-03-0193."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points, see below:</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<th>Risk Factor</th>\n<th>Point Value</th>\n</tr>\n<tr>\n<td>Recent Major Bleeding</td>\n<td>2</td>\n</tr>\n<tr>\n<td>Cr &gt;1.2 mg/dL</td>\n<td>1.5</td>\n</tr>\n<tr>\n<td>Anemia</td>\n<td>1.5</td>\n</tr>\n<tr>\n<td>Cancer</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Clinically-overt PE</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Age &gt;75</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = [];\nvar msg, recs, mini_msg;\nvar u = parseInt(major_bleeding) + parseInt(creatinine) + parseInt(anemia) + parseInt(malignancy) + parseInt(pulmonary_embolism) + parseInt(age_75);\nif (creatinine == 1.5) {\n    u += .5\n};\nif (anemia == 1.5) {\n    u += .5\n};\nif (u == 0) {\n    msg = 'Low Risk.<br/>0.1% Risk of Major Bleeding';\n    recs = 'Initiation of anticoagulation reasonable.';\n    mini_msg = 'Low Risk of Major Bleeding.'\n};\nif (u > 0 && u < 5) {\n    msg = 'Intermediate Risk.<br/>2.8% Risk of Major Bleeding';\n    recs = 'Carefully consider risks and benefits of anticoagulation prior to starting therapy.';\n    mini_msg = 'Intermediate Risk of Major Bleeding.'\n};\nif (u > 4) {\n    msg = 'High Risk.<br/>6.2% Risk of Major Bleeding';\n    recs = 'Alternative options should be considered unless there is a strong demonstrable clinical need for anticoagulation.';\n    mini_msg = 'High Risk of Major Bleeding.'\n};\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(1),\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '1786_RIETE Score_result',\n    value: u.toFixed(1),\n    value_text: 'points',\n    message: msg + '<br/><br/>' + recs\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recent major bleeding",
+                "md_calc_info_concept": null,
+                "name": "major_bleeding",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Creatinine &gt;1.2 mg/dL (106 &micro;mol/L)</p>",
+                "md_calc_info_concept": null,
+                "name": "creatinine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anemia",
+                "md_calc_info_concept": null,
+                "name": "anemia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Hgb <13 g/dL for men, Hgb <12 g/dL for women",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Malignancy history",
+                "md_calc_info_concept": null,
+                "name": "malignancy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Clinically-overt pulmonary embolism",
+                "md_calc_info_concept": null,
+                "name": "pulmonary_embolism",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Patients who were evaluated for PE and PE diagnosed, NOT incidental PE found during other studies",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >75",
+                "md_calc_info_concept": null,
+                "name": "age_75",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "pulm",
+            "reite",
+            "pe",
+            "lovenox",
+            "coumadin",
+            "warfarin"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Pulmonology"
+        ]
+    }
+}

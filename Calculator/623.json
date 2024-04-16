@@ -1,0 +1,175 @@
+{
+    "id": "623",
+    "title": "Nutrition Risk in the Critically Ill (NUTRIC) Score",
+    "desc": "The Nutrition Risk in the Critically Ill (NUTRIC) Score identifies critically ill patients who can benefit from nutrition therapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22085763 ",
+                "text": "Heyland DK, Dhaliwal R, Jiang X, Day AG. Identifying critically ill patients who benefit the most from nutrition therapy: the development and initial validation of a novel risk assessment tool. Crit Care. 2011;15(6):R268."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p><span>Addition of the selected points:</span></p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td>&nbsp;</td> <td colspan=\"4\"> <p><strong>Points</strong></p> </td> </tr> <tr> <td>&nbsp;</td> <td> <p><strong>0</strong></p> </td> <td> <p><strong>1</strong></p> </td> <td> <p><strong>2</strong></p> </td> <td> <p><strong>3</strong></p> </td> </tr> <tr> <td> <p><span>Age (years)</span></p> </td> <td> <p><span>&lt;50</span></p> </td> <td> <p><span>50–74</span></p> </td> <td> <p><span>≥75</span></p> </td> <td> <p><span>--</span></p> </td> </tr> <tr> <td> <p><span><calculator id=\"1868\">APACHE II</calculator></span></p> </td> <td> <p><span>&lt;15</span></p> </td> <td> <p><span>15–19</span></p> </td> <td> <p><span>20–27</span></p> </td> <td> <p><span>≥28</span></p> </td> </tr> <tr> <td> <p><span><calculator id=\"691\">SOFA Score</calculator>*</span></p> </td> <td> <p><span>&lt;6</span></p> </td> <td> <p><span>6–9</span></p> </td> <td> <p><span>≥10</span></p> </td> <td> <p><span>--</span></p> </td> </tr> <tr> <td> <p><span>Number of comorbidities</span></p> </td> <td> <p><span>0–1</span></p> </td> <td> <p><span>≥2</span></p> </td> <td> <p><span>--</span></p> </td> <td> <p><span>--</span></p> </td> </tr> <tr> <td> <p><span>Days in hospital to ICU admit</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>≥1</span></p> </td> <td> <p><span>--</span></p> </td> <td> <p><span>--</span></p> </td> </tr> <tr> <td> <p><span>IL-6 (µ/mL)</span></p> </td> <td> <p><span>0–399</span></p> </td> <td> <p><span>≥400</span></p> </td> <td> <p><span>--</span></p> </td> <td> <p><span>--</span></p> </td> </tr> </tbody> </table> </div> <p><span>*Initial, on presentation.</span></p>",
+        "facts": "<p><span>Interpretation:</span></p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>NUTRIC Score</strong></p> </td> <td> <p><strong>Risk</strong></p> </td> <td> <p><strong>28-day mortality</strong></p> </td> </tr> <tr> <td> <p><span>0</span></p> </td> <td rowspan=\"6\"> <p><span>Low risk</span></p> </td> <td> <p><span>~1%</span></p> </td> </tr> <tr> <td> <p><span>1 </span></p> </td> <td> <p><span>~2%</span></p> </td> </tr> <tr> <td> <p><span>2</span></p> </td> <td> <p><span>~3%</span></p> </td> </tr> <tr> <td> <p><span>3</span></p> </td> <td> <p><span>~8%</span></p> </td> </tr> <tr> <td> <p><span>4</span></p> </td> <td> <p><span>~11%</span></p> </td> </tr> <tr> <td> <p><span>5</span></p> </td> <td> <p><span>~20%</span></p> </td> </tr> <tr> <td> <p><span>6</span></p> </td> <td rowspan=\"5\"> <p><span>High risk</span></p> </td> <td> <p><span>~30%</span></p> </td> </tr> <tr> <td> <p><span>7</span></p> </td> <td> <p><span>~45%</span></p> </td> </tr> <tr> <td> <p><span>8</span></p> </td> <td> <p><span>~58%</span></p> </td> </tr> <tr> <td> <p><span>9</span></p> </td> <td> <p><span>~70%</span></p> </td> </tr> <tr> <td> <p><span>10</span></p> </td> <td> <p><span>~80%</span></p> </td> </tr> </tbody> </table> </div>",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Malnutrition",
+            "Sepsis"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs - addition of pts\nvar score = parseFloat(age) + parseFloat(apache) + parseFloat(sofa) + parseFloat(num) + parseFloat(days) + parseFloat(il);\n\n//interpretation\nvar extra;\nvar risk = 'Low';\nif(score > 5){\n\trisk = 'High';\n\textra = 'Consider aggressive nutrition therapy (enteral or parenteral).';\n}\nelse {\n\textra = ' '\n}\nvar mort;\nvar dict = {\n\t'0': 1,\n\t'1': 2,\n\t'2': 3,\n\t'3': 8,\n\t'4': 11,\n\t'5': 20,\n\t'6': 30,\n\t'7': 45,\n\t'8': 58,\n\t'9': 70,\n\t'10': 80\n}\n\nfor (var key in dict){\n\tif (key = score){\n\t\tmort = dict[key];\n\t}\n}\nif(score === 0){\n\tmort = 1;\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'NUTRIC Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'NUTRIC Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: 'risk',\n    message: '~' + mort + '% mortality at 28 days.<br/>' + extra\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<50",
+                        "value": 0
+                    },
+                    {
+                        "label": "50–74",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥75",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='1868'>APACHE II</calculator>",
+                "name": "apache",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<15",
+                        "value": 0
+                    },
+                    {
+                        "label": "15-19",
+                        "value": 1
+                    },
+                    {
+                        "label": "20-27",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥28",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='691'>SOFA Score</calculator>",
+                "name": "sofa",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<6",
+                        "value": 0
+                    },
+                    {
+                        "label": "6–9",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥10",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Initial, on presentation.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Number of comorbidities",
+                "name": "num",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0-1",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥2",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Days in hospital to ICU admit",
+                "name": "days",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥1",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "label_en": "IL-6, µ/mL",
+                "name": "il",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "0–399",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥400",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Optional",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "nutric",
+            "nurtrition",
+            "TPN",
+            "parenteral nutrition"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Gastroenterology",
+            "Clinical Nutrition"
+        ]
+    }
+}

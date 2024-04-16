@@ -1,0 +1,181 @@
+{
+    "id": "555",
+    "title": "IMPROVE RAM (International Medical Prevention Registry on Venous Thromboembolism Risk Assessment Model)",
+    "desc": "The IMPROVE RAM (International Medical Prevention Registry on Venous Thromboembolism Risk Assessment Model) estimates risk of VTE.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://www.ncbi.nlm.nih.gov/pubmed/17573514",
+                "text": "Tapson VF, Decousus H, Pini M, Chong BH, Froehlich JB, Monreal M, Spyropoulos AC, Merli GJ, Zotz RB, Bergmann JF, Pavanello R, Turpie AG, Nakamura M, Piovella F, Kakkar AK, Spencer FA, Fitzgerald G, Anderson FA Jr; IMPROVE Investigators. Venous thromboembolism prophylaxis in acutely ill hospitalized medical patients: findings from the International Medical Prevention Registry on Venous Thromboembolism. Chest. 2007 Sep;132(3):936-45. Epub 2007 Jun 15. PubMed PMID: 17573514."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://www.ncbi.nlm.nih.gov/pubmed/23539415",
+                "text": "Tapson VF. Thrombolytic therapy for acute pulmonary embolism. Semin Thromb Hemost. 2013 Jun;39(4):452-8. doi: 10.1055/s-0033-1334145. Epub 2013 Mar 28. Review. PubMed PMID: 23539415."
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p> <table class=\"table table-bordered table-hover\"> <tbody> <tr> <th>Risk Factors Associated With the IMPROVE RAM Score</th> <th>Points Added</th> </tr> <tr> <td>Previous VTE</td> <td>+3</td> </tr> <tr> <td>Known thrombophilia</td> <td>+2</td> </tr> <tr> <td>Lower limb paralysis</td> <td>+2</td> </tr> <tr> <td>Cancer</td> <td>+2</td> </tr> <tr> <td>Immobilization</td> <td>+1</td> </tr> <tr> <td>Intensive care unit or coronary care unit stay</td> <td>+1</td> </tr> <tr> <td>Age &gt;60 years</td> <td>+1</td> </tr> </tbody> </table>",
+        "facts": "<p><strong>Score interpretation:</strong></p> <table class=\"table table-bordered table-hover\" width=\"328\"> <tbody> <tr> <th>IMPROVE RAM Score</th> <th>Risk Group</th> </tr> <tr> <td>≤ 2</td> <td>Low risk of venous thromboembolism (VTE)</td> </tr> <tr> <td>≥ 3</td> <td>At risk of VTE</td> </tr> </tbody> </table>",
+        "estimation": [],
+        "primary_complains": [
+            "Extremity Edema",
+            "Extremity Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(vte) + parseFloat(known) + parseFloat(paralysis) + parseFloat(ca) + parseFloat(immob) + parseFloat(icu) + parseFloat(age);\nvar msg = '';\nvar mini_msg = '';\nif (u <= 2) {\n    msg = 'Low risk of venous thromboembolism (VTE).';\n    mini_msg = 'Low risk'\n}\nif (u >= 3) {\n    msg = 'High risk of venous thromboembolism (VTE).';\n    mini_msg = 'High risk'\n}\ncalc_output.push({ name: 'mini', value: u, value_text: 'points', message: mini_msg });\ncalc_output.push({ name: 'IMPROVE RAM', value: u, value_text: 'points', message: msg });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Previous VTE",
+                "name": "vte",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "N",
+                        "value": 0
+                    },
+                    {
+                        "label": "Y",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Known thrombophilia",
+                "name": "known",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "N",
+                        "value": 0
+                    },
+                    {
+                        "label": "Y",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lower limb paralysis",
+                "name": "paralysis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "N",
+                        "value": 0
+                    },
+                    {
+                        "label": "Y",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cancer",
+                "name": "ca",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "N",
+                        "value": 0
+                    },
+                    {
+                        "label": "Y",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Immobilization",
+                "name": "immob",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "N",
+                        "value": 0
+                    },
+                    {
+                        "label": "Y",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intensive care unit or coronary care unit stay",
+                "name": "icu",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "N",
+                        "value": 0
+                    },
+                    {
+                        "label": "Y",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >60 years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "N",
+                        "value": 0
+                    },
+                    {
+                        "label": "Y",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "improve",
+            "ram",
+            "vte",
+            "dvt",
+            "pe",
+            "risk",
+            "model"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Hospitalist Medicine"
+        ]
+    }
+}

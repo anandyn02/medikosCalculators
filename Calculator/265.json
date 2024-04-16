@@ -1,0 +1,153 @@
+{
+    "id": "265",
+    "title": "Ongoing Violence Assessment Tool (OVAT)",
+    "desc": "The Ongoing Violence Assessment Tool (OVAT) detects domestic abuse (intimate partner violence) in women and men in emergency department settings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/12816400/",
+                "text": "Weiss SJ, Ernst AA, Cham E, Nick TG. Development of a screen for ongoing intimate partner violence. Violence Vict. 2003;18(2):131-141."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The OVAT screening result is determined according to the following points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%;\"><colgroup><col style=\"width: 50.51194539249146%;\"><col style=\"width: 28.49829351535836%;\"><col style=\"width: 20.81911262798635%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Within the past month&hellip;</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Has your partner threatened you with a weapon?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Has your partner beaten you so badly that you had to seek medical care?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Has your partner acted like they would like to kill you?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\"><span>Has your partner had no respect for your feelings?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Never</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Rarely</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Occasionally</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Frequently</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Very frequently</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>5</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p>A &ldquo;yes&rdquo; answer to any of the first three questions or an &ldquo;occasionally&rdquo;, &ldquo;frequently&rdquo;, or &ldquo;very frequently&rdquo; answer to the last question is considered a positive screening result.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "Altered Mental Status",
+            "Anxious",
+            "Depressed",
+            "Injury/Trauma",
+            "Loss of Appetite",
+            "Preventive Care/Screening",
+            "Suicidal",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Public Health"
+        ],
+        "logic": "var calc_output = [];\n\nvar one = parseFloat(one);\nvar two = parseFloat(two);\nvar three = parseFloat(three);\nvar four = parseFloat(four);\n\nvar result;\n\nif (one == 1 || two == 1 || three == 1 || four >=3) {\n    result = 'Positive';\n} else {\n    result = 'Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: '',\n    message: 'Screening result'\n});\ncalc_output.push({\n    name: 'result',\n    value: result,\n    value_text: '',\n    message: 'Screening result'\n});\n",
+        "inputs": [
+            {
+                "subheading": "<p>Within the past month...</p>",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Has your partner threatened you with a weapon?</p>",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Has your partner beaten you so badly that you had to seek medical care?</p>",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Has your partner acted like they would like to kill you?</p>",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Has your partner had no respect for your feelings?</p>",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 1
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 2
+                    },
+                    {
+                        "label": "Occasionally",
+                        "value": 3
+                    },
+                    {
+                        "label": "Frequently",
+                        "value": 4
+                    },
+                    {
+                        "label": "Very frequently",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Ongoing Violence Assessment Tool (OVAT)",
+            "ovat",
+            "abuse",
+            "abuse screening",
+            "abuse screening tool",
+            "domestic abuse",
+            "domestic abuse screening",
+            "domestic violence",
+            "domestic violence screening",
+            "IPV",
+            "intimate partner violence"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "OB-Gyn",
+            "OB-Gyn"
+        ]
+    }
+}

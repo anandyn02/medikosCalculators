@@ -1,0 +1,336 @@
+{
+    "id": "627",
+    "title": "Brief Resolved Unexplained Events (BRUE) Criteria for Infants",
+    "desc": "The Brief Resolved Unexplained Events (BRUE) Criteria for Infants classifies unexplained events and replaces the Apparent Life Threatening Events (ALTE) classification.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pediatrics.aappublications.org/content/early/2016/04/21/peds.2016-0590",
+                "text": "Tieder JS, Bonkowsky JL, Etzel RA, et al. Brief Resolved Unexplained Events (Formerly Apparent Life-Threatening Events) and Evaluation of Lower-Risk Infants. Pediatrics. 2016;137(5)"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28814262",
+                "text": "Zwemer E, Claudius I, Tieder J. Update on the Evaluation and Management of Brief Resolved Unexplained Events (Previously Apparent Life-Threatening Events). Rev Recent Clin Trials. 2017;12. doi:10.2174/1574887112666170816150104."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17403838 ",
+                "text": "Claudius I, Keens T. Do all infants with apparent life-threatening events need to be admitted?. Pediatrics. 2007;119(4):679-83."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18950797",
+                "text": "Al-kindy HA, Gélinas JF, Hatzakis G, Côté A. Risk factors for extreme events in infants hospitalized for apparent life-threatening events. J Pediatr. 2009;154(3):332-7, 337.e1-2."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22743742",
+                "text": "Mittal MK, Sun G, Baren JM. A clinical decision rule to identify infants with apparent life-threatening event who can be safely discharged from the emergency department. Pediatr Emerg Care. 2012;28(7):599-605."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23734987 ",
+                "text": "Kaji AH, Santillanes G, Claudius I, et al. Do infants less than 12 months of age with an apparent life-threatening event need transport to a pediatric critical care center?. Prehosp Emerg Care. 2013;17(3):304-11."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23415612 ",
+                "text": "Tieder JS, Altman RL, Bonkowsky JL, et al. Management of apparent life-threatening events in infants: a systematic review. J Pediatr. 2013;163(1):94-9.e1-6."
+            }
+        ],
+        "evidence": "<p>To be classified as a BRUE, all of the following must be true:</p>\n<ul>\n<li>Infant &lt;1 year old.</li>\n<li>Asymptomatic on presentation (no URI symptoms, no fever).</li>\n<li>No explanation for the event after conducting history and physical (e.g. GER, feeding difficulties).</li>\n<li>History of sudden, brief, and now resolved episode consisting of &ge;1 of the following:</li>\n<ul>\n<li>Cyanosis or pallor.</li>\n<li>Absent, decreased, or irregular breathing.</li>\n<li>Marked change in tone (hyper or hypotonia).</li>\n<li>Altered level of responsiveness.</li>\n</ul>\n</ul>\n<p>Then, for a BRUE to be classified as low risk, all of the following must also be true:</p>\n<ul>\n<li>Episode duration &lt;1 minute.</li>\n<li>&gt;2 months of age.</li>\n<li>No history of prematurity.*</li>\n<li>No prior BRUE.</li>\n<li>No need for CPR by medical provider.</li>\n</ul>\n<p>*&ge;32 weeks gestational age or&nbsp;&ge;45 weeks postconceptional age for infants born at &lt;32 weeks.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar initial = parseFloat(infant) + parseFloat(asx) + parseFloat(hp) + parseFloat(episode);\n\nvar msg, risk, rec;\n\nif (initial < 4){\n    msg = \"Not BRUE\"\n    risk = \"\"\n    rec = \"Entry criteria not fulfilled\"\n}\nif(initial == 4){\n    var brue = parseFloat(cyanosis) + parseFloat(breathing) + parseFloat(tone) + parseFloat(altered);\n    if (brue >= 1){ \n    var other = parseFloat(duration) + parseFloat(age) + parseFloat(prematurity) + parseFloat(prior) + parseFloat(cpr);\n\tmsg = \"BRUE\";\n\trisk = \"Not lower risk\";\n    rec = \". Proceed with usual workup.\";\n    }\n    if (brue == 0) {\n    msg = \"Not BRUE\"\n    risk = ''\n    rec = 'Proceed with usual workup'\n    }\n\n\tif(other == 5){\n\t\tmsg = \"BRUE\";\n\t\trisk = \"Lower risk\";\n        rec = \". Assess social risk factors to detect child abuse. Should not admit for monitoring or do laboratory workup. See Advice for details.\"\n\t}\n   if (other < 5) {\n        msg = \"BRUE\"\n        risk = 'Not lower risk'\n        rec = ''\n    }\n}\n//results\ncalc_output.push({\n    name: 'mini',\n    value: msg,\n    value_text: '',\n    message: risk\n});\ncalc_output.push({\n    name: 'Result',\n    value: msg,\n    value_text: '',\n    message: risk + rec\n});\n",
+        "inputs": [
+            {
+                "subheading": "Entry criteria",
+                "subheading_instructions": "Must fulfill all 4 to evaluate for BRUE",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Infant <1 year old",
+                "name": "infant",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Asymptomatic on presentation",
+                "name": "asx",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "E.g. no <abbr title='Upper respiratory infection'>URI</abbr> symptoms, no fever",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "No explanation for the event after conducting history and physical",
+                "name": "hp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "E.g. <abbr title='Gastroesophageal reflux'>GER</abbr>, feeding difficulties",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "History of sudden, brief, and now resolved episode",
+                "name": "episode",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "BRUE criteria",
+                "subheading_instructions": "Must fulfill ≥1 to qualify as BRUE; episode consisting of:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "infant == 1 && asx == 1 && hp == 1 && episode == 1",
+                "default": 0,
+                "label_en": "Cyanosis or pallor",
+                "name": "cyanosis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "infant == 1 && asx == 1 && hp == 1 && episode == 1",
+                "default": 0,
+                "label_en": "Absent, decreased, or irregular breathing",
+                "name": "breathing",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "infant == 1 && asx == 1 && hp == 1 && episode == 1",
+                "default": 0,
+                "label_en": "Marked change in tone",
+                "name": "tone",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Hyper or hypotonia",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "infant == 1 && asx == 1 && hp == 1 && episode == 1",
+                "default": 0,
+                "label_en": "Altered level of responsiveness",
+                "name": "altered",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Lower risk BRUE criteria",
+                "subheading_instructions": "Must fulfill all 5 to qualify as lower risk BRUE",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "cyanosis == 1 || breathing == 1 || tone == 1 || altered == 1",
+                "default": 0,
+                "label_en": "Episode duration <1 minute",
+                "name": "duration",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "cyanosis == 1 || breathing == 1 || tone == 1 || altered == 1",
+                "default": 0,
+                "label_en": "Age >2 months",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "cyanosis == 1 || breathing == 1 || tone == 1 || altered == 1",
+                "default": 0,
+                "label_en": "No history of prematurity",
+                "name": "prematurity",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "≥32 weeks gestational age or ≥45 weeks postconceptional age",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "cyanosis == 1 || breathing == 1 || tone == 1 || altered == 1",
+                "default": 0,
+                "label_en": "No prior BRUE",
+                "name": "prior",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "cyanosis == 1 || breathing == 1 || tone == 1 || altered == 1",
+                "default": 0,
+                "label_en": "No need for CPR by medical provider",
+                "name": "cpr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "brue",
+            "alte",
+            "sids"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Pediatrics"
+        ]
+    }
+}

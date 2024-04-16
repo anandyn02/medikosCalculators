@@ -1,0 +1,224 @@
+{
+    "id": "549",
+    "title": "MASCC Risk Index for Febrile Neutropenia",
+    "desc": "The MASCC Risk Index for Febrile Neutropenia identifies patients at low risk for poor outcome with febrile neutropenia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10944139",
+                "text": "Klastersky J, Paesmans M, Rubenstein EB, Boyer M, Elting L, Feld R, Gallagher J, Herrstedt J, ,Rapoport B, Rolston K, Talcott J. The Multinational Association for Supportive Care in Cancer risk index: A multinational scoring system for identifying low-risk febrile neutropenic cancer patients. J Clin Oncol. 2002;Aug;18(16):3038-51."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23443617 ",
+                "text": "Klastersky J, Paesmans M. The Multinational Association for Supportive Care in Cancer (MASCC) risk index score: 10 years of use for identifying low-risk febrile neutropenic cancer patients. Support Care Cancer. 2013;21(5):1487-95."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28041827 ",
+                "text": "Coyne CJ, Le V, Brennan JJ, et al. Application of the MASCC and CISNE Risk-Stratification Scores to Identify Low-Risk Febrile Neutropenic Patients in the Emergency Department. Ann Emerg Med. 2017;69(6):755-764."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25559804 ",
+                "text": "Carmona-bayonas A, Jiménez-fonseca P, Virizuela echaburu J, et al. Prediction of serious complications in patients with seemingly stable febrile neutropenia: validation of the Clinical Index of Stable Febrile Neutropenia in a prospective cohort of patients from the FINITE study. J Clin Oncol. 2015;33(5):465-71."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>2 points</strong></p>\n</td>\n<td>\n<p><strong>3 points</strong></p>\n</td>\n<td>\n<p><strong>4 points</strong></p>\n</td>\n<td>\n<p><strong>5 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Burden of illness (symptom severity)</p>\n</td>\n<td>\n<p>Severe</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Moderate</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>None or mild</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Hypotension</p>\n<p>(sBP &lt;90 mmHg)</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>No</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Active COPD</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Solid tumor (or hematological malignancy without prior fungal infection)</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Dehydration requiring IV therapy</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Status at onset of fever</p>\n</td>\n<td>\n<p>Inpatient</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Outpatient</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Age</p>\n</td>\n<td>\n<p>&ge;60 years</p>\n</td>\n<td>\n<p>&lt;60 years</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>&ldquo;Poor outcome&rdquo; was defined as any of the following:</p>\n<ul>\n<li>Hypotension: systolic blood pressure &lt;90 mmHg or need for pressor support to maintain BP.</li>\n<li>Respiratory failure: PaO<sub>2</sub> &lt;60 mmHg while breathing room air, or need for mechanical ventilation.</li>\n<li>ICU admission.</li>\n<li>Disseminated intravascular coagulation.</li>\n<li>Confusion or altered mental state.</li>\n<li>CHF seen on chest x-ray and requiring treatment.</li>\n<li>Bleeding severe enough to require transfusion.</li>\n<li>Arrhythmia or EKG changes requiring treatment.</li>\n<li>Renal failure requiring investigation and/or treatment with IV fluids, dialysis, or any other intervention.</li>\n<li>Other complications judged serious and clinically significant by the investigator.</li>\n</ul>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>MASCC Risk Index</strong></p>\n</td>\n<td>\n<p><strong>Risk for febrile neutropenia</strong></p>\n</td>\n<td>\n<p><strong>Recommendation*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;21</p>\n</td>\n<td>\n<p>Low risk</p>\n</td>\n<td>\n<p>Consider oral and/or outpatient empirical antibiotic therapy.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&lt;21</p>\n</td>\n<td>\n<p>High risk</p>\n</td>\n<td>\n<p>Admit for empiric antibiotics if not already inpatient.</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*From the <a href=\"https://pubmed.ncbi.nlm.nih.gov/21258094/\" target=\"_blank\" rel=\"noopener\"><abbr title=\"Infectious Disease Society of America\">IDSA</abbr> Clinical Practice Guideline for the Use of Antimicrobial Agents in Neutropenic Patients with Cancer, 2010</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Fever"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "CML",
+            "HIV/AIDS",
+            "Sepsis"
+        ],
+        "logic": "var calc_output = [];\n\nvar burden = parseFloat(burden);\nvar bp = parseFloat(bp);\nvar copd = parseFloat(copd);\nvar solid = parseFloat(solid);\n// var fung = parseFloat(fung)\nvar hyd = parseFloat(hyd);\nvar outpt = parseFloat(outpt);\nvar age = parseFloat(age);\n\nvar u = burden + bp + copd + solid + hyd + outpt + age;\n\n// if (solid == 4) {\n// \tu = burden + bp + copd + solid + hyd + outpt + age\n// }\n// if (solid == 0){\n// \tu = burden + bp + copd + solid + hyd + outpt + age + parseFloat(fung)\n// }\n\nvar msg;\nvar rec;\n\nif (u >= 21) {\n\tmsg = \"Low risk for poor outcome.\"; \n\trec = \" Consider oral and/or outpatient empiric antibiotic therapy after discussion with oncology.\";\n}\nif (u < 21) {\n\tmsg = \"High risk for poor outcome.\";\n\trec = \" Admit for empiric antibiotics if not already inpatient.\";\n}\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg \n});\ncalc_output.push({ \n\tname: '3913_MASCC Risk Index_result', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg + rec\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Burden of illness (symptom severity)</p>",
+                "mdcalc_info_concept": null,
+                "name": "burden",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or mild",
+                        "value": 5
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 3
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "As determined by attending physician at presentation",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hypotension</p>",
+                "md_calc_info_concept": null,
+                "name": "bp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 5
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<abbr title='Systolic Blood Pressure'>sBP</abbr> <90 mmHg",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Active COPD</p>",
+                "md_calc_info_concept": null,
+                "name": "copd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 4
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Active chronic bronchitis, emphysema, decreased <abbr title='Forced Expiratory Volume'>FEV</abbr>, or need for oxygen therapy, corticosteroids, and/or bronchodilators",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Type of cancer</p>",
+                "mdcalc_info_concept": null,
+                "name": "solid",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Solid tumor",
+                        "value": 4
+                    },
+                    {
+                        "label": "Hematologic, no prior fungal infection",
+                        "value": 4
+                    },
+                    {
+                        "label": "Hematologic, prior fungal infection",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Dehydration requiring IV fluids</p>",
+                "md_calc_info_concept": null,
+                "name": "hyd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 3
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Status at onset of fever</p>",
+                "md_calc_info_concept": null,
+                "name": "outpt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Outpatient",
+                        "value": 3
+                    },
+                    {
+                        "label": "Inpatient",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Age (years)</p>",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<60",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥60",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "FN",
+            "sepsis",
+            "neutrophil",
+            "oncology",
+            "cancer",
+            "CA",
+            "outpatient",
+            "inpatient",
+            "solid tumor",
+            "fever"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Infectious Disease",
+            "Internal Medicine"
+        ]
+    }
+}

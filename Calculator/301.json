@@ -1,0 +1,313 @@
+{
+    "id": "301",
+    "title": "Acute Renal Failure after Cardiac Surgery (Thakar Score)",
+    "desc": "The Acute Renal Failure after Cardiac Surgery (Thakar Score) predicts risk of acute renal failure (ARF) requiring dialysis after cardiac surgery.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/15563569/",
+                "text": "Thakar CV, Arrigain S, Worley S, Yared JP, Paganini EP. A clinical score to predict acute renal failure after cardiac surgery. J Am Soc Nephrol. 2005;16(1):162-168."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The Thakar Score is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%;\"><colgroup><col style=\"width: 47.4601%;\"><col style=\"width: 35.4103%;\"><col style=\"width: 17.1296%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Gender</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Male</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Female</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Congestive heart failure</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Left ventricular ejection fraction &lt;35%</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Preoperative use of <abbr title=\"Intra-aortic balloon pump\">IABP</abbr></span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>COPD</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Insulin-requiring diabetes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Previous cardiac surgery</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Emergency surgery</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><span>Surgery type</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>None</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Valve only</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span><abbr title=\"Coronary artery bypass grafting\">CABG</abbr> and valve</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Other</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><span>Preoperative creatinine</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&lt;1.2 mg/dL</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>1.2-2.0 mg/dL</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&gt;2.0 mg/dL</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>5</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 64.4342%;\"><colgroup><col style=\"width: 54.9801%;\"><col style=\"width: 45.0199%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Thakar Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of ARF</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>0-2</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.4%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>3-5</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1.8%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>6-8</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>7.8-9.5%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;9</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>21.3-21.5%</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Arrhythmia",
+            "Back Pain",
+            "Bloating",
+            "Chest Pain",
+            "Cough",
+            "Diarrhea",
+            "Extremity Edema",
+            "Extremity Pain",
+            "Fatigue",
+            "Fever",
+            "Loss of Appetite",
+            "Nausea",
+            "Neck Pain",
+            "Peripheral Edema",
+            "Shortness of Breath",
+            "Sore Throat",
+            "Swelling",
+            "Vomiting",
+            "Weakness",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Arterial Aneurysm",
+            "CHF",
+            "Congestive Heart Failure",
+            "Coronary Artery Disease",
+            "Endocarditis",
+            "Heart Failure",
+            "Myocardial Infarction",
+            "Myocarditis",
+            "Hypertrophic Cardiomyopathy"
+        ],
+        "logic": "var calc_output = [];\n\nvar gender = parseFloat(gender);\nvar chf = parseFloat(chf);\nvar left = parseFloat(left);\nvar iabp = parseFloat(iabp);\nvar copd = parseFloat(copd);\nvar insulin = parseFloat(insulin);\nvar cardiac = parseFloat(cardiac);\nvar surgery = parseFloat(surgery);\nvar type = parseFloat(type);\nvar cr = parseFloat(cr);\n\nvar score = gender + chf + left + iabp + copd + insulin + cardiac + surgery + type + cr;\n\nvar risk;\nif (score <= 2) {\n    risk = '0.4';\n} else if (score <= 5) {\n    risk = '1.8';\n} else if (score <= 8) {\n    risk = '7.8-9.5';\n} else {\n    risk = '21.3-21.5';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'Thakar Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Thakar Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: '%',\n    message: 'Risk of ARF'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Gender</p>",
+                "mdcalc_info_concept": null,
+                "name": "gender",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Congestive heart failure</p>",
+                "mdcalc_info_concept": null,
+                "name": "chf",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Left ventricular ejection fraction &lt;35%</p>",
+                "mdcalc_info_concept": null,
+                "name": "left",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Preoperative use of <abbr title=\"Intra-aortic balloon pump\">IABP</abbr></p>",
+                "mdcalc_info_concept": null,
+                "name": "iabp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>COPD</p>",
+                "mdcalc_info_concept": null,
+                "name": "copd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Insulin-requiring diabetes</p>",
+                "mdcalc_info_concept": null,
+                "name": "insulin",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Previous cardiac surgery</p>",
+                "mdcalc_info_concept": null,
+                "name": "cardiac",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Emergency surgery</p>",
+                "mdcalc_info_concept": null,
+                "name": "surgery",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Surgery type</p>",
+                "mdcalc_info_concept": null,
+                "name": "type",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Valve only",
+                        "value": 1
+                    },
+                    {
+                        "label": "<abbr title=\"Coronary artery bypass grafting\">CABG</abbr> and valve",
+                        "value": 2
+                    },
+                    {
+                        "label": "Other",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Preoperative creatinine, mg/dL</p>",
+                "mdcalc_info_concept": null,
+                "name": "cr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<1.2",
+                        "value": 0
+                    },
+                    {
+                        "label": "1.2-2.0",
+                        "value": 2
+                    },
+                    {
+                        "label": ">2.0",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Thakar Score",
+            "ARF score",
+            "ARF",
+            "ARF-D",
+            "ARF-D Score",
+            "ARF D Score",
+            "ARF D",
+            "ARFD",
+            "Dialysis Risk After Cardiac Surgery",
+            "dialysis risk",
+            "cardiac surgery",
+            "afr risk",
+            "acute renal failure",
+            "Cleveland Clinic Scoring Tool (CCST)",
+            "ccst",
+            "CCS",
+            "Cleveland Clinic Score",
+            "open heart surgery",
+            "Acute Renal Failure after Cardiac Surgery"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

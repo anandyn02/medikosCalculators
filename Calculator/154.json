@@ -1,0 +1,219 @@
+{
+    "id": "154",
+    "title": "RiskE Score for Cardiac Surgery in Active Infective Endocarditis",
+    "desc": "The RiskE Score for Cardiac Surgery in Active Infective Endocarditis predicts perioperative mortality in patients with active left-sided endocarditis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://heart.bmj.com/content/103/18/1435",
+                "text": "Olmos C, Vilacosta I, Habib G, et al. Risk score for cardiac surgery in active left-sided infective endocarditis. Heart. 2017;103(18):1435-1442."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26320109?dopt=Abstract",
+                "text": "Habib G, Lancellotti P, Antunes MJ, et al. 2015 ESC Guidelines for the management of infective endocarditis: The Task Force for the Management of Infective Endocarditis of the European Society of Cardiology (ESC). Endorsed by: European Association for Cardio-Thoracic Surgery (EACTS), the European Association of Nuclear Medicine (EANM). Eur Heart J. 2015;36(44):3075-3128."
+            },
+            {
+                "href": "https://heart.bmj.com/content/103/18/1396?ijkey=30c59a34d1199dcd59e1c74d7fb7cce71e4ffe34&keytype2=tf_ipsecsha",
+                "text": "Donal E, Flecher E, Tattevin P. Machine learning to support decision-making for cardiac surgery during the acute phase of infective endocarditis. Heart. 2017;103(18):1396-1397."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"195\" /><col width=\"157\" /><col width=\"97\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Age, years</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;51</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">52-63</p>\n</td>\n<td>\n<p dir=\"ltr\">9</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">64-72</p>\n</td>\n<td>\n<p dir=\"ltr\">13</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;73</p>\n</td>\n<td>\n<p dir=\"ltr\">14</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Prosthetic endocarditis</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Virulent microorganism*</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">9</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Septic shock</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Thrombocytopenia**</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Acute renal insufficiency</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Cardiogenic shock</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">15</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Periannular complications***</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Staphylococcus aureus or fungi.</p>\n<p dir=\"ltr\">**&lt;150,000 platelets/mm<sup>3</sup>.</p>\n<p dir=\"ltr\">***Abscess, pseudoaneurysm, fistula, or prosthetic dehiscence.</p>\n<p dir=\"ltr\">From&nbsp;<a href=\"https://heart.bmj.com/content/103/18/1435\" target=\"_blank\">Olmos 2017</a>.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<p><span id=\"docs-internal-guid-9e878b97-7fff-814d-4f61-a5ff0781ffdf\">Refer to Table S3 in <a href=\"https://heart.bmj.com/content/103/18/1435\" target=\"_blank\">Olmos 2017</a> for the predicted in-hospital&nbsp;postop mortality at each RiskE score.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Fever"
+        ],
+        "disease_treated": [
+            "Endocarditis"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar pros = parseFloat(pros);\nvar vir = parseFloat(vir);\nvar sep = parseFloat(sep);\nvar throm = parseFloat(throm);\nvar renal = parseFloat(renal);\nvar cardio = parseFloat(cardio);\nvar peri = parseFloat(peri);\n\nvar score = age + pros + vir + sep + throm + renal + cardio + peri;\n\nvar array = [9.33,\n10.24,\n10.56,\n11.61,\n12.61,\n13.87,\n14.93,\n16.87,\n18.32,\n19.50,\n21.26,\n22.38,\n24.17,\n26.66,\n28.87,\n31.02,\n32.80,\n35.13,\n36.79,\n39.59,\n42.17,\n44.64,\n47.57,\n49.73,\n52.17,\n54.39,\n56.77,\n59.08,\n61.96,\n64.82,\n66.75,\n68.52,\n70.59,\n72.32,\n74.72,\n76.65,\n78.61,\n80.09,\n81.39,\n82.97,\n83.98,\n85.74,\n86.67,\n88.05,\n89.08,\n90.09,\n90.76,\n91.18,\n92.28,\n92.93,\n94.13,\n94.29,\n94.71,\n95.11];\n\nvar risk;\n\nif (score == 0) {\n  risk = 3.36;\n} else if (score == 5) {\n  risk = 5.64;\n} else if (score == 6) {\n  risk = 6.22;\n} else if (score == 7) {\n  risk = 6.42;\n} else if (score == 9) {\n  risk = 7.96;\n} else if (score == 67) {\n  risk = 96.94;\n} else if (score == 68) {\n  risk = 97.01;\n} else {\n  risk = array[score-10];\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + '% predicted in-hospital postop mortality'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'RiskE Score'   \n    });\ncalc_output.push({\n    name: 'risk1',\n    value: risk, \n    value_text: '%',\n    message: 'Predicted in-hospital postop mortality'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤51",
+                        "value": 0
+                    },
+                    {
+                        "label": "52-63",
+                        "value": 9
+                    },
+                    {
+                        "label": "64-72",
+                        "value": 13
+                    },
+                    {
+                        "label": "≥73",
+                        "value": 14
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Prosthetic endocarditis",
+                "name": "pros",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Virulent microorganism",
+                "name": "vir",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 9
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Staphylococcus aureus or fungi",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Septic shock",
+                "name": "sep",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Thrombocytopenia",
+                "name": "throm",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<150,000 platelets/mm<sup>3</sup>",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acute renal insufficiency",
+                "name": "renal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cardiogenic shock",
+                "name": "cardio",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 15
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Periannular complications",
+                "name": "peri",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Abscess, pseudoaneurysm, fistula, or prosthetic dehiscence",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "infective endocarditis",
+            "active infective endocarditis",
+            "riske",
+            "risk e",
+            "riske score",
+            "mortality"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

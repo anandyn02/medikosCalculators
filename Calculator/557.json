@@ -1,0 +1,193 @@
+{
+    "id": "557",
+    "title": "Fong Clinical Risk Score for Colorectal Cancer Recurrence",
+    "desc": "The Fong Clinical Risk Score predicts recurrence risk for colorectal cancer patients with liver metastasis after hepatic resection.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10493478",
+                "text": "Fong Y, et al.  Clinical Score for Predicting Recurrence After Hepatic Resection for Metastatic Colorectal Cancer. Annals of Surgery. Vol. 230, No. 3, 309–321"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/10.1046/j.1445-2197.2002.02290.x/abstract",
+                "text": "Moroz P, Salama PR, Gray BN. Resecting large numbers of hepatic colorectal metastases. ANZ Journal of Surgery. 2002;72(1):5-10. doi:10.1046/j.1445-2197.2002.02290.x. "
+            },
+            {
+                "href": "https://link.springer.com/article/10.1016/j.gassur.2003.11.009",
+                "text": "Schüssler-Fiorenza CM, Mahvi DM, Niederhuber J, Rikkers LF, Weber SM. Clinical risk score correlates with yield of PET scan in patients with colorectal hepatic metastases. Journal of Gastrointestinal Surgery. 2004;8(2):150-158. doi:10.1016/j.gassur.2003.11.009. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10472930",
+                "text": "Iwatsuki S, Dvorchik I, Madariaga JR, et al. Hepatic resection for metastatic colorectal adenocarcinoma: a proposal of a prognostic scoring system. Journal of the American College of Surgeons. 1999;189(3):291-299. doi:10.1016/s1072-7515(99)00089-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15127268",
+                "text": "Nagashima I, Takada T, Matsuda K, Adachi M, Nagawa H, Muto T, Okinaga K. A new scoring system to classify patients with colorectal liver metastases: proposal of criteria to select candidates for hepatic resection. Journal of Hepato-Biliary-Pancreatic Surgery. 2004;11(2):79-83. doi:10.1007/s00534-002-0778-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17606190",
+                "text": "Lupinacci R, Penna C, Nordlinger B. Hepatectomy for Resectable Colorectal Cancer Metastases—Indicators of Prognosis, Definition of Resectability, Techniques and Outcomes. Surgical Oncology Clinics of North America. 2007;16(3):493-506. doi:10.1016/j.soc.2007.04.014."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18673436",
+                "text": "Konopke R, Kersting S, Distler M, et al. Prognostic factors and evaluation of a clinical score for predicting survival after resection of colorectal liver metastases. Liver International. 2009;29(1):89-102. doi:10.1111/j.1478-3231.2008.01845.x. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16230676",
+                "text": "Khatri VP, Petrelli NJ, Belghiti J. Extending the frontiers of surgical therapy for hepatic colorectal metastases: is there a limit? J Clin Oncol 2005; 23:8490. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19153115",
+                "text": "Nordlinger B, Van Cutsem E, Gruenberger T, Glimelius B, Poston G, Rougier P, et al. Combination of surgery and chemotherapy and the role of targeted agents in the treatment of patients with colorectal liver metastases: recommendations from an expert panel. Ann Oncol Off J Eur Soc Med Oncol ESMO. 2009;20:985–92."
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<p><strong>Variables:</strong></p>\n<ul>\n<li>Nodal status of primary.</li>\n<li>Disease-free interval from the primary to discovery of the liver metastases of &lt;12 months.</li>\n<li>Number of tumors &gt;1.</li>\n<li>Preoperative CEA level &gt;200 ng/mL.</li>\n<li>Size of the largest tumor &gt;5 cm.</li>\n</ul>\n<p>&nbsp;</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td colspan=\"5\">\n<p><strong>Survival (%)</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Score</strong></p>\n</td>\n<td>\n<p><strong>1-year</strong></p>\n</td>\n<td>\n<p><strong>2-year</strong></p>\n</td>\n<td>\n<p><strong>3-year</strong></p>\n</td>\n<td>\n<p><strong>4-year</strong></p>\n</td>\n<td>\n<p><strong>5-year</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>93</p>\n</td>\n<td>\n<p>79</p>\n</td>\n<td>\n<p>72</p>\n</td>\n<td>\n<p>60</p>\n</td>\n<td>\n<p>60</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>1</p>\n</td>\n<td>\n<p>91</p>\n</td>\n<td>\n<p>76</p>\n</td>\n<td>\n<p>66</p>\n</td>\n<td>\n<p>54</p>\n</td>\n<td>\n<p>44</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>2</p>\n</td>\n<td>\n<p>89</p>\n</td>\n<td>\n<p>73</p>\n</td>\n<td>\n<p>60</p>\n</td>\n<td>\n<p>51</p>\n</td>\n<td>\n<p>40</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>3</p>\n</td>\n<td>\n<p>86</p>\n</td>\n<td>\n<p>67</p>\n</td>\n<td>\n<p>42</p>\n</td>\n<td>\n<p>25</p>\n</td>\n<td>\n<p>20</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>4</p>\n</td>\n<td>\n<p>70</p>\n</td>\n<td>\n<p>45</p>\n</td>\n<td>\n<p>38</p>\n</td>\n<td>\n<p>29</p>\n</td>\n<td>\n<p>25</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>5</p>\n</td>\n<td>\n<p>71</p>\n</td>\n<td>\n<p>45</p>\n</td>\n<td>\n<p>27</p>\n</td>\n<td>\n<p>14</p>\n</td>\n<td>\n<p>14</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Mass",
+            "Weakness",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(nodes) + parseFloat(interval) + parseFloat(tumor) + parseFloat(cea) + parseFloat(size);\nvar surv1;\nvar surv5;\nvar risk;\nvar msg;\n\n// 1- and 5-year survival\nif (u==0) {surv1 = '93'; surv5 = '60';}\nif (u==1) {surv1 = '91'; surv5 = '44';}\nif (u==2) {surv1 = '89'; surv5 = '40';}\nif (u==3) {surv1 = '86'; surv5 = '20';}\nif (u==4) {surv1 = '70'; surv5 = '25';}\nif (u==5) {surv1 = '71'; surv5 = '14';}\n\n// risk categories\nif (u == 0 || u == 1 || u == 2) {risk = 'Low risk'; msg = 'Consider surgical intervention'}\nif (u == 3 || u == 4 || u == 5 || u == 6) {risk = 'High risk'; msg = 'Consider additional preop workup and alternatives including close surveillance'}\n\n// result on app\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: surv1 + ' survival at 1 year'\n});\n\n// result on web\ncalc_output.push({\n    name: '3925_Fong Score_result (score)',\n    value: u,\n    value_text: 'points',\n    message: risk + ': ' + msg \n})\n\ncalc_output.push({\n    name: '3925_Fong Score_result (1 yr)',\n    value: surv1,\n    value_text: '%',\n    message: '1-year survival after metastasectomy'\n});\n\ncalc_output.push({\n    name: '3925_Fong Score_result (5 yrs)',\n    value: surv5,\n    value_text: '%',\n    message: '5-year survival after metastasectomy'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Node-positive primary",
+                "md_calc_info_concept": null,
+                "name": "nodes",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Disease-free interval <12 months",
+                "md_calc_info_concept": null,
+                "name": "interval",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "From diagnosis of primary tumor to discovery of liver metastasis",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": ">1 tumor",
+                "md_calc_info_concept": null,
+                "name": "tumor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Preoperative <abbr title='Carcinoembryonic Antigen'>CEA</abbr> level >200 ng/mL",
+                "md_calc_info_concept": null,
+                "name": "cea",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Size of largest tumor >5cm",
+                "md_calc_info_concept": null,
+                "name": "size",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "colorectal",
+            "crc",
+            "colon cancer",
+            "mets",
+            "liver mets",
+            "metastasis",
+            "survival",
+            "recurrence",
+            "hepatic",
+            "resection",
+            "CRS",
+            "nodal",
+            "tumor"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hematology and Oncology",
+            "Hepatology",
+            "Surgery (General)"
+        ]
+    }
+}

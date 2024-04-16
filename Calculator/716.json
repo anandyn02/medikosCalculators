@@ -1,0 +1,217 @@
+{
+    "id": "716",
+    "title": "Sodium Deficit in Hyponatremia",
+    "desc": "The Sodium Deficit in Hyponatremia Calculates sodium quantity missing in hyponatremia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10824078",
+                "text": "Adrogué HJ, Madias NE. Hyponatremia. N Engl J Med 2000; 342:1581."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2750773",
+                "text": "Oh MS, Uribarri J, Barrido D, et al. Danger of central pontine myelinolysis in hypotonic dehydration and recommendation for treatment. Am J Med Sci 1989; 298:41"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17913972",
+                "text": "Mohmand HK, Issa D, Ahmad Z, et al. Hypertonic saline for hyponatremia: risk of inadvertent overcorrection. Clin J Am Soc Nephrol 2007; 2:1110."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6986753",
+                "text": "Watson PE, Watson ID, Batt RD. Total body water volumes for adult males and females estimated from simple anthropometric measurements. Am J Clin Nutr. 1980;33(1):27-39."
+            }
+        ],
+        "evidence": "<p>Sodium deficit = total body water&nbsp;&times; (desired Na - pt's Na)</p>\n<p>For adults, total body water (TBW) is calculated using the Watson equation:</p>\n<ul>\n<li>Men: TBW, liters = 2.447 &ndash; 0.09516&nbsp;&times; age, years + 0.1074&nbsp;&times; height, cm + 0.3362&nbsp;&times; weight, kg</li>\n<li>Women: TBW, liters = -2.097 + 0.1069&nbsp;&times; height, cm + 0.2466&nbsp;&times; weight, kg</li>\n</ul>\n<p>For children, TBW = 0.6 &times; weight, kg</p>",
+        "facts": "<p>Remember not to correct too rapidly to avoid central pontine myelinolysis!</p>\n<p>The&nbsp;<calculator id=\"480\">hyponatremia correction rate calculator</calculator>&nbsp;can be used to pick an appropriate fluid and volume as well.</p>",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Age",
+                "unit": "age_adult",
+                "error_min": "18",
+                "error_max": "110",
+                "warn_min": "18",
+                "warn_max": "110",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Height",
+                "unit": "ht",
+                "error_min": "0",
+                "error_max": "90",
+                "warn_min": "5",
+                "warn_max": "80",
+                "conversion": "2.54",
+                "normal_max_si": "213",
+                "normal_max_us": "84",
+                "normal_min_si": "152",
+                "normal_min_us": "60",
+                "units_si": "cm",
+                "units_us": "in"
+            },
+            {
+                "name": "Sodium",
+                "unit": "na",
+                "error_min": "100",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "170",
+                "conversion": "1",
+                "normal_max_si": "145",
+                "normal_max_us": "145",
+                "normal_min_si": "136",
+                "normal_min_us": "136",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Seizure",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Hyponatremia"
+        ],
+        "logic": "var calc_output = [];\n//all conversions 1:1, no need to call UOMSYSTEM, and weight functions by itself\nvar sex = parseFloat(sex)\nvar age = parseFloat(age)\nvar weight = parseFloat(weight)\nvar height = parseFloat(height)\nvar tbw\nvar unit\n\nif (UOMSYSTEM == false) {\n\tunit = 'mmol'\n}\nelse {\n\tunit = 'mEq'\n}\n\nif (age == 1) { // adult\n\tvar age_no = parseFloat(age_no)\n    if (sex == 0) { // female\n    \ttbw = -2.097 + 0.1069 * height + 0.2466 * weight\n    } \n    else { // male\n\t\ttbw = 2.447 - 0.09516 * age_no + 0.1074 * height + 0.3362 * weight\n    }\n}\nelse if (age == 0) { // child\n\ttbw = 0.6 * weight; \n\t} \n\nvar v = tbw * (parseFloat(desired_sodium) - parseFloat(sodium));\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: v.toFixed(1), \n\tvalue_text: unit, \n\tmessage: 'Sodium Deficit' \n});\ncalc_output.push({ \n\tname: '95_Sodium Deficit in Hyponatremia_result', \n\tvalue: v.toFixed(1), \n\tvalue_text: unit, \n\tmessage: 'Sodium Deficit' \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Age range",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Child",
+                        "value": 0
+                    },
+                    {
+                        "label": "Adult",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 1",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age_no",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_adult"
+            },
+            {
+                "conditionality": "age == 1",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Height",
+                "name": "height",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Sodium",
+                "name": "sodium",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na"
+            },
+            {
+                "conditionality": null,
+                "default": 140,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Desired sodium",
+                "name": "desired_sodium",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na"
+            }
+        ],
+        "can_search": [
+            "na"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Pediatric)",
+            "Endocrinology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology"
+        ]
+    }
+}

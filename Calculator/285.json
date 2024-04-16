@@ -1,0 +1,176 @@
+{
+    "id": "285",
+    "title": "American University of Beirut (AUB)-HAS2 Cardiovascular Risk Index",
+    "desc": "The American University of Beirut (AUB)-HAS2 Cardiovascular Risk Index stratifies cardiovascular risk of patients undergoing noncardiac surgery.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31221255/",
+                "text": "Dakik HA, Chehab O, Eldirani M, et al. A new index for pre-operative cardiovascular evaluation. J Am Coll Cardiol. 2019;73(24):3067-3078."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>The AUB-HAS2 is calculated by the addition of the selected points:</p>\n<table style=\"width: 100%; height: 456.547px; border-width: 1px; border-style: none;\">\n<tbody>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 22.3984px; width: 78.9598%;\" colspan=\"3\"><strong>Variable</strong></td>\n<td style=\"width: 21.0402%; height: 22.3984px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 44.7968px; width: 25.0591%;\" rowspan=\"2\">Age, years</td>\n<td rowspan=\"2\" style=\"width: 34.279%; height: 44.7968px;\"></td>\n<td style=\"width: 19.6217%; height: 22.3984px;\">&lt;75</td>\n<td style=\"width: 21.0402%; height: 22.3984px;\">0</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 19.6217%; height: 22.3984px;\">&ge;75</td>\n<td style=\"width: 21.0402%; height: 22.3984px;\">1</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 44.7968px; width: 25.0591%;\" rowspan=\"2\">Hemoglobin, g/dL</td>\n<td style=\"height: 44.7968px; width: 34.279%;\" rowspan=\"2\"></td>\n<td style=\"width: 19.6217%; height: 22.3984px;\">&ge;12 g/dL</td>\n<td style=\"width: 21.0402%; height: 22.3984px;\">0</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 19.6217%; height: 22.3984px;\">&lt;12 g/dL</td>\n<td style=\"width: 21.0402%; height: 22.3984px;\">1</td>\n</tr>\n<tr style=\"height: 138.688px;\">\n<td style=\"height: 277.383px; width: 25.0591%;\" rowspan=\"2\">History of heart disease</td>\n<td style=\"height: 277.383px; width: 34.279%;\" rowspan=\"2\">e.g. history of previous myocardial infarction, coronary angioplasty, cardiac surgery, heart failure, atrial fibrillation, or moderate/severe valvular disease confirmed by echocardiography</td>\n<td style=\"width: 19.6217%; height: 138.688px;\">No</td>\n<td style=\"width: 21.0402%; height: 138.688px;\">0</td>\n</tr>\n<tr style=\"height: 138.695px;\">\n<td style=\"width: 19.6217%; height: 138.695px;\">Yes</td>\n<td style=\"width: 21.0402%; height: 138.695px;\">1</td>\n</tr>\n<tr style=\"height: 22.3906px;\">\n<td style=\"height: 44.7812px; width: 25.0591%;\" rowspan=\"2\">Angina or dyspnea</td>\n<td style=\"height: 22.3906px; width: 34.279%;\" rowspan=\"2\"></td>\n<td style=\"width: 19.6217%; height: 22.3906px;\">No</td>\n<td style=\"width: 21.0402%; height: 22.3906px;\">0</td>\n</tr>\n<tr style=\"height: 22.3906px;\">\n<td style=\"width: 19.6217%; height: 22.3906px;\">Yes</td>\n<td style=\"width: 21.0402%; height: 22.3906px;\">1</td>\n</tr>\n<tr style=\"height: 22.3906px;\">\n<td style=\"height: 22.3906px; width: 25.0591%;\" rowspan=\"2\">Vascular surgery</td>\n<td style=\"height: 22.3906px; width: 34.279%;\" rowspan=\"2\"></td>\n<td style=\"width: 19.6217%; height: 22.3906px;\">No</td>\n<td style=\"width: 21.0402%; height: 22.3906px;\">0</td>\n</tr>\n<tr>\n<td style=\"width: 19.6217%;\">Yes</td>\n<td style=\"width: 21.0402%;\">1</td>\n</tr>\n<tr>\n<td rowspan=\"2\" style=\"width: 25.0591%;\">Surgical urgency</td>\n<td rowspan=\"2\" style=\"width: 34.279%;\"></td>\n<td style=\"width: 19.6217%;\">Elective</td>\n<td style=\"width: 21.0402%;\">0</td>\n</tr>\n<tr>\n<td style=\"width: 19.6217%;\">Emergency</td>\n<td style=\"width: 21.0402%;\">1</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<table style=\"width: 100%; height: 246.382px; border-width: 1px; border-style: none;\">\n<tbody>\n<tr>\n<td style=\"width: 46.6281%;\"><strong>AUB-HAS2</strong></td>\n<td style=\"width: 46.6281%;\"><strong>Risk of Adverse Event*</strong></td>\n</tr>\n<tr>\n<td style=\"width: 46.6281%;\">0</td>\n<td style=\"width: 46.6281%;\">0.3%</td>\n</tr>\n<tr>\n<td style=\"width: 46.6281%;\">1</td>\n<td style=\"width: 46.6281%;\">1.6%</td>\n</tr>\n<tr>\n<td style=\"width: 46.6281%;\">2</td>\n<td style=\"width: 46.6281%;\">5.6%</td>\n</tr>\n<tr>\n<td style=\"width: 46.6281%;\">3</td>\n<td style=\"width: 46.6281%;\">11%</td>\n</tr>\n<tr>\n<td style=\"width: 46.6281%;\">&ge;4</td>\n<td style=\"width: 46.6281%;\">17.5%</td>\n</tr>\n</tbody>\n</table>\n<p><strong>*</strong>Defined as death, myocardial infarction, or stroke.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dizziness",
+            "Fatigue",
+            "Numbness",
+            "Vertigo",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Congestive Heart Failure",
+            "Heart Failure",
+            "Myocardial Infarction",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar hem = parseFloat(hem);\nvar heart = parseFloat(heart);\nvar angina = parseFloat(angina);\nvar vascular = parseFloat(vascular);\nvar urgency = parseFloat(urgency);\n\nvar cvri = age + hem + heart + angina + vascular + urgency;\n\nvar risk;\n\nif (cvri == 0) {\n    risk = 0.3;\n} else if (cvri == 1) {\n    risk = 1.6;\n} else if (cvri == 2) {\n    risk = 5.6;\n} else if (cvri == 3) {\n    risk = 11;\n} else {\n    risk = 17.5;\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: cvri,\n    value_text: 'points',\n    message: 'AUB-HAS2'\n});\ncalc_output.push({\n    name: 'cvri',\n    value: cvri,\n    value_text: 'points',\n    message: 'AUB-HAS2'\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '%',\n    message: 'Risk of adverse event in 30-day postoperative period'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Age, years</p>",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<75",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥75",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Hemoglobin, g/dL</p>",
+                "name": "hem",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥12 g/dL",
+                        "value": 0
+                    },
+                    {
+                        "label": "<12 g/dL",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>History of heart disease</p>",
+                "name": "heart",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. history of previous myocardial infarction, coronary angioplasty, cardiac surgery, heart failure, atrial fibrillation, or moderate/severe valvular disease confirmed by echocardiography",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Angina or dyspnea</p>",
+                "name": "angina",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Vascular surgery</p>",
+                "name": "vascular",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Surgical urgency</p>",
+                "name": "urgency",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Elective",
+                        "value": 0
+                    },
+                    {
+                        "label": "Emergency",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "American University of Beirut (AUB)-HAS2 Cardiovascular Risk Index",
+            "AUB-HAS2",
+            "aub",
+            "aub has2",
+            "cardiovascular risk index",
+            "aub cardiovascular risk index",
+            "cardio risk index",
+            "preop",
+            "preop clearance",
+            "preop risk",
+            "preoperative clearance",
+            "preoperative",
+            "preoperative risk"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Neurosurgery",
+            "Surgery (Cardiothoracic)",
+            "Surgery (General)",
+            "Surgery (Trauma)",
+            "Surgery (Vascular)"
+        ]
+    }
+}

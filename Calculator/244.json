@@ -1,0 +1,66 @@
+{
+    "id": "244",
+    "title": "Immune-Related Adverse Events for Endocrine Toxicities - Diabetes Mellitus",
+    "desc": "The Immune-Related Adverse Events for Endocrine Toxicities - Diabetes Mellitus grades severity of hyperglycemia secondary to immune checkpoint inhibitor therapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29442540 ",
+                "text": "Brahmer JR, Lacchetti C, Schneider BJ, et al. Management of Immune-Related Adverse Events in Patients Treated With Immune Checkpoint Inhibitor Therapy: American Society of Clinical Oncology Clinical Practice Guideline. J Clin Oncol. 2018;36(17):1714-1768."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col /><col /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Hyperglycemia grade</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Asymptomatic or mild symptoms; fasting glucose value &gt;160 mg/dL (&gt;8.9 mmol/L); no evidence of ketosis or laboratory evidence of T1DM&nbsp;</p>\n</td>\n<td>\n<p dir=\"ltr\">G1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate symptoms, able to perform ADLs, fasting glucose value &gt;160-250 mg/dL (&gt;8.9-13.9 mmol/L), ketosis or evidence of T1DM at any glucose level</p>\n</td>\n<td>\n<p dir=\"ltr\">G2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe symptoms, medically significant or life-threatening consequences, unable to perform ADLs; fasting glucose level &gt;250-500 mg/dL (&gt;13.9-27.8 mmol/L)&nbsp;</p>\n</td>\n<td>\n<p dir=\"ltr\">G3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe symptoms, medically significant or life-threatening consequences, unable to perform ADLs; fasting glucose level &gt;500 mg/dL (&gt;27.8 mmol/L)&nbsp;</p>\n</td>\n<td>\n<p dir=\"ltr\">G4</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">See Next Steps for details on management.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue",
+            "Headache",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus",
+            "Hyperglycemia"
+        ],
+        "logic": "var calc_output = [];\n\nvar grading = parseFloat(grading);\nvar rec;\n\nswitch (grading) {\n  case 1:\n    rec = 'May continue ICPi with close follow-up; if new onset T2DM consider oral antidiabetics; screen for T1DM if suspected; see Next Steps for details';\n    break;\n  case 2:\n    rec = 'May hold ICPi until serum glucose is controlled; titrate oral therapy or add insulin if worsening of preexisting T2DM; initiate insulin if T1DM is diagnosed or suspected; consult endocrinology if T1DM; consider hospital admission if T1DM and DKA or immediate outpatient evaluation is not available; see Next Steps for details';\n    break;\n  case 3:\n    rec = 'Hold ICPi until pt recovers to Grade ≤1; consult endocrinology; initiate insulin; admit if the patient is symptomatic, DKA development is concerned, or endocrinology is unavailable for patient with T1DM; see Next Steps for details';\n    break;\n  case 4:\n    rec = 'Hold ICPi until pt recovers to Grade ≤1; consult endocrinology; initiate insulin; admit if the patient is symptomatic, DKA development is concerned, or endocrinology is unavailable for patient with T1DM; see Next Steps for details';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: 'G'+grading,\n    value_text: '',\n    message: 'Hyperglycemia grade'   \n});\ncalc_output.push({\n    name: 'Score',\n    value: 'G'+grading,\n    value_text: '',\n    message: 'Hyperglycemia grade'   \n});\ncalc_output.push({\n    name: 'risk1',\n    value: '', \n    value_text: '',\n    message: rec\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Criteria",
+                "name": "grading",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Asymptomatic or mild symptoms; fasting glucose value >160 mg/dL (>8.9 mmol/L); no evidence of ketosis or laboratory evidence of T1DM ",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate symptoms, able to perform ADLs, fasting glucose value >160-250 mg/dL (>8.9-13.9 mmol/L), ketosis or evidence of T1DM at any glucose level",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe symptoms, medically significant or life-threatening consequences, unable to perform ADLs; fasting glucose level >250-500 mg/dL (>13.9-27.8 mmol/L) ",
+                        "value": 3
+                    },
+                    {
+                        "label": "Severe symptoms, medically significant or life-threatening consequences, unable to perform ADLs; fasting glucose level >500 mg/dL (>27.8 mmol/L) ",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Immune Related Adverse Events, irae, hyperglycemia, immune checkpoint inhibitor therapy, ICPi therapy, ASCO guideline, ASCO, Diabetes Mellitus, diabetes"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Endocrinology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

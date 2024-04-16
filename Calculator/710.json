@@ -1,0 +1,128 @@
+{
+    "id": "710",
+    "title": "Parkland Formula for Burns",
+    "desc": "Calculates fluid requirements for burn patients in a 24-hour period.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4609676",
+                "text": "Baxter CR. Fluid volume and electrolyte changes in the early post-burn period. Clin Plast Surg 1974;1:693–703."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18182919",
+                "text": "Blumetti J, et. al. The Parkland Formula Under Fire: Is the Criticism Justified? J Burn Care Res. 2008 Jan-Feb;29(1):180-6."
+            },
+            {
+                "href": "https://www.ameriburn.org",
+                "text": "American Burn Association Guideline. Available at: http://www.ameriburn.org."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15062415",
+                "text": "Ahrns KS. Trends in burn resuscitation: Shifting the focus from fluids to adequate endpoint monitoring, edema control, and adjuvant therapies. Crit Care Nurs Clin N Am 2004; 16:75–98"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10347386",
+                "text": "Ahrns KS, Harkins DR. Initial resuscitation after burn injury: Therapies, strategies, and controversies. AACN Clin Issue 1999; 10:46–60"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11900940",
+                "text": "Jeng JC, Jablonski K, Bridgeman A, et al. Serum lactate, not base deficit, rapidly predicts survival after major burns. Burns 2002; 28:161–166"
+            }
+        ],
+        "evidence": "<p>Fluid Requirements = TBSA burned(%) x Wt (kg) x 4mL<br>Give 1/2 of total requirements in 1st 8 hours, then give 2nd half over next 16 hours.</p>",
+        "facts": "<p>Administration of fluids:</p>\n<ul>\n<li>Give 1/2 of total requirements in 1st 8 hours (time from when the burn occurred), then give 2nd half over next 16 hours.</li>\n</ul>\n<p>Estimation:</p>\n<ul>\n<li>Rule of 9's for Adults: 9% for each arm, 18% for each leg, 9% for head,18% for front torso, 18% for back torso.</li>\n<li>Rule of 9's for Children: 9% for each arm, 14% for each leg, 18% for head, 18% for front torso, 18% for back torso.</li>\n</ul>\n<p><strong>Wallace Rule of Nines:</strong></p>\n<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/wallace-rule-of-nines.jpg\" alt=\"wallace rule of nines\"></p>",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "% Neutrophils",
+                "unit": "neut",
+                "error_min": "-0.01",
+                "error_max": "100.01",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Burns",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\nvar v = (parseFloat(weight)) * parseFloat(percentage_body_burned) * 4 / 1000;\nvar u = v / 2;\ncalc_output.push({ \n    name: 'mini', \n    value: v.toFixed(1), \n    value_text: 'L', \n    message: 'Fluid Requirements, 1st 24 Hours' \n});\ncalc_output.push({ \n    name: '83_Parkland Formula_result (1st 24 hrs)', \n    value: v.toFixed(1), \n    value_text: 'L', \n    message: 'Fluid requirements, 1st 24 hours from time of burn' \n});\ncalc_output.push({ \n    name: '83_Parkland Formula_result (1st 8 hrs)', \n    value: u.toFixed(1), \n    value_text: 'L', \n    message: 'Fluid requirements, 1st 8 hours (1/2 of Total) from time of burn' \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Rule of 9's for Adults: 9% for each arm, 18% for each leg, 9% for head,18% for front torso, 18% for back torso.<br />Rule of 9's for Children: 9% for each arm, 14% for each leg, 18% for head, 18% for front torso, 18% for back torso.",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Estimated percentage body burned",
+                "name": "percentage_body_burned",
+                "optional": false,
+                "tips_en": "Excluding 1st degree burns",
+                "type": "textbox",
+                "unit": "neut"
+            }
+        ],
+        "can_search": [
+            "fluid requirements ",
+            "parkland",
+            "fluids",
+            "burn",
+            "prognosis",
+            "24 hour",
+            "% of body"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

@@ -1,0 +1,108 @@
+{
+    "id": "463",
+    "title": "Karnofsky Performance Status Scale",
+    "desc": "The Karnofsky Performance Status Scale determines ability of patient to tolerate therapies in serious illness, specifically for chemotherapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "",
+                "text": "Karnofsky DA Burchenal JH. (1949). 'The Clinical Evaluation of Chemotherapeutic Agents in Cancer.' In: MacLeod CM (Ed), Evaluation of Chemotherapeutic Agents. Columbia Univ Press. Page 196."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Description</th>\n<th>Points assigned*</th>\n<th>Description</th>\n</tr>\n<tr>\n<td>Normal no complaints; no evidence of disease.</td>\n<td>100</td>\n<td rowspan=\"3\">Able to carry on normal activity and to work;<br>no special care needed.</td>\n</tr>\n<tr>\n<td>Able to carry on normal activity; minor signs or symptoms of disease.</td>\n<td>90</td>\n</tr>\n<tr>\n<td>Normal activity with effort; some signs or symptoms of disease.</td>\n<td>80</td>\n</tr>\n<tr>\n<td>Cares for self; unable to carry on normal activity or to do active work.</td>\n<td>70</td>\n<td rowspan=\"3\">Unable to work; able to live<br>at home and care for most personal needs;<br>varying amount of assistance needed.</td>\n</tr>\n<tr>\n<td>Requires occasional assistance, but is able to care for most of his personal needs.</td>\n<td>60</td>\n</tr>\n<tr>\n<td>Requires considerable assistance and frequent medical care.</td>\n<td>50</td>\n</tr>\n<tr>\n<td>Disabled; requires special care and assistance.</td>\n<td>40</td>\n<td rowspan=\"5\">Unable to care for self;<br>requires equivalent of institutional or hospital care;<br>disease may be progressing rapidly.</td>\n</tr>\n<tr>\n<td>Severely disabled; hospital admission is indicated although death not imminent.</td>\n<td>30</td>\n</tr>\n<tr>\n<td>Very sick; hospital admission necessary; active supportive treatment necessary.</td>\n<td>20</td>\n</tr>\n<tr>\n<td>Moribund; fatal processes progressing rapidly.</td>\n<td>10</td>\n</tr>\n<tr>\n<td>Dead.</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n<p>*% Survival correlates with points assigned.</p>\n</div>",
+        "facts": "<p>The lower the Karnofsky Scale, the worse the prognosis:</p>\n<ul>\n<li>Unable to tolerate therapies</li>\n<li>Survival rates decrease</li>\n</ul>\n<p>Karnofsky vs. <calculator id=\"3170\">ECOG/Zubrod Scores</calculator></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"width: 40%;\"><calculator id=\"3170\">ECOG PERFORMANCE STATUS</calculator></th>\n<th style=\"width: 60%;\">KARNOFSKY PERFORMANCE STATUS</th>\n</tr>\n<tr>\n<td rowspan=\"2\">0&mdash;Fully active, able to carry on all pre-disease performance without restriction</td>\n<td>100&mdash;Normal, no complaints; no evidence of disease</td>\n</tr>\n<tr>\n<td>90&mdash;Able to carry on normal activity; minor signs or symptoms of disease</td>\n</tr>\n<tr>\n<td rowspan=\"2\">1&mdash;Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work</td>\n<td>80&mdash;Normal activity with effort, some signs or symptoms of disease</td>\n</tr>\n<tr>\n<td>70&mdash;Cares for self but unable to carry on normal activity or to do active work</td>\n</tr>\n<tr>\n<td rowspan=\"2\">2&mdash;Ambulatory and capable of all selfcare but unable to carry out any work activities; up and about more than 50% of waking hours</td>\n<td>60&mdash;Requires occasional assistance but is able to care for most of personal needs</td>\n</tr>\n<tr>\n<td>50&mdash;Requires considerable assistance and frequent medical care</td>\n</tr>\n<tr>\n<td rowspan=\"2\">3&mdash;Capable of only limited selfcare; confined to bed or chair more than 50% of waking hours</td>\n<td>40&mdash;Disabled; requires special care and assistance</td>\n</tr>\n<tr>\n<td>30&mdash;Severely disabled; hospitalization is indicated although death not imminent</td>\n</tr>\n<tr>\n<td rowspan=\"2\">4&mdash;Completely disabled; cannot carry on any selfcare; totally confined to bed or chair</td>\n<td>20&mdash;Very ill; hospitalization and active supportive care necessary</td>\n</tr>\n<tr>\n<td>10&mdash;Moribund</td>\n</tr>\n<tr>\n<td>5&mdash;Dead</td>\n<td>0&mdash;Dead</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy"
+        ],
+        "logic": "var calc_output = [];\n\n    var msg = '';\n    var ecog;\n    var u = parseFloat(karnofsky);\n    if (u >= 10) { ecog = 'Correlates to an ECOG Performance Status of 4.<br/><br/>'; }\n    if (u >= 30) { ecog = 'Correlates to an ECOG Performance Status of 3.<br/><br/>'; }\n    if (u >= 50) { ecog = 'Correlates to an ECOG Performance Status of 2.<br/><br/>'; }\n    if (u >= 70) { ecog = 'Correlates to an ECOG Performance Status of 1.<br/><br/>'; }\n    if (u >= 90) { ecog = 'Correlates to an ECOG Performance Status of 0.<br/><br/>'; }\n    if (u == 0) { ecog = 'Correlates to an ECOG Performance Status of 5.<br/><br/>'; }\n    if (u <= 40) { mini_msg= 'Unable to care for self.'; msg = 'Unable to care for self; requires equivalent of institutional or hospital care; disease may be progressing rapidly.<br/><br/>'; }\n    if (u > 40 && u <= 70) { mini_msg= 'Unable to work; able to live at home and care for most personal needs.'; msg = 'Unable to work; able to live at home and care for most personal needs; varying amount of assistance needed.<br/><br/>'; }\n    if (u > 70) { mini_msg= 'Able to carry on normal activity and to work.'; msg = 'Able to carry on normal activity and to work; no special care needed.<br/><br/>'; }\n    \n    var addmsg = 'See definitions of the Karnofsky Scale on the About section.';\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3168_Karnofsky Scale_result',\n    value: u,\n    value_text: 'points',\n    message: msg+ecog+addmsg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Patient description</p>",
+                "mdcalc_info_concept": null,
+                "name": "karnofsky",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal no complaints; no evidence of disease",
+                        "value": 100
+                    },
+                    {
+                        "label": "Able to carry on normal activity; minor signs or symptoms of disease",
+                        "value": 90
+                    },
+                    {
+                        "label": "Normal activity with effort; some signs or symptoms of disease",
+                        "value": 80
+                    },
+                    {
+                        "label": "Cares for self; unable to carry on normal activity or to do active work",
+                        "value": 70
+                    },
+                    {
+                        "label": "Requires occasional assistance, but is able to care for most of his personal needs",
+                        "value": 60
+                    },
+                    {
+                        "label": "Requires considerable assistance and frequent medical care",
+                        "value": 50
+                    },
+                    {
+                        "label": "Disabled; requires special care and assistance",
+                        "value": 40
+                    },
+                    {
+                        "label": "Severely disabled; hospital admission is indicated although death not imminent",
+                        "value": 30
+                    },
+                    {
+                        "label": "Very sick; hospital admission necessary; active supportive treatment necessary",
+                        "value": 20
+                    },
+                    {
+                        "label": "Moribund; fatal processes progressing rapidly",
+                        "value": 10
+                    },
+                    {
+                        "label": "Dead",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "chemo",
+            "chemotherapy",
+            "ability",
+            "special care",
+            "KPS",
+            "KPSS",
+            "Karnofsky Performance Status",
+            "Karnofsky Performance Status Scale",
+            "Karnofsky Performance Scale",
+            "Karnofsky",
+            "performance status",
+            "cancer performance status",
+            "status scale",
+            "status"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Palliative Care/Hospice",
+            "Radiation Oncology"
+        ]
+    }
+}

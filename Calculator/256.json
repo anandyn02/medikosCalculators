@@ -1,0 +1,313 @@
+{
+    "id": "256",
+    "title": "Brief Resolved Unexplained Events 2.0 (BRUE 2.0) Criteria for Infants",
+    "desc": "The Brief Resolved Unexplained Events 2.0 (BRUE 2.0) Criteria for Infants classifies unexplained events, improves on the BRUE Criteria.",
+    "data": {
+        "orgreference": [
+            {
+                "href": null,
+                "text": "Nama N, Hall M, Neuman M, et al. Risk Prediction for Underlying Diagnosis and Recurrence of Brief Resolved Unexplained Events Hospital Pediatrics. 2022."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/34168059/",
+                "text": "Tieder JS, Sullivan E, Stephans A, et al. Risk factors and outcomes after a brief resolved unexplained event: a multicenter study. Pediatrics. 2021;148(1):e2020036095."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31350360/",
+                "text": "Merritt JL, Quinonez RA, Bonkowsky JL, et al. A framework for evaluation of the higher-risk infant after a brief resolved unexplained event. Pediatrics. 2019;144(2):e20184101."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/29571925/",
+                "text": "Tieder JS. Mortality risk and hospital admission after a brief resolved unexplained event. J Pediatr. 2018;197:12-13."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27244835/",
+                "text": "Tieder JS, Bonkowsky JL, Etzel RA, et al. Brief resolved unexplained events (Formerly apparent life-threatening events) and evaluation of lower-risk infants. Pediatrics. 2016;137(5):e20160590."
+            }
+        ],
+        "evidence": "<p>To be classified as BRUE, all of the following must be true:</p>\n<ul>\n<li>Infant &lt;1 year old.</li>\n<li>Asymptomatic on presentation (no URI symptoms, no fever).</li>\n<li>No explanation for the event after conducting history and physical (e.g. GER, feeding difficulties).</li>\n<li>History of sudden, brief, and now resolved episode consisting of &ge;1 of the following:\n<ul>\n<li>Cyanosis or pallor.</li>\n<li>Absent, decreased, or irregular breathing.</li>\n<li>Marked change in tone (hyper or hypotonia).</li>\n<li>Altered level of responsiveness.</li>\n</ul>\n</li>\n</ul>\n<p>The risk of serious underlying condition and the risk of recurrent event are calculated based on the following inputs:</p>\n<ul>\n<li>Age, days</li>\n<li>History of similar event*</li>\n<li>History of multiple events or event clusters*</li>\n<li>Abnormal medical history*</li>\n<li>Prematurity (&lt;32 weeks or between 32&ndash;38 weeks and corrected to &lt;45 weeks)*</li>\n<li>Absent, decreased, or irregular breathing*</li>\n<li>Marked change in tone (hyper or hypotonia)*</li>\n</ul>\n<p>*Yes = 1, No = 0</p>\n<p>% risk of serious underlying condition = [e<sup>x</sup>/(1 + e<sup>x</sup>)]*100</p>\n<p>where x = -3.7545 + 0.00252*(Age, days) + 0.5644*(History of similar event) + 0.6457*(Abnormal medical history)</p>\n<p>% risk of recurrent event = <span>[e</span><sup><span>w</span></sup><span>/(1 + e</span><sup><span>w</span></sup><span>)]*100</span></p>\n<p><span>where w = -2.4355 + 0.5844*(History of similar event) + 1.172*(History of multiple events or event clusters) + 0.4637*(Prematurity) + 0.3622*(Cyanosis or pallor) - 0.3187*(Absent, decreased, or irregular breathing) - 0.3038*(Marked change in tone)</span></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "age_brue",
+                "unit": "age_brue",
+                "error_min": "0",
+                "error_max": "364",
+                "warn_min": "0",
+                "warn_max": "364",
+                "conversion": "1",
+                "normal_max_si": "364",
+                "normal_max_us": "364",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "days",
+                "units_us": "days"
+            }
+        ],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output=[];\n\nvar infant_year = parseFloat(infant_year);\nvar asymptomatic = parseFloat(asymptomatic);\nvar explanation = parseFloat(explanation);\nvar cyanosis = parseFloat(cyanosis);\nvar absent = parseFloat(absent);\nvar marked = parseFloat(marked);\nvar altered = parseFloat(altered);\n\nvar age = parseFloat(age);\nvar similar = parseFloat(similar);\nvar multiple = parseFloat(multiple);\nvar history = parseFloat(history);\nvar premature = parseFloat(premature);\n\nvar msg;\nvar risk;\n\nvar sum = cyanosis + absent + marked + altered;\n\nif (sum == 0){\n  var sudden = 0;\n}\nif (sum > 0){\n  var sudden = 1;\n}\n\nvar initial = infant_year + asymptomatic + explanation + sudden;\n\nif (initial < 4){\n    msg = \"Not BRUE\";\n    risk = \"Entry criteria not fulfilled\";\n\n    calc_output.push({\n        name: 'mini',\n        value: msg,\n        value_text: '',\n        message: risk\n    });\n    calc_output.push({\n        name: 'Result',\n        value: msg,\n        value_text: '',\n        message: risk\n    });\n} else if (initial == 4) {\n    var x = -3.7545 + 0.00252*age + 0.5644*similar + 0.6457*history;\n    var risk_cond = (Math.exp(x)/(1 + Math.exp(x))) * 100;\n    var w = -2.4355 + 0.5844*similar + 1.172*multiple + 0.4637*premature + 0.3622*cyanosis - 0.3187*absent - 0.3038*marked;\n    var risk_rec = (Math.exp(w)/(1 + Math.exp(w))) * 100;\n\n    calc_output.push({\n        name: 'mini',\n        value: risk_cond.toFixed(1),\n        value_text: '',\n        message: '% Risk of serious underlying condition'\n    });\n    calc_output.push({\n        name: 'Risk cond',\n        value: risk_cond.toFixed(1),\n        value_text: '',\n        message: '% Risk of serious underlying condition'\n    });\n    calc_output.push({\n        name: 'Risk rec',\n        value: risk_rec.toFixed(1),\n        value_text: '',\n        message: ' % Risk of recurrent event'\n    });\n}\n",
+        "inputs": [
+            {
+                "subheading": "Entry criteria",
+                "subheading_instructions": "Must fulfill all 4 to evaluate for BRUE 2.0",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Infant &lt;1 year old</p>",
+                "name": "infant_year",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Asymptomatic on presentation</p>",
+                "name": "asymptomatic",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "E.g. no <abbr title='Upper respiratory infection'>URI</abbr> symptoms, no fever",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>No explanation for the event after conducting history and physical</p>",
+                "name": "explanation",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "E.g. <abbr title='Gastroesophageal reflux'>GER</abbr>, feeding difficulties",
+                "type": "toggle"
+            },
+            {
+                "subheading": "",
+                "subheading_instructions": "History of sudden, brief, and now resolved episode consisting of ≥1 of the following:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cyanosis or pallor</p>",
+                "name": "cyanosis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Absent, decreased, or irregular breathing</p>",
+                "name": "absent",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Marked change in tone (hyper or hypotonia)</p>",
+                "name": "marked",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Altered level of responsiveness</p>",
+                "name": "altered",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "BRUE 2.0 criteria",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
+                "default": null,
+                "label_en": "<p>Age, days</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_brue"
+            },
+            {
+                "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
+                "default": 0,
+                "label_en": "<p>History of similar event</p>",
+                "name": "similar",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
+                "default": 0,
+                "label_en": "<p>History of multiple events or event clusters</p>",
+                "name": "multiple",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
+                "default": 0,
+                "label_en": "<p>Abnormal medical history</p>",
+                "name": "history",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
+                "default": 0,
+                "label_en": "<p>Prematurity (&lt;32 weeks or between 32&ndash;38 weeks and corrected to &lt;45 weeks)</p>",
+                "name": "premature",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Brief Resolved Unexplained Events 2.0 (BRUE 2.0) Criteria for Infants, BRUE 2.0, brue, brue 2, brief resolved unexplained events, brief resolved unexplained events, alte, sids, brue criteria, brue criteria 2, brue 2 criteria"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Pediatrics"
+        ]
+    }
+}

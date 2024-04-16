@@ -1,0 +1,141 @@
+{
+    "id": "268",
+    "title": "Humiliation, Afraid, Rape, Kick (HARK)",
+    "desc": "Humiliation, Afraid, Rape, Kick (HARK) detects domestic abuse (intimate partner violence) in women in primary care settings. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/17727730/",
+                "text": "Sohal H, Eldridge S, Feder G. The sensitivity and specificity of four questions (Hark) to identify intimate partner violence: a diagnostic accuracy study in general practice. BMC Fam Pract. 2007;8:49."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The HARK screening result is determined according to the following points:</span></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 95.56313993174061%;\"><colgroup><col width=\"188\" style=\"width: 59.10714285714285%;\"><col width=\"110\" style=\"width: 20.17857142857143%;\"><col style=\"width: 20.535714285714285%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Within the last year&hellip;</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Have you been </span><span style=\"text-decoration: underline;\">humiliated</span><span> or emotionally abused in other ways by your partner or your ex-partner?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Have you been </span><span style=\"text-decoration: underline;\">afraid</span><span> of your partner or ex-partner?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Have you been </span><span style=\"text-decoration: underline;\">raped</span><span> or forced to have any kind of sexual activity by your partner or ex-partner?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Have you been </span><span style=\"text-decoration: underline;\">kicked</span><span>, hit, slapped or otherwise physically hurt by your partner or ex-partner?</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p>A &ldquo;yes&rdquo; answer to any of the screening questions is considered a positive screening result.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "Altered Mental Status",
+            "Anxious",
+            "Depressed",
+            "Injury/Trauma",
+            "Loss of Appetite",
+            "Preventive Care/Screening",
+            "Suicidal",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Public Health"
+        ],
+        "logic": "var calc_output = [];\n\nvar hum = parseFloat(hum);\nvar afraid = parseFloat(afraid);\nvar rape = parseFloat(rape);\nvar kick = parseFloat(kick);\n\nvar result;\n\nif (hum == 1 || afraid == 1 || rape == 1 || kick == 1) {\n    result = 'Positive';\n} else {\n    result = 'Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: '',\n    message: 'Screening result'\n});\ncalc_output.push({\n    name: 'result',\n    value: result,\n    value_text: '',\n    message: 'Screening result'\n});",
+        "inputs": [
+            {
+                "subheading": "<p>Within the last year&hellip;</p>",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Have you been <span style=\"text-decoration: underline;\">humiliated</span> or emotionally abused in other ways by your partner or your ex-partner?</p>",
+                "name": "hum",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Have you been <span style=\"text-decoration: underline;\">afraid</span> of your partner or ex-partner?</p>",
+                "name": "afraid",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Have you been <span style=\"text-decoration: underline;\">raped</span> or forced to have any kind of sexual activity by your partner or ex-partner?</p>",
+                "name": "rape",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Have you been <span style=\"text-decoration: underline;\">kicked</span>, hit, slapped or otherwise physically hurt by your partner or ex-partner?</p>",
+                "name": "kick",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Humiliation, Afraid, Rape, Kick (HARK)",
+            "hark",
+            "abuse",
+            "abuse screening",
+            "abuse screening tool",
+            "domestic abuse",
+            "domestic abuse screening",
+            "domestic violence",
+            "domestic violence screening",
+            "IPV",
+            "intimate partner violence"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "OB-Gyn",
+            "OB-Gyn"
+        ]
+    }
+}

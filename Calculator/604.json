@@ -1,0 +1,72 @@
+{
+    "id": "604",
+    "title": "Killip Classification for Heart Failure",
+    "desc": "The Killip Classification for Heart Failure quantifies severity of heart failure in NSTEMI and predicts 30-day mortality.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://www.ajconline.org/article/0002-9149(67)90023-9/pdf",
+                "text": "Killip T, Kimball JT. Treatment of myocardial infarction in a coronary care unit. A two year experience with 250 patients. Am J Cardiol. 1967;20(4):457-64."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Killip classification:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>Class I</strong></p> </td> <td> <p>No signs of congestion</p> </td> </tr> <tr> <td> <p><strong>Class II</strong></p> </td> <td> <p>S3 and basal rales on auscultation</p> </td> </tr> <tr> <td> <p><strong>Class III</strong></p> </td> <td> <p>Acute pulmonary edema</p> </td> </tr> <tr> <td> <p><strong>Class IV</strong></p> </td> <td> <p>Cardiogenic shock</p> </td> </tr> </tbody> </table> </div>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>Class</strong></p> </td> <td> <p><strong>30-day mortality*</strong></p> </td> <td> <p><strong>In-hospital mortality** (historical interest only)</strong></p> </td> </tr> <tr> <td> <p><strong>I</strong></p> </td> <td> <p>2-3%</p> </td> <td> <p>&lt;6%</p> </td> </tr> <tr> <td> <p><strong>II</strong></p> </td> <td> <p>5-12%</p> </td> <td> <p>&lt;17%</p> </td> </tr> <tr> <td> <p><strong>III</strong></p> </td> <td rowspan=\"2\"> <p>10-20%</p> </td> <td> <p>38%</p> </td> </tr> <tr> <td> <p><strong>IV</strong></p> </td> <td> <p>81%</p> </td> </tr> </tbody> </table> <p>*From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/14570953\" target='_blank'>Khot 2003</a>, which combined class III/IV owing to relatively smaller number of patients in class IV (0.3% of patients).</p> <p>**From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/6059183\" target='_blank'>Killip 1967</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Heart Failure",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar classm = parseFloat(killip);\n\nvar classRN, mort;\n\nif(classm === 1){\n\tclassRN = 'Class I';\n\tmort = '2-3';\n}\nif(classm === 2){\n\tclassRN = 'Class II';\n\tmort = '5-12';\n}\nif(classm === 3){\n\tclassRN = 'Class III';\n\tmort = '10-20';\n}\nif(classm === 4){\n\tclassRN = 'Class IV';\n\tmort = '10-20';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: classRN,\n    value_text: '',\n    message: mort + '% 30-day mortality'\n});\ncalc_output.push({\n    name: 'Killip Classification',\n    value: classRN,\n    value_text: '',\n    message: 'Killip Classification'\n});\ncalc_output.push({\n    name: 'Mortality',\n    value: mort,\n    value_text: '%',\n    message: '30-day mortality'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "Classification",
+                "name": "killip",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No signs of congestion",
+                        "value": 1
+                    },
+                    {
+                        "label": "S3 and basal rales on auscultation",
+                        "value": 2
+                    },
+                    {
+                        "label": "Acute pulmonary edema",
+                        "value": 3
+                    },
+                    {
+                        "label": "Cardiogenic shock",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "killip class",
+            "killip classification for heart failure",
+            "heart failure",
+            "killip heart",
+            "kilip"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine"
+        ]
+    }
+}

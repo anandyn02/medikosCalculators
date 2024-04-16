@@ -1,0 +1,173 @@
+{
+    "id": "547",
+    "title": "Bacterial Meningitis Score for Children",
+    "desc": "The Bacterial Meningitis Score for Children predicts likelihood of bacterial (versus aseptic) meningitis in children.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17200475",
+                "text": "Nigrovic LE, Kuppermann N, Macias CG, et al. Clinical prediction rule for identifying children with cerebrospinal fluid pleocytosis at very low risk of bacterial meningitis. JAMA. 2007;297(1):52-60."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12359784",
+                "text": "Nigrovic LE, Kuppermann N, Malley R. Development and validation of a multivariate predictive model to distinguish bacterial from aseptic meningitis in children in the post-haemophilus influenza era. Pediatrics. 2002; 110: 712-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23910166",
+                "text": "Kulik DM, Uleryk EM, Maguire JL. Does this child have bacterial meningitis? A systematic review of clinical prediction rules for children with suspected bacterial meningitis. J Emerg Med. 2013;45(4):508-19."
+            }
+        ],
+        "evidence": "<p><span>Addition of the selected points:</span></p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>CSF Gram stain</strong></p>\n</td>\n<td>\n<p><span>Negative</span></p>\n</td>\n<td>\n<p><span>Positive</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>CSF absolute neutrophil count (ANC) </strong></p>\n</td>\n<td>\n<p><span>&lt;1,000 cells/&mu;L</span></p>\n</td>\n<td>\n<p><span>&ge;1,000 cells/&micro;L</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>CSF protein </strong></p>\n</td>\n<td>\n<p><span>&lt;80 mg/dL (800 mg/L)</span></p>\n</td>\n<td>\n<p><span>&ge;80 mg/dL (800 mg/L)</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Peripheral blood ANC </strong></p>\n</td>\n<td>\n<p><span>&lt;10,000 cells/&mu;L</span></p>\n</td>\n<td>\n<p><span>&ge;10,000 cells/&mu;L</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Seizure at (or prior to) initial presentation</strong></p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><br><br></p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Bacterial Meningitis Score</strong></p>\n</td>\n<td>\n<p><strong>Risk for Bacterial Meningitis</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>Very low risk</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&gt;0</p>\n</td>\n<td>\n<p>Not very low risk</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><br><br></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "Fever",
+            "Headache",
+            "Seizure"
+        ],
+        "disease_treated": [
+            "Meningitis"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(gram) + parseFloat(prot) + parseFloat(blood_anc) + parseFloat(seizures) + parseFloat(spinal_neut);\nvar msg;\n\nif (u == 0) { msg = \"Very low risk for bacterial meningitis.\"; }\nif (u > 0) { msg = \"NOT very low risk for bacterial meningitis.\"; }\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: '3911_Bacterial Meningitis Score_result',\n    value: u,\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Cerebrospinal Fluid'>CSF</abbr> Gram stain positive",
+                "md_calc_info_concept": null,
+                "name": "gram",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "CSF <abbr title='Absolute Neutrophil Count'><calculator id='19'>ANC</calculator></abbr> ≥1,000 cells/µL",
+                "md_calc_info_concept": null,
+                "name": "spinal_neut",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "CSF protein ≥80 mg/dL (800 mg/L)",
+                "md_calc_info_concept": null,
+                "name": "prot",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Peripheral blood <calculator id='19'>ANC</calculator> ≥10,000 cells/µL",
+                "md_calc_info_concept": null,
+                "name": "blood_anc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Seizure at (or prior to) initial presentation",
+                "md_calc_info_concept": null,
+                "name": "seizures",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "gram stain",
+            "csf protein",
+            "anc",
+            "seizures",
+            "spinal fluid",
+            "bms",
+            "bacterial meningitis",
+            "aseptic meningitis",
+            "csf",
+            "spinal tap",
+            "lumbar puncture",
+            "LP",
+            "cerebrospinal fluid",
+            "spinal fluid",
+            "pleocytosis",
+            "meningitis"
+        ],
+        "specialty": [
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Family Practice",
+            "Infectious Disease",
+            "Pediatrics"
+        ]
+    }
+}

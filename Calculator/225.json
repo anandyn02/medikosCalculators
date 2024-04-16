@@ -1,0 +1,111 @@
+{
+    "id": "225",
+    "title": "Rome IV Diagnostic Criteria for Child Functional Abdominal Pain",
+    "desc": "The Rome IV Criteria for Child Functional Abdominal Pain provides criteria for diagnosis of child functional abdominal pain.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7104693/",
+                "text": "Hyams J, Di lorenzo C, Forbes D, et al. Childhood functional gastrointestinal disorders: child/adolescent. Gastroenterology. 2006;130(5):1527-37."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/15735476/",
+                "text": "Di Lorenzo C, Colletti RB, Lehmann HP, et al. Chronic abdominal pain in children: a technical report of the american academy of pediatrics and the north american society for pediatric gastroenterology, hepatology and nutrition. J Pediatr Gastroenterol Nutr. 2005;40(3):249-261."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24204070/",
+                "text": "van Assen T, de Jager-Kievit JWAJ, Scheltinga MR, Roumen RMH. Chronic abdominal wall pain misdiagnosed as functional abdominal pain. J Am Board Fam Med. 2013;26(6):738-744."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for child functional abdominal pain, patient must have the following (&ge;4 times per month for &ge;2 months prior):</p>\n<ol>\n<li>Episodic or continuous abdominal pain that does not occur solely during physiologic events (e.g. eating, menses).</li>\n<li>Insufficient criteria for <calculator id=\"10328\">irritable bowel syndrome</calculator>, <calculator id=\"10334\">functional dyspepsia</calculator>, or <calculator id=\"10329\">abdominal migraine</calculator>.</li>\n<li>After appropriate evaluation, the abdominal pain cannot be fully explained by another medical condition.&nbsp;</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Child/Adolescent Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three);\n\nvar diag;\n\nvar msg= 'Diagnosis for child functional abdominal pain as per Rome IV criteria';\nvar minimsg= 'Diagnosis for child abdominal pain';\n\nif (criteria==3) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Child Abdominal Pain',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For ≥4 times per month for ≥2 months prior",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Episodic or continuous abdominal pain that does not occur solely during physiologic events (e.g. eating, menses)",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Insufficient criteria for <calculator id=\"10328\">irritable bowel syndrome</calculator>, <calculator id=\"10334\">functional dyspepsia</calculator>, or <calculator id=\"10329\">abdominal migraine</calculator>",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "After appropriate evaluation, the abdominal pain cannot be fully explained by another medical condition",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Child Functional Abdominal Pain, Rome IV for Child Abdominal Pain, rome iv abdominal pain, rome abdominal pain, abdominal pain, rome, abdominal pain rome, rome iv child abdominal pain, rome abdominal pain child, rome 4 for child abdominal pain, rome 4 abdominal pain, rome 4 for abdominal pain"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

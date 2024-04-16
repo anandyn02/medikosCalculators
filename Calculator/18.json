@@ -1,0 +1,153 @@
+{
+    "id": "18",
+    "title": "RIFLE Criteria for Acute Kidney Injury (AKI)",
+    "desc": "RIFLE Criteria for Acute Kidney Injury (AKI) classifies severity of acute kidney injury.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://ccforum.biomedcentral.com/articles/10.1186/cc2872",
+                "text": "Bellomo R, Ronco C, Kellum JA, Mehta RL, Palevsky P. Acute renal failure - definition, outcome measures, animal models, fluid therapy and information technology needs: the Second International Consensus Conference of the Acute Dialysis Quality Initiative (ADQI) Group. Crit Care. 2004;8(4):R204-12."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Selection of the appropriate criteria. For serum creatinine, GFR, and urine output, choose the criteria leading to the worst classification (e.g. if serum creatinine is at baseline but GFR is &gt;50% below baseline, RIFLE Class is RIFLE-I).</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"90\" /><col width=\"90\" /><col width=\"87\" /><col width=\"86\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>RIFLE Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Serum creatinine</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>GFR</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Urine output</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>R</strong>isk, RIFLE-R</p>\n</td>\n<td>\n<p dir=\"ltr\">1.5-2x above baseline</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;25% decrease below baseline</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;0.5 mL/kg/hr x 6 hr</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>I</strong>njury, RIFLE-I</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;2&ndash;3x above baseline</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;50% decrease below baseline</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;0.5 mL/kg/hr x 12 hr</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>F</strong>ailure, RIFLE-F (RIFLE-FO if oliguria)</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;3x above baseline, &ge;4 mg/dL (350 &micro;mol/L), or acute rise &ge;0.5 mg/dL (44 &micro;mol/L)</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;75% decrease below baseline</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;0.3 mL/kg/hr x 24 hr (oliguria), or anuria x 12 hrs</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>L</strong>oss, RIFLE-L</p>\n</td>\n<td colspan=\"3\">\n<p dir=\"ltr\">Persistent&nbsp;AKI (on renal replacement therapy for &gt;4 weeks)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>E</strong>SRD, RIFLE-E</p>\n</td>\n<td colspan=\"3\">\n<p dir=\"ltr\">End stage renal disease (on dialysis for &gt;3 months)</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Anuria",
+            "Oliguria"
+        ],
+        "disease_treated": [
+            "Acute Kidney Injury",
+            "Renal Failure"
+        ],
+        "logic": "var calc_output = [];\nvar uo = parseFloat(uo);\nvar gfr = parseFloat(gfr);\nvar cr = parseFloat(cr);\nvar arf = parseFloat(arf);\nvar esrd = parseFloat(esrd);\n\nvar grade;\nvar msg; \n\nif (esrd == 1) {\n  grade = 'ESRD';\n  msg = 'RIFLE-E';\n} else if (arf == 1) {\n  grade = 'Loss';\n  msg = 'RIFLE-L';\n} else { \n  var max = Math.max(cr, uo, gfr);\n  if (max == 1) { \n    grade = 'Risk';\n    msg = 'RIFLE-R';\n  } else if (max == 2) {\n    grade = 'Injury';\n    msg = 'RIFLE-I';\n  } else if (max == 3) {\n    grade = 'Failure';\n    msg = 'RIFLE-F/RIFLE-FO if oliguria';\n  }\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: grade,\n    value_text: '',\n    message: msg\n});\ncalc_output.push({\n    name: 'Score',\n    value: grade,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "End stage renal disease",
+                "name": "esrd",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "On dialysis for >3 months",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "esrd == 0",
+                "default": null,
+                "label_en": "Persistent acute kidney injury",
+                "name": "arf",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "On <abbr title='Renal replacement therapy'>RRT</abbr> for >4 weeks",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "arf == 0 ",
+                "default": null,
+                "label_en": "Serum creatinine",
+                "name": "cr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1.5-2x above baseline",
+                        "value": 1
+                    },
+                    {
+                        "label": ">2-3x above baseline",
+                        "value": 2
+                    },
+                    {
+                        "label": ">3x above baseline, ≥4 mg/dL (350 µmol/L), or acute rise ≥0.5 mg/dL (44 µmol/L)",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "arf == 0 ",
+                "default": null,
+                "label_en": "GFR",
+                "name": "gfr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">25% decrease below baseline",
+                        "value": 1
+                    },
+                    {
+                        "label": ">50% decrease below baseline",
+                        "value": 2
+                    },
+                    {
+                        "label": ">75% decrease below baseline",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "arf == 0 ",
+                "default": null,
+                "label_en": "Urine output",
+                "name": "uo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<0.5 mL/kg/hr x 6 hr",
+                        "value": 1
+                    },
+                    {
+                        "label": "<0.5 mL/kg/hr x 12 hr",
+                        "value": 2
+                    },
+                    {
+                        "label": "<0.3 mL/kg/hr x 24 hr (oliguria), or anuria x 12 hr",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "AKI score",
+            "RIFLE score",
+            "AKIN"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Primary Care"
+        ]
+    }
+}

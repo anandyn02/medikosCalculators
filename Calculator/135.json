@@ -1,0 +1,189 @@
+{
+    "id": "135",
+    "title": "Pediatric Trauma Score (PTS)",
+    "desc": "The Pediatric Trauma Score stratifies severity of traumatic injury in children.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3102714/",
+                "text": "Tepas JJ, Mollitt DL, Talbert JL, Bryant M. The pediatric trauma score as a predictor of injury severity in the injured child. J Pediatr Surg. 1987;22(1):14-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2039101",
+                "text": "Saladino R, Lund D, Fleisher G. The spectrum of liver and spleen injuries in children: failure of the pediatric trauma score and clinical signs to predict isolated injuries. Ann Emerg Med. 1991;20(6):636-40."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Weight</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;20 kg (&gt;44 lbs)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10-20 kg (22-44 lbs)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;10 kg (&lt;22 lbs)</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Airway status</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Maintainable</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unmaintainable</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Systolic BP*</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;90 mmHg</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">50-90 mmHg</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;50 mmHg</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Central nervous system</p>\n</td>\n<td>\n<p dir=\"ltr\">Awake</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Obtunded/loss of consciousness</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Coma/decerebrate</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Skeletal injury</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Closed fracture</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Open/multiple fractures</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Cutaneous wounds</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Minor</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Major/penetrating</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*If proper-sized BP cuff not available, BP can be assessed by assigning points as follows:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\">Pulse palpable at wrist</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Pulse palpable at groin</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No pulse palpable</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<p dir=\"ltr\"><span id=\"docs-internal-guid-c0a05d69-7fff-2022-62f4-7d856e8bbe33\">Higher scores correlate with lower mortality (total scores range from -6 to 12 points). In the original and validation studies, no deaths were seen in patients with scores &gt;8.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar weight = parseFloat(weight);\nvar airway = parseFloat(airway);\nvar bp = parseFloat(bp);\nvar cns = parseFloat(cns);\nvar skeletal = parseFloat(skeletal);\nvar wounds = parseFloat(wounds);\n\nvar score = weight + airway + bp + cns + skeletal + wounds;\n\nvar msg = 'Higher scores correlate with lower mortality (total scores range from -6 to 12 points); in the original and validation studies, no deaths were seen in patients with scores >8';\n\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'Higher scores (out of 12) = lower mortality'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: msg   \n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">20 kg (>44 lbs)",
+                        "value": 2
+                    },
+                    {
+                        "label": "10-20 kg (22-44 lbs)",
+                        "value": 1
+                    },
+                    {
+                        "label": "<10 kg (<22 lbs)",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Airway status",
+                "name": "airway",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 2
+                    },
+                    {
+                        "label": "Maintainable",
+                        "value": 1
+                    },
+                    {
+                        "label": "Unmaintainable",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Systolic BP",
+                "name": "bp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">90 mmHg (or pulse palpable at wrist)",
+                        "value": 2
+                    },
+                    {
+                        "label": "50-90 mmHg (or pulse palpable at groin)",
+                        "value": 1
+                    },
+                    {
+                        "label": "<50 mmHg (or no pulse palpable)",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "If proper-sized BP cuff not available, BP can be assessed based on pulse (as listed in parentheses)",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Central nervous system",
+                "name": "cns",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Awake",
+                        "value": 2
+                    },
+                    {
+                        "label": "Obtunded/loss of consciousness",
+                        "value": 1
+                    },
+                    {
+                        "label": "Coma/decerebrate",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Skeletal injury",
+                "name": "skeletal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 2
+                    },
+                    {
+                        "label": "Closed fracture",
+                        "value": 1
+                    },
+                    {
+                        "label": "Open/multiple fractures",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cutaneous wounds",
+                "name": "wounds",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 2
+                    },
+                    {
+                        "label": "Minor",
+                        "value": 1
+                    },
+                    {
+                        "label": "Major/penetrating",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "peds trauma",
+            "pediatric trauma score",
+            "traumatic injury",
+            "trauma severity"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Pediatric Subspecialty",
+            "Pediatrics",
+            "Surgery (Trauma)"
+        ]
+    }
+}

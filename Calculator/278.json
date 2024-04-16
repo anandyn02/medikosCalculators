@@ -1,0 +1,252 @@
+{
+    "id": "278",
+    "title": "Modified Rankin Score-9Q (mRS-9Q)",
+    "desc": "The Modified Rankin Score-9Q (mRS-9Q) assesses level of function in neurological disease.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/22843133/",
+                "text": "Patel N, Rao VA, Heilman-Espinoza ER, Lai R, Quesada RA, Flint AC. Simple and reliable determination of the modified rankin scale score in neurosurgical and neurological patients: the mRS-9Q. Neurosurgery. 2012;71(5):971-975; discussion 975."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/19679846/",
+                "text": "Quinn TJ, Dawson J, Walters MR, Lees KR. Reliability of the modified Rankin Scale: a systematic review. Stroke. 2009;40(10):3393-3395."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>The mRS-9Q is conducted by asking the following yes/no questions:</span></p>\n<ul>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Do you have any symptoms that are bothering you?</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Are you able to do the same work as before?</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Are you able to keep up with your hobbies?</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Have you maintained your ties to friends and family?</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Do you need help making a simple meal, doing household chores, or balancing a checkbook?</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Do you need help with shopping or traveling close to home?</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Do you need another person to help you walk?</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Do you need help with eating, going to the toilet, or bathing?</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Do you stay in bed most of the day and need constant nursing care?</span></p>\n</li>\n</ul>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%;\"><colgroup><col style=\"width: 45.1258%;\" /><col style=\"width: 27.451%;\" /><col style=\"width: 27.4232%;\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Question</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Answer</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>mRS-9Q</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Do you have any symptoms that are bothering you?</p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Are you able to do the same work as before?</p>\n<p dir=\"ltr\">OR</p>\n<p dir=\"ltr\">Are you able to keep up with your hobbies?</p>\n<p dir=\"ltr\">OR</p>\n<p dir=\"ltr\">Have you maintained your ties to friends and family?</p>\n<p dir=\"ltr\"></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Do you need help making a simple meal, doing household chores, or balancing a checkbook?</p>\n<p dir=\"ltr\">OR</p>\n<p dir=\"ltr\">Do you need help with shopping or traveling close to home?</p>\n<p></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&nbsp;Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Do you need another person to help you walk?</p>\n<p dir=\"ltr\">OR</p>\n<p dir=\"ltr\">Do you need help with eating, going to the toilet, or bathing?</p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&nbsp;Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Do you stay in bed most of the day and need constant nursing care?</p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&nbsp;Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>An mRS-9Q of 0 is given otherwise.</p>\n<p><span>A higher mRS-9Q corresponds to higher severity of neurological disease</span>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Back Pain",
+            "Chronic Pain",
+            "Depressed",
+            "Extremity Pain",
+            "Fatigue",
+            "Headache",
+            "Head Injury",
+            "Muscle Stiffness",
+            "Numbness",
+            "Pain",
+            "Seizure",
+            "Vision Loss",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Alzheimer's Disease",
+            "Amyotrophic Lateral Sclerosis",
+            "Dementia",
+            "Epilepsy",
+            "Meningitis",
+            "Motor Neuron Disease",
+            "Multiple Sclerosis",
+            "Parkinson's Disease",
+            "Seizure Disorder",
+            "Stroke/TIA",
+            "Trauma",
+            "Traumatic Brain Injury"
+        ],
+        "logic": "var calc_output = [];\n\nvar q1 = parseFloat(q1);\nvar q2 = parseFloat(q2);\nvar q3 = parseFloat(q3);\nvar q4 = parseFloat(q4);\nvar q5 = parseFloat(q5);\nvar q6 = parseFloat(q6);\nvar q7 = parseFloat(q7);\nvar q8 = parseFloat(q8);\nvar q9 = parseFloat(q9);\n\nvar mrs;\nvar disability;\nvar m = '';\n\nif (q9 == 1) {\n    mrs = 5;\n    disability = 'Severe disability';\n    m = 'Requires constant nursing care and attention, bedridden.';\n} else if (q8 == 1 || q7 == 1) {\n    mrs = 4;\n    disability = 'Moderately severe disability';\n    m = 'Unable to attend to own bodily needs without assistance, and unable to walk unassisted.';\n} else if (q6 == 1 || q5 == 1) {\n    mrs = 3;\n    disability = 'Moderate disability';\n    m = 'Requires some help, but able to walk unassisted.';\n} else if  (q4 == 0 || q3 == 0 || q2 == 0) {\n    mrs = 2;\n    disability = 'Slight disability';\n    m = 'Able to look after own affairs without assistance, but unable to carry out all previous activities.';\n} else if (q1 == 1) {\n    mrs = 1;\n    disability = 'No significant disability';\n    m = 'Able to carry out all usual activities, despite some symptoms.';\n} else {\n    mrs = 0;\n    disability = 'No symptoms';\n}\n\nvar conflict = 0;\nvar msg ='';\n\nif (mrs == 5 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The severe disability from Q#9 conflicts with the lack of symptoms described in Q#1.<br/>';\n}\nif (mrs == 5 && q2 == 1) {\n    conflict = 1;\n    msg = msg + 'The severe disability from Q#9 conflicts with the ability to do work described in Q#2.<br/>';\n}\nif (mrs == 5 && q3 == 1) {\n    conflict = 1;\n    msg = msg + 'The severe disability from Q#9 conflicts with the ability to keep up with hobbies described in Q#3.<br/>';\n}\nif (mrs == 5 && q5 == 0) {\n    conflict = 1;\n    msg = msg + 'The severe disability from Q#9 conflicts with the activities described in Q#5.<br/>';\n}\nif (mrs == 5 && q6 == 0) {\n    conflict = 1;\n    msg = msg + 'The severe disability from Q#9 conflicts with the activities described in Q#6.<br/>';\n}\nif (mrs == 5 && q7 == 0) {\n    conflict = 1;\n    msg = msg + 'The severe disability from Q#9 conflicts with the ability to walk independently as described in Q#7.<br/>';\n}\nif (mrs == 5 && q8 == 0) {\n    conflict = 1;\n    msg = msg + 'The severe disability from Q#9 conflicts with the lack of help needed as described in Q#8.<br/>';\n}\nif (q8 == 1 && q7 == 0 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#8 conflicts with the lack of symptoms described in Q#1.<br/>';\n} \nif (q7 == 1 && q8 == 0 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#7 conflicts with the lack of symptoms described in Q#1.<br/>';\n}\nif (q8 == 1 && q7 == 1 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#7 & Q#8 conflicts with the lack of symptoms described in Q#1.<br/>';\n}\nif (q8 == 1 && q7 == 0 && q2 == 1) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#8 conflicts with the ability to do work described in Q#2.<br/>';\n}\nif (q7 == 1 && q8 == 0 && q2 == 1) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#7 conflicts with the ability to do work described in Q#2.<br/>';\n}\nif (q8 == 1 && q7 == 1 && q2 == 1) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#7 & Q#8 conflicts with the ability to do work described in Q#2.<br/>';\n}\nif (q8 ==1 && q7 == 0 && q3 ==1) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#8 conflicts with the ability to keep up with hobbies described in Q#3.<br/>';\n}\nif (q7 == 1 && q8 == 0 && q3 ==1) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#7 conflicts with the ability to keep up with hobbies described in Q#3.<br/>';\n}\nif (q8 == 1 && q7 == 1 && q3 ==1) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#7 & Q#8 conflicts with the ability to keep up with hobbies described in Q#3.<br/>';\n}\nif (q8 == 1 && q7 == 0 && q5 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#8 conflicts with the activities described in Q#5.<br/>';\n}\nif (q7 == 1 && q8 == 0 && q5 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#7 conflicts with the activities described in Q#5.<br/>';\n}\nif (q8 == 1 && q7 == 1 && q5 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#7 && Q#8 conflicts with the activities described in Q#5.<br/>';\n}\nif (q8 == 1 && q7 == 0 && q6 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#8 conflicts with the activities described in Q#6.<br/>';\n}\nif (q7 == 1 && q8 == 0 && q6 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#7 conflicts with the activities described in Q#6.<br/>';\n}\nif (q8 == 1 && q7 == 1 && q6 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderately severe disability from Q#7 & Q#8 conflicts with the activities described in Q#6.<br/>';\n}\nif (q6 == 1 && q5 == 0 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderate disability from Q#6 conflicts with the lack of symptoms described in Q#1.<br/>';\n}\nif (q5 == 1 && q6 == 0 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderate disability from Q#5 conflicts with the lack of symptoms described in Q#1.<br/>';\n}\nif (q6 == 1 && q5 == 1 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The moderate disability from Q#5 & Q#6 conflicts with the lack of symptoms described in Q#1.<br/>';\n}\nif (q6 == 1 && q5 == 0 && q2 == 1) {\n    conflict = 1;\n    msg = msg + 'The moderate disability from Q#6 may conflict with the ability to do work described in Q#2.<br/>';\n}\nif (q5 == 1 && q6 == 0 && q2 == 1) {\n    conflict = 1;\n    msg = msg + 'The moderate disability from Q#5 may conflict with the ability to do work described in Q#2.<br/>';\n}\nif (q6 == 1 && q5 == 1 && q2 == 1) {\n    conflict = 1;\n    msg = msg + 'The moderate disability from Q#5 & Q#6 may conflict with the ability to do work described in Q#2.<br/>';\n}\nif (q6 == 1 && q5 == 0 && q3 == 1) {\n    conflict = 1;\n    msg = msg + 'The moderate disability from Q#6 may conflict with the ability to keep up with hobbies described in Q#3.<br/>';\n}\nif (q5 == 1 && q6 == 0 && q3 == 1) {\n    conflict = 1;\n    msg = msg + 'The moderate disability from Q#5 may conflict with the ability to keep up with hobbies described in Q#3.<br/>';\n}\nif (q6 == 1 && q5 == 1 && q3 == 1) {\n    conflict = 1;\n    msg = msg + 'The moderate disability from Q#5 & Q#6 may conflict with the ability to keep up with hobbies described in Q#3.<br/>';\n}\nif (q4 == 0 && q3 == 1 && q2 == 1 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The slight disability from Q#4 conflicts with the lack of symptoms described in Q#1.';\n}\nif (q4 == 1 && q3 == 0 && q2 == 1 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The slight disability from Q#3 conflicts with the lack of symptoms described in Q#1.';\n}\nif (q4 == 1 && q3 == 1 && q2 == 0 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The slight disability from Q#2 conflicts with the lack of symptoms described in Q#1.';\n}\nif (q4 == 0 && q3 == 0 && q2 == 1 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The slight disability from Q#3 & Q#4 conflicts with the lack of symptoms described in Q#1.';\n}\nif (q4 == 0 && q3 == 1 && q2 == 0 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The slight disability from Q#2 & Q#4 conflicts with the lack of symptoms described in Q#1.';\n}\nif (q4 == 1 && q3 == 0 && q2 == 0 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The slight disability from Q#2 & Q#3 conflicts with the lack of symptoms described in Q#1.';\n}\nif (q4 == 0 && q3 == 0 && q2 == 0 && q1 == 0) {\n    conflict = 1;\n    msg = msg + 'The slight disability from Q#2, Q#3, & Q#4 conflicts with the lack of symptoms described in Q#1.';\n}\n\nif (conflict == 1) {\n    calc_output.push({\n        name: 'mini',\n        value: 'Potential conflict(s) identified',\n        value_text: '',\n        message: ''\n    });\n    calc_output.push({\n        name: 'mrs',\n        value: 'Potential conflict(s) identified:',\n        value_text: '',\n        message: msg\n    });\n} else {\n    calc_output.push({\n    name: 'mini',\n    value: 'mRS = ' + mrs,\n    value_text: '',\n    message: 'modified Rankin Scale'\n    });\n    calc_output.push({\n        name: 'mRS-9Q',\n        value: 'mRS = ' + mrs,\n        value_text: '',\n        message: 'modified Rankin Scale'\n    });\n    calc_output.push({\n        name: 'diability',\n        value: disability,\n        value_text: '',\n        message: m\n    });\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Q1: Do you have any symptoms that are bothering you?</p>",
+                "name": "q1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Q2: Are you able to do the same work as before?</p>",
+                "name": "q2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Q3: Are you able to keep up with your hobbies?</p>",
+                "name": "q3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Q4: Have you maintained your ties to friends and family?</p>",
+                "name": "q4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Q5: Do you need help making a simple meal, doing household chores, or balancing a checkbook?</p>",
+                "name": "q5",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Q6: Do you need help with shopping or traveling close to home?</p>",
+                "name": "q6",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Q7: Do you need another person to help you walk?</p>",
+                "name": "q7",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Q8: Do you need help with eating, going to the toilet, or bathing?</p>",
+                "name": "q8",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Q9: Do you stay in bed most of the day and need constant nursing care?</p>",
+                "name": "q9",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Modified Rankin Score-9Q (mRS-9Q)",
+            "mrs-9q",
+            "mrs",
+            "modified rankin score",
+            "mrs9q",
+            "mrs 9q",
+            "neurological disease"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

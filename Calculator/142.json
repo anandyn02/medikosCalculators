@@ -1,0 +1,144 @@
+{
+    "id": "142",
+    "title": "Pancreatic Fistula Risk Score",
+    "desc": "The Pancreatic Fistula Risk Score predicts postoperative pancreatic fistula, based on intraoperative findings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23122535",
+                "text": "Callery MP, Pratt WB, Kent TS, Chaikof EL, Vollmer CM. A prospectively validated clinical risk score accurately predicts pancreatic fistula after pancreatoduodenectomy. J Am Coll Surg. 2013;216(1):1-14."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"164\" /><col width=\"206\" /><col width=\"79\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Gland texture</p>\n</td>\n<td>\n<p dir=\"ltr\">Firm</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Soft</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Pathology</p>\n</td>\n<td>\n<p dir=\"ltr\">Pancreatic adenocarcinoma or pancreatitis</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Any other pathology (e.g. ampullary, duodenal, cystic, islet cell)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Pancreatic duct diameter</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;5 mm</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4 mm</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3 mm</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2 mm</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;1 mm</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Intraoperative blood loss</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;400 mL</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">401-700 mL</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">701-1,000 mL</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;1,000 mL</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-21aa53e0-7fff-90cf-4124-b2650c03deee\"><span id=\"docs-internal-guid-21aa53e0-7fff-90cf-4124-b2650c03deee\">&nbsp;</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"133\" /><col width=\"96\" /><col width=\"220\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Pancreatic Fistula Risk Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Rate of clinically relevant postoperative pancreatic fistula* </strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">Negligible</p>\n</td>\n<td>\n<p dir=\"ltr\">~0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1-2</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">6.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3-6</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">12.9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7-10</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">28.1%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Defined as clinically apparent symptomatic fistulas requiring diagnostic evaluation and therapeutic intervention, or those causing sepsis and/or organ dysfunction (need for critical care).</p>\n<p dir=\"ltr\">Figures from <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/24002771\" target=\"_blank\">Miller et al 2014</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Cancer"
+        ],
+        "disease_treated": [
+            "Pancreatic Cancer",
+            "Pancreatitis"
+        ],
+        "logic": "var calc_output = [];\n\nvar loss = parseFloat(loss);\nvar diameter = parseFloat(diameter);\nvar path = parseFloat(path);\nvar gland = parseFloat(gland);\n\nvar score = loss + diameter + path + gland;\n\nvar risk, prevalence;\n\nif (score == 0) {\n  risk = 'Negligible';\n  prevalence = '~0';\n} else if (score >=1 && score <=2) {\n  risk = 'Low';\n  prevalence = '6.6';\n} else if (score >=3 && score <=6) {\n  risk = 'Intermediate';\n  prevalence = '12.9';\n} else if (score >=7 && score <=10) {\n  risk = 'High';\n  prevalence = '28.1';\n} \n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: prevalence,\n    value_text: '%',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Pancreatic Fistula Risk Score'   \n});\ncalc_output.push({\n    name: 'risk1',\n    value: risk, \n    value_text: '',\n    message: 'Risk group'\n});\ncalc_output.push({\n    name: 'risk1',\n    value: prevalence, \n    value_text: '%',\n    message: 'Rate of clinically relevant postoperative pancreatic fistula (See Evidence for details)'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Gland texture",
+                "name": "gland",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Firm",
+                        "value": 0
+                    },
+                    {
+                        "label": "Soft",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Based on surgeon palpation intraop.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pathology",
+                "name": "path",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Pancreatic adenocarcinoma or pancreatitis",
+                        "value": 0
+                    },
+                    {
+                        "label": "Any other pathology (e.g. ampullary, duodenal, cystic, islet cell)",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pancreatic duct diameter",
+                "name": "diameter",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥5 mm",
+                        "value": 0
+                    },
+                    {
+                        "label": "4 mm",
+                        "value": 1
+                    },
+                    {
+                        "label": "3 mm",
+                        "value": 2
+                    },
+                    {
+                        "label": "2 mm",
+                        "value": 3
+                    },
+                    {
+                        "label": "≤1 mm",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Based on surgeon measurement intraop.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intraoperative blood loss",
+                "name": "loss",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤400 mL",
+                        "value": 0
+                    },
+                    {
+                        "label": "401-700 mL",
+                        "value": 1
+                    },
+                    {
+                        "label": "701-1,000 mL",
+                        "value": 2
+                    },
+                    {
+                        "label": ">1,000 mL",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Postoperative fistula risk",
+            "pancreatic surgery",
+            "pancreatic fistula",
+            "pancreas",
+            "whipple"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

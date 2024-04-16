@@ -1,0 +1,288 @@
+{
+    "id": "102",
+    "title": "Mumtaz Score for Readmission in Cirrhosis",
+    "desc": "The Mumtaz Score for Readmission in Cirrhosis predicts 30-day readmission risk in patients with cirrhosis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/30218583 ",
+                "text": "Mumtaz K, Issak A, Porter K, et al. Validation of Risk Score in Predicting Early Readmissions in Decompensated Cirrhotic patients: A Model Based on the Administrative Database. Hepatology. 2018."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"217\" /><col width=\"144\" /><col width=\"88\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Age, years</p>\n</td>\n<td>\n<p dir=\"ltr\">18-39</p>\n</td>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">40-64</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;65</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Primary payer</p>\n</td>\n<td>\n<p dir=\"ltr\">Medicare</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Medicaid</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Private insurance</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Self-pay</p>\n</td>\n<td>\n<p dir=\"ltr\">-3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No charge or other</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Elixhauser Comorbidity Index*</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;3</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;3</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Non-alcoholic etiology of cirrhosis</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Ascites</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Hepatic encephalopathy</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Variceal bleeding</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-7</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Hepatocellular carcinoma</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Paracentesis during admission</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Hemodialysis during admission</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Disposition</p>\n</td>\n<td>\n<p dir=\"ltr\">Routine</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Transfer</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Home health care</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Against medical advice</p>\n</td>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-18ea6d8a-7fff-da82-a482-670136516b47\"></span><span id=\"docs-internal-guid-18ea6d8a-7fff-da82-a482-670136516b47\">*Elixhauser Comorbidity Index gives one point for each of the following (liver disease is excluded):</span></p>\n<table width=\"391\" height=\"26\">\n<tbody>\n<tr>\n<td>\n<ul>\n<li><span style=\"white-space: pre;\">Congestive heart failure</span></li>\n<li><span style=\"white-space: pre;\">C</span>OPD</li>\n<li>Hypertension</li>\n<li>Obesity</li>\n<li>Diabetes, uncomplicated</li>\n<li>Diabetes with chronic complications</li>\n<li>Peripheral vascular disorders</li>\n<li>Metastatic cancer</li>\n<li>Solid tumor without metastasis</li>\n<li>Lymphoma</li>\n<li>Renal failure</li>\n<li>Alcohol abuse<span style=\"white-space: pre;\"> </span></li>\n<li>Drug abuse</li>\n<li>Valvular disease</li>\n</ul>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n</td>\n<td>\n<ul>\n<li>Paralysis</li>\n<li>Other neurological disorders</li>\n<li>Hypothyroidism</li>\n<li>Coagulopathy</li>\n<li>Peptic ulcer disease&nbsp;without&nbsp;bleeding</li>\n<li>Deficiency anemias</li>\n<li>Depression</li>\n<li>HIV/AIDS<span style=\"white-space: pre;\"> </span></li>\n<li>Rheumatoid arthritis/collagen vascular diseases</li>\n<li>Fluid and electrolyte disorders</li>\n<li>Psychoses</li>\n<li>Weight loss</li>\n<li>Chronic blood loss anemia</li>\n<li>Pulmonary circulation disorders</li>\n</ul>\n<p></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:&nbsp;</p>\n<div dir=\"ltr\">\n<div dir=\"ltr\">\n<table><colgroup><col width=\"109\" /><col width=\"115\" /><col width=\"110\" /><col width=\"115\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Mumtaz Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>30-day readmission risk</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Mumtaz Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>30-day readmission risk</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-11</p>\n</td>\n<td>9.3%</td>\n<td>\n<p dir=\"ltr\">20</p>\n</td>\n<td>\n<p dir=\"ltr\">32.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-10</p>\n</td>\n<td>\n<p dir=\"ltr\">9.7%</p>\n</td>\n<td>\n<p dir=\"ltr\">21</p>\n</td>\n<td>\n<p dir=\"ltr\">33.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-9</p>\n</td>\n<td>\n<p dir=\"ltr\">10.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">22</p>\n</td>\n<td>\n<p dir=\"ltr\">34.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-8</p>\n</td>\n<td>\n<p dir=\"ltr\">10.6%</p>\n</td>\n<td>\n<p dir=\"ltr\">23</p>\n</td>\n<td>\n<p dir=\"ltr\">36.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-7</p>\n</td>\n<td>\n<p dir=\"ltr\">11.1%</p>\n</td>\n<td>\n<p dir=\"ltr\">24</p>\n</td>\n<td>\n<p dir=\"ltr\">37.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-6</p>\n</td>\n<td>\n<p dir=\"ltr\">11.6%</p>\n</td>\n<td>\n<p dir=\"ltr\">25</p>\n</td>\n<td>\n<p dir=\"ltr\">38.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-5</p>\n</td>\n<td>\n<p dir=\"ltr\">12.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">26</p>\n</td>\n<td>\n<p dir=\"ltr\">39.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-4</p>\n</td>\n<td>\n<p dir=\"ltr\">12.7%</p>\n</td>\n<td>\n<p dir=\"ltr\">27</p>\n</td>\n<td>\n<p dir=\"ltr\">40.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-3</p>\n</td>\n<td>\n<p dir=\"ltr\">13.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">28</p>\n</td>\n<td>\n<p dir=\"ltr\">41.9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-2</p>\n</td>\n<td>\n<p dir=\"ltr\">13.9%</p>\n</td>\n<td>\n<p dir=\"ltr\">29</p>\n</td>\n<td>\n<p dir=\"ltr\">43.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n<td>\n<p dir=\"ltr\">14.5%</p>\n</td>\n<td>\n<p dir=\"ltr\">30</p>\n</td>\n<td>\n<p dir=\"ltr\">44.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">15.1%</p>\n</td>\n<td>\n<p dir=\"ltr\">31</p>\n</td>\n<td>\n<p dir=\"ltr\">45.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">15.7%</p>\n</td>\n<td>\n<p dir=\"ltr\">32</p>\n</td>\n<td>\n<p dir=\"ltr\">46.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">16.4%</p>\n</td>\n<td>\n<p dir=\"ltr\">33</p>\n</td>\n<td>\n<p dir=\"ltr\">48.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">17.1%</p>\n</td>\n<td>\n<p dir=\"ltr\">34</p>\n</td>\n<td>\n<p dir=\"ltr\">49.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">17.8%</p>\n</td>\n<td>\n<p dir=\"ltr\">35</p>\n</td>\n<td>\n<p dir=\"ltr\">50.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">18.6%</p>\n</td>\n<td>\n<p dir=\"ltr\">36</p>\n</td>\n<td>\n<p dir=\"ltr\">51.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n<td>\n<p dir=\"ltr\">19.4%</p>\n</td>\n<td>\n<p dir=\"ltr\">37</p>\n</td>\n<td>\n<p dir=\"ltr\">53.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n<td>\n<p dir=\"ltr\">20.1%</p>\n</td>\n<td>\n<p dir=\"ltr\">38</p>\n</td>\n<td>\n<p dir=\"ltr\">54.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n<td>\n<p dir=\"ltr\">21.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">39</p>\n</td>\n<td>\n<p dir=\"ltr\">55.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">9</p>\n</td>\n<td>\n<p dir=\"ltr\">21.8%</p>\n</td>\n<td>\n<p dir=\"ltr\">40</p>\n</td>\n<td>\n<p dir=\"ltr\">56.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n<td>\n<p dir=\"ltr\">22.7%</p>\n</td>\n<td>\n<p dir=\"ltr\">41</p>\n</td>\n<td>\n<p dir=\"ltr\">58.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">11</p>\n</td>\n<td>\n<p dir=\"ltr\">23.6%</p>\n</td>\n<td>\n<p dir=\"ltr\">42</p>\n</td>\n<td>\n<p dir=\"ltr\">59.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">12</p>\n</td>\n<td>\n<p dir=\"ltr\">24.5%</p>\n</td>\n<td>\n<p dir=\"ltr\">43</p>\n</td>\n<td>\n<p dir=\"ltr\">60.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">13</p>\n</td>\n<td>\n<p dir=\"ltr\">25.4%</p>\n</td>\n<td>\n<p dir=\"ltr\">44</p>\n</td>\n<td>\n<p dir=\"ltr\">61.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">14</p>\n</td>\n<td>\n<p dir=\"ltr\">26.4%</p>\n</td>\n<td>\n<p dir=\"ltr\">45</p>\n</td>\n<td>\n<p dir=\"ltr\">62.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">15</p>\n</td>\n<td>\n<p dir=\"ltr\">27.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">46</p>\n</td>\n<td>\n<p dir=\"ltr\">63.9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">16</p>\n</td>\n<td>\n<p dir=\"ltr\">28.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">47</p>\n</td>\n<td>\n<p dir=\"ltr\">65.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">17</p>\n</td>\n<td>\n<p dir=\"ltr\">29.4%</p>\n</td>\n<td>\n<p dir=\"ltr\">48</p>\n</td>\n<td>\n<p dir=\"ltr\">66.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">18</p>\n</td>\n<td>\n<p dir=\"ltr\">30.4%</p>\n</td>\n<td>\n<p dir=\"ltr\">49</p>\n</td>\n<td>\n<p dir=\"ltr\">67.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">19</p>\n</td>\n<td>\n<p dir=\"ltr\">31.5%</p>\n</td>\n<td>\n<p dir=\"ltr\"></p>\n</td>\n<td>\n<p dir=\"ltr\"></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n</div>\n<p dir=\"ltr\"></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Agitation",
+            "Bleeding",
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Cirrhosis"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar payer = parseFloat(payer);\nvar index = parseFloat(index);\nvar et = parseFloat(et);\nvar as = parseFloat(as);\nvar en = parseFloat(en);\nvar bleeding = parseFloat(bleeding);\nvar hcc = parseFloat(hcc);\nvar para = parseFloat(para);\nvar hemo = parseFloat(hemo);\nvar dis = parseFloat(dis);\n\nvar score = age + payer + index + et + as + en + bleeding + hcc + para + hemo + dis;\n\nvar risk = [\n    9.3,\n    9.7,\n    10.2,\n    10.6,\n    11.1,\n    11.6,\n    12.2,\n    12.7,\n    13.3,\n    13.9,\n    14.5,\n    15.1,\n    15.7,\n    16.4,\n    17.1,\n    17.8,\n    18.6,\n    19.4,\n    20.1,\n    21.0,\n    21.8,\n    22.7,\n    23.6,\n    24.5,\n    25.4,\n    26.4,\n    27.3,\n    28.3,\n    29.4,\n    30.4,\n    31.5,\n    32.6,\n    33.7,\n    34.8,\n    36.0,\n    37.1,\n    38.3,\n    39.5,\n    40.7,\n    41.9,\n    43.1,\n    44.3,\n    45.6,\n    46.8,\n    48.1,\n    49.3,\n    50.6,\n    51.8,\n    53.1,\n    54.3,\n    55.5,\n    56.8,\n    58.0,\n    59.2,\n    60.4,\n    61.6,\n    62.8,\n    63.9,\n    65.1,\n    66.2,\n    67.3,\n];\n\nvar risk1 = risk[score+11];\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk1 + '% risk of readmission at 30 days'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Mumtaz Score'   \n    });\ncalc_output.push({\n    name: 'risk1',\n    value: risk1, \n    value_text: '%',\n    message: '30-day readmission risk'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "18-39",
+                        "value": 7
+                    },
+                    {
+                        "label": "40-64",
+                        "value": 4
+                    },
+                    {
+                        "label": "≥65",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "Primary payer",
+                "name": "payer",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Medicare",
+                        "value": 4
+                    },
+                    {
+                        "label": "Medicaid",
+                        "value": 5
+                    },
+                    {
+                        "label": "Private insurance",
+                        "value": 0
+                    },
+                    {
+                        "label": "Self-pay",
+                        "value": -3
+                    },
+                    {
+                        "label": "No charge or other",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Elixhauser Comorbidity Index",
+                "name": "index",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥3",
+                        "value": 2
+                    },
+                    {
+                        "label": "<3",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Hypertension, diabetes, COPD, CHF, obesity, renal failure, etc (see <a href='#evidence'>Evidence</a> for full list)",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Non-alcoholic etiology of cirrhosis",
+                "name": "et",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    },
+                    {
+                        "label": "No",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Ascites",
+                "name": "as",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    },
+                    {
+                        "label": "No",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Hepatic encephalopathy",
+                "name": "en",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    },
+                    {
+                        "label": "No",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Variceal bleeding",
+                "name": "bleeding",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": -7
+                    },
+                    {
+                        "label": "No",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Hepatocellular carcinoma",
+                "name": "hcc",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    },
+                    {
+                        "label": "No",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Paracentesis during admission",
+                "name": "para",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    },
+                    {
+                        "label": "No",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Hemodialysis during admission",
+                "name": "hemo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 7
+                    },
+                    {
+                        "label": "No",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Disposition",
+                "name": "dis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Routine",
+                        "value": 0
+                    },
+                    {
+                        "label": "Transfer",
+                        "value": -1
+                    },
+                    {
+                        "label": "Home health care",
+                        "value": 1
+                    },
+                    {
+                        "label": "Against medical advice",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Cirrhosis",
+            "cirrhotic",
+            "readmission risk"
+        ],
+        "specialty": [
+            "Administration",
+            "Gastroenterology",
+            "Hepatology"
+        ]
+    }
+}

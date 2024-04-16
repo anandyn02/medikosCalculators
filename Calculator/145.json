@@ -1,0 +1,252 @@
+{
+    "id": "145",
+    "title": "PSA Doubling Time (PSADT) Calculator",
+    "desc": "The PSA Doubling Time Calculator calculates rate of PSA doubling in prostate cancer (correlates with survival).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jamanetwork.com/journals/jama/fullarticle/189741",
+                "text": "Pound CR, Partin AW, Eisenberger MA, Chan DW, Pearson JD, Walsh PC. Natural history of progression after PSA elevation following radical prostatectomy. JAMA. 1999;281(17):1591-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9302139 ",
+                "text": "Patel A, Dorey F, Franklin J, Dekernion JB. Recurrence patterns after radical retropubic prostatectomy: clinical usefulness of prostate specific antigen doubling times and log slope prostate specific antigen. J Urol. 1997;158(4):1441-5."
+            },
+            {
+                "href": "https://www.nccn.org/professionals/physician_gls/default.aspx#prostate",
+                "text": "NCCN Clinical Practice Guidelines in Oncology: Prostate Cancer."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Prostate-specific antigen doubling time (PSADT) = ln(2) / x,</p>\n<p dir=\"ltr\">Where x = slope of the relationship between ln(PSA, ng/mL) and time of PSA measurement (i.e., ln(PSA<sub>n</sub>) - ln(PSA<sub>1</sub>) / time between PSA<sub>n</sub>&nbsp;and PSA<sub>1</sub>, where n refers to a measurement &gt;1)</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Days/Months",
+                "unit": "psadt_days",
+                "error_min": "0",
+                "error_max": "5000",
+                "warn_min": "0",
+                "warn_max": "5000",
+                "conversion": "30.4375",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "days",
+                "units_us": "months"
+            },
+            {
+                "name": "psa",
+                "unit": "psa",
+                "error_min": "0",
+                "error_max": "10000",
+                "warn_min": "0",
+                "warn_max": "10000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "ng/mL",
+                "units_us": "ng/mL"
+            }
+        ],
+        "primary_complains": [
+            "Any/All"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Prostate Cancer"
+        ],
+        "logic": "var calc_output = [];\nvar time1 = 0;\nvar time2 = parseFloat(time2);\nvar time3 = parseFloat(time3) || 0;\nvar time4 = parseFloat(time4) || 0;\nvar time5 = parseFloat(time5) || 0;\nvar psa1 = parseFloat(psa1);\nvar psa2 = parseFloat(psa2);\nvar psa3 = parseFloat(psa3) || 0;\nvar psa4 = parseFloat(psa4) || 0;\nvar psa5 = parseFloat(psa5) || 0;\nvar add1 = parseFloat(add1);\nvar add2 = parseFloat(add2) || 0;\nvar add3 = parseFloat(add3) || 0;\n\nif (UOMSYSTEM == false) {\n  time2 = time2*0.03285420945;\n  time3 = time3*0.03285420945;\n  time4 = time4*0.032854209455;\n  time5 = time5*0.03285420945;\n}\n\nvar x_average, y_average, x1, x2, x3, x4, x5, y1, y2, y3, y4, y5, i1, i2, i3, i4, i5, j1, j2, j3, j4, j5, m, dt;\n\nif (psa5 > 0) {\n  psa1 = Math.log(psa1);\n  psa2 = Math.log(psa2);\n  psa3 = Math.log(psa3);\n  psa4 = Math.log(psa4);\n  psa5 = Math.log(psa5);\n\n  time3 = time2 + time3;\n  time4 = time3 + time4;\n  time5 = time4 + time5;\n\n  x_average = (time1 + time2 + time3 + time4 + time5)/5;\n  y_average = (psa1 + psa2 + psa3 + psa4 + psa5)/5;\n\n  x5 = time5 - x_average;\n  x4 = time4 - x_average;\n  x3 = time3 - x_average;\n  x2 = time2 - x_average;\n  x1 = time1 - x_average;\n  \n  y5 = psa5 - y_average;\n  y4 = psa4 - y_average;\n  y3 = psa3 - y_average;\n  y2 = psa2 - y_average;\n  y1 = psa1 - y_average;\n\n  i1 = x1*y1;\n  i2 = x2*y2;\n  i3 = x3*y3;\n  i4 = x4*y4;\n  i5 = x5*y5;\n  \n  j1 = x1*x1;\n  j2 = x2*x2;\n  j3 = x3*x3;\n  j4 = x4*x4;\n  j5 = x5*x5;\n\n  m = (i1 + i2 + i3 + i4 + i5)/(j1 + j2 + j3 + j4 +j5);\n  dt =  Math.LN2/m;\n} \n\nelse if (psa4 > 0) {\n  psa1 = Math.log(psa1);\n  psa2 = Math.log(psa2);\n  psa3 = Math.log(psa3);\n  psa4 = Math.log(psa4);\n\n  time3 = time2 + time3;\n  time4 = time3 + time4;\n\n  x_average = (time1 + time2 + time3 + time4)/4;\n  y_average = (psa1 + psa2 + psa3 + psa4)/4;\n\n  x4 = time4 - x_average;\n  x3 = time3 - x_average;\n  x2 = time2 - x_average;\n  x1 = time1 - x_average;\n  \n  y4 = psa4 - y_average;\n  y3 = psa3 - y_average;\n  y2 = psa2 - y_average;\n  y1 = psa1 - y_average;\n\n  i1 = x1*y1;\n  i2 = x2*y2;\n  i3 = x3*y3;\n  i4 = x4*y4;\n  \n  j1 = x1*x1;\n  j2 = x2*x2;\n  j3 = x3*x3;\n  j4 = x4*x4;\n\n  m = (i1 + i2 + i3 + i4)/(j1 + j2 + j3 + j4);\n  dt =  Math.LN2/m;\n}\n\n else if (psa3 > 0) {\n  psa1 = Math.log(psa1);\n  psa2 = Math.log(psa2);\n  psa3 = Math.log(psa3);\n\n  time3 = time2 + time3;\n\n  x_average = (time1 + time2 + time3)/3;\n  y_average = (psa1 + psa2 + psa3)/3;\n\n  x3 = time3 - x_average;\n  x2 = time2 - x_average;\n  x1 = time1 - x_average;\n  \n  y3 = psa3 - y_average;\n  y2 = psa2 - y_average;\n  y1 = psa1 - y_average;\n\n  i1 = x1*y1;\n  i2 = x2*y2;\n  i3 = x3*y3;\n  \n  j1 = x1*x1;\n  j2 = x2*x2;\n  j3 = x3*x3;\n\n  m = (i1 + i2 + i3)/(j1 + j2 + j3);\n  dt =  Math.LN2/m;\n}\n\n else {\n  psa1 = Math.log(psa1);\n  psa2 = Math.log(psa2);\n\n  x_average = (time1 + time2)/2;\n  y_average = (psa1 + psa2)/2;\n\n  x2 = time2 - x_average;\n  x1 = time1 - x_average;\n  \n  y2 = psa2 - y_average;\n  y1 = psa1 - y_average;\n\n  i1 = x1*y1;\n  i2 = x2*y2;\n  \n  j1 = x1*x1;\n  j2 = x2*x2;\n\n  m = (i1 + i2)/(j1 + j2);\n  dt =  Math.LN2/m;\n}\n\nif (m <= 0) {\n  msg = 'PSA value should be increasing over time';\n}\n\n//results\nif (m <= 0) {\ncalc_output.push({\n    name: 'mini',\n    value: '',\n    value_text: '',\n    message: msg\n});\ncalc_output.push({\n    name: '10198_PSA Doubling Time (PSADT) Calculator_result',\n    value: '',\n    value_text: '',\n    message: msg     \n});\n} else {\n  calc_output.push({\n    name: 'mini',\n    value: dt.toFixed(1),\n    value_text: 'months',\n    message: 'Doubling time'\n});\ncalc_output.push({\n    name: '10198_PSA Doubling Time (PSADT) Calculator_result (slope)',\n    value: m.toFixed(1),\n    value_text: '',\n    message: 'Slope'   \n});\ncalc_output.push({\n    name: '10198_PSA Doubling Time (PSADT) Calculator_result (time)',\n    value: dt.toFixed(1),\n    value_text: 'months',\n    message: 'Doubling time'   \n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "PSA<sub>1</sub>",
+                "name": "psa1",
+                "optional": false,
+                "tips_en": "First (earliest) available PSA result",
+                "type": "textbox",
+                "unit": "psa"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "PSA<sub>2</sub>",
+                "name": "psa2",
+                "optional": false,
+                "tips_en": "Second available PSA result",
+                "type": "textbox",
+                "unit": "psa"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Time between PSA<sub>1</sub> and PSA<sub>2</sub> measurement",
+                "name": "time2",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "psadt_days"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Add another measurement",
+                "md_calc_info_concept": null,
+                "name": "add1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "add1>0",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "PSA<sub>3</sub>",
+                "name": "psa3",
+                "optional": false,
+                "tips_en": "Third available PSA result",
+                "type": "textbox",
+                "unit": "psa"
+            },
+            {
+                "conditionality": "add1>0",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Time between PSA<sub>2</sub> and PSA<sub>3</sub> measurement",
+                "name": "time3",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "psadt_days"
+            },
+            {
+                "conditionality": "add1>0",
+                "default": 0,
+                "label_en": "Add another measurement",
+                "md_calc_info_concept": null,
+                "name": "add2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "add2>0",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "PSA<sub>4</sub>",
+                "name": "psa4",
+                "optional": false,
+                "tips_en": "Fourth available PSA result",
+                "type": "textbox",
+                "unit": "psa"
+            },
+            {
+                "conditionality": "add2>0",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Time between PSA<sub>3</sub> and PSA<sub>4</sub> measurement",
+                "name": "time4",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "psadt_days"
+            },
+            {
+                "conditionality": "add2>0",
+                "default": 0,
+                "label_en": "Add another measurement",
+                "md_calc_info_concept": null,
+                "name": "add3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "add3>0",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "PSA<sub>5</sub>",
+                "name": "psa5",
+                "optional": false,
+                "tips_en": "Fifth available PSA result",
+                "type": "textbox",
+                "unit": "psa"
+            },
+            {
+                "conditionality": "add3>0",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Time between PSA<sub>4</sub> and PSA<sub>5</sub> measurement",
+                "name": "time5",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "psadt_days"
+            }
+        ],
+        "can_search": [
+            "Psa",
+            "psa doubling time",
+            "psa velocity",
+            "rate of rise of psa",
+            "PSADT"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Urology"
+        ]
+    }
+}

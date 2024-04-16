@@ -1,0 +1,175 @@
+{
+    "id": "715",
+    "title": "San Francisco Syncope Rule",
+    "desc": "The San Francisco Syncope Rule predicts risk for serious outcomes at 7 days in patients presenting with syncope or near-syncope.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14747812",
+                "text": "Quinn JV, Stiell IG, McDermott DA, Sellers KL, Kohn MA, Wells GA.  Derivation of the San Francisco Syncope Rule to Predict Patients With Short-Term Serious Outcomes.  Annals of Emergency Medicine. 2004;43(2):224-232."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18282636",
+                "text": "Birnbaum A, Esses D, Bijur P, Wollowitz A, Gallagher EJ.  Failure to Validate the San Francisco Syncope Rule in an Independent Emergency Department Population.  Annals of Emergency Medicine. 2008;52(2):151-159."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20868906",
+                "text": "Serrano LA, Hess EP, Bellolio MF, Murad MH, Montori VM, Erwin PJ, Decker WW.  Accuracy and Quality of Clinical Decision Rules for Syncope in the Emergency Department: A Systematic Review and Meta-analysis.  Annals of Emergency Medicine. 2010;56(4):362-373."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20828875",
+                "text": "Quinn JV, McDermott DA.  ECG Criteria of the San Francisco Syncope Rule.  Annals of Emergency Medicine. 2011;57(1):72."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3193123/",
+                "text": "Saccilotto RT, Nickel CH, Bucher HC, Steyerberg EW, Bingisser R, Koller MT. San Francisco Syncope Rule to predict short-term serious outcomes: a systematic review. CMAJ. 2011;183(15):E1116-26."
+            }
+        ],
+        "evidence": "<p>Series of Yes/No Questions; if any answered &ldquo;Yes&rdquo; patient <strong>cannot</strong> be considered &ldquo;Low Risk.&rdquo;</p>",
+        "facts": "<p>This rule has a 96% sensitivity and 62% specificity for serious outcome - negative predictive value: 99.2%; positive predictive value 24.8%. However, an external validation at the Albert Einstein College of Medicine showed a lower sensitivity of 74%.</p>\n<p>Serious outcome in this study is defined as \"death, myocardial infarction, arrhythmia, pulmonary embolism, stroke, subarachnoid hemorrhage, significant hemorrhage, or any condition causing a return ED visit and hospitalization for a related event.\"</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Syncope"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Arrhythmia"
+        ],
+        "logic": "var calc_output=[]; \n\nvar mini_msg=''; \nvar msg=''; \nvar u=parseFloat(heart_failure)+parseFloat(hematocrit_30)+parseFloat(ekg_abnormal)+parseFloat(shortness_of_breath)+parseFloat(systolic_bp_90);\n\nif(u==0){\n    mini_msg='Low-risk'; \n    msg='Patient IS in the low-risk group for serious outcome.'\n} else if(u>0){\n    mini_msg='NOT low-risk'; \n    msg='Patient is NOT in the low-risk group for serious outcome.'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:' ',\n    value_text:' ',\n    message:mini_msg\n}); calc_output.push({\n    name:'93_SF Syncope Rule_result',\n    value:' ',\n    value_text:' ',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Congestive heart failure history",
+                "md_calc_info_concept": null,
+                "name": "heart_failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hematocrit <30%",
+                "md_calc_info_concept": null,
+                "name": "hematocrit_30",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "EKG abnormal (EKG changed, or any non-sinus rhythm on EKG or monitoring)",
+                "md_calc_info_concept": null,
+                "name": "ekg_abnormal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Shortness of breath symptoms",
+                "md_calc_info_concept": null,
+                "name": "shortness_of_breath",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Systolic BP <90 mmHg at triage",
+                "md_calc_info_concept": null,
+                "name": "systolic_bp_90",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "sf",
+            "pass out",
+            "stiell",
+            "Syncope",
+            "Near-syncope",
+            "Near syncope",
+            "SF",
+            "San Francisco",
+            "lightheadedness"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Primary Care"
+        ]
+    }
+}

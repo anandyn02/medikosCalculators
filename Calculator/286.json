@@ -1,0 +1,152 @@
+{
+    "id": "286",
+    "title": "Testicular Workup for Ischemia and Suspected Torsion (TWIST)",
+    "desc": "Testicular Workup for Ischemia and Suspected Torsion (TWIST) diagnosis of testicular torsion, decreasing indication for ultrasound.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/23103800/",
+                "text": "Barbosa JA, Tiseo BC, Barayan GA, et al. Development and initial validation of a scoring system to diagnose testicular torsion in children. J Urol. 2013;189(5):1859-1864."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/35238603/",
+                "text": "Qin KR, Qu LG. Diagnosing with a twist: systematic review and meta-analysis of a testicular torsion risk score. J Urol. 2022;208(1):62-70."
+            }
+        ],
+        "evidence": "<p>The TWIST score is calculated by the addition of the selected points:</p>\n<table style=\"width: 100%; height: 163.32px; border-width: 1px; border-style: none;\">\n<tbody>\n<tr style=\"height: 38.75px;\">\n<td colspan=\"2\" style=\"width: 66.6667%; height: 38.75px;\"><strong>Variable</strong></td>\n<td style=\"width: 33.3333%; height: 38.75px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td rowspan=\"2\" style=\"width: 33.3333%; height: 44.7968px;\">Testicular swelling</td>\n<td style=\"width: 33.3333%; height: 22.3984px;\">No</td>\n<td style=\"width: 33.3333%; height: 22.3984px;\">0</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 33.3333%; height: 22.3984px;\">Yes</td>\n<td style=\"width: 33.3333%; height: 22.3984px;\">2</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 44.7968px; width: 33.3333%;\" rowspan=\"2\">Hard testicle</td>\n<td style=\"width: 33.3333%; height: 22.3984px;\">No</td>\n<td style=\"width: 33.3333%; height: 22.3984px;\">0</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 33.3333%; height: 22.3984px;\">Yes</td>\n<td style=\"width: 33.3333%; height: 22.3984px;\">2</td>\n</tr>\n<tr style=\"height: 10px;\">\n<td style=\"height: 16.2344px; width: 33.3333%;\" rowspan=\"2\">Absent cremasteric reflex</td>\n<td style=\"width: 33.3333%; height: 10px;\">No</td>\n<td style=\"width: 33.3333%; height: 10px;\">0</td>\n</tr>\n<tr style=\"height: 6.23438px;\">\n<td style=\"width: 33.3333%; height: 6.23438px;\">Yes</td>\n<td style=\"width: 33.3333%; height: 6.23438px;\">1</td>\n</tr>\n<tr>\n<td rowspan=\"2\" style=\"width: 33.3333%;\">Nausea/vomiting</td>\n<td style=\"width: 33.3333%;\">No</td>\n<td style=\"width: 33.3333%;\">0</td>\n</tr>\n<tr>\n<td style=\"width: 33.3333%;\">Yes</td>\n<td style=\"width: 33.3333%;\">1</td>\n</tr>\n<tr style=\"height: 6.23438px;\">\n<td style=\"height: 6.23438px; width: 33.3333%;\" rowspan=\"2\">High riding testis</td>\n<td style=\"width: 33.3333%; height: 6.23438px;\">No</td>\n<td style=\"width: 33.3333%; height: 6.23438px;\">0</td>\n</tr>\n<tr style=\"height: 6.23438px;\">\n<td style=\"width: 33.3333%; height: 6.23438px;\">Yes</td>\n<td style=\"width: 33.3333%; height: 6.23438px;\">1</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<table style=\"width: 100%; height: 172.187px; border-width: 1px; border-style: none;\">\n<tbody>\n<tr style=\"height: 39.3281px;\">\n<td style=\"width: 35.7314%; height: 39.3281px;\"><strong>TWIST Score</strong></td>\n<td style=\"width: 64.505%; height: 39.3281px;\"><strong>Risk of Testicular Torsion</strong></td>\n</tr>\n<tr style=\"height: 54.1953px;\">\n<td style=\"width: 35.7314%; height: 54.1953px;\">0-2</td>\n<td style=\"width: 64.505%; height: 54.1953px;\">Low, no recommendation for ultrasound</td>\n</tr>\n<tr style=\"height: 39.3281px;\">\n<td style=\"width: 35.7314%; height: 39.3281px;\">3-4</td>\n<td style=\"width: 64.505%; height: 39.3281px;\">Intermediate, ultrasound indicated</td>\n</tr>\n<tr style=\"height: 39.3359px;\">\n<td style=\"width: 35.7314%; height: 39.3359px;\">5-7</td>\n<td style=\"width: 64.505%; height: 39.3359px;\">High, surgical exploration recommended</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Chronic Pain",
+            "Fever",
+            "Nausea",
+            "Pain",
+            "Polyuria",
+            "Swelling",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Ischemia"
+        ],
+        "logic": "var calc_output = [];\n\nvar swelling = parseFloat(swelling);\nvar hard = parseFloat(hard);\nvar absent = parseFloat(absent);\nvar nausea = parseFloat(nausea);\nvar high = parseFloat(high);\n\nvar score = swelling + hard + absent + nausea + high;\n\nvar risk;\nvar rec;\n\nif (score <=2) {\n    risk = 'Low';\n    rec = 'No recommendation for ultrasound';\n} else if (score <=4) {\n    risk = 'Intermediate';\n    rec = 'Ultrasound indicated';\n} else {\n    risk = 'High';\n    rec = 'Surgical exploration recommended';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'TWIST Score'\n});\ncalc_output.push({\n    name: 'TWIST',\n    value: score,\n    value_text: 'points',\n    message: 'TWIST Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: 'risk',\n    message: rec\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Testicular swelling</p>",
+                "name": "swelling",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Hard testicle</p>",
+                "name": "hard",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Absent cremasteric reflex</p>",
+                "name": "absent",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Nausea/vomiting</p>",
+                "name": "nausea",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>High riding testis</p>",
+                "name": "high",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Testicular Workup for Ischemia and Suspected Torsion (TWIST)",
+            "twist",
+            "testicular torsion",
+            "testicular torsion diagnosis",
+            "ischemia",
+            "suspected torsion"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Surgery (General)",
+            "Urology"
+        ]
+    }
+}

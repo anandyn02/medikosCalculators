@@ -1,0 +1,422 @@
+{
+    "id": "233",
+    "title": "Veterans Health Administration COVID-19 (VACO) Index for COVID-19 Mortality",
+    "desc": "The Veterans Health Administration COVID-19 (VACO) Index for COVID-19 Mortality estimates risk of 30-day mortality after COVID-19 infection using pre-COVID health status. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/33175863/",
+                "text": "King JT Jr, Yoon JS, Rentsch CT, Tate JP, Park LS, Kidwai-Khan F, Skanderson M, Hauser RG, Jacobson DA, Erdos J, Cho K, Ramoni R, Gagnon DR, Justice AC. Development and validation of a 30-day mortality index based on pre-existing medical administrative data from 13,323 COVID-19 patients: The Veterans Health Administration COVID-19 (VACO) Index. PLoS One. 2020 Nov 11;15(11):e0241825."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p><span id=\"docs-internal-guid-64f038d9-7fff-13dc-be9e-65e72d99e085\"><strong>Coefficient<sub>sum </sub></strong>=<span style=\"font-size: xx-small;\"> </span>Age<sub>coefficient</sub> + Sex<sub>coeffient</sub> + CCI_Age<sub>coefficient</sub> + MI_PVD<sub>coefficient </sub>+ Constant<sub>coefficient</sub></span></p>\n<p><span id=\"docs-internal-guid-a27cb63a-7fff-dffb-13c2-474058efdae5\"><strong>OR<sub>calc</sub></strong> = exp(coefficient<sub>sum</sub>)<sub></sub></span></p>\n<p><span id=\"docs-internal-guid-a6cac9e3-7fff-9619-8145-10f37cad0818\"><strong>Risk<sub>pred</sub></strong>&nbsp; = OR<sub>calc</sub> / (1 + OR<sub>calc</sub>)<br></span></p>\n<p></p>\n<p>Where:</p>\n<table width=\"*\" height=\"*\">\n<tbody>\n<tr>\n<td colspan=\"3\"><strong>Variable</strong><br><br></td>\n<td><strong>Coefficient</strong></td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"9\">Age<br><br><br><br><br><br><br><br></td>\n<td>20-49</td>\n<td>-2.228678713</td>\n</tr>\n<tr>\n<td>50-54</td>\n<td>0</td>\n</tr>\n<tr>\n<td>55-59</td>\n<td>0.400599289</td>\n</tr>\n<tr>\n<td>60-64</td>\n<td>0.941322019</td>\n</tr>\n<tr>\n<td>65-69</td>\n<td>1.295007128</td>\n</tr>\n<tr>\n<td>70-74</td>\n<td>1.629533438</td>\n</tr>\n<tr>\n<td>75-79</td>\n<td>1.763345763</td>\n</tr>\n<tr>\n<td>80-89</td>\n<td>1.927443543</td>\n</tr>\n<tr>\n<td>&ge;90</td>\n<td>2.018752269</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">Sex</td>\n<td>Female</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Male</td>\n<td>0.322291449</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">History of MI or PVD</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>0.267265312</td>\n</tr>\n<tr>\n<td colspan=\"3\">Constant</td>\n<td>-4.216058062</td>\n</tr>\n<tr>\n<td colspan=\"4\"><strong>CCI and Age Interaction Term</strong></td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"5\"><br>Age &lt;85<br><br><br></td>\n<td><strong>CCI</strong></td>\n<td><strong>Coefficient</strong></td>\n</tr>\n<tr>\n<td>1-3</td>\n<td>0.612122574</td>\n</tr>\n<tr>\n<td>4-5</td>\n<td>0.825072847</td>\n</tr>\n<tr>\n<td>6-9</td>\n<td>0.956099733</td>\n</tr>\n<tr>\n<td>&ge;10</td>\n<td>1.395164653</td>\n</tr>\n<tr>\n<td colspan=\"2\">Age&nbsp;&ge;85</td>\n<td>Any CCI</td>\n<td>1.529325519</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Charlson Comorbidity Index</strong></p>\n<p>Addition of the selected points:</p>\n<table width=\"*\" height=\"*\">\n<tbody>\n<tr>\n<td colspan=\"2\"><strong>Variable</strong></td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td rowspan=\"3\">History of Diabetes<br><br></td>\n<td>None</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Diabetes</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Diabetes, with complications (e.g., eyes, kidneys, ketoacidosis)</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Chronic pulmonary disease (e.g., COPD, emphysema)<br><br></td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Renal disease (e.g., dialysis, glomerulonephritis, nephritic syndrome)<br><br></td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Peripheral vascular disease<br><br></td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Congestive heart failure</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Dementia</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"3\">History of Cancer</td>\n<td>None</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Cancer (except skin cancer)</td>\n<td>2</td>\n</tr>\n<tr>\n<td>Cancer, metastatic (cancer spreading to another part of the body)</td>\n<td>6</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Cerebrovascular accident (i.e., stroke)</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"3\">History of liver disease</td>\n<td>None</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Liver disease, mild (e.g., viral hepatitis B or C, alcoholic hepatitis)</td>\n<td>1</td>\n</tr>\n<tr>\n<td>Liver disease, moderate or severe (e.g., esophageal varices, fatty liver, liver failure)</td>\n<td>3</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Myocardial infarction</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Peptic ulcer disease</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Paralysis of arm(s) or leg(s)</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">AIDS</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>6</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Rheumatologic disease (e.g., lupus, rheumatoid arthritis)</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<p><strong>Interpretation:</strong></p>\n<table width=\"*\" height=\"*\">\n<tbody>\n<tr>\n<td style=\"text-align: center;\"><strong>Risk</strong></td>\n<td colspan=\"2\" style=\"text-align: center;\"><strong>Risk Category</strong><strong></strong></td>\n</tr>\n<tr>\n<td>0-8.7%</td>\n<td>Lower risk (lower 50% of scores)</td>\n<td><img src=\"https://cdn-web-img.mdcalc.com/content/Lower Risk.png\" width=\"172\" height=\"100\"></td>\n</tr>\n<tr>\n<td>8.8-16.0%</td>\n<td>Moderate risk (4<sup>th</sup> sextile of scores)</td>\n<td><img src=\"https://cdn-web-img.mdcalc.com/content/Moderate Risk.png\" width=\"169\" height=\"100\"></td>\n</tr>\n<tr>\n<td>16.1-21.2%</td>\n<td>High risk (5<sup>th</sup> sextile of scores)</td>\n<td><img src=\"https://cdn-web-img.mdcalc.com/content/High Risk.png\" width=\"172\" height=\"100\"></td>\n</tr>\n<tr>\n<td>&gt;21.3%</td>\n<td>Extreme risk (upper sextile of scores)</td>\n<td><img src=\"https://cdn-web-img.mdcalc.com/content/Extreme Risk.png\" width=\"172\" height=\"100\"></td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/Vaco_graph.png\" class=\"alignnone size-full wp-image-1839\" alt=\"\"></div>\n<p>From <a href=\"https://pubmed.ncbi.nlm.nih.gov/33175863/\" target=\"_blank\" rel=\"noopener\">King 2020</a>.</p>",
+        "estimation": [
+            {
+                "name": "age_vaco",
+                "unit": "age_vaco",
+                "error_min": "20",
+                "error_max": "115",
+                "warn_min": "20",
+                "warn_max": "115",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Cough",
+            "Fever",
+            "Myalgias",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "COVID-19"
+        ],
+        "logic": "var calc_output=[];\n\nvar age_raw = parseFloat(one);\nvar sex = parseFloat(two);\nvar cci_raw = parseFloat(four)+parseFloat(five)+parseFloat(six)+parseFloat(seven)+parseFloat(eight)+parseFloat(nine)+parseFloat(ten)+parseFloat(eleven)+parseFloat(twelve)+parseFloat(thirteen)+parseFloat(fourteen)+parseFloat(fifteen)+parseFloat(sixteen)+parseFloat(seventeen);\n\nif (parseFloat(seven) ==1 || parseFloat(thirteen) ==1){\n  var history=0.267265312;\n}\nif (parseFloat(seven) ==0 && parseFloat(thirteen) ==0){\n  var history=0;\n}\n\nif (age_raw >=20 && age_raw <=49){\n  age = -2.228678713;\n}\nif (age_raw >=50 && age_raw <=54){\n  age = 0;\n}\nif (age_raw >=55 && age_raw <=59){\n  age = 0.400599289;\n}\nif (age_raw >=60 && age_raw <=64){\n  age = 0.941322019;\n}\nif (age_raw >=65 && age_raw <=69){\n  age = 1.295007128;\n}\nif (age_raw >=70 && age_raw <=74){\n  age = 1.629533438;\n}\nif (age_raw >=75 && age_raw <=79){\n  age = 1.763345763;\n}\nif (age_raw >=80 && age_raw <=89){\n  age = 1.927443543;\n}\nif (age_raw >=90){\n  age = 2.018752269;\n}\n\nif (age_raw <85){\n\tif (cci_raw==0){\n  \tvar cci=0;\n\t}\n\tif (cci_raw>=1 && cci_raw<=3){\n \tvar cci=0.612122574;\n\t}\n\tif (cci_raw>=4 && cci_raw<=5){\n\t  var cci=0.82507284;\n\t}\n\tif (cci_raw>=6 && cci_raw<=9){\n\t  var cci=0.956099733;\n\t}\n\tif (cci_raw>=10){\n\t  var cci=1.395164653;\n\t}\n}\n\nif (age_raw >=85){\n  var cci = 1.529325519;\n}\n\n\nvar coefficient_sum = age + sex + cci + history - 4.216058062;\nvar or_calc = Math.exp(coefficient_sum);\nvar risk = (or_calc/(1 + or_calc))*100;\n\nvar riskmsg;\nvar cci_msg = \"Charlson Comorbidity Index\";\n\nif (risk.toFixed(1)>=0 && risk.toFixed(1)<=8.7){\n  riskmsg='Lower Risk';\n}\nif (risk.toFixed(1)>=8.8 && risk.toFixed(1)<=16.0){\n  riskmsg='Moderate Risk';\n}\nif (risk.toFixed(1)>=16.1 && risk.toFixed(1)<=21.2){\n  riskmsg='High Risk';\n}\nif (risk.toFixed(1)>=21.3){\n  riskmsg='Extreme Risk';\n}\n\nvar tb;\nvar group;\n\nif (risk<8.35){\n  tb = 'bottom';\n}\nif (risk>=8.35){\n  tb = 'top';\n}\n\nif (risk>=0 && risk<0.16){\n  group = '3.3%';\n}\nif (risk>=0.16 && risk<0.22){\n  group = '16.8%';\n}\nif (risk>=0.22 && risk<0.29){\n  group = '18.1%';\n}\nif (risk>=0.29 && risk<0.36){\n  group = '18.2%';\n}\nif (risk>=0.36 && risk<0.38){\n  group = '18.2%';\n}\nif (risk>=0.38 && risk<0.40){\n  group = '23.4%';\n}\nif (risk>=0.40 && risk<0.41){\n  group = '23.4%';\n}\nif (risk>=0.41 && risk<0.47){\n  group = '23.4%';\n}\nif (risk>=0.47 && risk<0.50){\n  group = '23.6%';\n}\nif (risk>=0.50 && risk<0.53){\n  group = '23.8%';\n}\nif (risk>=0.53 && risk<0.57){\n  group = '24.2%';\n}\nif (risk>=0.57 && risk<0.65){\n  group = '24.3%';\n}\nif (risk>=0.65 && risk<0.74){\n  group = '24.3%';\n}\nif (risk>=0.74 && risk<0.88){\n  group = '24.3%';\n}\nif (risk>=0.88 && risk<1.14){\n  group = '24.3%';\n}\nif (risk>=1.14 && risk<1.45){\n  group = '24.8%';\n}\nif (risk>=1.45 && risk<2.00){\n  group = '27.8%';\n}\nif (risk>=2.00 && risk<2.16){\n  group = '28.2%';\n}\nif (risk>=2.16 && risk<2.65){\n  group = '28.6%';\n}\nif (risk>=2.65 && risk<2.95){\n  group = '31.6%';\n}\nif (risk>=2.95 && risk<3.26){\n  group = '31.6%';\n}\nif (risk>=3.26 && risk<3.43){\n  group = '31.7%';\n}\nif (risk>=3.43 && risk<3.62){\n  group = '34.6%';\n}\nif (risk>=3.62 && risk<3.64){\n  group = '34.9%';\n}\nif (risk>=3.64 && risk<3.70){\n  group = '34.9%';\n}\nif (risk>=3.70 && risk<3.90){\n  group = '35.5%';\n}\nif (risk>=3.90 && risk<4.21){\n  group = '35.5%';\n}\nif (risk>=4.21 && risk<4.44){\n  group = '35.9%';\n}\nif (risk>=4.44 && risk<4.68){\n  group = '36.0%';\n}\nif (risk>=4.68 && risk<4.79){\n  group = '36.1%';\n}\nif (risk>=4.79 && risk<4.96){\n  group = '38.7%';\n}\nif (risk>=4.96 && risk<5.03){\n  group = '38.9%';\n}\nif (risk>=5.03 && risk<5.04){\n  group = '39.0%';\n}\nif (risk>=5.04 && risk<5.11){\n  group = '39.1%';\n}\nif (risk>=5.11 && risk<5.31){\n  group = '42.9%';\n}\nif (risk>=5.31 && risk<5.42){\n  group = '42.9%';\n}\nif (risk>=5.42 && risk<5.62){\n  group = '42.9%';\n}\nif (risk>=5.62 && risk<5.72){\n  group = '43.1%';\n}\nif (risk>=5.72 && risk<6.16){\n  group = '43.1%';\n}\nif (risk>=6.16 && risk<6.47){\n  group = '43.2%';\n}\nif (risk>=6.47 && risk<6.49){\n  group = '43.7%';\n}\nif (risk>=6.49 && risk<6.52){\n  group = '44.2%';\n}\nif (risk>=6.52 && risk<6.83){\n  group = '44.6%';\n}\nif (risk>=6.83 && risk<6.92){\n  group = '46.3%';\n}\nif (risk>=6.92 && risk<6.96){\n  group = '46.3%';\n}\nif (risk>=6.96 && risk<7.00){\n  group = '46.3%';\n}\nif (risk>=7.00 && risk<7.33){\n  group = '46.7%';\n}\nif (risk>=7.33 && risk<7.60){\n  group = '46.7%';\n}\nif (risk>=7.60 && risk<7.92){\n  group = '46.7%';\n}\nif (risk>=7.92 && risk<7.95){\n  group = '46.8%';\n}\nif (risk>=7.95 && risk<8.16){\n  group = '46.8%';\n}\nif (risk>=8.16 && risk<8.31){\n  group = '47.0%';\n}\nif (risk>=8.31 && risk<8.35){\n  group = '47.0%';\n}\nif (risk>=8.35 && risk<8.78){\n  group = '48.3%';\n}\nif (risk>=8.78 && risk<8.96){\n  group = '48.3%';\n}\nif (risk>=8.96 && risk<9.04){\n  group = '48.0%';\n}\nif (risk>=9.04 && risk<9.21){\n  group = '48.0%';\n}\nif (risk>=9.21 && risk<9.37){\n  group = '47.7%';\n}\nif (risk>=9.37 && risk<9.41){\n  group = '45.6%';\n}\nif (risk>=9.41 && risk<9.70){\n  group = '45.5%';\n}\nif (risk>=9.70 && risk<10.13){\n  group = '45.5%';\n}\nif (risk>=10.13 && risk<10.40){\n  group = '45.5%';\n}\nif (risk>=10.40 && risk<10.62){\n  group = '44.7%';\n}\nif (risk>=10.62 && risk<10.65){\n  group = '43.7%';\n}\nif (risk>=10.65 && risk<10.93){\n  group = '43.7%';\n}\nif (risk>=10.93 && risk<10.95){\n  group = '43.6%';\n}\nif (risk>=10.95 && risk<11.17){\n  group = '43.0%';\n}\nif (risk>=11.17 && risk<11.39){\n  group = '43.0%';\n}\nif (risk>=11.39 && risk<11.49){\n  group = '43.0%';\n}\nif (risk>=11.49 && risk<11.96){\n  group = '42.4%';\n}\nif (risk>=11.96 && risk<12.06){\n  group = '37.9%';\n}\nif (risk>=12.06 && risk<12.19){\n  group = '37.8%';\n}\nif (risk>=12.19 && risk<12.28){\n  group = '37.4%';\n}\nif (risk>=12.28 && risk<12.29){\n  group = '37.4%';\n}\nif (risk>=12.29 && risk<13.24){\n  group = '37.4%';\n}\nif (risk>=13.24 && risk<13.47){\n  group = '36.9%';\n}\nif (risk>=13.47 && risk<13.70){\n  group = '36.9%';\n}\nif (risk>=13.70 && risk<13.82){\n  group = '36.8%';\n}\nif (risk>=13.82 && risk<13.84){\n  group = '36.8%';\n}\nif (risk>=13.84 && risk<14.51){\n  group = '35.7%';\n}\nif (risk>=14.51 && risk<14.66){\n  group = '35.6%';\n}\nif (risk>=14.66 && risk<15.07){\n  group = '35.0%';\n}\nif (risk>=15.07 && risk<15.20){\n  group = '34.3%';\n}\nif (risk>=15.20 && risk<15.35){\n  group = '34.3%';\n}\nif (risk>=15.35 && risk<15.48){\n  group = '34.2%';\n}\nif (risk>=15.48 && risk<15.76){\n  group = '34.2%';\n}\nif (risk>=15.76 && risk<16.08){\n  group = '27.7%';\n}\nif (risk>=16.08 && risk<16.21){\n  group = '27.0%';\n}\nif (risk>=16.21 && risk<16.38){\n  group = '26.9%';\n}\nif (risk>=16.38 && risk<16.42){\n  group = '26.9%';\n}\nif (risk>=16.42 && risk<16.63){\n  group = '26.9%';\n}\nif (risk>=16.63 && risk<17.40){\n  group = '26.9%';\n}\nif (risk>=17.40 && risk<17.97){\n  group = '24.2%';\n}\nif (risk>=17.97 && risk<18.15){\n  group = '23.6%';\n}\nif (risk>=18.15 && risk<18.29){\n  group = '23.6%';\n}\nif (risk>=18.29 && risk<18.33){\n  group = '23.5%';\n}\nif (risk>=18.33 && risk<18.79){\n  group = '23.5%';\n}\nif (risk>=18.79 && risk<19.17){\n  group = '21.5%';\n}\nif (risk>=19.17 && risk<20.02){\n  group = '20.3%';\n}\nif (risk>=20.02 && risk<20.17){\n  group = '19.4%';\n}\nif (risk>=20.17 && risk<20.37){\n  group = '19.4%';\n}\nif (risk>=20.37 && risk<20.42){\n  group = '19.4%';\n}\nif (risk>=20.42 && risk<20.52){\n  group = '18.0%';\n}\nif (risk>=20.52 && risk<20.87){\n  group = '18.0%';\n}\nif (risk>=20.87 && risk<21.28){\n  group = '16.8%';\n}\nif (risk>=21.28 && risk<21.33){\n  group = '15.8%';\n}\nif (risk>=21.33 && risk<21.58){\n  group = '15.7%';\n}\nif (risk>=21.58 && risk<22.25){\n  group = '15.1%';\n}\nif (risk>=22.25 && risk<22.63){\n  group = '15.1%';\n}\nif (risk>=22.63 && risk<23.08){\n  group = '15.0%';\n}\nif (risk>=23.08 && risk<23.21){\n  group = '15.0%';\n}\nif (risk>=23.21 && risk<23.30){\n  group = '15.0%';\n}\nif (risk>=23.30 && risk<23.61){\n  group = '14.3%';\n}\nif (risk>=23.61 && risk<23.65){\n  group = '13.1%';\n}\nif (risk>=23.65 && risk<24.21){\n  group = '12.5%';\n}\nif (risk>=24.21 && risk<25.22){\n  group = '12.2%';\n}\nif (risk>=25.22 && risk<25.63){\n  group = '12.2%';\n}\nif (risk>=25.63 && risk<26.10){\n  group = '10.5%';\n}\nif (risk>=26.10 && risk<26.15){\n  group = '9.8%';\n}\nif (risk>=26.15 && risk<26.69){\n  group = '9.4%';\n}\nif (risk>=26.69 && risk<28.16){\n  group = '9.2%';\n}\nif (risk>=28.16 && risk<28.41){\n  group = '9.2%';\n}\nif (risk>=28.41 && risk<28.76){\n  group = '8.4%';\n}\nif (risk>=28.76 && risk<29.44){\n  group = '8.0%';\n}\nif (risk>=29.44 && risk<29.54){\n  group = '7.8%';\n}\nif (risk>=29.54 && risk<31.88){\n  group = '7.8%';\n}\nif (risk>=31.88 && risk<32.24){\n  group = '7.2%';\n}\nif (risk>=32.24 && risk<32.40){\n  group = '7.1%';\n}\nif (risk>=32.40 && risk<33.89){\n  group = '7.1%';\n}\nif (risk>=33.89 && risk<35.39){\n  group = '6.8%';\n}\nif (risk>=35.39 && risk<36.10){\n  group = '6.7%';\n}\nif (risk>=36.10 && risk<37.94){\n  group = '6.7%';\n}\nif (risk>=37.94 && risk<38.51){\n  group = '6.5%';\n}\nif (risk>=38.51 && risk<39.25){\n  group = '4.0%';\n}\nif (risk>=39.25 && risk<40.11){\n  group = '4.0%';\n}\nif (risk>=40.11 && risk<41.44){\n  group = '2.2%';\n}\nif (risk>=41.44 && risk<42.46){\n  group = '2.1%';\n}\nif (risk>=42.46 && risk<45.77){\n  group = '0.8%';\n}\nif (risk>=45.77){\n  group = '0.1%';\n}\n\nvar msg = 'Note: Mortality estimates are based on testing patterns and treatment outcomes early in the pandemic. Changes in access to testing and in the management of COVID-19 may affect current mortality rates.';\n\ncalc_output.push({\n    name: 'mini',\n    value: risk.toFixed(1),\n\tvalue_text:'% 30-day mortality',\n    message: riskmsg\n});\ncalc_output.push({\n    name: 'VACO Index',\n    value: risk.toFixed(1),\n    value_text:'% risk of mortality (30d)',\n    message:riskmsg+'<br/><br/>'+msg\n});\ncalc_output.push({\n    name: 'Percentile',\n    value: 'Patient in '+tb+' '+group+' risk group',\n    value_text:'',\n    message: 'See Evidence for more info.'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "one",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_vaco"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "mdcalc_info_concept": null,
+                "name": "two",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 0.32
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Past Medical History for Charlson Comorbidity Index",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of Diabetes",
+                "mdcalc_info_concept": null,
+                "name": "four",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Diabetes without complications",
+                        "value": 1
+                    },
+                    {
+                        "label": "Diabetes, with complications (e.g., eyes, kidneys, ketoacidosis)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chronic pulmonary disease (e.g., COPD, emphysema)",
+                "md_calc_info_concept": null,
+                "name": "five",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Renal disease (e.g., dialysis, glomerulonephritis, nephritic syndrome)",
+                "md_calc_info_concept": null,
+                "name": "six",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Peripheral vascular disease",
+                "md_calc_info_concept": null,
+                "name": "seven",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Congestive heart failure",
+                "md_calc_info_concept": null,
+                "name": "eight",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Dementia (e.g., Alzheimer’s, vascular dementia, Lewy body dementia)",
+                "md_calc_info_concept": null,
+                "name": "nine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of Cancer",
+                "mdcalc_info_concept": null,
+                "name": "ten",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Cancer (except skin cancer)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Cancer, metastatic (cancer spreading to another part of the body)",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cerebrovascular accident (i.e., stroke)",
+                "md_calc_info_concept": null,
+                "name": "eleven",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of liver disease",
+                "mdcalc_info_concept": null,
+                "name": "twelve",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Liver disease, mild (e.g., viral hepatitis B or C, alcoholic hepatitis)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Liver disease, moderate or severe (e.g., esophageal varices, fatty liver, liver failure)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Myocardial infarction (heart attack)",
+                "md_calc_info_concept": null,
+                "name": "thirteen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Peptic ulcer disease",
+                "md_calc_info_concept": null,
+                "name": "fourteen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Paralysis of arm(s) or leg(s)",
+                "md_calc_info_concept": null,
+                "name": "fifteen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "AIDS",
+                "md_calc_info_concept": null,
+                "name": "sixteen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Not simply HIV diagnosis",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Rheumatologic disease (e.g., lupus, rheumatoid arthritis)",
+                "md_calc_info_concept": null,
+                "name": "seventeen",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Veterans Health Administration COVID-19 (VACO) Index for COVID-19 Mortality, VACO index, vaco index, covid-19, covid, covid-19 mortality, covid mortality, covid risk, vaco risk, vaco, coronavirus mortality, covid death risk, covid death risk"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "OB-Gyn",
+            "Primary Care",
+            "Pulmonology",
+            "Surgery (General)"
+        ]
+    }
+}

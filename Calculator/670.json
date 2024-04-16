@@ -1,0 +1,233 @@
+{
+    "id": "670",
+    "title": "YEARS Algorithm for Pulmonary Embolism (PE)",
+    "desc": "The YEARS Algorithm for PE helps rule out pulmonary embolism (not externally validated).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28549662 ",
+                "text": "Van der Hulle T, Cheung WY, Kooij S, et al. Simplified diagnostic management of suspected pulmonary embolism (the YEARS study): a prospective, multicentre, cohort study. Lancet. 2017;"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28941051",
+                "text": "Van der Pol LM, Van der Hulle T, Cheung YW, et al. No added value of the age-adjusted D-dimer cut-off to the YEARS algorithm in patients with suspected pulmonary embolism. J Thromb Haemost. 2017;15(12):2317-2324."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24643601",
+                "text": "Righini M, Van es J, Den exter PL, et al. Age-adjusted D-dimer cutoff levels to rule out pulmonary embolism: the ADJUST-PE study. JAMA. 2014;311(11):1117-24."
+            },
+            {
+                "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa1813865",
+                "text": "Van der pol LM, Tromeur C, Bistervels IM, et al. Pregnancy-Adapted YEARS Algorithm for Diagnosis of Suspected Pulmonary Embolism. N Engl J Med. 2019;380(12):1139-1149."
+            }
+        ],
+        "evidence": "<p>Refer to decision tree:</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/years-tree.png\" width=\"100%\" alt=\"\"></p>\n<p>Adapted from <a href=\"https://www.nejm.org/doi/full/10.1056/NEJMoa1813865\" target=\"_blank\" rel=\"noopener\">Van der Pol 2019</a>.</p>\n<p>Take note of the following exclusion criteria:</p>\n<ul>\n<li>Treatment with therapeutic doses of anticoagulants initiated 24 hours or more before eligibility assessment.</li>\n<li>Life expectancy less than 3 months.</li>\n<li>Geographic inaccessibility precluding follow-up.</li>\n<li>Pregnancy (be sure to use pregnancy-adapted YEARS algorithm in the calc).</li>\n<li>Allergy to intravenous contrast agent.</li>\n</ul>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Extremity Edema",
+            "Palpitations",
+            "Shortness of Breath",
+            "Syncope"
+        ],
+        "disease_treated": [
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = [];\n\nvar dvt = parseFloat(dvt);\nvar hemoptysis = parseFloat(hemoptysis);\nvar likely = parseFloat(likely);\nvar dimer500 = parseFloat(dimer500);\nvar dimer1000 = parseFloat(dimer1000);\nvar pregnant = parseFloat(pregnant);\nvar comp = parseFloat(comp);\nvar pregnant = parseFloat(pregnant);\n\nvar msg, result;\n\nif (dvt + hemoptysis + likely == 0) {\n\tif (dimer1000 == 0) {\n\t\tresult = 'PE excluded'\n\t\tmsg = 'YEARS algorithm rules out PE (0.43% with symptomatic VTE during 3-month follow-up)'\n    } else {\n\t\tresult = 'PE not excluded'\n\t\tmsg = 'YEARS algorithm recommends CTPA'\n\t}\n}\nelse {\n  if (dvt == 1 && pregnant == 1 && comp == 0) {\n    result = 'Initiate anticoagulant'\n    msg = 'Pregnancy-adapted YEARS algorithm recommends initiation of anticoagulant treatment'\n  } else if (dimer500 == 0) {\n\t\tresult = 'PE excluded'\n\t\tmsg = 'YEARS algorithm rules out PE (0.43% with symptomatic VTE during 3-month follow-up)'\n  } else {\n\t\tresult = 'PE not excluded'\n\t\tmsg = 'YEARS algorithm recommends CTPA'\n\t}\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: '',\n    message: ''\n});\ncalc_output.push({\n    name: '4067_YEARS Algorithm_result',\n    value: result,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Pregnant patient</p>",
+                "md_calc_info_concept": null,
+                "name": "pregnant",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<p>YEARS items</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Clinical signs of DVT</p>",
+                "md_calc_info_concept": null,
+                "name": "dvt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "pregnant == 1 && dvt == 1",
+                "default": null,
+                "label_en": "<p>Compression ultrasonography of symptomatic leg</p>",
+                "mdcalc_info_concept": null,
+                "name": "comp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Abnormal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Normal",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Hemoptysis</p>",
+                "md_calc_info_concept": null,
+                "name": "hemoptysis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>PE most likely diagnosis</p>",
+                "md_calc_info_concept": null,
+                "name": "likely",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<p>D-dimer</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "dvt + hemoptysis + likely > 0",
+                "default": null,
+                "label_en": "<p>D-dimer &ge;500 ng/mL</p>",
+                "mdcalc_info_concept": null,
+                "name": "dimer500",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<p>D-dimer</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "dvt == 0 && hemoptysis == 0 && likely == 0",
+                "default": null,
+                "label_en": "<p>D-dimer &ge;1,000 ng/mL</p>",
+                "mdcalc_info_concept": null,
+                "name": "dimer1000",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "acute PE",
+            "ctpa",
+            "years score",
+            "years algorithm",
+            "years"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Pulmonology"
+        ]
+    }
+}

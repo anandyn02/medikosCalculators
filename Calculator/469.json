@@ -1,0 +1,117 @@
+{
+    "id": "469",
+    "title": "Harmless Acute Pancreatitis Score (HAPS)",
+    "desc": "The Harmless Acute Pancreatitis Score (HAPS) identifies patients who not require intensive care for their first attack of acute pancreatitis",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19245846",
+                "text": "Lankisch PG, Weber-Dany B, Hebel K, Maisonneuve P, Lowenfels AB. The harmless acute pancreatitis score: a clinical algorithm for rapid initial stratification of nonsevere disease. Clin Gastroenterol Hepatol. 2009 Jun;7(6):702-5. PMID: 19245846."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.cghjournal.org/article/S1542-3565(09)00817-9/fulltext",
+                "text": "Talukdar R, Vege SS. Recent developments in acute pancreatitis. Clin Gastroenterol Hepatol. Nov 2009;7(11 Suppl):S3-9."
+            }
+        ],
+        "evidence": "<p>Selection of appropriate criteria.</p>",
+        "facts": "<p>The Harmless Acute Pancreatitis Score (HAPS) rules out &ldquo;severe&rdquo; pancreatitis and need for admission for acute pancreatitis based on three clinical values:</p>\n<ul>\n<li>Peritonitis</li>\n<li>Creatinine</li>\n<li>Hematocrit</li>\n</ul>\n<p>If the above criteria are normal (score of 0), the patient likely does not need ICU admission.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Pancreatitis"
+        ],
+        "logic": " var calc_output = [];\n\n var u = parseFloat(peri) + parseFloat(creat) + parseFloat(hct);\n var msg, mini_msg;\n\n if (u == 0) { mini_msg='Non-severe pancreatitis'; msg='Non-severe pancreatitis.<br/><br/>A score of 0 suggests no pancreatic necrosis, need for dialysis, artificial ventilation, or fatal outcome.'; } \n else { mini_msg='Unable to rule out severe pancreatitis'; msg='Scores >0 do not rule out a harmful first attack of acute pancreatitis. Consider further testing and possible admission to the ICU.'; }\n\n calc_output.push({\n     name: 'mini',\n     value: u,\n     value_text: 'points',\n     message: mini_msg\n });\n calc_output.push({\n     name: '3286_HAPS_result',\n     value: u,\n     value_text: 'points',\n     message: msg\n });",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Peritonitis (rebound tenderness/guarding)",
+                "md_calc_info_concept": null,
+                "name": "peri",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Creatinine ≥2 mg/dL (177 µmol/L)",
+                "md_calc_info_concept": null,
+                "name": "creat",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Hematocrit ≥ 43% (male) or 39.6% (female)",
+                "md_calc_info_concept": null,
+                "name": "hct",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Panc",
+            "hematocrit",
+            "hct",
+            "rebound",
+            "tenderness",
+            "guarding",
+            "haps",
+            "creatinine",
+            "pancreatitis",
+            "acute pancreatitis",
+            "necrotizing pancreatitis"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Gastroenterology",
+            "Hepatology",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

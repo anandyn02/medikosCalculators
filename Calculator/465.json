@@ -1,0 +1,103 @@
+{
+    "id": "465",
+    "title": "Lansky Play-Performance Scale for Pediatric Functional Status",
+    "desc": "The Lansky Play-Performance Scale for Pediatric Patients uses parent description of their child’s activity to assess ability and response to treatment.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3621134",
+                "text": "Lansky DA, List MA, Lansky LL, Ritter-Sterr C, Miller DR (1987). The measurement of performance in childhood cancer patients. Cancer 60 (7): 1651–6.doi:10.1002/1097-0142(19871001)60:73.0.CO;2-J. PMID 3621134."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Score</th>\n<th>Description</th>\n</tr>\n<tr>\n<td>Fully active, normal.</td>\n<td>100</td>\n<td rowspan=\"3\">Able to carry on normal activity; no special care is needed.</td>\n</tr>\n<tr>\n<td>Minor restrictions in strenuous physical activity.</td>\n<td>90</td>\n</tr>\n<tr>\n<td>Active, but gets tired more quickly.</td>\n<td>80</td>\n</tr>\n<tr>\n<td>Greater restriction of play and less time spent in play activity.</td>\n<td>70</td>\n<td rowspan=\"3\">Mild to moderate restriction.</td>\n</tr>\n<tr>\n<td>Up and around, but active play minimal; keeps busy by being involved in quieter activities.</td>\n<td>60</td>\n</tr>\n<tr>\n<td>Lying around much of the day, but gets dressed; no active playing participates in all quiet play and activities.</td>\n<td>50</td>\n</tr>\n<tr>\n<td>Mainly in bed; participates in quiet activities.</td>\n<td>40</td>\n<td rowspan=\"5\">Moderate to severe restriction.</td>\n</tr>\n<tr>\n<td>Bedbound; needing assistance even for quiet play.</td>\n<td>30</td>\n</tr>\n<tr>\n<td>Sleeping often; play entirely limited to very passive activities.</td>\n<td>20</td>\n</tr>\n<tr>\n<td>Doesn't play; does not get out of bed.</td>\n<td>10</td>\n</tr>\n<tr>\n<td>Unresponsive.</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy"
+        ],
+        "logic": "var calc_output = [];\n    var u;\n    var msg = '';\n    u = parseFloat(lansky);\n    if (u <= 40) { msg = 'Moderate to severe restriction.'; }\n    if (u > 40 && u <= 70) { msg = 'Mild to moderate restriction.'; }\n    if (u > 70) { msg = 'Able to carry on normal activity; no special care is needed.'; }\n    var addmsg = 'See definitions of the Lansky Scale in the About section.';\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: '3176_Lansky Scale_result',\n    value: u,\n    value_text: 'points',\n    message: msg+'<br/><br/>'+addmsg\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Patient Description",
+                "mdcalc_info_concept": null,
+                "name": "lansky",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Fully active, normal",
+                        "value": 100
+                    },
+                    {
+                        "label": "Minor restrictions in strenuous physical activity",
+                        "value": 90
+                    },
+                    {
+                        "label": "Active, but gets tired more quickly",
+                        "value": 80
+                    },
+                    {
+                        "label": "Greater restriction of play and less time spent in play activity",
+                        "value": 70
+                    },
+                    {
+                        "label": "Up and around, but active play minimal; keeps busy by being involved in quieter activities",
+                        "value": 60
+                    },
+                    {
+                        "label": "Lying around much of the day, but gets dressed; no active playing participates in all quiet play and activities",
+                        "value": 50
+                    },
+                    {
+                        "label": "Mainly in bed; participates in quiet activities",
+                        "value": 40
+                    },
+                    {
+                        "label": "Bedbound; needing assistance even for quiet play",
+                        "value": 30
+                    },
+                    {
+                        "label": "Sleeping often; play entirely limited to very passive activities",
+                        "value": 20
+                    },
+                    {
+                        "label": "Doesn't play; does not get out of bed",
+                        "value": 10
+                    },
+                    {
+                        "label": "Unresponsive",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "peds performance",
+            "peds",
+            "play",
+            "ability",
+            "activity",
+            "chemo",
+            "chemotherapy",
+            "cancer"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Palliative Care/Hospice",
+            "Pediatrics",
+            "Radiation Oncology"
+        ]
+    }
+}

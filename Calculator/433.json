@@ -1,0 +1,181 @@
+{
+    "id": "433",
+    "title": "APGAR Score",
+    "desc": "The APGAR Score assesses neonates vitality at 1 and 5 minutes after birth.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/13083014",
+                "text": " Apgar V. A proposal for a new method of evaluation of the newborn infant. Curr. Res. Anesth. Analg. 1953;32(4): 260–267. doi:10.1213/00000539-195301000-00041. PMID 13083014."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/13598635",
+                "text": "Apgar V, Holaday D, Stanley James L, et al. Evaluation of the Newborn Infant – Second Report. JAMA. 1958; 168(15): 1985-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11172187",
+                "text": "Casey BM, McIntire DD Leveno KJ The continuing value of the Apgar score for the assessment of newborn infants. N Engl J Med. 2001; 344 (7): 467–471.doi:10.1056/NEJM200102153440701. PMID 11172187"
+            },
+            {
+                "href": "https://pediatrics.aappublications.org/content/136/4/819",
+                "text": "The American Academy of Pediatrics Committee on Fetus and Newborn, The American College of Obstetricians and Gynecologists Committee on Obstetric Practice. The Apgar Score. Pediatrics. 2015; 136: 819-22."
+            }
+        ],
+        "evidence": "<p>Addition of assigned points.</p>\n<ul>\n<li>5 independent items, each scored 0 (Absent), 1 (Intermediate), or 2 (Present)</li>\n<li>Minimum score = 0; maximum = 10</li>\n<li>Initial testing for &ldquo;Reflex Irritability&rdquo; was nasal and oropharyngeal suctioning with rubber catheter meant to elicit grimace, sneeze, or cough.\n<ul>\n<li>Later, a rapid, tangential slap of the sole of the foot was found to be an easier and more effective stimulus.</li>\n</ul>\n</li>\n</ul>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>Scores &ge;7; generally normal</li>\n<li>Score of 4 to 6; fairly low</li>\n<li>Scores &le;3; critically low, needs intervention</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Pregnancy"
+        ],
+        "logic": "var calc_output = []; \n\nvar v = parseFloat(activity) + parseFloat(pulse) + parseFloat(grimace) + parseFloat(appearance) + parseFloat(respirations); \n\nvar msg = ''; \nif (v >= 7) {\n    msg = 'Scores ≥7 are typically \\u201cnormal\\u201d for neonates.'; \n} else if (v < 7) {\n    msg = 'Scores <7 suggest potential need for medical intervention, like suction, drying, warming, and stimulating the neonate. Supplemental oxygen may be indicated as well.'; \n} \n\ncalc_output.push({\n    name: 'mini', \n    value: v.toFixed(0), \n    value_text: 'points', \n    message: 'APGAR Score'\n}); \ncalc_output.push({\n    name: '23_APGAR Score_result',\n    value: v.toFixed(0), \n    value_text: 'points', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Activity/muscle tone",
+                "mdcalc_info_concept": null,
+                "name": "activity",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Active",
+                        "value": 2
+                    },
+                    {
+                        "label": "Some extremity flexion",
+                        "value": 1
+                    },
+                    {
+                        "label": "Limp",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Pulse",
+                "mdcalc_info_concept": null,
+                "name": "pulse",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥100 BPM",
+                        "value": 2
+                    },
+                    {
+                        "label": "<100 BPM",
+                        "value": 1
+                    },
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Grimace",
+                "mdcalc_info_concept": null,
+                "name": "grimace",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Sneeze/cough",
+                        "value": 2
+                    },
+                    {
+                        "label": "Grimace",
+                        "value": 1
+                    },
+                    {
+                        "label": "None",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Appearance/color",
+                "mdcalc_info_concept": null,
+                "name": "appearance",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "All pink",
+                        "value": 2
+                    },
+                    {
+                        "label": "Blue extremities, pink body",
+                        "value": 1
+                    },
+                    {
+                        "label": "Blue/pale",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Respirations",
+                "mdcalc_info_concept": null,
+                "name": "respirations",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Good/crying",
+                        "value": 2
+                    },
+                    {
+                        "label": "Irregular/slow",
+                        "value": 1
+                    },
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "peds",
+            "newborn",
+            "neonate"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neonatal)",
+            "Emergency Medicine",
+            "OB-Gyn",
+            "Pediatrics"
+        ]
+    }
+}

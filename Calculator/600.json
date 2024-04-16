@@ -1,0 +1,126 @@
+{
+    "id": "600",
+    "title": "Cerebral Perfusion Pressure",
+    "desc": "Cerebral Perfusion Pressure measures blood flow to the brain.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16698860 ",
+                "text": "Steiner LA, Andrews PJ. Monitoring the injured brain: ICP and CBF. Br J Anaesth. 2006;97(1):26-38."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22900846",
+                "text": "Farahvar A, Gerber LM, Chiu YL, Carney N, Hartl R, Ghajar J. Increased mortality in patients with severe traumatic brain injury treated without intracranial pressure monitoring. J Neurosurg. Oct 2012;117(4):729-734. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23971954",
+                "text": "Talving P, Karamanos E, Teixeira PG, et al. Intracranial pressure monitoring in severe head injury: compliance with Brain Trauma Foundation guidelines and effect on outcomes: a prospective study. J Neurosurg. Nov 2013;119(5):1248-1254. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24098983",
+                "text": "Gerber LM, Chiu YL, Carney N, Hartl R, Ghajar J. Marked reduction in mortality in patients with severe traumatic brain injury. J Neurosurg. Dec 2013;119(6):1583-1590. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16908157",
+                "text": "Huang SJ, Hong WC, Han YY, et al. Clinical outcome of severe head injury using three different ICP and CPP protocol-driven therapies. J Clin Neurosci. Oct 2006;13(8):818- 822. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11596949",
+                "text": "Contant CF, Valadka AB, Gopinath SP, Hannay HJ, Robertson CS. Adult respiratory distress syndrome: a complication of induced hypertension after severe head injury. J Neurosurg. Oct 2001;95(4):560-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16215372",
+                "text": "Cremer OL, van Dijk GW, van Wensen E, Brekelmans GJ, Moons KG, Leenen LP, Kalkman CJ. Effect of intracranial pressure monitoring and targeted intensive care on functional outcome after severe head injury. Crit Care Med. Oct 2005;33(10):2207-13."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21311298",
+                "text": "Johnson U, Nilsson P, Ronne-Engstrom E, Howells T, Enblad P. Favorable outcome in traumatic brain injury patients with impaired cerebral pressure autoregulation when treated at low cerebral perfusion pressure levels. Neurosurg. 2011;68(3):714-721."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16498188",
+                "text": "Balestreri M, Czosnyka M, Hutchinson P, Steiner LA, Hiler M, Smielewski P, Pickard JD. Impact of intracranial pressure and cerebral perfusion pressure on severe disability and mortality after head injury. Neurocrit Care. 2006;4(1):8-13. "
+            }
+        ],
+        "evidence": "<p>CPP = MAP&nbsp;&ndash; ICP</p>\n<p>MAP, mean arterial pressure. ICP, intracranial pressure.</p>",
+        "facts": "<p>Target CPP in TBI patients is 60&ndash;70 mmHg, per <a href=\"https://braintrauma.org/uploads/07/04/Guidelines_for_the_Management_of_Severe_Traumatic.97250__2_.pdf\" target=\"_blank\" rel=\"noopener\">2017 Brain Trauma Foundation evidence-based guidelines</a>.</p>",
+        "estimation": [
+            {
+                "name": "Intracranial Pressure",
+                "unit": "icp",
+                "error_min": "0",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "1",
+                "normal_max_si": "15",
+                "normal_max_us": "15",
+                "normal_min_si": "5",
+                "normal_min_us": "5",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Mean Arterial Pressure",
+                "unit": "map",
+                "error_min": "20",
+                "error_max": "210",
+                "warn_min": "40",
+                "warn_max": "180",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "70",
+                "normal_min_us": "70",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            }
+        ],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar map = parseFloat(map);\nvar icp = parseFloat(icp);\n\nvar cpp = map - icp;\n\nvar risk = 'Within normal limits'\nvar rec = 'Likely adequate perfusion.'\nif (cpp < 60){\n\trisk = 'Low CPP'\n\trec = 'Consider interventions to increase MAP or decrease ICP (see Next Steps for details).'\n}\nif (cpp > 70){\n\trisk = 'High CPP'\n\trec = 'Consider weaning pressors if MAP is adequate (see Next Steps for details).'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: cpp,\n    value_text: 'mmHg',\n    message: risk\n});\ncalc_output.push({\n    name: '3985_CPP_result',\n    value: cpp,\n    value_text: 'mmHg',\n    message: risk + '. ' + rec\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<calculator id='74'>MAP</calculator>",
+                "name": "map",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "map"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<abbr title='Intracranial pressure'>ICP</abbr>",
+                "name": "icp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "icp"
+            }
+        ],
+        "can_search": [
+            "CPP",
+            "cerebral perfusion",
+            "brain perfusion",
+            "traumatic brain injury",
+            "tbi"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

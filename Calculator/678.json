@@ -1,0 +1,174 @@
+{
+    "id": "678",
+    "title": "Mangled Extremity Severity Score (MESS)",
+    "desc": "The Mangled Extremity Severity Score (MESS) estimates viability of an extremity after trauma to determine need for salvage versus empiric amputation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2342140",
+                "text": "Johansen, K, et. al. Objective criteria accurately predict amputation following lower extremity trauma. Journal of Trauma, 1990"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the assigned points; if there has been limb ischemia for more than 6 hours, the \"limb ischemia\" points are doubled.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered\" style=\"width: 100.121%; height: 537.562px;\">\n<tbody>\n<tr style=\"height: 22.3984px;\">\n<th colspan=\"2\" style=\"text-align: left; width: 73.1884%; height: 22.3984px;\">Variable</th>\n<th style=\"text-align: left; width: 26.8116%; height: 22.3984px;\">Points</th>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td rowspan=\"3\" style=\"width: 21.5075%; height: 134.391px;\">Limb ischemia*</td>\n<td style=\"width: 51.6809%; height: 44.7969px;\">Reduced pulse but normal perfusion</td>\n<td style=\"width: 26.8116%; height: 44.7969px;\">1</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"width: 51.6809%; height: 44.7969px;\">Pulseless, paresthesias, slow capillary refill</td>\n<td style=\"width: 26.8116%; height: 44.7969px;\">2</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"width: 51.6809%; height: 44.7969px;\">Cool, paralysis, numb/insensate</td>\n<td style=\"width: 26.8116%; height: 44.7969px;\">3</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td rowspan=\"3\" style=\"width: 21.5075%; height: 67.1952px;\">Patient age range</td>\n<td style=\"width: 51.6809%; height: 22.3984px;\">&lt;30</td>\n<td style=\"width: 26.8116%; height: 22.3984px;\">0</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 51.6809%; height: 22.3984px;\">30-50</td>\n<td style=\"width: 26.8116%; height: 22.3984px;\">1</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 51.6809%; height: 22.3984px;\">&ge;50</td>\n<td style=\"width: 26.8116%; height: 22.3984px;\">2</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td rowspan=\"3\" style=\"width: 21.5075%; height: 89.5937px;\">Shock</td>\n<td style=\"width: 51.6809%; height: 44.7969px;\"><abbr title=\"Systolic Blood Pressure\">SBP</abbr> &gt;90 mmHg consistently</td>\n<td style=\"width: 26.8116%; height: 44.7969px;\">0</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 51.6809%; height: 22.3984px;\">Hypotension transiently</td>\n<td style=\"width: 26.8116%; height: 22.3984px;\">1</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 51.6809%; height: 22.3984px;\">Persistent hypotension</td>\n<td style=\"width: 26.8116%; height: 22.3984px;\">2</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td rowspan=\"4\" style=\"width: 21.5075%; height: 223.984px;\">Injury&nbsp; mechanism</td>\n<td style=\"width: 51.6809%; height: 44.7969px;\">Low energy (stab, gunshot, simple fracture)</td>\n<td style=\"width: 26.8116%; height: 44.7969px;\">1</td>\n</tr>\n<tr style=\"height: 67.1953px;\">\n<td style=\"width: 51.6809%; height: 67.1953px;\">Medium energy (dislocation, open/multiple fractures)</td>\n<td style=\"width: 26.8116%; height: 67.1953px;\">2</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"width: 51.6809%; height: 44.7969px;\">High energy (high speed MVA or rifle shot)</td>\n<td style=\"width: 26.8116%; height: 44.7969px;\">3</td>\n</tr>\n<tr style=\"height: 67.1953px;\">\n<td style=\"width: 51.6809%; height: 67.1953px;\">Very high energy (high speed trauma with gross contamination)</td>\n<td style=\"width: 26.8116%; height: 67.1953px;\">4</td>\n</tr>\n</tbody>\n</table>\n<p>*If Limb ischemia present &gt;6 hours, Limb ischemia points are multiplied by 2.</p>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Extremity Pain",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output=[]; \n\nvar msg=''; \nvar time=1; \n\nif(ischemia_6_hours==1){time=2};\n\nvar u=(time*parseInt(limb_ischemia))+parseInt(age)+parseInt(shock)+parseInt(injury); \n\nif(u<7){msg='Per original study, scores ≤6 were predictive of salvaged limb. Subsequent validations found multiple instances of amputation in patients with MESS ≤6.'} \nif(u>6){msg='Scores ≥7 predict a low likelihood of limb/extremity viability (100% sensitive in validation).'} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:'MESS ≥7 predicts low likelihood of limb/extremity viability.'\n}); \ncalc_output.push({\n    name:'549_MESS_result',\n    value:u,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Limb ischemia for &gt;6 hours</p>",
+                "md_calc_info_concept": null,
+                "name": "ischemia_6_hours",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Limb ischemia</p>",
+                "mdcalc_info_concept": null,
+                "name": "limb_ischemia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Reduced pulse but normal perfusion",
+                        "value": 1
+                    },
+                    {
+                        "label": "Pulseless, paresthesias, slow capillary refill",
+                        "value": 2
+                    },
+                    {
+                        "label": "Cool, paralysis, numb/insensate",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Patient age</p>",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<30",
+                        "value": 0
+                    },
+                    {
+                        "label": "30-50",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥50",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Shock</p>",
+                "mdcalc_info_concept": null,
+                "name": "shock",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "SBP >90 mmHg consistently",
+                        "value": 0
+                    },
+                    {
+                        "label": "Transient hypotension",
+                        "value": 1
+                    },
+                    {
+                        "label": "Persistent hypotension",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Injury mechanism</p>",
+                "mdcalc_info_concept": null,
+                "name": "injury",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Low energy (stab, gunshot, simple fracture)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Medium energy (dislocation, open/multiple fractures)",
+                        "value": 2
+                    },
+                    {
+                        "label": "High energy (high speed MVA or rifle shot)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very high energy (high speed trauma with gross contamination)",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "trauma",
+            "amputation",
+            "injury"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Orthopedics",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

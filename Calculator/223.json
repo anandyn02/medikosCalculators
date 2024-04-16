@@ -1,0 +1,124 @@
+{
+    "id": "223",
+    "title": "Rome IV Diagnostic Criteria for Child Irritable Bowel Syndrome (IBS)",
+    "desc": "The Rome IV Criteria for Child Irritable Bowel Syndrome (IBS) provides criteria for diagnosis of child irritable bowel syndrome (IBS).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7104693/",
+                "text": "Hyams J, Di lorenzo C, Forbes D, et al. Childhood functional gastrointestinal disorders: child/adolescent. Gastroenterology. 2006;130(5):1527-37."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27144617/",
+                "text": "Drossman DA. Functional Gastrointestinal Disorders: History, Pathophysiology, Clinical Features and Rome IV [published online ahead of print, 2016 Feb 19]. Gastroenterology. 2016;S0016-5085(16)00223-7. "
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/30055266/",
+                "text": "Beinvogl B, Burch E, Snyder J, et al. Multidisciplinary Treatment Reduces Pain and Increases Function in Children With Functional Gastrointestinal Disorders. Clin Gastroenterol Hepatol. 2019;17(5):994-996. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4760857/ ",
+                "text": "Chumpitazi BP, Self MM, Czyzewski DI, Cejka S, Swank PR, Shulman RJ. Bristol Stool Form Scale reliability and agreement decreases when determining Rome III stool form designations. Neurogastroenterol Motil. 2016;28(3):443-8."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24486406/",
+                "text": "Self MM, Czyzewski DI, Chumpitazi BP, Weidler EM, Shulman RJ. Subtypes of irritable bowel syndrome in children and adolescents. Clin Gastroenterol Hepatol. 2014 Sep;12(9):1468-73."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24485818/",
+                "text": "Giannetti E, de'Angelis G, Turco R, Campanozzi A, Pensabene L, Salvatore S, de Seta F, Staiano A. Subtypes of irritable bowel syndrome in children: prevalence at diagnosis and at follow-up. J Pediatr. 2014 May;164(5):1099-1103.e1."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for child irritable bowel syndrome (IBS), patient must have the following (for &ge;2 months prior):</p>\n<ol>\n<li>Abdominal pain &ge;4 days per month associated with one or more of the following:\n<ol>\n<li>Related to defecation.</li>\n<li>A change in frequency of stool.</li>\n<li>A change in form (appearance) of stool.</li>\n</ol>\n</li>\n<li>In children with constipation, the pain does not resolve with resolution of the constipation (children in whom the pain resolves have functional constipation, not irritable bowel syndrome).</li>\n<li>After appropriate evaluation, the symptoms cannot be fully explained by another medical condition.</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Constipation"
+        ],
+        "disease_treated": [
+            "Child/Adolescent Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three);\n\nvar diag;\n\nvar msg= 'Diagnosis for child irritable bowel syndrome as per Rome IV criteria';\nvar minimsg= 'Diagnosis for child IBS';\n\nif (criteria==3) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Child IBS',\n    value: diag,\n    value_text:'',\n    message:msg\n});\n",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For ≥2 months prior",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abdominal pain ≥4 days per month associated with one or more of the following:",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "1. Related to defecation <br/>2. A change in frequency of stool <br/>3. A change in form (appearance) of stool",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "In children with constipation, the pain does not resolve with resolution of the constipation (children in whom the pain resolves have functional constipation, not irritable bowel syndrome)",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "After appropriate evaluation, the symptoms cannot be fully explained by another medical condition",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV for Criteria Child Irritable Bowel Syndrome (IBS), Rome IV for Child IBS, rome iv child irritable bowel syndrome, rome iv child ibs, rome iv ibs, rome 4 ibs, rome ibs, rome child ibs, rome irritable bowel syndrome"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

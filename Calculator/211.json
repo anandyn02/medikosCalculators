@@ -1,0 +1,82 @@
+{
+    "id": "211",
+    "title": "Rome IV Diagnostic Criteria for Infant Dyschezia",
+    "desc": "The Rome IV criteria for infant dyschezia provides criteria for the diagnosis of infant dyschezia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27144631/",
+                "text": "Benninga MA, Faure C, Hyman PE, St james roberts I, Schechter NL, Nurko S. Childhood Functional Gastrointestinal Disorders: Neonate/Toddler. Gastroenterology. 2016; 1443-1455."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>To fulfill the Rome IV criteria for infant dyschezia, patient must be &lt;9 months of age and have the following:</p>\n<ol>\n<li>&ge;10 minutes of straining and crying before successful or unsuccessful passage of soft stools.</li>\n<li>No other health problems.</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Constipation"
+        ],
+        "disease_treated": [
+            "Neonate/Toddler Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "\nvar calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two);\n\nvar diag;\n\nvar msg= 'Diagnosis for infant dyschezia as per Rome IV criteria';\nvar minimsg= 'Diagnosis for infant dyschezia';\n\nif (criteria==2) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Infant Dyschezia',\n    value: diag,\n    value_text:'',\n    message:msg\n});\n",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For patients <9 months of age",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "≥10 minutes of straining and crying before successful or unsuccessful passage of soft stools",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No other health problems",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Infant Dyschezia, Rome IV for Infant Dyschezia, rome iv dyschezia, rome iv infant dyschezia, dyschezia, infant dyschezia, rome dyschezia, rome infant dyschezia, rome 4 for infant dyschezia, rome 4 infant dyschezia, rome 4 dyschezia, infant dyschezia rome, dyschezia rome"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

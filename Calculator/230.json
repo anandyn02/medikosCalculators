@@ -1,0 +1,273 @@
+{
+    "id": "230",
+    "title": "4C Mortality Score for COVID-19",
+    "desc": "The 4C Mortality Score for COVID-19 predicts mortality in patients admitted to hospital with COVID-19.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.bmj.com/content/370/bmj.m3339",
+                "text": "Knight SR, Ho A, Pius R, et al. Risk stratification of patients admitted Kto hospital with covid-19 using the ISARIC WHO Clinical Characterisation Protocol: development and validation of the 4C Mortality Score. BMJ. 2020;370:m3339."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<table width=\"334\" height=\"182\">\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p>Variable</p>\n</td>\n<td>Points</td>\n</tr>\n<tr>\n<td rowspan=\"5\">Age, years<br><br><br><br></td>\n<td>\n<p>&lt;50</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>50-59</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>60-69</p>\n</td>\n<td>4</td>\n</tr>\n<tr>\n<td>\n<p>70-79</p>\n</td>\n<td>6</td>\n</tr>\n<tr>\n<td>\n<p>&ge;80</p>\n</td>\n<td>7</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Sex at birth</td>\n<td>\n<p>Female</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>Male</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"3\">Number of comorbidities*</td>\n<td>\n<p>0</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>1</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>&ge;2</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"3\">Respiratory rate, breaths/min</td>\n<td>\n<p>&lt;20</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>20-29</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>&ge;30</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Peripheral oxygen saturation on room air</td>\n<td>\n<p>&ge;92%</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>&lt;92%</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\"><calculator id=\"64\">Glasgow Coma Scale</calculator></td>\n<td>\n<p>15</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>&lt;15</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"3\">Urea or BUN (use measurement available)</td>\n<td>\n<p>Urea &lt;7 mmol/L (&lt;42 mg/dL)</p>\n<p>OR&nbsp;</p>\n<p>BUN &lt;19.6 mg/dL</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>Urea &ge;7 to &le;14 mmol/L (&ge;42mg/dL to &le;84 mg/dL)</p>\n<p>OR</p>\n<p>BUN &ge;19.6 to &le;39.2 mg/dL</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Urea &gt;14 mmol/L (&gt;84 mg/dL)</p>\n<p>OR</p>\n<p>BUN &gt;39.2 mg/dL</p>\n<p></p>\n</td>\n<td>3</td>\n</tr>\n<tr>\n<td rowspan=\"3\">C-reactive protein, mg/L</td>\n<td>\n<p>&lt;50 mg/L (&lt;5 mg/dL)</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>50-99 mg/L (5-9.9 mg/dL)</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>&ge;100 mg/L (&ge;10 mg/dL)</p>\n</td>\n<td>2</td>\n</tr>\n</tbody>\n</table>\n<p>*Comorbidities include chronic cardiac disease, chronic respiratory disease (excluding asthma), chronic renal disease (estimated glomerular filtration rate &le;30), mild to severe liver disease, dementia, chronic neurological conditions, connective tissue disease, diabetes mellitus (diet, tablet, or insulin controlled), HIV or AIDS, and malignancy.</p>",
+        "facts": "<p>Interpretation:</p>\n<table width=\"311\" height=\"93\">\n<tbody>\n<tr>\n<td>\n<p><strong>4C Mortality Score</strong></p>\n</td>\n<td><strong>Risk group</strong></td>\n<td><strong>In-hospital mortality</strong></td>\n</tr>\n<tr>\n<td>\n<p>0-3</p>\n</td>\n<td>Low&nbsp;</td>\n<td>1.2-1.7%</td>\n</tr>\n<tr>\n<td>\n<p>4-8</p>\n</td>\n<td>Intermediate</td>\n<td>9.1-9.9%</td>\n</tr>\n<tr>\n<td>\n<p>9-14</p>\n</td>\n<td>High</td>\n<td>31.4-34.9%</td>\n</tr>\n<tr>\n<td>\n<p>&ge;15</p>\n</td>\n<td>Very high</td>\n<td>61.5-66.2%</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output=[];\n\nif (parseFloat(avail) == 0) { \nvar criteria = parseFloat(one) + parseFloat(two) + parseFloat(three) + parseFloat(four) + parseFloat(five) + parseFloat(six) + parseFloat(seven) + parseFloat(eight);\n} else if (parseFloat(avail) == 1) {\n  var criteria = parseFloat(one) + parseFloat(two) + parseFloat(three) + parseFloat(four) + parseFloat(five) + parseFloat(six) + parseFloat(bun) + parseFloat(eight);\n}\n\nvar risk;\nvar group;\n\nif (criteria >= 0 && criteria <= 3) {\n  risk = '1.2-1.7';\n  group = 'Low';\n} else if (criteria>=4 && criteria <= 8) {\n  risk = '9.1-9.9';\n  group = 'Intermediate';\n} else if (criteria >= 9 && criteria <= 14) {\n  risk = '31.4-34.9';\n  group = 'High';\n} else if (criteria >= 15) {\n  risk = '61.5-66.2';\n  group = 'Very high';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text: 'points',\n    message: risk + '% in-hospital mortality'\n});\ncalc_output.push({\n    name: 'criteria',\n    value: criteria,\n    value_text: 'points',\n    message: '4C Mortality Score'\n});\ncalc_output.push({\n    name: 'group',\n    value: group, \n    value_text: 'risk',\n    message: ''\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk, \n    value_text: '%',\n    message: 'In-hospital mortality'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Age, years</p>",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<50",
+                        "value": 0
+                    },
+                    {
+                        "label": "50-59",
+                        "value": 2
+                    },
+                    {
+                        "label": "60-69",
+                        "value": 4
+                    },
+                    {
+                        "label": "70-79",
+                        "value": 6
+                    },
+                    {
+                        "label": "≥80",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Sex at birth</p>",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Number of comorbidities</p>",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥2",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Comorbidities include chronic cardiac disease, chronic respiratory disease (excluding asthma), chronic renal disease (estimated glomerular filtration rate ≤30), mild to severe liver disease, dementia, chronic neurological conditions, connective tissue disease, diabetes mellitus (diet, tablet, or insulin controlled), HIV or AIDS, and malignancy.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Respiratory rate, breaths/min</p>",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<20",
+                        "value": 0
+                    },
+                    {
+                        "label": "20-29",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥30",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Peripheral oxygen saturation on room air</p>",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥92%",
+                        "value": 0
+                    },
+                    {
+                        "label": "<92%",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><calculator id=\"64\">Glasgow Coma Scale</calculator></p>",
+                "name": "six",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "15",
+                        "value": 0
+                    },
+                    {
+                        "label": "<15",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Select measurement available</p>",
+                "name": "avail",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "BUN",
+                        "value": 1
+                    },
+                    {
+                        "label": "Urea",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "avail==0",
+                "default": 0,
+                "label_en": "<p>Urea</p>",
+                "name": "seven",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<7 mmol/L (<42 mg/dL)",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥7 to ≤14 mmol/L (≥42mg/dL to ≤84 mg/dL)",
+                        "value": 1
+                    },
+                    {
+                        "label": ">14 mmol/L (>84 mg/dL)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "avail==1",
+                "default": 0,
+                "label_en": "<p>BUN</p>",
+                "name": "bun",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<19.6 mg/dL",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥19.6 to ≤39.2 mg/dL",
+                        "value": 1
+                    },
+                    {
+                        "label": ">39.2 mg/dL",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>C-reactive protein</p>",
+                "name": "eight",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<50 mg/L (<5 mg/dL)",
+                        "value": 0
+                    },
+                    {
+                        "label": "50-99 mg/L (5-9.9 mg/dL)",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥100 mg/L (≥10 mg/dL)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "4C Mortality Score for COVID-19, 4C, 4C mortality, 4C covid-19, 4c covid, 4c covid mortality, covid mortality, covid score, covid mortality score, 4c covid-19 mortality, covid-19 mortality, covid-19 mortality score, coronavirus mortality score, coronavirus mortality, 4c coronavirus mortality, 4c coronavirus, coronavirus, covid-19, covid"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

@@ -1,0 +1,155 @@
+{
+    "id": "210",
+    "title": "Rome IV Diagnostic Criteria for Narcotic Bowel Syndrome ",
+    "desc": "The Rome IV Criteria for Narcotic Bowel Syndrome provides criteria for diagnosis of narcotic bowel syndrome.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144628",
+                "text": "Keefer L, Drossman DA, Guthrie E, et al. Centrally Mediated Disorders of Gastrointestinal Pain. Gastroenterology. 2016;1408-1419."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.nature.com/articles/nrgastro.2014.53",
+                "text": "Kurlander JE, Drossman DA. Diagnosis and treatment of narcotic bowel syndrome. Nature Reviews Gastroenterology & Hepatology. 2014;11(7):410-418."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/22710577/",
+                "text": "Drossman DA, Morris CB, Wrennal CE, et al. Diagnosis, characterization, and three month outcome after detoxification of 39 patients with narcotic bowel syndrome. American Journal of Gastroenterology 2012;107:1426-1440."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for narcotic bowel syndrome/opiate-induced gastrointestinal hyperalgesia, patient must have the following (for 3 months prior with symptom onset &ge;6 months ago):</p>\n<ol>\n<li>Chronic or frequently recurring abdominal pain* that is treated with acute high-dose or chronic narcotics.</li>\n<li>The nature and intensity of the pain is not explained by a current or previous GI diagnosis.**</li>\n<li>Two or more of the following:\n<ol>\n<li>The pain worsens or incompletely resolves with continued or escalating&nbsp;dosages of narcotics.</li>\n<li>There is marked worsening of pain when the narcotic dose wanes and improvement when narcotics are re-instituted (soar and crash).</li>\n<li>There is a progression of the frequency, duration, and intensity of pain episodes.</li>\n</ol>\n</li>\n</ol>\n<p>*Pain must occur most days.</p>\n<p>**A patient may have a structural diagnosis (e.g. inflammatory bowel disease, chronic pancreatitis), but the character or activity of the disease process is not sufficient to explain the pain.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "\nvar calc_output=[];\n\nvar criteria1=parseFloat(one)+parseFloat(two);\nvar criteria2=parseFloat(three)+parseFloat(four)+parseFloat(five);\n\nvar diag;\n\nvar msg= 'Diagnosis for narcotic bowel syndrome as per Rome IV criteria';\nvar minimsg= 'Diagnosis for narcotic bowel syndrome';\n\nif (criteria1==2 & criteria2>=2) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Narcotic Bowel Syndrome',\n    value: diag,\n    value_text:'',\n    message:msg\n});\n",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chronic or frequently recurring abdominal pain (occurs most days) that is treated with acute high-dose or chronic narcotics",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "The nature and intensity of the pain is not explained by a current or previous GI diagnosis",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Must have ≥2 of the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "The pain worsens or incompletely resolves with continued or escalating dosages of narcotics",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "There is marked worsening of pain when the narcotic dose wanes and improvement when narcotics are re-instituted (soar and crash)",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "There is a progression of the frequency, duration, and intensity of pain episodes",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Narcotic Bowel Syndrome, Rome IV for Narcotic Bowel Syndrome, rome iv narcotic bowel syndrome, rome narcotic bowel syndrome, rome iv for opiate-induced gastrointestinal hyperalgesia, rome for opiate-induced gastrointestinal hyperalgesia, opiate-induced gastrointestinal hyperalgesia, gi hyperalgesia, rome iv hyperalgesia, rome iv gi hyperalgesia"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

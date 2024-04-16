@@ -1,0 +1,77 @@
+{
+    "id": "656",
+    "title": "Fomepizole Dosing",
+    "desc": "Fomepizole Dosing doses fomepizole for methanol and ethylene glycol reversal.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://accesspharmacy.mhmedical.com/Content.aspx?bookid=1163&sectionid=65087766",
+                "text": "Howland MA. Antidotes in Depth: Fomepizole. In: Flomenbaum NE, Goldfrank LR, Hoffman RS et al, eds: Goldfrank’s Toxicologic Emergencies. New York NY, 2006;1460-1464."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19458366 ",
+                "text": "Brent J. Fomepizole for ethylene glycol and methanol poisoning. N Engl J Med. 2009;360(21):2216-23."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11172179 ",
+                "text": "Brent J, Mcmartin K, Phillips S, Aaron C, Kulig K. Fomepizole for the treatment of methanol poisoning. N Engl J Med. 2001;344(6):424-9."
+            }
+        ],
+        "evidence": "<p>Dosing of fomepizole:</p>\n<ul>\n<li>15 mg/kg IV loading dose.</li>\n<li>After 12 hours give 10 mg/kg for the next four doses.</li>\n<li>Then give 15 mg/kg every 12 hours thereafter.</li>\n</ul>\n<p>If on hemodialysis:</p>\n<ul>\n<li>Give at onset of dialysis if last dose was &gt;6 hours prior.</li>\n<li>Give every 4 hours during dialysis.</li>\n<li>At completion of dialysis, give scheduled dose if &gt;3 hours since last dose, or &frac12; dose if 1-3 hours since last dose.</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            }
+        ],
+        "primary_complains": [
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\nvar weight = parseFloat(weight)\n\nvar fom_load = (15 * weight)\nvar fom_12 = (10 * weight)\nvar fom_late = (15 * weight)\n\ncalc_output.push({\n    name: 'mini',\n    value: fom_load.toFixed(0),\n    value_text: 'mg',\n    message: 'IV loading dose'\n}); \ncalc_output.push({\n    name: '4051_Fomepizole Dosing_result (loading)',\n    value: fom_load.toFixed(0),\n    value_text: 'mg',\n    message: 'IV loading dose'\n}); \ncalc_output.push({\n    name: '4051_Fomepizole Dosing_result (12 hr)',\n    value: fom_12.toFixed(0),\n    value_text: 'mg',\n    message: 'Give ' + fom_12.toFixed(0) + ' mg every 12 hrs for the next 4 doses, starting 12 hrs post loading dose'\n}); \ncalc_output.push({\n    name: '4051_Fomepizole Dosing_result (after)',\n    value: fom_late.toFixed(0),\n    value_text: 'mg',\n    message: 'After 5th dose, give ' + fom_late.toFixed(0) + ' mg every 12 hrs until patient asymptomatic and serum alcohol levels undetectable'\n}); ",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Patient body weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            }
+        ],
+        "can_search": [
+            "methanol",
+            "ethylene glycol",
+            "poison",
+            "4-methylpyrazole",
+            "antizol",
+            "antifreeze",
+            "windshield wiper fluid"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Pharmacy",
+            "Toxicology"
+        ]
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "id": "690",
+    "title": "Hepatic Encephalopathy Grades/Stages",
+    "desc": "The Hepatic Encephalopathy Grades/Stages defines criteria for the stages of hepatic encephalopathy based on West Haven Criteria.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pdfs.semanticscholar.org/dc1b/6482929753520e0557cddacf93d3ab9fd1a4.pdf",
+                "text": "Hepatic Failure: An Evidence Based Approach in the Emergency Department. Emergency Medicine Practice, 2010."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "AMS"
+        ],
+        "disease_treated": [
+            "Cirrhosis",
+            "Hepatitis"
+        ],
+        "logic": "var calc_output=[]; \n\nvar msg=''; \nvar mini_msg='';\n\nvar v=parseInt(signs_symptoms); \nif(v==1){\n    msg='Grade I Hepatic Encephalopathy';\n    mini_msg='Grade I'\n} else if(v==2){\n    msg='Grade II Hepatic Encephalopathy';\n    mini_msg='Grade II'\n} else if(v==3){\n    msg='Grade III Hepatic Encephalopathy';\n    mini_msg='Grade III'\n} else if(v==4){\n    msg='Grade IV Hepatic Encephalopathy';\n    mini_msg='Grade IV'\n}\n\ncalc_output.push({\n    name:'mini',\n    value:v.toFixed(0),\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'674_Hepatic Encephalopathy Grades_result',\n    value:v.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "West Haven Criteria:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Signs/Symptoms",
+                "mdcalc_info_concept": null,
+                "name": "signs_symptoms",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Changes in behavior with minimal change in level of consciousness",
+                        "value": 1
+                    },
+                    {
+                        "label": "Gross disorientation, drowsiness, possibly asterixis, inappropriate behavior",
+                        "value": 2
+                    },
+                    {
+                        "label": "Marked confusion, incoherent speech, sleeping most of the time but arousable to vocal stimuli",
+                        "value": 3
+                    },
+                    {
+                        "label": "Comatose, unresponsive to pain; decorticate or decerebrate posturing",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "west haven criteria",
+            "cirrhosis",
+            "hepatatic"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Gastroenterology",
+            "Geriatrics",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Palliative Care/Hospice",
+            "Primary Care"
+        ]
+    }
+}

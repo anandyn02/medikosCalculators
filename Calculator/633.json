@@ -1,0 +1,152 @@
+{
+    "id": "633",
+    "title": "Marburg Heart Score (MHS)",
+    "desc": "The Marburg Heart Score rules out coronary artery disease in primary care patients with chest pain.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20603345 ",
+                "text": "Bösner S, Haasenritter J, Becker A, et al. Ruling out coronary artery disease in primary care: development and validation of a simple prediction rule. CMAJ. 2010;182(12):1295-300."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20092615 ",
+                "text": "Gencer B, Vaucher P, Herzig L, et al. Ruling out coronary heart disease in primary care patients with chest pain: a clinical prediction score. BMC Med. 2010;8:9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21391528 ",
+                "text": "Ebell MH. Evaluation of chest pain in primary care patients. Am Fam Physician. 2011;83(5):603-5."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24795903",
+                "text": "Cayley WE Jr. Chest pain--tools to improve your in-office evaluation. J Fam Pract. 2014 May;63(5):246-51."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27773828 ",
+                "text": "Aerts M, Minalu G, Bösner S, et al. Pooled individual patient data from five countries were used to derive a clinical prediction rule for coronary artery disease in primary care. J Clin Epidemiol. 2017;81:120-128."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p> <table> <tbody> <tr> <td>&nbsp;</td> <td> <p><strong>No</strong></p> </td> <td> <p><strong>Yes</strong></p> </td> </tr> <tr> <td> <p>Female ≥65 years or male ≥55 years</p> </td> <td> <p>0</p> </td> <td> <p>+1</p> </td> </tr> <tr> <td> <p>Known CAD, cerebrovascular disease, or peripheral vascular disease</p> </td> <td> <p>0</p> </td> <td> <p>+1</p> </td> </tr> <tr> <td> <p>Pain worse with exercise</p> </td> <td> <p>0</p> </td> <td> <p>+1</p> </td> </tr> <tr> <td> <p>Pain reproducible with palpation</p> </td> <td> <p>+1</p> </td> <td> <p>0</p> </td> </tr> <tr> <td> <p>Patient assumes pain is cardiac</p> </td> <td> <p>0</p> </td> <td> <p>+1</p> </td> </tr> </tbody> </table>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>Marburg Heart Score</strong></p> </td> <td> <p><strong>CAD risk</strong></p> </td> <td> <p><strong>Recommendation</strong></p> </td> </tr> <tr> <td> <p>0–2</p> </td> <td> <p>3%</p> </td> <td> <p>Outpatient evaluation as needed</p> </td> </tr> <tr> <td> <p>≥3</p> </td> <td> <p>23%</p> </td> <td> <p>Consider urgent evaluation or inpatient admission</p> </td> </tr> </tbody> </table> <p>&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(age) + parseFloat(knowndisease) + parseFloat(exercisepain) + parseFloat(reproduciblepain) + parseFloat(cardiacpain);\nvar risk;\nvar msg;\nvar mini_msg;\n\n// define risk\n\n\nif (u == 0 || u == 1 || u == 2) {\n\trisk = '3'; \n\tmsg = 'Outpatient evaluation as needed.'\n    mini_msg = 'Non-urgent evaluation.'\n}\n\nif (u >= 3) {\n\trisk = '23'; \n\tmsg = 'Consider urgent evaluation or inpatient admission.'\n    mini_msg = 'Urgent evaluation.'\n}\n\n// result on app\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mini_msg\n});\n\n// result on web - column 1\ncalc_output.push({\n    name: 'score',\n    value: u,\n    value_text: 'points',\n    message: 'Marburg Heart Score'\n});\n// result on web - column 2\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '%',\n    message: 'CAD risk. ' + msg \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Female ≥65 years or male ≥55 years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Known CAD, cerebrovascular disease, or peripheral vascular disease",
+                "name": "knowndisease",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Pain worse with exercise",
+                "name": "exercisepain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 1,
+                "label_en": "Pain reproducible with palpation",
+                "name": "reproduciblepain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Patient assumes pain is cardiac",
+                "name": "cardiacpain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Marburg score"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Family Practice",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

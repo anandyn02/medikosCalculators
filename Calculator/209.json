@@ -1,0 +1,127 @@
+{
+    "id": "209",
+    "title": "Rome IV Diagnostic Criteria for Functional Pancreatic Sphincter of Oddi Disorder (SOD)",
+    "desc": "The Rome IV Criteria for Functional Pancreatic Sphincter of Oddi Disorder provides criteria for diagnosis of functional pancreatic sphincter of oddi disorder.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144629",
+                "text": "Cotton PB, Elta GH, Carter CR, Pasricha PJ, Corazziari ES. Rome IV. Gallbladder and Sphincter of Oddi Disorders. Gastroenterology. 2016;150:1420-1429."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/22982183/",
+                "text": "Coté GA, Imperiale TF, Schmidt SE, et al. Similar efficacies of biliary, with or without pancreatic, sphincterotomy in treatment of idiopathic recurrent acute pancreatitis. Gastroenterology. 2012;143(6):1502-1509."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for pancreatic sphincter of oddi disorder, patient must have the following:</p>\n<ol>\n<li>Documented recurrent episodes of pancreatitis (typical pain with amylase or lipase &gt;3 times normal and/or imaging evidence of acute pancreatitis).</li>\n<li>Other etiologies of pancreatitis excluded.</li>\n<li>Negative endoscopic ultrasound.</li>\n<li>Abnormal sphincter manometry.</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Sphincter of Oddi Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four);\n\nvar diag;\n\nvar msg= 'Diagnosis for pancreatic sphincter of oddi disorder as per Rome IV criteria';\nvar minimsg= 'Diagnosis for pancreatic SOD';\n\nif (criteria==4) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Pancreatic SOD',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Documented recurrent episodes of pancreatitis (typical pain with amylase or lipase >3 times normal and/or imaging evidence of acute pancreatitis)",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Other etiologies of pancreatitis excluded",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Negative endoscopic ultrasound",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abnormal sphincter manometry",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Functional Pancreatic Sphincter of Oddi Disorder, Rome IV for Pancreatic Sphincter of Oddi Disorder, rome iv pancreatic sphincter of oddi disorder, rome iv pancreatic sphincter of oddi, rome iv sphincter of oddi disorder, rome iv sphincter of oddi, rome iv for biliary pain, rome iv criteria for biliary pain, rome iv pancreatic sod, pancreatic sod"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

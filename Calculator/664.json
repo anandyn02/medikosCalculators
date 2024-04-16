@@ -1,0 +1,121 @@
+{
+    "id": "664",
+    "title": "Aortic Dissection Detection Risk Score (ADD-RS)",
+    "desc": "The Aortic Dissection Detection Risk Score (ADD-RS) rules out aortic dissection.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29030346 ",
+                "text": "Nazerian P, Mueller C, Soeiro AM, et al. Diagnostic Accuracy of the Aortic Dissection Detection Risk Score Plus D-Dimer for Acute Aortic Syndromes: The ADvISED Prospective Multicenter Study. Circulation. 2018;137(3):250-258."
+            },
+            {
+                "href": "https://circ.ahajournals.org/content/123/20/2213 ",
+                "text": "Rogers AM, Hermann LK, Booher AM, et al. Sensitivity of the aortic dissection detection risk score, a novel guideline-based tool for identification of acute aortic dissection at initial presentation: results from the international registry of acute aortic dissection. Circulation. 2011;123(20):2213-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://circ.ahajournals.org/content/119/20/2702.full",
+                "text": "Suzuki T, Distante A, Zizza A, et al. Diagnosis of acute aortic dissection by D-dimer: the International Registry of Acute Aortic Dissection Substudy on Biomarkers (IRAD-Bio) experience. Circulation. 2009;119(20):2702-7."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/32187432/",
+                "text": "Bima P, Pivetta E, Nazerian P, et al. Systematic review of aortic dissection detection risk score plus d-dimer for diagnostic rule-out of suspected acute aortic syndromes. Acad Emerg Med. 2020;27(10):1013-1027."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p><strong>Finding</strong></p>\n</td>\n<td>\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p>Any high risk condition</p>\n</td>\n<td>\n<p>Marfan syndrome</p>\n</td>\n<td rowspan=\"5\">\n<p>1 point</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Family history of aortic disease</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Known aortic valve disease</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Recent aortic manipulation</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Known thoracic aortic aneurysm</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Any high risk pain feature</p>\n</td>\n<td>\n<p>Chest, back, or abdominal pain described as any of the following:</p>\n<ul>\n<li>Abrupt onset</li>\n<li>Severe intensity</li>\n<li>Ripping or tearing</li>\n</ul>\n</td>\n<td>\n<p>1 point</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p>Any high risk exam feature</p>\n</td>\n<td>\n<p>Evidence of perfusion deficit (pulse deficit, systolic BP differential, or focal neurological deficit in conjunction with pain)</p>\n</td>\n<td rowspan=\"3\">\n<p>1 point</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>New murmur of aortic insufficiency (with pain)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Hypotension or shock state</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>",
+        "facts": "<p>Interpretation:</p>\n<table style=\"width: 100.126%;\">\n<tbody>\n<tr>\n<td style=\"width: 24.7328%;\">\n<p><strong>ADD-RS</strong></p>\n</td>\n<td style=\"width: 75.2672%;\">\n<p><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td style=\"width: 24.7328%;\">\n<p>&gt;1</p>\n</td>\n<td style=\"width: 75.2672%;\">\n<p>Consider proceeding directly to CTA or other conclusive imaging.</p>\n</td>\n</tr>\n<tr>\n<td style=\"width: 24.7328%;\">\n<p>&le;1</p>\n</td>\n<td style=\"width: 75.2672%;\">\n<p>Proceed to D-dimer testing. &nbsp;If D-dimer FEU &lt;500 ng/mL, consider stopping workup of dissection, if D-dimer FEU &ge;500 ng/ml, consider CTA.</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Chest Pain",
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome"
+        ],
+        "logic": "var calc_output = [];\n\nvar score = parseFloat(hx) + parseFloat(pain) + parseFloat(exam)\n\nvar msg;\n\nif (score > 1) {\n    msg = 'Consider proceeding directly to CTA or other conclusive imaging according to ADD-RS.';\n    mini = 'Consider CTA'\n       } \nelse {\n  msg = 'Proceed to D-dimer testing according to ADD-RS; if <500 ng/mL, consider stopping dissection workup, or if ≥500 ng/mL, consider CTA.';\n  mini = 'Proceed to D-dimer'\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: score,\n   value_text: 'points',\n   message: mini\n});\ncalc_output.push({\n   name: '4060_ADD-RS_result',\n   value: score,\n   value_text: 'points',\n   message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Any high risk condition",
+                "md_calc_info_concept": null,
+                "name": "hx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": " Marfan syndrome, family history of aortic disease, known aortic valve disease, recent aortic manipulation, or known <abbr title='Thoracic aortic aneurysm'>TAA</abbr>",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Any high risk pain feature",
+                "md_calc_info_concept": null,
+                "name": "pain",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Chest, back, or abdominal pain described as abrupt onset, severe intensity, or ripping/tearing",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Any high risk exam feature",
+                "md_calc_info_concept": null,
+                "name": "exam",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": " Evidence of perfusion deficit (pulse deficit, systolic BP differential, or focal neuro deficit plus pain), new aortic insufficiency murmur (with pain), hypotension/shock",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Aortic dissection",
+            "dissection",
+            "acute aortic syndrome",
+            "advised",
+            "add rs",
+            "addrs"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Surgery (Cardiothoracic)",
+            "Surgery (Vascular)"
+        ]
+    }
+}

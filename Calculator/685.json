@@ -1,0 +1,321 @@
+{
+    "id": "685",
+    "title": "Canadian CT Head Injury/Trauma Rule",
+    "desc": "The Canadian CT Head Injury/Trauma Rule clears head injury without imaging.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11356436",
+                "text": "Stiell IG, Wells GA, Vandemheen K, Clement C, Lesiuk H, Laupacis A, McKnight RD, Verbeek R, Brison R, Cass D, Eisenhauer ME, Greenberg G, Worthington J. The Canadian CT Head Rule for patients with minor head injury. Lancet. 2001 May 5;357(9266):1391-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2950184/",
+                "text": "Stiell IG, Clement CM, Grimshaw JM, et al. A prospective cluster-randomized trial to implement the Canadian CT Head Rule in emergency departments. CMAJ : Canadian Medical Association Journal. 2010;182(14):1527-1532. doi:10.1503/cmaj.091974."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15208223",
+                "text": "Boyle A, Santarius L, Maimaris C. Evaluation of the impact of the Canadian CT head rule on British practice. Emerg Med J. 2004 Jul;21(4):426-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16189365",
+                "text": "Smits M, Dippel DW, de Haan GG, Dekker HM, Vos PE, Kool DR, Nederkoorn PJ, Hofman PA, Twijnstra A, Tanghe HL, Hunink MG.External validation of the Canadian CT Head Rule and the New Orleans Criteria for CT scanning in patients with minor head injury.JAMA. 2005 Sep 28;294(12):1519-25."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21818031",
+                "text": "Harnan SE, Pickering A, Pandor A, Goodacre SW. Clinical decision rules for adults with minor head injury: a systematic review. J Trauma. 2011 Jul;71(1):245-51."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22251188",
+                "text": "Papa L, Stiell IG, Clement CM, Pawlowicz A, Wolfram A, Braga C, Draviam S, Wells GA.Performance of the Canadian CT Head Rule and the New Orleans Criteria for predicting any traumatic intracranial injury on computed tomography in a United States Level I trauma center. Acad Emerg Med. 2012 Jan;19(1):2-10."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22921164",
+                "text": "Bouida W, Marghli S, Souissi S, Ksibi H, Methammem M, Haguiga H, Khedher S, Boubaker H, Beltaief K, Grissa MH, Trimech MN, Kerkeni W, Chebili N, Halila I, Rejeb I, Boukef R, Rekik N, Bouhaja B, Letaief M, Nouira S. Prediction value of the Canadian CT head rule and the New Orleans criteria for positive head CT scan and acute neurosurgical procedures in minor head trauma: a multicenter external validation study. Ann Emerg Med. 2013 May;61(5):521-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24033617",
+                "text": "Easter JS et al. Traumatic intracranial injury in intoxicated patients with minor head trauma. Acad Emerg Med. 2013 Aug;20(8):753-60."
+            },
+            {
+                "href": "https://archinte.jamanetwork.com/article.aspx?articleid=1830019",
+                "text": "Schuur JD, Carney DP, Lyn ET, et al. A Top-Five List for Emergency Medicine: A Pilot Project to Improve the Value of Emergency Care. JAMA Intern Med. 2014;174(4):509-515."
+            }
+        ],
+        "evidence": "",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Head Injury",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = []; \n\nvar msg, mini_msg, txt; \n\nif (age + blood + seizure > 0) {\n  mini_msg = 'Not eligible'\n  msg = 'Not eligible'\n  txt = 'Patient is not eligible for scoring because exclusion criteria met (see Instructions)'\n}\nelse {\nvar score = glasgow_coma_score + fracture + basilar_fracture + vomiting + age_65; \nvar score2 = amnesia + danger_mechanism; \n\n\nif (score2 > 0) {\n  mini_msg = 'Consider'; \n  msg = 'Consider CT'; \n  txt= 'The Canadian Head CT Rule suggests a head CT is necessary for this patient as they are at \\u201cmedium\\u201d risk to rule out an intracranial traumatic finding (sensitivity 83-100%).'\n} \nif (score > 0) {\n  mini_msg = 'Consider'; \n  msg = 'Consider CT'; \n  txt='The Canadian Head CT Rule cannot rule out need for imaging. Consider CT.'\n} if (score == 0 && score2 == 0) {\n  mini_msg = 'Unnecessary'; \n  msg = 'CT Unnecessary'; \n  txt='The Canadian Head CT Rule suggests a head CT is not necessary for this patient (sensitivity 83-100% for all intracranial traumatic findings, sensitivity 100% for findings requiring neurosurgical intervention).'} \n}\n\n  calc_output.push({\n    name: 'mini', \n    value: mini_msg, \n    value_text: ' ', \n    message: 'CT for Head Trauma.'\n  }); \n  calc_output.push({\n    name: '608_Canadian CT Head Rule_result', \n    value: msg, \n    value_text: ' ', \n    message: txt \n  });",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<u>Exclusion Criteria</u>: If any of the following are true, the CCHR does not apply",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age <16 years",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Patient on blood thinners",
+                "md_calc_info_concept": null,
+                "name": "blood",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Seizure after injury",
+                "md_calc_info_concept": null,
+                "name": "seizure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": " No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<u>High Risk Criteria</u>: Rules out need for neurosurgical intervention",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "age + blood + seizure == 0",
+                "default": 0,
+                "label_en": "GCS <15 at 2 hours post-injury",
+                "md_calc_info_concept": null,
+                "name": "glasgow_coma_score",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age + blood + seizure == 0",
+                "default": 0,
+                "label_en": "Suspected open or depressed skull fracture",
+                "md_calc_info_concept": null,
+                "name": "fracture",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age + blood + seizure == 0",
+                "default": 0,
+                "label_en": "Any sign of basilar skull fracture?",
+                "md_calc_info_concept": null,
+                "name": "basilar_fracture",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Hemotympanum, raccoon eyes, Battle’s Sign, CSF oto-/rhinorrhea",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age + blood + seizure == 0",
+                "default": 0,
+                "label_en": "≥2 episodes of vomiting",
+                "md_calc_info_concept": null,
+                "name": "vomiting",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age + blood + seizure == 0",
+                "default": 0,
+                "label_en": "Age ≥65 years",
+                "md_calc_info_concept": null,
+                "name": "age_65",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<u>Medium Risk Criteria</u>: In addition to above, rules out “clinically important” brain injury (positive CT's that normally require admission)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "age + blood + seizure == 0",
+                "default": 0,
+                "label_en": "Retrograde amnesia to the event ≥ 30 minutes",
+                "md_calc_info_concept": null,
+                "name": "amnesia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age + blood + seizure == 0",
+                "default": 0,
+                "label_en": "“Dangerous” mechanism?",
+                "md_calc_info_concept": null,
+                "name": "danger_mechanism",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Pedestrian struck by motor vehicle, occupant ejected from motor vehicle, or fall from >3 feet or >5 stairs.",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "trauma",
+            "cchr",
+            "injury",
+            "ct",
+            "head ct",
+            "Canadian CT Head Rule",
+            "Canadian CT Head Injury/Trauma Rule"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Primary Care",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

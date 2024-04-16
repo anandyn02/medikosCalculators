@@ -1,0 +1,294 @@
+{
+    "id": "148",
+    "title": "Pediatric Appendicitis Risk Calculator (pARC)",
+    "desc": "The Pediatric Appendicitis Risk Calculator (pARC) quantifies appendicitis risk in pediatric patients with abdominal pain, possibly better than the Pediatric Appendicitis Score.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29535251",
+                "text": "Kharbanda AB, Vazquez-benitez G, Ballard DW, et al. Development and Validation of a Novel Pediatric Appendicitis Risk Calculator (pARC). Pediatrics. 2018;141(4)."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">pARC Score (ED) = e<sup>x</sup>&nbsp;/ (1 + e<sup>x</sup>)</p>\n<p dir=\"ltr\">pARC Score&nbsp;(Community) = e<sup>-0.615 + 1.1x</sup>&nbsp;/ (1 + e<sup>-0.615 + 1.1x</sup>)</p>\n<p dir=\"ltr\">Where x = &minus;8.6855 + addition of the assigned values:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"149\" /><col width=\"149\" /><col width=\"97\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Value</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Sex</p>\n</td>\n<td>\n<p dir=\"ltr\">Female</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Male</p>\n</td>\n<td>\n<p dir=\"ltr\">1.2780</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Age (grouped by sex)</p>\n</td>\n<td>\n<p dir=\"ltr\">Male &gt;13 years or female &gt;11 years</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Female 3-7 years</p>\n</td>\n<td>\n<p dir=\"ltr\">0.3810</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Female 8-11 years</p>\n</td>\n<td>\n<p dir=\"ltr\">0.6513</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Male 3-7 years</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.6653</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Male 8-13 years</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.0654</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Duration of pain, hrs</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;24</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">24 to &lt;48</p>\n</td>\n<td>\n<p dir=\"ltr\">0.4696</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">48 to 96</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1003</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;96</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unknown (defaults to&nbsp;&lt;24 hrs)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">ANC*, cells x 10<sup>3</sup>/&micro;L</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;14</p>\n</td>\n<td>\n<p dir=\"ltr\">1.7734 x&nbsp;&radic;ANC</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;14</p>\n</td>\n<td>\n<p dir=\"ltr\">6.6195</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Presence of pain with walking</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1.0494</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Maximal tenderness in RLQ</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1.1435</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Abdominal guarding</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0.6736</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">History of migration of pain to RLQ</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0.4557</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*ANC = (neutrophil, % x WBC, cells x 10<sup>3</sup>/&micro;L)&nbsp;/ 100. If neutrophil count is not available, ANC = (-0.8783 + 1.1008&nbsp;x &radic;WBC, cells x 10<sup>3</sup>/&micro;L)<sup>2</sup>.</p>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"90\" /><col width=\"96\" /><col width=\"438\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Pediatric ED setting</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>pARC Score (ED)</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Clinical recommendations</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;5%</p>\n</td>\n<td>\n<p dir=\"ltr\">Ultra low</p>\n</td>\n<td>\n<p dir=\"ltr\">Outpatient follow up appropriate if PCP evaluation available within 24 hrs; no diagnostic imaging required</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-15%</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">Consider ED observation for 6&nbsp;hrs for serial exams; if improved, ensure outpatient follow-up in 24 hrs; no imaging required</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">16-25%</p>\n</td>\n<td>\n<p dir=\"ltr\">Low-moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">If patients symptoms &lt;24 hrs, consider observation for 12 hrs; if not improved, obtain ultrasound and repeat <abbr title=\"Complete blood count\">CBC</abbr>; if pain &ge;24 hrs of symptoms, obtain ultrasound to evaluate for appendicitis</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">26-50%</p>\n</td>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">Ultrasound recommended as first line imaging; admit for observation if ultrasound equivocal</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">51-75%</p>\n</td>\n<td>\n<p dir=\"ltr\">Ultrasound recommended as first line imaging; CT if ultrasound equivocal</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">76-90%</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate-high</p>\n</td>\n<td>\n<p dir=\"ltr\">Consult surgery; consider imaging based on surgery recommendations</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;90%</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">Consult surgery; imaging not required</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">Note: Data from personal correspondence with the study authors.</p>\n<p>&nbsp; &nbsp;</p>\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Community setting</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>pARC Score (Community)</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;5%</p>\n</td>\n<td>\n<p dir=\"ltr\">Very low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5-14%</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">15-24%</p>\n</td>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Intermediate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">25-49%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">50-74%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">75-84%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;85%</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p dir=\"ltr\">From <a href=\"https://www.annemergmed.com/article/S0196-0644(19)30346-4/abstract\" target=\"_blank\">Cotton 2019</a>.</p>",
+        "estimation": [
+            {
+                "name": "% Neutrophils",
+                "unit": "neut",
+                "error_min": "-0.01",
+                "error_max": "100.01",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "White Blood Cell Count",
+                "unit": "wbc",
+                "error_min": "0.0001",
+                "error_max": "500",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10.7",
+                "normal_max_us": "10.7",
+                "normal_min_si": "3.7",
+                "normal_min_us": "3.7",
+                "units_si": "× 10⁹ cells/L",
+                "units_us": "× 10³ cells/µL"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Appendicitis"
+        ],
+        "logic": "var calc_output = [];\nvar guarding = parseFloat(guarding); \nvar history = parseFloat(history);     \nvar rlq = parseFloat(rlq); \nvar pain = parseFloat(pain); \nvar duration = parseFloat(duration); \nvar age1 = parseFloat(age1) || 0;\nvar age2 = parseFloat(age2) || 0; \nvar sex = parseFloat(sex); \nvar wbc = parseFloat(wbc); \nvar neu = parseFloat(neu) || 0; \n\nif (sex == 0) {\n  var age = age1;\n} else {\n  var age = age2;\n}\n\nif (neu > 0) {\n  anc = (neu*wbc)/100;\n} else {\n  anc = Math.pow((-0.8783 + 1.1008*Math.sqrt(wbc)),2);\n}\n\nif (anc < 14) {\n  anc = Math.sqrt(anc)*1.7734;\n} else {\n  anc = 6.6195;\n}\n    \nvar x = -8.6855 + guarding + pain + rlq + history + anc + duration + age + sex;\n\nvar score, a;\n\nif (setting == 1) {\n  a = '(ED)';\n  score = Math.exp(x) / (1 + Math.exp(x));\n  score = score*100;\n  score = score.toFixed(0);\n  var risk1, risk2;\n  if (score <= 5) {\n      risk1 = 'Ultra low';\n      risk2 = 'Outpatient follow up appropriate if PCP evaluation available within 24 hrs; no diagnostic imaging required';\n  }  else if (score >= 6 && score <= 15) {\n      risk1 = 'Low';\n      risk2 = 'Consider ED observation for 6 hrs for serial exams; if improved, ensure outpatient follow-up in 24 hrs; no imaging required';\n  }  else if (score >= 16 && score <= 25) {\n      risk1 = 'Low-moderate';\n      risk2 = 'If patients symptoms <24 hrs, consider observation for 12 hrs; if not improved, obtain ultrasound and repeat CBC; if pain ≥24 hrs of symptoms, obtain ultrasound to evaluate for appendicitis';\n  }  else if (score >= 26 && score <= 50) {\n      risk1 = 'Moderate';\n      risk2 = 'Ultrasound recommended as first line imaging; admit for observation if ultrasound equivocal';\n  }  else if (score >= 51 && score <= 75) {\n      risk1 = 'Moderate';\n      risk2 = 'Ultrasound recommended as first line imaging; CT if ultrasound equivocal';\n  }  else if (score >= 76 && score <= 90) {\n      risk1 = 'Moderate-high';\n      risk2 = 'Consult surgery; consider imaging based on surgery recommendations';\n  }  else if (score > 90) {\n      risk1 = 'High';\n      risk2 = 'Consult surgery; imaging not required';\n  }\n} else if (setting == 0) {\n  a = '(Community)';\n  score = Math.exp(-0.615 + 1.1*(x))/(1 + Math.exp(-0.615 + 1.1*(x)));\n  score = score*100;\n  score = score.toFixed(0);\n  var risk1, risk2;\n  if (score < 5) {\n      risk1 = 'Very low';\n      risk2 = '1.4';\n  }  else if (score >= 5 && score <= 14) {\n      risk1 = 'Low';\n      risk2 = '3.0';\n  }  else if (score >= 15 && score <= 24) {\n      risk1 = 'Intermediate';\n      risk2 = '7.7';\n  }  else if (score >= 25 && score <= 49) {\n      risk1 = 'Intermediate';\n      risk2 = '23.9';\n  }  else if (score >= 50 && score <= 74) {\n      risk1 = 'Intermediate';\n      risk2 = '50.0';\n  }  else if (score >= 75 && score <= 84) {\n      risk1 = 'Intermediate';\n      risk2 = '65.3';\n  }  else if (score >= 85) {\n      risk1 = 'High';\n      risk2 = '84.8';\n  }\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: '%',\n    message: risk1 + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: '%',\n    message: 'pARC Score ' + a   \n    });\ncalc_output.push({\n    name: 'risk1',\n    value: risk1, \n    value_text: 'risk',\n    message: 'Risk group'\n});\nif (setting == 1) {\n  calc_output.push({\n    name: 'risk1',\n    value: '', \n    value_text: '',\n    message: risk2\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Setting",
+                "name": "setting",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Community",
+                        "value": 0
+                    },
+                    {
+                        "label": "Pediatric ED",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Selecting setting gives customized information on prevalence in Results",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1.278
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "sex == 0",
+                "default": 0,
+                "label_en": "Age",
+                "name": "age1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "3-7 years",
+                        "value": 0.381
+                    },
+                    {
+                        "label": "8-11 years",
+                        "value": 0.6513
+                    },
+                    {
+                        "label": ">11 years",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "sex == 1.278",
+                "default": 0,
+                "label_en": "Age",
+                "name": "age2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "3-7 years",
+                        "value": -0.6653
+                    },
+                    {
+                        "label": "8-13 years",
+                        "value": -0.0654
+                    },
+                    {
+                        "label": ">13 years",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Duration of pain, hrs",
+                "name": "duration",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<24",
+                        "value": 0
+                    },
+                    {
+                        "label": "24 to <48",
+                        "value": 0.4696
+                    },
+                    {
+                        "label": "48 to 96",
+                        "value": 0.1003
+                    },
+                    {
+                        "label": ">96",
+                        "value": 0
+                    },
+                    {
+                        "label": "Unknown (defaults to <24 hrs)",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "WBC",
+                "name": "wbc",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wbc"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Neutrophil",
+                "name": "neu",
+                "optional": true,
+                "tips_en": "Enter a value for neutrophil if it is available; otherwise, leave it as blank",
+                "type": "textbox",
+                "unit": "neut"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Presence of pain with walking",
+                "name": "pain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.0494
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Maximal tenderness in <abbr title = \"Right lower quadrant\">RLQ</abbr>",
+                "name": "rlq",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.1435
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abdominal guarding",
+                "name": "guarding",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0.6736
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of migration of pain to RLQ",
+                "name": "history",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0.4557
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Appendicitis",
+            "peds",
+            "pediatric",
+            "parc",
+            "appendicitis risk",
+            "abdominal pain"
+        ],
+        "specialty": [
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatrics",
+            "Surgery (General)"
+        ]
+    }
+}

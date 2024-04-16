@@ -1,0 +1,182 @@
+{
+    "id": "453",
+    "title": "Simplified Autoimmune Hepatitis (AIH) Score",
+    "desc": "The Simplified Autoimmune Hepatitis (AIH) Score diagnoses autoimmune hepatitis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18537184 ",
+                "text": "Hennes EM, Zeniya M, Czaja AJ, et al. Simplified criteria for the diagnosis of autoimmune hepatitis. Hepatology. 2008;48(1):169-76."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Variable</strong></p>\n</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n<td>\n<p><strong>2 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>ANA or SMA</p>\n</td>\n<td>\n<p>&lt;1:40</p>\n</td>\n<td>\n<p>&ge;1:40</p>\n</td>\n<td>\n<p><strong><em>&ge;1:80*</em></strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>LKM1</p>\n</td>\n<td>\n<p>&lt;1:40</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p><strong><em>&ge;1:40*</em></strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>SLA</p>\n</td>\n<td>\n<p>Negative</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p><strong><em>Positive*</em></strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>IgG</p>\n</td>\n<td>\n<p>Normal</p>\n</td>\n<td>\n<p>&gt;Upper limit of normal</p>\n</td>\n<td>\n<p>&gt;1.1&times; upper limit of normal</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Liver histology**</p>\n</td>\n<td>\n<p><span mce-data-marked=\"1\">--</span></p>\n</td>\n<td>\n<p>Compatible with AIH</p>\n</td>\n<td>\n<p>Typical of AIH</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Viral hepatitis</p>\n</td>\n<td>\n<p>Present</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Absent</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><br>*Maximum 2 points total (e.g. if ANA or SMA &ge;1:80 and SLA is positive, only 2 points are assigned, not 4).</p>\n<p>**If histology is normal, AIH is not the diagnosis.</p>\n<p>AIH, autoimmune hepatitis; ANA, antinuclear antibody; LKM1, Liver Kidney&nbsp;Microsome type 1; SLA, soluble liver antigen; SMA, smooth muscle antibody; IgG, immunoglobulin G.</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Simplified AIH Score</strong></p>\n</td>\n<td>\n<p><strong>Diagnosis</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&le;5</p>\n</td>\n<td>\n<p>Possible AIH (though further testing should be done)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>6</p>\n</td>\n<td>\n<p>Probable AIH</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;7</p>\n</td>\n<td>\n<p>Likely&nbsp;AIH</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Autoimmune Disorders",
+            "Hepatitis"
+        ],
+        "logic": "var calc_output = [];\nvar msg = '';\nvar antibody = parseInt(ana) + parseInt(lkm) + parseInt(sla);\nvar antibody = ana + lkm + sla;\n\nif (antibody > 2) {antibody = 2;}\n\nvar u = parseInt(antibody) + parseInt(igg) + parseInt(liver) + parseInt(hep);\n\nif (u <= 5) {\n    msg = 'Possible AIH. Investigate further.';\n} else if (u >= 6 && u < 7) {\n    msg = 'Probable AIH';\n} else if (u >= 7) {\n    msg = 'Likely AIH';\n}\n\ncalc_output.push({ \n\tname: 'mini',\n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg \n});\ncalc_output.push({ \n\tname: '3112_Simplified AIH Score_result', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Antinuclear antibody'>ANA</abbr> or <abbr title='Smooth muscle antibody'>SMA</abbr>",
+                "mdcalc_info_concept": null,
+                "name": "ana",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<1:40",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥1:40",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥1:80",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Liver kidney microsomal type 1'>LKM1</abbr> antibody",
+                "mdcalc_info_concept": null,
+                "name": "lkm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<1:40",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥1:40",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Soluble liver antigen'>SLA</abbr>",
+                "mdcalc_info_concept": null,
+                "name": "sla",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Negative",
+                        "value": 0
+                    },
+                    {
+                        "label": "Positive",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Immunoglobulin G'>IgG</abbr>",
+                "mdcalc_info_concept": null,
+                "name": "igg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": ">Upper limit of normal",
+                        "value": 1
+                    },
+                    {
+                        "label": ">1.1× upper limit of normal",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Liver histology",
+                "mdcalc_info_concept": null,
+                "name": "liver",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Compatible with AIH",
+                        "value": 1
+                    },
+                    {
+                        "label": "Typical of AIH",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "If histology is normal, AIH is not the diagnosis",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Viral hepatitis",
+                "md_calc_info_concept": null,
+                "name": "hep",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Absent",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "AIH",
+            "hepatitis",
+            "simple",
+            "diagnosis",
+            "liver injury",
+            "AIH Score"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hepatology",
+            "Internal Medicine",
+            "Rheumatology"
+        ]
+    }
+}

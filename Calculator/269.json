@@ -1,0 +1,317 @@
+{
+    "id": "269",
+    "title": "Canadian Transient Ischemic Attack (TIA) Score",
+    "desc": "The Canadian Transient Ischemic Attack (TIA) Score identifies risk of stroke in the next 7 days in patients who experienced symptoms of TIA.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24262323/",
+                "text": "Perry JJ, Sharma M, Sivilotti MLA, et al. A prospective cohort study of patients with transient ischemic attack to identify high-risk clinical characteristics. Stroke. 2014;45(1):92-100."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The Canadian TIA Score is calculated by the addition of the selected points:</span></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 93.51535836177474%;\"><colgroup><col style=\"width: 57.2992700729927%;\"><col style=\"width: 23.175182481751825%;\"><col style=\"width: 19.34306569343066%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Clinical Findings</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>First TIA in lifetime</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Symptoms &ge;10 mins</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>History of carotid stenosis</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Already on antiplatelet therapy</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>History of gait disturbance</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>History of unilateral weakness</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>History of vertigo</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-3</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Initial triage diastolic blood pressure &ge;110 mmHg</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Dysarthria or aphasia (history or examination)</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Investigations in Emergency Department</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Atrial fibrillation on ECG</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Infarction (new or old) on CT</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Platelet count &ge;400&times;10</span><sup><span>9</span></sup><span>/L</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Glucose &ge;15 mmol/L</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 57.508532423208194%;\"><colgroup><col style=\"width: 53.89408099688473%;\"><col style=\"width: 45.794392523364486%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Canadian TIA Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>% Risk of Stroke</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>-3</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.01%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>-2</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.01-0.03%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>-1</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.03%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.04%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.07%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.11%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.2%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.3%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>5</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.5%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>6</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.8%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>7</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1.2%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>8</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>9</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>3.2%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>10</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>5.1%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>11</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>8.1%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>12</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>12.6%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>13</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>19%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>14</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>27.6%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;15</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&gt;27.6%</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 49.31740614334471%;\"><colgroup><col style=\"width: 52.94117647058823%;\"><col style=\"width: 46.71280276816609%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Canadian TIA Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk Category</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&le;3</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Low</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>4-8</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Medium</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;9</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>High</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dizziness",
+            "Fatigue",
+            "Numbness",
+            "Vertigo",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar tia = parseFloat(tia);\nvar symptoms = parseFloat(symptoms);\nvar stenosis = parseFloat(stenosis);\nvar therapy = parseFloat(therapy);\nvar gait = parseFloat(gait);\nvar weakness = parseFloat(weakness);\nvar vertigo = parseFloat(vertigo);\nvar bp = parseFloat(bp);\nvar d = parseFloat(d);\nvar ecg = parseFloat(ecg);\nvar ct = parseFloat(ct);\nvar platelet = parseFloat(platelet);\nvar glucose = parseFloat(glucose);\n\nvar score = tia + symptoms + stenosis + therapy + gait + weakness + vertigo + bp + d + ecg + ct + platelet + glucose;\n\nvar risk;\n\nif (score == -3) {\n    risk = 0.01;\n} else if (score == -2) {\n    risk = '0.01-0.03';\n} else if (score == -1) {\n    risk = 0.03;\n} else if (score == 0) {\n    risk = 0.04;\n} else if (score == 1) {\n    risk = 0.07;\n} else if (score == 2) {\n    risk = 0.11;\n} else if (score == 3) {\n    risk = 0.2;\n} else if (score == 4) {\n    risk = 0.3;\n} else if (score == 5) {\n    risk = 0.5;\n} else if (score == 6) {\n    risk = 0.8;\n} else if (score == 7) {\n    risk = 1.2;\n} else if (score == 8) {\n    risk = 2;\n} else if (score == 9) {\n    risk = 3.2;\n} else if (score == 10) {\n    risk = 5.1;\n} else if (score == 11) {\n    risk = 8.1;\n} else if (score == 12) {\n    risk = 12.6;\n} else if (score == 13) {\n    risk = 19;\n} else if (score == 14) {\n    risk = 27.6;\n} else {\n    risk = '>27.6'\n}\n\nvar msg;\n\nif (score <= 3) {\n    msg = 'Low risk of stroke in the next 7 days';\n} else if (score <= 8) {\n    msg = 'Medium risk of stroke in the next 7 days';\n} else {\n    msg = 'High risk of stroke in the next 7 days';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: '%',\n    message: msg\n});\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'Canadian TIA Score'\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '%',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Clinical Findings",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span>First TIA in lifetime</span></p>",
+                "name": "tia",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span>Symptoms &ge;10 mins</span></p>",
+                "name": "symptoms",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span>History of carotid stenosis</span></p>",
+                "name": "stenosis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Already on antiplatelet therapy</p>",
+                "name": "therapy",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>History of gait disturbance</p>",
+                "name": "gait",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>History of unilateral weakness</p>",
+                "name": "weakness",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>History of vertigo</p>",
+                "name": "vertigo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Initial triage diastolic blood pressure &ge;110 mmHg</p>",
+                "name": "bp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Dysarthria or aphasia (history or examination)</p>",
+                "name": "d",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Investigations in Emergency Department",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Atrial fibrillation on ECG</p>",
+                "name": "ecg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Infarction (new or old) on CT</p>",
+                "name": "ct",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Platelet count &ge;400&times;10<sup>9</sup>/L</p>",
+                "name": "platelet",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Glucose &ge;15 mmol/L</p>",
+                "name": "glucose",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Canadian Transient Ischemic Attack (TIA) Score",
+            "Canadian TIA Score",
+            "TIA",
+            "TIA score",
+            "stroke",
+            "impending stroke",
+            "transient ischemic attack",
+            "transient ischemic attack score"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

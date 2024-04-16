@@ -1,0 +1,119 @@
+{
+    "id": "618",
+    "title": "HERDOO2 Rule for Discontinuing Anticoagulation in Unprovoked VTE",
+    "desc": "The HERDOO2 Rule for Discontinuing Anticoagulation in VTE identifies low-risk women who can safely discontinue VTE treatment.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18725614 ",
+                "text": "Rodger MA, Kahn SR, Wells PS, et al. Identifying unprovoked thromboembolism patients at low risk for recurrence who can discontinue anticoagulant therapy. CMAJ. 2008;179(5):417-26."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27154483 ",
+                "text": "Ensor J, Riley RD, Moore D, Snell KI, Bayliss S, Fitzmaurice D. Systematic review of prognostic models for recurrent venous thromboembolism (VTE) post-treatment of first unprovoked VTE. BMJ Open. 2016;6(5):e011190."
+            }
+        ],
+        "evidence": "<p><span>Addition of the selected points:</span></p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td>&nbsp;</td> <td> <p><strong>0 points</strong></p> </td> <td> <p><strong>1 point</strong></p> </td> </tr> <tr> <td> <p><span>Post-thrombotic signs*</span></p> </td> <td> <p><span>No</span></p> </td> <td> <p><span>Yes</span></p> </td> </tr> <tr> <td> <p><span>D-dimer level</span></p> </td> <td> <p><span>&lt;250 µg/L</span></p> </td> <td> <p><span>≥250 µg/L</span></p> </td> </tr> <tr> <td> <p><span><calculator id=\"29\">BMI</calculator>, kg/m²</span></p> </td> <td> <p><span>&lt;30</span></p> </td> <td> <p><span>≥30</span></p> </td> </tr> <tr> <td> <p><span>Age, years</span></p> </td> <td> <p><span>&lt;65 </span></p> </td> <td> <p><span>≥65</span></p> </td> </tr> </tbody> </table> </div> <p><span>*Hyperpigmentation, edema, or redness (either leg)</span></p> <p><span>HERDOO2 = </span><span>H</span><span>yperpigmentation, </span><span>E</span><span>dema, or </span><span>R</span><span>edness; </span><span>D</span><span>-dimer, </span><span>O</span><span>besity, </span><span>O</span><span>lder age</span></p>",
+        "facts": "<p><span>Interpretation: </span></p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>HERDOO2 </strong></p> </td> <td> <p><strong>Risk group</strong></p> </td> <td> <p><strong>Risk of recurrent major VTE*</strong></p> </td> <td> <p><strong>Recommendation</strong></p> </td> </tr> <tr> <td> <p>0-1</p> </td> <td> <p>Low</p> </td> <td> <p>3.0%</p> </td> <td> <p>Can safely discontinue oral anticoagulation</p> </td> </tr> <tr> <td> <p>2-4</p> </td> <td> <p>Not low</p> </td> <td> <p>7.4%</p> </td> <td> <p>Continue oral anticoagulation</p> </td> </tr> </tbody> </table> <p>*Proximal DVT and segmental or greater PE, % per 100 patient years.</p> </div>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Dyspnea",
+            "Extremity Edema",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar score = parseFloat(post) + parseFloat(level) + parseFloat(bmi) + parseFloat(age);\n\n//interpretation\nvar rec, risk, risk_grp;\nif(score<2){\n\trec = 'Can safely discontinue oral anticoagulation';\n    risk = '3.0'\n    risk_grp = 'Low'\n}else{\n\trec = 'Continue oral anticoagulation';\n    risk = '7.4'\n    risk_grp = 'Not low'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: rec\n});\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'HERDOO2 Score'\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '%',\n    message: 'Risk of recurrent major VTE per 100 patient years'\n});\ncalc_output.push({\n    name: 'risk group',\n    value: risk_grp,\n    value_text: 'risk',\n    message: rec\n});",
+        "inputs": [
+            {
+                "default": 0,
+                "label_en": "Post-thrombotic signs",
+                "name": "post",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Hyperpigmentation, edema, or redness (either leg)",
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "D-dimer level",
+                "name": "level",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<250 µg/L",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥250 µg/L",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "<calculator id='29'>BMI</calculator>, kg/m²",
+                "name": "bmi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<30",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥30",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "default": 0,
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<65 ",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥65",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "herdoo2",
+            "vte",
+            "herdoo2 rule"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Internal Medicine"
+        ]
+    }
+}

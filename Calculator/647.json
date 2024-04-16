@@ -1,0 +1,162 @@
+{
+    "id": "647",
+    "title": "Focused Assessment with Sonography for Trauma (FAST)",
+    "desc": "Focused Assessment with Sonography for Trauma predicts presence of pericardial or intra-abdominal injury after penetrating or blunt trauma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8487337",
+                "text": "Rozycki GS, Ochsner MG, Jaffin JH, Champion HR. Prospective evaluation of surgeons' use of ultrasound in the evaluation of trauma patients. J Trauma. 1993 Apr;34(4):516-26."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28318439",
+                "text": "Richards JR, McGahan JP. Focused Assessment with Sonography in Trauma (FAST) in 2017: What Radiologist Can Learn. Radiology. 2017 Apr;283(1):30-48."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19901678  ",
+                "text": "Ball CG, Williams BH, Wyrzykowski AD, et al. A Caveat to the Performance of Pericardial Ultrasound in Patients with Penetrating Cardiac Wounds. J Trauma. 2009 Nov;67(5):1123-4."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20149371 ",
+                "text": "Nandipati KC, Allamaneni S, Kakarla R, et al. Extended Focused Assessment with Sonography for Trauma (EFAST) in the Diagnosis of Pneumothorax: Experience at a Community Based Level I Trauma Center. Injury. 2011 May;42(5):511-4."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26649350 ",
+                "text": "Governatori NJ, Saul T, Siadecki SD, et al. Ultrasound in the Evaluation of Penetrating Thoraco-Abdominal Trauma: A Review of the Literature. Med Ultrason. 2015 Dec;17(4):528-34."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20078434 ",
+                "text": "Wilkerson RG, Stone MB. Sensitivity of Bedside Ultrasound and Supine Anteroposterior Chest Radiographs for the Identification of Pneumothorax After Blunt Trauma. Acad Emerg Med. 2010 Jan;17(1):11-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28779381 ",
+                "text": "Matsushima K, Khor D, Berona K, Antoku D, Dollbaum R, Khan M, Demetriades D. Double Jeopardy in Penetrating Trauma: Get FAST, Get It Right. World J Surg. 2017 Aug 4. [Epub ahead of print]"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25498329 ",
+                "text": "Carter JW, Falco MH, Chopko MS, Flyn WJ Jr, Wiles Iii CE, Guo WA. Do we really rely on fast for decision-making in the management of blunt abdominal trauma?. Injury. 2015 May;26(5):817-21. "
+            }
+        ],
+        "evidence": "<p>Using bedside ultrasound, assess for fluid in each of the following areas:</p> <table> <tbody> <tr> <td>&nbsp;</td> <td colspan=\"3\"> <p><strong>Fluid present?</strong></p> </td> </tr> <tr> <td> <p>Pericardial fluid</p> </td> <td> <p>Absent</p> </td> <td> <p>Present</p> </td> <td> <p>Equivocal</p> </td> </tr> <tr> <td> <p>Right upper quadrant (Morison’s pouch) fluid</p> </td> <td> <p>Absent</p> </td> <td> <p>Present</p> </td> <td> <p>Equivocal</p> </td> </tr> <tr> <td> <p>Left upper quadrant (splenorenal recess) fluid</p> </td> <td> <p>Absent</p> </td> <td> <p>Present</p> </td> <td> <p>Equivocal</p> </td> </tr> <tr> <td> <p>Suprapubic fluid</p> </td> <td> <p>Absent</p> </td> <td> <p>Present</p> </td> <td> <p>Equivocal</p> </td> </tr> </tbody> </table>",
+        "facts": "<p>Interpretation:</p> <ul> <li>If pericardial fluid is seen in the subxiphoid view, surgical intervention is warranted. </li> <li>If intra-abdominal fluid is seen in any of the three abdominal views, emergent laparotomy is indicated in unstable patients. </li> <li>Stable patients with intra-abdominal fluid should proceed to cross-sectional imaging.&nbsp;</li> </ul> <p>See Next Steps &gt; Management for suggested algorithm.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar pericardial = parseFloat(pericardial)\nvar ruq = parseFloat(ruq) \nvar luq = parseFloat(luq)\nvar suprapubic = parseFloat(suprapubic)\n\nvar fast = pericardial + ruq + luq + suprapubic\n\nvar result, msg, rec_peri, rec_abd\n\nif (fast == 0) { // peri, abd negative\n    result = 'Negative FAST'\n    msg = 'No pericardial or intra-abdominal fluid seen on FAST'\n    rec_peri = ''\n    rec_abd = 'Negative FAST does not exclude injury.';\n}\nif (pericardial == 1 ) { // peri positive\n    result = 'Positive FAST'\n    msg = 'Suspected hemopericardium';\n    rec_peri = 'Surgical intervention warranted for suspected hemopericardium. Median sternotomy preferred if stable; otherwise, use left anterolateral thoracotomy.'; \n    rec_abd = ''\n    if (ruq == 1 || luq == 1 || suprapubic == 1 ) { // peri positive and abd positive\n        result = 'Positive FAST'\n        rec_abd = 'Emergent ex lap indicated for hemoperitoneum in unstable patients.';\n        msg = 'Suspected hemopericardium and hemoperitoneum'\n    }\n    else {\n        rec_abd = ''\n        result = 'Positive FAST'\n    }\n} else if (pericardial == 0) { // peri negative\n    if (ruq == 1 || luq == 1 || suprapubic == 1) { // abd positive\n        result = 'Positive FAST'\n        msg = 'Suspected hemoperitoneum';\n        rec_peri = ''; \n        rec_abd = 'Emergent ex lap indicated for hemoperitoneum in unstable patients.'\n    }\n    else if (ruq + luq + suprapubic == 0) { // abd negative\n        result = 'Negative FAST'\n        msg = 'No pericardial or intra-abdominal fluid seen on FAST'\n        rec_peri = ''\n        rec_abd = 'Negative FAST does not exclude injury.';\n    }\n    else { // abd equivocal\n        result = 'Equivocal FAST'\n        msg = 'Equivocal abdominal view';\n        rec_peri = ''; \n        rec_abd = 'Recommend diagnostic peritoneal aspiration (DPA) to rule out hemoperitoneum if unstable. If stable, recommend CT.'\n    }\n}\n\nelse if (pericardial == 2) { // peri equivocal\n    if (ruq + luq + suprapubic == 0) { // abd negative\n        result = 'Equivocal FAST'\n        msg = 'Equivocal pericardial view, negative abdominal view'\n        rec_peri = 'Pericardial window or formal transthoracic echocardiography (TTE) recommended to rule out hemopericardium.'\n        rec_abd = ''\n    }\n    else if (ruq == 1 || luq == 1 || suprapubic == 1) { // abd positive\n        result = 'Positive FAST'\n        msg = 'Suspected hemoperitoneum and equivocal pericardial view'\n        rec_abd = 'Emergent ex lap indicated in unstable patients for suspected hemoperitoneum. Pericardial window or formal transthoracic echocardiography (TTE) recommended for equivocal pericardial view.'\n        rec_peri = ''\n    }\n    else if (ruq + luq + suprapubic > 0) {\n    result = 'Equivocal FAST' \n    msg = 'Equivocal pericardial view, equivocal abdominal view'\n    rec_peri = 'Pericardial window or formal transthoracic echocardiography (TTE) recommended to rule out hemopericardium. ';\n    rec_abd = 'Recommend diagnostic peritoneal aspiration (DPA) to rule out hemoperitoneum if unstable. If stable, recommend CT.';\n    }\n} \n\ncalc_output.push({ \n    name: 'mini', \n    value: result, \n    value_text: '', \n    message: msg \n});\ncalc_output.push({ \n    name: 'FAST', \n    value: result, \n    value_text: '', \n    message: msg\n});\ncalc_output.push({ \n    name: 'FAST', \n    value: '', \n    value_text: '', \n    message: rec_peri + ' ' + rec_abd + ' Use clinical judgment; see Next Steps for details.'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Pericardial fluid",
+                "name": "pericardial",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    },
+                    {
+                        "label": "Equivocal",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Right upper quadrant (Morison’s pouch) fluid",
+                "name": "ruq",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    },
+                    {
+                        "label": "Equivocal",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Left upper quadrant (splenorenal recess) fluid",
+                "name": "luq",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    },
+                    {
+                        "label": "Equivocal",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Suprapubic fluid",
+                "name": "suprapubic",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    },
+                    {
+                        "label": "Equivocal",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "FAST",
+            "eFAST",
+            "trauma ultrasound",
+            "abdominal trauma"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Surgery (Trauma)"
+        ]
+    }
+}

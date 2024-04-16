@@ -1,0 +1,218 @@
+{
+    "id": "271",
+    "title": "NEXUS Head CT Instrument",
+    "desc": "The NEXUS Head CT Instrument predicts need for head CT after blunt head injury.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/16374287/",
+                "text": "Mower WR, Hoffman JR, Herbert M, et al. Developing a decision instrument to guide computed tomographic imaging of blunt head injury patients. J Trauma. 2005;59(4):954-959."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The NEXUS Head CT Instrument decision is determined by the selection of the appropriate criteria:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%;\"><colgroup><col style=\"width: 26.4505119453925%;\"><col style=\"width: 73.37883959044369%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Detail</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Evidence of significant skull fracture</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Basilar: e.g. periorbital or periauricular ecchymoses, hemotympanum, drainage of clear fluid from ears or nose.&nbsp;</span></p>\n<p dir=\"ltr\"><span>Depressed/diastatic: palpable step-off, stellate laceration from a point source, or any injury produced by an object striking a localized region of the skull (e.g. baseball bat, club, pool cue, golf ball, baseball, pipe)</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Scalp hematoma</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Injuries not involving calvarium (e.g. hematomas limited to the face/neck), are not considered scalp hematomas</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Neurologic deficit</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Any abnormal neurologic finding revealed by detailed exam, e.g. motor or sensory deficits (abnormal weakness/sensation in &ge;1 extremity, cranial nerve abnormality (particularly II through XII), cerebellar abnormality as manifested by ataxia, dysmetria, dysdiadokinesis, or other impairment of cerebellar function (as determined by systematic testing of cerebellar function, including tests of ataxia and finger-nose-finger, heel-to-shin, and rapid alternating movements), gait abnormality or inability to walk normally (due to inadequate strength, loss of balance, or ataxia; perform systematic testing of gait, including tandem and heel-to-toe walking and Romberg testing), or any other impairment of neurologic function</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Altered level of alertness</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>e.g. GCS &le;14; delayed or inappropriate response to external stimuli; excessive somnolence; disorientation to person, place, time, or events; inability to remember three objects at 5 mins; perseverating speech</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Abnormal behavior</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Any inappropriate action, e.g. excessive agitation, inconsolability, refusal to cooperate, lack of affective response to questions or events, violent activity</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Coagulopathy</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Any clotting impairment, e.g. hemophilia, secondary to medications (Coumadin, heparin, aspirin, etc), hepatic insufficiency</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Persistent vomiting</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Recurrent (&ge;1 episode) projectile or forceful emesis, either observed or by history, after trauma</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Age &ge;65 years</span></p>\n</td>\n<td></td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 93.85665529010238%;\"><colgroup><col style=\"width: 26.36363636363636%;\"><col style=\"width: 38.18181818181818%;\"><col style=\"width: 35.27272727272727%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Criteria Present</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of Significant Intracranial Injuries</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Low</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>CT not necessary</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&gt;0</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>High</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>CT necessary</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Headache",
+            "Head Injury",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma",
+            "Traumatic Brain Injury"
+        ],
+        "logic": "var calc_output = [];\n\nvar score = parseFloat(skull) + parseFloat(scalp) + parseFloat(neuro) + parseFloat(alert) + parseFloat(behavior) + parseFloat(coag) + parseFloat(vomit) + parseFloat(age);\n\nvar rec;\nvar risk;\n\nif (score == 0){\n    rec = 'CT not necessary';\n    risk = 'Low';\n} else {\n    rec = 'CT necessary';\n    risk = 'High';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: 'risk of significant intracranial injuries',\n    message: rec\n});\ncalc_output.push({\n    name: 'Result',\n    value: risk,\n    value_text: 'risk of significant intracranial injuries',\n    message: rec\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Evidence of significant skull fracture</p>",
+                "name": "skull",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "e.g. periorbital or periauricular ecchymoses, hemotympanum, drainage of clear fluid from ears or nose, palpable step-off, stellate laceration (see <a href='#evidence'>Evidence</a> for more detail)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Scalp hematoma</p>",
+                "name": "scalp",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Injuries not involving calvarium (e.g. hematomas limited to the face/neck), are not considered scalp hematomas",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Neurologic deficit</p>",
+                "name": "neuro",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Any abnormal neurologic finding revealed by detailed exam (see <a href='#evidence'>Evidence</a> for more detail)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Altered level of alertness</p>",
+                "name": "alert",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "e.g. <calculator id='64'>Glasgow Coma Scale (GCS)</calculator> ≤14; delayed or inappropriate response to external stimuli; excessive somnolence; disorientation to person, place, time, or events; inability to remember three objects at 5 mins; perseverating speech",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Abnormal behavior</p>",
+                "name": "behavior",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Any inappropriate action, e.g. excessive agitation, inconsolability, refusal to cooperate, lack of affective response to questions or events, violent activity",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Coagulopathy</p>",
+                "name": "coag",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Any clotting impairment, e.g. hemophilia, secondary to medications (Coumadin, heparin, aspirin, etc), hepatic insufficiency",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Persistent vomiting</p>",
+                "name": "vomit",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Recurrent (≥1 episode) projectile or forceful emesis, either observed or by history, after trauma",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Age &ge;65 years</p>",
+                "name": "age",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "NEXUS II Head CT Instrument",
+            "nexus",
+            "nexus 2",
+            "nexus ii",
+            "head ct",
+            "nexus ii head ct",
+            "nexus head ct",
+            "head injury",
+            "brain imaging",
+            "nexus ii head rule",
+            "nexus head rule",
+            "head ct decision",
+            "nexus ii ct decision",
+            "nexus ct decision",
+            "blunt trauma",
+            "NEXUS Head CT Instrument"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Radiology",
+            "Surgery (Trauma)"
+        ]
+    }
+}

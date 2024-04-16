@@ -1,0 +1,193 @@
+{
+    "id": "288",
+    "title": "Brief Alcohol Withdrawal Scale (BAWS)",
+    "desc": "The Brief Alcohol Withdrawal Scale (BAWS) assesses alcohol withdrawal symptoms.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/28699845/",
+                "text": "Rastegar DA, Applewhite D, Alvanzo AAH, Welsh C, Niessen T, Chen ES. Development and implementation of an alcohol withdrawal protocol using a 5-item scale, the Brief Alcohol Withdrawal Scale (Baws). Subst Abus. 2017;38(4):394-400."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>The BAWS Score is calculated by the addition of the selected points:</p>\n<table style=\"width: 100%; height: 812.149px; border-width: 1px; border-style: none;\">\n<tbody>\n<tr style=\"height: 34.7969px;\">\n<td colspan=\"2\" style=\"width: 78.7234%; height: 34.7969px;\"><strong>Variable</strong></td>\n<td style=\"width: 21.2766%; height: 34.7969px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 34.7969px;\">\n<td style=\"height: 169.188px; width: 36.4066%;\" rowspan=\"4\">Tremor</td>\n<td style=\"width: 42.3168%; height: 34.7969px;\">No tremor</td>\n<td style=\"width: 21.2766%; height: 34.7969px;\">0</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"width: 42.3168%; height: 44.7969px;\">Not visible, but can be felt</td>\n<td style=\"width: 21.2766%; height: 44.7969px;\">1</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"width: 42.3168%; height: 44.7969px;\">Moderate, with arms extended</td>\n<td style=\"width: 21.2766%; height: 44.7969px;\">2</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"width: 42.3168%; height: 44.7969px;\">At rest, without arms extended</td>\n<td style=\"width: 21.2766%; height: 44.7969px;\">3</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 134.391px; width: 36.4066%;\" rowspan=\"4\">Diaphoresis/sweats</td>\n<td style=\"width: 42.3168%; height: 22.3984px;\">No sweats</td>\n<td style=\"width: 21.2766%; height: 22.3984px;\">0</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"width: 42.3168%; height: 44.7969px;\">Mild, barely visible</td>\n<td style=\"width: 21.2766%; height: 44.7969px;\">1</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 42.3168%; height: 22.3984px;\">Beads of sweat</td>\n<td style=\"width: 21.2766%; height: 22.3984px;\">2</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"width: 42.3168%; height: 44.7969px;\">Drenching sweats</td>\n<td style=\"width: 21.2766%; height: 44.7969px;\">3</td>\n</tr>\n<tr style=\"height: 44.7969px;\">\n<td style=\"height: 268.781px; width: 36.4066%;\" rowspan=\"4\">Agitation</td>\n<td style=\"width: 42.3168%; height: 44.7969px;\">Alert and calm (<calculator id=\"1872\">RASS</calculator> = 0)</td>\n<td style=\"width: 21.2766%; height: 44.7969px;\">0</td>\n</tr>\n<tr style=\"height: 89.5938px;\">\n<td style=\"width: 42.3168%; height: 89.5938px;\">Restless, anxious, apprehensive, movements not aggressive (RASS = 1)</td>\n<td style=\"width: 21.2766%; height: 89.5938px;\">1</td>\n</tr>\n<tr style=\"height: 67.1953px;\">\n<td style=\"width: 42.3168%; height: 67.1953px;\">Agitated, frequent non-purposeful movement (RASS = 2)</td>\n<td style=\"width: 21.2766%; height: 67.1953px;\">2</td>\n</tr>\n<tr style=\"height: 67.1953px;\">\n<td style=\"width: 42.3168%; height: 67.1953px;\">Very agitated or combative, violent (RASS = 3 or 4)</td>\n<td style=\"width: 21.2766%; height: 67.1953px;\">3</td>\n</tr>\n<tr style=\"height: 52.7656px;\">\n<td rowspan=\"4\" style=\"width: 36.4066%; height: 160.195px;\">Confusion<br><br>e.g. time: by more than 2 days, wrong month, or wrong year<br><br>place:&nbsp;name of building, city, state</td>\n<td style=\"width: 42.3168%; height: 52.7656px;\">Oriented to person, place, time</td>\n<td style=\"width: 21.2766%; height: 52.7656px;\">0</td>\n</tr>\n<tr style=\"height: 52.7656px;\">\n<td style=\"width: 42.3168%; height: 52.7656px;\">Disoriented to time or place, but not both</td>\n<td style=\"width: 21.2766%; height: 52.7656px;\">1</td>\n</tr>\n<tr style=\"height: 27.3203px;\">\n<td style=\"width: 42.3168%; height: 27.3203px;\">Disoriented to time and place</td>\n<td style=\"width: 21.2766%; height: 27.3203px;\">2</td>\n</tr>\n<tr style=\"height: 27.3438px;\">\n<td style=\"width: 42.3168%; height: 27.3438px;\">Disoriented to person</td>\n<td style=\"width: 21.2766%; height: 27.3438px;\">3</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 22.3984px; width: 36.4066%;\" rowspan=\"4\">Hallucinations (visual, auditory, tactile)</td>\n<td style=\"width: 42.3168%; height: 22.3984px;\">None</td>\n<td style=\"width: 21.2766%; height: 22.3984px;\">0</td>\n</tr>\n<tr>\n<td style=\"width: 42.3168%;\">Mild (vague report, reality testing intact)</td>\n<td style=\"width: 21.2766%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 42.3168%;\">Moderate (more defined hallucinations)</td>\n<td style=\"width: 21.2766%;\">2</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"width: 42.3168%; height: 22.3984px;\">Severe (obviously responding to internal stimuli, poor reality testing)</td>\n<td style=\"width: 21.2766%; height: 22.3984px;\">3</td>\n</tr>\n</tbody>\n</table>\n<p></p>",
+        "facts": "<p><strong>BAWS &lt;3:</strong>&nbsp;</p>\n<p>Give diazepam 5 mg orally as needed for mild withdrawal or anxiety.</p>\n<ul>\n<li>Every 4 hrs up to 6 doses (day 1).</li>\n<li>Every 6 hrs up to 4 doses (day 2).</li>\n<li>Every 8 hrs up to 3 doses (day 3).</li>\n</ul>\n<p>Reassess BAWS every 4 hrs for 24 hrs, then every 6 hrs.</p>\n<p></p>\n<p><strong>BAWS 3-5:</strong></p>\n<p>Give diazepam 10 mg orally every 4 hrs until BAWS &lt;3 (up to 10 doses).</p>\n<p>Reassess BAWS every 4 hrs.</p>\n<p></p>\n<p><strong>BAWS 6-8:</strong></p>\n<p>Give diazepam 20 mg orally every 2 hrs until BAWS &lt;6 (up to 3 doses).</p>\n<p>If the patient has not received any benzodiazepines, give an initial dose of 10 mg.</p>\n<p>Reassess BAWS every 2 hrs; notify physician if BAWS &gt;5 after 6hrs.</p>\n<p></p>\n<p><strong>BAWS &gt;8:</strong></p>\n<p>Give diazepam 20 mg orally and notify physician.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "Anxious",
+            "Depressed",
+            "Fever",
+            "Headache",
+            "Intoxication/Overdose",
+            "Loss of Appetite",
+            "Nausea",
+            "Seizure",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Drug/Alcohol Use"
+        ],
+        "logic": "calc_output = [];\n\nvar tremor = parseFloat(tremor);\nvar sweats = parseFloat(sweats);\nvar agitation = parseFloat(agitation);\nvar confusion = parseFloat(confusion);\nvar hallucinations = parseFloat(hallucinations);\n\nvar baws = tremor + sweats + agitation + confusion + hallucinations;\n\ncalc_output.push({\n    name: 'mini',\n    value: baws,\n    value_text: 'points',\n    message: 'BAWS Score'\n});\ncalc_output.push({\n    name: 'BAWS Score',\n    value: baws,\n    value_text: 'points',\n    message: 'BAWS Score<br/><br/>See Next Steps for dosing information.'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Tremor</p>",
+                "name": "tremor",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No tremor",
+                        "value": 0
+                    },
+                    {
+                        "label": "Not visible, but can be felt",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate, with arms extended",
+                        "value": 2
+                    },
+                    {
+                        "label": "At rest, without arms extended",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Diaphoresis/sweats</p>",
+                "name": "sweats",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No sweats",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild, barely visible",
+                        "value": 1
+                    },
+                    {
+                        "label": "Beads of sweat",
+                        "value": 2
+                    },
+                    {
+                        "label": "Drenching sweats",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Agitation</p>",
+                "name": "agitation",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Alert and calm (RASS = 0)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Restless, anxious, apprehensive, movements not aggressive (RASS = 1)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Agitated, frequent non-purposeful movement (RASS = 2)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Very agitated or combative, violent (RASS = 3 or 4)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<calculator id='1872'>RASS</calculator>",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Confusion/orientation</p>",
+                "name": "confusion",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Oriented to person, place, time",
+                        "value": 0
+                    },
+                    {
+                        "label": "Disoriented to time or place, but not both",
+                        "value": 1
+                    },
+                    {
+                        "label": "Disoriented to time and place",
+                        "value": 2
+                    },
+                    {
+                        "label": "Disoriented to person",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. time: by more than 2 days, wrong month, or wrong year<br/>place: name of building, city, state",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Hallucinations</p>",
+                "name": "hallucinations",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild (vague report, reality testing intact)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate (more defined hallucinations)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe (obviously responding to internal stimuli, poor reality testing)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Visual, auditory, tactile",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Brief Alcohol Withdrawal Scale (BAWS)",
+            "baws",
+            "alcohol",
+            "alcohol withdrawal",
+            "withdrawal",
+            "drinking"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hepatology",
+            "Internal Medicine",
+            "Psychiatry"
+        ]
+    }
+}

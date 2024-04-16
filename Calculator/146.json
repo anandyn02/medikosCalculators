@@ -1,0 +1,301 @@
+{
+    "id": "146",
+    "title": "Gupta Postoperative Pneumonia Risk",
+    "desc": "The Gupta Postoperative Pneumonia Risk predicts risk of pneumonia after surgery.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24182703",
+                "text": "Gupta H, Gupta PK, Schuller D, et al. Development and validation of a risk calculator for predicting postoperative pneumonia. Mayo Clin Proc. 2013;88(11):1241-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Postoperative pneumonia risk, % = <em>e</em><sup>x</sup> / (1 + <em>e</em><sup>x</sup>)</p>\n<p dir=\"ltr\">Where x = &minus;2.8977 + sum of the values of the selected variables.</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"120\"><col width=\"235\"><col width=\"94\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Options</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Value</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Age</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0144 (per year)</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">COPD*</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.4553</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Functional status</p>\n</td>\n<td>\n<p dir=\"ltr\">Independent</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Partially dependent</p>\n</td>\n<td>\n<p dir=\"ltr\">0.7653</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Totally dependent</p>\n</td>\n<td>\n<p dir=\"ltr\">0.9400</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\"><calculator id=\"10024\">ASA class</calculator></p>\n</td>\n<td>\n<p dir=\"ltr\">1: normal healthy patient</p>\n</td>\n<td>\n<p dir=\"ltr\">-3.0225</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2: mild systemic disease</p>\n</td>\n<td>\n<p dir=\"ltr\">-1.6057</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3: severe systemic disease</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.4915</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4: severe systemic disease that is a constant threat to life**</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0123</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5: moribund, not expected to survive without surgery</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Sepsis</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.7641</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Preoperative systemic inflammatory response syndrome</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Preoperative sepsis</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.0842</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Preoperative septic shock</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1048</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Smoking within last year</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.4306</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"21\">\n<p dir=\"ltr\">Type of procedure</p>\n<p dir=\"ltr\"></p>\n</td>\n<td>\n<p dir=\"ltr\">Anorectal</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.8470</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Aortic</p>\n</td>\n<td>\n<p dir=\"ltr\">0.7178</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Bariatric</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.6282</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Brain</p>\n</td>\n<td>\n<p dir=\"ltr\">0.6841</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Breast</p>\n</td>\n<td>\n<p dir=\"ltr\">-2.3318</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Cardiac</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1382</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">ENT (except thyroid/parathyroid)</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.3665</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Foregut or hepatopancreatobiliary</p>\n</td>\n<td>\n<p dir=\"ltr\">1.0660</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Gallbladder, appendix, adrenals, or spleen</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.3951</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Hernia (ventral, inguinal, femoral)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Intestinal</p>\n</td>\n<td>\n<p dir=\"ltr\">0.6169</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Neck</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.0872</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Obstetric/gynecologic</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.4101</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Orthopedic</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.5415</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Other abdomen</p>\n</td>\n<td>\n<p dir=\"ltr\">0.4021</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Peripheral vascular</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.4519</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Skin</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.5075</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Spine</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.5672</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Non-esophageal thoracic</p>\n</td>\n<td>\n<p dir=\"ltr\">0.8901</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Vein</p>\n</td>\n<td>\n<p dir=\"ltr\">-1.4760</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Urology</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1076</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*COPD with forced expiratory volume in the first second &lt;75% or causing functional disability or hospitalization.</p>\n<p>**i.e., patient could die acutely without intervention.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Pneumonia"
+        ],
+        "logic": "var calc_output = [];\nvar copd = parseFloat(copd);\nvar procedure = parseFloat(procedure);\nvar smoking = parseFloat(smoking);\nvar sepsis = parseFloat(sepsis);\nvar class1 = parseFloat(class1);\nvar status = parseFloat(status);\nvar age = parseFloat(age);\n\nvar b = -2.8977 + copd + status + class1 + sepsis + smoking + procedure + age*0.0144;\n\nvar risk = Math.exp(b)/(1 + Math.exp(b)) * 100;\n\ncalc_output.push({\n   name: 'mini',\n   value: risk.toFixed(1),\n   value_text: '%',\n   message: 'Risk of postoperative pneumonia'\n});\ncalc_output.push({\n   name: 'Gupta score',\n   value: risk.toFixed(1),\n   value_text: '%',\n   message: 'Risk of postoperative pneumonia'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><abbr title=\"Chronic obstructive pulmonary disease\">COPD</abbr></p>",
+                "name": "copd",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": -0.46
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "COPD causing functional disability or hospitalization, or <abbr title='Forced expiratory volume in 1 second'>FEV1</abbr> <75%",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Functional status</p>",
+                "name": "status",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Independent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Partially dependent",
+                        "value": 0.77
+                    },
+                    {
+                        "label": "Totally dependent",
+                        "value": 0.94
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><calculator id=\"10024\">ASA class</calculator></p>",
+                "name": "class1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1: normal healthy patient",
+                        "value": -3.02
+                    },
+                    {
+                        "label": "2: mild systemic disease",
+                        "value": -1.61
+                    },
+                    {
+                        "label": "3: severe systemic disease",
+                        "value": -0.49
+                    },
+                    {
+                        "label": "4: severe systemic disease that is a constant threat to life (i.e., patient could die acutely without intervention)",
+                        "value": 0.01
+                    },
+                    {
+                        "label": "5: moribund, not expected to survive without surgery",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Sepsis</p>",
+                "name": "sepsis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": -0.76
+                    },
+                    {
+                        "label": "Preoperative systemic inflammatory response syndrome",
+                        "value": 0
+                    },
+                    {
+                        "label": "Preoperative sepsis",
+                        "value": -0.08
+                    },
+                    {
+                        "label": "Preoperative septic shock",
+                        "value": 0.1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Smoking within last year</p>",
+                "name": "smoking",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": -0.43
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Type of procedure</p>",
+                "name": "procedure",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Anorectal",
+                        "value": -0.85
+                    },
+                    {
+                        "label": "Aortic",
+                        "value": 0.72
+                    },
+                    {
+                        "label": "Bariatric",
+                        "value": -0.63
+                    },
+                    {
+                        "label": "Brain",
+                        "value": 0.68
+                    },
+                    {
+                        "label": "Breast",
+                        "value": -2.33
+                    },
+                    {
+                        "label": "Cardiac",
+                        "value": 0.14
+                    },
+                    {
+                        "label": "ENT (except thyroid/parathyroid)",
+                        "value": -0.37
+                    },
+                    {
+                        "label": "Foregut (esophagus, stomach) or hepatopancreatobiliary",
+                        "value": 1.07
+                    },
+                    {
+                        "label": "Gallbladder, appendix, adrenals, or spleen",
+                        "value": -0.4
+                    },
+                    {
+                        "label": "Hernia (ventral, inguinal, femoral)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Intestinal",
+                        "value": 0.62
+                    },
+                    {
+                        "label": "Neck (thyroid/parathyroid)",
+                        "value": -0.09
+                    },
+                    {
+                        "label": "Obstetric/gynecologic",
+                        "value": -0.41
+                    },
+                    {
+                        "label": "Orthopedic and non-vascular extremity",
+                        "value": -0.54
+                    },
+                    {
+                        "label": "Other abdominal",
+                        "value": 0.4
+                    },
+                    {
+                        "label": "Peripheral vascular",
+                        "value": -0.45
+                    },
+                    {
+                        "label": "Skin",
+                        "value": -0.51
+                    },
+                    {
+                        "label": "Spine",
+                        "value": -0.57
+                    },
+                    {
+                        "label": "Non-esophageal thoracic (lung, mediastinum, etc)",
+                        "value": 0.89
+                    },
+                    {
+                        "label": "Vein",
+                        "value": -1.48
+                    },
+                    {
+                        "label": "Urology",
+                        "value": 0.11
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "dropdown"
+            }
+        ],
+        "can_search": [
+            "pneumonia",
+            "post-operative risk",
+            "postop risk",
+            "postoperative risk",
+            "postop pneumonia",
+            "postoperative pneumonia",
+            "post-operative pneumonia",
+            "gupta"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Oral and Maxillofacial Surgery",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)",
+            "Surgery (General)",
+            "Surgery (Plastic)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

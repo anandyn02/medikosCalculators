@@ -1,0 +1,154 @@
+{
+    "id": "415",
+    "title": "Memorial Sloan-Kettering Cancer Center (MSKCC/Motzer) Score for Metastatic Renal Cell Carcinoma (RCC)",
+    "desc": "The MSKCC/Motzer Criteria for RCC predicts survival based on clinical and laboratory data in metastatic RCC patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10561319",
+                "text": "Motzer RJ, Mazumdar M, Bacik J, Berg W, Amsterdam A, Ferrara J. Survival and prognostic stratification of 670 patients with advanced renal cell carcinoma. J Clin Oncol. 1999;17(8):2530-40."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of selected points, as above.</p>",
+        "facts": "<p><span id=\"docs-internal-guid-f039d8ab-7fff-710f-1cef-72f9a9264e61\">Interpretation:</span></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Score</th>\n<th style=\"text-align: left;\">Risk</th>\n<th style=\"text-align: left;\">\n<p>Median survival</p>\n</th>\n</tr>\n<tr>\n<td>0</td>\n<td>\n<p>Good</p>\n</td>\n<td>20 months</td>\n</tr>\n<tr>\n<td>1-2</td>\n<td>\n<p>Intermediate</p>\n</td>\n<td>10 months</td>\n</tr>\n<tr>\n<td>&ge;3</td>\n<td>\n<p>High</p>\n</td>\n<td>4 months</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Hematuria"
+        ],
+        "disease_treated": [
+            "Chemotherapy",
+            "Renal Cell Carcinoma"
+        ],
+        "logic": "var calc_output = []; \nvar risk = ''; \nvar surv = ''; \nvar u = parseFloat(neph) + parseFloat(hb) + parseFloat(ca) + parseFloat(ldh) + parseFloat(karnofsky); \nif (u == 0) {risk = 'Favorable Risk Group'; surv = 'Median Survival 20 Months'; } \nelse if (u >=1 && u<= 2) {risk = 'Intermediate Risk Group'; surv = 'Median Survival 10 Months'; } \nelse if (u >= 3) {risk = 'High Risk Group'; surv = 'Median Survival 4 Months'; } \n\ncalc_output.push({\n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: risk \n}); \ncalc_output.push({\n    name: '2153_MSKCC/Motzer Criteria_result', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: risk + '<br/><br/>' + surv \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Time from diagnosis to systemic treatment <1 year",
+                "md_calc_info_concept": null,
+                "name": "neph",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Measured ~1 month after stopping anticoagulation",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemoglobin < Lower Limit of Normal",
+                "md_calc_info_concept": null,
+                "name": "hb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<ul><li>Men (Normal): 13.5-17.5 g/dL</li><li>Women (Normal): 12.0-15.5 g/dL</li></ul>",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Calcium >10mg/dL (>2.5 mmol/L)",
+                "md_calc_info_concept": null,
+                "name": "ca",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "LDH > 1.5x Upper Limit of Normal",
+                "md_calc_info_concept": null,
+                "name": "ldh",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Normal: 140 U/L",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Performance status <80% (Karnofsky)",
+                "md_calc_info_concept": null,
+                "name": "karnofsky",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "RCC",
+            "MSKCC",
+            "Sloan-Kettering",
+            "Sloan Kettering",
+            "Motzer",
+            "renal cancer",
+            "kidney cancer",
+            "karnofsky",
+            "nephrectomy",
+            "survival"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Nephrology",
+            "Urology"
+        ]
+    }
+}

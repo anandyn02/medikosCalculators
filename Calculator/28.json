@@ -1,0 +1,177 @@
+{
+    "id": "28",
+    "title": "REACH-B Score for Hepatocellular Carcinoma (HCC)",
+    "desc": "The REACH-B Score for Hepatocellular Carcinoma estimates risk of hepatocellular carcinoma in patients with chronic hepatitis B.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21497551",
+                "text": "Yang HI, Yuen MF, Chan HL, et al. Risk estimation for hepatocellular carcinoma in chronic hepatitis B (REACH-B): development and validation of a predictive score. Lancet Oncol. 2011;12(6):568-74."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"149\" /><col width=\"149\" /><col width=\"93\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Sex</p>\n</td>\n<td>\n<p dir=\"ltr\">Female</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Male</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"7\">\n<p dir=\"ltr\">Age, years</p>\n</td>\n<td>\n<p dir=\"ltr\">30&ndash;34</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">35&ndash;39</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">40&ndash;44</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">45&ndash;49</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">50&ndash;54</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">55&ndash;59</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">60&ndash;65</p>\n</td>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><abbr title=\"Alanine aminotransferase\">ALT</abbr>, U/L</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;15</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">15&ndash;44</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;45</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><abbr title=\"Hepatitis B e-Antigen\">HBeAg</abbr></p>\n</td>\n<td>\n<p dir=\"ltr\">Negative</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Positive</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Hepatitis B virus DNA level, copies/mL</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;300 (undetectable)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">300&ndash;9,999</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10,000&ndash;99,999</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">100,000&ndash;999,999</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;10<sup>6</sup></p>\n</td>\n<td>\n<p dir=\"ltr\">4*</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-604e4d3f-1b3c-c58c-ffd0-e569993f14ed\">*The risk score attributed to HBV DNA &ge;10<sup>6</sup> copies/mL was less than that for HBV DNA of 100,000&ndash;999,999 copies/mL because most patients with HBV DNA &ge;10<sup>6</sup> copies/mL were also HBeAg positive, thus sharing the associated higher score for this category.</span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"112\" /><col width=\"66\" /><col width=\"82\" /><col width=\"81\" /></colgroup>\n<tbody>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>REACH-B Score</strong></p>\n</td>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>HCC risk</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>3-year</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>5-year</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>10-year</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n<td>\n<p dir=\"ltr\">0.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.5%</p>\n</td>\n<td>\n<p dir=\"ltr\">1.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n<td>\n<p dir=\"ltr\">0.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.8%</p>\n</td>\n<td>\n<p dir=\"ltr\">2.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">9</p>\n</td>\n<td>\n<p dir=\"ltr\">0.5%</p>\n</td>\n<td>\n<p dir=\"ltr\">1.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">3.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n<td>\n<p dir=\"ltr\">0.9%</p>\n</td>\n<td>\n<p dir=\"ltr\">2.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">5.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">11</p>\n</td>\n<td>\n<p dir=\"ltr\">1.4%</p>\n</td>\n<td>\n<p dir=\"ltr\">3.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">8.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">12</p>\n</td>\n<td>\n<p dir=\"ltr\">2.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">5.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">13.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">13</p>\n</td>\n<td>\n<p dir=\"ltr\">3.7%</p>\n</td>\n<td>\n<p dir=\"ltr\">8.5%</p>\n</td>\n<td>\n<p dir=\"ltr\">21.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">14</p>\n</td>\n<td>\n<p dir=\"ltr\">6.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">13.6%</p>\n</td>\n<td>\n<p dir=\"ltr\">32.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">15</p>\n</td>\n<td>\n<p dir=\"ltr\">9.6%</p>\n</td>\n<td>\n<p dir=\"ltr\">21.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">46.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">16</p>\n</td>\n<td>\n<p dir=\"ltr\">15.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">32.4%</p>\n</td>\n<td>\n<p dir=\"ltr\">64.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">17</p>\n</td>\n<td>\n<p dir=\"ltr\">23.6%</p>\n</td>\n<td>\n<p dir=\"ltr\">47.4%</p>\n</td>\n<td>\n<p dir=\"ltr\">81.6%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Hepatitis",
+            "Hepatocellular Carcinoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar sex = parseFloat(sex)\nvar age = parseFloat(age)\nvar alanine = parseFloat(alanine)\nvar ag = parseFloat(ag)\nvar dna_level = parseFloat(dna_level)\n\nvar score = sex + age + alanine + ag + dna_level\n\nvar risk = [ \"0.0\",\n\"0.1\",\n\"0.1\",\n\"0.2\",\n\"0.3\",\n\"0.5\",\n\"0.7\",\n\"1.2\",\n\"2.0\",\n\"3.2\",\n\"5.2\",\n\"8.4\",\n\"13.4\",\n\"21.0\",\n\"32.0\",\n\"46.8\",\n\"64.4\",\n\"81.6\"]\n\nvar hcc = risk[score]\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: hcc,\n    value_text: '%',\n    message: 'HCC risk at 10 yrs'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'REACH-B Score'\n});\ncalc_output.push({\n    name: 'hcc',\n    value: hcc,\n    value_text: '%',\n    message: '10-year risk of HCC (See 3-year and 5-year risk in the Evidence section)<br/><br/><guideline id = \"10112\">AASLD guideline</guideline>'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "30–34",
+                        "value": 0
+                    },
+                    {
+                        "label": "35–39",
+                        "value": 1
+                    },
+                    {
+                        "label": "40–44",
+                        "value": 2
+                    },
+                    {
+                        "label": "45–49",
+                        "value": 3
+                    },
+                    {
+                        "label": "50–54",
+                        "value": 4
+                    },
+                    {
+                        "label": "55–59",
+                        "value": 5
+                    },
+                    {
+                        "label": "60–65",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Alanine aminotransferase'>ALT</abbr>, U/L",
+                "name": "alanine",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<15",
+                        "value": 0
+                    },
+                    {
+                        "label": "15–44",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥45",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Hepatitis B e-Antigen'>HBeAg</abbr>",
+                "name": "ag",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Negative",
+                        "value": 0
+                    },
+                    {
+                        "label": "Positive",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hepatitis B virus DNA level, copies/mL",
+                "name": "dna_level",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<300 (undetectable)",
+                        "value": 0
+                    },
+                    {
+                        "label": "300–9,999",
+                        "value": 0
+                    },
+                    {
+                        "label": "10,000–99,999",
+                        "value": 3
+                    },
+                    {
+                        "label": "100,000–999,999",
+                        "value": 5
+                    },
+                    {
+                        "label": "≥10⁶",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "REACH-B",
+            "hepatocellular carcinoma",
+            "hepatitis B",
+            "hepatitis",
+            "carcinoma",
+            "HCC"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hematology and Oncology",
+            "Hepatology"
+        ]
+    }
+}

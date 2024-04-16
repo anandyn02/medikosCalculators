@@ -1,0 +1,264 @@
+{
+    "id": "137",
+    "title": "Ottawa COPD Risk Scale",
+    "desc": "The Ottawa COPD Risk Scale predicts risk of death or serious adverse events in ED patients with COPD.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24549125",
+                "text": "Stiell IG, Clement CM, Aaron SD, et al. Clinical characteristics associated with adverse events in patients with exacerbation of chronic obstructive pulmonary disease: a prospective cohort study. CMAJ. 2014;186(6):E193-204."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10987628",
+                "text": "Alpert JS, Thygesen K, Antman E, Bassand JP. Myocardial infarction redefined--a consensus document of The Joint European Society of Cardiology/American College of Cardiology Committee for the redefinition of myocardial infarction. J Am Coll Cardiol. 2000;36(3):959-69."
+            },
+            {
+                "href": "https://emj.bmj.com/content/26/4/278.long",
+                "text": "Pan AM, Stiell IG, Clement CM, et al. Feasibility of a structured 3-minute walk test as a clinical decision tool for patients presenting to the emergency department with acute dyspnoea. Emergency Medicine Journal. 2009;26:278-282."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"224\" /><col width=\"116\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>History</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Coronary bypass graft</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Intervention for peripheral vascular disease</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Intubation for respiratory distress (any history)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Examination</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">HR&nbsp;&ge;110/min (on arrival to ED)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Too ill to do walk test* after treatment in ED (SaO<sub>2</sub> &lt;90% or HR &ge;120/min)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Investigations</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Acute ischemic changes on EKG (by clinician judgment)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Pulmonary congestion on chest x-ray (by clinician judgment)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Hemoglobin &lt;10 g/dL (100 g/L)</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Urea &ge;12 mmol/L (BUN &ge;34 mg/dL)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Serum CO<sub>2</sub> &ge;35 mEq/L (35 mmol/L)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*In the study, a structured 3 min walk test was performed with the patient walking at their own pace regardless of distance and their normal walking aids (but they could not be supported by another person).</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"148\" /><col width=\"150\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>COPD Risk Scale</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of adverse event*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">2.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Medium</p>\n</td>\n<td>\n<p dir=\"ltr\">4.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">7.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td rowspan=\"2\">\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">12.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">20.9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td rowspan=\"7\">\n<p dir=\"ltr\">Very high</p>\n</td>\n<td>\n<p dir=\"ltr\">32.9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n<td>\n<p dir=\"ltr\">47.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n<td>\n<p dir=\"ltr\">62.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n<td>\n<p dir=\"ltr\">75.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">9**</p>\n</td>\n<td>\n<p dir=\"ltr\">-</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n<td>\n<p dir=\"ltr\">91.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;10**</p>\n</td>\n<td>\n<p dir=\"ltr\">-</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Defined as all-cause 30-day mortality or any of the following within 14 days of the index ED visit&nbsp;(regardless of whether patient was initially admitted):</p>\n<ul>\n<li dir=\"ltr\">Admission to a monitored unit (excluding monitoring by telemetry).</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Intubation/need for noninvasive ventilation after hospital admission (unless already on home oxygen).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">MI, as defined by international consensus standards (<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/10987628\" target=\"_blank\">Alpert 2000</a>).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Major procedure (<abbr title=\"Coronary artery bypass grafting\">CABG</abbr>, <abbr title=\"Percutaneous coronary intervention\">PCI</abbr>, other cardiac surgery, or new hemodialysis).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Return to the ED for any related medical problem within 14 days, followed by hospital admission (if discharged after initial visit).</p>\n</li>\n</ul>\n<p>**No patient had a score of 9 or &gt;10.<br /><span id=\"docs-internal-guid-65c81581-7fff-a7dc-323b-d10dcbd91fe2\"></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath",
+            "Dyspnea",
+            "Cough"
+        ],
+        "disease_treated": [
+            "COPD",
+            "Asthma"
+        ],
+        "logic": "var calc_output = [];\nvar cabg = parseFloat(cabg);\nvar peri = parseFloat(peri);\nvar intu = parseFloat(intu);\nvar hr = parseFloat(hr);\nvar walk = parseFloat(walk);\nvar ekg = parseFloat(ekg);\nvar xray = parseFloat(xray);\nvar hemo = parseFloat(hemo);\nvar urea = parseFloat(urea);\nvar co2 = parseFloat(co2);\n\nvar score = cabg +\nperi +\nintu +\nhr +\nwalk +\nekg +\nxray +\nhemo +\nurea +\nco2;\n\nrisk = ['2.2',\n'4.0',\n'7.2',\n'12.5',\n'20.9',\n'32.9',\n'47.5',\n'62.6',\n'75.6',\n'0',\n'91.4']\n\nvar risk1, risk2;\n\nif (score <= 10) {\n\trisk1 = risk[score];\n} else {\n\trisk1 = '';\n}\n\nif (score == 0) {\n\trisk2 = 'Low';\n} else if (score == 1 || score == 2) {\n\trisk2 = 'Medium';\n} else if (score == 3 || score == 4) {\n\trisk2 = 'High';\n} else {\n\trisk2 = 'Very high';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk2 + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'COPD Risk Scale'   \n});\ncalc_output.push({\n    name: 'Score',\n    value: risk2,\n    value_text: 'risk',\n    message: 'Risk group'   \n});\nif (score != 9 && score <= 10)\ncalc_output.push({\n    name: 'Score',\n    value: risk1,\n    value_text: '%',\n    message: 'Risk of adverse event (MI, intubation, etc; see Evidence for details)'   \n});\n",
+        "inputs": [
+            {
+                "subheading": "History",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Coronary bypass graft",
+                "name": "cabg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intervention for peripheral vascular disease",
+                "name": "peri",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intubation for respiratory distress",
+                "name": "intu",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Any history",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Examination",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "HR ≥110/min ",
+                "name": "hr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "On arrival to ED",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Too ill to do walk test after treatment in ED",
+                "name": "walk",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "SaO<sub>2</sub> <90% or HR ≥120/min after 3 minute walk test (see Evidence for details)",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Investigations",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acute ischemic changes on EKG",
+                "name": "ekg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "By clinician judgment",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pulmonary congestion on chest x-ray",
+                "name": "xray",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "By clinician judgment",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemoglobin <10 g/dL (100 g/L)",
+                "name": "hemo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Urea ≥12 mmol/L (BUN ≥34 mg/dL)",
+                "name": "urea",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Serum CO<sub>2</sub> ≥35 mEq/L (35 mmol/L)",
+                "name": "co2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "COPD",
+            "Ottawa",
+            "copd risk",
+            "poor outcomes",
+            "adverse events",
+            "COPD exacerbation",
+            "copd risk score"
+        ],
+        "specialty": [
+            "Pulmonology",
+            "Critical Care",
+            "Internal Medicine",
+            "Hospitalist Medicine",
+            "Emergency Medicine"
+        ]
+    }
+}

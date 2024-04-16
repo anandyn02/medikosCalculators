@@ -1,0 +1,105 @@
+{
+    "id": "382",
+    "title": "Richmond Agitation-Sedation Scale (RASS)",
+    "desc": "The Richmond Agitation-Sedation Scale (RASS) ranks agitation and possibility for sedation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16088675",
+                "text": "Sessler CN, Grap MJ, Brophy GM. Multidisciplinary management of sedation and analgesia in critical care. Semin Respir Crit Care Med. 2001;22(2):211-26. "
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.icudelirium.org/docs/RASS.pdf",
+                "text": "“Richmond Agitation Sedation Scale.” ICU Delirium and Cognitive Impairment Group. Web. 09/2014."
+            }
+        ],
+        "evidence": "<p>Select responsiveness level of patient.</p>",
+        "facts": "<p><strong>Definitions:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Definition</th>\n<th>Points</th>\n</tr>\n<tr>\n<td>Combative</td>\n<td>Overtly combative, violent, immediate danger to staff</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>Very agitated</td>\n<td>Pulls or removes tube(s) or catheter(s); aggressive</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>Agitated</td>\n<td>Frequent non-purposeful movement, fights ventilator</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Restless</td>\n<td>Anxious but movements not aggressive vigorous</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Alert and calm</td>\n<td></td>\n<td>0</td>\n</tr>\n<tr>\n<td>Drowsy</td>\n<td>Not fully alert, but has sustained awakening (eye-opening/eye contact) to voice (&gt;10 seconds)</td>\n<td>-1</td>\n</tr>\n<tr>\n<td>Light sedation</td>\n<td>Briefly awakens with eye contact to voice (&lt;10 seconds)</td>\n<td>-2</td>\n</tr>\n<tr>\n<td>Moderate sedation</td>\n<td>Movement or eye opening to voice (but no eye contact)</td>\n<td>-3</td>\n</tr>\n<tr>\n<td>Deep sedation</td>\n<td>No response to voice, but movement or eye opening to physical stimulation</td>\n<td>-4</td>\n</tr>\n<tr>\n<td>Unarousable</td>\n<td>No response to voice or physical stimulation</td>\n<td>-5</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "AMS"
+        ],
+        "disease_treated": [
+            "Acid-Base Disturbance",
+            "Anxiety",
+            "Delirium",
+            "Dementia",
+            "Sepsis"
+        ],
+        "logic": "var calc_output=[]; \nvar u=parseFloat(patient_description); \nvar msg='';\nvar mini_msg=''; \nif(u<=-3){\n    msg='Patients with a RASS of \\u2264-3 should have their sedation decreased or modified in order to achieve a RASS of -2 to 0.';\n    mini_msg='Sedatition should be decreased or modified.'\n} \nif(u==2||u==3||u==4){\n    msg='Patients with a RASS of 2 to 4 are not sedated enough and should be assessed for pain, anxiety, or delirium. The underlying etiology of the agitation should be investigated and appropriately treated to achieve a RASS of -2 to 0.';\n    mini_msg='Sedation not sufficient. Assess for pain, anxiety, delirium.'\n} \nif(u==-2||u==-1||u==0||u==1){\n    msg='Patients with a RASS of -2 to 1 are properly sedated.';\n    mini_msg='Proper sedation.'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1872_RASS_result',\n    value:u,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Patient description",
+                "mdcalc_info_concept": null,
+                "name": "patient_description",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Combative",
+                        "value": 4
+                    },
+                    {
+                        "label": "Very agitated",
+                        "value": 3
+                    },
+                    {
+                        "label": "Agitated",
+                        "value": 2
+                    },
+                    {
+                        "label": "Restless",
+                        "value": 1
+                    },
+                    {
+                        "label": "Alert and calm",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drowsy",
+                        "value": -1
+                    },
+                    {
+                        "label": "Light sedation",
+                        "value": -2
+                    },
+                    {
+                        "label": "Moderate sedation",
+                        "value": -3
+                    },
+                    {
+                        "label": "Deep sedation",
+                        "value": -4
+                    },
+                    {
+                        "label": "Unarousable sedation",
+                        "value": -5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "dementia",
+            "agitation",
+            "sedation",
+            "icu",
+            "delirium"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Neurology",
+            "Psychiatry"
+        ]
+    }
+}

@@ -1,0 +1,244 @@
+{
+    "id": "394",
+    "title": "POMPE-C Tool for Pulmonary Embolism Mortality",
+    "desc": "The POMPE-C tool predicts mortality for patients with pulmonary embolism with cancer.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22475313",
+                "text": "Kline JA, Roy PM, Than MP, Hernandez J, Courtney DM, Jones AE, Penaloza A, Pollack CV Jr. Derivation and validation of a multivariate model to predict mortality from pulmonary embolism with cancer: The POMPE-C tool. Thromb Res. 2012 May;129(5):e194-9. doi: 10.1016/j.thromres.2012.03.015. Epub 2012 Apr 3."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24226257",
+                "text": "Nendaz M, Spirk D, Kucher N, Aujesky D, Hayoz D, Beer JH, Husmann M, Frauchiger B, Korte W, Wuillemin WA, Jäger K, Righini M, Bounameaux H. Multicentre validation of the Geneva Risk Score for hospitalised medical patients at risk of venous thromboembolism. Explicit ASsessment of Thromboembolic RIsk and Prophylaxis for Medical PATients in SwitzErland (ESTIMATE).Thromb Haemost. 2014 Mar 3;111(3):531-8. doi: 10.1160/TH13-05-0427. Epub 2013 Nov 14."
+            }
+        ],
+        "evidence": "<p><b>Probability (P) of death using the POMPE-C formula:</b></p>\n<p>P = 100*(1 - 1 / (1 + Exp(3.718 + 1.551*DNR + 0.799*RespDistress + 0.734*Leg Swelling + 1.473*AMS + 1.027*HR + 0.044*RR + (-0.0636*SAT) + (-0.012*Body Weight))))</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Respiratory Rate",
+                "unit": "rr",
+                "error_min": "0",
+                "error_max": "90",
+                "warn_min": "5",
+                "warn_max": "70",
+                "conversion": "1",
+                "normal_max_si": "20",
+                "normal_max_us": "20",
+                "normal_min_si": "12",
+                "normal_min_us": "12",
+                "units_si": "breaths/min",
+                "units_us": "breaths/min"
+            },
+            {
+                "name": "O2 Sat",
+                "unit": "sat",
+                "error_min": "40",
+                "error_max": "100.1",
+                "warn_min": "70",
+                "warn_max": "100.01",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "95",
+                "normal_min_us": "95",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = [];\nvar r, u, x, y, z;\nvar wt = parseFloat(wt);\n\nvar dnr = parseFloat(dnr);\nvar resp_dist = parseFloat(resp_dist);\nvar uls = parseFloat(uls);\nvar ams = parseFloat(ams);\nvar hr = parseFloat(hr);\nvar rr = parseFloat(rr);\nvar sat = parseFloat(sat);\nvar wt = parseFloat(wt) * 2.2; // weight comes to us in kilos but for this study actually uses lbs\n\nvar r = 3.718 + (1.551711 * dnr) + (0.799617 * resp_dist) + (0.734339 * uls) +\n  (1.473451 * ams) + (hr * 1.027895) + (0.04422 * rr) + (-0.063644 * sat) + (-\n    0.011613 * wt);\n\nvar u = 1 + (Math.exp(r));\nvar x = 1 / u;\nvar y = 100 * (1 - x);\nvar z = Math.round(y);\n\ncalc_output.push({\n  name: 'mini',\n  value: z,\n  value_text: '%',\n  message: 'Chance of 30-day mortality'\n});\ncalc_output.push({\n  name: '2022_POMPE-C Tool_result',\n  value: z,\n  value_text: '%',\n  message: 'Chance of mortality within 30 days.'\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Do not resuscitate",
+                "md_calc_info_concept": null,
+                "name": "dnr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "New or existing desire of patient to not be resuscitated from death (verbal or written)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Respiratory distress",
+                "md_calc_info_concept": null,
+                "name": "resp_dist",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Obvious anxiety from dyspnea or increased work of breathing",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Unilateral leg swelling",
+                "md_calc_info_concept": null,
+                "name": "uls",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Leg or arm with new, noticeable swelling causing asymmetry",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Altered mental status",
+                "md_calc_info_concept": null,
+                "name": "ams",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "New or different from baseline",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Heart rate ≥100 in past 6 hours",
+                "md_calc_info_concept": null,
+                "name": "hr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Highest respiratory rate in past 6 hours",
+                "name": "rr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "rr"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "wt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "O2 Sat on room air",
+                "name": "sat",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sat"
+            }
+        ],
+        "can_search": [
+            "Pompe-C",
+            "VTE",
+            "DVT",
+            "PE",
+            "clotting",
+            "chest pain",
+            "shortness of breath",
+            "DNR",
+            "CA",
+            "Cancer"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Hospitalist Medicine"
+        ]
+    }
+}

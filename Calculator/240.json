@@ -1,0 +1,321 @@
+{
+    "id": "240",
+    "title": "PRIEST COVID-19 Clinical Severity Score",
+    "desc": "The PRIEST COVID-19 Clinical Severity Score predicts adverse outcome in adults presenting to ED with suspected COVID-19.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0245840",
+                "text": "Goodacre S, Thomas B, Sutton L, et al. Derivation and validation of a clinical severity score for acutely ill adults with suspected COVID-19: The PRIEST observational cohort study. PLOS ONE. 2021;16(1):e0245840."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%; height: 883px;\">\n<tbody>\n<tr style=\"height: 21px;\">\n<td colspan=\"2\" style=\"width: 63.926%; height: 21px;\"><strong>Variable</strong></td>\n<td style=\"width: 31.963%; height: 21px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Sex</td>\n<td style=\"width: 31.963%; height: 21px;\">Female</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Male</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"4\" style=\"width: 31.963%; height: 84px;\">Age, years</td>\n<td style=\"width: 31.963%; height: 21px;\">16-49</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">50-65</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">66-80</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">&gt;80</td>\n<td style=\"width: 31.963%; height: 21px;\">4</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"5\" style=\"width: 31.963%; height: 105px;\">Respiratory rate, breaths per min</td>\n<td style=\"width: 31.963%; height: 21px;\">&lt;9</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">9-11</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">12-20</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">21-24</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">&gt;24</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"4\" style=\"width: 31.963%; height: 84px;\">Oxygen saturation</td>\n<td style=\"width: 31.963%; height: 21px;\">&gt;95%</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">94-95%</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">92-93%</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">&lt;92%</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"6\" style=\"width: 31.963%; height: 126px;\">Heart rate, beats per min</td>\n<td style=\"width: 31.963%; height: 21px;\">&lt;41</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">41-50</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">51-90</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">91-110</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">111-130</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">&gt;130</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"5\" style=\"width: 31.963%; height: 105px;\">Systolic BP, mmHg</td>\n<td style=\"width: 31.963%; height: 21px;\">&lt;91</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">91-100</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">101-110</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">111-219</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">&gt;219</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"5\" style=\"width: 31.963%; height: 105px;\">Temperature</td>\n<td style=\"width: 31.963%; height: 21px;\">&lt;35.1&deg;C (&lt;95.18&deg;F)</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">35.1-36.0&deg;C (95.18-96.8&deg;F)</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">36.1-38.0&deg;C (96.8-100.4&deg;F)</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">38.1-39.0&deg;C (100.58&deg;C-102.2&deg;F)</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">&gt;39.0&deg;C (&gt;102.2&deg;F)</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Alertness</td>\n<td style=\"width: 31.963%; height: 21px;\">Alert</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Confused or not alert</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Inspired oxygen</td>\n<td style=\"width: 31.963%; height: 21px;\">Air</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Supplemental oxygen</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"5\" style=\"width: 31.963%; height: 127px;\">Performance status</td>\n<td style=\"width: 31.963%; height: 21px;\">Unrestricted normal activity</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 43px;\">\n<td style=\"width: 31.963%; height: 43px;\">Limited strenuous activity, can do light activity</td>\n<td style=\"width: 31.963%; height: 43px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Limited activity, can self-care</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Limited self-care</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Bed/chair bound, no self-care</td>\n<td style=\"width: 31.963%; height: 21px;\">4</td>\n</tr>\n</tbody>\n</table>\n<p></p>",
+        "facts": "<p>Interpretation:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%;\">\n<tbody>\n<tr>\n<td style=\"width: 48.565%;\"><strong>PRIEST Score</strong></td>\n<td style=\"width: 48.662%;\"><strong>30-day probability of adverse outcome</strong></td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">0-1</td>\n<td style=\"width: 48.662%;\">1%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">2-3</td>\n<td style=\"width: 48.662%;\">2%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">4*</td>\n<td style=\"width: 48.662%;\">3%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">5</td>\n<td style=\"width: 48.662%;\">9%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">6</td>\n<td style=\"width: 48.662%;\">15%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">7</td>\n<td style=\"width: 48.662%;\">18%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">8</td>\n<td style=\"width: 48.662%;\">22%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">9</td>\n<td style=\"width: 48.662%;\">26%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">10</td>\n<td style=\"width: 48.662%;\">29%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">11</td>\n<td style=\"width: 48.662%;\">34%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">12</td>\n<td style=\"width: 48.662%;\">38%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">13</td>\n<td style=\"width: 48.662%;\">46%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">14</td>\n<td style=\"width: 48.662%;\">47%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">15</td>\n<td style=\"width: 48.662%;\">49%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">16</td>\n<td style=\"width: 48.662%;\">55%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">17-25</td>\n<td style=\"width: 48.662%;\">59-88%</td>\n</tr>\n<tr>\n<td style=\"width: 48.565%;\">&ge;26</td>\n<td style=\"width: 48.662%;\">&gt;99%</td>\n</tr>\n</tbody>\n</table>\n<p>*Score &gt;4 predict adverse outcomes (defined as death or major organ support - respiratory, cardiovascular, or renal) with high sensitivity (98%) and low specificity (34%).</p>\n<p>From <a href=\"https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0245840\" target=\"_blank\" rel=\"noopener\">Goodacre 2021</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria = parseFloat(sex) + parseFloat(age) + parseFloat(res) + parseFloat(oxy) + parseFloat(bpm) + parseFloat(sys) + parseFloat(temp) + parseFloat(alert) + parseFloat(ins) + parseFloat(status);\n \nvar msg = '30-day probability of adverse outcome';\nvar outcome;\n\nif (criteria<=1) {\n  outcome = '1';\n}\nif (criteria>=2 & criteria<=3) {\n  outcome = '2';\n}\nif (criteria==4) {\n  outcome = '3';\n}\nif (criteria==5) {\n  outcome = '9';\n}\nif (criteria==6) {\n  outcome = '15';\n}\nif (criteria==7) {\n  outcome = '18';\n}\nif (criteria==8) {\n  outcome = '22';\n}\nif (criteria==9) {\n  outcome = '26';\n}\nif (criteria==10) {\n  outcome = '29';\n}\nif (criteria==11) {\n  outcome = '34';\n}\nif (criteria==12) {\n  outcome = '38';\n}\nif (criteria==13) {\n  outcome = '46';\n}\nif (criteria==14) {\n  outcome = '47';\n}\nif (criteria==15) {\n  outcome = '49';\n}\nif (criteria==16) {\n  outcome = '55';\n}\nif (criteria>=17 & criteria<=25) {\n  outcome = '59-88';\n}\nif (criteria>=26) {\n  outcome = '>99';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text:'points',\n    message: outcome + '% ' + msg\n});\ncalc_output.push({\n    name: 'score',\n    value: criteria,\n    value_text:'points',\n    message:'PRIEST Score'\n});\ncalc_output.push({\n    name: 'outcome',\n    value: outcome,\n    value_text:'%',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "16-49",
+                        "value": 0
+                    },
+                    {
+                        "label": "50-65",
+                        "value": 2
+                    },
+                    {
+                        "label": "66-80",
+                        "value": 3
+                    },
+                    {
+                        "label": ">80",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "<p>Respiratory rate, breaths per min</p>",
+                "name": "res",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<9 ",
+                        "value": 3
+                    },
+                    {
+                        "label": "9-11",
+                        "value": 1
+                    },
+                    {
+                        "label": "12-20",
+                        "value": 0
+                    },
+                    {
+                        "label": "21-24",
+                        "value": 2
+                    },
+                    {
+                        "label": ">24",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Oxygen saturation</p>",
+                "name": "oxy",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">95%",
+                        "value": 0
+                    },
+                    {
+                        "label": "94-95%",
+                        "value": 1
+                    },
+                    {
+                        "label": "92-93%",
+                        "value": 2
+                    },
+                    {
+                        "label": "<92%",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "<p>Heart rate, beats per min</p>",
+                "name": "bpm",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<41",
+                        "value": 3
+                    },
+                    {
+                        "label": "41-50",
+                        "value": 1
+                    },
+                    {
+                        "label": "51-90",
+                        "value": 0
+                    },
+                    {
+                        "label": "91-110",
+                        "value": 1
+                    },
+                    {
+                        "label": "111-130",
+                        "value": 2
+                    },
+                    {
+                        "label": ">130",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 3,
+                "label_en": "<p>Systolic BP, mmHg</p>",
+                "name": "sys",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<91",
+                        "value": 3
+                    },
+                    {
+                        "label": "91-100",
+                        "value": 2
+                    },
+                    {
+                        "label": "101-110",
+                        "value": 1
+                    },
+                    {
+                        "label": "111-219",
+                        "value": 0
+                    },
+                    {
+                        "label": ">219",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "<p>Temperature</p>",
+                "name": "temp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<35.1°C (<95.18°F)",
+                        "value": 3
+                    },
+                    {
+                        "label": "35.1-36.0°C (95.18 - 96.8°F)",
+                        "value": 1
+                    },
+                    {
+                        "label": "36.1-38.0°C (>96.8 - 100.4°F)",
+                        "value": 0
+                    },
+                    {
+                        "label": "38.1-39.0°C (>100.4 - 102.2°F)",
+                        "value": 1
+                    },
+                    {
+                        "label": ">39.0°C (>102.2°F)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Alertness</p>",
+                "name": "alert",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Alert",
+                        "value": 0
+                    },
+                    {
+                        "label": "Confused or not alert",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Inspired oxygen</p>",
+                "name": "ins",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Air",
+                        "value": 0
+                    },
+                    {
+                        "label": "Supplemental oxygen",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Performance status</p>",
+                "name": "status",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Unrestricted normal activity",
+                        "value": 0
+                    },
+                    {
+                        "label": "Limited strenuous activity, can do light activity",
+                        "value": 1
+                    },
+                    {
+                        "label": "Limited activity, can self-care",
+                        "value": 2
+                    },
+                    {
+                        "label": "Limited self-care",
+                        "value": 3
+                    },
+                    {
+                        "label": "Bed/chair bound, no self-care",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Mortality, covid-19, covid19, covid, coronavirus, priest score, priest, priest study, PRIEST COVID-19 Clinical Severity Score, PRIEST Score for COVID-19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

@@ -1,0 +1,169 @@
+{
+    "id": "486",
+    "title": "Risk Score for Asthma Exacerbation (RSE)",
+    "desc": "The Risk Score for Asthma Exacerbation (RSE) predicts likelihood of asthma exacerbation within 6 months.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.jacionline.org/article/S0091-6749(14)01187-7/fulltext",
+                "text": "Bateman ED. et al. Development and validation of a novel risk score for asthma exacerbations: The risk score for exacerbations. Journal of Allergy and Clinical Immunology, Volume 135, Issue 6, 1457-1464.e4"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of assigned points.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>RSE Score</th>\n<th>Likelihood of exacerbation in 6 months</th>\n</tr>\n<tr>\n<td>0-10</td>\n<td>5%</td>\n</tr>\n<tr>\n<td>11-20</td>\n<td>5-7%</td>\n</tr>\n<tr>\n<td>21-30</td>\n<td>7-10%</td>\n</tr>\n<tr>\n<td>31-40</td>\n<td>10-12%</td>\n</tr>\n<tr>\n<td>41-50</td>\n<td>12-15%</td>\n</tr>\n<tr>\n<td>51-60</td>\n<td>15-18%</td>\n</tr>\n<tr>\n<td>61-70</td>\n<td>18-24%</td>\n</tr>\n<tr>\n<td>71-80</td>\n<td>24-30%</td>\n</tr>\n<tr>\n<td>81-90</td>\n<td>30-37%</td>\n</tr>\n<tr>\n<td>91-100</td>\n<td>37-45%</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>For more information on the Global Initiative for Asthma treatment steps, click <a href=\"https://ginasthma.org/wp-content/uploads/2016/01/GINA_Pocket_2015.pdf\" target=\"_blank\" rel=\"noopener\">here</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Asthma"
+        ],
+        "logic": "var calc_output = [];\n\nvar v = parseInt(bmi) + parseInt(acq) + parseInt(fev) + parseInt(reliever) + parseInt(gina);\nvar msg = ' Likelihood of asthma exacerbation within 6 months.';\nvar mini_msg= 'Likelihood of asthma exacerbation';\nvar perc;\n\n\nif (v <= 10) {\n    perc = '5%';\n}\nif (v >= 11 && v <= 20) {\n    perc = '5-7%';\n}\nif (v >= 21 && v <= 30) {\n    perc = '7-10%';\n}\nif (v >= 31 && v <= 40) {\n    perc = '10-12%';\n}\nif (v >= 41 && v <= 50) {\n    perc = '12-15%';\n}\nif (v >= 51 && v <= 60) {\n    perc = '15-18%';\n}\nif (v >= 61 && v <= 70) {\n    perc = '18-24%';\n}\nif (v >= 71 && v <= 80) {\n    perc = '24-30%';\n}\nif (v >= 81 && v <= 90) {\n    perc = '30-37%';\n}\nif (v >= 91 && v <= 100) {\n    perc = '37-45%';\n}\n\ncalc_output.push({ name: 'mini', value: perc, value_text: ' ', message: mini_msg });\ncalc_output.push({ name: '3386_Risk Score for Asthma Exacerbation_result', value: v.toFixed(0), value_text: 'points', message: perc+msg });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "BMI ≥30 kg/m²",
+                "md_calc_info_concept": null,
+                "name": "bmi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 14
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Asthma Control Questionnaire-5 (ACQ-5) Score",
+                "mdcalc_info_concept": null,
+                "name": "acq",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "< 1.5",
+                        "value": 0
+                    },
+                    {
+                        "label": "1.5-2.5",
+                        "value": 7
+                    },
+                    {
+                        "label": "≥2.5",
+                        "value": 13
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Postbronchodilator FEV1 (% Predicted normal value)",
+                "mdcalc_info_concept": null,
+                "name": "fev",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥90%",
+                        "value": 0
+                    },
+                    {
+                        "label": "80% to 90%",
+                        "value": 13
+                    },
+                    {
+                        "label": "<80%",
+                        "value": 20
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Rescue inhaler usage per day",
+                "mdcalc_info_concept": null,
+                "name": "reliever",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2",
+                        "value": 0
+                    },
+                    {
+                        "label": "2-4",
+                        "value": 11
+                    },
+                    {
+                        "label": "≥4",
+                        "value": 26
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Global Initiative for Asthma (GINA) treatment step 4 or higher",
+                "md_calc_info_concept": null,
+                "name": "gina",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 27
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Medium-high inhaled steroid/long acting beta agonist",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Gina",
+            "acq",
+            "corticosteroid",
+            "inhaled steroid",
+            "FEV1"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Pediatrics",
+            "Primary Care"
+        ]
+    }
+}

@@ -1,0 +1,242 @@
+{
+    "id": "84",
+    "title": "Cardiac Output (Fick’s Formula)",
+    "desc": "The Fick Formula calculates cardiac output, cardiac index, and stroke volume.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.google.com/books/edition/Textbook_of_Clinical_Hemodynamics_E_Book/H7nHDgAAQBAJ?hl=en&gbpv=0",
+                "text": "Ragosta M. Textbook of Clinical Hemodynamics. Elsevier; 2017."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<ul>\n<li dir=\"ltr\">CO (Cardiac Output), L/min = VO<sub>2</sub>/ [(SaO<sub>2</sub>&nbsp;- SvO<sub>2</sub>) x Hb x 13.4)],\n<ul>\n<li dir=\"ltr\">where VO<sub>2</sub>&nbsp;= 125 mL O<sub>2</sub>/min x <calculator id=\"29\">BSA</calculator>,</li>\n<li dir=\"ltr\">and <abbr title=\"Body surface area\">BSA</abbr> =&nbsp;[(Height, cm x Weight, kg)/ 3,600 ]<sup>1/2</sup></li>\n<li dir=\"ltr\">In elderly patients (age &ge;70 years), use 110 mL O<sub><span style=\"font-size: 9.16667px;\">2&nbsp;</span></sub>x BSA for VO<sub><span style=\"font-size: xx-small;\">2</span></sub><span style=\"font-size: xx-small;\">.</span></li>\n</ul>\n</li>\n<li dir=\"ltr\">CI (Cardiac Index), L/min/m<sup>2</sup> = CO/BSA</li>\n<li dir=\"ltr\">SV (Stroke Volume), mL/beat = CO/HR</li>\n</ul>\n<p>Note: SaO<sub>2</sub> should be acquired by arterial blood gas measurement. SvO<sub>2</sub>&nbsp;should be acquired by mixed venous gas from pulmonary artery catheter. Formula assumes decimal values, not percentages (this calculator automatically converts to decimal values).</p>",
+        "facts": "<p dir=\"ltr\"><strong>Normal values:</strong></p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">CO = 4.0-8.0 L/min</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">CI = 2.5-4.0 L/min/m<sup><sub>2</sub></sup></p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">SV = 60-100 mL/beat</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">MAP&nbsp;&ge;60 mmHg</p>\n</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Hemoglobin",
+                "unit": "hgb",
+                "error_min": "0.5",
+                "error_max": "25",
+                "warn_min": "4",
+                "warn_max": "20",
+                "conversion": "10",
+                "normal_max_si": "170",
+                "normal_max_us": "17",
+                "normal_min_si": "120",
+                "normal_min_us": "12",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "svo2",
+                "unit": "svo2",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "40",
+                "warn_max": "80",
+                "conversion": "1",
+                "normal_max_si": "80",
+                "normal_max_us": "80",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Height",
+                "unit": "ht",
+                "error_min": "0",
+                "error_max": "90",
+                "warn_min": "5",
+                "warn_max": "80",
+                "conversion": "2.54",
+                "normal_max_si": "213",
+                "normal_max_us": "84",
+                "normal_min_si": "152",
+                "normal_min_us": "60",
+                "units_si": "cm",
+                "units_us": "in"
+            },
+            {
+                "name": "O2 Sat",
+                "unit": "sat",
+                "error_min": "40",
+                "error_max": "100.1",
+                "warn_min": "70",
+                "warn_max": "100.01",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "95",
+                "normal_min_us": "95",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Heart Rate/Pulse",
+                "unit": "hr",
+                "error_min": "10",
+                "error_max": "300",
+                "warn_min": "20",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "beats/min",
+                "units_us": "beats/min"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Congestive Heart Failure",
+            "Endocarditis",
+            "Heart Failure",
+            "Myocardial Infarction",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output = [];\n\nvar wt = parseFloat(wt);\nvar ht = parseFloat(ht);\nvar arterialsat = parseFloat(arterialsat) / 100;\nvar venoussat = parseFloat(venoussat) / 100;\nvar hr = parseFloat(hr);\nvar age = parseFloat(age);\n\nif (UOMSYSTEM == true) {\n  var hb = parseFloat(hb);\n}\nif (UOMSYSTEM == false) {\n  var hb = parseFloat(hb)/10;\n}\n\n\nvar bsa = ((wt * ht) / 3600);\nbsa = Math.pow(bsa, 0.5);\n\nvar vmax = 125 * bsa;\nif (age == 1) {\n  vmax = 110 * bsa\n}\n\nvar cardiacoutput = (vmax / ((arterialsat - venoussat) * hb * 13.4)); \n\nvar index = cardiacoutput  / bsa;\nvar volume = (cardiacoutput * 1000) / hr; \n\ncalc_output.push({\n    name: 'mini',\n    value: cardiacoutput.toFixed(1),\n    value_text: 'L/min',\n    message: 'Cardiac output'\n    });\ncalc_output.push({\n    name: '10095_Fick Cardiac Output_result (output)',\n    value: cardiacoutput.toFixed(1),\n    value_text: 'L/min',\n    message: 'Cardiac output'\n    });\ncalc_output.push({\n    name: '10095_Fick Cardiac Output_result (index)',\n    value: index.toFixed(1),\n    value_text: 'L/min/m\\u00B2',\n    message: 'Cardiac index'\n    });\ncalc_output.push({\n    name: '10095_Fick Cardiac Output_result (volume)',\n    value: volume.toFixed(0),\n    value_text: 'mL/beat',\n    message: 'Stroke volume'\n    });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "wt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Height",
+                "name": "ht",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "SaO₂",
+                "name": "arterialsat",
+                "optional": false,
+                "tips_en": "As measured on ABG",
+                "type": "textbox",
+                "unit": "sat"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "SvO₂",
+                "name": "venoussat",
+                "optional": false,
+                "tips_en": "As measured on mixed venous gas from PA catheter",
+                "type": "textbox",
+                "unit": "svo2"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hemoglobin",
+                "name": "hb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hgb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Heart rate",
+                "name": "hr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<70 years",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥70 years",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Fick’s formula",
+            "cardiac output calculator",
+            "CO calculator",
+            "cardiac index calculator",
+            "CI calculator",
+            "stroke volume calculator",
+            "SV calculator",
+            "fick",
+            "ficks"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

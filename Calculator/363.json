@@ -1,0 +1,291 @@
+{
+    "id": "363",
+    "title": "Opioid Risk Tool (ORT) for Narcotic Abuse",
+    "desc": "The Opioid Risk Tool for Narcotic abuse estimates risk of opioid-related aberrant behaviors based on patient history.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16336480",
+                "text": "Webster LR, Webster RM. Predicting aberrant behaviors in opioid-treated patients: preliminary validation of the Opioid Risk Tool. Pain Med. 2005 Nov-Dec;6(6):432-42. PubMed PMID: 16336480."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the selected points. Complete scoring information can be found in the <a href=\"https://painmedicine.oxfordjournals.org/content/6/6/432#T2\" target=\"_blank\" rel=\"noopener\">derivation study</a>.</p>",
+        "facts": "<p>Score interpretation:</p>\n<ul>\n<li>Low risk: 0&ndash;3.</li>\n<li>Moderate risk: 4&ndash;7.</li>\n<li>High risk: &ge; 8.</li>\n</ul>\n<p>Other Notes:</p>\n<ul>\n<li>185 patients were followed in chronic pain clinic.</li>\n<li>Tracked to determine who developed \"aberrant behaviors\".</li>\n<li>Developed a score based on this to calculate this risk.</li>\n<li>Of note, still 5% of \"low-risk\" patients still had aberrant behaviors..</li>\n</ul>\n<p>Aberrant behaviors included a long list of behaviors indicating possible abuse, including but not limited to:</p>\n<ul>\n<li>Used additional opioids than those prescribed.</li>\n<li>Requested refills instead of clinic visit.</li>\n<li>Canceled clinic visit.</li>\n<li>Solicited opioids from other providers.</li>\n<li>Unauthorized ER visits.\n<p><strong></strong></p>\n</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Pain"
+        ],
+        "disease_treated": [
+            "Chronic Pain"
+        ],
+        "logic": "var calc_output = [];\nvar u = 0;\nif (age_16_45 == 1) { u += 1 }\nif (depression == 1) { u += 1 }\nif (psychological_disorder == 1) { u += 2 }\nif (alcohol_abuse == 1) { u += 3 }\nif (illegal_drug_abuse == 1) { u += 4 }\nif (prescription_drug_abuse == 1) { u += 5 }\nif (family_prescription_drug == 1) { u += 4 }\nif (sex == 0) {\n    if (family_illegal_drug == 1) { u += 3 }\n    if (family_alcohol == 1) { u += 3 } } else if (sex == 1) {\n    if (sexual_abuse == 1) { u += 3 }\n    if (family_illegal_drug == 1) { u += 2 }\n    if (family_alcohol == 1) { u += 1 } }\nvar msg = '';\nvar mini_msg = '';\nif (u < 4) { msg = 'Low risk for future opioid-related aberrant behaviors. 5.6% of low-risk patients had aberrant behaviors.';\n    mini_msg = 'Low risk' }\nif (u > 3 && u < 8) { msg = 'Moderate risk for future opioid-related aberrant behaviors. 28% of moderate-risk patients had aberrant behaviors.';\n    mini_msg = 'Moderate risk' }\nif (u > 7) { msg = 'High risk for future opioid-related aberrant behaviors. 91% of high-risk patients had aberrant behaviors.';\n    mini_msg = 'High risk' }\ncalc_output.push({ \n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '1757_Opioid Risk Tool_result', \n    value: u.toFixed(0), \n    value_text: 'points',\n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 1
+                    },
+                    {
+                        "label": "Male",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age 16-45",
+                "md_calc_info_concept": null,
+                "name": "age_16_45",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of preadolescent sexual abuse",
+                "md_calc_info_concept": null,
+                "name": "sexual_abuse",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of depression",
+                "md_calc_info_concept": null,
+                "name": "depression",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of ADD, OCD, bipolar disorder, or schizophrenia",
+                "md_calc_info_concept": null,
+                "name": "psychological_disorder",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Personal history of alcohol abuse",
+                "md_calc_info_concept": null,
+                "name": "alcohol_abuse",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Personal history of illegal drug abuse",
+                "md_calc_info_concept": null,
+                "name": "illegal_drug_abuse",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Personal history of prescription drug abuse",
+                "md_calc_info_concept": null,
+                "name": "prescription_drug_abuse",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Family history of alcohol abuse",
+                "md_calc_info_concept": null,
+                "name": "family_alcohol",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Family history of illegal drug abuse",
+                "md_calc_info_concept": null,
+                "name": "family_illegal_drug",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Family history of prescription drug abuse",
+                "md_calc_info_concept": null,
+                "name": "family_prescription_drug",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "narcotic",
+            "opiate",
+            "opioid",
+            "drug-seeking",
+            "seeking",
+            "abuse",
+            "addiction"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Pain Management",
+            "Primary Care",
+            "Psychiatry",
+            "Toxicology"
+        ]
+    }
+}

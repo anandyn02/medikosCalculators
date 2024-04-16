@@ -1,0 +1,175 @@
+{
+    "id": "369",
+    "title": "Step-by-Step Approach to Febrile Infants",
+    "desc": "The Step by Step Approach to Febrile Infants identifies low-risk febrile infants, perhaps better than the Rochester criteria.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23851127 ",
+                "text": "Mintegi S, Bressan S, Gomez B, et al. Accuracy of a sequential approach to identify young febrile infants at low risk for invasive bacterial infection. Emerg Med J. 2014;31(e1):e19-24."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pediatrics.aappublications.org/content/pediatrics/138/2/e20161579.full.pdf ",
+                "text": "Aronson PL, Neuman MI. Should We Evaluate Febrile Young Infants Step-by-Step in the Emergency Department?. Pediatrics. 2016;138(2)"
+            },
+            {
+                "href": "https://www.aafp.org/afp/2016/1201/p933.html",
+                "text": "Shaughnessy AF. Step-By-Step Approach to Ruling Out Infant Infection Is Accurate. Am Fam Physician. 2016;94(11):933."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20386420 ",
+                "text": "Dieckmann RA, Brownstein D, Gausche-hill M. The pediatric assessment triangle: a novel approach for the rapid evaluation of children. Pediatr Emerg Care. 2010;26(4):312-5."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26188607 ",
+                "text": "Biondi EA, Byington CL. Evaluation and management of febrile well-appearing young Infants. Infect Dis Clin N Am 2015; 29: 575- 85. "
+            },
+            {
+                "href": "https://jamanetwork.com/journals/jamapediatrics/fullarticle/1888745 ",
+                "text": "Biondi EA, Mischler MM, Jerardi KE, et al. Blood culture time to positivity in febrile infants with bacteremia. JAMA Pediatrics 2014; 168(9): 844-9. "
+            }
+        ],
+        "evidence": "<p>Stepwise approach as follows:</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/StepByStep_diagram.png\" alt=\"\" width=\"100%\"></p>\n<p><strong>*Pediatric Assessment Triangle </strong>(<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/20386420\" target=\"_blank\" rel=\"noopener\">Dieckmann 2010</a>):</p>\n<p><strong>Appearance:</strong></p>\n<ul>\n<li>Tone</li>\n<li>Interactivity</li>\n<li>Consolability</li>\n<li>Look/gaze</li>\n<li>Speech/cry</li>\n</ul>\n<p><strong>Breathing:</strong></p>\n<ul>\n<li>Tachypnea</li>\n<li>Abnormal breath sounds</li>\n<li>Abnormal positioning</li>\n<li>Retractions</li>\n<li>Nasal flaring</li>\n</ul>\n<p><strong>Circulation:</strong></p>\n<ul>\n<li>Pallor</li>\n<li>Mottling</li>\n<li>Cyanosis</li>\n<li>Bleeding</li>\n</ul>\n<p>If any single aspect is abnormal, then the infant should be considered high-risk by the Pediatric Assessment Triangle.</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Risk group</strong></p>\n</td>\n<td>\n<p><strong>IBI risk</strong></p>\n</td>\n<td>\n<p><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Low</p>\n</td>\n<td>\n<p>0.7%</p>\n</td>\n<td>\n<p>Full sepsis workup likely not needed. Consider a period of ED observation, especially if the duration of fever is &lt;2 hours, and ensure outpatient pediatrician follow-up.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Intermediate</p>\n</td>\n<td>\n<p>3.4%</p>\n</td>\n<td>\n<p>Full sepsis workup, including blood, urine, and CSF cultures, initiation of broad spectrum intravenous antibiotics, and inpatient hospital admission <strong>MAY</strong> be indicated, especially if the patient is between 21 and 28 days old.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>High</p>\n</td>\n<td>\n<p>8.1%</p>\n</td>\n<td>\n<p>Full sepsis workup, including blood, urine, and CSF cultures, initiation of broad spectrum intravenous antibiotics, chest x-ray, and inpatient hospital admission are recommended.</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Fever"
+        ],
+        "disease_treated": [
+            "Meningitis",
+            "Pneumonia"
+        ],
+        "logic": "var calc_output = [];\nvar result = 'High'\nvar rec, mini\n\nif (ill == 0) {\n\tif (age == 0) {\n\t\tif (leuk == 0) {\n\t\t\tif (pct == 0) {\n\t\t\t\tif (crp == 0) {\n\t\t\t\t\tresult = 'Low'\n\t\t\t\t}\n\t\t\t\telse if (crp == 1) {\n\t\t\t\t\tresult = 'Intermediate'\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n\nif (result == 'Low') {\n\trec = 'Risk of invasive bacterial infection 0.7%. Full sepsis workup likely not necessary.'\n\tmini = 'Limited workup'\n}\nif (result == 'High') {\n\trec = 'Risk of invasive bacterial infection 8.1%. Full sepsis workup indicated (follow local practices, but generally includes pan-culture, empiric antibiotics, chest x-ray, and admission).'\n\tmini = 'Full workup'\n}\nif (result == 'Intermediate') {\n\trec = 'Risk of invasive bacterial infection 3.4%. Full sepsis workup, including blood, urine, and CSF cultures, broad spectrum IV antibiotics, and admission MAY be indicated, especially if patient is 21-28 days old.'\n\tmini = 'May need full workup'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: 'risk',\n    message: ''\n});\ncalc_output.push({\n    name: '1801_Step-by-Step Approach to Fever_result',\n    value: result,\n    value_text: 'risk',\n    message: rec\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Ill appearing (abnormal Pediatric Assessment Triangle)?",
+                "md_calc_info_concept": null,
+                "name": "ill",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Pediatric Assessment Triangle = appearance, work of breathing, circulation (see <a href='#evidence'>Evidence</a> for details)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "ill == 0",
+                "default": null,
+                "label_en": "Age ≤21 days",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "ill == 0 && age == 0",
+                "default": null,
+                "label_en": "Leukocyturia",
+                "md_calc_info_concept": null,
+                "name": "leuk",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "ill == 0 && age == 0 && leuk == 0",
+                "default": null,
+                "label_en": "Procalcitonin ≥0.5 ng/mL",
+                "md_calc_info_concept": null,
+                "name": "pct",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "ill == 0 && age == 0 && leuk == 0 && pct == 0",
+                "default": null,
+                "label_en": "CRP >20 mg/L or <calculator id='19'>ANC</calculator> >10,000/mm<sup>3</sup>",
+                "md_calc_info_concept": null,
+                "name": "crp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Step by Step Approach to Febrile Infants",
+            "step by step",
+            "febrile infants",
+            "Rochester criteria",
+            "infant fever",
+            "fever",
+            "infant"
+        ],
+        "specialty": [
+            "Critical Care (Neonatal)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Family Practice",
+            "Pediatric Subspecialty",
+            "Pediatrics"
+        ]
+    }
+}

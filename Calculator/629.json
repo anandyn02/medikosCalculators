@@ -1,0 +1,150 @@
+{
+    "id": "629",
+    "title": "DECAF Score for Acute Exacerbation of COPD",
+    "desc": "The DECAF Score for Acute Exacerbation of COPD predicts in-hospital mortality in acute COPD exacerbation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22895999 ",
+                "text": "Steer J, Gibson J, Bourke SC. The DECAF Score: predicting hospital mortality in exacerbations of chronic obstructive pulmonary disease. Thorax. 2012;67(11):970-6."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td rowspan=\"2\">&nbsp;</td>\n<td colspan=\"3\">\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>0</strong></p>\n</td>\n<td>\n<p><strong>1</strong></p>\n</td>\n<td>\n<p><strong>2</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Extended MRC Dyspnea Scale (eMRCD)</p>\n</td>\n<td>\n<p>Not too dyspneic to leave house (eMRCD 1&ndash;4)</p>\n</td>\n<td>\n<p>Too dyspneic to leave house but independent with washing/dressing (eMRCD 5a)</p>\n</td>\n<td>\n<p>Too dyspneic to leave house and wash/dress (eMRCD 5b)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Eosinopenia (eosinophils&nbsp;&lt;0.05&times;10⁹/L)</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Consolidation on chest x-ray</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Acidemia (pH &lt;7.30)</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Atrial fibrillation (including history of paroxysmal afib)</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p>Interpretation:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>DECAF Score</strong></p>\n</td>\n<td>\n<p><strong>Risk</strong></p>\n</td>\n<td>\n<p><strong>Recommendation</strong></p>\n</td>\n<td>\n<p><strong>In-hospital mortality*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0</p>\n</td>\n<td rowspan=\"2\">\n<p>Low</p>\n</td>\n<td rowspan=\"2\">\n<p>Routine management</p>\n</td>\n<td>\n<p>0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>1</p>\n</td>\n<td>\n<p>1.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>2</p>\n</td>\n<td>\n<p>Intermediate</p>\n</td>\n<td>\n<p>Use clinician judgment re: disposition</p>\n</td>\n<td>\n<p>5.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>3</p>\n</td>\n<td rowspan=\"4\">\n<p>High</p>\n</td>\n<td rowspan=\"4\">\n<p>Consider escalation of care vs. palliative care</p>\n</td>\n<td>\n<p>15.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>4</p>\n</td>\n<td>\n<p>31%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>5</p>\n</td>\n<td>\n<p>40.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>6</p>\n</td>\n<td>\n<p>50%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*From <a href=\"http://thorax.bmj.com/content/thoraxjnl/71/2/133.full.pdf\" target=\"_blank\" rel=\"noopener\">Echevarria 2016</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Asthma",
+            "COPD",
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar score = parseFloat(emrcd) + parseFloat(eos) + parseFloat(cons) + parseFloat(aci) + parseFloat(afib);\n\nvar risk = \"Low\"; \nvar rec = \"Routine management\";\nif(score > 1){\n\trisk = \"Intermediate\";\n\trec = \"Use clinician judgment re: disposition\";\n}\nif(score > 2){\n\trisk = \"High\";\n\trec = \"Consider escalation of care vs. palliative care\";\n}\n\nvar pt = 'points';\nif(score === 1){\n\tpt = 'point';\n}\n\nvar dict = {\n\t'0': 0,\n\t'1': 1.5,\n\t'2': 5.4,\n\t'3': 15.3,\n\t'4': 31,\n\t'5': 40.5,\n\t'6': 50\n}\n\nvar mort;\n\nfor(var key in dict){\n\tif(score.toString() === key){\n\t\tmort = dict[key];\n\t}\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: pt,\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: pt,\n    message: 'DECAF Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: 'risk',\n    message: rec + '<br/><br/>' + mort.toString() + '% in-hospital mortality'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Extended MRC Dyspnea Scale (eMRCD)</p>",
+                "name": "emrcd",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not too dyspneic to leave house (eMRCD 1–4)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Too dyspneic to leave house but independent with washing/dressing (eMRCD 5a)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Too dyspneic to leave house and wash/dress (eMRCD 5b)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "On a good day, within the last 3 months",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Eosinopenia</p>",
+                "name": "eos",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Eosinophils <0.05×10⁹/L",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Consolidation on chest x-ray</p>",
+                "name": "cons",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Acidemia</p>",
+                "name": "aci",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "pH <7.30",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Atrial fibrillation</p>",
+                "name": "afib",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "On EKG at presentation and/or history of paroxysmal afib",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Decaf score",
+            "coad",
+            "acute copd",
+            "coronavirus",
+            "covid-19",
+            "covid"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

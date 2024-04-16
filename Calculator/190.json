@@ -1,0 +1,92 @@
+{
+    "id": "190",
+    "title": "Rome IV Diagnostic Criteria for Rumination Syndrome",
+    "desc": "The Rome IV Criteria for Rumination Syndrome provides criteria for diagnosis of rumination syndrome.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27147122",
+                "text": "Stanghellini V, Chan FK, Hasler WL, et al. Gastroduodenal Disorders. Gastroenterology. 2016;150(6):1380-92."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://theromefoundation.org/wp-content/uploads/functional-gastrointestinal-disorders-history-pathophysiology-clinical-features-and-rome-iv.pdf",
+                "text": "Drossman DA, Chang L, et al Rome Foundation (Raleigh). Rome IV Functional Gastrointestinal Disorders: Disorders of Gut-Brain Interaction. Rome Foundation; 2016."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/29902642/",
+                "text": "Halland M, Pandolfino J, Barba E, et al. Diagnosis and treatment of rumination syndrome. Clinical Gastroenterology and Hepatology 2018;16:1549-1555."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for rumination syndrome*, patient must have the following (for 3 months prior with symptom onset &ge;6 months ago):</p>\n<ol>\n<li>Persistent or recurrent regurgitation of recently ingested food into the mouth with subsequent spitting or remastication and swallowing.</li>\n<li>Regurgitation is not preceded by retching.</li>\n</ol>\n<p>*Note:</p>\n<ol>\n<li>Effortless regurgitation events are usually not preceded by nausea.</li>\n<li>Regurgitant contains recognizable food that might have a pleasant taste.</li>\n<li>The process tends to cease when the regurgitated material becomes acidic.</li>\n</ol>\n<p></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Nausea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Gastroduodenal Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output = [];\n\nvar total = parseFloat(one)+parseFloat(two);\n\nvar diag;\n\nvar msg = 'Diagnosis for rumination syndrome as per Rome IV criteria';\nvar minimsg = 'Diagnosis for rumination syndrome';\n\nif (total == 2) {\n  diag = 'Positive';\n} else {\n  diag = 'Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Rumination Syndrome',\n    value: diag,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Persistent or recurrent regurgitation of recently ingested food into the mouth with subsequent spitting or remastication and swallowing",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Regurgitation is not preceded by retching",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Rumination Syndrome, Rome IV for Rumination Syndrome, rome for rumination syndrome, rumination, rumination syndrome, rome iv rumination syndrome, rome rumination syndrome, rome iv criteria, rome 4 rumination syndrome, rome 4 for rumination syndrome, rome 4 rumination, rome iv rumination"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

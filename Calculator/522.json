@@ -1,0 +1,136 @@
+{
+    "id": "522",
+    "title": "US (MEDPED) Diagnostic Criteria for Familial Hypercholesterolemia (FH)",
+    "desc": "The US (MEDPED) diagnostic criteria for Familial Hypercholesterolemia Diagnoses FH by using patient's age range and cut off values of total cholesterol.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8328379",
+                "text": "Williams RR, Hunt SC, Schumacher MC, Hegele RA, Leppert MF, Ludwig EH, et al. Diagnosing heterozygous familial hypercholesterolemia using new practical criteria validated by molecular genetics.Am J Cardiol 1993. Jul;72(2):171-176 10.1016/0002-9149(93)90155-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3976735/",
+                "text": "Al-Rasadi K, Al-Waili K, Al-Sabti HA, et al. Criteria for Diagnosis of Familial Hypercholesterolemia: A Comprehensive Analysis of the Different Guidelines, Appraising their Suitability in the Omani Arab Population. Oman Medical Journal. 2014;29(2):85-91. doi:10.5001/omj.2014.22."
+            }
+        ],
+        "evidence": "",
+        "facts": "<p>US (MEDPED) Diagnostic Criteria cutoff values compared to the general population:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>&nbsp;</th>\n<th colspan=\"4\">Total cholesterol cutpoints in mg/dL (mmol/L)</th>\n</tr>\n<tr>\n<th>Age (years)</th>\n<th>First Degree relative with FH</th>\n<th>Second Degree relative with FH</th>\n<th>Third Degree relative with FH</th>\n<th>General Population</th>\n</tr>\n<tr>\n<td>&lt;20</td>\n<td>220 (5.7)</td>\n<td>230 (5.9)</td>\n<td>240 (6.2)</td>\n<td>270 (7)</td>\n</tr>\n<tr>\n<td>20-29</td>\n<td>240 (6.2)</td>\n<td>250 (6.5)</td>\n<td>260 (6.7)</td>\n<td>290 (7.5)</td>\n</tr>\n<tr>\n<td>30-39</td>\n<td>270 (7)</td>\n<td>280 (7.2)</td>\n<td>290 (7.5)</td>\n<td>340 (8.8)</td>\n</tr>\n<tr>\n<td>&ge;40</td>\n<td>290 (7.5)</td>\n<td>300 (7.8)</td>\n<td>310 (8)</td>\n<td>360 (9.3)</td>\n</tr>\n</tbody>\n</table>\n<p>Instructions:</p>\n<ol>\n<li>Select appropriate age in column 1.</li>\n<li>Select appropriate degree relative with FH (if applicable).</li>\n<li>If patient's cholesterol is higher than cutoff, MEDPED criteria for FH are met.</li>\n</ol>\n</div>",
+        "estimation": [
+            {
+                "name": "Total Cholesterol",
+                "unit": "chol_total",
+                "error_min": "100",
+                "error_max": "1000",
+                "warn_min": "150",
+                "warn_max": "500",
+                "conversion": "0.02586",
+                "normal_max_si": "5.2",
+                "normal_max_us": "200",
+                "normal_min_si": "3.9",
+                "normal_min_us": "150",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Mass"
+        ],
+        "disease_treated": [
+            "Dyslipidemia"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar tchol = parseFloat(tchol);\nvar rel = parseFloat(rel);\n\nif (UOMSYSTEM == false) {\n    tchol = tchol / 0.0259\n}\nelse {\n    tchol = tchol\n}\n\nvar string1;\nvar string2 = 'Familial Hypercholesterolemia';\n\nif (age == 1) {\n    if (rel == 1) {\n        if (tchol >= 220) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n    if (rel == 2) {\n        if (tchol >= 230) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n    if (rel == 3) {\n        if (tchol >= 240) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n}\nif (age == 2) {\n    if (rel == 1) {\n        if (tchol >= 240) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n    if (rel == 2) {\n        if (tchol >= 250) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n    if (rel == 3) {\n        if (tchol >= 260) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n}\nif (age == 3) {\n    if (rel == 1) {\n        if (tchol >= 270) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n    if (rel == 2) {\n        if (tchol >= 280) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n    if (rel == 3) {\n        if (tchol >= 290) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n}\nif (age == 4) {\n    if (rel == 1) {\n        if (tchol >= 290) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n    if (rel == 2) {\n        if (tchol >= 300) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n    if (rel == 3) {\n        if (tchol >= 310) {\n            string1 = 'Definite';\n        } else {\n            string1 = 'Unlikely';\n        }\n    }\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: string1,\n    value_text: ' ',\n    message: string2\n});\ncalc_output.push({\n    name: '3820_US MEDPED_result',\n    value: string1,\n    value_text: ' ',\n    message: string2\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Age",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<20",
+                        "value": 1
+                    },
+                    {
+                        "label": "20-29",
+                        "value": 2
+                    },
+                    {
+                        "label": "30-39",
+                        "value": 3
+                    },
+                    {
+                        "label": ">40",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Closest degree relative with confirmed FH diagnosis",
+                "mdcalc_info_concept": null,
+                "name": "rel",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1st Degree",
+                        "value": 1
+                    },
+                    {
+                        "label": "2nd Degree",
+                        "value": 2
+                    },
+                    {
+                        "label": "3rd Degree",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Total cholesterol",
+                "name": "tchol",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "chol_total"
+            }
+        ],
+        "can_search": [
+            "high cholesterol",
+            "cholesterol",
+            "cad",
+            "cvd",
+            "hefh",
+            "hofh ",
+            "gene",
+            "dna",
+            "xanthomas",
+            "hypercholesterolemia",
+            "familial"
+        ],
+        "specialty": [
+            "Endocrinology",
+            "Family Practice",
+            "Internal Medicine",
+            "Pediatric Subspecialty",
+            "Pediatrics"
+        ]
+    }
+}

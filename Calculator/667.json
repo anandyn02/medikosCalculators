@@ -1,0 +1,137 @@
+{
+    "id": "667",
+    "title": "R Factor for Liver Injury",
+    "desc": "The R Factor for Liver Injury differentiates cholestatic from hepatocellular liver injury.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2254635 ",
+                "text": "Bénichou C. Criteria of drug-induced liver disorders. Report of an international consensus meeting. J Hepatol. 1990;11(2):272-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24935270 ",
+                "text": "Chalasani NP, Hayashi PH, Bonkovsky HL, et al. ACG Clinical Guideline: the diagnosis and management of idiosyncratic drug-induced liver injury. Am J Gastroenterol. 2014;109(7):950-66."
+            }
+        ],
+        "evidence": "<p>R Factor = ( patient&rsquo;s ALT / upper limit of normal ALT ) / ( patient&rsquo;s ALP / upper limit of normal ALP )</p>\n<p>Note: calculator uses 40 U/L as upper limit of normal ALT and 120 U/L as upper limit of normal ALP. Normal values may vary by lab.</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>R Factor</strong></p>\n</td>\n<td>\n<p><strong>Injury type</strong></p>\n</td>\n<td>\n<p><strong>Recommended 1st line tests*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&gt;5</p>\n</td>\n<td>\n<p>Hepatocellular</p>\n</td>\n<td>\n<p>Acute viral hepatitis serologies, HCV RNA and autoimmune hepatitis serologies, imaging studies (e.g. abdominal ultrasound)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>2&ndash;5</p>\n</td>\n<td>\n<p>Mixed</p>\n</td>\n<td>\n<p>Acute viral hepatitis serologies, HCV RNA and autoimmune hepatitis serologies, imaging studies (e.g. abdominal ultrasound)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&lt;2</p>\n</td>\n<td>\n<p>Cholestatic</p>\n</td>\n<td>\n<p>Imaging studies (e.g. abdominal ultrasound)</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/24935270\" target=\"_blank\" rel=\"noopener\">Chalasani 2014</a>.</p>",
+        "estimation": [
+            {
+                "name": "Alanine Aminotransferase",
+                "unit": "ALT",
+                "error_min": "1",
+                "error_max": "1000",
+                "warn_min": "4",
+                "warn_max": "400",
+                "conversion": "1",
+                "normal_max_si": "35",
+                "normal_max_us": "35",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "Alkaline Phosphatase",
+                "unit": "ALP",
+                "error_min": "0",
+                "error_max": "600",
+                "warn_min": "30",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "140",
+                "normal_max_us": "140",
+                "normal_min_si": "40",
+                "normal_min_us": "40",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Fatigue",
+            "Jaundice",
+            "Pain",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Cirrhosis",
+            "Drug/Alcohol Use",
+            "Hepatitis",
+            "Hepatocellular Carcinoma"
+        ],
+        "logic": "var calc_output = [];\n\n// Declare vars\n\nvar alt = parseFloat(alt);\nvar alt_uln = parseFloat(alt_uln);\nvar alp = parseFloat(alp);\nvar alp_uln = parseFloat(alp_uln);\n\nvar r = alt / alt_uln / ( alp / alp_uln );\nvar interpretation;\nvar rec;\n\nif (r.toFixed(1) < 2) {\n\tinterpretation = 'Cholestatic';\n\trec = 'Recommend imaging studies (e.g. abdominal ultrasound)';\n}\nelse if (r.toFixed(1) >= 2 && r.toFixed(1) <= 5) {\n\tinterpretation = 'Mixed';\n\trec = 'Recommend acute viral hepatitis serologies, HCV RNA and autoimmune hepatitis serologies, imaging studies (e.g. abdominal ultrasound)';\n}\nelse if (r.toFixed(1) > 5) {\n\tinterpretation = 'Hepatocellular';\n\trec = 'Recommend acute viral hepatitis serologies, HCV RNA and autoimmune hepatitis serologies, imaging studies (e.g. abdominal ultrasound)';\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: r.toFixed(1),\n   value_text: '',\n   message: interpretation\n});\ncalc_output.push({\n   name: '4064_R Factor_result',\n   value: r.toFixed(1),\n   value_text: '',\n   message: 'R Factor'\n});\ncalc_output.push({\n   name: '4064_R Factor_interpretation',\n   value: interpretation,\n   value_text: 'injury',\n   message: rec\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Patient's <abbr title=\"Alanine aminotransferase\">ALT</abbr></p>",
+                "name": "alt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ALT"
+            },
+            {
+                "conditionality": "",
+                "default": 40,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Upper limit of normal <abbr title=\"Alanine aminotransferase\">ALT</abbr></p>",
+                "name": "alt_uln",
+                "optional": false,
+                "tips_en": "According to your lab",
+                "type": "textbox",
+                "unit": "ALT"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Patient's <abbr title=\"Alkaline phosphatase\">ALP</abbr></p>",
+                "name": "alp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ALP"
+            },
+            {
+                "conditionality": "",
+                "default": 120,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Upper limit of normal <abbr title=\"Alkaline phosphatase\">ALP</abbr></p>",
+                "name": "alp_uln",
+                "optional": false,
+                "tips_en": "According to your lab",
+                "type": "textbox",
+                "unit": "ALP"
+            }
+        ],
+        "can_search": [
+            "dili",
+            "hepatic failure",
+            "liver failure",
+            "cirrhotic",
+            "obstructive jaundice",
+            "drug induced liver injury",
+            "r value",
+            "r-value",
+            "r ratio",
+            "r-factor"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

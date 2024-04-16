@@ -1,0 +1,146 @@
+{
+    "id": "392",
+    "title": "DASH Prediction Score for Recurrent VTE",
+    "desc": "The DASH Prediction Score for Recurrent VTE Predicts VTE recurrence: continue vs discontinue anticoagulation at 3-6 months.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22489957",
+                "text": "Tosetto A, Iorio A, Marcucci M, Baglin T, Cushman M, Eichinger S, Palareti G, Poli D, Tait RC, Douketis J. Predicting disease recurrence in patients with previous unprovoked venous thromboembolism: a proposed prediction score (DASH).J Thromb Haemost. 2012 Jun;10(6):1019-25. doi: 10.1111/j.1538-7836.2012.04735.x."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18574272",
+                "text": "Kearon C, Kahn SR, Agnelli G, Goldhaber S, Raskob GE, Comerota AJ. Antithrombotic therapy for venous thromboembolic disease: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines (8th Edition). Chest 2008; 133: 454S–545S."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:See formula table below:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Weighted Score</th>\n</tr>\n<tr>\n<td>D-dimer abnormal</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Age &le;50 years</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Sex - Male</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Hormone use at time of initial VTE (if female)</td>\n<td>-2</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>DASH Score</th>\n<th>Annual Recurrence Rate</th>\n</tr>\n<tr>\n<td>-2</td>\n<td>1.8%*</td>\n</tr>\n<tr>\n<td>-1</td>\n<td>1.0%</td>\n</tr>\n<tr>\n<td>0</td>\n<td>2.4%</td>\n</tr>\n<tr>\n<td>1</td>\n<td>3.9%</td>\n</tr>\n<tr>\n<td>2</td>\n<td>6.3%</td>\n</tr>\n<tr>\n<td>3</td>\n<td>10.8%</td>\n</tr>\n<tr>\n<td>4</td>\n<td>19.9%</td>\n</tr>\n</tbody>\n</table>\n<p>*A very small sample had DASH Score of -2 in the derivation study.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Dyspnea",
+            "Extremity Edema",
+            "Extremity Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = []; var msg = ''; var msgAppend = ''; var consider = ''; var u = parseFloat(ddimer) + parseFloat(age_50) + parseFloat(male) + parseFloat(hormone); if (u == -2) {msg = '1.8% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider discontinuing anticoagulation.'; msgAppend = '<br/><br/>NOTE: A very small group (2.3% of studied sample) had DASH Score of -2 in the derivation study.'; } else if (u == -1) {msg = '1.0% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider discontinuing anticoagulation.'; } else if (u == 0) {msg = '2.4% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider discontinuing anticoagulation.'; } else if (u == 1) {msg = '3.9% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider discontinuing anticoagulation.'; } else if (u == 2) {msg = '6.3% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider continuing anticoagulation.'; } else if (u == 3) {msg = '10.8% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider continuing anticoagulation.'; } else if (u == 4) {msg = '19.9% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider continuing anticoagulation.'; } \n\ncalc_output.push({\n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'points',\n    message: msg \n}); \ncalc_output.push({\n    name: '2011_DASH Score_result', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: msg + consider + msgAppend \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "D-dimer abnormal",
+                "md_calc_info_concept": null,
+                "name": "ddimer",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Measured ~1 month after stopping anticoagulation",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≤50 years",
+                "md_calc_info_concept": null,
+                "name": "age_50",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Male patient",
+                "md_calc_info_concept": null,
+                "name": "male",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hormone use at VTE onset (if female)",
+                "md_calc_info_concept": null,
+                "name": "hormone",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "If male patient, select \"No\"",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Clotting",
+            "VTE",
+            "DVT",
+            "PE",
+            "prediction",
+            "prognosis",
+            "d-dimer",
+            "hormone use",
+            "age",
+            "risk factors"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Pulmonology"
+        ]
+    }
+}

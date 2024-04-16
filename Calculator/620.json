@@ -1,0 +1,164 @@
+{
+    "id": "620",
+    "title": "Rome IV Diagnostic Criteria for Irritable Bowel Syndrome (IBS)",
+    "desc": "The Rome IV Diagnostic Criteria for Irritable Bowel Syndrome (IBS) provides criteria for diagnosis of irritable bowel syndrome.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27147121 ",
+                "text": "Drossman DA, Hasler WL. Rome IV-Functional GI Disorders: Disorders of Gut-Brain Interaction. Gastroenterology. 2016;150(6):1257-61."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5383110/ ",
+                "text": "Schmulson MJ, Drossman DA. What Is New in Rome IV. J Neurogastroenterol Motil. 2017;23(2):151-163."
+            },
+            {
+                "href": "https://www.gastrojournal.org/article/S0016-5085(16)00180-3/abstract ",
+                "text": "Palsson OS, Whitehead WE, Van tilburg MA, et al. Rome IV Diagnostic Questionnaires and Tables for Investigators and Clinicians. Gastroenterology. 2016."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4760857/ ",
+                "text": "Chumpitazi BP, Self MM, Czyzewski DI, Cejka S, Swank PR, Shulman RJ. Bristol Stool Form Scale reliability and agreement decreases when determining Rome III stool form designations. Neurogastroenterol Motil. 2016;28(3):443-8."
+            }
+        ],
+        "evidence": "<p>Recurrent abdominal pain at least 1 day per week in the last 3 months on average, associated with &ge;2 of the criteria* below:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p>Related to defecation (either increasing or improving pain)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Associated with a change in stool frequency</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Associated with a change in stool form (appearance)</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*The criteria are fulfilled with symptoms onset 6 months prior to diagnosis.</p>\n<p>Subtypes:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p>IBS-C</p>\n</td>\n<td>\n<p>&gt;25% of bowel movements with Bristol Stool Scale Types 1&ndash;2 and &lt;25% with Types 6&ndash;7.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>IBS-D</p>\n</td>\n<td>\n<p>&gt;25% of bowel movements with Bristol Stool Scale Types 6&ndash;7 and &lt;25% with Types 1&ndash;2.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>IBS-M</p>\n</td>\n<td>\n<p>&gt;25%of bowel movements with Bristol Stool Scale Types 1&ndash;2 and &gt;25% with Types 6&ndash;7.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>IBS-U</p>\n</td>\n<td>\n<p>Meets diagnostic criteria for IBS but bowel habits not accurately categorized in any of the above subtypes.</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>IBS bowel habit subtype is based on stool form on days with at least one abnormal bowel movement. They can only be confidently established when the patient is evaluated off medications used to treat bowel habit abnormalities.</p>\n<p>IBS, irritable bowel syndrome; IBS-C, IBS with predominant constipation; IBS-D, IBS with predominant diarrhea; IBS-M, IBS with mixed bowel habits; IBS-U, unclassified IBS.</p>\n<p>Bristol Stool Scale:</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/romeiv-bristol.gif\" alt=\"\" width=\"100%\" height=\"auto\"></p>\n<p>From <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4760857/\" target=\"_blank\" rel=\"noopener\">Chumpitazi 2016</a>.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Anxious",
+            "Constipation",
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Anxiety",
+            "Disorders of Gut-Brain Interaction (DGBI)",
+            "Irritable Bowel Syndrome"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar total = parseFloat(related) + parseFloat(frequency) + parseFloat(form);\n\nvar result, min, msg\n\n//interpretation\n\tresult = \"Negative\";\n\tmin = \"Unikely IBS.\";\n\tmsg = ' Consider further assessment for other pathology.'\n\nif(total >= 2){\n\tresult = 'Positive';\n\tmin = 'Likely IBS.';\n\tmsg = ''\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: '',\n    message: min\n});\ncalc_output.push({\n    name: 'Result',\n    value: result,\n    value_text: '',\n    message: min + msg\n});\n\nif (total >= 2){\nvar sub = parseFloat(subtype);\nvar type, def;\n\tif(sub == 0){\n\t\ttype = 'IBS-C';\n\t\tdef = 'IBS with predominant constipation';\n\t}else if(sub == 1){\n\t\ttype = 'IBS-D';\n\t\tdef = 'IBS with predominant diarrhea';\n\t}else if(sub == 2){\n\t\ttype = 'IBS-M';\n\t\tdef = 'IBS with mixed bowel habits';\n\t}else if(sub == 3){\n\t\ttype = 'IBS-U';\n\t\tdef = 'Unclassified IBS';\n\t}\n\tcalc_output.push({\n\t    name: 'Sub',\n\t    value: type,\n\t    value_text: '',\n\t    message: def\n\t});\n}\n",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Must have ≥2 of the following:",
+                "subheading_instructions": "Associated with recurrent abdominal pain ≥1 day/wk in the last 3 months (on average)",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Related to defecation</p>",
+                "md_calc_info_concept": null,
+                "name": "related",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Either increasing or improving pain",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Associated with a change in stool frequency",
+                "md_calc_info_concept": null,
+                "name": "frequency",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Associated with a change in stool form (appearance)",
+                "md_calc_info_concept": null,
+                "name": "form",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "(related + frequency + form) >= 2",
+                "default": 3,
+                "label_en": "<p>Subtypes</p>",
+                "mdcalc_info_concept": null,
+                "name": "subtype",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": ">25% of bowel movements with Bristol Stool Scale Types 1–2 and <25% with Types 6–7",
+                        "value": 0
+                    },
+                    {
+                        "label": ">25% of stools with Bristol Types 6–7 and <25% with Types 1–2",
+                        "value": 1
+                    },
+                    {
+                        "label": ">25% of stools with Bristol Types 1–2 and >25% with Types 6–7",
+                        "value": 2
+                    },
+                    {
+                        "label": "Meets diagnostic criteria for IBS but bowel habits not accurately categorized in any of the above subtypes",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "rome",
+            "ibs",
+            "irritable bowel",
+            "Rome IV Diagnostic Criteria for Irritable Bowel Syndrome (IBS)",
+            "rome ibs",
+            "rome iv ibs",
+            "rome iv for ibs",
+            "irritable bowel syndrome"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Psychiatry"
+        ]
+    }
+}

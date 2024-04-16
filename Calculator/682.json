@@ -1,0 +1,174 @@
+{
+    "id": "682",
+    "title": "PECARN Pediatric Head Injury/Trauma Algorithm",
+    "desc": "The PECARN Pediatric Head Injury/Trauma Algorithm provides the PECARN algorithm for evaluating pediatric head injury.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19758692",
+                "text": "Kuppermann N, Holmes JF, Dayan PS, Hoyle JD Jr, Atabaki SM, Holubkov R, Nadel FM, Monroe D, Stanley RM, Borgialli DA, Badawy MK, Schunk JE, Quayle KS, Mahajan P, Lichenstein R, Lillis KA, Tunik MG, Jacobs ES, Callahan JM, Gorelick MH, Glass TF, Lee LK, Bachman MC, Cooper A, Powell EC, Gerardi MJ, Melville KA, Muizelaar JP, Wisner DH, Zuspan SJ, Dean JM, Wootton-Gorges SL; Pediatric Emergency Care Applied Research Network (PECARN). Identification of children at very low risk of clinically-important brain injuries after head trauma: a prospective cohort study. Lancet. 2009 Oct 3;374(9696):1160-70. doi: 10.1016/S0140-6736(09)61558-0. Epub 2009 Sep 14. Erratum in: Lancet. 2014 Jan 25;383(9914):308."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24635987",
+                "text": "Easter JS, Bakes K, Dhaliwal J, Miller M, Caruso E, Haukoos JS. Comparison of PECARN, CATCH, and CHALICE rules for children with minor head injury: a prospective cohort study. Ann Emerg Med. 2014 Aug;64(2):145-52, 152.e1-5. doi: 10.1016/j.annemergmed.2014.01.030. Epub 2014 Mar 11."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11159059",
+                "text": "Brenner D, Elliston C, Hall E, Berdon W. Estimated risks of radiation-induced fatal cancer from pediatric CT. AJR Am J Roentgenol. 2001 Feb;176(2):289-96."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24559605",
+                "text": "Dayan PS, Holmes JF, et al. Association of Traumatic Brain Injuries with Vomiting Children with Blunt Head Trauma. Ann Emerg Med. 2014; 63(6): 657-65."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24635991",
+                "text": "Dayan PS, Holmes JF, et al. Risk of Traumatic Brain Injuries in Children Younger than 24 Months with isolated Scalp Hematomas. Ann Emerg Med. 2014; 64(2): 153-62."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4081461/",
+                "text": "Hess EP, Wyatt KD, Kharbanda AB, et al. Effectiveness of the head CT choice decision aid in parents of children with minor head trauma: study protocol for a multicenter randomized trial. Trials. 2014;15:253."
+            }
+        ],
+        "evidence": "<p>Prediction tree using a series of dichotomous Yes/No questions.</p>\n<p><span>Use A if &lt;2 years old and B if &ge;2 years old.</span></p>\n<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/pecarn-algorithm.png\" alt=\"\"></p>\n<p>Figure from <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/19758692\" target=\"_blank\" rel=\"noopener\">Kuppermann 2009</a>.&nbsp;</p>",
+        "facts": "<p>Definition of <b>clinically-important traumatic brain injury (ciTBI) </b>(any of the following satisfy definition):</p>\n<ul>\n<li>Death from traumatic brain injury (TBI)</li>\n<li>Neurosurgical intervention for traumatic brain injury\n<ul>\n<li>Intracranial pressure monitoring</li>\n<li>Elevation of depressed skull fracture</li>\n<li>Ventriculostomy</li>\n<li>Hematoma evacuation</li>\n<li>Lobectomy</li>\n<li>Tissue debridement</li>\n<li>Dura repair</li>\n<li>Other</li>\n</ul>\n</li>\n<li>Intubation of more than 24 hours for TBI</li>\n<li>Hospital admission of 2 nights or more for the TBI in association with TBI on CT\n<ul>\n<li>Hospital admission for TBI defined by admission for persistent neurological symptoms or signs such as persistent alteration in mental status, recurrent emesis due to head injury, persistent severe headache or ongoing seizure management</li>\n</ul>\n</li>\n</ul>\n<p>Definition of <b>traumatic brain injury on CT</b> (any of the following satisfy definition):</p>\n<ul>\n<li>Intracranial hemorrhage or contusion</li>\n<li>Cerebral edema</li>\n<li>Traumatic infarction</li>\n<li>Diffuse axonal injury</li>\n<li>Shearing injury</li>\n<li>Sigmoid sinus thrombosis</li>\n<li>Midline shift of intracranial contents or signs of brain herniation</li>\n<li>Diastasis of the skull</li>\n<li>Pneumocephalus</li>\n<li>Skull fracture depressed by at least the width of the table of the skull</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Head Injury",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": " var calc_output = [];\n var mini_msg = '';\n var msg = '';\n if (age == 0) {\n     if (gcs_palpable_fracture_ams == 1) {\n         mini_msg = 'CT Recommended';\n         msg = 'PECARN recommends CT; 4.4% risk of clinically important Traumatic Brain Injury.'\n     } else if (gcs_palpable_fracture_ams == 0) {\n         if (hematoma_loc_injury == 1) {\n             mini_msg = 'Observation Recommended';\n             msg = 'PECARN recommends observation over imaging, depending on provider comfort; 0.9% risk of clinically important Traumatic Brain Injury.<br/><br/>Consider the following when making imaging decisions: Physician experience, worsening signs/symptoms during observation period, age <3 months, parent preference, multiple vs. isolated findings: patients with certain isolated findings (i.e., no other findings suggestive of TBI), such as isolated LOC, isolated headache, isolated vomiting, and certain types of isolated scalp hematomas in infants >3 months have ciTBI risk substantially <1%.'\n         }\n         if (hematoma_loc_injury == 0) {\n             mini_msg = 'No Risk';\n             msg = 'PECARN recommends No CT; Risk of ciTBI <0.02%, “Exceedingly Low, generally lower than risk of CT-induced malignancies.”'\n         }\n     }\n } else if (age == 1) {\n     if (gcs_basilar_fracture_ams == 1) {\n         mini_msg = 'CT Recommended';\n         msg = 'PECARN recommends CT; 4.3% risk of clinically important Traumatic Brain Injury.'\n     } else if (gcs_basilar_fracture_ams == 0) {\n         if (loc_vomiting_headache_injury == 1) {\n             mini_msg = 'Observation Recommended';\n             msg = 'PECARN recommends observation over imaging, depending on provider comfort; 0.9% risk of clinically important Traumatic Brain Injury.<br/><br/>Consider the following when making imaging decisions: Physician experience, worsening signs/symptoms during observation period, age <3 months, parent preference, multiple vs. isolated findings: patients with certain isolated findings (i.e., no other findings suggestive of TBI), such as isolated LOC, isolated headache, isolated vomiting, and certain types of isolated scalp hematomas in infants >3 months have ciTBI risk substantially <1%.'\n         } else if (loc_vomiting_headache_injury == 0) {\n             mini_msg = 'No Risk';\n             msg = 'PECARN recommends No CT; Risk <0.05%, \\u201cExceedingly Low, generally lower than risk of CT-induced malignancies.\\u201d'\n         }\n     }\n }\n\ncalc_output.push({ \n    name: 'mini', \n    value: ' ', \n    value_text: ' ', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '589_PECARN Pediatric Head Injury Rule_result', \n    value: ' ', \n    value_text: ' ', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age</p>",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2 Years",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥2 Years",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 0",
+                "default": null,
+                "label_en": "<p>GCS &le;14, palpable skull fracture or signs of AMS</p>",
+                "md_calc_info_concept": null,
+                "name": "gcs_palpable_fracture_ams",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "AMS: Agitation, somnolence, repetitive questioning, or slow response to verbal communication",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 1",
+                "default": null,
+                "label_en": "<p>GCS &le;14 or signs of basilar skull fracture or signs of AMS</p>",
+                "md_calc_info_concept": null,
+                "name": "gcs_basilar_fracture_ams",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "AMS: Agitation, somnolence, repetitive questioning, or slow response to verbal communication",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 0 && gcs_palpable_fracture_ams == 0",
+                "default": null,
+                "label_en": "<p>Occipital, parietal or temporal scalp hematoma; history of LOC &ge;5 sec; not acting normally per parent or severe mechanism of injury?</p>",
+                "md_calc_info_concept": null,
+                "name": "hematoma_loc_injury",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Severe mechanism: MVC with patient ejection, death of another passenger, rollover; pedestrian or bicyclist w/o helmet struck by motorized vehicle; fall from >0.9m or 3ft; head struck by high-impact object",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 1 && gcs_basilar_fracture_ams == 0",
+                "default": null,
+                "label_en": "<p>History of LOC or history of vomiting or severe headache or severe mechanism of injury</p>",
+                "md_calc_info_concept": null,
+                "name": "loc_vomiting_headache_injury",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Motor vehicle crash with patient ejection, death of another passenger, or rollover; pedestrian or bicyclist without helmet struck by a motorized vehicle; falls of more than 1.5m/5ft; head struck by a high-impact object",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "trauma",
+            "kuppermann",
+            "pediatric",
+            "peds head injury",
+            "peds trauma"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Neurology",
+            "Pediatrics",
+            "Primary Care",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

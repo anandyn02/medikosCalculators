@@ -1,0 +1,295 @@
+{
+    "id": "340",
+    "title": "Pulmonary Embolism Severity Index (PESI)",
+    "desc": "The Pulmonary Embolism Severity Index (PESI) predicts 30-day outcome of patients with pulmonary embolism using 11 clinical criteria.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16020800",
+                "text": "Aujesky D, Obrosky DS, Stone RA, Auble TE, Perrier A, Cornuz J, Roy PM, Fine MJ. Derivation and validation of a prognostic model for pulmonary embolism. Am J Respir Crit Care Med. 2005 Oct 15;172(8):1041-6. Epub 2005 Jul 14. PubMed PMID: 16020800; PubMed Central PMCID: PMC2718410."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21703676",
+                "text": "Aujesky D, Roy PM, Verschuren F, Righini M, Osterwalder J, Egloff M, Renaud B,Verhamme P, Stone RA, Legall C, Sanchez O, Pugh NA, N'gako A, Cornuz J, Hugli O, Beer HJ, Perrier A, Fine MJ, Yealy DM. Outpatient versus inpatient treatment for patients with acute pulmonary embolism: an international, open-label, randomised,non-inferiority trial. Lancet. 2011 Jul 2;378(9785):41-8."
+            }
+        ],
+        "evidence": "<p>Addition of the assigned points.</p>",
+        "facts": "<p><strong>Interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: left;\">\n<p>PESI Score</p>\n</th>\n<th style=\"text-align: left;\">Class</th>\n<th style=\"text-align: left;\">Risk 30 day mortality</th>\n</tr>\n<tr>\n<td>\n<p>0-65</p>\n</td>\n<td>I</td>\n<td>0.0-1.6%</td>\n</tr>\n<tr>\n<td>\n<p>66-85</p>\n</td>\n<td>II</td>\n<td>1.7-3.5%</td>\n</tr>\n<tr>\n<td>\n<p>86-105</p>\n</td>\n<td>III</td>\n<td>3.2-7.1%</td>\n</tr>\n<tr>\n<td>\n<p>106-125</p>\n</td>\n<td>IV</td>\n<td>4.0-11.4%</td>\n</tr>\n<tr>\n<td>\n<p>&ge;125</p>\n</td>\n<td>V</td>\n<td>10-24.5%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Palpitations",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output=[]; \n\nvar u=parseInt(age)+parseInt(sex)+parseInt(cancer)+parseInt(heart_failure)+parseInt(chronic_lung_disease)+parseInt(heart_rate_110)+parseInt(systolic_blood_pressure_100)+parseInt(respiratory_rate_30)+parseInt(temperature_36)+parseInt(altered_mental_status)+parseInt(o2_saturation_90);\n\nvar msg='';\nvar mini_msg=''; \n\nif(u<66){\n    msg='Class I, Very Low Risk: 0-1.6% 30-day mortality in this group.';\n    mini_msg='Very Low Risk.'\n} \nif(u>65&&u<86){\n    msg='Class II, Low Risk: 1.7-3.5% 30-day mortality in this group.';\n    mini_msg='Low Risk.'\n} \nif(u>85&&u<106){\n    msg='Class III, Intermediate Risk: 3.2-7.1% 30-day mortality in this group.';\n    mini_msg='Intermediate Risk.'\n} \nif(u>105&&u<126){\n    msg='Class IV, High Risk: 4.0-11.4% 30-day mortality in this group.';\n    mini_msg='High Risk.'\n} \nif(u>125){\n    msg='Class V, Very High Risk: 10.0-24.5% 30-day mortality in this group.';\n    mini_msg='Very High Risk.'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1304_PESI Score_result',\n    value:u,\n    value_text:'points',\nmessage:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of cancer",
+                "md_calc_info_concept": null,
+                "name": "cancer",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 30
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of heart failure",
+                "md_calc_info_concept": null,
+                "name": "heart_failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of chronic lung disease",
+                "md_calc_info_concept": null,
+                "name": "chronic_lung_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Heart rate ≥110",
+                "md_calc_info_concept": null,
+                "name": "heart_rate_110",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 20
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Systolic BP <100 mmHg",
+                "md_calc_info_concept": null,
+                "name": "systolic_blood_pressure_100",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 30
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Respiratory rate ≥30",
+                "md_calc_info_concept": null,
+                "name": "respiratory_rate_30",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 20
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Temperature <36°C/96.8°F",
+                "md_calc_info_concept": null,
+                "name": "temperature_36",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 20
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Altered mental status (disorientation, lethargy, stupor, or coma)",
+                "md_calc_info_concept": null,
+                "name": "altered_mental_status",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 60
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "O2 saturation <90%",
+                "md_calc_info_concept": null,
+                "name": "o2_saturation_90",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 20
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "PE"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (General)"
+        ]
+    }
+}

@@ -1,0 +1,899 @@
+{
+    "id": "243",
+    "title": "ACEP ED COVID-19 Management Tool",
+    "desc": "The ACEP ED COVID-19 Management Tool is an emergency department classification and management tool for adult patients (>18 years old) with suspected or confirmed SARS-CoV-2 (Covid-19).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.acep.org/corona/COVID-19-alert/covid-19-articles/covid-19-ED-management-tool-now-available/",
+                "text": "Emergency Department COVID-19 Management Tool. American College of Emergency Physicians."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.acep.org/COVID-19",
+                "text": "ACEP COVID-19 Resources."
+            },
+            {
+                "href": "https://www.ajog.org/article/S0002-9378(21)00033-8/fulltext",
+                "text": "Lokken EM et al. Disease Severity, Pregnancy Outcomes and Maternal Deaths among Pregnant Patients with SARS-CoV-2 Infection in Washington State [published online ahead of print, 2021 Jan 19]. Am J Obstet Gynecol. 2021;S0002-9378(21)00033-8."
+            },
+            {
+                "href": "https://www.idsociety.org/practice-guideline/covid-19-guideline-treatment-and-management/",
+                "text": "Bhimraj A, Morgan RL, Shumaker AH, Lavergne V, Baden L, Cheng VC, Edwards KM, Gandhi R, Gallagher J, Muller WJ, O'Horo JC, Shoham S, Murad MH, Mustafa RA, Sultan S, Falck-Ytter Y. Infectious Diseases Society of America Guidelines on the Treatment and Management of Patients with COVID-19. Infectious Diseases Society of America 2021; Version 4.1.1."
+            },
+            {
+                "href": "https://www.cdc.gov/coronavirus/2019-ncov/covid-data/investigations-discovery/hospitalization-death-by-race-ethnicity.html",
+                "text": "COVID-19 Hospitalization and Death by Race/Ethnicity. Centers for Disease Control and Prevention."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7373004/",
+                "text": "Haimovich AD et al. Development and Validation of the Quick COVID-19 Severity Index: A Prognostic Tool for Early Clinical Decompensation. Ann Emerg Med. 2020;76(4):442-453."
+            },
+            {
+                "href": "https://www.medrxiv.org/content/10.1101/2020.05.13.20100495v1.full-text",
+                "text": "Bellou V. Risk factors for adverse clinical outcomes in patients with COVID-19: A systematic review and meta-analysis. MedRxiv preprint."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7377468/",
+                "text": "Ebinger JE et al. Pre-existing traits associated with Covid-19 illness severity. PLoS One. 2020;15(7):e0236240."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7507999/ ",
+                "text": "Toussie D et al. Clinical and Chest Radiography Features Determine Patient Outcomes in Young and Middle-aged Adults with COVID-19. Radiology. 2020;297(1):E197-E206."
+            },
+            {
+                "href": "https://www.cebm.net/covid-19/what-is-the-efficacy-and-safety-of-rapid-exercise-tests-for-exertional-desaturation-in-covid-19/",
+                "text": "Greenhalgh T et al. What is the efficacy and safety of rapid exercise tests for exertional desaturation in covid-19? April 21, 2020. Centre for Evidence-Based Medicine."
+            },
+            {
+                "href": "https://www.covid19treatmentguidelines.nih.gov/overview/clinical-spectrum/",
+                "text": "Clinical spectrum. COVID-19 Treatment Guidelines."
+            },
+            {
+                "href": "https://www.cdc.gov/coronavirus/2019-ncov/covid-data/investigations-discovery/ hospitalization-death-by-race-ethnicity.html",
+                "text": "COVID-19 Hospitalization and Death by Race/Ethnicity. Centers for Disease Control and Prevention."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7328119/",
+                "text": "Giannakoulis VG et al. Effect of Cancer on Clinical Outcomes of Patients With COVID-19: A Meta-Analysis of Patient Data. JCO Glob Oncol. 2020;6:799-808."
+            },
+            {
+                "href": "https://www.ajog.org/article/S0002-9378(21)00033-8/fulltext",
+                "text": "Lokken EM et al. Disease Severity, Pregnancy Outcomes and Maternal Deaths among Pregnant Patients with SARS-CoV-2 Infection in Washington State [published online ahead of print, 2021 Jan 19]. Am J Obstet Gynecol. 2021;S0002-9378(21)00033-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7804843/",
+                "text": "Strausz S et al. Sleep apnoea is a risk factor for severe COVID-19. BMJ Open Respir Res. 2021;8(1):e000845."
+            },
+            {
+                "href": "https://www.nature.com/articles/s41586-020-2521-4",
+                "text": "Williamson EJ et al. Factors associated with COVID-19-related death using OpenSAFELY. Nature. 2020;584(7821):430-436."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7429998/",
+                "text": "Tartof SY et al. Obesity and Mortality Among Patients Diagnosed With COVID-19: Results From an Integrated Health Care Organization. Ann Intern Med. 2020;173(10):773-781."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7716294/",
+                "text": "Goodacre S et al. Post-exertion oxygen saturation as a prognostic factor for adverse outcome in patients attending the emergency department with suspected COVID-19: a substudy of the PRIEST observational cohort study. Emergency medicine journal:emermed-2020-210528."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7822515/",
+                "text": "Goodacre S, Thomas B, Sutton L, Burnsall M, Lee E, Bradburn M, et al. (2021) Derivation and validation of a clinical severity score for acutely ill adults with suspected COVID-19: The PRIEST observational cohort study. PLoS ONE 16(1): e0245840."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7592804/",
+                "text": "Clift AK et al. COVID-19 Mortality Risk in Down Syndrome: Results From a Cohort Study Of 8 Million Adults. Annals of internal medicine, M20-4986. 21 Oct. 2020."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/pmc7191115",
+                "text": "Putative contributions of circadian clock and sleep in the context of SARS-CoV-2 infection. Meira E Cruz M, Miyazawa M, Gozal D.Meira E Cruz M, et al. Eur Respir J. 2020 Jun 4;55(6):2001023. doi: 10.1183/13993003.01023-2020. Print 2020 Jun."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/33092041/",
+                "text": "Pecora F, Persico F, Argentiero A, Neglia C, Esposito S. The Role of Micronutrients in Support of the Immune Response against Viral Infections. Nutrients. 2020 Oct 20;12(10):3198. doi: 10.3390/nu12103198."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/16309885/",
+                "text": "Arjona A, Sarkar DK. Evidence supporting a circadian control of natural killer cell function. Brain Behav Immun. 2006 Sep;20(5):469-76. doi: 10.1016/j. bbi.2005.10.002. Epub 2005 Nov 23."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5911985/",
+                "text": "Campbell J.P., Turner J.E. Debunking the myth of exercise-induced immune suppression: Redefining the impact of exercise on immunological health across the lifespan. Front Immunol. 2018;9:648."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/16155285",
+                "text": "Patchett D, Yang J, Northern J, Salinas M, Bauer BA. Viral Respiratory Infections: An Ounce of Prevention Is Worth a Pound of Cure. Mayo Clin Proc Innov Qual Outcomes. 2021 Feb 6."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7753836/#acem14180-sup-0001",
+                "text": "Paglia S, Nattino G, Occhipinti F, et al. The Quick Walk Test: A Noninvasive Test to Assess the Risk of Mechanical Ventilation During COVID‐19 Outbreaks. Acad Emerg Med. 2020 Dec 15."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7655027/",
+                "text": "Ghosh S, Deshwal H, Bin Saeedan M, et al. Imaging algorithm for COVID-19: A practical approach. Clin Imaging. 2021 Apr; 72: 22–30."
+            },
+            {
+                "href": "https://pubs.rsna.org/doi/full/10.1148/radiol.2020201365",
+                "text": "Rubin GD, Ryerson CJ, Haramati LB, et al. The Role of Chest Imaging in Patient Management during the COVID-19 Pandemic: A Multinational Consensus Statement from the Fleischner Society. Radiology (296) 1."
+            },
+            {
+                "href": "https://link.springer.com/article/10.1007/s10396-020-01074-y",
+                "text": "Kameda T, Mizuma Y, Taniguchi H. Point-of-care lung ultrasound for the assessment of pneumonia: a narrative review in the COVID-19 era. Journal of Medical Ultrasonics volume 48, pages31–43(2021)."
+            },
+            {
+                "href": "https://www.nejm.org/doi/full/10.1056/NEJMc2029240",
+                "text": "Sjoding MW, Dickson RP, Iwashyna TJ, et al. Racial Bias in Pulse Oximetry Measurement. N Engl J Med 2020; 383:2477-2478."
+            },
+            {
+                "href": "https://www.fda.gov/medical-devices/safety-communications/pulse-oximeter-accuracy-and-limitations-fda-safety-communication",
+                "text": "Pulse Oximeter Accuracy and Limitations: FDA Safety Communication. Date Issued: February 19, 2021."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/33410720/",
+                "text": "Guan X, Zhang B, Fu M, et al. Clinical and inflammatory features based machine learning model for fatal risk prediction of hospitalized COVID-19 patients: results from a retrospective cohort study. Ann Med 2021 Dec;53(1):257-266."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/32818235/",
+                "text": "Tjendra Y, Al Mana AF, Esejo AP. Predicting Disease Severity and Outcome in COVID-19 Patients: A Review of Multiple Biomarkers. Arch Pathol Lab Med 2020 Dec 1;144(12):1465-1474."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/33401345/",
+                "text": "Hahm CR, Lee YK, Oh DH, et al. Factors associated with worsening oxygenation in patient with non-severe COVID-19 pneumonia. Tuberc Respir Dis (Seoul) 2021 Jan 5."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/33296357/",
+                "text": "Chow DS, Glavis-Bloom J, Soun JE, et al. Development and external validation of a prognostic tool for COVID-19 critical disease. PLoS One 2020 Dec 9;15(12):e0242953."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/33336243/",
+                "text": "Payan-Pernia S, Perez LG, Sevilla AFR, et al. Absolute Lymphocytes, Ferritin, C-Reactive Protein, and Lactate Dehydrogenase Predict Early Invasive Ventilation in Patients With COVID-19. Lab Med 2020 Dec 18."
+            },
+            {
+                "href": "https://www.acep.org/corona/covid-19-field-guide/assessment/laboratory-abnormalities/",
+                "text": "ACEP COVID-19 Field Guide.  American College of Emergency Physicians."
+            },
+            {
+                "href": "https://www.cdc.gov/coronavirus/2019-ncov/hcp/clinical-care/underlyingconditions.html",
+                "text": "CDC. Healthcare workers. Centers for Disease Control and Prevention."
+            },
+            {
+                "href": "https://www.covid19treatmentguidelines.nih.gov/management/",
+                "text": "Management. COVID-19 Treatment Guidelines."
+            },
+            {
+                "href": "https://www.covid19treatmentguidelines.nih.gov/therapies/",
+                "text": "Therapies. COVID-19 Treatment Guidelines."
+            }
+        ],
+        "evidence": "<p><a href=\"https://www.acep.org/globalassets/sites/acep/media/covid-19-main/acep-covid-19-ed-management-tool.pdf\" target=\"_blank\" rel=\"noopener\">Recommendations for workup:</a></p>\n<div class=\"acep-2-container\"><a href=\"https://www.acep.org/corona/covid-19-field-guide/assessment/laboratory-abnormalities/\" target=\"_blank\" rel=\"noopener\"><img src=\"https://cdn-web-img.mdcalc.com/content/ACEP_diag_2_012622.png\" width=\"100%\"></a>\n<div></div>\n</div>\n<p>&nbsp;</p>\n<p><a href=\"https://www.acep.org/corona/COVID-19-alert/covid-19-articles/covid-19-ED-management-tool-now-available/\" target=\"_blank\" rel=\"noopener\">Recommendations for treatment:</a></p>\n<div class=\"acep-3-container\"><img src=\"https://cdn-web-img.mdcalc.com/content/ACEP_diag3_v2_mobile_2022.png\" width=\"100%\">\n<div></div>\n</div>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Cough",
+            "Dyspnea",
+            "Fever"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output=[];\n\nvar severity = parseFloat(severity);\n\nif (severity <2) {\n  var priest = parseFloat(sex) + parseFloat(age) + parseFloat(res) + parseFloat(oxy) + parseFloat(bpm) + parseFloat(sys) + parseFloat(temp) + parseFloat(alert) + parseFloat(ins) + parseFloat(status);\n\nvar risk = parseFloat(risk1) + parseFloat(risk2) + parseFloat(risk3) + parseFloat(risk4) + parseFloat(risk5) + parseFloat(risk6) + parseFloat(risk7) + parseFloat(risk8) + parseFloat(risk9) + parseFloat(risk10) + parseFloat(risk11) + parseFloat(risk12) + parseFloat(risk13) + parseFloat(risk14) + parseFloat(risk15) + parseFloat(risk16);\n}\n\nvar result;\nvar wkup;\nvar tx;\nvar admit;\nvar a = '';\nvar b = '';\n\n\nif (priest <=1){\n  b = '1';\n}\n\nif (priest >=2 && priest <=3){\n  b = '2';\n}\n\nif (priest == 4){\n  b = '3';\n}\n\nif (priest == 5){\n  b = '9';\n}\n\nif (priest == 6){\n  b = '15';\n}\n\nif (priest == 7){\n  b = '18';\n}\n\nif (priest == 8){\n  b = '22';\n}\n\nif (priest == 9){\n  b = '26';\n}\n\nif (priest == 10){\n  b = '29';\n}\n\nif (priest == 11){\n  b = '34';\n}\n\nif (priest == 12){\n  b = '38';\n}\n\nif (priest == 13){\n  b = '47';\n}\n\nif (priest == 14){\n  b = '48';\n}\n\nif (priest == 15){\n  b = '50';\n}\n\nif (priest == 16){\n  b = '55';\n}\n\nif (priest >=17){\n  b = '66';\n}\n\n\nif (severity == 0) {\n  result = 'Mild';\n  if (priest <= 4 && risk <= 1) {\n    a = 'PRIEST Score = ' + priest + ' points PLUS ' + risk + ' additional risk factors, ' +  b + '% 30-day probability of adverse outcome (death or organ support)<br/><br/>';\n    wkup = 'Workup: Usually not necessary';\n    admit = 'Disposition: D/C home with CDC patient materials + consider home PulseOx';\n    tx = 'Treatment: Likely candidate for IV Ab or oral antivirals (if early in diagnosis; some risk factors) - follow NIH guidelines and local protocol';\n  } else {\n    a = 'PRIEST Score = ' + priest + ' points PLUS ' + risk + ' additional risk factors, ' +  b + '% 30-day probability of adverse outcome (death or organ support)<br/><br/>';\n    wkup = 'Workup: Usually not necessary';\n    admit = 'Disposition: D/C home with CDC patient materials<br/>Close f/u to PMD + consider home PulseOx + risk of ED return';\n    tx = 'Treatment: Likely candidate for IV Ab or oral antivirals (if early in diagnosis; some risk factors) - follow NIH guidelines and local protocol';\n  }\n} else if (severity == 1) {\n  result = 'Moderate';\n  if (priest <= 4 && risk <= 1) {\n    a = 'PRIEST Score = ' + priest + ' points PLUS ' + risk + ' additional risk factors, ' +  b + '% 30-day probability of adverse outcome (death or organ support)<br/><br/>';\n    wkup = 'Workup: Consider imaging, labs, ECG';\n    admit = 'Disposition: Consider discharge if no concerning workup and patient has close follow-up<br/>Admit if other condition warrants';\n    tx = 'Treatment: If discharged, likely candidate for IV Ab or oral antivirals (if early in diagnosis; some risk factors) - follow NIH guidelines and local protocol<br/>If admitted, unlikely to be a candidate for IV ab and oral antivirals';\n  } else {\n    a = 'PRIEST Score = ' + priest + ' points PLUS ' + risk + ' additional risk factors, ' +  b + '% 30-day probability of adverse outcome (death or organ support)<br/><br/>';\n    wkup = 'Workup: Consider imaging, labs, ECG';\n    admit = 'Disposition: Admit to appropriate level of care';\n    tx = 'Treatment: Consider remdesivir if high risk of progression, unlikely candidate for IV Ab or po antivirals - follow NIH guidelines and local protocol';\n  }\n} else if (severity == 2) {\n  result = 'Severe';\n  wkup = 'Workup: Imaging, labs, ECG';\n  admit = 'Disposition: Clinical decision floor vs intermediate vs ICU; consider transfer if low resources';\n  tx = 'Treatment: Oxygen support, steroids, remdesivir +/- toclizumab<br/>Unlikely candidate for IV Ab or oral antivirals<br/>Follow NIH guidelines and local protocols';\n} else if (severity == 3) {\n  result = 'Critical';\n  wkup = 'Workup: Imaging, labs, ECG';\n  admit = 'Disposition: ICU; consider transfer if low resources, ECMO consult';\n  tx = 'Treatment: Respiratory and oxygen support, steroids, remdesivir, tocilizumab<br/>Unlikely candidate for IV or oral antivirals<br/>Follow NIH guidelines and local protocols';\n} \n\nvar msg = a + wkup + '<br/>' + '<br/>' + admit + '<br/>' + '<br/>' + tx;\n\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text:'',\n    message: 'Click to see recs.'\n});\ncalc_output.push({\n    name: 'outcome',\n    value: result,\n    value_text:'',\n    message: msg\n});",
+        "inputs": [
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<p><img src=\"https://cdn-web-img.mdcalc.com/content/ACEP_diag_1_(mob).png\" width=\"100%\"></p>"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Severity classification",
+                "mdcalc_info_concept": null,
+                "name": "severity",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Mild",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 1
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 2
+                    },
+                    {
+                        "label": "Critical",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Select the patient's severity of disease based on <a href=\"https://www.covid19treatmentguidelines.nih.gov/overview/clinical-spectrum/\" target=\"_blank\">NIH criteria</a> above",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<strong><calculator id =\"10369\">PRIEST Score</calculator></strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": null,
+                "label_en": "Sex",
+                "mdcalc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": null,
+                "label_en": "Age, years",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "16-49",
+                        "value": 0
+                    },
+                    {
+                        "label": "50-65",
+                        "value": 2
+                    },
+                    {
+                        "label": "66-80",
+                        "value": 3
+                    },
+                    {
+                        "label": ">80",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 2,
+                "label_en": "Respiratory rate, breaths per min",
+                "mdcalc_info_concept": null,
+                "name": "res",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<9 ",
+                        "value": 3
+                    },
+                    {
+                        "label": "9-11",
+                        "value": 1
+                    },
+                    {
+                        "label": "12-20",
+                        "value": 0
+                    },
+                    {
+                        "label": "21-24",
+                        "value": 2
+                    },
+                    {
+                        "label": ">24",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Oxygen saturation",
+                "mdcalc_info_concept": null,
+                "name": "oxy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">95%",
+                        "value": 0
+                    },
+                    {
+                        "label": "94-95%",
+                        "value": 1
+                    },
+                    {
+                        "label": "92-93%",
+                        "value": 2
+                    },
+                    {
+                        "label": "<92%",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 2,
+                "label_en": "Heart rate, beats per min",
+                "mdcalc_info_concept": null,
+                "name": "bpm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<41",
+                        "value": 3
+                    },
+                    {
+                        "label": "41-50",
+                        "value": 1
+                    },
+                    {
+                        "label": "51-90",
+                        "value": 0
+                    },
+                    {
+                        "label": "91-110",
+                        "value": 1
+                    },
+                    {
+                        "label": "111-130",
+                        "value": 2
+                    },
+                    {
+                        "label": ">130",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 3,
+                "label_en": "Systolic BP, mmHg",
+                "mdcalc_info_concept": null,
+                "name": "sys",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<91",
+                        "value": 3
+                    },
+                    {
+                        "label": "91-100",
+                        "value": 2
+                    },
+                    {
+                        "label": "101-110",
+                        "value": 1
+                    },
+                    {
+                        "label": "111-219",
+                        "value": 0
+                    },
+                    {
+                        "label": ">219",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 2,
+                "label_en": "Temperature",
+                "mdcalc_info_concept": null,
+                "name": "temp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<35.1°C (<95.18°F)",
+                        "value": 3
+                    },
+                    {
+                        "label": "35.1-36.0°C (95.18 - 96.8°F)",
+                        "value": 1
+                    },
+                    {
+                        "label": "36.1-38.0°C (>96.8 - 100.4°F)",
+                        "value": 0
+                    },
+                    {
+                        "label": "38.1-39.0°C (>100.4 - 102.2°F)",
+                        "value": 1
+                    },
+                    {
+                        "label": ">39.0°C (>102.2°F)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Alertness",
+                "mdcalc_info_concept": null,
+                "name": "alert",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Alert",
+                        "value": 0
+                    },
+                    {
+                        "label": "Confused or not alert",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Inspired oxygen",
+                "mdcalc_info_concept": null,
+                "name": "ins",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Air",
+                        "value": 0
+                    },
+                    {
+                        "label": "Supplemental oxygen",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Performance status",
+                "mdcalc_info_concept": null,
+                "name": "status",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Unrestricted normal activity",
+                        "value": 0
+                    },
+                    {
+                        "label": "Limited strenuous activity, can do light activity",
+                        "value": 1
+                    },
+                    {
+                        "label": "Limited activity, can self-care",
+                        "value": 2
+                    },
+                    {
+                        "label": "Limited self-care",
+                        "value": 3
+                    },
+                    {
+                        "label": "Bed/chair bound, no self-care",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<strong>COVID-19 Risk Factors</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Pulmonary disease",
+                "md_calc_info_concept": null,
+                "name": "risk1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Bronchopulmonary dysplasia, COPD, pulmonary hypertension, PE, bronchietasis, asthma, interstitial lung disease, tuberculosis",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Children with certain underlying conditions",
+                "md_calc_info_concept": null,
+                "name": "risk2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Genetic conditions",
+                "md_calc_info_concept": null,
+                "name": "risk3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Down syndrome, cystic fibrosis, sickle cell disease",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Immunosupression",
+                "md_calc_info_concept": null,
+                "name": "risk4",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Cancer, corticosteroid use, immunosuppression medication, immune deficiencies, HIV, solid organ or blood stem transplantation",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Mental health disorders",
+                "md_calc_info_concept": null,
+                "name": "risk5",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Chronic liver disease",
+                "md_calc_info_concept": null,
+                "name": "risk6",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Chronic kidney disease",
+                "md_calc_info_concept": null,
+                "name": "risk7",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Diabetes mellitus (type I and II)",
+                "md_calc_info_concept": null,
+                "name": "risk8",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Obesity/overweight",
+                "md_calc_info_concept": null,
+                "name": "risk9",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Hypertension",
+                "md_calc_info_concept": null,
+                "name": "risk10",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Neurologic conditions",
+                "md_calc_info_concept": null,
+                "name": "risk11",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Pregnancy (and recent pregnancy)",
+                "md_calc_info_concept": null,
+                "name": "risk12",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Substance use disorders",
+                "md_calc_info_concept": null,
+                "name": "risk13",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Heart conditions",
+                "md_calc_info_concept": null,
+                "name": "risk14",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Cerebrovascular disease",
+                "md_calc_info_concept": null,
+                "name": "risk15",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "severity<2",
+                "default": 0,
+                "label_en": "Thalassemia",
+                "md_calc_info_concept": null,
+                "name": "risk16",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ACEP ED COVID-19 Management Tool, ACEP"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

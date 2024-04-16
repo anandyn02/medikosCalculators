@@ -1,0 +1,258 @@
+{
+    "id": "608",
+    "title": "Ottawa Heart Failure Risk Scale (OHFRS)",
+    "desc": "The Ottawa Heart Failure Risk Scale (OHFRS) Identifies ED patients with heart failure at high risk for serious adverse events.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://onlinelibrary.wiley.com/doi/10.1111/acem.12056/abstract ",
+                "text": "Stiell IG, Clement CM, Brison RJ, et al. A risk scoring system to identify emergency department patients with heart failure at high risk for serious adverse events. Acad Emerg Med. 2013;20(1):17-26."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p><span>Addition of the selected points:</span></p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p>&nbsp;</p> </td> <td> <p><strong>No</strong></p> </td> <td> <p><strong>Yes</strong></p> </td> </tr> <tr> <td colspan=\"3\"> <p><strong>History</strong></p> </td> </tr> <tr> <td> <p><span>Stroke or TIA</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>+1</span></p> </td> </tr> <tr> <td> <p><span>Intubation for respiratory distress</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>+2</span></p> </td> </tr> <tr> <td colspan=\"3\"> <p><strong>Examination</strong></p> </td> </tr> <tr> <td> <p><span>HR </span><span>≥110 </span><span>on ED arrival</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>+2</span></p> </td> </tr> <tr> <td> <p><span>SaO</span><sub><span>2</span></sub><span> &lt;90% on arrival</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>+1</span></p> </td> </tr> <tr> <td> <p><span>Heart rate </span><span>≥110 during 3-minutes walk test (or too ill to perform walk test)</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>+1</span></p> </td> </tr> <tr> <td colspan=\"3\"> <p><strong>Investigations</strong></p> </td> </tr> <tr> <td> <p><span>New ischemic changes on EKG</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>+2</span></p> </td> </tr> <tr> <td> <p><span>Urea </span><span>≥12 mmol/L</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>+1</span></p> </td> </tr> <tr> <td> <p><span>Serum CO</span><sub><span>2</span></sub> <span>≥35 mmol/L (mEq/L)</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>+2</span></p> </td> </tr> <tr> <td> <p><span>Troponin I or T elevated to MI level</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>+2</span></p> </td> </tr> <tr> <td> <p><span>NT-proBNP </span><span>≥5,000 ng/L (pg/mL)</span></p> </td> <td> <p><span>0</span></p> </td> <td> <p><span>+1</span></p> </td> </tr> </tbody> </table> </div>",
+        "facts": "<p>Interpretation:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>Total Score</strong></p> </td> <td> <p><strong>Risk of Serious Adverse Event (SAE)*</strong></p> </td> <td> <p><strong>Category</strong></p> </td> </tr> <tr> <td> <p>0</p> </td> <td> <p>2.8%</p> </td> <td> <p>Low</p> </td> </tr> <tr> <td> <p>1</p> </td> <td> <p>5.1%</p> </td> <td> <p>Medium</p> </td> </tr> <tr> <td> <p>2</p> </td> <td> <p>9.2%</p> </td> <td> <p>Medium</p> </td> </tr> <tr> <td> <p>3</p> </td> <td> <p>15.9%</p> </td> <td> <p>High</p> </td> </tr> <tr> <td> <p>4</p> </td> <td> <p>26.1%</p> </td> <td> <p>High</p> </td> </tr> <tr> <td> <p>5</p> </td> <td> <p>39.8%</p> </td> <td> <p>Very high</p> </td> </tr> <tr> <td> <p>6</p> </td> <td> <p>55.3%</p> </td> <td> <p>Very high</p> </td> </tr> <tr> <td> <p>7</p> </td> <td> <p>69.8%</p> </td> <td> <p>Very high</p> </td> </tr> <tr> <td> <p>8</p> </td> <td> <p>81.2%</p> </td> <td> <p>Very high</p> </td> </tr> <tr> <td> <p>9</p> </td> <td> <p>89.0%</p> </td> <td> <p>Very high</p> </td> </tr> <tr> <td> <p>&gt;9</p> </td> <td> <p>&gt;89.0%</p> </td> <td> <p>Very high</p> </td> </tr> </tbody> </table> <p>&nbsp;<span>*Serious adverse events were defined as:</span></p> <ul> <li><span>30-day all cause mortality, or </span></li> <li><span>Any of the following within 14 days of the index ED visit, regardless of whether initially admitted: </span></li> <ul> <li><span>Admission to critical care or acute monitoring unit (excluding ambulatory telemetry units).</span></li> <li><span>Endotracheal intubation or need for noninvasive ventilation after hospital admission (unless on noninvasive ventilation at home).</span></li> <li><span>MI, as deﬁned by international consensus standards. Either one of the following criteria satisﬁes the diagnosis for an acute, evolving, or recent MI: </span></li> <ul> <li><span>Typical rise and gradual fall of troponin with at least one of the following: </span></li> <ul> <li><span>Ischemic symptoms. </span></li> <li><span>Pathologic Q waves on EKG.</span></li> <li><span>EKG changes indicative of ischemia.</span></li> <li><span>Coronary artery intervention (e.g., coronary angioplasty). </span></li> </ul> <li><span>Pathologic ﬁndings of an acute MI. </span></li> </ul> <li><span>Major procedure, deﬁned as CABG, PCI, other cardiac surgery, or new hemodialysis.</span></li> <li><span>Relapse and hospital admission for patients discharged on the initial ED visit, defined as a return to the ED for any related medical problem within 14 days followed by admission to hospital (relapse to the ED without associated admission was not considered a SAE). </span></li> </ul> </ul> </div>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Dyspnea",
+            "Extremity Edema"
+        ],
+        "disease_treated": [
+            "Heart Failure"
+        ],
+        "logic": "var calc_output = [];\n \n//user inputs & formula\nvar score = parseFloat(stroke) + parseFloat(resp) + parseFloat(heart) + parseFloat(sao) + parseFloat(min) + parseFloat(ecg) + parseFloat(urea) + parseFloat(serum) + parseFloat(troponin) + parseFloat(probnp);\n\n//interpretation \nvar results = {\n\t0: '2.8',\n\t1: '5.1',\n\t2: '9.2',\n\t3: '15.9',\n\t4: '26.1',\n\t5: '39.8',\n\t6: '55.3',\n\t7: '69.8',\n\t8: '81.2',\n\t9: '89.0',\n\t10: '>89.0',\n\t11: '>89.0',\n\t12: '>89.0'\n};\n\n//interpretation applied\nvar result;\nfor (var key in results){\n\tif (key == score){\n\t\tresult = results[key];\n\t}\n}\n\nvar risk = 'Low';\nvar rec = 'Consider discharge with close follow up and return precautions if no other concerning findings';\nif(score > 0){\n\trisk = 'Medium';\n\trec = 'May consider discharge based on patient factors';\n}\nif(score > 2){\n\trisk = 'High';\t\n\trec = 'Not safe for discharge by OHFRS'\n}\nif(score > 4){\n\trisk = 'Very high';\n\trec = 'Not safe for discharge by OHFRS'\n}\nif(score >9){\n\trisk = 'Very high';\n\trec = 'Not safe for discharge by OHFRS'\t\n}\n\n \n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: ''\n});\ncalc_output.push({\n    name: 'percent',\n    value: result,\n    value_text: '%',\n    message: 'Risk of serious adverse event (death, MI, need for ICU/intubation)'\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: 'risk',\n    message: rec\n});",
+        "inputs": [
+            {
+                "subheading": "History",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Stroke or <abbr title='transient ischemic attack'>TIA</abbr>",
+                "name": "stroke",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Intubation for respiratory distress",
+                "name": "resp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Examination",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Heart rate on ED arrival ≥110",
+                "name": "heart",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "SaO₂ <90% on arrival",
+                "name": "sao",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Heart rate ≥110 during 3-minutes walk test (or too ill to perform walk test)",
+                "name": "min",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Investigations",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "New ischemic changes on EKG",
+                "name": "ecg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Urea ≥12 mmol/L (33 mg/dL)",
+                "name": "urea",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Serum CO₂ ≥35 mmol/L (mEq/L)",
+                "name": "serum",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Troponin I or T elevated to MI level",
+                "name": "troponin",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<abbr title='N-terminal prohormone of brain natriuretic peptide'>NT-proBNP</abbr> ≥5,000 ng/L (pg/mL)",
+                "name": "probnp",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ottawa",
+            "ottawa heart failure",
+            "otawa heart failure",
+            "otawa",
+            "heart failure",
+            "heart"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

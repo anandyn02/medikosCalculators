@@ -1,0 +1,223 @@
+{
+    "id": "426",
+    "title": "Shortened Modified Fatigue Impact Scale (MFIS)",
+    "desc": "The Shortened Modified Fatigue Impact Scale (MFIS) measures the impact fatigue takes on a patients’ daily life.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6703889",
+                "text": "Fisk JD, Pontefract A, Ritvo PG, Archibald CJ, Murray TJ. The impact of fatigue on patients with multiple sclerosis. Can J Neurol Sci. 1994 Feb;21(1):9-14."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://walkcoc.nationalmssociety.org/docs/HOM/MSQLI_Manual_and_Forms.pdf",
+                "text": "Larson RD. Psychometric Properties of the Modified Fatigue Impact Scale.International Journal of MS Care. 2013;15(1):15-20. doi:10.7224/1537-2073.2012-019."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6703889",
+                "text": "Freal JE, Kraft GH, Coryell JK.Symptomatic fatigue in multiple sclerosis.Arch Phys Med Rehabil. 1984 Mar;65(3):135-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1579227/",
+                "text": "Kos D, Nagels G, D'Hooghe MB, Duportail M, Kerckhofs E. A rapid screening tool for fatigue impact in multiple sclerosis. BMC Neurology. 2006;6:27. doi:10.1186/1471-2377-6-27."
+            }
+        ],
+        "evidence": "<p>Shortened MFIS = Sum of items 1, 9, 10, 17, 19 (from <calculator id=\"2196\">MFIS</calculator>)</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Multiple Sclerosis"
+        ],
+        "logic": "var calc_output = [];\nvar q1 = parseInt(q1);\nvar q9 = parseInt(q9);\nvar q10 = parseInt(q10);\nvar q17 = parseInt(q17);\nvar q19 = parseInt(q19);\nvar msg = 'The higher the score, the more severely impacted the patient’s daily life.';\nvar mini_msg = ' out of 20 points';\nvar total = q1 + q9 + q10 + q17 + q19;\n\ncalc_output.push({ \n    name: 'mini', \n    value: total.toFixed(0), \n    value_text: '', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '2197_Shortened Modified Fatigue Impact Scale_result', \n    value: total.toFixed(0), \n    value_text: mini_msg, \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "1. I have been less alert.",
+                "mdcalc_info_concept": null,
+                "name": "q1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "9. I have been limited in my ability to do things away from home.",
+                "mdcalc_info_concept": null,
+                "name": "q9",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "10. I have had trouble maintaining physical effort for long periods.",
+                "mdcalc_info_concept": null,
+                "name": "q10",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "17. I have been less able to complete tasks that require physical effort.",
+                "mdcalc_info_concept": null,
+                "name": "q17",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "19. I have had trouble concentrating.",
+                "mdcalc_info_concept": null,
+                "name": "q19",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "mfis",
+            "ms",
+            "multiple sclerosis",
+            "daily life",
+            "function",
+            "short mfis"
+        ],
+        "specialty": [
+            "Geriatrics",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

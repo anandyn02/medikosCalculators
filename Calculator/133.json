@@ -1,0 +1,608 @@
+{
+    "id": "133",
+    "title": "Psoriasis Area and Severity Index (PASI)",
+    "desc": "The Psoriasis Area and Severity Index (PASI) quantifies severity of psoriasis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/357213",
+                "text": "Fredriksson T, Pettersson U. Severe psoriasis--oral therapy with a new retinoid. Dermatologica. 1978;157(4):238-44."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Total PASI = addition of PASI for each body region (i.e., head/neck, upper limbs, trunk, and lower limbs)</p>\n<p dir=\"ltr\">PASI for each body region = lesion severity x&nbsp;percentage of area affected x body surface area, defined as below</p>\n<p dir=\"ltr\">Lesion severity for each body region = erythema + induration/thickness + desquamation/scaling, defined as below</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"224\" /><col width=\"130\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><b>Lesion characteristic (separately scored for head/neck, upper limbs, trunk, and lower limbs)</b></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Erythema</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Slight</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Very severe</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Induration/thickness</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Slight</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Very severe</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Desquamation/scaling</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Slight</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Very severe</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>\n<p dir=\"ltr\"><strong>Percentage of area affected*:</strong></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"224\" /><col width=\"129\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Percentage of area affected</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1-9%</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10-29%</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">30-49%</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">50-69%</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">70-89%</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">90-100%</p>\n</td>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*Validated using palm method of body surface area estimation (patient&rsquo;s palm, excluding fingers, roughly correlates to 1% BSA).</p>\n<p></p>\n<p dir=\"ltr\"><strong>Body surface area:</strong></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"224\" /><col width=\"128\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Region</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><b>Constants</b></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Head/neck</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Upper limbs</p>\n</td>\n<td>\n<p dir=\"ltr\">0.2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Trunk</p>\n</td>\n<td>\n<p dir=\"ltr\">0.3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Lower limbs</p>\n</td>\n<td>\n<p dir=\"ltr\">0.4</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p>Interpretation:</p>\n<p>Higher PASI scores indicate higher severity of psoriasis. Scores range from 0 (no disease) to 72 (maximal disease severity).</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Rash"
+        ],
+        "disease_treated": [
+            "Autoimmune Disorders",
+            "Psoriasis"
+        ],
+        "logic": "var calc_output = [];\nvar lower_percent = parseFloat(lower_percent);\nvar lower_ery = parseFloat(lower_ery);\nvar lower_scale = parseFloat(lower_scale);\nvar lower_indu = parseFloat(lower_indu);\n\nvar head_percent = parseFloat(head_percent);\nvar head_ery = parseFloat(head_ery);\nvar head_scale = parseFloat(head_scale);\nvar head_indu = parseFloat(head_indu);\n\nvar upper_percent = parseFloat(upper_percent);\nvar upper_ery = parseFloat(upper_ery);\nvar upper_scale = parseFloat(upper_scale);\nvar upper_indu = parseFloat(upper_indu);\n\nvar trunk_percent = parseFloat(trunk_percent);\nvar trunk_ery = parseFloat(trunk_ery);\nvar trunk_scale = parseFloat(trunk_scale);\nvar trunk_indu = parseFloat(trunk_indu);\n\nvar head = head_ery + head_scale + head_indu;\nhead = head*head_percent*0.1;\n\nvar upper = upper_ery + upper_scale + upper_indu;\nupper = upper*upper_percent*0.2;\n\nvar trunk = trunk_ery + trunk_scale + trunk_indu;\ntrunk = trunk*trunk_percent*0.3;\n\nvar lower = lower_ery + lower_scale + lower_indu;\nlower = lower*lower_percent*0.4;\n\nvar score = head + upper + trunk + lower;\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score.toFixed(1),\n    value_text: 'points',\n    message: 'Higher scores = higher severity'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score.toFixed(1),\n    value_text: 'points',\n    message: 'Higher PASI scores indicate higher severity of psoriasis; scores range from 0 (no disease) to 72 (maximal disease severity)'   \n});\ncalc_output.push({\n    name: 'Score',\n    value: '',\n    value_text: '',\n    message: 'Head/neck: ' + head.toFixed(1) + '<br/>Upper limbs: ' + upper.toFixed(1) + '<br/>Trunk: ' + trunk.toFixed(1)+ '<br/>Lower limbs: ' + lower.toFixed(1)   \n});\n\n",
+        "inputs": [
+            {
+                "subheading": "Head/neck",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Erythema",
+                "name": "head_ery",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Induration/thickness",
+                "name": "head_indu",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Desquamation/scaling",
+                "name": "head_scale",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Percentage of head/neck affected",
+                "name": "head_percent",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0%",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-9%",
+                        "value": 1
+                    },
+                    {
+                        "label": "10-29%",
+                        "value": 2
+                    },
+                    {
+                        "label": "30-49%",
+                        "value": 3
+                    },
+                    {
+                        "label": "50-69%",
+                        "value": 4
+                    },
+                    {
+                        "label": "70-89%",
+                        "value": 5
+                    },
+                    {
+                        "label": "90-100%",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Upper limbs",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Erythema",
+                "name": "upper_ery",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Induration/thickness",
+                "name": "upper_indu",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Desquamation/scaling",
+                "name": "upper_scale",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Percentage of upper limbs affected",
+                "name": "upper_percent",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0%",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-9%",
+                        "value": 1
+                    },
+                    {
+                        "label": "10-29%",
+                        "value": 2
+                    },
+                    {
+                        "label": "30-49%",
+                        "value": 3
+                    },
+                    {
+                        "label": "50-69%",
+                        "value": 4
+                    },
+                    {
+                        "label": "70-89%",
+                        "value": 5
+                    },
+                    {
+                        "label": "90-100%",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Trunk",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Erythema",
+                "name": "trunk_ery",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Induration/thickness",
+                "name": "trunk_indu",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Desquamation/scaling",
+                "name": "trunk_scale",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Percentage of trunk affected",
+                "name": "trunk_percent",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0%",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-9%",
+                        "value": 1
+                    },
+                    {
+                        "label": "10-29%",
+                        "value": 2
+                    },
+                    {
+                        "label": "30-49%",
+                        "value": 3
+                    },
+                    {
+                        "label": "50-69%",
+                        "value": 4
+                    },
+                    {
+                        "label": "70-89%",
+                        "value": 5
+                    },
+                    {
+                        "label": "90-100%",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Lower limbs",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Erythema",
+                "name": "lower_ery",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Induration/thickness",
+                "name": "lower_indu",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Desquamation/scaling",
+                "name": "lower_scale",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slight",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Percentage of lower limbs affected",
+                "name": "lower_percent",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0%",
+                        "value": 0
+                    },
+                    {
+                        "label": "1-9%",
+                        "value": 1
+                    },
+                    {
+                        "label": "10-29%",
+                        "value": 2
+                    },
+                    {
+                        "label": "30-49%",
+                        "value": 3
+                    },
+                    {
+                        "label": "50-69%",
+                        "value": 4
+                    },
+                    {
+                        "label": "70-89%",
+                        "value": 5
+                    },
+                    {
+                        "label": "90-100%",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Pasi",
+            "psoriasis",
+            "pasi",
+            "psoriasis severity"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Dermatology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

@@ -1,0 +1,214 @@
+{
+    "id": "77",
+    "title": "Mehran Score for Post-PCI Contrast Nephropathy",
+    "desc": "The Mehran Score for Post-PCI Contrast Nephropathy predicts risk of contrast-induced nephropathy (CIN) after percutaneous coronary intervention (PCI).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.sciencedirect.com/science/article/pii/S0735109704014457?via%3Dihub",
+                "text": "Mehran R, Aymong ED, Nikolsky E, et al. A simple risk score for prediction of contrast-induced nephropathy after percutaneous coronary intervention: development and initial validation. J Am Coll Cardiol. 2004;44(7):1393-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Hypotension*</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Intra-aortic balloon pump</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Congestive heart failure**</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Age &gt;75 years</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Anemia***</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Diabetes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Contrast media volume</p>\n</td>\n<td>\n<p dir=\"ltr\">-</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point per 100 mL contrast</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><calculator id=\"76\">eGFR</calculator>, mL/min/1.73 m<sup>2</sup></p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;60</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">40 to &lt;60</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">20 to &lt;40</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;20</p>\n</td>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Systolic blood pressure &lt;80 mmHg for at least 1 hour requiring inotropic support with medications or intra-aortic balloon pump within 24 hours periprocedurally.</p>\n<p dir=\"ltr\">**CHF class III/IV by New York Heart Association Classification and/or history of pulmonary edema.</p>\n<p><span id=\"docs-internal-guid-63b4dc1a-7fff-e618-a0a5-9d20bfb3af64\">***Baseline hematocrit value &lt;39% for men and &lt;36% for women.</span></p>\n<p><span>Note: the original study includes serum creatinine (as a dichotomous variable) as an alternative to eGFR, and adds 4 points for Cr &gt;1.5 mg/dL. We have chosen to use eGFR in this calculator as it&nbsp;tends to be a more accurate measure of renal function than creatinine alone.</span></p>",
+        "facts": "<p>Interpretation:</p>\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong></strong></p>\n<p dir=\"ltr\"><strong>CIN Risk Score</strong></p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong></strong></p>\n<p dir=\"ltr\"><strong>Risk of post-PCI CIN</strong><b></b></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Any CIN</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><b>CIN requiring dialysis</b></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;5</p>\n</td>\n<td>\n<p dir=\"ltr\">7.5%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.04%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-10</p>\n</td>\n<td>\n<p dir=\"ltr\">14.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.12%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">11-15</p>\n</td>\n<td>\n<p dir=\"ltr\">26.1%</p>\n</td>\n<td>\n<p dir=\"ltr\">1.09%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;16</p>\n</td>\n<td>\n<p dir=\"ltr\">57.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">12.6%</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><span id=\"docs-internal-guid-1a763578-7fff-d90c-8e5f-df1485769e70\"></span><span id=\"docs-internal-guid-1a763578-7fff-d90c-8e5f-df1485769e70\"><br /></span></p>",
+        "estimation": [
+            {
+                "name": "Volume",
+                "unit": "volume",
+                "error_min": "0",
+                "error_max": "20000",
+                "warn_min": "1",
+                "warn_max": "5000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL",
+                "units_us": "mL"
+            }
+        ],
+        "primary_complains": [
+            "Vomiting",
+            "Fatigue"
+        ],
+        "disease_treated": [
+            "Acute Kidney Injury",
+            "Chronic Kidney Disease",
+            "Kidney Failure"
+        ],
+        "logic": "var calc_output = [];\n\nvar a = parseFloat(hypo);\nvar b = parseFloat(pump);\nvar c = parseFloat(chf);\nvar d = parseFloat(age);\nvar e = parseFloat(anemia);\nvar f = parseFloat(diab);\nvar g = parseFloat(cmv)/100;\n g = Math.floor(g);\nvar h = parseFloat(gfr);\n\nvar score = a + b + c + d + e + f + g + h; \n\nvar risk1;\n\nvar risk2;\n\nif (score <= 5) {\n\trisk1 = '7.5';\n  \trisk2 = '0.04';\n}\nelse if (score > 5 && score <= 10) { \n\trisk1 = '14.0';\n  \trisk2 = '0.12';\n}\nelse if (score > 10 && score <= 15) { \n\trisk1 = '26.1';\n  \trisk2 = '1.09';\n}\nelse if (score >= 16) { \n\trisk1 = '57.3';\n  \trisk2 = '12.6';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: risk1,\n    value_text: '%',\n    message: 'Risk of any post-PCI CIN'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'CIN Risk Score'   \n    });\ncalc_output.push({\n    name: 'risk1',\n    value: risk1, \n    value_text: '%',\n    message: 'Risk of any post-PCI CIN'\n});\ncalc_output.push({\n    name: 'risk2',\n    value: risk2, \n    value_text: '%',\n    message: 'Risk of post-PCI CIN requiring dialysis'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hypotension",
+                "name": "hypo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "SBP <80 for ≥1 hr requiring inotrope or balloon pump within 24 hrs of cath",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intra-aortic balloon pump",
+                "name": "pump",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Congestive heart failure",
+                "name": "chf",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "CHF class III/IV by New York Heart Association Classification and/or history of pulmonary edema",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >75 years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anemia",
+                "name": "anemia",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Baseline hematocrit value <39% for men and <36% for women",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Diabetes",
+                "name": "diab",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Contrast media volume",
+                "name": "cmv",
+                "optional": false,
+                "type": "textbox",
+                "unit": "volume"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id = '76'>eGFR</calculator>, mL/min/1.73 m²",
+                "name": "gfr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥60",
+                        "value": 0
+                    },
+                    {
+                        "label": "40 to <60",
+                        "value": 2
+                    },
+                    {
+                        "label": "20 to <40",
+                        "value": 4
+                    },
+                    {
+                        "label": "<20",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Percutaneous coronary intervention",
+            "CIN",
+            "PCI"
+        ],
+        "specialty": [
+            "Nephrology",
+            "Cardiology",
+            "Radiology",
+            "Internal Medicine",
+            "Hospitalist Medicine"
+        ]
+    }
+}

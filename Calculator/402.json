@@ -1,0 +1,129 @@
+{
+    "id": "402",
+    "title": "Urine Anion Gap",
+    "desc": "The Urine Anion Gap is used for differential diagnosis in metabolic acidosis using measured ions in the urine.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3752165",
+                "text": "Goldstein MB, Bear R, Richardson RM, Marsden PA, Halperin ML. The urine anion gap: a clinically useful index of ammonium excretion. Am J Med Sci. 1986 Oct;292(4):198-202."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Urine Anion Gap (mEq/L) = Na<sup>+</sup> + K<sup>+</sup> - Cl<sup>-</sup></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Urine Potassium",
+                "unit": "k_urine",
+                "error_min": "-1",
+                "error_max": "300",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            },
+            {
+                "name": "Urine Chloride",
+                "unit": "cl_urine",
+                "error_min": "-1",
+                "error_max": "301",
+                "warn_min": "1",
+                "warn_max": "151",
+                "conversion": "1",
+                "normal_max_si": "250",
+                "normal_max_us": "250",
+                "normal_min_si": "80",
+                "normal_min_us": "80",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            },
+            {
+                "name": "Urine Sodium",
+                "unit": "na_urine",
+                "error_min": "0",
+                "error_max": "500",
+                "warn_min": "1",
+                "warn_max": "260",
+                "conversion": "1",
+                "normal_max_si": "260",
+                "normal_max_us": "260",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "Diarrhea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acid-Base Disturbance"
+        ],
+        "logic": "var calc_output = [];\nvar v = 0;\nv = parseFloat(na) + parseFloat(k) - parseFloat(cl);\nvar msg = '';\nvar mini_msg = '';\nvar msgalt = '';\n\n\nif (v > 0) {\n  msg = 'Urine anion gap positive';\n  msgalt =\n    'This suggests LOW urinary NH4+ and Renal Tubular Acidosis (RTA) if >10.';\n  mini_msg = 'Positive'\n}\nif (v < 0) {\n  msg = 'Urine anion gap negative';\n  msgalt =\n    'This suggests HIGH urinary NH4+ and possibly diarrheal cause if < -10.';\n  mini_msg = 'Negative'\n}\nif (v == 0) {\n  msg = 'Urine anion gap neutral';\n  mini_msg = 'Neutral'\n}\n\nif (UOMSYSTEM == false) {\n  unit = 'mmol/L';\n}\n\n\nif (UOMSYSTEM == true) {\n  unit = 'mEq/L';\n}\n\ncalc_output.push({\n  name: 'mini',\n  value: v.toFixed(1),\n  value_text: unit,\n  message: mini_msg + ' Urine Anion Gap'\n});\ncalc_output.push({\n  name: '2045_Urine Anion Gap_result',\n  value: v.toFixed(1),\n  value_text: unit,\n  message: msg\n});\ncalc_output.push({\n  name: '2045_Urine Anion Gap_interpretation',\n  value: ' ',\n  value_text: ' ',\n  message: msgalt\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Urine sodium",
+                "name": "na",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na_urine"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Urine potassium",
+                "name": "k",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "k_urine"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Urine chloride",
+                "name": "cl",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cl_urine"
+            }
+        ],
+        "can_search": [
+            "metabolic acidosis",
+            "nh4",
+            "urine anion gap",
+            "anion gap",
+            "urine ag",
+            "urine nh4"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Pediatrics",
+            "Urology"
+        ]
+    }
+}

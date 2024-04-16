@@ -1,0 +1,174 @@
+{
+    "id": "613",
+    "title": "CHADS<sub>2</sub> Score for Atrial Fibrillation Stroke Risk",
+    "desc": "The CHADS2 score estimates stroke risk in patients with atrial fibrillation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11401607",
+                "text": "Gage BF, Waterman AD, Shannon W, Boechler M, Rich MW, Radford MJ. Validation of clinical classification schemes for predicting stroke: results from the National Registry of Atrial Fibrillation. JAMA. 2001 Jun 13;285(22):2864-70."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18574273",
+                "text": "Singer DE, Albers GW, Dalen JE, Fang MC, Go AS, Halperin JL, Lip GY, Manning WJ; American College of Chest Physicians. Antithrombotic therapy in atrial fibrillation: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines (8th Edition). Chest. 2008 Jun;133(6 Suppl):546S-592S. doi: 10.1378/chest.08-0678."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22473219",
+                "text": "Olesen JB, Torp-Pedersen C, Hansen ML, Lip GY. The value of the CHA2DS2-VASc score for refining stroke risk stratification in patients with atrial fibrillation with a CHADS2 score 0-1: a nationwide cohort study. Thromb Haemost. 2012 Jun;107(6):1172-9. doi: 10.1160/TH12-03-0175."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22503581",
+                "text": "Yarmohammadi H, Varr BC, Puwanant S, Lieber E, Williams SJ, Klostermann T, Jasper SE, Whitman C, Klein AL. Role of CHADS2 score in evaluation of thromboembolic risk and mortality in patients with atrial fibrillation undergoing direct current cardioversion (from the ACUTE Trial Substudy). Am J Cardiol. 2012 Jul 15;110(2):222-6. doi: 10.1016/j.amjcard.2012.03.017."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>",
+        "facts": "<p>See formula table, below:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\" style=\"width: 80.6005%;\">\n<tbody>\n<tr>\n<th style=\"text-align: left; width: 80.2432%;\">Variable</th>\n<th style=\"width: 19.7568%;\">Points</th>\n</tr>\n<tr>\n<td style=\"width: 80.2432%;\">Congestive heart failure history</td>\n<td style=\"width: 19.7568%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 80.2432%;\">Hypertension history</td>\n<td style=\"width: 19.7568%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 80.2432%;\">Age &ge; 75</td>\n<td style=\"width: 19.7568%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 80.2432%;\">Diabetes mellitus history</td>\n<td style=\"width: 19.7568%;\">1</td>\n</tr>\n<tr>\n<td style=\"width: 80.2432%;\">Stroke or TIA symptoms previously</td>\n<td style=\"width: 19.7568%;\">2</td>\n</tr>\n</tbody>\n</table>\n<p></p>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Palpitations",
+            "Shortness of Breath",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Arrhythmia",
+            "Atrial Fibrillation",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output=[]; \nvar msg='';\nvar mini_msg=''; \nif(parseFloat(stroke)==2){\n\tmsg+='Note: While history of stroke provides 2 points, most physicians would move these patients directly to the high risk group (>8.5% risk of event per year if no coumadin.) <br/><br/>By points directly:<br/>'\n} \nvar u=parseFloat(heart_failure)+parseFloat(hypertension)+parseFloat(age_75)+parseFloat(diabetes)+parseFloat(stroke); \nif(u==0){\n\tmsg+='Low risk of thromboembolic event. 1.9% risk of event per year if no coumadin.'; mini_msg='1.9% risk of event per year.'\n} \nif(u==1){\n\tmsg+='Intermediate risk of thromboembolic event. 2.8% risk of event per year if no coumadin.'; \n\tmini_msg='2.8% risk of event per year.'\n} \nif(u==2){\n\tmsg+='Intermediate risk of thromboembolic event. 4.0% risk of event per year if no coumadin.'; mini_msg='4.0% risk of event per year.'\n} \nif(u==3){\n\tmsg+='High risk of thromboembolic event. 5.9% risk of event per year if no coumadin.'; mini_msg='5.9% risk of event per year.'\n} \nif(u==4){\n\tmsg+='High risk of thromboembolic event. 8.5% risk of event per year if no coumadin.'; mini_msg='8.5% risk of event per year.'\n} \nif(u==5){\n\tmsg+='High risk of thromboembolic event. 12.5% risk of event per year if no coumadin.'; mini_msg='12.5% risk of event per year.'\n} \nif(u==6){\n\tmsg+='High risk of thromboembolic event. 18.2% risk of event per year if no coumadin.'; mini_msg='18.2% risk of event per year.'\n} \nmsg+='<br/><br/>The adjusted stroke rate was the expected stroke rate per 100 person-years derived from the multivariable model assuming that aspirin was not taken.';\n\ncalc_output.push({\n\tname:'mini',\n\tvalue:u.toFixed(0),\n\tvalue_text:'points',\n\tmessage:mini_msg\n}); \ncalc_output.push({\n\tname:'40_CHADS2 Score_result',\n\tvalue:u.toFixed(0),\n\tvalue_text:'points',\n\tmessage:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Congestive heart failure'>CHF</abbr> history",
+                "md_calc_info_concept": null,
+                "name": "heart_failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hypertension history",
+                "md_calc_info_concept": null,
+                "name": "hypertension",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥ 75 years",
+                "md_calc_info_concept": null,
+                "name": "age_75",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Diabetes mellitus history",
+                "md_calc_info_concept": null,
+                "name": "diabetes",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stroke or TIA symptoms previously",
+                "md_calc_info_concept": null,
+                "name": "stroke",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "tia",
+            "afib",
+            "chads",
+            "stroke",
+            "cva",
+            "atrial fibrillation",
+            "stroke risk",
+            "chads2"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Primary Care"
+        ]
+    }
+}

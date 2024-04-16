@@ -1,0 +1,522 @@
+{
+    "id": "88",
+    "title": "Systemic Lupus Erythematosus Disease Activity Index 2000 (SLEDAI-2K)",
+    "desc": "The Systemic Lupus Erythematosus Disease Activity Index 2000 (SLEDAI-2K) stratifies severity of systemic lupus erythematosus (SLE).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://www.jrheum.org/content/29/2/288.long",
+                "text": "Gladman DD, Ibañez D, Urowitz MB. Systemic lupus erythematosus disease activity index 2000. J Rheumatol. 2002;29(2):288-91."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"112\" /><col width=\"179\" /><col width=\"83\" /><col width=\"74\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Recent onset seizure</strong></p>\n<p dir=\"ltr\">Exclude metabolic, infectious, or drug causes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Psychosis</strong></p>\n<p dir=\"ltr\">Altered ability to function in normal activity due to severe disturbance in the perception of reality (include hallucinations, incoherence, marked loose associations, impoverished thought content, marked illogical thinking, and bizarre, disorganized, or catatonic behavior); exclude uremia and drug causes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Organic brain syndrome</strong></p>\n<p dir=\"ltr\">Altered mental function with impaired orientation, memory, or other intellectual function (with rapid onset and fluctuating clinical features), inability to sustain attention to environment, and &ge;2 of the following: perceptual disturbance, incoherent speech, insomnia or daytime drowsiness, and increased or decreased psychomotor activity; exclude metabolic, infectious, or drug causes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Visual disturbance</strong></p>\n<p dir=\"ltr\">Retinal changes of SLE (include cytoid bodies, retinal hemorrhages, serous exudates or hemorrhages in choroid, and optic neuritis); exclude hypertensive, infectious, or drug causes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>New onset sensory or motor neuropathy involving cranial nerves</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Lupus headache</strong></p>\n<p dir=\"ltr\">Severe, persistent headache (may be migrainous but must be nonresponsive to narcotic analgesia)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>New onset stroke</strong></p>\n<p dir=\"ltr\">Exclude arteriosclerosis</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Vasculitis</strong></p>\n<p dir=\"ltr\">Ulceration, gangrene, tender finger nodules, periungual infarction, splinter hemorrhages or biopsy, and angiogram proof of vasculitis</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Arthritis</strong></p>\n<p dir=\"ltr\">&ge;2 joints with pain and signs of inflammation (i.e., tenderness, swelling, or effusion)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Myositis</strong></p>\n<p dir=\"ltr\">Proximal muscle aching/weakness associated with elevated <abbr title=\"Creatine phosphokinase\">CPK</abbr>/aldolase, <abbr title=\"Electromyogram\">EMG</abbr> changes, or a biopsy showing myositis</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Heme-granular or RBC urinary casts</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Hematuria</strong></p>\n<p dir=\"ltr\">&gt;5 RBC/high-power field; exclude stone, infection, or other cause</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong><calculator id=\"3945\">Proteinuria</calculator></strong></p>\n<p dir=\"ltr\">&gt;0.5 g/24 hours</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Pyuria</strong></p>\n<p dir=\"ltr\">&gt;5 WBC/high-power field; exclude infection</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Inflammatory-type rash</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Alopecia</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Oral or nasal mucosal ulcers</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Pleuritic chest pain with pleural rub/effusion or pleural thickening</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Pericarditis</strong></p>\n<p dir=\"ltr\">Pericardial pain with &ge;1 of the following: rub, effusion, or EKG/echocardiogram confirmation</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Low complement</strong></p>\n<p dir=\"ltr\">CH50, C3, or C4 decreased below lower limit of normal for lab</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>High DNA binding</strong></p>\n<p dir=\"ltr\">Increased above normal range for lab</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Temp &gt;100.4&deg;F (38&deg;C)</strong></p>\n<p dir=\"ltr\">Exclude infectious causes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Platelets &lt;100 x 10<sup>9</sup>/L</strong></p>\n<p dir=\"ltr\">Exclude drug causes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>WBC &lt;3 x 10<sup>9</sup>/L</strong></p>\n<p dir=\"ltr\">Exclude drug causes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-becb56a0-7fff-f112-cffc-f7296797782b\"></span><span id=\"docs-internal-guid-becb56a0-7fff-f112-cffc-f7296797782b\"><br /></span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<p dir=\"ltr\"><span id=\"docs-internal-guid-eb8a68a1-7fff-9e9c-8ea6-dee21aea5a73\">The most appropriate SLEDAI-2K cut-off score for definition of active disease which links to the need to increase therapy is 3 or 4, and trending changes over time in order to help with decision-making is recommended (<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/21245073\" target=\"_blank\">Yee 2011</a>).</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Fever",
+            "Headache",
+            "Hematuria",
+            "Rash",
+            "Seizure"
+        ],
+        "disease_treated": [
+            "Autoimmune Disorders"
+        ],
+        "logic": "var calc_output = [];\n\nvar a = parseFloat(wbc);\nvar b = parseFloat(platelets);\nvar c = parseFloat(temp);\nvar d = parseFloat(dna);\nvar e = parseFloat(low);\nvar f = parseFloat(pericarditis);\nvar g = parseFloat(pleural);\nvar h = parseFloat(oral);\nvar i = parseFloat(alopecia);\nvar j = parseFloat(rash);\nvar k = parseFloat(pyuria);\nvar l = parseFloat(proteinuria);\nvar m = parseFloat(hema);\nvar n = parseFloat(heme);\nvar o = parseFloat(myositis);\nvar p = parseFloat(arthritis);\nvar q = parseFloat(vasculitis);\nvar r = parseFloat(stroke);\nvar s = parseFloat(lupus);\nvar t = parseFloat(nerves);\nvar u = parseFloat(visual);\nvar v = parseFloat(brain);\nvar w = parseFloat(psychosis);\nvar x = parseFloat(seizure);\n\nvar score = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q + r + s + t + u + v + w + x; \n\nvar msg = 'Authors recommend a cutoff of 3 or 4 to define active disease and the need to increase therapy (see Evidence for details)';\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message:'>3 or 4 consistent with active disease'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: msg   \n    });\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recent onset seizure",
+                "name": "seizure",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Exclude metabolic, infectious, or drug causes",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Psychosis",
+                "name": "psychosis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Altered ability to function in normal activity due to severe disturbance in the perception of reality (include hallucinations, incoherence, marked loose associations, impoverished thought content, marked illogical thinking, and bizarre, disorganized, or catatonic behavior); exclude uremia and drug causes",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Organic brain syndrome",
+                "name": "brain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Altered mental function with impaired orientation, memory, or other intellectual function (with rapid onset and fluctuating clinical features), inability to sustain attention to environment, and ≥2 of the following: perceptual disturbance, incoherent speech, insomnia or daytime drowsiness, and increased or decreased psychomotor activity; exclude metabolic, infectious, or drug causes",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Visual disturbance",
+                "name": "visual",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Retinal changes of SLE (include cytoid bodies, retinal hemorrhages, serous exudates or hemorrhages in choroid, and optic neuritis); exclude hypertensive, infectious, or drug causes",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "New onset sensory or motor neuropathy involving cranial nerves",
+                "name": "nerves",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lupus headache",
+                "name": "lupus",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Severe, persistent headache (may be migrainous but must be nonresponsive to narcotic analgesia)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "New onset stroke",
+                "name": "stroke",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Exclude arteriosclerosis",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Vasculitis",
+                "name": "vasculitis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ulceration, gangrene, tender finger nodules, periungual infarction, splinter hemorrhages or biopsy, and angiogram proof of vasculitis",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Arthritis",
+                "name": "arthritis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "≥2 joints with pain and signs of inflammation (i.e., tenderness, swelling, or effusion)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Myositis",
+                "name": "myositis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Proximal muscle aching/weakness associated with elevated <abbr title = \"Creatine phosphokinase\">CPK</abbr>/aldolase, <abbr title = \"Electromyogram\">EMG</abbr> changes, or a biopsy showing myositis",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Heme-granular or RBC urinary casts",
+                "name": "heme",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hematuria",
+                "name": "hema",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": ">5 RBC/high-power field; exclude stone, infection, or other cause",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id = '3945'>Proteinuria</calculator>",
+                "name": "proteinuria",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": ">0.5 g/24 hours",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pyuria",
+                "name": "pyuria",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": ">5 WBC/high-power field; exclude infection",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Inflammatory-type rash",
+                "name": "rash",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Alopecia",
+                "name": "alopecia",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Oral or nasal mucosal ulcers",
+                "name": "oral",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pleuritic chest pain with pleural rub/effusion or pleural thickening",
+                "name": "pleural",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pericarditis",
+                "name": "pericarditis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Pericardial pain with ≥1 of the following: rub, effusion, or EKG/echocardiogram confirmation",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Low complement",
+                "name": "low",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "CH50, C3, or C4 decreased below lower limit of normal for lab",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "High DNA binding",
+                "name": "dna",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Increased above normal range for lab",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Temp >100.4 °F (38°C)",
+                "name": "temp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Exclude infectious causes",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Platelets <100 x 10<sup>9</sup>/L ",
+                "name": "platelets",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Exclude drug causes",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "WBC <3 x 10<sup>9</sup>/L",
+                "name": "wbc",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Exclude drug causes",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "SLE",
+            "clinical activity",
+            "sle severity",
+            "sle activity"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Rheumatology"
+        ]
+    }
+}

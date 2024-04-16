@@ -1,0 +1,168 @@
+{
+    "id": "635",
+    "title": "Fetal Biophysical Profile (BPP) Score",
+    "desc": "The Fetal Biophysical Profile (BPP) Score assesses for fetal distress based on sonographic and nonstress testing.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7355965",
+                "text": "Manning FA, Platt LD, Sipos L. Antepartum fetal evaluation: development of a fetal biophysical profile. Am J Obstet Gynecol. 1980;136(6):787-95."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": "Bloom S, Cunningham F, Spong CY et al. Williams Obstetrics 24/E. McGraw-Hill Education / Medical; 2014."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8203424",
+                "text": "Nageotte MP, Towers CV, Asrat T, Freeman RK. Perinatal outcome with the modified biophysical profile. Am J Obstet Gynecol. 1994;170(6):1672-6."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p> <table> <tbody> <tr> <td>&nbsp;</td> <td> <p><strong>0 points</strong></p> </td> <td> <p><strong>2 points</strong></p> </td> </tr> <tr> <td> <p>Fetal breathing</p> </td> <td> <p>&lt;30 sec of breathing within 30 min</p> </td> <td> <p>≥1 episode of rhythmic breathing lasting ≥30 sec within 30 min</p> </td> </tr> <tr> <td> <p>Fetal movement</p> </td> <td> <p>&lt;3 discrete movements</p> </td> <td> <p>≥3 discrete body or limb movements within 30 min</p> </td> </tr> <tr> <td> <p>Fetal tone</p> </td> <td> <p>0 extension/flexion events</p> </td> <td> <p>≤1 episode of extremity extension and subsequent return to flexion</p> </td> </tr> <tr> <td> <p>Amniotic fluid volume*</p> </td> <td> <p>Largest single vertical pocket ≤2 cm</p> </td> <td> <p>A pocket of amniotic fluid ≥2 cm in 2 perpendicular planes (2x2 cm pocket)</p> </td> </tr> <tr> <td>&nbsp;Nonstress test**</td> <td> <p>0 or 1 acceleration within 20–40 min</p> </td> <td>≥2 accelerations of ≥15 beats/min for ≥15 sec within 20–40 min&nbsp;</td> </tr> </tbody> </table> <p>*If largest vertical amniotic fluid pocket ≤2 cm.</p> <p>**May omit if all four sonographic components are normal.</p>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>BPP Score</strong></p> </td> <td> <p><strong>Interpretation</strong></p> </td> <td> <p><strong>Recommendation</strong></p> </td> </tr> <tr> <td> <p>10</p> </td> <td> <p>Normal, non-asphyxiated fetus</p> </td> <td> <p>No fetal indication for intervention; repeat test weekly except in diabetic patients and post-term pregnancy (twice weekly)</p> </td> </tr> <tr> <td> <p>8/10, Normal AFV</p> </td> <td> <p>Normal, non-asphyxiated fetus</p> </td> <td> <p>No fetal indication for intervention; repeat testing per protocol</p> </td> </tr> <tr> <td> <p>8/8, NST not done</p> </td> <td> <p>Normal, non-asphyxiated fetus</p> </td> <td> <p>No fetal indication for intervention; repeat testing per protocol</p> </td> </tr> <tr> <td> <p>8/10, Decreased AFV</p> </td> <td> <p>Chronic fetal asphyxia suspected</p> </td> <td> <p>Deliver</p> </td> </tr> <tr> <td> <p>6</p> </td> <td> <p>Possible fetal asphyxia</p> </td> <td> <p>If abnormal AFV, deliver. If normal AFV, delivery recommended if &gt;36 weeks with favorable cervix or repeat test ≤6; if repeat test &gt;6, observe and repeat per protocol</p> </td> </tr> <tr> <td> <p>4</p> </td> <td> <p>Probable fetal asphyxia</p> </td> <td> <p>Repeat testing same day; if ≤6, deliver</p> </td> </tr> <tr> <td> <p>0–2</p> </td> <td> <p>Almost certain fetal asphyxia</p> </td> <td> <p>Deliver</p> </td> </tr> </tbody> </table> <p>From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/7355965\" target=\"_blank\">Manning 1980</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Pregnancy"
+        ],
+        "logic": "var calc_output = [];\n\nvar breathing = parseFloat(breathing)\nvar movement = parseFloat(movement)\nvar tone = parseFloat(tone)\nvar volume = parseFloat(volume)\n\nvar test \n\nif (breathing + movement + tone + volume == 8) {\n    var test_normal = parseFloat(test_normal)\n    if (test_normal == 3) {\n        test = 0\n    } else {\n        test = test_normal\n    }\n}\nelse {\n    test = parseFloat(test)\n}\n\nvar u = breathing + movement + tone + volume + test\nvar interpretation;\nvar msg;\nvar mini_msg;\n\n// normal and NST not done (8/8)\nif (u > 10) {\n    u = 8\n    interpretation = 'Normal, non-asphyxiated fetus (sonography normal, NST omitted)'; \n    msg = 'No fetal indication for intervention; repeat test weekly except in diabetic patients and post-term pregnancy (twice weekly)'\n    mini_msg = 'No intervention'\n    }\n// normal and NST done (10/10)\nelse if (u == 10) {\n    interpretation = 'Normal, non-asphyxiated fetus'; \n    msg = 'No fetal indication for intervention; repeat test weekly except in diabetic patients and post-term pregnancy (twice weekly)'\n    mini_msg = 'No intervention'\n}\n// 8/10 \nelse if (u == 8) {\n    if (volume == 2) { // normal AFV\n    interpretation = 'Normal, non-asphyxiated fetus (normal AFV)'; \n    msg = 'No fetal indication for intervention; repeat testing per protocol'\n    mini_msg = 'Repeat testing'\n    }\n    else if (volume == 0) { // abnormal AFV\n    interpretation = 'Chronic fetal asphyxia suspected (decreased AFV)'; \n    msg = 'Delivery recommended'\n    mini_msg = 'Delivery recomended'\n    }\n}\n// 6 Normal or abnormal AFV\nif (u == 6) {\n    if (volume == 2) { // normal AFV\n        interpretation = 'Possible fetal asphyxia, normal AFV'; \n        msg = 'Delivery recommended if >36 weeks with favorable cervix or repeat test ≤6; if repeat test >6, observe and repeat per protocol'\n        mini_msg = 'Delivery or repeat testing recommended'\n    }\n    else if (volume == 0) { // abnormal AFV\n        interpretation = 'Possible fetal asphyxia, abnormal AFV'\n        msg = 'Delivery recommended'\n        mini_msg = 'Delivery recomended'\n    }\n}\n\nif (u == 4) {\n    interpretation = 'Probable fetal asphyxia'; \n    msg = 'Repeat testing same day; if ≤6, delivery recommended'\n    mini_msg = 'Repeat testing'\n}\n\nif  (u <= 2) {\n    interpretation = 'Almost certain fetal asphyxia'; \n    msg = 'Delivery recomended'\n    mini_msg = 'Delivery recomended'\n}\n\n// result on app\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mini_msg\n});\n\n// result on web - column 1\ncalc_output.push({\n    name: 'score',\n    value: u,\n    value_text: 'points',\n    message: interpretation\n});\n// result on web - column 2\ncalc_output.push({\n    name: 'interpretation',\n    value: '',\n    value_text: '',\n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Fetal breathing",
+                "name": "breathing",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<30 sec of breathing within 30 min",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥1 episode of rhythmic breathing lasting ≥30 sec within 30 min",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Fetal movement",
+                "name": "movement",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<3 discrete movements",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥3 discrete body or limb movements within 30 min",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Fetal tone",
+                "name": "tone",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0 extension/flexion events",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥1 episode of extremity extension and subsequent return to flexion",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Amniotic fluid volume (AFV)",
+                "name": "volume",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Largest single vertical pocket ≤2 cm",
+                        "value": 0
+                    },
+                    {
+                        "label": "A pocket of amniotic fluid ≥2 cm in 2 perpendicular planes (2x2 cm pocket)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "If largest vertical amniotic fluid pocket ≤2 cm",
+                "type": "radio"
+            },
+            {
+                "conditionality": "breathing + movement + tone + volume < 8",
+                "default": null,
+                "label_en": "Nonstress test (NST)",
+                "name": "test",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0 or 1 acceleration within 20–40 min",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥2 accelerations of ≥15 beats/min for ≥15 sec within 20–40 min",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "breathing + movement + tone + volume == 8",
+                "default": null,
+                "label_en": "Nonstress test (NST)",
+                "name": "test_normal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0 or 1 acceleration within 20–40 min",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥2 accelerations of ≥15 beats/min for ≥15 sec within 20–40 min",
+                        "value": 2
+                    },
+                    {
+                        "label": "NST not done",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "May omit if all four sonographic components are normal",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "BPP",
+            "biophysical profile",
+            "sono",
+            "fetal distress"
+        ],
+        "specialty": [
+            "OB-Gyn"
+        ]
+    }
+}

@@ -1,0 +1,103 @@
+{
+    "id": "221",
+    "title": "Rome IV Diagnostic Criteria for Child Rumination Syndrome",
+    "desc": "The Rome IV Criteria for Child Rumination Syndrome provides criteria for diagnosis of child rumination syndrome.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7104693/",
+                "text": "Hyams J, Di lorenzo C, Forbes D, et al. Childhood functional gastrointestinal disorders: child/adolescent. Gastroenterology. 2006;130(5):1527-37."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>To fulfill the Rome IV criteria for child rumination syndrome, patient must have the following (for &ge;2 months prior):</p>\n<ol>\n<li>Repeated regurgitation and rechewing or expulsion of food that:\n<ol>\n<li>Begins soon after ingestion of a meal.</li>\n<li>Does not occur during sleep.</li>\n</ol>\n</li>\n<li>Not preceded by retching.</li>\n<li>After appropriate evaluation, the symptoms cannot be fully explained by another medical condition (an eating disorder must be ruled out).</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Nausea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Child/Adolescent Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three);\n\nvar diag;\n\nvar msg= 'Diagnosis for child rumination syndrome as per Rome IV criteria';\nvar minimsg= 'Diagnosis for child rumination syndrome';\n\nif (criteria==3) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Child Rumination Syndrome',\n    value: diag,\n    value_text:'',\n    message:msg\n});\n",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For ≥2 months prior",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Repeated regurgitation and rechewing or expulsion of food that begins soon after ingestion of a meal and does not occur during sleep",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Not preceded by retching",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "After appropriate evaluation, the symptoms cannot be fully explained by another medical condition (an eating disorder must be ruled out)",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Child Rumination Syndrome, Rome IV for Child Rumination Syndrome, rome iv child rumination syndrome, rome iv rumination, rome iv rumination syndrome, rome 4 child rumination syndrome, rome 4 rumination syndrome, rome child rumination syndrome, rome rumination syndrome"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

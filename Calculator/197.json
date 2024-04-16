@@ -1,0 +1,109 @@
+{
+    "id": "197",
+    "title": "Rome IV Diagnostic Criteria for Cyclic Vomiting Syndrome",
+    "desc": "Rome IV Criteria for Cyclic Vomiting Syndrome provides criteria for the diagnosis of cyclic vomiting syndrome.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27144627/",
+                "text": "Stanghellini V, Chan FK, Hasler WL, et al. Gastroduodenal Disorders. Gastroenterology. 2016;150(6):1380-92."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31241819",
+                "text": "Venkatesan T, Levinthal DJ, Tarbell SE, et al. Guidelines on Management of Cyclic Vomiting Syndrome in Adults by the American Neurogastroenterology and Motility Society and the Cyclic Vomiting Association. Neurogastroenterol Motil. 2019;Suppl 2(Suppl 2):e13604."
+            }
+        ],
+        "evidence": "<p>To fulfill the Rome IV criteria for cyclic vomiting syndrome,* patient must have the following:</p>\n<ol>\n<li>Stereotypical episodes of vomiting regarding onset (acute) and duration (&lt;1 week).</li>\n<li>&ge;3 discrete episodes in the prior year and 2 episodes in the past 6 months, occurring&nbsp;&ge;1 week apart.</li>\n<li>Absence of vomiting between episodes, but other milder symptoms can be present between cycles.</li>\n</ol>\n<p>*History or family history of migraine headaches may support diagnosis.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue",
+            "Nausea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Gastroduodenal Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output = [];\n\nvar total = parseFloat(one)+parseFloat(two)+parseFloat(three);\n\nvar diag;\n\nvar msg = 'Diagnosis for cyclic vomiting syndrome as per Rome IV criteria';\nvar minimsg = 'Diagnosis for cyclic vomiting syndrome';\n\nif (total == 3) {\n  diag = 'Positive';\n} else {\n  diag = 'Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Cyclic Vomiting Syndrome',\n    value: diag,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stereotypical episodes of vomiting regarding onset (acute) and duration (<1 week)",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "≥3 discrete episodes in the prior year and 2 episodes in the past 6 months, occurring ≥1 week apart",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of vomiting between episodes, but other milder symptoms can be present between cycles",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Cyclic Vomiting Syndrome, Rome IV for Cyclic Vomiting Syndrome, rome iv cyclic vomiting syndrome, cvs, cyclic vomiting syndrome, rome iv for cyclic vomiting syndrome, vomiting syndrome, cyclic vomiting, rome iv vomiting, rome iv for vomiting, rome iv vomiting syndrome, rome 4 for cvs, rome 4 cyclic vomiting syndrome, rome 4 for cyclic vomiting syndrome, rome 4 for vomiting, rome 4 vomiting syndrome, rome 4 cyclic vomiting, rome 4 for cyclic vomiting, rome iv"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

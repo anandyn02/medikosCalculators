@@ -1,0 +1,131 @@
+{
+    "id": "468",
+    "title": "Rome II Diagnostic Criteria for Irritable Bowel Syndrome (IBS)",
+    "desc": "The Rome II Diagnostic Criteria provides criteria for diagnosis of irritable bowel syndrome (IBS) within 3 month period.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1766692/",
+                "text": "Drossman DA. The functional gastrointestinal disorders and the Rome II process. Gut. 1999;45(suppl II):II1–II5."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.romecriteria.org/assets/pdf/20_RomeIII_apB_899-916.pdf",
+                "text": "Comparison Table of Rome II and Rome III Adult Diagnostic Criteria."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/10457044/",
+                "text": "Thompson WG, Longstreth GF, Drossman DA, et al. Functional bowel disorders and functional abdominal pain. Gut. 1999;45(suppl 2):II43–II47."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16678561",
+                "text": "Longstreth GF, Thompson WG, Chey WD, et al. Functional bowel disorders. Gastroenterology. 2006;130:1489–1491."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16678553",
+                "text": "Drossman DA. The functional gastrointestinal disorders and the Rome III process. Gastroenterology 2006;130:1377–1390."
+            }
+        ],
+        "evidence": "<p>Patient must have at least 12 weeks of abdominal discomfort or pain, which need not be consecutive, in the preceding 12 months with at least 2 of following 3 features:</p>\n<ul>\n<li>Relieved with defecation.</li>\n<li>Onset associated with a change in stool frequency.</li>\n<li>Onset associated with a change in stool form (appearance).</li>\n</ul>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Anxious",
+            "Constipation",
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Anxiety",
+            "Irritable Bowel Syndrome"
+        ],
+        "logic": " var calc_output = [];\n\n var u = parseFloat(def) + parseFloat(freq) + parseFloat(form);\n var string, string2, like;\n\n if (u <= 1) {\n     string = 'Negative ';\n     like= 'Unlikely IBS';\n     string2 = 'Patient unlikely suffers from IBS.<br/><br/>Consider further assessment for other pathology.';\n }\n if (u >= 2) {\n     string = 'Positive ';\n     like= 'Likely IBS';\n     string2 = 'Patient likely suffers from IBS.';\n }\n\n calc_output.push({\n     name: 'mini',\n     value: string,\n     value_text: ' ',\n     message: like\n });\n calc_output.push({\n     name: '3281_Rome II for IBS_result',\n     value: string,\n     value_text: ' ',\n     message: string2\n });",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Patient must have at least 12 weeks of abdominal discomfort or pain, which need not be consecutive, in the preceding 12 months with at least 2 of following 3 features:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Relieved with defecation",
+                "md_calc_info_concept": null,
+                "name": "def",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Onset associated with a change in stool frequency",
+                "md_calc_info_concept": null,
+                "name": "freq",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Onset associated with a change in stool form (appearance)",
+                "md_calc_info_concept": null,
+                "name": "form",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "IBS",
+            "irritable",
+            "bowel"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

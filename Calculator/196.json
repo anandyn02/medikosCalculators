@@ -1,0 +1,103 @@
+{
+    "id": "196",
+    "title": "Rome IV Diagnostic Criteria for Cannabinoid Hyperemesis Syndrome (CHS)",
+    "desc": "The Rome IV Criteria for Cannabinoid Hyperemesis Syndrome (CHS) provides criteria for diagnosis of cannabinoid hyperemesis syndrome.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27147122",
+                "text": "Stanghellini V, Chan FK, Hasler WL, et al. Gastroduodenal Disorders. Gastroenterology. 2016;150(6):1380-92."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>To fulfill the Rome IV criteria for cannabinoid hyperemesis syndrome,* patient must have the following (for 3 months prior with symptom onset &ge;6 months ago):</p>\n<ol>\n<li>Stereotypical episodic vomiting resembling <calculator id=\"10299\">cyclic vomiting syndrome (CVS)</calculator> in terms of onset, duration, and frequency.</li>\n<li>Presentation after prolonged excessive cannabis use.</li>\n<li>Relief of vomiting episodes by sustained cessation of cannabis use.</li>\n</ol>\n<p>*May be associated with pathologic bathing behavior (prolonged hot baths or showers).</p>\n<p></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Gastroduodenal Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output = [];\n\nvar total = parseFloat(one)+parseFloat(two)+parseFloat(three);\n\nvar diag;\n\nvar msg = 'Diagnosis for cannabinoid hyperemesis syndrome as per Rome IV criteria';\nvar minimsg = 'Diagnosis for cannabinoid hyperemesis syndrome';\n\nif (total == 3) {\n  diag = 'Positive';\n} else {\n  diag = 'Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Cannabinoid Hyperemesis Syndrome',\n    value: diag,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stereotypical episodic vomiting resembling <calculator id=\"10299\">cyclic vomiting syndrome (CVS)</calculator> in terms of onset, duration, and frequency",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Presentation after prolonged excessive cannabis use",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Relief of vomiting episodes by sustained cessation of cannabis use",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Cannabinoid Hyperemesis Syndrome (CHS), Rome IV for CHS, rome iv cannabinoid, chs, cannabinoid hyperemesis syndrome, rome iv cannabinoid hyperemesis, rome iv cannabinoid hyperemesis syndrome, cannabinoid hyperemesis, rome iv chs, chs rome iv, rome iv criteria, rome 4 cannabinoid, chs, cannabinoid hyperemesis syndrome, rome 4 cannabinoid hyperemesis, rome 4 cannabinoid hyperemesis syndrome, cannabinoid hyperemesis, rome 4 chs, chs rome 4, rome 4 criteria"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

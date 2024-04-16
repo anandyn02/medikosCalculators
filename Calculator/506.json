@@ -1,0 +1,171 @@
+{
+    "id": "506",
+    "title": "Pain Assessment in Advanced Dementia Scale (PAINAD)",
+    "desc": "The Pain Assessment in Advanced Dementia Scale (PAINAD) assesses pain in patients with cognitive impairment.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12807591",
+                "text": "Warden V, Hurley AC, Volicer L. Development and psychometric evaluation of the Pain Assessment in Advanced Dementia (PAINAD) scale. J Am Med Dir Assoc. 2003;4(1):9-15."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of assigned points.</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Score</strong></p>\n</td>\n<td><strong>Pain assessment</strong></td>\n</tr>\n<tr>\n<td>\n<p>1-3</p>\n</td>\n<td>Mild pain</td>\n</tr>\n<tr>\n<td>\n<p>4-6</p>\n</td>\n<td>Moderate pain</td>\n</tr>\n<tr>\n<td>\n<p>7-10</p>\n</td>\n<td>Severe pain</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Pain"
+        ],
+        "disease_treated": [
+            "Dementia"
+        ],
+        "logic": "var calc_output = [];\nvar string = '';\nvar minimsg = '';\n\nvar u = parseFloat(consolability) + parseFloat(body) + parseFloat(face) +\n  parseFloat(vocal) + parseFloat(breath);\n\n\n\nif (u == 0) {\n  minimsg = \"No pain\";\n} else if (u >= 1 && u <= 3) {\n  minimsg = \"Mild pain\";\n} else if (u >= 4 && u <= 6) {\n  minimsg = \"Moderate pain\";\n} else if (u >= 7) {\n  minimsg = \"Severe pain\";\n}\n\nstring =\n  'Ranges are based on a standard 0-10 scale of pain, but the original tool only quantifies 0 as \"No pain\" and 10 as \"Severe pain\".';\n\n\ncalc_output.push({\n  name: 'mini',\n  value: u.toFixed(0),\n  value_text: 'points',\n  message: minimsg\n});\ncalc_output.push({\n  name: '3701_PAINAD_result',\n  value: u.toFixed(0),\n  value_text: 'points',\n  message: minimsg + '<br/>' + string\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Breathing (independent of vocalization)",
+                "mdcalc_info_concept": null,
+                "name": "breath",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Occasional labored breathing or short periods of hyperventilation",
+                        "value": 1
+                    },
+                    {
+                        "label": "Noisy labored breathing, long periods of hyperventilation or Cheyne-Stokes respirations",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Negative vocalization",
+                "mdcalc_info_concept": null,
+                "name": "vocal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Occasional moan/groan or low-level speech with negative quality",
+                        "value": 1
+                    },
+                    {
+                        "label": "Repeated troubled calling out, loud moaning/groaning/crying",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Facial expression",
+                "mdcalc_info_concept": null,
+                "name": "face",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Smiling or inexpressive",
+                        "value": 0
+                    },
+                    {
+                        "label": "Sad/frightened/frown",
+                        "value": 1
+                    },
+                    {
+                        "label": "Facial grimacing",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Body language",
+                "mdcalc_info_concept": null,
+                "name": "body",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Relaxed",
+                        "value": 0
+                    },
+                    {
+                        "label": "Tense, distressed pacing/fidgeting",
+                        "value": 1
+                    },
+                    {
+                        "label": "Rigid, fists clenched, knees pulled up, pulling/pushing away/striking out",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Consolability",
+                "mdcalc_info_concept": null,
+                "name": "consolability",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No need to console",
+                        "value": 0
+                    },
+                    {
+                        "label": "Distracted or reassured by voice/touch",
+                        "value": 1
+                    },
+                    {
+                        "label": "Unable to console, distract or reassure",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "cognition",
+            "impaired"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Pain Management",
+            "Palliative Care/Hospice",
+            "Primary Care"
+        ]
+    }
+}

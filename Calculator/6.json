@@ -1,0 +1,145 @@
+{
+    "id": "6",
+    "title": "Neonatal Partial Exchange for Polycythemia",
+    "desc": "The Neonatal Partial Exchange for Polycythemia estimates the volume of whole blood to remove and volume of crystalloid to infuse in neonatal polycythemia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4022696",
+                "text": "Black VD, Rumack CM, Lubchenco LO, Koops BL. Gastrointestinal injury in polycythemic term infants. Pediatrics. 1985;76(2):225-31."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Volume of replacement fluid = [ blood volume, mL &times; (Hct(actual) - Hct(goal)) ] / Hct(actual)</p>\n<p>Where <calculator id=\"4065\">blood volume</calculator> = 100 mL/kg if preterm and 85 mL/kg if term.</p>\n<p>Example calculation:</p>\n<ul>\n<li>Patient blood volume = 200 mL, Hct(actual) = 70, Hct(goal) = 60</li>\n<li>(200 mL &times; (0.7 &ndash; 0.6)) / 0.7</li>\n<li>Replacement volume is 29 mL (remove 29 mL whole blood, replace 29 mL crystalloid)&nbsp;</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Fetal weight",
+                "unit": "wt_fetus",
+                "error_min": "0",
+                "error_max": "320",
+                "warn_min": "21",
+                "warn_max": "320",
+                "conversion": "28.3495",
+                "normal_max_si": "4000",
+                "normal_max_us": "160",
+                "normal_min_si": "600",
+                "normal_min_us": "21",
+                "units_si": "g",
+                "units_us": "oz"
+            },
+            {
+                "name": "Goal hct",
+                "unit": "hct_final",
+                "error_min": "40",
+                "error_max": "80",
+                "warn_min": "0",
+                "warn_max": "80",
+                "conversion": "1",
+                "normal_max_si": "60",
+                "normal_max_us": "60",
+                "normal_min_si": "50",
+                "normal_min_us": "50",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Initial hct",
+                "unit": "hct_initial",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "65",
+                "normal_max_us": "65",
+                "normal_min_si": "42",
+                "normal_min_us": "42",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Cancer"
+        ],
+        "disease_treated": [
+            "Anemia"
+        ],
+        "logic": "var calc_output = [];\n\nif (UOMSYSTEM == true) {\n\tweight = weight * 28.3495 / 1000\n}\nelse {\n\tweight = weight / 1000\n}\n\nhct_initial = parseFloat(hct_initial) / 100\nhct_goal = parseFloat(hct_goal) / 100\n\nvar term = parseFloat(term)\nvar volume\n\nif (term == 0) {\n  volume = 100 * weight\n}\nelse {\n  volume = 85 * weight\n}\n\nvar vol = parseFloat(volume) * (hct_initial - hct_goal) / hct_initial\n\nif (hct_initial <= hct_goal) {\ncalc_output.push({\n   name: 'mini',\n   value: '',\n   value_text: '',\n   message: 'Goal hematocrit should be less than initial'\n});\ncalc_output.push({\n   name: '10006_Neonatal Partial Exchange_result',\n   value: '',\n   value_text: '',\n   message: 'Goal hematocrit should be less than initial. Please re-check values.'\n});\n}\n\nelse {\ncalc_output.push({\n   name: 'mini',\n   value: vol.toFixed(0),\n   value_text: 'mL',\n   message: 'Replacement fluid volume'\n});\ncalc_output.push({\n   name: '10006_Neonatal Partial Exchange_result',\n   value: vol.toFixed(0),\n   value_text: 'mL',\n   message: 'Replacement fluid volume'\n});\ncalc_output.push({\n   name: '10006_Neonatal Partial Exchange_interpretation',\n   value: '',\n   value_text: '',\n   message: 'Remove ' + vol.toFixed(0) + ' mL ' + 'whole blood, replace ' + vol.toFixed(0) + ' mL ' + 'crystalloid (blood volume = ' + volume.toFixed(0) + ' mL)'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Patient weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt_fetus"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Gestational age",
+                "mdcalc_info_concept": null,
+                "name": "term",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Pre-term",
+                        "value": 0
+                    },
+                    {
+                        "label": "Term",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hematocrit, initial",
+                "name": "hct_initial",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hct_initial"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hematocrit, goal",
+                "name": "hct_goal",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hct_final"
+            }
+        ],
+        "can_search": [
+            "polycythemia",
+            "Neonatal Partial Exchange for Polycythemia",
+            "Neonatal Partial Exchange"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Pathology",
+            "Transfusion Medicine"
+        ]
+    }
+}

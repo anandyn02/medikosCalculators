@@ -1,0 +1,201 @@
+{
+    "id": "318",
+    "title": "Central Nervous System International Prognostic Index (CNS-IPI)",
+    "desc": "The Central Nervous System International Prognostic Index (CNS-IPI) predicts relapse in the CNS in patients with diffuse large B-cell lymphoma (DLBCL).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27382100/",
+                "text": "Schmitz N, Zeynalova S, Nickelsen M, et al. Cns international prognostic index: a risk model for cns relapse in patients with diffuse large b-cell lymphoma treated with r-chop. J Clin Oncol. 2016;34(26):3150-3156."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The CNS-IPI is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%;\"><colgroup><col style=\"width: 57.8947%;\"><col style=\"width: 22.3158%;\"><col style=\"width: 19.7895%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Age &gt;60 years</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span><abbr title=\"Lactate dehydrogenase\">LDH</abbr> &gt; normal*</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span><calculator id=\"3170\">ECOG Performance Status</calculator> &gt;1</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Ann Arbor stages III or IV</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>&gt;1 extranodal disease site**</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Kidney and/or adrenal gland involvement</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span>*The upper limit of normal varies by institution and was not further defined in the original study. Please follow your local lab ranges.</span></p>\n<p dir=\"ltr\"><span>**Disease in bone marrow, CNS, liver/GI tract, or lungs.</span></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col width=\"118\"><col width=\"134\"><col width=\"195\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>CNS-IPI</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk Level</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>2-year Rate of CNS Relapse</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>0-1</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Low</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.6%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>2-3</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Intermediate</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>3.4%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>4-6</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>High</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>10.2%</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding",
+            "Chest Pain",
+            "Constipation",
+            "Cough",
+            "Diarrhea",
+            "Fatigue",
+            "Fever",
+            "Loss of Appetite",
+            "Lymphadenopathy",
+            "Nausea",
+            "Rash",
+            "Shortness of Breath",
+            "Swelling",
+            "Vomiting",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Hematologic Malignancy",
+            "Leukemia/Lymphoma",
+            "Lymphoma"
+        ],
+        "logic": "calc_output = [];\n\nvar age = parseFloat(age);\nvar ldh = parseFloat(ldh);\nvar ecog = parseFloat(ecog);\nvar ann = parseFloat(ann);\nvar eds = parseFloat(eds);\nvar kidney = parseFloat(kidney);\n\nvar score = age + ldh + ecog + ann + eds + kidney;\n\nvar risk;\nvar rate;\n\nif (score <= 1) {\n    risk = 'Low';\n    rate = 0.6;\n} else if (score <= 3) {\n    risk = 'Intermediate';\n    rate = 3.4;\n} else if (score <= 6) {\n    risk = 'High';\n    rate = 10.2;\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' (' + rate + '%) risk of CNS relapse'\n});\ncalc_output.push({\n    name: '10488_CNS-IPI_result (score)',\n    value: score,\n    value_text: 'points',\n    message: 'CNS-IPI'\n});\ncalc_output.push({\n    name: '10488_CNS-IPI_result (risk)',\n    value: rate,\n    value_text: '%',\n    message: risk + ' risk of CNS relapse'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Age &gt;60 years</p>",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><abbr title=\"Lactate dehydrogenase\">LDH</abbr> &gt; normal</p>",
+                "mdcalc_info_concept": null,
+                "name": "ldh",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "The upper limit of normal varies by institution and was not further defined in the original study. Please follow your local lab ranges.",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><calculator id=\"3170\">ECOG Performance Status</calculator> &gt;1</p>",
+                "mdcalc_info_concept": null,
+                "name": "ecog",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Ann Arbor stages III or IV</p>",
+                "mdcalc_info_concept": null,
+                "name": "ann",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>&gt;1 extranodal disease site</p>",
+                "mdcalc_info_concept": null,
+                "name": "eds",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Disease in bone marrow, CNS, liver/GI tract, or lungs.",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Kidney and/or adrenal gland involvement</p>",
+                "mdcalc_info_concept": null,
+                "name": "kidney",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "CNS-IPI",
+            "cns",
+            "central nervous system",
+            "international prognostic index",
+            "ipi",
+            "cns ipi",
+            "dlbcl",
+            "diffuse large b cell lymphoma",
+            "diffuse large b-cell lymphoma",
+            "dlbcl relapse",
+            "cancer",
+            "lymphoma",
+            "Central Nervous System International Prognostic Index (CNS-IPI)"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pathology",
+            "Primary Care"
+        ]
+    }
+}

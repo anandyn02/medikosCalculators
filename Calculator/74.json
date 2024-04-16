@@ -1,0 +1,272 @@
+{
+    "id": "74",
+    "title": "RegiSCAR Score for Drug Reaction with Eosinophilia and Systemic Symptoms (DRESS)",
+    "desc": "The RegiSCAR-Group Score for Drug Reaction with Eosinophilia and Systemic Symptoms (DRESS) diagnoses drug reaction with eosinophilia and systemic symptoms (DRESS).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://dermatol-sinica.com/web/data/20091130043801.pdf",
+                "text": "Roujeau JC, Allanore L, Liss Y, Mockenhaupt M. Severe cutaneous adverse reactions to drugs (SCAR): Definitions, diagnostic criteria, genetic predisposition. Dermatologica Sinica. 2009;27(4):203-209."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<p><span id=\"docs-internal-guid-a4d49254-7fff-04b1-335c-9ca08caa0218\"></span></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"240\" /><col width=\"98\" /><col width=\"64\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Fever (&ge;38.5 &deg;C)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unknown</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Enlarged lymph nodes (&ge;2 sites, &gt;1 cm)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unknown</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Atypical lymphocytes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unknown</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Eosinophilia</p>\n</td>\n<td>\n<p dir=\"ltr\">0-699 cells or &lt;10% (no eosinophilia)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">700-1,499 cells or 10-19.9%</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;1,500 cells or &ge;20%</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Skin rash extent &gt;50%</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unknown</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">At least two of: edema, infiltration, purpura, scaling</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unknown</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Biopsy suggesting DRESS</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unknown</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Internal organ involved</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;2</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Resolution in &gt;15 days</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unknown</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Alternative diagnoses excluded (by &ge;3 biological investigations)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unknown</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<p><span id=\"docs-internal-guid-6a04ce26-7fff-59dc-cc5d-64d1c6234c61\"></span></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>RegiSCAR-Group Score </strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Likelihood of DRESS diagnosis</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;2</p>\n</td>\n<td>\n<p dir=\"ltr\">No case</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2-3</p>\n</td>\n<td>\n<p dir=\"ltr\">Possible case</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4-5</p>\n</td>\n<td>\n<p dir=\"ltr\">Probable case</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;5</p>\n</td>\n<td>\n<p dir=\"ltr\">Definite case</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Rash",
+            "Fever",
+            "Lymphadenopathy"
+        ],
+        "disease_treated": [
+            "Autoimmune Disorders"
+        ],
+        "logic": "var calc_output = [];\n\nvar fever = parseFloat(fever)\nvar lymph = parseFloat(lymph)\nvar lymphocytes = parseFloat(lymphocytes)\nvar eos = parseFloat(eos)\nvar rash = parseFloat(rash)\nvar needtwo = parseFloat(needtwo)\nvar dress = parseFloat(dress)\nvar internal = parseFloat(internal)\nvar resolution = parseFloat(resolution)\nvar altdx = parseFloat(altdx)\n\nvar score = fever + lymph + lymphocytes + eos + rash + needtwo + dress + internal + resolution + altdx\n\nvar likelihood \n\nif (score < 2) {\n\tlikelihood = 'No case'\n}\nelse if (score == 2 || score == 3) {\n\tlikelihood = 'Possible case'\n}\nelse if (score == 4 || score == 5) {\n\tlikelihood = 'Probable case'\n}\nelse {\n\tlikelihood = 'Definite case'\n}\n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: likelihood\n    });\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'RegiSCAR for DRESS'\n    });\ncalc_output.push({\n    name: 'likelihood',\n    value: likelihood,\n    value_text: '',\n    message: 'Likelihood of DRESS diagnosis'\n    });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Fever (≥38.5 °C)",
+                "name": "fever",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": -1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    },
+                    {
+                        "label": "Unknown",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Enlarged lymph nodes ",
+                "name": "lymph",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Unknown",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "≥2 sites, >1 cm",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Atypical lymphocytes",
+                "name": "lymphocytes",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Unknown",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Eosinophilia",
+                "name": "eos",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0-699 cells or <10% (no eosinophilia)",
+                        "value": 0
+                    },
+                    {
+                        "label": "700-1,499 cells or 10-19.9%",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥1,500 cells or ≥20%",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Skin rash extent >50%",
+                "name": "rash",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Unknown",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "At least two of: edema, infiltration, purpura, scaling",
+                "name": "needtwo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": -1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Unknown",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Biopsy suggesting DRESS",
+                "name": "dress",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": -1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    },
+                    {
+                        "label": "Unknown",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Internal organ involved",
+                "name": "internal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥2",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Resolution in >15 days",
+                "name": "resolution",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": -1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Alternative diagnoses excluded (by ≥3 biological investigations)",
+                "name": "altdx",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Unknown",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Dress score",
+            "AGEP",
+            "acute generalized exanthematous pustulosis",
+            "DIHS",
+            "drug induced hypersensitivity syndrome",
+            "regiscar score"
+        ],
+        "specialty": [
+            "Dermatology",
+            "Allergy and Immunology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pathology",
+            "Critical Care"
+        ]
+    }
+}

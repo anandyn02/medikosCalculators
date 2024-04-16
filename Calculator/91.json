@@ -1,0 +1,300 @@
+{
+    "id": "91",
+    "title": "Prediction of Alcohol Withdrawal Severity Scale",
+    "desc": "The Prediction of Alcohol Withdrawal Severity Scale (PAWSS) predicts the severity risk of alcohol withdrawal syndrome. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24657098 ",
+                "text": "Maldonado JR, Sher Y, Ashouri JF, et al. The \"Prediction of Alcohol Withdrawal Severity Scale\" (PAWSS): systematic literature review and pilot study of a new scale for the prediction of complicated alcohol withdrawal syndrome. Alcohol. 2014;48(4):375-90."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://jamanetwork.com/journals/jama/article-abstract/2698497 ",
+                "text": "Wood E, Albarqouni L, Tkachuk S, et al. Will This Hospitalized Patient Develop Severe Alcohol Withdrawal Syndrome?: The Rational Clinical Examination Systematic Review. JAMA. 2018;320(8):825-833."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28981333 ",
+                "text": "Eloma AS, Tucciarone JM, Hayes EM, Bronson BD. Evaluation of the appropriate use of a CIWA-Ar alcohol withdrawal protocol in the general hospital setting. Am J Drug Alcohol Abuse. 2018;44(4):418-425."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25427113 ",
+                "text": "Schuckit MA. Recognition and management of withdrawal delirium (delirium tremens). N Engl J Med. 2014;371(22):2109-13."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><strong>Threshold criteria:</strong></p>\n<ul>\n<li dir=\"ltr\">Patient consumed any amount of alcohol within the last 30 days, OR</li>\n<li dir=\"ltr\">Patient had a positive blood alcohol level upon admission</li>\n</ul>\n<p>If yes to either of the above, addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"318\" /><col width=\"64\" /><col width=\"67\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Ask the patient:</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Have you been recently intoxicated or drunk within the last 30 days?</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Have you ever experienced previous episodes of alcohol withdrawal?</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Have you ever experienced withdrawal seizures?</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Have you ever experienced delirium tremens (DTs)?</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Have you ever undergone alcohol rehabilitation treatment (i.e., inpatient or outpatient treatment programs, or Alcoholics Anonymous attendance)?</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Have you ever experienced blackouts?</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Have you combined alcohol with other &ldquo;downers&rdquo; (e.g. benzodiazepines, barbiturates) during the last 90 days?</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Have you combined alcohol with any other substance of abuse during the last 90 days?</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Clinical evidence:</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Positive blood alcohol level (BAL)&nbsp; on presentation</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Evidence of increased autonomic activity (i.e., HR &gt;120, tremor, sweating, agitation, nausea)?</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1&nbsp;</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/25999438\" target=\"_blank\">Maldonado 2015</a>.</p>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"82\" /><col width=\"165\" /><col width=\"141\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>PAWSS Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of complicated AWS*</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Likelihood ratio**</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;4</p>\n</td>\n<td>\n<p dir=\"ltr\">Average</p>\n</td>\n<td>\n<p dir=\"ltr\">0.07</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;4</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">174</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Withdrawal hallucinosis, withdrawal-related seizures, or delirium tremens.</p>\n<p><span id=\"docs-internal-guid-84f4ae93-7fff-b0a7-95e8-5003b4f7e3e6\">**From <a href=\"https://jamanetwork.com/journals/jama/article-abstract/2698497\" target=\"_blank\">Wood 2018</a>.</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "AMS",
+            "Headache",
+            "Intoxication/Overdose",
+            "Nausea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Drug/Alcohol Use",
+            "Substance Withdrawal"
+        ],
+        "logic": "var calc_output = [];\n\nvar threshold = parseFloat(threshold);\nvar drunk = parseFloat(drunk);\nvar previousep = parseFloat(previousep);\nvar seizures = parseFloat(seizures);\nvar dts = parseFloat(dts);\nvar rehab = parseFloat(rehab);\nvar blackout = parseFloat(blackout);\nvar downers = parseFloat(downers);\nvar combined = parseFloat(combined);\nvar bal = parseFloat(bal);\nvar autonomic = parseFloat(autonomic);\n\n\nvar risk;\nvar ratio;\n\nif(threshold == 0){\n        var score = 0;\n    calc_output.push({\n        name: 'mini',\n        value: '',\n        value_text: '',\n        message:'Threshold criteria not met'\n        });\n    calc_output.push({\n        name: 'score',\n        value: '',\n        value_text: '',\n        message:'Threshold criteria not met'\n        });\n    }\nelse{\n    var score = drunk + previousep + seizures +dts + rehab + blackout + downers + combined + bal + autonomic;\n\n\n    if (score <4){\n        risk = 'Average';\n        ratio = '0.07';\n    }\n    else if (score >=4) {\n        risk = 'High';\n        ratio = '174';\n    }\n\n    //results \n    calc_output.push({\n        name: 'mini',\n        value: score,\n        value_text: 'points',\n        message: risk + ' risk'\n        });\n    calc_output.push({\n        name: 'score',\n        value: score,\n        value_text: 'points',\n        message: 'PAWSS'\n        });\n    calc_output.push({\n        name: 'risk',\n        value: risk, \n        value_text: 'risk',\n        message: 'Likelihood ratio ' + ratio + ' for complicated AWS (withdrawal hallucinosis, withdrawal-related seizures, or delirium tremens)'\n    });\n}",
+        "inputs": [
+            {
+                "subheading": "Threshold criteria",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Patient consumed any amount of alcohol within the last 30 days OR patient had a positive blood alcohol level upon admission",
+                "name": "threshold",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Ask the patient",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "threshold == 1",
+                "default": 0,
+                "label_en": "Have you been recently intoxicated or drunk within the last 30 days?",
+                "name": "drunk",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "threshold == 1",
+                "default": 0,
+                "label_en": "Have you ever experienced previous episodes of alcohol withdrawal? ",
+                "name": "previousep",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "threshold == 1",
+                "default": 0,
+                "label_en": "Have you ever experienced withdrawal seizures? ",
+                "name": "seizures",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "threshold == 1",
+                "default": 0,
+                "label_en": "Have you ever experienced delirium tremens (DTs)?",
+                "name": "dts",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "threshold == 1",
+                "default": 0,
+                "label_en": "Have you ever undergone alcohol rehabilitation treatment (i.e., inpatient or outpatient treatment programs, or Alcoholics Anonymous attendance)?",
+                "name": "rehab",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "threshold == 1",
+                "default": 0,
+                "label_en": "Have you ever experienced blackouts?",
+                "name": "blackout",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "threshold == 1",
+                "default": 0,
+                "label_en": "Have you combined alcohol with other “downers” (e.g. benzodiazepines, barbiturates) during the last 90 days?",
+                "name": "downers",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "threshold == 1",
+                "default": 0,
+                "label_en": "Have you combined alcohol with any other substance of abuse during the last 90 days?",
+                "name": "combined",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Clinical evidence",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "threshold == 1",
+                "default": 0,
+                "label_en": "Positive blood alcohol level (BAL) on presentation",
+                "name": "bal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "threshold == 1",
+                "default": 0,
+                "label_en": "Evidence of increased autonomic activity (i.e., HR >120, tremor, sweating, agitation, nausea)",
+                "name": "autonomic",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "alcohol dependence",
+            "PAWSS",
+            "AWS",
+            "alcohol withdrawal",
+            "withdrawal",
+            "substance abuse",
+            "alcohol abuse"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Psychiatry",
+            "Rehabilitation Medicine",
+            "Toxicology"
+        ]
+    }
+}

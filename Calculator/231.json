@@ -1,0 +1,261 @@
+{
+    "id": "231",
+    "title": "Altitude-Adjusted PERC Rule",
+    "desc": "The Altitude-adjusted PERC Rule for Pulmonary Embolism rules out PE if no criteria are present; includes SaO₂ adjustment for altitude. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/18272098/",
+                "text": "Wolf SJ, Mccubbin TR, Nordenholz KE, Naviaux NW, Haukoos JS. Assessment of the pulmonary embolism rule-out criteria rule for evaluation of suspected pulmonary embolism in the emergency department. Am J Emerg Med. 2008;26(2):181-5."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://www.ncbi.nlm.nih.gov/pubmed/15304025",
+                "text": "Kline JA, et al. Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism. J Thromb Haemost 2004; 2: 1247–55."
+            },
+            {
+                "href": "http://www.ncbi.nlm.nih.gov/pubmed/18318689",
+                "text": "Kline JA, et al. Prospective multicenter evaluation of the pulmonary embolism rule-out criteria. J Thromb Haemost 2008; 6: 772–80."
+            }
+        ],
+        "evidence": "<p>If any of the following is/are present, PE cannot be ruled out:</p>\n<ul>\n<li>Age &ge;50.</li>\n<li>HR &ge;100.</li>\n<li>O₂ sat on room air&nbsp;<strong>&lt;95%</strong> (or O₂ sat on room air&nbsp;<strong>&lt;90%&nbsp;</strong>for high altitudes*).</li>\n<li>Unilateral leg swelling.</li>\n<li>Hemoptysis.</li>\n<li>Recent trauma or surgery.</li>\n<li>Prior PE or DVT.</li>\n<li>Hormone use (oral contraceptives, hormone replacement or estrogenic hormones use in males or female patients).</li>\n</ul>\n<p>*Altitudes &gt;4000 ft.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = [];\nvar calc_msg = '';\nvar mini_msg = '';\nvar yesno = '';\n\nif (altitude==0) {\n\tvar output_score = (parseInt(age) + parseInt(hr) + parseInt(lowo2) + parseInt(dvt_pe_history) + parseInt(trauma) + parseInt(hemoptysis) + parseInt(estrogen) + parseInt(leg_swelling));\n} else if (altitude==1) {\n\tvar output_score = (parseInt(age) + parseInt(hr) + parseInt(higho2) + parseInt(dvt_pe_history) + parseInt(trauma) + parseInt(hemoptysis) + parseInt(estrogen) + parseInt(leg_swelling));\n}\n\n\nif (output_score == 0) {\n\tyesno = 'Yes';\n\tcalc_msg = 'No need for further workup.<br/><br/>If no criteria are positive, PERC-Altitude Rule criteria are satisfied.';\n\tmini_msg = 'PE can be ruled out.';\n} else {\n\tyesno = 'No';\n\tcalc_msg = 'If any criteria are positive, the PERC-Altitude Rule cannot be used to rule out PE in this patient.';\n\tmini_msg = 'PE cannot be ruled out.';\n}\ncalc_output.push({\n\tname: 'mini',\n\tvalue: yesno,\n\tvalue_text: ' ',\n\tmessage: mini_msg\n});\ncalc_output.push({\n\tname: 'PERC Rule',\n\tvalue: output_score,\n\tvalue_text: 'criteria',\n\tmessage: calc_msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "High altitude (>4000 ft)",
+                "name": "altitude",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "altitude==0",
+                "default": null,
+                "label_en": "O₂ sat on room air <strong><95%</strong>",
+                "name": "lowo2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "altitude==1",
+                "default": null,
+                "label_en": "O₂ sat on room air <strong><90%</strong>",
+                "name": "higho2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥50",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "HR ≥100",
+                "name": "hr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Unilateral leg swelling",
+                "name": "leg_swelling",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemoptysis",
+                "name": "hemoptysis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recent surgery or trauma",
+                "name": "trauma",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Surgery or trauma ≤4 weeks ago requiring treatment with general anesthesia",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Prior PE or DVT",
+                "name": "dvt_pe_history",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hormone use",
+                "name": "estrogen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Oral contraceptives, hormone replacement or estrogenic hormones use in males or female patients",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "pe",
+            "pulmonary embolism",
+            "dvt",
+            "PERC-Altitude Rule for Pulmonary Embolism",
+            "perc rule",
+            "perc",
+            "perc altitude",
+            "altitude-adjusted perc",
+            "altitude adjusted perc"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Pulmonology",
+            "Surgery (General)"
+        ]
+    }
+}

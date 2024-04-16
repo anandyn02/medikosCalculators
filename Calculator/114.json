@@ -1,0 +1,259 @@
+{
+    "id": "114",
+    "title": "NINCDS-ADRDA Criteria for Alzheimer’s Disease",
+    "desc": "The NINCDS-ADRDA Criteria for Alzheimer’s Disease diagnoses Alzheimer's disease (AD).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6610841",
+                "text": "Mckhann G, Drachman D, Folstein M, Katzman R, Price D, Stadlan EM. Clinical diagnosis of Alzheimer's disease: report of the NINCDS-ADRDA Work Group under the auspices of Department of Health and Human Services Task Force on Alzheimer's Disease. Neurology. 1984;34(7):939-44."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><strong>Definite Alzheimer&rsquo;s Disease:</strong></p>\n<p dir=\"ltr\">Histopathologic evidence obtained from a biopsy or autopsy plus all criteria for&nbsp;Probable Alzheimer&rsquo;s Disease (1-6 below).&nbsp;</p>\n<p dir=\"ltr\"><strong>Probable Alzheimer&rsquo;s Disease</strong>* (must have all 6):</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Dementia established by clinical examination and documented by the Mini-Mental Test, Blessed Dementia Scale, or some similar examination, and confirmed by neuropsychological tests.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Deficits in &ge;2 areas of cognition.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Progressive worsening of memory and other cognitive functions.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">No disturbance of consciousness.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Onset at age &gt;40 to &lt;90 years.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Absence of systemic disorders or other brain diseases that in and of themselves could account for the progressive deficits in memory and cognition.</p>\n</li>\n</ol>\n<p dir=\"ltr\">*Additionally, the diagnosis of Probable AD is supported by the following:</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Progressive deterioration of specific cognitive functions such as language (aphasia), motor skills (apraxia), and perception (agnosia).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Impaired activities of daily living and altered patterns of behavior.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Family history of similar disorders, particularly if confirmed neuropathologically.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Lab results:</p>\n</li>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Normal lumbar puncture.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Normal pattern or nonspecific changes in <abbr title=\"Electroencephalogram\">EEG</abbr> (e.g. increased slow-wave activity).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Cerebral atrophy on CT with progression documented by serial observation.</p>\n</li>\n</ul>\n</ul>\n<p dir=\"ltr\">Features that make Probable AD diagnosis uncertain or unlikely:</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Sudden, apoplectic onset.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Focal neurologic findings (e.g. hemiparesis, sensory loss, visual field deficits, and incoordination early in the course of the illness).</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Seizures or gait disturbances at onset or very early in the course of the illness.</p>\n</li>\n</ul>\n<p dir=\"ltr\">If neither of the above is fulfilled,</p>\n<p dir=\"ltr\"><strong>Possible&nbsp;Alzheimer&rsquo;s Disease</strong>&nbsp;(must have all 3):</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Dementia syndrome, in the absence of other neurologic, psychiatric, or systemic disorders sufficient to cause dementia, and presence of variations in onset, in presentation, or in clinical course.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Presence of a second systemic or brain disorder sufficient to produce dementia but is not considered to be the cause of dementia.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">A single, gradually progressive severe cognitive deficit is identified in the absence of other identifiable cause.</p>\n</li>\n</ol>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"182\" /><col width=\"266\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Clinical diagnosis for AD</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Rate of AD by pathological diagnosis</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Probable AD</p>\n</td>\n<td>\n<p dir=\"ltr\">91%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Possible AD</p>\n</td>\n<td>\n<p dir=\"ltr\">92%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">The sensitivity and specificity of a clinical diagnosis of Probable AD or Possible AD for a pathological diagnosis of AD are 83% and 84%, respectively&nbsp;(<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/7986174\" target=\"_blank\">Blacker 1994</a>).</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Neurologic Deficit"
+        ],
+        "disease_treated": [
+            "Dementia",
+            "Alzheimer's Disease"
+        ],
+        "logic": "var other = other || 0;\nvar syndrome = syndrome || 0;\nvar presence = presence || 0;\n\nvar calc_output = [];\nvar other = parseFloat(other);\nvar presence = parseFloat(presence);\nvar syndrome = parseFloat(syndrome);\nvar histo = parseFloat(histo);\nvar absence = parseFloat(absence);\nvar onset = parseFloat(onset);\nvar disturbance = parseFloat(disturbance);\nvar memory = parseFloat(memory);\nvar deficits = parseFloat(deficits);\nvar tests = parseFloat(tests);\n\nvar probable = tests + deficits + memory + disturbance + onset + absence;\nvar definite = histo;\nvar possible = other + presence + syndrome;\n\nvar diag, risk, msg;\n\nif ((probable + definite) == 7) {\n  diag = \"Definite AD\";\n  risk = \"\";\n  msg = \"\";\n} else if (probable == 6) {\n  diag = \"Probable AD\";\n  risk = \"91\";\n  msg = \"% rate of AD by pathological diagnosis\";\n} else if (possible == 3) {\n  diag = \"Possible AD\";\n  risk = \"92\";\n  msg = \"% rate of AD by pathological diagnosis\";\n} else {\n  diag = \"Criteria not met\";\n  risk = \"\";\n  msg = \"\";\n}\n \n//results\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: risk + msg\n});\ncalc_output.push({\n    name: 'Score',\n    value: diag,\n    value_text: '',\n    message: risk + msg   \n    });",
+        "inputs": [
+            {
+                "subheading": "Required Criterion for Definite Alzheimer's Disease",
+                "subheading_instructions": "Plus all criteria for Probable Alzheimer’s Disease",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Histopathologic evidence obtained from a biopsy or autopsy",
+                "name": "histo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "subheading": "Criteria for Probable Alzheimer's Disease",
+                "subheading_instructions": "Must have all 6",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Dementia established by clinical examination and documented by the Mini-Mental Test, Blessed Dementia Scale, or some similar examination, and confirmed by neuropsychological tests",
+                "name": "tests",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Deficits in ≥2 areas of cognition",
+                "name": "deficits",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Progressive worsening of memory and other cognitive functions",
+                "name": "memory",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "No disturbance of consciousness",
+                "name": "disturbance",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Onset at age >40 to <90 years",
+                "name": "onset",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of systemic disorders or other brain diseases that in and of themselves could account for the progressive deficits in memory and cognition",
+                "name": "absence",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "subheading": "Criteria for Possible Alzheimer's Disease",
+                "subheading_instructions": "Must have all 3",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "tests + deficits + memory + disturbance + onset + absence < 6",
+                "default": 0,
+                "label_en": "Dementia syndrome, in the absence of other neurologic, psychiatric, or systemic disorders sufficient to cause dementia, and presence of variations in onset, in presentation, or in clinical course",
+                "name": "syndrome",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "tests + deficits + memory + disturbance + onset + absence < 6",
+                "default": 0,
+                "label_en": "Presence of a second systemic or brain disorder sufficient to produce dementia but is not considered to be the cause of the dementia",
+                "name": "presence",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "tests + deficits + memory + disturbance + onset + absence < 6",
+                "default": 0,
+                "label_en": "A single, gradually progressive severe cognitive deficit is identified in the absence of other identifiable cause",
+                "name": "other",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Alzheimer's disease",
+            "alzheimers disease",
+            "Alzheimer's",
+            "alzheimers",
+            "alzhimers",
+            "nincds-adrda",
+            "criteria",
+            "ad",
+            "dementia",
+            "iwg",
+            "iwg2",
+            "iwg 2"
+        ],
+        "specialty": [
+            "Psychiatry",
+            "Geriatrics",
+            "Neurology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Palliative Care/Hospice"
+        ]
+    }
+}

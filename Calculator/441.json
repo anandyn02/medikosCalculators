@@ -1,0 +1,100 @@
+{
+    "id": "441",
+    "title": "Bicarbonate Deficit",
+    "desc": "The Bicarbonate Deficit calculator calculates the total body bicarbonate deficit.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "",
+                "text": "Kurtz I. Acid-Base Case Studies. 2nd Ed. Trafford Publishing (2004); 68:150."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Bicarbonate deficit = 0.4 &times; body weight in kg &times;&nbsp;(24 &ndash; bicarbonate level)</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Bicarbonate",
+                "unit": "bicarb",
+                "error_min": "1",
+                "error_max": "100",
+                "warn_min": "4",
+                "warn_max": "60",
+                "conversion": "1",
+                "normal_max_si": "28",
+                "normal_max_us": "28",
+                "normal_min_si": "23",
+                "normal_min_us": "23",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Acid-Base Disturbance",
+            "Diabetes Mellitus",
+            "Renal Failure",
+            "Sepsis",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\nvar weight = parseFloat(weight); // already defaults to kg\nvar bicarb = parseFloat(bicarbonate); // no conversion needed\nvar u = 0.4 * weight * (24 - bicarb);\n\nif (UOMSYSTEM == true) { // US units, u already in US, no change\n  calc_output.push({\n    name: 'mini',\n    value: u.toFixed(1),\n    value_text: 'mEq',\n    message: 'Bicarbonate Deficit'\n  });\n  calc_output.push({\n    name: '27_Bicarbonate Deficit_result',\n    value: u.toFixed(1),\n    value_text: 'mEq',\n    message: 'Bicarbonate Deficit'\n  });\n\n}\n\nif (UOMSYSTEM == false) { // SI units, just change the units\n  calc_output.push({\n    name: 'mini',\n    value: u.toFixed(1),\n    value_text: 'mmol',\n    message: 'Bicarbonate Deficit'\n  });\n  calc_output.push({\n    name: '27_Bicarbonate Deficit_result',\n    value: u.toFixed(1),\n    value_text: 'mmol',\n    message: 'Bicarbonate Deficit'\n  });\n\n}\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Bicarbonate",
+                "name": "bicarbonate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bicarb"
+            }
+        ],
+        "can_search": [
+            "base excess",
+            "base deficit"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Gastroenterology",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Surgery (Trauma)"
+        ]
+    }
+}

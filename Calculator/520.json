@@ -1,0 +1,347 @@
+{
+    "id": "520",
+    "title": "Dutch Criteria for Familial Hypercholesterolemia (FH)",
+    "desc": "The Dutch Criteria for Familial Hypercholesterolemia diagnoses familial hypercholesterolemia (FH) based on clinical, genetic and family history.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://apps.who.int/iris/bitstream/10665/66346/1/WHO_HGN_FH_CONS_99.2.pdf ",
+                "text": "World Health Organization. Familial hypercholesterolemia—report of a second WHO Consultation. Geneva, Switzerland: World Health Organization, 1999. (WHO publication no. WHO/HGN/FH/CONS/99.2)."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3976735/",
+                "text": "Al-Rasadi K, Al-Waili K, Al-Sabti HA, et al. Criteria for Diagnosis of Familial Hypercholesterolemia: A Comprehensive Analysis of the Different Guidelines, Appraising their Suitability in the Omani Arab Population. Oman Medical Journal. 2014;29(2):85-91. doi:10.5001/omj.2014.22."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15321837",
+                "text": "Austin MA, Hutter CM, Zimmern RL, Humphries SE. Genetic causes of monogenic heterozygous familial hypercholesterolemia: a HuGE prevalence review. Am J Epidemiol 2004. Sep;160(5):407-420 10.1093/aje/kwh236"
+            },
+            {
+                "href": "https://nlaresourcecenter.lipidjournal.com/Content/PDFs/Tables/4.pdf",
+                "text": "National Lipid Association Clinical Lipidology Resource Center"
+            }
+        ],
+        "evidence": "<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>Criteria</strong></p>\n</td>\n<td>\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Family history</strong></p>\n</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td>\n<p>First-degree relative with known premature* coronary and vascular disease, OR</p>\n<p>First-degree relative with known LDL-C level above the 95th percentile</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>First-degree relative with tendinous xanthomata and/or arcus cornealis, OR</p>\n<p>Children &lt;18 years with LDL-C level above the 95th percentile</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Clinical history</strong></p>\n</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td>\n<p>Patient with premature* coronary artery disease</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Patient with premature* cerebral or peripheral vascular disease</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Physical examination</strong></p>\n</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td>\n<p>Tendinous xanthomata</p>\n</td>\n<td>\n<p>6</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Arcus cornealis prior to age 45 years</p>\n</td>\n<td>\n<p>4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Cholesterol level, mmol/L (mg/dL)</strong></p>\n</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td>\n<p>LDL-C &ge;8.5 (330)</p>\n<p>LDL-C 6.5 - 8.4 (250 - 329)</p>\n<p>LDL-C 5.0 - 6.4 (190 - 249)</p>\n<p>LDL-C 4.0 - 4.9 (155 - 189)</p>\n</td>\n<td>\n<p>8</p>\n<p>5</p>\n<p>3</p>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>DNA analysis &ndash; functional mutation LDLR, apoB and PCSK9</p>\n</td>\n<td>\n<p>8</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*Premature = &lt;55 years in men; &lt;60 years in women.</p>\n<p>From the <a href=\"https://nlaresourcecenter.lipidjournal.com/Content/PDFs/Tables/4.pdf\" target=\"_blank\" rel=\"noopener\">National Lipid Association Resource Center</a>.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: left;\"><strong>Stratification</strong></th>\n<th style=\"text-align: left;\"><strong>Total Score</strong></th>\n</tr>\n<tr>\n<td>Definite familial hypercholesterolemia</td>\n<td>&gt;8</td>\n</tr>\n<tr>\n<td>Probable familial hypercholesterolemia</td>\n<td>6-8</td>\n</tr>\n<tr>\n<td>Possible familial hypercholesterolemia</td>\n<td>3-5</td>\n</tr>\n<tr>\n<td>Unlikely familial hypercholesterolemia</td>\n<td>&lt;3</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Mass"
+        ],
+        "disease_treated": [
+            "Dyslipidemia"
+        ],
+        "logic": "var calc_output = [];\n\nif(parseFloat(entry) === 0){\n    calc_output.push({\n        name: 'mini',\n        value: 'Ineligible',\n        value_text: '',\n        message: 'This patient is not eligible for scoring. Use only in patients with suspected FH, either by elevated cholesterol level or family history.'\n    });\n    calc_output.push({\n        name: '3818_Dutch Criteria_result',\n        value: 'Ineligible',\n        value_text: '',\n        message: 'This patient is not eligible for scoring. Use only in patients with suspected FH, either by elevated cholesterol level or family history.'\n    });\n\n}else{\n    var u = Math.max(parseFloat(relative_corvasc), parseFloat(relative_ldl95)) + Math.max(parseFloat(relative_xan), parseFloat(child_ldl95)) + parseFloat(premcad) + parseFloat(premvasc) + parseFloat(xan) + parseFloat(arcus) + parseFloat(ldl) + parseFloat(dna);\n\n    var string1;\n\n    var pt = ' points';\n    if (u > 8) {\n        string1 = \"Definite FH\";\n    }\n    if (u >= 6 && u <= 8) {\n        string1 = \"Probable FH\";\n    }\n    if (u >= 3 && u <= 5) {\n        string1 = \"Possible FH\";\n    }\n    if (u < 3) {\n        string1 = \"Unlikely FH\";\n    }\n\n    if(u === 1){\n        pt = ' point';\n    }\n    \n    calc_output.push({\n        name: 'mini',\n        value: string1,\n        value_text: '',\n        message: u + pt\n    });\n    calc_output.push({\n        name: '3818_Dutch Criteria_result',\n        value: string1,\n        value_text: '',\n        message: u + pt\n    });\n}",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Entry Criterion",
+                "subheading_instructions": "If yes, 9+ additional criteria required for Definite FH",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Patient has elevated cholesterol, family history of FH, and/or family history of premature cardiac death</p>",
+                "mdcalc_info_concept": null,
+                "name": "entry",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Family History",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "entry == 1",
+                "default": 0,
+                "label_en": "<p>First-degree relative with premature coronary and/or vascular disease</p>",
+                "md_calc_info_concept": null,
+                "name": "relative_corvasc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Male relative <55 years, female relative <60 years",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "entry == 1",
+                "default": 0,
+                "label_en": "<p>First-degree relative with known LDL &gt;95th percentile for age and sex</p>",
+                "md_calc_info_concept": null,
+                "name": "relative_ldl95",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "entry == 1",
+                "default": 0,
+                "label_en": "<p>First-degree relative with tendon xanthomata and/or arcus cornealis</p>",
+                "md_calc_info_concept": null,
+                "name": "relative_xan",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "entry == 1",
+                "default": 0,
+                "label_en": "<p>Children &lt;18 years with known LDL &gt;95th percentile for age and sex</p>",
+                "md_calc_info_concept": null,
+                "name": "child_ldl95",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Clinical History",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "entry == 1",
+                "default": 0,
+                "label_en": "<p>Patient with premature coronary artery disease</p>",
+                "md_calc_info_concept": null,
+                "name": "premcad",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "entry == 1",
+                "default": 0,
+                "label_en": "<p>Patient with premature cerebral or peripheral vascular disease</p>",
+                "md_calc_info_concept": null,
+                "name": "premvasc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Physical Examination",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "entry == 1",
+                "default": 0,
+                "label_en": "<p>Tendon xanthomata</p>",
+                "md_calc_info_concept": null,
+                "name": "xan",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "entry == 1",
+                "default": 0,
+                "label_en": "<p>Arcus cornealis at age &lt;45 years</p>",
+                "md_calc_info_concept": null,
+                "name": "arcus",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Cholesterol Level",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "entry == 1",
+                "default": null,
+                "label_en": "<p>LDL in mmol/L (mg/dL)</p>",
+                "mdcalc_info_concept": null,
+                "name": "ldl",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "LDL-C ≥8.5 (330)",
+                        "value": 8
+                    },
+                    {
+                        "label": "LDL-C 6.5 - 8.4 (250 - 329)",
+                        "value": 5
+                    },
+                    {
+                        "label": "LDL-C 5.0 - 6.4 (190 - 249)",
+                        "value": 3
+                    },
+                    {
+                        "label": "LDL-C 4.0 - 4.9 (155 - 189)",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "DNA Analysis",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "entry == 1",
+                "default": 0,
+                "label_en": "<p>Functional mutation of LDLR, apoB or PCSK9 gene</p>",
+                "md_calc_info_concept": null,
+                "name": "dna",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "FH",
+            "HoFH",
+            "HeFH",
+            "high cholesterol",
+            "dna",
+            "hypercholesterolemia",
+            "familial"
+        ],
+        "specialty": [
+            "Endocrinology",
+            "Family Practice",
+            "Internal Medicine",
+            "Pediatrics"
+        ]
+    }
+}

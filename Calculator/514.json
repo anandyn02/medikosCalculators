@@ -1,0 +1,692 @@
+{
+    "id": "514",
+    "title": "Seattle Heart Failure Model",
+    "desc": "The Seattle Heart Failure Model predicts survival in heart failure.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/16534009/",
+                "text": "Levy WC, Mozaffarian D, Linker DT, et al. The Seattle Heart Failure Model: prediction of survival in heart failure. Circulation. 2006;113(11):1424-1433."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/20798278/",
+                "text": "Gorodeski EZ, Chu EC, Chow CH, Levy WC, Hsich E, Starling RC. Application of the Seattle Heart Failure Model in ambulatory patients presented to an advanced heart failure therapeutics committee. Circ Heart Fail. 2010;3(6):706-714."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/19161882/",
+                "text": "Kalogeropoulos AP, Georgiopoulou VV, Giamouzis G, et al. Utility of the Seattle Heart Failure Model in patients with advanced heart failure. J Am Coll Cardiol. 2009;53(4):334-342."
+            }
+        ],
+        "evidence": "<p>The Seattle Heart Failure Score is calculated by the following:</p>\n<p dir=\"ltr\"><span><strong>Seattle HF Score</strong> = (age/10)*ln(1.09) + male*ln(1.089) + (NYHA class)*ln(1.6) + (100/(ejection fraction))*ln(1.03) + (if ischemic etiology)*ln(1.354) + (SBP/10)*ln(0.877) + (diuretic dose)*ln(1.178) + (if using allopurinol)*ln(1.571) + (if using statins)*ln(0.63) + (if using ACE inhibitors) + (if using beta-blockers)*ln(0.66) + (if using angiotensin receptor blockers)*ln(0.85) + (if using K-sparing diuretics)*ln(0.74) + (if using biventricular pacemaker) + (if using implantable cardioverter-defibrillator)*ln(0.73) + (if using biventricular implantable cardioverter-defibrillator)*ln(0.79) + (138 &ndash; sodium)*ln(1.05) + (100/(total cholesterol, mg/dL))*ln(2.206) + (hgb score) + ((% lymphocytes)/5)*ln(0.897) + (uric acid, mg/dL)*ln(1.064),</span><b></b></p>\n<p dir=\"ltr\"><span>where <strong>diuretic dose, mg/kg</strong> = (furosemide + 2*torsemide + 26.7*b</span>umetanide&nbsp;<span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\">+ 40*metolazone + 3.2*hydrochlorothiazide)/(weight, kg)</span></p>\n<p dir=\"ltr\"><b></b></p>\n<p dir=\"ltr\"><span>If hemoglobin, g/dL &lt;16 g/dL,</span></p>\n<p dir=\"ltr\"><span><strong>hgb score</strong> = (16 &ndash; hemoglobin)*ln(1.124)</span><b></b></p>\n<p dir=\"ltr\"><span>If hemoglobin, g/dL &ge;16 g/dL,</span></p>\n<p dir=\"ltr\"><span><strong>hgb score</strong> = (hemoglobin &ndash; 16)*ln(1.336)</span><b></b><span></span></p>\n<p dir=\"ltr\"><span>Note:</span></p>\n<ul>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Lymphocyte values &gt;47% are set to 47%.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Uric acid values &lt;3.4 mg/dL are set to 3.4 mg/dL.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>SBP values &gt;160 mm Hg are set to 160 mm Hg.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Sodium values &gt;138 mEq/L are set to 138 mEq/L.</span></p>\n</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Hemoglobin",
+                "unit": "hgb",
+                "error_min": "0.5",
+                "error_max": "25",
+                "warn_min": "4",
+                "warn_max": "20",
+                "conversion": "10",
+                "normal_max_si": "170",
+                "normal_max_us": "17",
+                "normal_min_si": "120",
+                "normal_min_us": "12",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Total Cholesterol",
+                "unit": "chol_total",
+                "error_min": "100",
+                "error_max": "1000",
+                "warn_min": "150",
+                "warn_max": "500",
+                "conversion": "0.02586",
+                "normal_max_si": "5.2",
+                "normal_max_us": "200",
+                "normal_min_si": "3.9",
+                "normal_min_us": "150",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Sodium",
+                "unit": "na",
+                "error_min": "100",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "170",
+                "conversion": "1",
+                "normal_max_si": "145",
+                "normal_max_us": "145",
+                "normal_min_si": "136",
+                "normal_min_us": "136",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            },
+            {
+                "name": "BUN",
+                "unit": "bun",
+                "error_min": "1",
+                "error_max": "500",
+                "warn_min": "2",
+                "warn_max": "300",
+                "conversion": "0.357",
+                "normal_max_si": "7.1",
+                "normal_max_us": "20",
+                "normal_min_si": "2.9",
+                "normal_min_us": "8",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Ejection Fraction",
+                "unit": "ejection_fraction",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "40",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "50",
+                "normal_min_us": "50",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Furosemide HF",
+                "unit": "furosemide",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0",
+                "warn_max": "600",
+                "conversion": "1",
+                "normal_max_si": "240",
+                "normal_max_us": "240",
+                "normal_min_si": "40",
+                "normal_min_us": "40",
+                "units_si": "mg",
+                "units_us": "mg"
+            },
+            {
+                "name": "Bumetanide HF",
+                "unit": "bumetanide",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "5",
+                "normal_max_us": "5",
+                "normal_min_si": "1",
+                "normal_min_us": "1",
+                "units_si": "mg",
+                "units_us": "mg"
+            },
+            {
+                "name": "Torsemide HF",
+                "unit": "torsemide",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "20",
+                "normal_max_us": "20",
+                "normal_min_si": "5",
+                "normal_min_us": "5",
+                "units_si": "mg",
+                "units_us": "mg"
+            },
+            {
+                "name": "% Lymphocytes",
+                "unit": "lymph",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "40",
+                "normal_max_us": "40",
+                "normal_min_si": "20",
+                "normal_min_us": "20",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Metolazone HF",
+                "unit": "metolazone",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "1",
+                "normal_max_si": "10",
+                "normal_max_us": "10",
+                "normal_min_si": "2.5",
+                "normal_min_us": "2.5",
+                "units_si": "mg",
+                "units_us": "mg"
+            },
+            {
+                "name": "Hydrochlorothiazide HF",
+                "unit": "hydrochlorothiazide",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "12.5",
+                "normal_min_us": "12.5",
+                "units_si": "mg",
+                "units_us": "mg"
+            }
+        ],
+        "primary_complains": [
+            "Arrhythmia",
+            "Chest Pain",
+            "Cough",
+            "Dizziness",
+            "Extremity Edema",
+            "Fatigue",
+            "Nausea",
+            "Peripheral Edema",
+            "Polyuria",
+            "Shortness of Breath",
+            "Swelling",
+            "Weakness",
+            "Weight Loss/Gain",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Arrhythmia",
+            "Coronary Artery Disease",
+            "Heart Failure",
+            "Hypertension",
+            "Myocardial Infarction",
+            "Myocarditis",
+            "Hypertrophic Cardiomyopathy"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar ef = parseFloat(ef);\nvar sbp = parseFloat(sbp);\nvar wt = parseFloat(wt);\nvar sex = parseFloat(sex);\nvar nyha = parseFloat(nyha);\nvar isch = parseFloat(isch);\nvar fur = parseFloat(fur);\nvar tor = parseFloat(tor);\nvar but = parseFloat(but);\nvar met = parseFloat(met);\nvar hctz = parseFloat(hctz);\nvar allo = parseFloat(allo);\nvar stat = parseFloat(stat);\nvar acei = parseFloat(acei);\nvar bb = parseFloat(bb);\nvar arb = parseFloat(arb);\nvar diur = parseFloat(diur);\nvar dev = parseFloat(dev);\nvar na = parseFloat(na);\nvar tchol = parseFloat(tchol);\nvar hb = parseFloat(hb);\nvar lymph = parseFloat(lymph);\nvar uric = parseFloat(uric);\n\n\n\nif (sbp > 160.0) {\n    sbp = 160.0;\n} else {\n    sbp = sbp;\n}\n\nvar drugs = fur +\n    2 * tor +\n    26.7 * but +\n    40.0 * met +\n    3.2 * hctz;\n\nif (na > 138.0) {\n    na = 138.0;\n} else {\n    na = na;\n}\n\n\nvar hbscore;\nif (hb < 16.0) {\n    hbscore = (16.0 - hb) * Math.log(1.124);\n} else {\n    hbscore = (hb - 16.0) * Math.log(1.336);\n}\n\nif (lymph > 47.0) {\n    lymph = 47.0;\n} else {\n    lymph = lymph;\n}\n\nif (uric < 3.4) {\n    uric = 3.4;\n} else {\n    uric = uric\n}\n\nvar score = (age / 10) * Math.log(1.090) + sex * Math.log(1.089) + nyha * Math.log(1.6) + (100 / ef) * Math.log(1.030) + isch * Math.log(1.354) + (sbp / 10) * Math.log(0.877) + (drugs / wt) * Math.log(1.178) + allo * Math.log(1.571) + stat * Math.log(0.63) + acei * Math.log(0.77) + bb * Math.log(0.66) + arb * Math.log(0.85) + diur * Math.log(0.74) + dev + (138 - na) * Math.log(1.050) + (100 / tchol) * Math.log(2.206) + (lymph / 5) * Math.log(0.897) + uric * Math.log(1.064) + hbscore;\nvar survival_1 = Math.exp(-0.0405*Math.exp(score)) * 100;\nvar survival_5 = Math.exp(-0.0405*5*Math.exp(score)) * 100;\n\ncalc_output.push({\n    name: 'mini',\n    value: score.toFixed(2),\n    value_text: 'points',\n    message: survival_1.toFixed(0) + '% predicted 1-year survival'\n});\ncalc_output.push({\n    name: '3808_Seattle Heart Failure Model_result (score)',\n    value: score.toFixed(2),\n    value_text: 'points',\n    message: 'Seattle Heart Failure Score'\n});\ncalc_output.push({\n    name: '3808_Seattle Heart Failure Model_result (1-yr survival)',\n    value: survival_1.toFixed(0),\n    value_text: '%',\n    message: 'Predicted 1-year survival'\n});\ncalc_output.push({\n    name: '3808_Seattle Heart Failure Model_result (5-yr survival)',\n    value: survival_5.toFixed(0),\n    value_text: '%',\n    message: 'Predicted 5-year survival'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Gender</p>",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>NYHA class</p>",
+                "mdcalc_info_concept": null,
+                "name": "nyha",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Class I",
+                        "value": 1
+                    },
+                    {
+                        "label": "Class II",
+                        "value": 2
+                    },
+                    {
+                        "label": "Class III",
+                        "value": 3
+                    },
+                    {
+                        "label": "Class IV",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Ejection fraction</p>",
+                "name": "ef",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ejection_fraction"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Ischemic etiology</p>",
+                "md_calc_info_concept": null,
+                "name": "isch",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>SBP</p>",
+                "name": "sbp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Furosemide</p>",
+                "name": "fur",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "furosemide"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Torsemide</p>",
+                "name": "tor",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "torsemide"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Bumetanide</p>",
+                "name": "but",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bumetanide"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Metolazone</p>",
+                "name": "met",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "metolazone"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Hydrochlorothiazide</p>",
+                "name": "hctz",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hydrochlorothiazide"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Weight</p>",
+                "name": "wt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Using allopurinol</p>",
+                "md_calc_info_concept": null,
+                "name": "allo",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Using statins</p>",
+                "md_calc_info_concept": null,
+                "name": "stat",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Using ACE inhibitors</p>",
+                "md_calc_info_concept": null,
+                "name": "acei",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Using beta-blockers</p>",
+                "md_calc_info_concept": null,
+                "name": "bb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Using angiotensin receptor blockers</p>",
+                "md_calc_info_concept": null,
+                "name": "arb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Using K-sparing diuretics</p>",
+                "md_calc_info_concept": null,
+                "name": "diur",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Devices</p>",
+                "mdcalc_info_concept": null,
+                "name": "dev",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Biventricular pacemaker",
+                        "value": 0
+                    },
+                    {
+                        "label": "Implantable cardioverter-defibrillator",
+                        "value": -0.31
+                    },
+                    {
+                        "label": "Biventricular implantable cardioverter-defibrillator",
+                        "value": -0.24
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Sodium</p>",
+                "name": "na",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Total cholesterol</p>",
+                "name": "tchol",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "chol_total"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Hemoglobin</p>",
+                "name": "hb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hgb"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Lymphocytes</p>",
+                "name": "lymph",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "lymph"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Uric acid</p>",
+                "name": "uric",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bun"
+            }
+        ],
+        "can_search": [
+            "Seattle Heart Failure Model",
+            "hf",
+            "heart failure",
+            "congestive heart failure",
+            "chf",
+            "systolic heart failure",
+            "shf",
+            "hf survival",
+            "heart failure survival"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Palliative Care/Hospice",
+            "Primary Care",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

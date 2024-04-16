@@ -1,0 +1,247 @@
+{
+    "id": "686",
+    "title": "Alvarado Score for Acute Appendicitis",
+    "desc": "The Alvarado Score for Acute Appendicitis predicts likelihood of appendicitis diagnosis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3963537",
+                "text": "Alvarado A. A practical score for the early diagnosis of acute appendicitis. Ann Emerg Med. 1986 May;15(5):557-64. PMID: 3963537."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7702329",
+                "text": "Kalan M, Talbot D, Cunliffe WJ, Rich AJ. Evaluation of the modified Alvarado score in the diagnosis of acute appendicitis: a prospective study. Ann R Coll Surg Engl. 1994;76(6):418-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12037754",
+                "text": "Samuel M. Pediatric appendicitis score. J Pediatr Surg. 2002;37:872–881."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3299622/",
+                "text": "Ohle R, O'Reilly F, O'Brien KK, Fahey T, Dimitrov BD. The Alvarado score for predicting acute appendicitis: a systematic review. BMC Med. 2011;9:139."
+            }
+        ],
+        "evidence": "<p>Addition of assigned points.</p>",
+        "facts": "<p><span id=\"docs-internal-guid-4e436e43-7fff-5dac-eea1-7e9e44df4a5b\"></span></p>\n<p dir=\"ltr\">As the Alvarado Score is numerical, it has been evaluated for ruling in and ruling out appendicitis.</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Studies ruling out appendicitis (using Alvarado &lt;3-4) have a sensitivity of 96%;</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Studies ruling in appendicitis (using Alvarado &gt;6-7) have a sensitivity of 58-88%, depending on the study and score cutoffs used.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">The <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/17543650\" target=\"_blank\" rel=\"noopener\">2007 McKay study</a> recommends CT scan for Alvarado 4-6, surgical consultation for Alvarado &ge;7, and for Alvarado &le;3, no CT for diagnosing appendicitis, as appendicitis is unlikely.</p>\n</li>\n</ul>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Fever",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Appendicitis"
+        ],
+        "logic": "var calc_output = [];\nvar msg;\nvar mini_msg;\nvar v = parseFloat(right_lower_quadrant_tenderness) + parseFloat(elevated_temperature) + parseFloat(rebound_tenderness) + parseFloat(pain_right_lower_quadrant) + parseFloat(anorexia) + parseFloat(nausea) + parseFloat(leukocytosis) + parseFloat(leukocyte_left_shift);\nif (v > 8) { msg = 'Definite appendicitis by the Alvarado Score.';\n    mini_msg = 'Definite appendicitis'; } else if (v > 6 && v < 9) { msg = 'Probable/likely appendicitis by the Alvarado Score.';\n    mini_msg = 'Probable/likely appendicitis'; } else if (v > 4 && v < 7) { msg = 'Possible appendicitis by the Alvarado Score.';\n    mini_msg = 'Possible appendicitis'; } else if (v < 5) { msg = 'Unlikely appendicitis by the Alvarado Score.';\n    mini_msg = 'Unlikely appendicitis'; };\ncalc_output.push({ \n    name: 'mini', \n    value: v.toFixed(0), \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '617_Alvarado Score_result', \n    value: v.toFixed(0), \n    value_text: 'points', \n    message: msg \n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Signs",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Right lower quadrant tenderness",
+                "md_calc_info_concept": null,
+                "name": "right_lower_quadrant_tenderness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Elevated temperature (37.3°C or 99.1°F)",
+                "md_calc_info_concept": null,
+                "name": "elevated_temperature",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Rebound tenderness",
+                "md_calc_info_concept": null,
+                "name": "rebound_tenderness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Symptoms",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Migration of pain to the right lower quadrant",
+                "md_calc_info_concept": null,
+                "name": "pain_right_lower_quadrant",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anorexia",
+                "md_calc_info_concept": null,
+                "name": "anorexia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nausea or vomiting",
+                "md_calc_info_concept": null,
+                "name": "nausea",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Laboratory Values",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Leukocytosis >10,000",
+                "md_calc_info_concept": null,
+                "name": "leukocytosis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Leukocyte left shift",
+                "md_calc_info_concept": null,
+                "name": "leukocyte_left_shift",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": ">75% neutrophils",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "appy",
+            "mantrels"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Pediatrics",
+            "Surgery (General)"
+        ]
+    }
+}

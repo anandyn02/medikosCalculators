@@ -1,0 +1,160 @@
+{
+    "id": "611",
+    "title": "Clinical Index of Stable Febrile Neutropenia (CISNE)",
+    "desc": "The Clinical Index of Stable Febrile Neutropenia (CISNE) identifies febrile neutropenia patients at low risk of serious complications.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21811253 ",
+                "text": "Carmona-bayonas A, Gómez J, González-billalabeitia E, et al. Prognostic evaluation of febrile neutropenia in apparently stable adult cancer patients. Br J Cancer. 2011;105(5):612-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4891503/",
+                "text": "Fonseca PJ, Carmona-bayonas A, García IM, et al. A nomogram for predicting complications in patients with solid tumours and seemingly stable febrile neutropenia. Br J Cancer. 2016;114(11):1191-8."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td>&nbsp;</td> <td> <p><strong>0 points</strong></p> </td> <td> <p><strong>1 point</strong></p> </td> <td> <p><strong>2 points</strong></p> </td> </tr> <tr> <td> <p><calculator id=\"3170\">ECOG Performance Status</calculator></p> </td> <td> <p>&lt;2</p> </td> <td> <p>--</p> </td> <td> <p>≥2</p> </td> </tr> <tr> <td> <p>Stress-induced hyperglycemia</p> </td> <td> <p>No</p> </td> <td> <p>--</p> </td> <td> <p>Yes</p> </td> </tr> <tr> <td> <p>COPD</p> </td> <td> <p>No</p> </td> <td> <p>Yes</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Cardiovascular disease history</p> </td> <td> <p>No</p> </td> <td> <p>Yes</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>NCI mucositis grade ≥2</p> </td> <td> <p>No</p> </td> <td> <p>Yes</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Monocytes</p> </td> <td> <p>≥200/µL</p> </td> <td> <p>&lt;200/µL</p> </td> <td> <p>--</p> </td> </tr> </tbody> </table> </div>",
+        "facts": "<p>Interpretation:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>CISNE</strong></p> </td> <td> <p><strong>Risk category</strong></p> </td> <td> <p><strong>Risk of complications*</strong></p> </td> <td> <p><strong>Recommendation</strong></p> </td> </tr> <tr> <td> <p>0</p> </td> <td> <p>I (Low)</p> </td> <td> <p>1.1%</p> </td> <td> <p>Consider discharge with oral antibiotics after discussion with oncology.</p> </td> </tr> <tr> <td> <p>1-2</p> </td> <td> <p>II (Intermediate)</p> </td> <td> <p>6.2%</p> </td> <td> <p>Use clinical judgment regarding admission. Consider oncology consultation.</p> </td> </tr> <tr> <td> <p>≥3</p> </td> <td> <p>III (High)</p> </td> <td> <p>36%</p> </td> <td> <p>Admit for further investigation, including blood cultures.</p> </td> </tr> </tbody> </table> <p>*Any of the following complications within 7 days minumum, from ED arrival until complete resolution of the episode, defined as \"disappearance of all signs of infection with recovery from neutropenia (≥1,500 neutrophils/μL) and absence of fever for 48 hours, including home surveillance if patient was discharged early\":</p> <ul> <ul> <li><strong>Hypotension: </strong>persistent systolic blood pressure &lt;90 mmHg requiring inotropes or aggressive fluid resuscitation.</li> <li><strong>Acute respiratory failure: </strong>SaO<sub>2</sub> &lt;90%, PaO<sub>2</sub> &lt;60 mmHg, or PaCO<sub>2</sub> ≥45 mmHg.</li> <li><strong>Acute renal failure: </strong>increase in creatinine &gt;0.3 mg/dL within 48 hours, increase in creatinine to ≥1.5× baseline within prior 7 days, or urine volume &lt;0.5 mL/kg per hour for 6 hours.</li> <li><strong>Acute heart failure:</strong> rapid onset of dyspnea, pulmonary edema, and oxygen desaturation requiring urgent therapy.</li> <li><strong>Arrhythmia: </strong>any that alter cardiovascular stability.</li> <li><strong>Major bleeding:</strong> episodes associated with death, occurring in critical localization (intracranial, intraspinal, intraocular, retroperitoneal, or pericardial), or associated with reduction in hemoglobin values ≥2 g/dL or bleeding requiring transfusion of two units RBCs.</li> <li><strong>Delirium:</strong> acute, fluctuating alteration of mental state with cognitive impairment.</li> <li><strong>Acute abdomen: </strong>requiring urgent medical or surgical management.</li> <li><strong>Disseminated intravascular coagulation.</strong></li> </ul> </ul> </div>",
+        "estimation": [],
+        "primary_complains": [
+            "Fever"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "CML",
+            "HIV/AIDS"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar score = parseFloat(ecog) + parseFloat(stress) + parseFloat(copd) + parseFloat(cvd) + parseFloat(nci) + parseFloat(mono);\n\nvar risk, risk2, comp, rec;\nif(score === 0){\n\trisk = 'I';\n\trisk2 = 'Low';\n\tcomp = '1.1%';\n\trec = 'Consider discharge with oral antibiotics after discussion with oncology.';\n}else if(score === 1 || score ===2 ){\n\trisk = 'II';\n\trisk2 = 'Intermediate';\n\tcomp = '6.2%';\n\trec = 'Use clinical judgment regarding admission. Consider oncology consultation.';\n}else if(score >= 3){\n\trisk = 'III';\n\trisk2 = 'High';\n\tcomp = '36%';\n\trec = 'Admit for further investigation, including blood cultures.';\n}\n\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk2\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: rec\n});\ncalc_output.push({\n    name: 'Result',\n    value: risk2,\n    value_text: 'risk',\n    message: 'Risk category ' + risk +'<br/><br/>'+ comp + ' risk of complications within a minimum of 7 days (hypotension, organ failure, etc.—see Facts & Figures for details)'\n});",
+        "inputs": [
+            {
+                "default": 0,
+                "label_en": "<calculator id='3170'>ECOG Performance Status</calculator>",
+                "name": "ecog",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥2",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "ECOG PS 2 = Capable of all self care, but no work activities, out of bed >50% of day",
+                "type": "radio"
+            },
+            {
+                "default": 0,
+                "label_en": "Stress-induced hyperglycemia",
+                "name": "stress",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Initial blood glucose ≥121 mg/dL (6.7 mmol/L), or ≥250 mg/dL (13.9 mmol/L) in diabetics or if on steroids",
+                "type": "radio"
+            },
+            {
+                "default": 0,
+                "label_en": "<abbr title='Chronic obstructive pulmonary disease'>COPD</abbr>",
+                "name": "copd",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "COPD diagnosis on therapy with ≥1 of the following: steroids, supplemental O₂, bronchodilators",
+                "type": "radio"
+            },
+            {
+                "default": 0,
+                "label_en": "Cardiovascular disease history",
+                "name": "cvd",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Chronic heart conditions (e.g., cor pulmonale, heart failure, cardiomyopathy, hypertensive heart disease, arrhythmias, valvular disease, other structural malformations), EXCLUDING history of single uncomplicated episode of AFib",
+                "type": "radio"
+            },
+            {
+                "default": 0,
+                "label_en": "NCI mucositis grade ≥2",
+                "name": "nci",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Painful erythema, edema, or ulcers, but eating/swallowing possible",
+                "type": "radio"
+            },
+            {
+                "default": 0,
+                "label_en": "Monocytes",
+                "name": "mono",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥200/µL",
+                        "value": 0
+                    },
+                    {
+                        "label": "<200/µL",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "cisne",
+            "clinical index",
+            "clinical index of stable febrile neutropenia",
+            "stable febrile neutropenia",
+            "febrile neutropenia"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Infectious Disease",
+            "Internal Medicine"
+        ]
+    }
+}

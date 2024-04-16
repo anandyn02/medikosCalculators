@@ -1,0 +1,330 @@
+{
+    "id": "14",
+    "title": "IMPACT Score for Outcomes in Head Injury",
+    "desc": "The IMPACT Score for Outcomes in Head Injury predicts 6-month mortality and unfavorable outcomes after moderate to severe traumatic brain injury (TBI).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2494563/pdf/pmed.0050165.pdf ",
+                "text": "Steyerberg EW, Mushkudiani N, Perel P, et al. Predicting outcome after traumatic brain injury: development and international validation of prognostic scores based on admission characteristics. PLoS Med. 2008;5(8):e165."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17375997 ",
+                "text": "Murray GD, Butcher I, Mchugh GS, et al. Multivariable prognostic analysis in traumatic brain injury: results from the IMPACT study. J Neurotrauma. 2007;24(2):329-37."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Probability of 6-month mortality or unfavorable outcome = 1 / (1 + e<sup>-x</sup>), where x is as follows:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"76\" /><col width=\"196\" /><col width=\"179\" /></colgroup>\n<tbody>\n<tr>\n<td rowspan=\"2\"><br />\n<p dir=\"ltr\"><strong>Model&nbsp;</strong></p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>6-month outcome</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Mortality</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Unfavorable outcome*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Core</p>\n</td>\n<td>\n<p dir=\"ltr\">x = -3.109 + addition of the selected points**</p>\n</td>\n<td>\n<p dir=\"ltr\">x = -2.644 + addition of the selected points</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Extended</p>\n</td>\n<td>\n<p dir=\"ltr\">x = -3.787 + addition of the selected points</p>\n</td>\n<td>\n<p dir=\"ltr\">x = -3.023 + addition of the selected points</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Lab</p>\n</td>\n<td>\n<p dir=\"ltr\">x = -3.184 + addition of the selected points</p>\n</td>\n<td>\n<p dir=\"ltr\">x = -2.470 + addition of the selected points</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Unfavorable outcome = death, persistent vegetative state, or severe disability.</p>\n<p dir=\"ltr\">**Points for each variable in the core, extended, and lab models are provided below.</p>\n<p>&nbsp;</p>\n<p dir=\"ltr\"><strong>1) Core model</strong></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"107\" /><col width=\"137\" /><col width=\"61\" /><col width=\"61\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points for mortality</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points for unfavorable outcome</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Age, years</p>\n</td>\n<td>\n<p dir=\"ltr\">Age x 0.034</p>\n</td>\n<td>\n<p dir=\"ltr\">Age x 0.038</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"7\">\n<p dir=\"ltr\">Motor score (if on sedation/paralysis or unable to be assessed, mark as \"Not testable (NT)\")</p>\n</td>\n<td>\n<p dir=\"ltr\">Obeys commands (+6)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Localizes pain (+5)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Withdrawal from pain (+4)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.390</p>\n</td>\n<td>\n<p dir=\"ltr\">0.632</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Flexion to pain (+3)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.797</p>\n</td>\n<td>\n<p dir=\"ltr\">1.266</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Extension to pain (+2)</p>\n</td>\n<td>\n<p dir=\"ltr\">1.397</p>\n</td>\n<td>\n<p dir=\"ltr\">2.078</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No motor response (+1)</p>\n</td>\n<td>\n<p dir=\"ltr\">1.447</p>\n</td>\n<td>\n<p dir=\"ltr\">1.393</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Not testable (NT)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.522</p>\n</td>\n<td>\n<p dir=\"ltr\">0.885</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Pupils</p>\n</td>\n<td>\n<p dir=\"ltr\">Both reactive</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">One reactive</p>\n</td>\n<td>\n<p dir=\"ltr\">0.514</p>\n</td>\n<td>\n<p dir=\"ltr\">0.592</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Neither reactive</p>\n</td>\n<td>\n<p dir=\"ltr\">1.239</p>\n</td>\n<td>\n<p dir=\"ltr\">1.216</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><strong>&nbsp;</strong></p>\n<p dir=\"ltr\"><strong>2) Extended model</strong></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"107\" /><col width=\"137\" /><col width=\"61\" /><col width=\"61\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points for mortality</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points for unfavorable outcome</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Age, years</p>\n</td>\n<td>\n<p dir=\"ltr\">Age x 0.032</p>\n</td>\n<td>\n<p dir=\"ltr\">Age x 0.033</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"7\">\n<p dir=\"ltr\">Motor score (if on sedation/paralysis or unable to be assessed, mark as \"Not testable (NT)\")</p>\n</td>\n<td>\n<p dir=\"ltr\">Obeys commands (+6)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Localizes pain (+5)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Withdrawal from pain (+4)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.313</p>\n</td>\n<td>\n<p dir=\"ltr\">0.575</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Flexion to pain (+3)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.746</p>\n</td>\n<td>\n<p dir=\"ltr\">1.185</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Extension to pain (+2)</p>\n</td>\n<td>\n<p dir=\"ltr\">1.207</p>\n</td>\n<td>\n<p dir=\"ltr\">1.852</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No motor response (+1)</p>\n</td>\n<td>\n<p dir=\"ltr\">1.205</p>\n</td>\n<td>\n<p dir=\"ltr\">1.218</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Not testable (NT)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.425</p>\n</td>\n<td>\n<p dir=\"ltr\">0.837</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Pupils</p>\n</td>\n<td>\n<p dir=\"ltr\">Both reactive</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">One reactive</p>\n</td>\n<td>\n<p dir=\"ltr\">0.334</p>\n</td>\n<td>\n<p dir=\"ltr\">0.442</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Neither reactive</p>\n</td>\n<td>\n<p dir=\"ltr\">0.970</p>\n</td>\n<td>\n<p dir=\"ltr\">1.003</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Marshall CT classification*</p>\n</td>\n<td>\n<p dir=\"ltr\">Diffuse injury I</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.298</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.530</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Diffuse injury II</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Diffuse injury III or IV (swelling or shift)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.774</p>\n</td>\n<td>\n<p dir=\"ltr\">0.543</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">V or VI (evacuated or non-evacuated mass lesion)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.651</p>\n</td>\n<td>\n<p dir=\"ltr\">0.497</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Traumatic subarachnoid hemorrhage on CT</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0.606</p>\n</td>\n<td>\n<p dir=\"ltr\">0.567</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Epidural hematoma on CT</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.379</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.572</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Hypoxia</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes (or suspected)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.237</p>\n</td>\n<td>\n<p dir=\"ltr\">0.316</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Hypotension</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes (or suspected)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.667</p>\n</td>\n<td>\n<p dir=\"ltr\">0.614</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>&nbsp;</p>\n<p dir=\"ltr\"><strong>3) Lab model</strong></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"107\" /><col width=\"137\" /><col width=\"61\" /><col width=\"61\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points for mortality</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points for unfavorable outcome</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Age, years</p>\n</td>\n<td>\n<p dir=\"ltr\">Age x 0.020</p>\n</td>\n<td>\n<p dir=\"ltr\">Age x 0.029</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"7\">\n<p dir=\"ltr\">Motor score (if on sedation/paralysis or unable to be assessed, mark as \"Not testable (NT)\")</p>\n</td>\n<td>\n<p dir=\"ltr\">Obeys commands (+6)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Localizes pain (+5)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Withdrawal from pain (+4)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.310</p>\n</td>\n<td>\n<p dir=\"ltr\">0.548</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Flexion to pain (+3)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.778</p>\n</td>\n<td>\n<p dir=\"ltr\">1.186</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Extension to pain (+2)</p>\n</td>\n<td>\n<p dir=\"ltr\">1.109</p>\n</td>\n<td>\n<p dir=\"ltr\">1.801</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No motor response (+1)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.965</p>\n</td>\n<td>\n<p dir=\"ltr\">1.105</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Not testable (NT)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.462</p>\n</td>\n<td>\n<p dir=\"ltr\">0.059</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Pupils</p>\n</td>\n<td>\n<p dir=\"ltr\">Both reactive</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">One reactive</p>\n</td>\n<td>\n<p dir=\"ltr\">0.090</p>\n</td>\n<td>\n<p dir=\"ltr\">0.201</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Neither reactive</p>\n</td>\n<td>\n<p dir=\"ltr\">0.533</p>\n</td>\n<td>\n<p dir=\"ltr\">0.712</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Marshall CT classification*</p>\n</td>\n<td>\n<p dir=\"ltr\">Diffuse injury I</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.150</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.567</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Diffuse injury II</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Diffuse injury III or IV (swelling or shift)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.715</p>\n</td>\n<td>\n<p dir=\"ltr\">0.508</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">V or VI (evacuated or non-evacuated mass lesion)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.807</p>\n</td>\n<td>\n<p dir=\"ltr\">0.571</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Traumatic subarachnoid hemorrhage on CT</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0.740</p>\n</td>\n<td>\n<p dir=\"ltr\">0.666</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Epidural hematoma on CT</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.510</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.687</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Hypoxia</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes (or suspected)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.360</p>\n</td>\n<td>\n<p dir=\"ltr\">0.396</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Hypotension</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes (or suspected)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.366</p>\n</td>\n<td>\n<p dir=\"ltr\">0.440</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Glucose, mmol/L</p>\n</td>\n<td>\n<p dir=\"ltr\">Glu x 0.097</p>\n</td>\n<td>\n<p dir=\"ltr\">Glu x 0.085</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Hemoglobin, g/dL</p>\n</td>\n<td>\n<p dir=\"ltr\">Hgb x -0.086</p>\n</td>\n<td>\n<p dir=\"ltr\">Hgb x -0.092</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Marshall CT classification:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"119\" /><col width=\"274\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Classification</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Definition</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Diffuse injury I</p>\n</td>\n<td>\n<p dir=\"ltr\">No visible intracranial pathology</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Diffuse injury II</p>\n</td>\n<td>\n<p dir=\"ltr\">Cisterns present, midline shift &le;5 mm and/or lesion densities, no high/mixed density lesion &gt;25 cm&sup3;</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Diffuse injury III</p>\n</td>\n<td>\n<p dir=\"ltr\">Cisterns compressed or absent, midline shift &le;5 mm, no high/mixed density lesion &gt;25 cm&sup3;</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Diffuse injury IV</p>\n</td>\n<td>\n<p dir=\"ltr\">Midline shift &gt;5 mm, no high/mixed density lesion &gt;25 cm&sup3;</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">V</p>\n</td>\n<td>\n<p dir=\"ltr\">Any surgically-evacuated lesion</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">VI</p>\n</td>\n<td>\n<p dir=\"ltr\">High/mixed density lesion &gt;25 cm&sup3;, not surgically evacuated</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age_impact",
+                "error_min": "14",
+                "error_max": "100",
+                "warn_min": "14",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Hemoglobin",
+                "unit": "hgb",
+                "error_min": "0.5",
+                "error_max": "25",
+                "warn_min": "4",
+                "warn_max": "20",
+                "conversion": "10",
+                "normal_max_si": "170",
+                "normal_max_us": "17",
+                "normal_min_si": "120",
+                "normal_min_us": "12",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Glucose",
+                "unit": "glu",
+                "error_min": "1",
+                "error_max": "1600",
+                "warn_min": "50",
+                "warn_max": "1000",
+                "conversion": "0.0555",
+                "normal_max_si": "5.8",
+                "normal_max_us": "105",
+                "normal_min_si": "3.9",
+                "normal_min_us": "70",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\nvar age = parseFloat(age);\nvar motor = parseFloat(motor);\nvar pupils = parseFloat(pupils);\nvar hypoxia = parseFloat(hypoxia);\nvar hypotension = parseFloat(hypotension);\nvar epi = parseFloat(epi);\nvar sah = parseFloat(sah);\nvar ct = parseFloat(ct);\nvar model = parseFloat(model);\nvar glucose = parseFloat(glucose);\nvar hgb = parseFloat(hgb);\n\nif (UOMSYSTEM == true) {\n  glucose = glucose*0.0555;\n} else if (UOMSYSTEM == false) {\n  hgb = hgb*0.1;\n}\n  \nif (model == 0) {\n\tcore1 = [0,\n  \t0.39011,\n    0.79689,\n    1.39716,\n    1.44694,\n    0.52185,\n    0.51422,\n    1.23913];\n\n\tcore2 = [0,\n\t0.63222,\n    1.26569,\n    2.07785,\n    1.39274,\n    0.88454,\n    0.59200,\n    1.21592];\n\n\tvar mort_score_core = -3.109 + age*0.03421 + core1[pupils] + core1[motor];\n\tvar mort_prob_core = 1 / (1 + Math.exp(-1*mort_score_core));\n\tmort_prob_core = 100*mort_prob_core;\n\n\tvar unfav_score_core = -2.64449 + age*0.03758 + core2[pupils] + core2[motor];\n\tvar unfav_prob_core = 1 / (1 + Math.exp(-1*unfav_score_core));\n\tunfav_prob_core = 100*unfav_prob_core;\n\n} else if (model == 1) {\n\tcore1 = [0,\n  \t0.39011,\n    0.79689,\n    1.39716,\n    1.44694,\n    0.52185,\n    0.51422,\n    1.23913];\n\n\tcore2 = [0,\n\t0.63222,\n    1.26569,\n    2.07785,\n    1.39274,\n    0.88454,\n    0.59200,\n    1.21592];\n  \n\tvar mort_score_core = -3.109 + age*0.03421 + core1[pupils] + core1[motor];\n\tvar mort_prob_core = 1 / (1 + Math.exp(-1*mort_score_core));\n\tmort_prob_core = 100*mort_prob_core;\n\n\tvar unfav_score_core = -2.64449 + age*0.03758 + core2[pupils] + core2[motor];\n\tvar unfav_prob_core = 1 / (1 + Math.exp(-1*unfav_score_core));\n\tunfav_prob_core = 100*unfav_prob_core;\n\n\tct1 = [0,\n\t0.31266,\n\t0.74613,\n\t1.20660,\n\t1.20471,\n\t0.42453,\n\t0.33449,\n\t0.97003,\n\t-0.29780,\n\t0.77389,\n\t0.65138,\n\t0.60594,\n\t-0.37939,\n\t0.23717,\n\t0.66676];\n\n\tct2 = [0,\n\t0.57499,\n\t1.18478,\n\t1.85198,\n\t1.21820,\n\t0.83688,\n\t0.44244,\n\t1.00322,\n\t-0.53028,\n\t0.54341,\n\t0.49696,\n\t0.56707,\n\t-0.57215,\n\t0.31560,\n\t0.61406];\n\n\tvar mort_score_ct = -3.78654 + age*0.03208 + ct1[pupils] + ct1[motor] + ct1[ct] + ct1[sah] + ct1[epi] + ct1[hypoxia] + ct1[hypotension];\n\tvar mort_prob_ct = 1 / (1 + Math.exp(-1*mort_score_ct));\n\tmort_prob_ct = 100*mort_prob_ct;\n\n\tvar unfav_score_ct = -3.0226 + age*0.03316 + ct2[pupils] + ct2[motor] + ct2[ct] + ct2[sah] + ct2[epi] + ct2[hypoxia] + ct2[hypotension];\n\tvar unfav_prob_ct = 1 / (1 + Math.exp(-1*unfav_score_ct));\n\tunfav_prob_ct = 100*unfav_prob_ct;\n\n} else if (model == 2) {\n\tcore1 = [0,\n  \t0.39011,\n    0.79689,\n    1.39716,\n    1.44694,\n    0.52185,\n    0.51422,\n    1.23913];\n\n\tcore2 = [0,\n\t0.63222,\n    1.26569,\n    2.07785,\n    1.39274,\n    0.88454,\n    0.59200,\n    1.21592];\n\n\tvar mort_score_core = -3.109 + age*0.03421 + core1[pupils] + core1[motor];\n\tvar mort_prob_core = 1 / (1 + Math.exp(-1*mort_score_core));\n\tmort_prob_core = 100*mort_prob_core;\n\n\tvar unfav_score_core = -2.64449 + age*0.03758 + core2[pupils] + core2[motor];\n\tvar unfav_prob_core = 1 / (1 + Math.exp(-1*unfav_score_core));\n\tunfav_prob_core = 100*unfav_prob_core;\n\n\tct1 = [0,\n\t0.31266,\n\t0.74613,\n\t1.20660,\n\t1.20471,\n\t0.42453,\n\t0.33449,\n\t0.97003,\n\t-0.29780,\n\t0.77389,\n\t0.65138,\n\t0.60594,\n\t-0.37939,\n\t0.23717,\n\t0.66676];\n\n\tct2 = [0,\n\t0.57499,\n\t1.18478,\n\t1.85198,\n\t1.21820,\n\t0.83688,\n\t0.44244,\n\t1.00322,\n\t-0.53028,\n\t0.54341,\n\t0.49696,\n\t0.56707,\n\t-0.57215,\n\t0.31560,\n\t0.61406];\n\n\n\tvar mort_score_ct = -3.78654 + age*0.03208 + ct1[pupils] + ct1[motor] + ct1[ct] + ct1[sah] + ct1[epi] + ct1[hypoxia] + ct1[hypotension];\n\tvar mort_prob_ct = 1 / (1 + Math.exp(-1*mort_score_ct));\n\tmort_prob_ct = 100*mort_prob_ct;\n\n\tvar unfav_score_ct = -3.0226 + age*0.03316 + ct2[pupils] + ct2[motor] + ct2[ct] + ct2[sah] + ct2[epi] + ct2[hypoxia] + ct2[hypotension];\n\tvar unfav_prob_ct = 1 / (1 + Math.exp(-1*unfav_score_ct));\n\tunfav_prob_ct = 100*unfav_prob_ct;\n\n\tlab1 = [0,\n\t0.30975,\n\t0.77817,\n\t1.10928,\n\t0.96483,\n\t0.46200,\n\t0.09045,\n\t0.53327,\n\t-0.14967,\n\t0.71545,\n\t0.80678,\n\t0.73996,\n\t-0.50960,\n\t0.35962,\n\t0.36601];\n\n\tlab2 = [0,\n\t0.54824,\n\t1.18636,\n\t1.80098,\n\t1.10513,\n\t0.05868,\n\t0.20088,\n\t0.71179,\n\t-0.56728,\n\t0.50750,\n\t0.57130,\n\t0.66629,\n\t-0.68741,\n\t0.39646,\n\t0.44000];\n\n\tvar mort_score_lab = -3.18424 + age*0.02038 + lab1[pupils] + lab1[motor] + lab1[ct] + lab1[sah] + lab1[epi] + lab1[hypoxia] + lab1[hypotension] + glucose*0.09743 + hgb*(-0.08622);\n\tvar mort_prob_lab = 1 / (1 + Math.exp(-1*mort_score_lab));\n\tmort_prob_lab = 100*mort_prob_lab;\n\n\tvar unfav_score_lab = -2.47002 + age*0.02882 + lab2[pupils] + lab2[motor] + lab2[ct] + lab2[sah] + lab2[epi] + lab2[hypoxia] + lab2[hypotension] + glucose*0.08482 + hgb*(-0.09150);\n\tvar unfav_prob_lab = 1 / (1 + Math.exp(-1*unfav_score_lab));\n\tunfav_prob_lab = 100*unfav_prob_lab;\n\n}\n\n//results\nif (model == 0) {\ncalc_output.push({\n    name: 'mini',\n    value: mort_prob_core.toFixed(1),\n    value_text: '%',\n    message: 'Probability of 6-month mortality (core model)'\n});\n} else if (model == 1) {\ncalc_output.push({\n    name: 'mini',\n    value: mort_prob_ct.toFixed(1),\n    value_text: '%',\n    message: 'Probability of 6-month mortality (extended model)'\n});\n} else if (model == 2) {\ncalc_output.push({\n    name: 'mini',\n    value: mort_prob_lab.toFixed(1),\n    value_text: '%',\n    message: 'Probability of 6-month mortality (lab model)'\n});\n} \ncalc_output.push({\n    name: 'Score',\n    value: mort_prob_core.toFixed(1),\n    value_text: '%',\n    message: 'Probability of 6-month mortality (core model)<br/><br/>' + 'Probability of 6-month unfavorable outcome: '+ unfav_prob_core.toFixed(1) + '% (core model)' \n});\nif (model >= 1) {\n\tcalc_output.push({\n    name: 'Score',\n    value: mort_prob_ct.toFixed(1),\n    value_text: '%',\n    message: 'Probability of 6-month mortality (extended model)<br/><br/>' + 'Probability of 6-month unfavorable outcome: '+ unfav_prob_ct.toFixed(1) + '% (extended model)'\n});\n}\nif (model > 1) {\n\tcalc_output.push({\n    name: 'Score',\n    value: mort_prob_lab.toFixed(1),\n    value_text: '%',\n    message: 'Probability of 6-month mortality (lab model)<br/><br/>' + 'Probability of 6-month unfavorable outcome: '+ unfav_prob_lab.toFixed(1) + '% (lab model)'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Information available",
+                "name": "model",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "H&P only (core model)",
+                        "value": 0
+                    },
+                    {
+                        "label": "H&P and CT (extended model)",
+                        "value": 1
+                    },
+                    {
+                        "label": "H&P, CT, and labs (lab model)",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Each subsequent model builds on the previous to add additional clinical data when available",
+                "type": "radio"
+            },
+            {
+                "subheading": "Core model",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "model == 0 || model == 1 || model == 2",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_impact"
+            },
+            {
+                "conditionality": "model == 0 || model == 1 || model == 2",
+                "default": 0,
+                "label_en": "Motor score",
+                "name": "motor",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Obeys commands (+6)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Localizes pain (+5)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Withdrawal from pain (+4)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Flexion to pain (+3)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Extension to pain (+2)",
+                        "value": 3
+                    },
+                    {
+                        "label": "No motor response (+1)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Not testable (NT)",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "If on sedation/paralysis or unable to be assessed, mark as \"Not testable (NT)\"",
+                "type": "radio"
+            },
+            {
+                "conditionality": "model == 0 || model == 1 || model == 2",
+                "default": 0,
+                "label_en": "Pupils",
+                "name": "pupils",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Both reactive",
+                        "value": 0
+                    },
+                    {
+                        "label": "One reactive",
+                        "value": 6
+                    },
+                    {
+                        "label": "Neither reactive",
+                        "value": 7
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Extended model (core + CT)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "model >= 1",
+                "default": 0,
+                "label_en": "Marshall CT classification",
+                "name": "ct",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Diffuse injury I",
+                        "value": 8
+                    },
+                    {
+                        "label": "Diffuse injury II",
+                        "value": 0
+                    },
+                    {
+                        "label": "Diffuse injury III or IV (swelling or shift)",
+                        "value": 9
+                    },
+                    {
+                        "label": "V or VI (evacuated or non-evacuated mass lesion)",
+                        "value": 10
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "See <a href=\"#evidence\">Evidence</a> for detailed description of CT classes",
+                "type": "radio"
+            },
+            {
+                "conditionality": "model >= 1",
+                "default": 0,
+                "label_en": "Traumatic subarachnoid hemorrhage on CT",
+                "name": "sah",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 11
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "model >= 1",
+                "default": 0,
+                "label_en": "Epidural hematoma on CT",
+                "name": "epi",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 12
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "model >= 1",
+                "default": 0,
+                "label_en": "Hypoxia",
+                "name": "hypoxia",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 13
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "If hypoxia suspected but not confirmed, select \"Yes\"",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "model >= 1",
+                "default": 0,
+                "label_en": "Hypotension",
+                "name": "hypotension",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 14
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "If hypotension suspected but not confirmed, select \"Yes\"",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Lab model (core + CT + lab)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "model == 2",
+                "default": null,
+                "label_en": "Glucose",
+                "name": "glucose",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "glu"
+            },
+            {
+                "conditionality": "model == 2",
+                "default": null,
+                "label_en": "Hemoglobin",
+                "name": "hgb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hgb"
+            }
+        ],
+        "can_search": [
+            "impact calculator",
+            "tbi",
+            "traumatic brain injury"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Surgery (Trauma)"
+        ]
+    }
+}

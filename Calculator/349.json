@@ -1,0 +1,161 @@
+{
+    "id": "349",
+    "title": "CAGE Questions for Alcohol Use",
+    "desc": "The CAGE Questions for Alcohol Use screen for excessive drinking and alcoholism.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6471323",
+                "text": "Ewing JA. Detecting alcoholism. The CAGE questionnaire. JAMA. 1984 Oct 12;252(14):1905-7. PubMed PMID: 6471323."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10888972",
+                "text": "Fiellin DA, Reid M, O'Connor PG. Screening for Alcohol Problems in Primary Care: A Systematic Review. Arch Intern Med. 2000;160(13):1977-1989. PubMed PMID: 10888972."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7966928",
+                "text": "Kitchens JM. Does this patient have an alcohol problem? JAMA. 1994 Dec 14;272(22):1782-7. PubMed PMID: 7966928."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1530196",
+                "text": "Klatsky AL, Armstrong MA, Friedman GD. Alcohol and mortality. Ann Intern Med. 1992;117:646-654. PubMed PMID:1530196."
+            },
+            {
+                "href": "https://www.cdc.gov/alcohol/fact-sheets/alcohol-use.htm",
+                "text": "Centers for Disease Control and Prevention. Alcohol use and health. 2014."
+            },
+            {
+                "href": "https://pubs.niaaa.nih.gov/publications/aa65/AA65.htm",
+                "text": "The Physicians' Guide to Helping Patients With Alcohol Problems. Washington, DC US Dept of Health and Human Services, Public Health Service, National Institutes of Health, National Institute on Alcohol Abuse and Alcoholism, 1995."
+            }
+        ],
+        "evidence": "<p>Addition of the assigned points, as above.</p>",
+        "facts": "<p>The CAGE questions are most commonly used in primary care settings to help discuss alcohol use/abuse.</p>\n<p>The name of the score, &ldquo;CAGE&rdquo;, derives from the bolded phrases in the questions, as below:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Value</th>\n<th>Points</th>\n</tr>\n<tr>\n<td>Have you ever felt you needed to <b>Cut down on your drinking?</b></td>\n<td>Yes/No</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Have people <b>Annoyed you by criticizing your drinking?</b></td>\n<td>Yes/No</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Have you ever felt <b>Guilty about drinking?</b></td>\n<td>Yes/No</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Have you ever felt you needed a drink first thing in the morning<br>(<b>Eye-opener</b>) to steady your nerves or to get rid of a hangover?</td>\n<td>Yes/No</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "AMS",
+            "Anxious",
+            "Injury/Trauma",
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Drug/Alcohol Use"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseInt(cut_down) + parseInt(annoyed) + parseInt(guilty) + parseInt(eye_opener);\nvar msg = '';\nvar mini_msg = '';\nif (u <= 1) { msg += 'Screening negative.';\n    mini_msg = 'Screening negative.' }\nif (u > 1) { msg += 'Scores of 2 or higher had a 93% sensitivity/76% specificity for the identification of \\u201cexcessive drinking\\u201d and a 91% sensitivity/77% specificity for the identification of alcoholism.';\n    mini_msg = 'High sensitivity for \\u201cexcessive drinking\\u201d and alcoholism.' }\nif (eye_opener > 0) { msg += '<br/><br/>Some clinicians also consider the \\u201ceye opener\\u201d question as highly concerning for unhealthy drinking behavior, even if all other questions are answered negatively.' }\ncalc_output.push({ \n    name: 'mini', \n    value: u, \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '1729_CAGE Questions_result', \n    value: u, \n    value_text: 'points', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Have you ever felt you needed to Cut down on your drinking?",
+                "md_calc_info_concept": null,
+                "name": "cut_down",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Have people Annoyed you by criticizing your drinking?",
+                "md_calc_info_concept": null,
+                "name": "annoyed",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Have you ever felt Guilty about drinking?",
+                "md_calc_info_concept": null,
+                "name": "guilty",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Have you ever felt you needed a drink first thing in the morning (Eye-opener) to steady your nerves or to get rid of a hangover?",
+                "md_calc_info_concept": null,
+                "name": "eye_opener",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "etoh",
+            "drugs",
+            "abuse"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Cardiology",
+            "Emergency Medicine",
+            "Family Practice",
+            "Gastroenterology",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "OB-Gyn",
+            "Pain Management",
+            "Primary Care",
+            "Psychiatry",
+            "Sleep Medicine",
+            "Surgery (General)",
+            "Toxicology"
+        ]
+    }
+}

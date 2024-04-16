@@ -1,0 +1,252 @@
+{
+    "id": "545",
+    "title": "Additional Nodal Metastasis Nomogram",
+    "desc": "The Additional Nodal Metastasis Nomogram predicts likelihood of breast cancer with sentinel lymph node metastasis has also spread to additional lymph nodes.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16021535",
+                "text": "Specht MC, Kattan MW, Gonen M, Fey J, Van Zee KJ. Predicting nonsentinel node status after positive sentinel lymph biopsy for breast cancer: clinicians versus nomogram. Ann Surg Oncol. 2005 Aug;12(8):654-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15251163",
+                "text": "Goyal A, Douglas-Jones A, Newcombe RG, Mansel RE; ALMANAC Trialists Group. Predictors of non-sentinel lymph node metastasis in breast cancer patients. Eur J Cancer. 2004 Jul;40(11):1731-7."
+            }
+        ],
+        "evidence": "<p>Multivariate nomogram, with assigned points to 8 criteria.</p>",
+        "facts": "<p><img src=\"https://cdn-web-img.mdcalc.com/content/additional-lymph-node-metastasis-nomogram_pdf__page_2_of_7_.png\" width=\"100%\"></p>",
+        "estimation": [
+            {
+                "name": "Negative SLNs",
+                "unit": "pos_sln",
+                "error_min": "-1",
+                "error_max": "7",
+                "warn_min": "0",
+                "warn_max": "6",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": " ",
+                "units_us": " "
+            },
+            {
+                "name": "Negative SLNs",
+                "unit": "neg_sln",
+                "error_min": "-1",
+                "error_max": "14",
+                "warn_min": "0",
+                "warn_max": "13",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": " ",
+                "units_us": " "
+            },
+            {
+                "name": "cm",
+                "unit": "path_tum_size",
+                "error_min": "-1",
+                "error_max": "9",
+                "warn_min": "0",
+                "warn_max": "8",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "cm",
+                "units_us": "cm"
+            }
+        ],
+        "primary_complains": [
+            "Weakness",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Breast Cancer"
+        ],
+        "logic": "var calc_output = [];\nvar msg;\nvar p, n, s;\nvar u;\nif (parseFloat(numneg) == 14) { n = 0; }\nif (parseFloat(numneg) == 13) { n = 3; }\nif (parseFloat(numneg) == 12) { n = 5; }\nif (parseFloat(numneg) == 11) { n = 9; }\nif (parseFloat(numneg) == 10) { n = 13; }\nif (parseFloat(numneg) == 9) { n = 16; }\nif (parseFloat(numneg) == 8) { n = 19; }\nif (parseFloat(numneg) == 7) { n = 23; }\nif (parseFloat(numneg) == 6) { n = 27; }\nif (parseFloat(numneg) == 5) { n = 33; }\nif (parseFloat(numneg) == 4) { n = 36; }\nif (parseFloat(numneg) == 3) { n = 43; }\nif (parseFloat(numneg) == 2) { n = 48; }\nif (parseFloat(numneg) == 1) { n = 57; }\nif (parseFloat(numneg) == 0) { n = 80; }\n\nif (parseFloat(numpos) == 7) { p = 95; }\nif (parseFloat(numpos) == 6) { p = 80; }\nif (parseFloat(numpos) == 5) { p = 65; }\nif (parseFloat(numpos) == 4) { p = 47; }\nif (parseFloat(numpos) == 3) { p = 33; }\nif (parseFloat(numpos) == 2) { p = 16; }\nif (parseFloat(numpos) <= 1) { p = 0; }\n\nif (parseFloat(size) > 8.5) { s = 100; }\nif (parseFloat(size) <= 8.5 && parseFloat(size) > 8) { s = 95; }\nif (parseFloat(size) <= 8 && parseFloat(size) > 7.5) { s = 89; }\nif (parseFloat(size) <= 7.5 && parseFloat(size) > 7) { s = 85; }\nif (parseFloat(size) <= 7 && parseFloat(size) > 6.5) { s = 78; }\nif (parseFloat(size) <= 6.5 && parseFloat(size) > 6) { s = 72; }\nif (parseFloat(size) <= 6 && parseFloat(size) > 5.5) { s = 67; }\nif (parseFloat(size) <= 5.5 && parseFloat(size) > 5) { s = 62; }\nif (parseFloat(size) <= 5 && parseFloat(size) > 4.5) { s = 55; }\nif (parseFloat(size) <= 4.5 && parseFloat(size) > 4) { s = 50; }\nif (parseFloat(size) <= 4 && parseFloat(size) > 3.5) { s = 44; }\nif (parseFloat(size) <= 3.5 && parseFloat(size) > 3) { s = 37; }\nif (parseFloat(size) <= 3 && parseFloat(size) > 2.5) { s = 34; }\nif (parseFloat(size) <= 2.5 && parseFloat(size) > 2) { s = 27; }\nif (parseFloat(size) <= 2 && parseFloat(size) > 1.5) { s = 22; }\nif (parseFloat(size) <= 1.5 && parseFloat(size) > 1) { s = 15; }\nif (parseFloat(size) <= 1 && parseFloat(size) > 0.5) { s = 10; }\nif (parseFloat(size) <= 0.5 && parseFloat(size) > 0) { s = 5; }\nif (parseFloat(size) == 0) { s = 0; }\n\n\nu = n + p + s + parseFloat(meth) + parseFloat(er) + parseFloat(multi) + parseFloat(lvi) + parseFloat(nuc);\n\n\nif (u < 58) { msg = \"<2% predicted probability of SLN metastasis\";\n} if (u >= 58 && u < 93) { msg = \"2-5% predicted probability of non-SLN metastasis\";\n} if (u >= 93 && u < 122) { msg = \"5-10% predicted probability of non-SLN metastasis\";\n} if (u >= 122 && u < 155) { msg = \"10-20% predicted probability of non-SLN metastasis\";\n} if (u >= 155 && u < 175) { msg = \"20-30% predicted probability of non-SLN metastasis\";\n} if (u >= 175 && u < 192) { msg = \"30-40% predicted probability of non-SLN metastasis\";\n} if (u >= 192 && u < 210) { msg = \"40-50% predicted probability of non-SLN metastasis\";\n} if (u >= 210 && u < 225) { msg = \"50-60% predicted probability of non-SLN metastasis\";\n} if (u >= 225 && u < 242) { msg = \"60-70% predicted probability of non-SLN metastasis\";\n} if (u >= 242 && u < 263) { msg = \"70-80% predicted probability of non-SLN metastasis\";\n} if (u >= 263 && u < 305) { msg = \"80-92% predicted probability of non-SLN metastasis\";\n} if (u >= 305) { msg = \">92% predicted probability of non-SLN metastasis\";\n}\n\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: 'Dutch Criteria',\n    value: u,\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Nuclear Grade",
+                "mdcalc_info_concept": null,
+                "name": "nuc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Ductal I",
+                        "value": 0
+                    },
+                    {
+                        "label": "Ductal II",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ductal III",
+                        "value": 10
+                    },
+                    {
+                        "label": "Lobular",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Lymphovascular Invasion (LVI)",
+                "md_calc_info_concept": null,
+                "name": "lvi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 22
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Multifocal",
+                "md_calc_info_concept": null,
+                "name": "multi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 15
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Estrogen Receptor (ER) Status",
+                "md_calc_info_concept": null,
+                "name": "er",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Negative",
+                        "value": 0
+                    },
+                    {
+                        "label": "Positive",
+                        "value": 17
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of negative <abbr title='Sentinel Lymph Nodes'>SLN</abbr>s",
+                "name": "numneg",
+                "optional": false,
+                "tips_en": "Range: 0-14",
+                "type": "textbox",
+                "unit": "neg_sln"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of positive <abbr title='Sentinel Lymph Nodes'>SLN</abbr>s",
+                "name": "numpos",
+                "optional": false,
+                "tips_en": "Range: 0-7",
+                "type": "textbox",
+                "unit": "pos_sln"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Pathologic Size of Tumor",
+                "name": "size",
+                "optional": false,
+                "tips_en": "Range: 0-9 cm",
+                "type": "textbox",
+                "unit": "path_tum_size"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Method of detection of <abbr title=\"Sentinel Lymph Nodes\">SLN</abbr> metastases</p>",
+                "mdcalc_info_concept": null,
+                "name": "meth",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Immunohistochemistry (IHC)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Serial hematoxylin and eosin (HE)",
+                        "value": 23
+                    },
+                    {
+                        "label": "Routine",
+                        "value": 35
+                    },
+                    {
+                        "label": "Frozen",
+                        "value": 81
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "additional",
+            "lymph",
+            "mets",
+            "breast CA"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Internal Medicine",
+            "OB-Gyn",
+            "Surgery (General)"
+        ]
+    }
+}

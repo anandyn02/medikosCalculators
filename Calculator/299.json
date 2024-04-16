@@ -1,0 +1,195 @@
+{
+    "id": "299",
+    "title": "STUMBL/Battle Score",
+    "desc": "The STUMBL/Battle Score predicts mortality in patients with blunt chest wall trauma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24887537/",
+                "text": "Battle C, Hutchings H, Lovett S, et al. Predicting outcomes after blunt chest wall trauma: development and external validation of a new prognostic model. Crit Care. 2014;18(3):R98."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/28698337/",
+                "text": "Battle C, Abbott Z, Hutchings HA, et al. Protocol for a multicentre randomised feasibility STUdy evaluating the impact of a prognostic model for Management of BLunt chest wall trauma patients: STUMBL trial. BMJ Open. 2017;7(7):e015972."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/21256488/",
+                "text": "Battle CE, Hutchings H, Evans PA. Risk factors that predict mortality in patients with blunt chest wall trauma: a systematic review and meta-analysis. Injury. 2012;43(1):8-17."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/35739456/",
+                "text": "Callisto E, Costantino G, Tabner A, Kerslake D, Reed MJ. The clinical effectiveness of the STUMBL score for the management of ED patients with blunt chest trauma compared to clinical evaluation alone. Intern Emerg Med. 2022;17(6):1785-1793."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>The STUMBL/Battle Score is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%;\"><colgroup><col style=\"width: 41.4352%;\"><col style=\"width: 20.8403%;\"><col style=\"width: 37.7245%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Age, years</span></p>\n</td>\n<td></td>\n<td>\n<p dir=\"ltr\"><span>1 point per 10 years</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Number of rib fractures</span></p>\n</td>\n<td></td>\n<td>\n<p dir=\"ltr\"><span>3 points per rib fracture</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Chronic lung disease</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>5</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Pre-injury anticoagulant use</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><span>Oxygen saturation level</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&ge;95%</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>90-94%</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>85-89%</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>4</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>80-84%</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>6</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col><col></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>STUMBL/Battle Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of Complications</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>0-10</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>13 &plusmn; 6%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>11-15</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>29 &plusmn; 8%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>16-20</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>52 &plusmn; 8%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>21-25</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>70 &plusmn; 6%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>26-30</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>80 &plusmn; 6%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;31</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>88 &plusmn; 7%</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [
+            {
+                "name": "Age (STUMBL)",
+                "unit": "age_stumbl",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.001",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Fractures (STUMBL)",
+                "unit": "fractures",
+                "error_min": "0",
+                "error_max": "24",
+                "warn_min": "0",
+                "warn_max": "24",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "fractures",
+                "units_us": "fractures"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Chest Pain",
+            "Cough",
+            "Shortness of Breath",
+            "Swelling",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar fractures = parseFloat(fractures);\nvar lung = parseFloat(lung);\nvar anticoagulant = parseFloat(anticoagulant);\nvar o2 = parseFloat(o2);\n\nvar age2 = Math.floor(age/10);\n\nvar score = age2 + fractures*3 + lung + anticoagulant + o2;\n\nvar risk;\nif (score <= 10) {\n    risk = '13 ± 6';\n} else if (score <= 15) {\n    risk = '29 ± 8';\n} else if (score <= 20) {\n    risk = '52 ± 8';\n} else if (score <= 25) {\n    risk = '70 ± 6';\n} else if (score <= 30) {\n    risk = '80 ± 6';\n} else if (score >= 31) {\n    risk = '88 ± 7';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + '% risk of complications'\n});\ncalc_output.push({\n    name: 'STUMBL Score',\n    value: score,\n    value_text: 'points',\n    message: 'STUMBL/Battle Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: '%',\n    message: 'Risk of complications'\n})",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_stumbl"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Number of rib fractures</p>",
+                "name": "fractures",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "fractures"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Chronic lung disease</p>",
+                "mdcalc_info_concept": null,
+                "name": "lung",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Pre-injury anticoagulant use</p>",
+                "mdcalc_info_concept": null,
+                "name": "anticoagulant",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Oxygen saturation level</p>",
+                "mdcalc_info_concept": null,
+                "name": "o2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥95%",
+                        "value": 0
+                    },
+                    {
+                        "label": "90-94%",
+                        "value": 2
+                    },
+                    {
+                        "label": "85-89%",
+                        "value": 4
+                    },
+                    {
+                        "label": "80-84%",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "STUdy evaluating the impact of a prognostic model for Management of BLunt chest wall trauma patients (STUMBL score)",
+            "stumbl",
+            "stumbl score",
+            "battle score",
+            "stumbl/battle score",
+            "blunt chest trauma",
+            "blunt chest wall trauma",
+            "trauma mortality",
+            "rib fracture",
+            "rib score"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

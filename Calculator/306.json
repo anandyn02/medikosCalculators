@@ -1,0 +1,230 @@
+{
+    "id": "306",
+    "title": "MACOCHA Score",
+    "desc": "The MACOCHA Score predicts difficult intubation in ICU patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/23348979/",
+                "text": "De Jong A, Molinari N, Terzi N, et al. Early identification of patients at risk for difficult intubation in the intensive care unit: development and validation of the MACOCHA score in a multicenter cohort study. Am J Respir Crit Care Med. 2013;187(8):832-839."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The MACOCHA Score is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 96.9977%; height: 979.171px;\"><colgroup><col style=\"width: 54.9267%;\"><col style=\"width: 23.8323%;\"><col style=\"width: 21.2411%;\"></colgroup>\n<tbody>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"2\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"3\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Factors related to patient</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>M</strong></span><calculator id=\"3989\">allampati score</calculator> III or IV</p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>5</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Obstructive sleep </span><span style=\"text-decoration: underline;\"><strong>a</strong></span><span>pnea syndrome</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Reduced mobility of </span><span style=\"text-decoration: underline;\"><strong>c</strong></span><span>ervical spine</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Limited mouth </span><span style=\"text-decoration: underline;\"><strong>o</strong></span><span>pening, &lt;3 cm</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"3\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Factors related to pathology</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>C</strong></span><span>oma</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Severe </span><span style=\"text-decoration: underline;\"><strong>h</strong></span><span>ypoxemia (&lt;80%)</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"3\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Factor related to operator</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Non</span><span style=\"text-decoration: underline;\"><strong>a</strong></span><span>nesthesiologist</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p>A higher score corresponds to a higher difficulty of intubation.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Altered Mental Status",
+            "Cough",
+            "Dyspnea",
+            "Fatigue",
+            "Fever",
+            "Headache",
+            "Injury/Trauma",
+            "Shortness of Breath",
+            "Wheezing",
+            "Involuntary Movements"
+        ],
+        "disease_treated": [
+            "Acute Respiratory Distress Syndrome",
+            "Obstructive Sleep Apnea",
+            "Respiratory Distress",
+            "Respiratory Failure"
+        ],
+        "logic": "var calc_output = [];\n\nvar mal = parseFloat(mal);\nvar osa = parseFloat(osa);\nvar spine = parseFloat(spine);\nvar open = parseFloat(open);\nvar coma = parseFloat(coma);\nvar o2 = parseFloat(o2);\nvar doc = parseFloat(doc);\n\nvar score = mal + osa + spine + open + coma + o2 + doc;\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'MACOCHA Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'MACOCHA Score<br/><br/>A higher score corresponds to a higher difficulty of intubation.'\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Factors related to patient",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p dir=\"ltr\"><span style=\"text-decoration: underline;\"><strong>M</strong></span><calculator id=\"3989\">allampati score</calculator> III or IV</p>",
+                "mdcalc_info_concept": null,
+                "name": "mal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Obstructive sleep <span style=\"text-decoration: underline;\"><strong>a</strong></span>pnea syndrome</p>",
+                "mdcalc_info_concept": null,
+                "name": "osa",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Reduced mobility of <span style=\"text-decoration: underline;\"><strong>c</strong></span>ervical spine</p>",
+                "mdcalc_info_concept": null,
+                "name": "spine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Limited mouth <span style=\"text-decoration: underline;\"><strong>o</strong></span>pening, &lt;3 cm</p>",
+                "mdcalc_info_concept": null,
+                "name": "open",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Factors related to pathology",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>C</strong></span>oma</p>",
+                "mdcalc_info_concept": null,
+                "name": "coma",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Severe <span style=\"text-decoration: underline;\"><strong>h</strong></span>ypoxemia (&lt;80%)</p>",
+                "mdcalc_info_concept": null,
+                "name": "o2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Factor related to operator",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Non<span style=\"text-decoration: underline;\"><strong>a</strong></span>nesthesiologist</p>",
+                "mdcalc_info_concept": null,
+                "name": "doc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "MACOCHA Score",
+            "MACOCHA",
+            "intubation",
+            "ICU intubation",
+            "respiratory failure",
+            "icu",
+            "mallampati score",
+            "obstructive sleep apnea",
+            "osa"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

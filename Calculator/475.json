@@ -1,0 +1,194 @@
+{
+    "id": "475",
+    "title": "Khorana Risk Score for Venous Thromboembolism in Cancer Patients",
+    "desc": "The Khorana Risk Score for VTE predicts risk of VTE for cancer patients depending on type of cancer and other factors.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.bloodjournal.org/content/bloodjournal/111/10/4902.full.pdf?sso-checked=true",
+                "text": "Khorana AA, et al. Development and validation of a predictive model for chemotherapy-associated thrombosis. Blood 2008;111:4902-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25873061",
+                "text": "Lyman GH, et al. Venous thromboembolism prophylaxis and treatment in patients with cancer: American Society of Clinical Oncology clinical practice guideline update. J Clin Oncol. 2013 Jun 10;31(17):2189-204. doi: 10.1200/JCO.2013.49.1118. Epub 2013 May 13."
+            },
+            {
+                "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa1814630",
+                "text": "Khorana AA, Soff GA, Kakkar AK, et al. Rivaroxaban for Thromboprophylaxis in High-Risk Ambulatory Patients with Cancer. N Engl J Med. 2019;380(8):720-728."
+            },
+            {
+                "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa1814468",
+                "text": "Carrier M, Abou-nassar K, Mallick R, et al. Apixaban to Prevent Venous Thromboembolism in Patients with Cancer. N Engl J Med. 2019;380(8):711-719."
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<p><strong>Score interpretation</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Risk Group</th>\n<th>Score</th>\n<th>2.5-month rate of VTE</th>\n</tr>\n<tr>\n<td>Low</td>\n<td>0</td>\n<td>0.3-0.8%</td>\n</tr>\n<tr>\n<td>Intermediate</td>\n<td>1 - 2</td>\n<td>1.8-2.0%</td>\n</tr>\n<tr>\n<td>High</td>\n<td>&ge;3</td>\n<td>6.7-7.1%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output = [];\n\nvar ca = parseInt(ca);\nvar plt = parseInt(plt);\nvar hb = parseInt(hb);\nvar leuk = parseInt(leuk);\nvar bmi = parseInt(bmi);\nvar u = ca + plt + hb + leuk + bmi;\nvar msg;\n\nif (u == 0) { mini_msg = 'Low Risk';\n    msg = 'Low Risk (0 Points)<br/><br/>Rate of VTE at 2.5 months* = 0.3 - 0.8%'; }\nif (u == 1 || u == 2) { mini_msg = 'Intermediate Risk';\n    msg = 'Intermediate Risk (1-2 Points)<br/><br/>Rate of VTE at 2.5 months* = 1.8 - 2.0%'; }\nif (u > 2) { mini_msg = 'High Risk';\n    msg = 'High Risk (≥3 Points)<br/><br/>Rate of VTE at 2.5 months* = 6.7 - 7.1%'; }\nmsg += \"<br/><br/>*Note: Median follow-up time was 2.5 months.\";\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3315_Khorana Risk Score_result',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Cancer type",
+                "mdcalc_info_concept": null,
+                "name": "ca",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Stomach",
+                        "value": 2
+                    },
+                    {
+                        "label": "Pancreas",
+                        "value": 2
+                    },
+                    {
+                        "label": "Lung",
+                        "value": 1
+                    },
+                    {
+                        "label": "Lymphoma",
+                        "value": 1
+                    },
+                    {
+                        "label": "Gynecologic",
+                        "value": 1
+                    },
+                    {
+                        "label": "Bladder",
+                        "value": 1
+                    },
+                    {
+                        "label": "Testicular",
+                        "value": 1
+                    },
+                    {
+                        "label": "Other",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pre-chemotherapy platelet count ≥350x10⁹/L",
+                "md_calc_info_concept": null,
+                "name": "plt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemoglobin level <10 g/dL or using RBC growth factors",
+                "md_calc_info_concept": null,
+                "name": "hb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pre-chemotherapy leukocyte count >11x10⁹/L",
+                "md_calc_info_concept": null,
+                "name": "leuk",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "BMI ≥35 kg/m²",
+                "md_calc_info_concept": null,
+                "name": "bmi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Vte",
+            "dvt",
+            "cancer",
+            "ca",
+            "pe",
+            "embolism",
+            "thrombosis",
+            "chemo"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Radiation Oncology"
+        ]
+    }
+}

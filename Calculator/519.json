@@ -1,0 +1,220 @@
+{
+    "id": "519",
+    "title": "Simon Broome Diagnostic Criteria for Familial Hypercholesterolemia (FH)",
+    "desc": "The Simon-Broome Diagnostic Criteria diagnoses familial hypercholesterolemia (FH) based on clinical, genetic and family history.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1671226/",
+                "text": "Risk of fatal coronary heart disease in familial hypercholesterolaemia. Scientific Steering Committee on behalf of the Simon Broome Register Group. BMJ : British Medical Journal. 1991;303(6807):893-896."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3976735/",
+                "text": "Al-Rasadi K, Al-Waili K, Al-Sabti HA, et al. Criteria for Diagnosis of Familial Hypercholesterolemia: A Comprehensive Analysis of the Different Guidelines, Appraising their Suitability in the Omani Arab Population. Oman Medical Journal. 2014;29(2):85-91. doi:10.5001/omj.2014.22."
+            },
+            {
+                "href": "https://www.nice.org.uk/guidance/CG71/chapter/1-Guidance#diagnosis",
+                "text": "National Institute for Health and Care Excellence, 2016. Familial hypercholesterolaemia: identification and management. London: NICE."
+            },
+            {
+                "href": "https://heartuk.org.uk/simon-broome-register-patients-info",
+                "text": "What is the Simon Broome Register? HEART UK. "
+            }
+        ],
+        "evidence": "<p>Selection of appropriate criteria.</p>",
+        "facts": "<p><strong>Simon Broome Diagnosis Criteria for Familial Hypercholesterolemia:</strong></p>\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Diagnosis</th>\n<th>Criteria</th>\n</tr>\n<tr>\n<td rowspan=\"6\">Definite FH</td>\n<td>Cholesterol &gt;7.5 mmol/L or LDL-cholesterol &gt;4.9 mmol/L in adult</td>\n</tr>\n<tr>\n<td>Cholesterol &gt;6.7 mmol/L or LDL-cholesterol &gt;4.0 mmol/L in a child under 16 years of age</td>\n</tr>\n<tr>\n<td>PLUS</td>\n</tr>\n<tr>\n<td>Tendon xanthomas in patient or a 1st degree relative (parent, sibling, child),<br>or in a 2nd degree relative (grand parent, uncle, aunt)</td>\n</tr>\n<tr>\n<td>OR</td>\n</tr>\n<tr>\n<td>DNA based evidence of a functional LDLR, PCSK9 and APOB mutation</td>\n</tr>\n<tr>\n<td rowspan=\"6\">Probable FH</td>\n<td>Cholesterol &gt;7.5 mmol/L or LDL-cholesterol &gt;4.9 mmol/L in adult</td>\n</tr>\n<tr>\n<td>Cholesterol &gt;6.7 mmol/L or LDL-cholesterol &gt;4.0 mmol/L in a child under 16 years of age</td>\n</tr>\n<tr>\n<td>PLUS</td>\n</tr>\n<tr>\n<td>Family History of myocardial infarction (MI) before 50 years of age in a 2nd degree relative<br>or below age 60 in a 1st degree relative</td>\n</tr>\n<tr>\n<td>OR</td>\n</tr>\n<tr>\n<td>Family history of raised total cholesterol - &gt;7.5 mmol/L in adult 1st or 2nd degree relative<br>or &gt;6.7 mmol/L in a child or sibling aged &lt;16 years</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [
+            {
+                "name": "Total Cholesterol",
+                "unit": "chol_total",
+                "error_min": "100",
+                "error_max": "1000",
+                "warn_min": "150",
+                "warn_max": "500",
+                "conversion": "0.02586",
+                "normal_max_si": "5.2",
+                "normal_max_us": "200",
+                "normal_min_si": "3.9",
+                "normal_min_us": "150",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "LDL Cholesterol",
+                "unit": "chol_ldl",
+                "error_min": "40",
+                "error_max": "700",
+                "warn_min": "40",
+                "warn_max": "300",
+                "conversion": "0.0259",
+                "normal_max_si": "3.4",
+                "normal_max_us": "130",
+                "normal_min_si": "1",
+                "normal_min_us": "40",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Mass"
+        ],
+        "disease_treated": [
+            "Dyslipidemia"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar tchol = parseFloat(tchol);\nvar ldl = parseFloat(ldl);\nvar xan = parseFloat(xan);\nvar dna = parseFloat(dna);\nvar cvd = parseFloat(cvd);\nvar fam = parseFloat(fam);\n\nif (UOMSYSTEM == false) {\n    tchol = tchol / 0.0259\n    ldl = ldl / 0.0259\n}\nelse {\n    tchol = tchol\n    ldl = ldl\n}\n\nvar string1, tchol, ldl, tchol, ldl;\nvar string2 = 'Familial Hypercholesterolemia';\n\nif (age == 2) {\n    if (tchol >= 288) { tchol = 1; } else { tchol = 0; }\n    if (ldl >= 188) { ldl = 1; } else { ldl = 0; }\n}\nif (age == 1) {\n    if (tchol >= 258) { tchol = 1; } else { tchol = 0; }\n    if (ldl >= 154) { ldl = 1; } else { ldl = 0; }\n}\n\nif (tchol + ldl >= 1) {\n    if (xan + dna + cvd + fam == 0) { string1 = 'Unlikely'; }\n    if (xan + dna >= 1) { string1 = 'Definite'; }\n    if (xan + dna == 0) {\n        if (cvd + fam >= 1) { string1 = 'Probable'; }\n        }\n    }\nelse if (tchol + ldl == 0) { string1 = 'Unlikely'; }\n\ncalc_output.push({\n    name: 'mini',\n    value: '',\n    value_text: '',\n    message: string1 + ' ' + string2\n});\ncalc_output.push({\n    name: '3817_Simon Broome Diagnostic Criteria_result',\n    value: string1,\n    value_text: '',\n    message: string2\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Age (years)",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<16",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥16",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Total cholesterol",
+                "name": "tchol",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "chol_total"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "LDL cholesterol",
+                "name": "ldl",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "chol_ldl"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Tendon xanthomas",
+                "md_calc_info_concept": null,
+                "name": "xan",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Patient, 1st degree relative, or 2nd degree relative",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "DNA-based evidence of a functional LDLR, PCSK9 and APOB mutation",
+                "md_calc_info_concept": null,
+                "name": "dna",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Family history of premature CVD events",
+                "md_calc_info_concept": null,
+                "name": "cvd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Myocardial infarction <50 years (2nd degree relative) or <60 years (1st degree relative)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Family history of extremely high cholesterol",
+                "md_calc_info_concept": null,
+                "name": "fam",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": ">289.6 mg/dL (7.5 mmol/L) in adult 1st or 2nd degree relative or >258.7 mg/dL (6.7 mmol/L) in a child or sibling <16 years",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "FH",
+            "HeFH",
+            "gene",
+            "dna",
+            "xanthomas",
+            "high cholesterol",
+            "hypercholesterolemia",
+            "familial"
+        ],
+        "specialty": [
+            "Endocrinology",
+            "Family Practice",
+            "Internal Medicine"
+        ]
+    }
+}

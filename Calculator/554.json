@@ -1,0 +1,142 @@
+{
+    "id": "554",
+    "title": "Global Initiative for Obstructive Lung Disease (GOLD) Criteria for COPD",
+    "desc": "The Global Initiative for Obstructive Lung Disease (GOLD) Criteria for COPD assesses different stages of COPD and provides treatment recommendations.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://www.goldcopd.com",
+                "text": "Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for Diagnosis, Management of Chronic Obstructive Pulmonary Disease;NHLBI Workshop Report 2003"
+            },
+            {
+                "href": "http://goldcopd.org/gold-2017-global-strategy-diagnosis-management-prevention-copd/ ",
+                "text": "Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for Diagnosis, Management of Chronic Obstructive Pulmonary Disease;NHLBI Workshop Report 2017"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://www.ncbi.nlm.nih.gov/pubmed/18027158",
+                "text": "Maleki-Yazdi MR, et. al. Early detection and impaired quality of life in COPD GOLD stage 0: a pilot study. COPD. 2007 Dec;4(4):313-20."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23611880",
+                "text": "Leivseth L, Brumpton BM, Nilsen TI, Mai XM, Johnsen R, Langhammer A. GOLD classifications and mortality in chronic obstructive pulmonary disease: the HUNT Study, Norway. Thorax. 2013 oct;68(10):914-21. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25711468",
+                "text": "Moreira GL, et al. GOLD B-C-D groups or GOLD II-III-IV grades: Which one better reflects the functionality of patients with chronic obstructive pulmonary disease? Chron Respir Dis. 2015 May;12(2):102-10."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27168432",
+                "text": "Woodruff PG, et al. Clinical Significance of Symptoms in Smokers with Preserved Pulmonary Function. N Engl J Med. 2016 May 12;374(19):1811-21."
+            }
+        ],
+        "evidence": "<img src=\"https://cdn-web-img.mdcalc.com/content/GOLD.png\" alt=\"\" width=\"100%\"> <p>GOLD 1–4 refers to the <em>grade</em> of airflow obstruction, and GOLD A-D are the <em>groups</em> on which treatment recommendations are based.</p> <p>From the Global Strategy for the Diagnosis, Management and Prevention of COPD, Global Initiative for Chronic Obstructive Lung Disease <a href=\"http://goldcopd.org\" target=\"_blank\">(GOLD) 2017</a>.</p>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>GOLD group</strong></p> </td> <td> <p><strong>Risk</strong></p> </td> <td> <p><strong>3-year mortality*</strong></p> </td> <td> <p><strong>Pharmacologic treatment recommendation</strong></p> </td> </tr> <tr> <td> <p>A</p> </td> <td> <p>Low risk, low symptom burden</p> </td> <td> <p>3.8%</p> </td> <td> <p>Bronchodilator (long- or short-acting) </p> </td> </tr> <tr> <td> <p>B</p> </td> <td> <p>Low risk, higher symptom burden</p> </td> <td> <p>10.6%</p> </td> <td> <p>Long-acting bronchodilator (LABA) or long-acting methacholine antagonist (LAMA)</p> </td> </tr> <tr> <td> <p>C</p> </td> <td> <p>High risk, low symptom burden</p> </td> <td> <p>8.2%</p> </td> <td> <p>LAMA (or LAMA + LABA, or LABA + ICS (inhaled corticosteroids) if frequent exacerbations)</p> </td> </tr> <tr> <td> <p>D</p> </td> <td> <p>High risk, higher symptom burden</p> </td> <td> <p>20.1%</p> </td> <td> <p>LAMA and LABA, plus inhaled corticosteroid (ICS) if frequent exacerbations</p> </td> </tr> </tbody> </table> <p>*From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/22997207\" target=\"_blank\">Lange 2012</a>, based on GOLD 2011 criteria.<br><br></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "COPD"
+        ],
+        "logic": "var calc_output=[];\n\nvar sx = parseInt(sx);\nvar ex =  parseInt(ex);\nvar fev =  parseInt(fev);\n\nvar group, risk, mort, tx, grade;\n\nif (sx == 0) {\n\tif (ex == 0 || ex == 1) {\n\tgroup = \"GOLD A\";\n\trisk = \"Low risk, low symptom burden\"; \n\tmort = \"3.8\";\n\ttx = \"Bronchodilator (long- or short-acting) recommended\";\n\t}\n\telse {\n\t\tgroup = \"GOLD C\";\n\t\trisk = \"High risk, low symptom burden\";\n\t\tmort = \"8.2\";\n\t\ttx = \"LAMA (or LAMA + LABA vs. LABA + ICS if frequent exacerbations) recommended\";\n\t}\n}\nif (sx == 1) {\n\tif (ex == 0 || ex == 1) {\n\tgroup = \"GOLD B\";\n\trisk = \"Low risk, higher symptom burden\"; \n\tmort = \"10.6\";\n\ttx = \"LABA or LAMA recommended\";\n\t}\n\telse {\n\t\tgroup = \"GOLD D\";\n\t\trisk = \"High risk, higher symptom burden\";\n\t\tmort = \"20.1\";\n\t\ttx = \"LAMA + LABA recommended, plus ICS if frequent exacerbations\";\n\t}\n}\n\nif (fev == 0) {\n\tgrade = 'Grade 1'\n}\nif (fev == 1) {\n\tgrade = 'Grade 2'\n}\nif (fev == 2) {\n\tgrade = 'Grade 3'\n}\nif (fev == 3) {\n\tgrade = 'Grade 4'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: group,\n    value_text: '',\n    message: mort + '% mortality'\n});\ncalc_output.push({\n    name: 'GOLD Criteria',\n    value: group,\n    value_text: '',\n    message: grade + ' airflow obstruction'\n});\ncalc_output.push({\n    name: 'risk',\n    value: mort,\n    value_text: '%',\n    message: '3-year mortality<br/><br/> ' + tx\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Symptom burden",
+                "name": "sx",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Lower (mMRC <2 or CAT Score <10)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Higher (mMRC ≥2 or CAT Score ≥10)",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "<calculator id='4006'>mMRC</calculator> 2 = Walks slower than people of the same age because of dyspnea or has to stop for breath when walking at own pace; CAT 10 = COPD symptoms have low-medium impact on patient's life",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Exacerbation history",
+                "name": "ex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0 exacerbations",
+                        "value": 0
+                    },
+                    {
+                        "label": "1 exacerbation without hospital admission",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥1 exacerbation with hospital admission",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥2 exacerbations",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "FEV₁ % of predicted",
+                "name": "fev",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥80",
+                        "value": 0
+                    },
+                    {
+                        "label": "50–79",
+                        "value": 1
+                    },
+                    {
+                        "label": "30–49",
+                        "value": 2
+                    },
+                    {
+                        "label": "<30",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "respiratory",
+            "gold",
+            "COPD",
+            "emphysema",
+            "lungs",
+            "pulmonary",
+            "peak flow",
+            "expiratory",
+            "asthma",
+            "WHO"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Geriatrics",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

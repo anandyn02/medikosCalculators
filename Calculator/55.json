@@ -1,0 +1,183 @@
+{
+    "id": "55",
+    "title": "Licurse Score for Renal Ultrasound",
+    "desc": "The Licurse Score for Renal Ultrasound predicts probability of hydronephrosis on renal ultrasonography in adult patients with acute kidney injury.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/226252",
+                "text": "Licurse A, Kim MC, Dziura J, et al. Renal ultrasonography in the evaluation of acute kidney injury: developing a risk stratification framework. Arch Intern Med. 2010;170(21):1900-7."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">History of hydronephrosis*</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">High-risk group</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">-</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Race</p>\n</td>\n<td>\n<p dir=\"ltr\">Non-black</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Black</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">History of recurrent urinary tract infections</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Diagnosis consistent with possible obstruction**</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">History of congestive heart failure</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">History of sepsis or prerenal acute kidney injury, use of pressors, or hypotension</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Exposure to nephrotoxic medications*** prior to acute kidney injury</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Documented history of HN in the medical record or any imaging history of HN in the 2 years prior to the current RUS.</p>\n<p dir=\"ltr\">**e.g. benign prostatic hyperplasia, abdominal or pelvic cancer, neurogenic bladder, single functional kidney, or previous pelvic surgery.</p>\n<p dir=\"ltr\">***Aspirin (&gt;81 mg/day), diuretic, ACE inhibitor, or IV vancomycin.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Licurse Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of hydronephrosis on imaging</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of hydronephrosis requiring stent or nephrostomy tube placement</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;2</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">4.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">1.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">Medium</p>\n</td>\n<td>\n<p dir=\"ltr\">6.8%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.5%*</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;3</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">20.9%</p>\n</td>\n<td>\n<p dir=\"ltr\">4.9%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">From <a href=\"https://onlinelibrary.wiley.com/doi/pdf/10.1002/jhm.2598\" target=\"_blank\">Ip 2016</a>.</p>\n<p dir=\"ltr\">*Data are from the validation study, which found a paradoxical decrease in risk of hydronephrosis requiring urologic intervention for medium- versus low-risk scores.&nbsp;Wider validation is needed to further clarify actual risk.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Vomiting",
+            "Fever",
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Acute Kidney Injury"
+        ],
+        "logic": "var calc_output = [];\n\nvar race = parseFloat(race)\nvar hn = parseFloat(hn)\nvar uti = parseFloat(uti)\nvar obs = parseFloat(obs)\nvar chf = parseFloat(chf)\nvar aki = parseFloat(aki)\nvar exposure = parseFloat(exposure)\n\nvar score = race + uti + obs + chf + aki + exposure\n\nvar group \nvar prev\nvar risk\n\nif (hn == 1) {\nscore = ''\ngroup = 'High'\nprev = '20.9'\nrisk = '4.9'\n}\n\nelse {\n  if (score <= 2) {\n\tgroup = 'Low'\n  \tprev = '4.0'\n    risk = '1.1'\n  }\n  else if (score == 3) {\n    group = 'Medium'\n  \tprev = '6.8'\n    risk = '0.5'\n  }\n  else if (score > 3) {\n    group = 'High'\n  \tprev = '20.9'\n\trisk = '4.9'\n  }\n}\n\n//results\n\nif (hn == 0) {\n\tcalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: '%',\n    message: 'Risk of hydronephrosis requiring intervention'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Licurse Score'\n});\n\ncalc_output.push({\n    name: 'group',\n    value: group,\n    value_text: 'risk',\n    message: ''\n});\n}\n  \nif (hn == 1) {\n\tcalc_output.push({\n    name: 'mini',\n    value: 'High',\n    value_text: 'risk',\n    message: 'Hydronephrosis history automatically confers high risk'\n});\n\ncalc_output.push({\n    name: 'group',\n    value: group,\n    value_text: 'risk',\n    message: 'History of hydronephrosis automatically confers high risk'\n});\n}\n\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '%',\n    message: 'Risk of hydronephrosis requiring stent or nephrostomy (' + prev + '% risk of hydronephrosis on imaging)'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "History of hydronephrosis",
+                "name": "hn",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Documented history of HN in the medical record or any imaging history of HN in the 2 years prior to the current RUS",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hn == 0",
+                "label_en": "Race",
+                "name": "race",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Non-black",
+                        "value": 1
+                    },
+                    {
+                        "label": "Black",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "hn == 0",
+                "default": 0,
+                "label_en": "History of recurrent urinary tract infections",
+                "name": "uti",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hn == 0",
+                "default": 0,
+                "label_en": "Diagnosis consistent with possible obstruction",
+                "name": "obs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "e.g. benign prostatic hyperplasia, abdominal or pelvic cancer, neurogenic bladder, single functional kidney, or previous pelvic surgery",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hn == 0",
+                "default": 1,
+                "label_en": "History of congestive heart failure",
+                "name": "chf",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hn == 0",
+                "default": 1,
+                "label_en": "History of sepsis or prerenal acute kidney injury, use of pressors, or hypotension",
+                "name": "aki",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hn == 0",
+                "default": 1,
+                "label_en": "Exposure to nephrotoxic medications prior to acute kidney injury",
+                "name": "exposure",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Aspirin (>81 mg/day), diuretic, ACE inhibitor, or IV vancomycin",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "HN risk",
+            "hydronephrosis",
+            "renal ultrasonography",
+            "renal ultrasound",
+            "Licurse score",
+            "licurse model",
+            "acute kidney injury",
+            "AKI"
+        ],
+        "specialty": [
+            "Nephrology",
+            "Internal Medicine",
+            "Hospitalist Medicine",
+            "Urology"
+        ]
+    }
+}

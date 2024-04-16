@@ -1,0 +1,130 @@
+{
+    "id": "697",
+    "title": "LDL Calculated",
+    "desc": "The LDL Calculated calculates LDL based on total and HDL cholesterol and triglycerides.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.nhlbi.nih.gov/health-pro/guidelines/current/cholesterol-guidelines/quick-desk-reference-html",
+                "text": "NCEP 2004 update to LDL Guidelines"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15654445",
+                "text": "Cordova CM, Schneider CR, Juttel ID, Cordova MM. Comparison of LDL-cholesterol direct measurement with the estimate using the Friedewald formula in a sample of 10,664 patients. Arq Bras Cardiol. 2004;83(6):482-7."
+            }
+        ],
+        "evidence": "<p>LDL cholesterol = total cholesterol - HDL - (triglycerides / 5)</p>",
+        "facts": "<p><strong>Interpretation:</strong></p>\n<p></p>\n<table width=\"265\" height=\"61\">\n<tbody>\n<tr>\n<td><strong>LDL level, mg/dL</strong></td>\n<td><strong>Interpretation</strong></td>\n</tr>\n<tr>\n<td>&lt;100&nbsp;</td>\n<td>Optimal</td>\n</tr>\n<tr>\n<td>100-129</td>\n<td>Near optimal/above optimal</td>\n</tr>\n<tr>\n<td>130-159&nbsp;</td>\n<td>Borderline high</td>\n</tr>\n<tr>\n<td>160-189</td>\n<td>High</td>\n</tr>\n<tr>\n<td>&ge;190</td>\n<td>Very high</td>\n</tr>\n</tbody>\n</table>\n<p>From&nbsp;<a href=\"https://www.nhlbi.nih.gov/files/docs/guidelines/atglance.pdf\" target=\"_blank\" rel=\"noopener\">ATP III Guidelines</a>.</p>\n<p>&nbsp;</p>\n<p><strong>LDL targets:</strong></p>\n<ul>\n<li><strong>&ldquo;Very&rdquo; high risk:</strong> guidelines suggest &lt;70mg/dL may be a reasonable option, but data may suggest there is little incremental benefit to this extreme but with high associated cost.</li>\n<li><strong>High risk</strong> (known CAD, known other atherosclerotic disease, diabetes, etc): &lt;100 mg/dL.</li>\n<li><strong>Moderate risk</strong> (&gt;1 risk factor*): &lt;130 mg/dL.</li>\n<li><strong>Lower risk</strong> (0-1 risk factors): &lt;160 mg/dL.</li>\n</ul>\n<p>From <a href=\"https://www.nhlbi.nih.gov/health-pro/guidelines/current/cholesterol-guidelines/quick-desk-reference-html\" target=\"_blank\" rel=\"noopener\">NCEP 2004 Guidelines</a>.</p>\n<p>&nbsp;</p>\n<p>*Risk factors include diabetes, cigarette smoking, HTN (BP 140/90 mm Hg or on antihypertensive medication), low HDL cholesterol (&lt;40 mg/dL),&nbsp;and family history of premature CAD (CAD in male first-degree relative, or father &lt;55 years, or female first-degree relative or mother &lt;65 years).</p>",
+        "estimation": [
+            {
+                "name": "Total Cholesterol",
+                "unit": "chol_total",
+                "error_min": "100",
+                "error_max": "1000",
+                "warn_min": "150",
+                "warn_max": "500",
+                "conversion": "0.02586",
+                "normal_max_si": "5.2",
+                "normal_max_us": "200",
+                "normal_min_si": "3.9",
+                "normal_min_us": "150",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Triglycerides",
+                "unit": "trig",
+                "error_min": "0",
+                "error_max": "400",
+                "warn_min": "0",
+                "warn_max": "300",
+                "conversion": "0.0113",
+                "normal_max_si": "1.7",
+                "normal_max_us": "150",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "HDL Cholesterol",
+                "unit": "chol_hdl",
+                "error_min": "1",
+                "error_max": "150",
+                "warn_min": "1",
+                "warn_max": "95",
+                "conversion": "0.02586",
+                "normal_max_si": "1.55",
+                "normal_max_us": "60",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Preventive Care/Screening"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Dyslipidemia",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\nvar total_cholesterol = parseFloat(total_cholesterol);\nvar hdl_cholesterol = parseFloat(hdl_cholesterol);\nvar triglycerides = parseFloat(triglycerides);\nif (UOMSYSTEM == false) { // convert these puppies to SI units for the equation\n  total_cholesterol = total_cholesterol / 0.0259;\n  hdl_cholesterol = hdl_cholesterol / 0.0259;\n  triglycerides = triglycerides / 0.0113;\n}\nvar v = total_cholesterol - hdl_cholesterol - (triglycerides / 5);\nvar unit = '';\nif (UOMSYSTEM == false) { // convert the result back into mmol/L for cholesterols\n  v = v * 0.0259;\n  unit = 'mmol/L';\n} else {\n  unit ='mg/dL'\n}\n\nvar risk;\nif (v.toFixed(1) < 100) {\n\trisk = 'Optimal'\n}\nif (v.toFixed(1) >= 100 && v.toFixed(1) < 130) {\n\trisk = 'Near optimal'\n}\nif (v.toFixed(1) >= 130 && v.toFixed(1) < 160) {\n\trisk = 'Borderline high'\n}\nif (v.toFixed(1) >= 160 && v.toFixed(1) < 190) {\n\trisk = 'High'\n}\nif (v.toFixed(1) >= 190) {\n\trisk = 'Very high'\n}\n\ncalc_output.push({\n  name: 'mini',\n  value: v.toFixed(1),\n  value_text: unit,\n  message: 'Calculated LDL level'\n});\ncalc_output.push({\n  name: '70_LDL Calculated_result',\n  value: v.toFixed(1),\n  value_text: unit,\n  message: 'Calculated LDL level<br/><br/>' + risk + ' LDL level according to ATP III guidelines. See Evidence for cutoffs and target LDL levels according to risk.'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Total Cholesterol</p>",
+                "name": "total_cholesterol",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "chol_total"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>HDL Cholesterol</p>",
+                "name": "hdl_cholesterol",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "chol_hdl"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Triglycerides</p>",
+                "name": "triglycerides",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "trig"
+            }
+        ],
+        "can_search": [
+            "ACS",
+            "cholesterol",
+            "hdl",
+            "triglycerides"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Endocrinology",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

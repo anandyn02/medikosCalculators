@@ -1,0 +1,662 @@
+{
+    "id": "389",
+    "title": "tPA Contraindications for Ischemic Stroke",
+    "desc": "tPA Contraindications provide inclusion/exclusion criteria when deciding to use tPA on a patient with acute ischemic stroke.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://stroke.ahajournals.org/content/44/3/870.full",
+                "text": "Jauch ED, et al. Guidelines for the early management of patients with acute ischemic stroke: A Guideline for healthcare professionals from the American Heart Association/American Stroke Association. Stroke. 2013; 44: 870-947."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21490319",
+                "text": "De Silva DA, Manzano JJ, Chang HM, Wong MC. Reconsidering recent myocardial infarction as a contraindication for IV stroke thrombolysis. Neurology. 2011 May 24;76(21):1838-40."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12097852",
+                "text": "Selim M, Kumar S, Fink J, Schlaug G, Caplan LR, Linfante I. Seizure at stroke onset: should it be an absolute contraindication to thrombolysis? Cerebrovasc Dis. 2002;14(1):54-7."
+            },
+            {
+                "href": "ncbi.nlm.nih.gov/pmc/articles/PMC4530420/",
+                "text": "Fugate JE, Rabinstein AA. Absolute and Relative Contraindications to IV rt-PA for Acute Ischemic Stroke. Neurohospitalist. 2015;5(3):110-21."
+            },
+            {
+                "href": "https://stroke.ahajournals.org/content/early/2015/12/22/STR.0000000000000086.full.pdf+html",
+                "text": "Demaerschalk BM, et al. Scientific Rationale for the Inclusion and Exclusion Criteria for Intravenous Alteplase in Acute Ischemic Stroke: A Statement for Healthcare Professionals From the American Heart Association/American Stroke Association. Stroke. 2016 Feb;47(2):581-641."
+            }
+        ],
+        "evidence": "<p>Series of Yes/No questions.</p>",
+        "facts": "<p>For the entire list of inclusion/exclusion criteria and ischemic stroke guidelines, view the <a href=\"https://www.ahajournals.org/doi/10.1161/STR.0000000000000211\" target=\"_blank\" rel=\"noopener\">2019 Update in Early Management of Acute Ischemic Stroke</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dizziness",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Intracranial Hemorrhage",
+            "Stroke/TIA",
+            "Subarachnoid Hemorrhage"
+        ],
+        "logic": "var calc_output = [];\nvar inc, abs, rel, rel3;\nvar val = 'Patient does NOT meet inclusion criteria for tPA.';\nvar mini_val = 'TPA administration NOT indicated.';\ninc = 0;\nabs = 0;\nrel = 0;\nrel3 = 0;\nif (age_18 == 1 & diagnosis == 1 & symptom_onset == 1) { inc = 1 }\nif (hemorrhage == 1 || sub_hemorrhage == 1 || surg_trauma_stroke == 1 || hypertension == 1 || hist_hemorr == 1 || endocarditis == 1 || malformation == 1 || bleeding == 1 || diathesis == 1 || glucose == 1) { abs = 1 }\nif (minor_stroke == 1 || surgery == 1 || gastro == 1 || seizure == 1 || art_puncture == 1 || lumb_puncture == 1 || pericarditis == 1 || pregnancy == 1) { rel = 1 }\nif (age_80 == 1 || stroke == 1 || anticoagulant == 1 || nihss_25 == 1 || multi_infarction == 1) { rel3 = 1 }\nif (inc == 1) { val = 'Patient eligible for tPA';\n    mini_val = 'Patient eligible for tPA';\n    if (rel3 == 1 || rel == 1) {\n        if (rel3 == 1 && rel != 1) { val += ' but has contraindications if onset >3 hours; consider and discuss risk/benefit with patient, family, and neurology consultation.';\n            mini_val += ' but has contraindications.' }\n        if (rel == 1) { val += ' but has relative contraindications; consider and discuss risk/benefit with patient, family, and neurology consultation.';\n            mini_val += ' but has contraindications.' } } else { val += '.';\n        mini_val += '.' }\n    if (abs == 1) { val = 'Patient has absolute contraindications to tPA and it should NOT be given.';\n        mini_val = 'TPA administration NOT indicated.' } }\ncalc_output.push({ \n    name: 'mini', \n    value: ' ', \n    value_text: ' ',\n    message: mini_val\n});\ncalc_output.push({ \n    name: '1934_tPA Contraindications_result', \n    value: ' ', \n    value_text: ' ', \n    message: val \n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Eligibility for tPA",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥18",
+                "md_calc_info_concept": null,
+                "name": "age_18",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Clinical diagnosis of ischemic stroke causing neurological deficit",
+                "md_calc_info_concept": null,
+                "name": "diagnosis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Time of symptom onset <4.5 hours",
+                "md_calc_info_concept": null,
+                "name": "symptom_onset",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "See Additional Warnings to tPA at 3-4.5hr below",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Absolute Contraindications to tPA",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intracranial hemorrhage on CT",
+                "md_calc_info_concept": null,
+                "name": "hemorrhage",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Clinical presentation suggests subarachnoid hemorrhage",
+                "md_calc_info_concept": null,
+                "name": "sub_hemorrhage",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Neurosurgery, head trauma, or stroke in past 3 months",
+                "md_calc_info_concept": null,
+                "name": "surg_trauma_stroke",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Uncontrolled hypertension (>185 mmHg SBP or >110 mmHg DBP)",
+                "md_calc_info_concept": null,
+                "name": "hypertension",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of intracranial hemorrhage",
+                "md_calc_info_concept": null,
+                "name": "hist_hemorr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Known intracranial arteriovenous malformation, neoplasm, or aneurysm",
+                "md_calc_info_concept": null,
+                "name": "malformation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Active internal bleeding",
+                "md_calc_info_concept": null,
+                "name": "bleeding",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Suspected/confirmed endocarditis",
+                "md_calc_info_concept": null,
+                "name": "endocarditis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Known bleeding diathesis",
+                "md_calc_info_concept": null,
+                "name": "diathesis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "(1) Platelet count < 100,000; (2) Patient has received heparin within 48 hours and has an elevated aPTT (greater than upper limit of normal for laboratory); (3) Current use of oral anticoagulants (ex: warfarin) and INR >1.7; (4)Current use of direct thrombin inhibitors or direct factor Xa inhibitors",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abnormal blood glucose (<50 mg/dL)",
+                "md_calc_info_concept": null,
+                "name": "glucose",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Relative Contraindications/Warnings to tPA",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Only minor or rapidly improving stroke symptoms",
+                "md_calc_info_concept": null,
+                "name": "minor_stroke",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Major surgery or serious non-head trauma in the previous 14 days",
+                "md_calc_info_concept": null,
+                "name": "surgery",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of gastrointestinal or urinary tract hemorrhage within 21 days",
+                "md_calc_info_concept": null,
+                "name": "gastro",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Seizure at stroke onset",
+                "md_calc_info_concept": null,
+                "name": "seizure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recent arterial puncture at a noncompressible site",
+                "md_calc_info_concept": null,
+                "name": "art_puncture",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recent lumbar puncture",
+                "md_calc_info_concept": null,
+                "name": "lumb_puncture",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Post myocardial infarction pericarditis",
+                "md_calc_info_concept": null,
+                "name": "pericarditis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pregnancy",
+                "md_calc_info_concept": null,
+                "name": "pregnancy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Additional Warnings to tPA >3hr Onset",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >80 years",
+                "md_calc_info_concept": null,
+                "name": "age_80",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of prior stroke and diabetes",
+                "md_calc_info_concept": null,
+                "name": "stroke",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Any active anticoagulant use (even with INR <1.7) ",
+                "md_calc_info_concept": null,
+                "name": "anticoagulant",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='715'>NIHSS</calculator> >25",
+                "md_calc_info_concept": null,
+                "name": "nihss_25",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "CT shows multilobar infarction (hypodensity >1/3 cerebral hemisphere)",
+                "md_calc_info_concept": null,
+                "name": "multi_infarction",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "tPA",
+            "thrombolysis",
+            "CVA",
+            "TIA",
+            "stroke"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology"
+        ]
+    }
+}

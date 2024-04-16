@@ -1,0 +1,136 @@
+{
+    "id": "267",
+    "title": "Pittsburgh Knee Rules",
+    "desc": "The Pittsburgh Knee Rules define when knee x-rays are unnecessary after minor trauma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8060409",
+                "text": "Seaberg DC and Jackson R. Clinical decision rule for knee radiographs. American Journal of Emergency Medicine. 1994; 12(5): 541-3."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/10.1111/j.1553-2712.2010.00897.x/full",
+                "text": "Simon LV, et al. The Pittsburgh decision rule: triage nurse versus physician utilization in the emergency department. Journal of Emergency Medicine. 2006; 31(3): 247-50."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23399332",
+                "text": "Cheung TC, et al. Diagnostic accuracy and reproducibility of the Ottawa knee rule vs the Pittsburgh decision rule. 2013; 31: 641-5."
+            }
+        ],
+        "evidence": "<p>Series of Yes/No questions, see below:</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Response</th>\n</tr>\n<tr>\n<td>Mechanism Blunt Trauma or Fall</td>\n<td>Y/N</td>\n</tr>\n<tr>\n<td>Age &lt;12</td>\n<td>Y/N</td>\n</tr>\n<tr>\n<td>Age &gt;50</td>\n<td>Y/N</td>\n</tr>\n<tr>\n<td>Unable to bear weight in ED? (4 steps, limping is allowed)</td>\n<td>Y/N</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output=[]; \nvar msg=''; \nvar mini_msg=''; \nvar output_score=parseInt(mechanism)+parseInt(age_12)+parseInt(age_50)+parseInt(bear_weight_unable); \nif(mechanism==0){\n    msg='If mechanism is not met, the Pittsburgh Knee Rules cannot be applied.';mini_msg='Rule cannot be applied.'\n} else if(mechanism==1){\n    if(output_score==1){\n        msg='If the only criteria met is \\u201cmechanism\\u201d, the Pittsburgh Knee Rules suggest knee imaging is not indicated for this patient.';\n        mini_msg='Imaging not indicated.'\n    }\n    if(output_score>1){\n        msg='If any of the above criteria are met along with \\u201cmechanism\\u201d, the Pittsburgh Knee Rules suggest this patient may need knee imaging.';\n        mini_msg='May need imaging.'\n    }\n}\ncalc_output.push({\n    name:'mini',\n    value:output_score,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1042_Pittsburgh Knee Rules_result',\n    value:output_score,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Mechanism: blunt trauma or fall</p>",
+                "md_calc_info_concept": null,
+                "name": "mechanism",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Age &lt;12</p>",
+                "md_calc_info_concept": null,
+                "name": "age_12",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Age &gt;50</p>",
+                "md_calc_info_concept": null,
+                "name": "age_50",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Unable to bear weight in ED (4 steps, limping is allowed)</p>",
+                "md_calc_info_concept": null,
+                "name": "bear_weight_unable",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ortho",
+            "patella"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Orthopedics",
+            "Primary Care",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

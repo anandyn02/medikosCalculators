@@ -1,0 +1,171 @@
+{
+    "id": "128",
+    "title": "ED-SAFE Patient Safety Screener 3 (PSS-3)",
+    "desc": "The ED-SAFE Patient Safety Screener (PSS) screens for suicidality in emergency patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23707435",
+                "text": "Boudreaux ED, Miller I, Goldstein AB, Sullivan AF, Allen MH, Manton AP, Arias SA, Camargo CA Jr. The emergency department safety assessment and follow-up evaluation (ED-SAFE): method and design considerations. Contemp Clin Trials. 2013;36(1):14-24."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22288721",
+                "text": "Ting SA, Sullivan AF, Miller I, Espinola JA, Allen MH, Camargo CA Jr, Boudreaux ED, Emergency Department Safety Assessment and Follow-up Evaluation (ED-SAFE) Investigators. Multicenter study of predictors of suicide screening in emergency departments. Acad Emerg Med. 2012;19(2):239-243."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24033624",
+                "text": "Caterino JM, Sullivan AF, Betz ME, Espinola JA, Miller I, Camargo CA Jr, Boudreaux ED, Emergency Department Safety Assessment and Follow-up Evaluation (ED-SAFE) Investigators. Evaluating current patterns of assessment for self-harm in emergency departments: a multicenter study. Acad Emerg Med. 2013;20(8):807-815."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Positive screen = selection of &ldquo;Yes&rdquo; to question 2 or 3 below:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Ask the patient:</strong></p>\n</td>\n<td></td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><strong>1. Depressed mood</strong></p>\n<p dir=\"ltr\">&ldquo;Over the past two weeks, have you felt down, depressed, or hopeless?&rdquo;</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Refused</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><strong>2. Active suicidal ideation</strong></p>\n<p dir=\"ltr\">&ldquo;Over the past two weeks, have you had thoughts of killing yourself?&rdquo;</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Refused</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><strong>3. Lifetime suicide attempt</strong></p>\n<p dir=\"ltr\">&ldquo;In your lifetime, have you ever attempted to kill yourself?&rdquo;</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Refused</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"6\">\n<p dir=\"ltr\"><strong>3a.&nbsp;Recent suicide attempt (if it happened within the last 6 months)</strong></p>\n<p dir=\"ltr\">&ldquo;When did your last attempt occur?&rdquo; (only ask if yes to question 3)</p>\n</td>\n<td>\n<p dir=\"ltr\">Today</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Within 30 days</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Within 1-6 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;6 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Does not know</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Refused</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-358bbbe3-7fff-8737-5573-e8c41dac9e44\"><span id=\"docs-internal-guid-358bbbe3-7fff-8737-5573-e8c41dac9e44\">&nbsp;</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Anxious",
+            "Depressed",
+            "Suicidal"
+        ],
+        "disease_treated": [
+            "Depression/Suicidality"
+        ],
+        "logic": "var calc_output = [];\nvar depressed = parseFloat(depressed);\nvar ideation = parseFloat(ideation);\nvar attempt = parseFloat(attempt);\nvar when = parseFloat(when);\n\nvar msg = ''; \nvar mini_msg = ''; \n\nif (depressed == 1){\n  msg += '<br/>Depressed mood';\n  mini_msg = 'Depressed mood';\n} else {\n  msg += '';\n}\n\nif (ideation == 1){\n  msg += '<br/>Active suicidal ideation';\n  mini_msg = 'Active suicidal ideation';  \n} else {\n  msg += '';\n}\n\nif (attempt == 1){\n\tif (when < 3) {\n\t\tmsg += '<br/>Recent suicide attempt';\n        mini_msg = 'Recent suicide attempt';  \n\t} else if (when >= 3) {\n\t\tmsg += '<br/>Lifetime suicide attempt';\n        mini_msg = 'Lifetime suicide attempt';  \n\t}\n} else {\n\tmsg += '';\n}\n\nvar screen;\n\nif (ideation == 1 || attempt == 1) {\n\tscreen = 'Positive';\n} else {\n\tscreen = 'Not positive';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: screen,\n    value_text: '',\n    message: mini_msg\n});\ncalc_output.push({\n    name: 'Score',\n    value: screen,\n    value_text: '',\n    message: screen + ' for suicidality by ED-SAFE PSS-3'   \n});\nif (depressed ==1 || attempt ==1 || ideation ==1) {\ncalc_output.push({\n    name: 'risk1',\n    value: '', \n    value_text: '',\n    message: 'Patient is presenting with:'+msg\n});\n}",
+        "inputs": [
+            {
+                "subheading": "Ask the patient:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Over the past two weeks, have you felt down, depressed, or hopeless?",
+                "name": "depressed",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Refused to answer",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Over the past two weeks, have you had thoughts of killing yourself?",
+                "name": "ideation",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Refused to answer",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "In your lifetime, have you ever attempted to kill yourself?",
+                "name": "attempt",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Refused to answer",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "attempt == 1",
+                "default": null,
+                "label_en": "When did your last attempt occur?",
+                "name": "when",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Today",
+                        "value": 0
+                    },
+                    {
+                        "label": "Within 30 days",
+                        "value": 1
+                    },
+                    {
+                        "label": "Within 1-6 months",
+                        "value": 2
+                    },
+                    {
+                        "label": ">6 months",
+                        "value": 3
+                    },
+                    {
+                        "label": "Does not know",
+                        "value": 4
+                    },
+                    {
+                        "label": "Refused to answer",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "ed-safe",
+            "ed safe",
+            "edsafe",
+            "suicidality screening",
+            "pss",
+            "pss3",
+            "pss-3",
+            "pss 3",
+            "Patients Safety Screener",
+            "suicide screening",
+            "C-SSRS",
+            "suicide ideation",
+            "suicidal ideation",
+            "columbia scale"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Psychiatry"
+        ]
+    }
+}

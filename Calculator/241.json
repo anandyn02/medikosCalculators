@@ -1,0 +1,288 @@
+{
+    "id": "241",
+    "title": "4-Level Pulmonary Embolism Clinical Probability Score (4PEPS)",
+    "desc": "The 4-Level Pulmonary Embolism Clinical Probability Score (4PEPS) rules out PE based on clinical criteria.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jamanetwork.com/journals/jamacardiology/fullarticle/2776853",
+                "text": "Roy P-M, Friou E, Germeau B, et al. Derivation and validation of a 4-level clinical pretest probability score for suspected pulmonary embolism to safely decrease imaging testing. JAMA Cardiol. Published online March 3, 2021."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%; height: 546px;\">\n<tbody>\n<tr style=\"height: 21px;\">\n<td colspan=\"2\" style=\"width: 63.926%; height: 21px;\"><strong>Variable</strong></td>\n<td style=\"width: 31.963%; height: 21px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"3\" style=\"width: 31.963%; height: 63px;\">Age, years</td>\n<td style=\"width: 31.963%; height: 21px;\">&lt;50</td>\n<td style=\"width: 31.963%; height: 21px;\">-2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">50-64</td>\n<td style=\"width: 31.963%; height: 21px;\">-1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">&gt;64</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Sex</td>\n<td style=\"width: 31.963%; height: 21px;\">Female</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Male</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Chronic respiratory disease</td>\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">-1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Heart rate &lt;80</td>\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">-1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Chest pain AND acute dyspnea</td>\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Current estrogen use</td>\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Prior history of VTE</td>\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Syncope</td>\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Immobility within the last four weeks*</td>\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">O<sub>2</sub> saturation &lt;95%</td>\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Calf pain and/or unilateral lower limb edema</td>\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">PE is the most likely diagnosis</td>\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">5</td>\n</tr>\n</tbody>\n</table>\n<p>*Surgery, lower limb plaster cast, or bedridden &gt;3 days for acute medical condition within the last four weeks.</p>",
+        "facts": "<p>Interpretation:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%;\">\n<tbody>\n<tr>\n<td style=\"width: 31.963%;\"><strong>4PEPS Score for PE</strong></td>\n<td style=\"width: 31.963%;\"><strong>Clinical probability of PE</strong></td>\n<td style=\"width: 31.963%;\"><strong>PE diagnosis</strong></td>\n</tr>\n<tr>\n<td style=\"width: 31.963%;\">&lt;0</td>\n<td style=\"width: 31.963%;\">Very low <abbr title=\"Clinical pretest probability\">CPP</abbr> (&lt;2%)</td>\n<td style=\"width: 31.963%;\">PE can be ruled out</td>\n</tr>\n<tr>\n<td style=\"width: 31.963%;\">0-5</td>\n<td style=\"width: 31.963%;\">Low CPP (2-20%)</td>\n<td style=\"width: 31.963%;\">PE can be ruled out if D-dimer level &lt;1.0 &mu;g/mL</td>\n</tr>\n<tr>\n<td style=\"width: 31.963%;\">6-12</td>\n<td style=\"width: 31.963%;\">Moderate CPP (20-65%)</td>\n<td style=\"width: 31.963%;\">PE can be ruled out if D-dimer level &lt;0.5 &mu;g/mL OR &lt;(age x 0.01) &mu;g/mL</td>\n</tr>\n<tr>\n<td style=\"width: 31.963%;\">&ge;13</td>\n<td style=\"width: 31.963%;\">High CPP (&gt;65%)</td>\n<td style=\"width: 31.963%;\">PE cannot be ruled out without imaging testing</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age_adult",
+                "error_min": "18",
+                "error_max": "110",
+                "warn_min": "18",
+                "warn_max": "110",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output=[];\n\nvar age = parseFloat(age);\nif (age<50) {\n  var age_points = -2;\n} else if (age >= 50 && age <= 64) {\n  var age_points = -1;\n} else if (age>64) { \n   var age_points = 0;\n}\n\nvar criteria= age_points + parseFloat(sex) + parseFloat(resp) + parseFloat(bpm) + parseFloat(chest) + parseFloat(estrogen) + parseFloat(vte) + parseFloat(sync) + parseFloat(imm) + parseFloat(pulse) + parseFloat(calf) + parseFloat(pediag);\n\n\nif (criteria <0){\n  var prob = '<2';\n  var prob_msg = 'Very low CPP';\n  var diag = 'PE can be ruled out';\n}\nif (criteria >=0 && criteria <=5){\n  var prob = '2-20';\n  var prob_msg = 'Low CPP';\n  var diag = 'PE can be ruled out if D-dimer level <1.0 µg/mL';\n\n}\n\nif (criteria >=6 && criteria <=12){\n  var prob = '20-65';\n  var prob_msg = 'Moderate CPP';\n  var diag = 'PE can be ruled out if D-dimer level <0.5 µg/mL OR <(age x 0.01) µg/mL';\n}\n\nif (criteria >=13){\n  var prob = '>65';\n  var prob_msg = 'High CPP';\n  var diag = 'PE cannot be ruled out without imaging testing';\n}\n\n\ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text:'points',\n    message:prob_msg\n});\ncalc_output.push({\n    name: '4PEPS Score',\n    value: criteria,\n    value_text:'points',\n    message:'4PEPS Score'\n});\ncalc_output.push({\n    name: 'Probability',\n    value: prob,\n    value_text:'%',\n    message:prob_msg\n});\ncalc_output.push({\n    name: 'PE diagnosis',\n    value: '',\n    value_text:'',\n    message:diag\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_adult"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Chronic respiratory disease",
+                "name": "resp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Heart rate <80",
+                "name": "bpm",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Chest pain AND acute dyspnea",
+                "name": "chest",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Current estrogen use",
+                "name": "estrogen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Prior history of <abbr title=\"Venous thromboembolism\">VTE</abbr>",
+                "name": "vte",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Syncope",
+                "name": "sync",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Immobility within the last four weeks",
+                "name": "imm",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Surgery, lower limb plaster cast, or bedridden >3 days for acute medical condition within the last four weeks",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "O<sub>2</sub> saturation <95%",
+                "name": "pulse",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Calf pain and/or unilateral lower limb edema",
+                "name": "calf",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<abbr title=\"Pulmonary embolism\">PE</abbr> is the most likely diagnosis",
+                "name": "pediag",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "4-Level Pulmonary Embolism Clinical Probability Score (4PEPS), 4PEPS Score for PE, 4PEPS, PE, pulmonary embolism, DVT"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Pulmonology"
+        ]
+    }
+}

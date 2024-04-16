@@ -1,0 +1,176 @@
+{
+    "id": "158",
+    "title": "INTERCHEST Clinical Prediction Rule for Chest Pain in Primary Care",
+    "desc": "The INTERCHEST Clinical Prediction Rule for Chest Pain in Primary Care  rules out coronary artery disease in primary care patients with chest pain.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27773828",
+                "text": "Aerts M, Minalu G, Bösner S, et al. Pooled individual patient data from five countries were used to derive a clinical prediction rule for coronary artery disease in primary care. J Clin Epidemiol. 2017;81:120-128."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8163958 ",
+                "text": "Klinkman MS, Stevens D, Gorenflo DW. Episodes of care for chest pain: a preliminary report from MIRNET. Michigan Research Network. J Fam Pract. 1994;38(4):345-52."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16342831 ",
+                "text": "Cayley WE. Diagnosing the cause of chest pain. Am Fam Physician. 2005;72(10):2012-21."
+            },
+            {
+                "href": "https://www.aafp.org/afp/2019/0501/p584.html",
+                "text": "Sox HC, Aerts M, Haasenriter J. Applying a Clinical Decision Rule for CAD in Primary Care to Select a Diagnostic Test and Interpret the Results. Am Fam Physician. 2019;99(9):584-586."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/30819715",
+                "text": "Harskamp RE, Laeven SC, Himmelreich JC, Lucassen WAM, Van weert HCPM. Chest pain in general practice: a systematic review of prediction rules. BMJ Open. 2019;9(2):e027081."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"224\" /><col width=\"70\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">History of CAD</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Female &ge;65 years or male &ge;55 years</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Chest pain related to effort</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Pain reproducible by palpation</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Physician initially suspected a serious condition</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Chest discomfort feels like &ldquo;pressure&rdquo;</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-e0b68deb-7fff-22e4-0ba7-7492456a8afa\"><span id=\"docs-internal-guid-e0b68deb-7fff-22e4-0ba7-7492456a8afa\"><br /></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>CAD risk</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Probability of CAD</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;1</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">2.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2-5</p>\n</td>\n<td>\n<p dir=\"ltr\">Not low</p>\n</td>\n<td>\n<p dir=\"ltr\">43.0%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-bf5b995d-7fff-68d6-4baa-37f56ee18fd3\">From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/27773828\" target=\"_blank\">Aerts 2017</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain"
+        ],
+        "disease_treated": [
+            "Coronary Artery Disease"
+        ],
+        "logic": "var calc_output = [];\nvar history = parseFloat(history);\nvar age = parseFloat(age);\nvar chest = parseFloat(chest);\nvar pain = parseFloat(pain);\nvar phys = parseFloat(phys);\nvar pressure = parseFloat(pressure);\n\nvar score = history + age + chest + pain  + phys + pressure;\n\nvar diag, prob,msg; \n\nif (score <= 1) {\n  diag = 'Low';\n  prob = '2.1';\n  msg = 'Diagnostic workup can likely be done non-urgently if patient is otherwise stable'\n} else {\n  diag = 'Not low';\n  prob = '43.0';\n  msg = 'Consider more urgent diagnostic testing'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: 'risk',\n    message: prob + '% probability of CAD'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'INTERCHEST Score'   \n});\ncalc_output.push({\n    name: 'risk1',\n    value: diag, \n    value_text: 'risk',\n    message: 'CAD risk'\n});\ncalc_output.push({\n    name: 'risk1',\n    value: prob, \n    value_text: '%',\n    message: 'Probability of CAD' + '<br/><br/>' + msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of CAD",
+                "name": "history",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Female ≥65 years or male ≥55 years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chest pain related to effort",
+                "name": "chest",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pain reproducible by palpation",
+                "name": "pain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Physician initially suspected a serious condition",
+                "name": "phys",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chest discomfort feels like “pressure”",
+                "name": "pressure",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Cad",
+            "coronary artery disease",
+            "chest pain",
+            "interchest",
+            "prediction rule"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Family Practice",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

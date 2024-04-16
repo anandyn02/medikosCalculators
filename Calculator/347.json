@@ -1,0 +1,352 @@
+{
+    "id": "347",
+    "title": "PHQ-9 (Patient Health Questionnaire-9)",
+    "desc": "The PHQ-9 (Patient Health Questionnaire-9) objectifies and assesses degree of depression severity via questionnaire.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11556941",
+                "text": "Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001 Sep;16(9):606-13. PubMed PMID: 11556941; PubMed Central PMCID: PMC1495268."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10568646",
+                "text": "Spitzer RL, Kroenke K, Williams JB. Validation and utility of a self-report version of PRIME-MD: the PHQ primary care study. Primary Care Evaluation of Mental Disorders. Patient Health Questionnaire. JAMA. 1999;282(18):1737-44."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points.</p>",
+        "facts": "<p>The PHQ-9 is a validated, 9-question tool to assess for the degree of depression present in an individual; the last question is not scored, but is useful functionally to help the clinician assess the impact of the patient's symptoms on his or her life.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Depressed"
+        ],
+        "disease_treated": [
+            "Depression/Suicidality"
+        ],
+        "logic": "var problems_difficult = problems_difficult || 0;\n\nvar calc_output = [];\n\nproblems_difficult = parseFloat(problems_difficult);\nvar v = parseFloat(interest) + parseFloat(depressed) + parseFloat(sleep) + parseFloat(tired) + parseFloat(appetite) + parseFloat(failure) + parseFloat(concentration) + parseFloat(slow) + parseFloat(death);\n\nvar text = '';\nvar mini_msg = '';\n\nif (v <= 4) {\n  text = 'Scores ≤4 suggest minimal depression which may not require treatment.';\n  mini_msg = 'Minimal depression';\n}\nelse if (v > 4 && v < 10) {\n  text = 'Scores 5-9 suggest mild depression which may require only watchful waiting and repeated PHQ-9 at followup.';\n  mini_msg = 'Mild depression';\n}\nelse if (v >= 10 && v <= 14) {\n  text = 'Scores 10-14 suggest moderate depression severity; patients should have a treatment plan ranging form counseling, followup, and/or pharmacotherapy.';\n  mini_msg = 'Moderate depression';\n}\nelse if (v > 14 && v <= 19) {\n  text = 'Scores 15-19 suggest moderately severe depression; patients typically should have immediate initiation of pharmacotherapy and/or psychotherapy.';\n  mini_msg = 'Moderately severe depression';\n}\nelse if (v > 19) {\n  text = 'Scores 20 and greater suggest severe depression; patients typically should have immediate initiation of pharmacotherapy and expedited referral to mental health specialist.';\n  mini_msg = 'Severe depression';\n}\n\nif (problems_difficult == 0) {\n  text += '<br/><br/>Functionally, the patient does not report limitations due to their symptoms.';\n} else if (problems_difficult == 1) {\n  text += '<br/><br/>Functionally, the patient is \\u201csomewhat\\u201d having difficulty with life tasks due to their symptoms.';\n} else if (problems_difficult == 2) {\n  text += '<br/><br/>Functionally, the patient finds it is \\u201cvery difficult\\u201d to perform life tasks due to their symptoms.';\n} else if (problems_difficult == 3) {\n  text += '<br/><br/>Functionally, the patient finds it is \\u201cextremely difficult\\u201d to perform life tasks due to their symptoms.';\n}\n\nif (parseFloat(death) > 0) {\n  text += '<br/><br/>WARNING: This patient is having thoughts concerning for suicidal ideation or self-harm, and should be probed further, referred, or transferred for emergency psychiatric evaluation as clinically appropriate and depending on clinician overall risk assessment.';\n}\n\ncalc_output.push({\n  name: 'mini',\n  value: v.toFixed(0),\n  value_text: 'points',\n  message: mini_msg\n});\ncalc_output.push({\n  name: '1725_PHQ-9_result',\n  value: v.toFixed(0),\n  value_text: 'points',\n  message: text\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<p><strong>Ask the patient:</strong> how often have they been bothered by the following over the past 2 weeks?</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Little interest or pleasure in doing things?</p>",
+                "mdcalc_info_concept": null,
+                "name": "interest",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Feeling down, depressed, or hopeless?</p>",
+                "mdcalc_info_concept": null,
+                "name": "depressed",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Trouble falling or staying asleep, or sleeping too much?</p>",
+                "mdcalc_info_concept": null,
+                "name": "sleep",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Feeling tired or having little energy?</p>",
+                "mdcalc_info_concept": null,
+                "name": "tired",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Poor appetite or overeating?</p>",
+                "mdcalc_info_concept": null,
+                "name": "appetite",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Feeling bad about yourself &mdash; or that you are a failure or have let yourself or your family down?</p>",
+                "mdcalc_info_concept": null,
+                "name": "failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Trouble concentrating on things, such as reading the newspaper or watching television?</p>",
+                "mdcalc_info_concept": null,
+                "name": "concentration",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?</p>",
+                "mdcalc_info_concept": null,
+                "name": "slow",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Thoughts that you would be better off dead, or thoughts of hurting yourself in some way?</p>",
+                "mdcalc_info_concept": null,
+                "name": "death",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 1
+                    },
+                    {
+                        "label": "More than half the days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Nearly every day",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "(death + slow + concentration + failure + appetite + tired + sleep + depressed + interest) > 0",
+                "default": null,
+                "label_en": "<p>Ask the patient: how difficult have these problems made it to do work, take care of things at home, or get along with other people?</p>",
+                "mdcalc_info_concept": null,
+                "name": "problems_difficult",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Somewhat difficult",
+                        "value": 1
+                    },
+                    {
+                        "label": "Very difficult",
+                        "value": 2
+                    },
+                    {
+                        "label": "Extremely difficult",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Optional, not included in final score but may help assess global impairment",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "depression",
+            "psych",
+            "si",
+            "suicidal",
+            "phq9",
+            "phq-9"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Internal Medicine",
+            "Primary Care",
+            "Psychiatry"
+        ]
+    }
+}

@@ -1,0 +1,172 @@
+{
+    "id": "179",
+    "title": "MuLBSTA Score for Viral Pneumonia Mortality",
+    "desc": "The MuLBSTA Score predicts 90-day mortality in patients with viral pneumonia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6901688/",
+                "text": "Guo L, Wei D, Zhang X, et al. Clinical Features Predicting Mortality Risk in Patients With Viral Pneumonia: The MuLBSTA Score. Front Microbiol. 2019;10:2752."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://thorax.bmj.com/content/63/1/42",
+                "text": "Jennings LC, Anderson TP, Beynon KA, et al. Incidence and characteristics of viral community-acquired pneumonia in adults. Thorax. 2008;63(1):42-8."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table width=\"399\" height=\"465\">\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p><strong>Variable</strong></p>\n</td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td rowspan=\"2\"><strong>Mu</strong>ltilobe infiltrate</td>\n<td>\n<p>Yes</p>\n</td>\n<td>5</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\"><span id=\"docs-internal-guid-aeef8cd1-7fff-d46e-6170-d9f5beee2355\">Absolute <strong>L</strong>ymphocyte count &le;0.8 x 10<sup>9</sup>/L</span></td>\n<td>\n<p>Yes</p>\n</td>\n<td>4</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\"><strong>B</strong>acterial coinfection (detected by sputum or blood culture)</td>\n<td>\n<p>Yes</p>\n</td>\n<td>4</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"3\"><strong>S</strong>moking history</td>\n<td>\n<p>Non smoker</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>Prior smoker</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>Active smoker</p>\n</td>\n<td>3</td>\n</tr>\n<tr>\n<td rowspan=\"2\">History of hyper-<strong>T</strong>ension</td>\n<td>\n<p>Yes</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td rowspan=\"2\"><strong>A</strong>ge &ge;60 years</td>\n<td>\n<p>Yes</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>No</p>\n</td>\n<td>0</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<table width=\"401\" height=\"246\" style=\"height: 246px;\">\n<tbody>\n<tr>\n<td>\n<p><strong>MuLBSTA Score</strong></p>\n</td>\n<td><strong>90-day mortality</strong></td>\n</tr>\n<tr>\n<td>\n<p>0</p>\n</td>\n<td>0.47%</td>\n</tr>\n<tr>\n<td>\n<p>2</p>\n</td>\n<td>0.87%</td>\n</tr>\n<tr>\n<td>\n<p>3</p>\n</td>\n<td>1.18%</td>\n</tr>\n<tr>\n<td>\n<p>4</p>\n</td>\n<td>1.60%</td>\n</tr>\n<tr>\n<td>\n<p>5</p>\n</td>\n<td>2.17%</td>\n</tr>\n<tr>\n<td>\n<p>6</p>\n</td>\n<td>2.92%</td>\n</tr>\n<tr>\n<td>\n<p>7</p>\n</td>\n<td>3.93%</td>\n</tr>\n<tr>\n<td>\n<p>8</p>\n</td>\n<td>5.27%</td>\n</tr>\n<tr>\n<td>\n<p>9</p>\n</td>\n<td>7.03%</td>\n</tr>\n<tr>\n<td>\n<p>10</p>\n</td>\n<td>9.33%</td>\n</tr>\n<tr>\n<td>\n<p>11</p>\n</td>\n<td>12.27%</td>\n</tr>\n<tr>\n<td>\n<p>12</p>\n</td>\n<td>15.99%</td>\n</tr>\n<tr>\n<td>\n<p>13</p>\n</td>\n<td>20.56%</td>\n</tr>\n<tr>\n<td>\n<p>14</p>\n</td>\n<td>26.03%</td>\n</tr>\n<tr>\n<td>\n<p>15</p>\n</td>\n<td>32.36%</td>\n</tr>\n<tr>\n<td>\n<p>16</p>\n</td>\n<td>39.42%</td>\n</tr>\n<tr>\n<td>\n<p>17</p>\n</td>\n<td>46.95%</td>\n</tr>\n<tr>\n<td>\n<p>18</p>\n</td>\n<td>54.61%</td>\n</tr>\n<tr>\n<td>\n<p>19</p>\n</td>\n<td>62.07%</td>\n</tr>\n<tr>\n<td>\n<p>20</p>\n</td>\n<td>68.99%</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(six)+parseFloat(seven);\n\nvar risk;\n\nif (criteria==0) {\n  risk='0.47';\n}\n\nif (criteria==2) {\n  risk='0.87';\n}\n\nif (criteria==3) {\n  risk='1.18';\n}\n\nif (criteria==4) {\n  risk='1.60';\n}\n\nif (criteria==5) {\n  risk='2.17';\n}\n\nif (criteria==6) {\n  risk='2.92';\n}\n\nif (criteria==7) {\n  risk='3.93';\n}\n\nif (criteria==8) {\n  risk='5.27';\n}\n\nif (criteria==9) {\n  risk='7.03';\n}\n\nif (criteria==10) {\n  risk='9.33';\n}\n\nif (criteria==11) {\n  risk='12.27';\n}\n\nif (criteria==12) {\n  risk='15.99';\n}\n\nif (criteria==13) {\n  risk='20.56';\n}\n\nif (criteria==14) {\n  risk='26.03';\n}\n\nif (criteria==15) {\n  risk='32.36';\n}\n\nif (criteria==16) {\n  risk='39.42';\n}\n\nif (criteria==17) {\n  risk='46.95';\n}\n\nif (criteria==18) {\n  risk='54.61';\n}\n\nif (criteria==19) {\n  risk='62.07';\n}\n\nif (criteria==20) {\n  risk='68.99';\n}\n\nif (criteria>=21) {\n  risk='>68.99';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text: 'points',\n    message: risk + '% 90-day mortality',\n});\ncalc_output.push({\n    name: 'criteria',\n    value: criteria,\n    value_text: 'points',\n    message: 'MuLBSTA Score',\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk, \n    value_text: '%',\n    message: '90-day mortality',\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><strong>Mu</strong>ltilobe infiltrate</p>",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Absolute <strong>L</strong>ymphocyte count &le;0.8 x 10<sup>9</sup>/L</p>",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><strong>B</strong>acterial coinfection</p>",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Detected by sputum or blood culture",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><strong>S</strong>moking history</p>",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Non smoker",
+                        "value": 0
+                    },
+                    {
+                        "label": "Prior smoker",
+                        "value": 2
+                    },
+                    {
+                        "label": "Active smoker",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>History of hyper-<strong>T</strong>ension</p>",
+                "name": "six",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><strong>A</strong>ge &ge;60 years</p>",
+                "name": "seven",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "MuLBSTA Score, MuLBSTA, pneumonia mortality, pneumonia mortality risk, pneumonia, pneumonia risk, viral pneumonia, viral pneumonia mortality, viral pneumonia mortality risk, MuLBSTA pneumonia, MuLBSTA score pneumonia, Coronavirus, Corona virus, COVID, COVID-19, COVID 19, COVID19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

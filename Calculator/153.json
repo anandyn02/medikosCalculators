@@ -1,0 +1,257 @@
+{
+    "id": "153",
+    "title": "Abbreviated Mental Test (AMT-10)",
+    "desc": "The Abbreviated Mental Test (AMT-10) assesses mental impairment in elderly patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4669880",
+                "text": "Hodkinson HM. Evaluation of a mental test score for assessment of mental impairment in the elderly. Age Ageing. 1972;1(4):233-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19790838",
+                "text": "Abbreviated Mental Test Score (AMTS). Occas Pap R Coll Gen Pract. 1993;(59):28."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points (ask the patient):</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"226\" /><col width=\"116\" /><col width=\"108\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Question</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Correct</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Incorrect</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Age</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Time (to the nearest hour)</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\">Give the patient the following address for recall at end of test: &ldquo;42 West Street&rdquo; (have patient repeat to ensure it has been heard correctly)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Current year</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Patient&rsquo;s home address</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">What jobs do these people do? (show the patient two pictures: a postman and a cook)</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Date of birth</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Year World War I started</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Current president (use setting-specific equivalent, e.g. &ldquo;monarch&rdquo; in the UK)</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Count backwards from 20 to 1</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Ask to recall address given earlier (i.e., 42 West Street)</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>From&nbsp;<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/19790838\" target=\"_blank\">Abbreviated Mental Test Score 1993</a>.</p>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"138\" /><col width=\"228\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>AMT-10 Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Severity of delirium</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-3</p>\n</td>\n<td>\n<p dir=\"ltr\">Severe cognitive impairment</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4-6</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate cognitive impairment</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;6</p>\n</td>\n<td>\n<p dir=\"ltr\">No delirium</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-e04a9c5f-7fff-7926-29bf-ed467c47f413\"><span id=\"docs-internal-guid-e04a9c5f-7fff-7926-29bf-ed467c47f413\">From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/19790838\" target=\"_blank\">Abbreviated Mental Test Score 1993</a>.</p>\n<p>Note:&nbsp;Some authors (e.g.&nbsp;<a href=\"https://onlinelibrary.wiley.com/doi/full/10.1111/psyg.12276\" target=\"_blank\">Foroughan 2017</a>) suggest a cutoff of 7 for cognitive impairment.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Neurologic Deficit"
+        ],
+        "disease_treated": [
+            "Dementia",
+            "Delirium"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar time = parseFloat(time);\nvar year = parseFloat(year);\nvar homeaddress = parseFloat(homeaddress);\nvar jobs = parseFloat(jobs);\nvar date = parseFloat(date);\nvar ww1 = parseFloat(ww1);\nvar president = parseFloat(president);\nvar count = parseFloat(count);\nvar recall = parseFloat(recall);\n\nvar score = age + time + year + homeaddress + jobs + date + ww1 + president + count + recall;\n\nvar diag;\n\nif (score >= 0 && score <= 3) {\n  diag = 'Severe cognitive impairment';\n} else if (score >= 4 && score <= 6) {\n  diag = 'Moderate cognitive impairment';\n} else {\n  diag = 'No delirium';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: diag\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: diag   \n});",
+        "inputs": [
+            {
+                "subheading": "<strong>Ask the patient:</strong>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Time",
+                "name": "time",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "To the nearest hour",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Give the patient the following address for recall at end of test: “42 West Street” (have patient repeat to ensure it has been heard correctly)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Current year",
+                "name": "year",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Patient’s home address",
+                "name": "homeaddress",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "What jobs do these people do?",
+                "name": "jobs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Show the patient two pictures: a postman and a cook",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Date of birth",
+                "name": "date",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Year World War I started",
+                "name": "ww1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Current president",
+                "name": "president",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Use setting-specific equivalent, e.g. “monarch” in the UK",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Count backwards from 20 to 1",
+                "name": "count",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ask to recall address given earlier",
+                "name": "recall",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    },
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "i.e., 42 West Street",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "AMTS",
+            "Amt 10",
+            "amt",
+            "amt-10",
+            "abbreviated mental test score",
+            "abbreviated mental test"
+        ],
+        "specialty": [
+            "Geriatrics",
+            "Psychiatry",
+            "Internal Medicine",
+            "Hospitalist Medicine",
+            "Primary Care",
+            "Family Practice"
+        ]
+    }
+}

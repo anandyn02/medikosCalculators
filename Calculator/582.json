@@ -1,0 +1,148 @@
+{
+    "id": "582",
+    "title": "Palchak (UC Davis) Rule for Pediatric Head Trauma",
+    "desc": "The Palchak (UC Davis) Rule for Pediatric Head Trauma identifies children at low risk for brain injuries after blunt head trauma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14520320 ",
+                "text": "Palchak MJ, Holmes JF, Vance CW, et al. A decision rule for identifying children at low risk for brain injuries after blunt head trauma. Ann Emerg Med. 2003;42(4):492-506."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19194349",
+                "text": "Palchak MJ, Holmes JF, Kuppermann N. Clinician judgment versus a decision rule for identifying children at risk of traumatic brain injury on computed tomography after blunt head trauma. Pediatr Emerg Care. 2009;25(2):61-5."
+            }
+        ],
+        "evidence": "<p>If any of the following is present, then the patient is NOT low risk for brain injury:</p> <ol> <li>Abnormal mental status</li> <li>Clinical signs of skull fracture</li> <li>History of vomiting</li> <li>Scalp hematoma (in children ≤2 years of age)</li> <li>Headache</li> </ol> <img src=\"https://cdn-web-img.mdcalc.com/content/palchak.png\" alt=\"\" width=\"100%\">",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Dizziness",
+            "Headache",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar ams = parseFloat(ams) ? 1 : 0;          //A\nvar skull = parseFloat(skull) ? 1 : 0;      //B\nvar hx = parseFloat(hx) ? 1 : 0;            //C\nvar scalp = parseFloat(scalp) ? 1 : 0;      //D\nvar ache = parseFloat(ache) ? 1 : 0;        //E\n\nvar u = ams + skull + hx + scalp + ache;\n\n//interpretation \nvar risk = 'Not low';\nvar ct, intervention;\nif(ams == 1){\n    ct = '15.0';\n    intervention = '16.3';\n}\nif(skull == 1){\n    ct = '13.3';\n    intervention = '11.8';\n} \nif(hx == 1){\n    ct = '4.5';\n    intervention = '3.2';\n}\nif(scalp == 1){\n    ct = '10.5';\n    intervention = '0';\n}\nif(ache == 1){\n    ct = '0.5';\n    intervention = '0.6';\n}\nif(u == 0){\n    ct = '0.3';\n    intervention = '0';\n    risk = 'Low';\n    msg = 'CT not necessary'\n}\nif(u > 0){\n    risk = 'Not low';\n    msg = 'Consider CT'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: 'risk',\n    message: msg\n});\ncalc_output.push({\n    name: 'UCDavis',\n    value: risk,\n    value_text: 'risk',\n    message: msg\n});\ncalc_output.push({\n    name: 'TBIintervention',\n    value: intervention,\n    value_text: '%',\n    message: 'TBI requiring intervention'\n});\ncalc_output.push({\n    name: 'TBICT',\n    value: ct,\n    value_text: '%',\n    message: 'TBI seen on CT'\n});\n",
+        "inputs": [
+            {
+                "label_en": "Abnormal mental status",
+                "name": "ams",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "ams == 0",
+                "label_en": "Clinical signs of skull fracture",
+                "name": "skull",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "skull == 0",
+                "label_en": "History of vomiting",
+                "name": "hx",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "hx == 0",
+                "label_en": "Scalp hematoma",
+                "name": "scalp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "In children ≤2 years of age",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "scalp == 0",
+                "label_en": "Headache",
+                "name": "ache",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "head trauma",
+            "trauma",
+            "head injury",
+            "CT head",
+            "trauma imaging",
+            "intracranial hemorrhage",
+            "intracranial bleed",
+            "pediatrics",
+            "peds",
+            "peds trauma",
+            "child",
+            "children",
+            "palchak rule",
+            "uc davis"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Pediatrics",
+            "Radiology"
+        ]
+    }
+}

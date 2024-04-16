@@ -1,0 +1,130 @@
+{
+    "id": "571",
+    "title": "Pittsburgh Response to Endovascular therapy (PRE) Score",
+    "desc": "The Pittsburgh Response to Endovascular therapy (PRE) Score identifies patients with large vessel occlusion (LVO) strokes likely to benefit from endovascular therapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jnis.bmj.com/content/7/11/783.long",
+                "text": "Rangaraju S, Aghaebrahim A, Streib C, et al. Pittsburgh Response to Endovascular therapy (PRE) score: optimizing patient selection for endovascular therapy for large vessel occlusion strokes. J Neurointerv Surg. 2015;7(11):783-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://stroke.ahajournals.org/content/47/Suppl_1/AWMP10",
+                "text": "Rangaraju S, Haussen D, Nogueira R et al. Abstract WMP10: Validation of the Pittsburgh Response to Endovascular Therapy (PRE) Score in IMS3. Stroke. 2016;47:AWMP10"
+            }
+        ],
+        "evidence": "<p>PRE Score = Age + (2 &times; <calculator id=\"715\">NIHSS</calculator>) &ndash; (10 &times; <calculator id=\"3164\">ASPECTS</calculator>)</p>",
+        "facts": "<p><strong>Interpretation: </strong></p>\n<p>PRE &minus;24 to +49: Likely to benefit from endovascular therapy if successful revascularization (TICI 2b/3) is achieved.</p>\n<p>PRE &ge;50: Not likely to benefit from endovascular therapy.</p>\n<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/pre-score.jpeg\" alt=\"\"></p>\n<p><strong>Figure:</strong> Magnitude of benefit for endovascular therapy based on PRE Score. TICI, Thrombolysis In Cerebral Infarction. mRS, Modified Rankin Scale. PRE, Pittsburgh Response to Endovascular therapy. Based on data from <a href=\"https://jnis.bmj.com/content/7/11/783.long\" target=\"_blank\" rel=\"noopener\">Rangaraju 2015</a>, used with permission from the author.</p>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age_adult",
+                "error_min": "18",
+                "error_max": "110",
+                "warn_min": "18",
+                "warn_max": "110",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "ASPECTS Score",
+                "unit": "aspects",
+                "error_min": "0",
+                "error_max": "10",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "10",
+                "normal_max_us": "10",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "points",
+                "units_us": "points"
+            },
+            {
+                "name": "NIH Stroke Scale",
+                "unit": "nihss",
+                "error_min": "0",
+                "error_max": "42",
+                "warn_min": "0",
+                "warn_max": "42",
+                "conversion": "1",
+                "normal_max_si": "42",
+                "normal_max_us": "42",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "points",
+                "units_us": "points"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Syncope",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "//outputs\nvar calc_output = [];\n\n//user inputs\nvar nih = parseFloat(nih);\nvar asp = parseFloat(asp);\nvar age = parseFloat(age);\n\n\n//calculation\nvar u = age + 2*nih - 10*asp;\nvar mini_msg;\n\nvar msg;\nif (u >= -24 && u <= 49){\n\tmsg = \"Likely to benefit from endovascular therapy.\";\n\tmini_msg = \"Endovascular benefit\"\n}else{\n\tmsg = \"Not likely to benefit from endovascular therapy.\";\n\tmini_msg = \"No endovascular benefit\"\n}\n\n// var msg;\n// if (-24 <= u <= 49){\n// \tmsg = \"Likely to benefit from endovascular therapy.\";\n// }else{\n// \tmsg = \"Not likely to benefit from endovascular therapy.\";\n// }\n\n//result user sees\ncalc_output.push({\nname: 'mini',\nvalue: u,\nvalue_text: 'points',\nmessage: mini_msg\n});\n\ncalc_output.push({\nname: 'Output',\nvalue: u,\nvalue_text: 'points',\nmessage: msg\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_adult"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<calculator id='715'>NIHSS</calculator> Score",
+                "name": "nih",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "nihss"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<calculator id='3164'>ASPECTS</calculator> Score",
+                "name": "asp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "aspects"
+            }
+        ],
+        "can_search": [
+            "stroke",
+            "ischemic stroke",
+            "cva",
+            "cerebrovascular accident",
+            "endovascular",
+            "revascularization",
+            "pre",
+            "pre score"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

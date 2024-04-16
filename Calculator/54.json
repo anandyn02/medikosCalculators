@@ -1,0 +1,164 @@
+{
+    "id": "54",
+    "title": "Fleischner Society Guidelines for Incidental Pulmonary Nodules",
+    "desc": "The Fleischner Society Guidelines for Incidental Pulmonary Nodules provides guidelines for management of solid and subsolid pulmonary nodules.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubs.rsna.org/doi/pdf/10.1148/radiol.2017161659",
+                "text": "Macmahon H, Naidich DP, Goo JM, et al. Guidelines for Management of Incidental Pulmonary Nodules Detected on CT Images: From the Fleischner Society 2017. Radiology. 2017;:161659."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Choose the appropriate features. For nodule size, use the average of long and short axes and round to the nearest millimeter.</p>\n<p dir=\"ltr\"><strong>Solid nodules:</strong></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>Size</strong></p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Single</strong></p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Multiple</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Low risk*</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>High risk*</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Low risk*</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>High risk*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;6 mm (&lt;100 mm3)</p>\n</td>\n<td>\n<p dir=\"ltr\">No routine follow-up</p>\n</td>\n<td>\n<p dir=\"ltr\">Optional CT at 12 months</p>\n</td>\n<td>\n<p dir=\"ltr\">No routine follow-up</p>\n</td>\n<td>\n<p dir=\"ltr\">Optional CT at 12 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-8 mm (100-250 mm3)</p>\n</td>\n<td>\n<p dir=\"ltr\">CT at 6-12 months, then consider CT at 18-24 months</p>\n</td>\n<td>\n<p dir=\"ltr\">CT at 6-12 months, then CT at 18-24 months</p>\n</td>\n<td>\n<p dir=\"ltr\">CT at 3-6 months, then consider CT at 18-24 months</p>\n</td>\n<td>\n<p dir=\"ltr\">CT at 3-6 months, then at 18-24 months</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;8 mm (&gt;250 mm3)</p>\n</td>\n<td>\n<p dir=\"ltr\">Consider CT at 3 months, PET/CT, or tissue sampling</p>\n</td>\n<td>\n<p dir=\"ltr\">Consider CT at 3 months, PET/CT, or tissue sampling</p>\n</td>\n<td>\n<p dir=\"ltr\">CT at 3-6 months, then consider CT at 18-24 months</p>\n</td>\n<td>\n<p dir=\"ltr\">CT at 3-6 months, then at 18-24 months</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"></p>\n<p dir=\"ltr\"><strong>Subsolid nodules:</strong></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"108\" /><col width=\"121\" /><col width=\"38\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>Size</strong></p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Single</strong></p>\n</td>\n<td colspan=\"2\" rowspan=\"2\">\n<p dir=\"ltr\"><strong>Multiple</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Ground glass</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Part solid</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;6 mm (&lt;100 mm3)</p>\n</td>\n<td>\n<p dir=\"ltr\">No routine follow-up</p>\n</td>\n<td>\n<p dir=\"ltr\">No routine follow-up</p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\">CT at 3-6 months. If stable, consider CT at 2 and 4 years</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;6 mm (&ge;100 mm3)</p>\n</td>\n<td>\n<p dir=\"ltr\">CT at 6-12 months to confirm persistence, then CT every 2 years until 5 years</p>\n</td>\n<td>\n<p dir=\"ltr\">CT at 3-6 months to confirm persistence. If unchanged and solid component remains &lt;6 mm, annual CT should be performed for 5 years</p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\">CT at 3-6 months. Subsequent management based on the most suspicious nodule(s)</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"></p>\n<p dir=\"ltr\">*Risk level is determined by clinical judgment, and all relevant risk factors should be considered, including:</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Nodule size, morphology, location, multiplicity, growth rate, presence of emphysema, and evidence of fibrosis.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Age, race, sex, and family history of lung cancer.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Smoking status and exposure to other inhaled carcinogens.</p>\n</li>\n</ul>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Shortness of Breath",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Lung Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar nodule = parseFloat(nodule)\nvar type = parseFloat(type)\nvar level = parseFloat(level)\nvar features = parseFloat(features)\nvar size1 = parseFloat(size1)\nvar size2 = parseFloat(size2)\n\nvar result = ''\nvar msg = ''\n\nif (nodule == 0){\n  \tif (level == 0){\n    \tif (type == 0 && size1 == 0) {\n\tresult = ''\n    msg = 'No routine follow-up'\n   \t\t}\n    \telse if (type == 0 && size1 == 1) {\n\tresult = ''\n\tmsg = 'CT at 6-12 months, then consider CT at 18-24 months'\n    \t}\n    \telse if (type == 0 && size1 == 2) {\n\tresult = ''\n\tmsg = 'Consider CT at 3 months, PET/CT, or tissue sampling'\n    \t}\n    \telse if (type == 1 && size1 == 0) {\n\tresult = ''\n\tmsg = 'No routine follow-up'\n    \t}\n    \telse if (type == 1 && size1 == 1) {\n\tresult = ''\n\tmsg = 'CT at 3-6 months, then consider CT at 18-24 months'\n    \t}\n    \telse if (type == 1 && size1 == 2) {\n\tresult = ''\n\tmsg = 'CT at 3-6 months, then consider CT at 18-24 months'\n    \t}\n    }\n\t\n  \telse if (level == 1){\n    \tif (type == 0 && size1 == 0) {\n\tresult = ''\n    msg = 'Optional CT at 12 months'\n   \t\t}\n    \telse if (type == 0 && size1 == 1) {\n\tresult = ''\n\tmsg = 'CT at 6-12 months, then CT at 18-24 months'\n    \t}\n    \telse if (type == 0 && size1 == 2) {\n\tresult = ''\n\tmsg = 'Consider CT at 3 months, PET/CT, or tissue sampling'\n    \t}\n    \telse if (type == 1 && size1 == 0) {\n\tresult = ''\n\tmsg = 'Optional CT at 12 months'\n    \t}\n    \telse if (type == 1 && size1 == 1) {\n\tresult = ''\n\tmsg = 'CT at 3-6 months, then at 18-24 months'\n    \t}\n    \telse if (type == 1 && size1 == 2) {\n\tresult = ''\n\tmsg = 'CT at 3-6 months, then at 18-24 months'\n    \t}\n    }\n}\nelse if (nodule == 1){\n  \tif (type == 0){\n    \tif (features == 0 && size2 == 0) {\n\tresult = ''\n    msg = 'No routine follow-up'\n   \t\t}\n    \telse if (features == 0 && size2 == 1) {\n\tresult = ''\n\tmsg = 'CT at 6-12 months to confirm persistence, then CT every 2 years until 5 years'\n    \t}\n    \telse if (features == 1 && size2 == 0) {\n\tresult = ''\n\tmsg = 'No routine follow-up'\n    \t}\n    \telse if (features == 1 && size2 == 1) {\n\tresult = ''\n\tmsg = 'CT at 3-6 months to confirm persistence. If unchanged and solid component remains <6 mm, annual CT should be performed for 5 years'\n        }\n    }\n\t\n  \telse if (type == 1){\n    \tif (size2 == 0) {\n\tresult = ''\n    msg = 'CT at 3-6 months. If stable, consider CT at 2 and 4 years'\n   \t\t}\n    \telse if (size2 == 1) {\n\tresult = ''\n\tmsg = 'CT at 3-6 months. Subsequent management based on the most suspicious nodule(s)'\n    \t}\n    }\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: '',\n   value_text: '',\n   message: msg\n});\ncalc_output.push({\n   name: 'fleischner',\n   value: '',\n   value_text: '',\n   message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "Nodule type",
+                "name": "nodule",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Solid",
+                        "value": 0
+                    },
+                    {
+                        "label": "Subsolid",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Number of nodules",
+                "name": "type",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Single",
+                        "value": 0
+                    },
+                    {
+                        "label": "Multiple",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "conditionality": "nodule == 0",
+                "label_en": "Risk level",
+                "name": "level",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Low",
+                        "value": 0
+                    },
+                    {
+                        "label": "High",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Use clinical judgment and consider all relevant factors, including size, morphology, patient age, race, smoking status, etc (see <a href=\"#evidence\">Evidence</a> for details)",
+                "type": "radio"
+            },
+            {
+                "conditionality": "nodule == 1 && type == 0 ",
+                "label_en": "Additional features",
+                "name": "features",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Ground glass",
+                        "value": 0
+                    },
+                    {
+                        "label": "Part solid",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "conditionality": "nodule == 0",
+                "label_en": "Size",
+                "name": "size1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<6 mm (<100 mm³)",
+                        "value": 0
+                    },
+                    {
+                        "label": "6-8 mm (100-250 mm³)",
+                        "value": 1
+                    },
+                    {
+                        "label": ">8 mm (>250 mm³)",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "conditionality": "nodule == 1",
+                "label_en": "Size",
+                "name": "size2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<6 mm (<100 mm³)",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥6 mm (≥100 mm³)",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "pulmonary nodules",
+            "pulmonary nodule management",
+            "pulmonary nodule treatment",
+            "recommendation",
+            "lung nodules",
+            "incidental lung nodules",
+            "fleischner criteria",
+            "fleischner"
+        ],
+        "specialty": [
+            "Pulmonology",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine"
+        ]
+    }
+}

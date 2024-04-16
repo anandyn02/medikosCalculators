@@ -1,0 +1,149 @@
+{
+    "id": "229",
+    "title": "Rome IV Diagnostic Criteria for Functional Defecation Disorders",
+    "desc": "The Rome IV Criteria for Functional Defecation Disorders provides criteria for diagnosis of functional defecation disorders.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5035713/",
+                "text": "Rao SS, Bharucha AE, Chiarioni G, et al. Functional Anorectal Disorders. Gastroenterology. 2016; 150: 1430-1442."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31407463/",
+                "text": "Carrington EV, Heinrich H, Knowles CH, et al. The international anorectal physiology working group (Iapwg) recommendations: Standardized testing protocol and the London classification for disorders of anorectal function. Neurogastroenterol Motil. 2020;32(1):e13679."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/25022811/",
+                "text": "Wald A, Bharucha AE, Cosman BC, Whitehead WE. ACG clinical guideline: management of benign anorectal disorders. Am J Gastroenterol. 2014 Aug;109(8):1141-57; (Quiz) 1058. doi: 10.1038/ajg.2014.190. Epub 2014 Jul 15. PMID: 25022811."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/23421551/",
+                "text": "Videlock EJ, Lembo A, Cremonini F. “Diagnostic testing for dyssynergic defecation in chronic constipation: meta-analysis.” Neurogastroent Motil 2013; 25: 509–520."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6474701/",
+                "text": "Zhao Y, Ren X, Qiao W, Dong L, He S, Yin Y. High-resolution Anorectal Manometry in the Diagnosis of Functional Defecation Disorder in Patients With Functional Constipation: A Retrospective Cohort Study. J Neurogastroenterol Motil. 2019;25(2):250-257."
+            }
+        ],
+        "evidence": "<p><strong>Criteria for functional defecation disorders</strong></p>\n<p>To fulfill the Rome IV criteria for functional defecation disorders, patient must have the following (for 3 months prior with symptom onset &ge;6 month ago):</p>\n<ol>\n<li>The patient must satisfy <calculator id=\"10003\">diagnostic criteria for functional constipation</calculator> and/or <calculator id=\"4007\">irritable bowel syndrome with constipation</calculator>.</li>\n<li>During repeated attempts to defecate, there must be features of impaired evacuation, as demonstrated by 2 of the following 3 tests:\n<ol>\n<li>Abnormal balloon expulsion test.</li>\n<li>Abnormal anorectal evacuation pattern with manometry or anal surface EMG.</li>\n<li>Impaired rectal evacuation by imaging.</li>\n</ol>\n</li>\n</ol>\n<p><strong>Subcriteria for inadequate defecatory propulsion</strong></p>\n<p>To fulfill the Rome IV criteria for inadequate defecatory propulsion, patient must have the following:</p>\n<ol>\n<li>Criteria for functional defecation disorders is satisfied.</li>\n<li>Inadequate propulsive forces as measured with manometry with or without inappropriate contraction of the anal sphincter and/or pelvic floor muscles (as defined by age and sex-appropriate normal values for the technique).</li>\n</ol>\n<p><strong>Subcriteria for d</strong><strong>yssynergic defecation</strong></p>\n<p>To fulfill the Rome IV criteria for dyssynergic defecation, patient must have the following:</p>\n<ol>\n<li>Criteria for functional defecation disorders is satisfied.</li>\n<li>Inappropriate contraction of the pelvic floor as measured with anal surface EMG or manometry with adequate propulsive forces during attempted defecation (as defined by age and sex-appropriate normal values for the technique).</li>\n</ol>\n<p></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Constipation"
+        ],
+        "disease_treated": [
+            "Functional Anorectal Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar one = parseFloat(one);\nvar two = parseFloat(two);\nvar criteria1 =  one + two; \nvar criteria2 = parseFloat(four) || 0;\nvar criteria3 = parseFloat(six) || 0;\n\nvar diag1;\n\nvar msg;\n\nif (criteria1==2) {\n  diag1='Positive';\n\n  if (criteria2 == 1 && criteria3 < 1) {\n    msg='<br/><br/>Fulfills additional criteria for inadequate defecatory propulsion';\n  } else if (criteria2 < 1 && criteria3 == 1) {\n    msg='<br/><br/>Fulfills additional criteria for dyssynergic defecation';\n  } else if (criteria2 == 1 && criteria3 == 1) {\n    msg='<br/><br/>Fulfills additional criteria for inadequate defecatory propulsion and dyssynergic defecation';\n  } else if (criteria2 < 1 && criteria3 < 1) {\n    msg='<br/><br/>Does not fulfill additional criteria for inadequate defecatory propulsion or dyssynergic defecation';\n  }\n\n} else if (criteria1 < 2) {\n  diag1='Negative';\n  msg = '';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag1,\n    value_text:'',\n    message: 'Diagnosis for functional defecation disorders'\n});\ncalc_output.push({\n    name: 'Rome IV for Functional Defecation Disorders',\n    value: diag1,\n    value_text:'',\n    message:'Diagnosis for functional defecation disorders' + msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "The patient must satisfy <calculator id=\"10003\">diagnostic criteria for functional constipation</calculator> and/or <calculator id=\"4007\">irritable bowel syndrome with constipation</calculator>",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "During repeated attempts to defecate, there must be features of impaired evacuation, as demonstrated by 2 of the following 3 tests:",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "a. Abnormal balloon expulsion test<br>b. Abnormal anorectal evacuation pattern with manometry or anal surface EMG<br>c. Impaired rectal evacuation by imaging",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Additional criteria for inadequate defecatory propulsion:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Inadequate propulsive forces as measured with manometry with or without inappropriate contraction of the anal sphincter and/or pelvic floor muscles (as defined by age and sex-appropriate normal values for the technique)",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Additional criteria for dyssynergic defecation:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Inappropriate contraction of the pelvic floor as measured with anal surface EMG or manometry with adequate propulsive forces during attempted defecation (as defined by age and sex-appropriate normal values for the technique)",
+                "name": "six",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Functional Defecation Disorders, Rome IV for Defecation Disorders, rome iv defecation disorders, rome 4 defecation disorders, rome defecation disorders, defecation disorders, rome, defecation disorders rome, rome iv inadequate defecatory propulsion, rome iv dyssynergic defecation, dyssynergic defecation, inadequate defecatory propulsion"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

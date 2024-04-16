@@ -1,0 +1,138 @@
+{
+    "id": "371",
+    "title": "Surgical Apgar Score (SAS) for Postoperative Risk",
+    "desc": "The Surgical Apgar Score (SAS) predicts postoperative risk of major complication, including death in patients undergoing major surgery.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17254923",
+                "text": "Gawande AA, Kwaan MR, Regenbogen SE, Lipsitz SA, Zinner MJ. An Apgar score for surgery. J Am Coll Surg. 2007 Feb;204(2):201-8. Epub 2006 Dec 27. PubMed PMID: 17254923."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points; points assigned below:</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: left;\">\n<p>Criteria</p>\n</th>\n<th style=\"text-align: left;\">Value</th>\n<th style=\"text-align: left;\">Points</th>\n</tr>\n<tr>\n<td rowspan=\"4\">Estimated blood loss (mL)</td>\n<td>&gt;1,000</td>\n<td>0</td>\n</tr>\n<tr>\n<td>600-1,000</td>\n<td>+ 1</td>\n</tr>\n<tr>\n<td>101-600</td>\n<td>+ 2</td>\n</tr>\n<tr>\n<td>&le;100</td>\n<td>+ 3</td>\n</tr>\n<tr>\n<td rowspan=\"4\">Lowest mean arterial pressure (mmHg)</td>\n<td>&lt;40</td>\n<td>0</td>\n</tr>\n<tr>\n<td>40-54</td>\n<td>+ 1</td>\n</tr>\n<tr>\n<td>55-69</td>\n<td>+ 2</td>\n</tr>\n<tr>\n<td>&ge;70</td>\n<td>+ 3</td>\n</tr>\n<tr>\n<td rowspan=\"5\">Lowest heart rate (beats / min)</td>\n<td>&gt;85</td>\n<td>0</td>\n</tr>\n<tr>\n<td>76-85</td>\n<td>+ 1</td>\n</tr>\n<tr>\n<td>66-75</td>\n<td>+ 2</td>\n</tr>\n<tr>\n<td>56-65</td>\n<td>+ 3</td>\n</tr>\n<tr>\n<td>&le;55</td>\n<td>+ 4</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>Complications in this study were defined as:</p>\n<ul>\n<li>Acute renal failure,</li>\n<li>Bleeding requiring &ge;4 U red cell transfusion within 72 hours after operation</li>\n<li>Cardiac arrest requiring CPR</li>\n<li>Coma for 24 hours or longer</li>\n<li>Deep venous thrombosis</li>\n<li>Septic shock</li>\n<li>MI</li>\n<li>Unplanned intubation</li>\n<li>Ventilator use for &ge;48 hours</li>\n<li>Pneumonia</li>\n<li>Pulmonary embolism</li>\n<li>Stroke</li>\n<li>Wound disruption</li>\n<li>Deep or organ-space surgical site infection,</li>\n<li>Sepsis</li>\n<li>Systemic inflammatory response syndrome and</li>\n<li>Vascular graft failure, according to NSQIP&rsquo;s established definitions</li>\n</ul>\n<p>All deaths were considered major complications.</p>\n<p>Patients having complications categorized in the database as &ldquo;other occurrence&rdquo; were reviewed individually to determine the severity of the complication. Anastomotic leak, cystic duct leak after cholecystectomy, pericardial effusion requiring drainage, and gastric outlet obstruction requiring reoperation were identified on review of these individual occurrences and classified as major complications.</p>\n<p>Superficial surgical site infection and urinary tract infection were not major complications.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Appendicitis",
+            "Bleeding/Hemorrhage",
+            "Cholecystitis",
+            "Hernia"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(estimated_blood_loss) + parseFloat(lowest_mean_arterial_pressure) + parseFloat(lowest_heart_rate);\nvar msg = '';\nvar msgalt = '';\nvar mini_msg = '';\nif (u < 3) {\n    msg = 'Very high risk patient of poor outcome. 14% mortality rate, overall 75% risk of major complication including death.';\n    msgalt = '<br/><br/>In one follow-up study, patients with scores \\u22644 were 97% specific for post-operative ICU admission if not initially admitted there.';\n    mini_msg = 'Very high risk'\n} else if (u < 5) {\n    msg = 'Very high risk patient of poor outcome. 14% mortality rate, overall 56% risk of major complication including death.';\n    msgalt = '<br/><br/>In one follow-up study, patients with scores \\u22644 were 97% specific for post-operative ICU admission if not initially admitted there.';\n    mini_msg = 'Very high risk'\n} else if (u < 7) {\n    msg = 'High risk patient of poor outcome. 4% mortality rate, overall 16% risk of major complication including death.';\n    mini_msg = 'High risk'\n} else if (u < 9) {\n    msg = 'Moderate risk patient of poor outcome. 1% mortality rate, overall 6% risk of major complication including death.';\n    mini_msg = 'Moderate risk'\n} else {\n    msg = 'Low risk patient of poor outcome. 0% mortality rate, overall <4% risk of major complication including death.';\n    mini_msg = 'Low risk'\n}\ncalc_output.push({ \n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '1826_Surgical Apgar Score_result', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: msg + msgalt \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Estimated blood loss (EBL)",
+                "mdcalc_info_concept": null,
+                "name": "estimated_blood_loss",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">1000 mL",
+                        "value": 0
+                    },
+                    {
+                        "label": "601-1000 mL",
+                        "value": 1
+                    },
+                    {
+                        "label": "101-600 mL",
+                        "value": 2
+                    },
+                    {
+                        "label": "≤100 mL",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='74'>Lowest mean arterial pressure</calculator>",
+                "mdcalc_info_concept": null,
+                "name": "lowest_mean_arterial_pressure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<40 mmHg",
+                        "value": 0
+                    },
+                    {
+                        "label": "40-54 mmHg",
+                        "value": 1
+                    },
+                    {
+                        "label": "55-69 mmHg",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥70 mmHg",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lowest heart rate",
+                "mdcalc_info_concept": null,
+                "name": "lowest_heart_rate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">85 bpm",
+                        "value": 0
+                    },
+                    {
+                        "label": "76-85 bpm",
+                        "value": 1
+                    },
+                    {
+                        "label": "66-75 bpm",
+                        "value": 2
+                    },
+                    {
+                        "label": "56-65 bpm",
+                        "value": 3
+                    },
+                    {
+                        "label": "≤55 bpm",
+                        "value": 4
+                    },
+                    {
+                        "label": "Pathologic bradyarrhythmia or asystole",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "'Pathologic Bradyarrhythmia’ includes sinus arrest, AV (atrioventricular) block or dissociation, junctional or ventricular escape rhythm",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "surgery",
+            "mortality",
+            "m&m",
+            "gawande"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Surgery (General)"
+        ]
+    }
+}

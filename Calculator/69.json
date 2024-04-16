@@ -1,0 +1,133 @@
+{
+    "id": "69",
+    "title": "Subtle Anterior STEMI Calculator (4-Variable)",
+    "desc": "The Subtle Anterior STEMI Calculator (4-Variable) differentiates normal variant ST elevation (benign early repolarization) from anterior STEMI, more sensitive than 3-variable version.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.sciencedirect.com/science/article/pii/S0022073617301073",
+                "text": "Driver BE, Khalil A, Henry T, Kazmi F, Adil A, Smith SW. A new 4-variable formula to differentiate normal variant ST segment elevation in V2-V4 (early repolarization) from subtle left anterior descending coronary occlusion - Adding QRS amplitude of V2 improves the model. J Electrocardiol. 2017;50(5):561-569."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22520989",
+                "text": "Smith SW, Khalil A, Henry TD, et al. Electrocardiographic differentiation of early repolarization from subtle anterior ST-segment elevation myocardial infarction. Ann Emerg Med. 2012;60(1):45-56.e2."
+            }
+        ],
+        "evidence": "<p><span id=\"docs-internal-guid-56171ab2-7fff-f8e8-a457-f172abaa286f\">Subtle Anterior STEMI 4-Variable Calculation = 0.052 x (<calculator id=\"48\">Bazett-corrected QT interval</calculator>, ms) - 0.151 x (QRS amplitude in lead V2, mm) - 0.268 x (R wave amplitude in lead V4, mm) + 1.062 x (ST segment elevation 60 ms after the J point in lead V3, mm)</span></p>",
+        "facts": "<p><strong><span id=\"docs-internal-guid-2d7e72ce-7fff-7e81-64b3-941fcd02e24e\">Interpretation:</span></strong></p>\n<p><span id=\"docs-internal-guid-2d7e72ce-7fff-7e81-64b3-941fcd02e24e\">Scores &ge;18.2 are likely to be anterior STEMI (</span><span id=\"docs-internal-guid-2d7e72ce-7fff-7e81-64b3-941fcd02e24e\">83.3%</span><span id=\"docs-internal-guid-2d7e72ce-7fff-7e81-64b3-941fcd02e24e\"> sensitivity, 87.7% specificity, and 85.9% diagnostic accuracy</span><span id=\"docs-internal-guid-2d7e72ce-7fff-7e81-64b3-941fcd02e24e\">).</span></p>\n<p><span id=\"docs-internal-guid-2d7e72ce-7fff-7e81-64b3-941fcd02e24e\">Scores &lt;18.</span><span id=\"docs-internal-guid-2d7e72ce-7fff-7e81-64b3-941fcd02e24e\">2 are likely to be benign early repolarization.</span></p>",
+        "estimation": [
+            {
+                "name": "QT Interval",
+                "unit": "qt",
+                "error_min": "200",
+                "error_max": "750",
+                "warn_min": "200",
+                "warn_max": "650",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "msec",
+                "units_us": "msec"
+            },
+            {
+                "name": "Length",
+                "unit": "length_si_mm",
+                "error_min": "0",
+                "error_max": "10000",
+                "warn_min": "0.1",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mm",
+                "units_us": "mm"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output=[];\nvar u=0.052*(parseFloat(bazett)) - 0.151*(parseFloat(qrs)) - 0.268*(parseFloat(rwave)) + 1.062*(parseFloat(st));\nvar msg='';\nvar mini_msg='';\n\nif(u.toFixed(1) >= 18.2){\n  msg='Likely anterior STEMI';\n  mini_msg='Likely anterior STEMI'\n} \nelse if (u.toFixed(1) < 18.2) {\n  msg='Likely benign early repolarization';\n  mini_msg='Likely benign early repolarization'\n} \ncalc_output.push({name:'mini',value:u.toFixed(1),value_text:'points',message:mini_msg}); \n\ncalc_output.push({\n  name:'10079_Subtle Anterior STEMI (4-Variable)_result',value:u.toFixed(1),value_text:'points',message:msg});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<calculator id = \"48\">Bazett-corrected QT interval</calculator>",
+                "name": "bazett",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "qt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "QRS amplitude in lead V2",
+                "name": "qrs",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "R wave amplitude in lead V4",
+                "name": "rwave",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "ST segment elevation 60 ms after the J point in lead V3",
+                "name": "st",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "length_si_mm"
+            }
+        ],
+        "can_search": [
+            "early repolarization",
+            "repol",
+            "jpoint",
+            "benign",
+            "ekg",
+            "myocardial infarction",
+            "normal ST elevation",
+            "NVSTE",
+            "NV-STE",
+            "lad occlusion",
+            "MI",
+            "STE"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

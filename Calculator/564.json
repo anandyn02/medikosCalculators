@@ -1,0 +1,193 @@
+{
+    "id": "564",
+    "title": "Pediatric Asthma Score (PAS)",
+    "desc": "The Pediatric Asthma Score stratifies asthma severity in children.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10831004",
+                "text": "Kelly CS, Andersen CL, Pestian JP. Improved outcomes for hospitalized asthmatic children using a clinical pathway. Ann Allergy Asthma Immunol. 2000;84(5):509–516."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3668947/",
+                "text": "Nievas IFF, Anand KJS. Severe Acute Asthma Exacerbation in Children: A Stepwise Approach for Escalating Therapy in a Pediatric Intensive Care Unit.The Journal of Pediatric Pharmacology and Therapeutics : JPPT. 2013;18(2):88-104. doi:10.5863/1551-6776-18.2.88."
+            }
+        ],
+        "evidence": "<p><span>Addition of the selected points:</span></p> <table> <tbody> <tr> <td>&nbsp;</td> <td> <p><strong>1 point</strong></p> </td> <td> <p><strong>2 points</strong></p> </td> <td> <p><strong>3 points</strong></p> </td> </tr> <tr> <td> <p><strong>Respiratory Rate by Age</strong></p> </td> <td>&nbsp;</td> <td>&nbsp;</td> <td>&nbsp;</td> </tr> <tr> <td> <p><span>2-3 years</span></p> </td> <td> <p><span>≤34</span></p> </td> <td> <p><span>35-39</span></p> </td> <td> <p><span>≥40</span></p> </td> </tr> <tr> <td> <p><span>4-5 years</span></p> </td> <td> <p><span>≤30</span></p> </td> <td> <p><span>31-35</span></p> </td> <td> <p><span>≥36</span></p> </td> </tr> <tr> <td> <p><span>6-12 years</span></p> </td> <td> <p><span>≤26</span></p> </td> <td> <p><span>27-30</span></p> </td> <td> <p><span>≥31</span></p> </td> </tr> <tr> <td> <p><span>&gt;12 years</span></p> </td> <td> <p><span>≤23</span></p> </td> <td> <p><span>24-27</span></p> </td> <td> <p><span>≥28</span></p> </td> </tr> <tr> <td> <p><strong>Oxygen Requirements</strong></p> </td> <td> <p><span>&gt;95% on room air</span></p> </td> <td> <p><span>90-95% on room air</span></p> </td> <td> <p><span>&lt;90% on room air or any supplemental oxygen</span></p> </td> </tr> <tr> <td> <p><strong>Auscultation</strong></p> </td> <td> <p><span>Normal breath sounds to end-expiratory wheeze only</span></p> </td> <td> <p><span>Expiratory wheezing</span></p> </td> <td> <p><span>Inspiratory and expiratory wheezing to diminished breath sounds</span></p> </td> </tr> <tr> <td> <p><strong>Retractions</strong></p> </td> <td> <p><span>None or intercostal</span></p> </td> <td> <p><span>Intercostal and substernal</span></p> </td> <td> <p><span>Intercostal, substernal, and supraclavicular</span></p> </td> </tr> <tr> <td> <p><strong>Dyspnea</strong></p> </td> <td> <p><span>Speaks in sentences (or coos and babbles)</span></p> </td> <td> <p><span>Speaks partial sentences (or short cry)</span></p> </td> <td> <p><span>Speaks in single words or short phrases (or grunts)</span></p> </td> </tr> </tbody> </table> <p><br><br></p>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>Pediatric Asthma Score (PAS)</strong></p> </td> <td> <p><strong>Severity of Exacerbation</strong></p> </td> <td> <p><strong>Percent of Peak Flow (Personal Best or Predicted)</strong></p> </td> </tr> <tr> <td> <p>5-7</p> </td> <td> <p>Mild</p> </td> <td> <p>&gt;70%</p> </td> </tr> <tr> <td> <p>8-11</p> </td> <td> <p>Moderate</p> </td> <td> <p>50-70%</p> </td> </tr> <tr> <td> <p>12-15</p> </td> <td> <p>Severe</p> </td> <td> <p>&lt;50%</p> </td> </tr> </tbody> </table>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age_pas",
+                "error_min": "2",
+                "error_max": "19",
+                "warn_min": "2",
+                "warn_max": "19",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Respiratory Rate",
+                "unit": "rr",
+                "error_min": "0",
+                "error_max": "90",
+                "warn_min": "5",
+                "warn_max": "70",
+                "conversion": "1",
+                "normal_max_si": "20",
+                "normal_max_us": "20",
+                "normal_min_si": "12",
+                "normal_min_us": "12",
+                "units_si": "breaths/min",
+                "units_us": "breaths/min"
+            }
+        ],
+        "primary_complains": [
+            "Dyspnea",
+            "Shortness of Breath",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Asthma"
+        ],
+        "logic": "//outputs\nvar calc_output = [];\nvar rgroup, ppf;\n\n//user inputs\nvar age = parseFloat(age);\nvar rr = parseFloat(rr);\nvar or = parseFloat(or);\nvar a = parseFloat(a);\nvar wb = parseFloat(wb);\nvar d = parseFloat(d);\n\n//final score\nvar u, rrscore;\n\n//Calculate score for resp rate depending on age range\nif (age == 2 || age == 3){\n\tif (rr <= 34){\n\t\trrscore = 1;\n\t}else if (rr >= 35 && rr <= 39){\n\t\trrscore = 2;\n\t}else{\n\t\trrscore = 3;\n\t}\n}else if (age == 4 || age == 5){\n\tif (rr <= 30){\n\t\trrscore = 1;\n\t}else if (rr >= 31 && rr <= 35){\n\t\trrscore = 2;\n\t}else{\n\t\trrscore = 3;\n\t}\n}else if (age >= 6 && age <= 12){\n\tif (rr <= 26){\n\t\trrscore = 1;\n\t}else if (rr >= 27 && rr <= 30){\n\t\trrscore = 2;\n\t}else{\n\t\trrscore = 3;\n\t}\n}else{\n\tif (rr <= 23){\n\t\trrscore = 1;\n\t}else if (rr >= 24 && rr <= 27){\n\t\trrscore = 2;\n\t}else{\n\t\trrscore = 3;\n\t}\n}\n\n//calculate final score\nu = rrscore + or + a + wb + d;\n\nif(age > 18 || age < 2){\n\tu = 'N/A';\n\trgroup = 'N/A';\n\tppf = 'N/A';\n} \nelse if(u < 5){\n\trgroup = 'Unlikely';\n\tppf = 'N/A';\n}\nelse if(u >= 5 && u <= 7){\n\trgroup = 'Mild';\n\tppf = \">70\";\n}else if(u >= 8 && u <= 11){\n\trgroup = 'Moderate';\n\tppf = \"50-70\";\n}else{\n\trgroup = 'Severe';\n\tppf = \"<50\";\n}\n\n//result for user \ncalc_output.push({\n\tname: 'mini',\n\tvalue: u,\n\tvalue_text: 'points',\n\tmessage: rgroup + \" Exacerbation\"});\n\nif(age > 18 || age < 2){\ncalc_output.push({\n\tname: 'score',\n\tvalue: u,\n\tvalue_text: 'points',\n\tmessage: 'This patient is not in the appropriate age range for this calculator'\n});\n}else{\n\tcalc_output.push({\n\tname: 'score',\n\tvalue: u,\n\tvalue_text: 'points',\n\tmessage: 'Pediatric Asthma Score'\n\t});\n}\ncalc_output.push({\n\tname: 'group',\n\tvalue: rgroup,\n\tvalue_text: '',\n\tmessage: 'Exacerbation'\n});\ncalc_output.push({\n\tname: 'ppf',\n\tvalue: ppf,\n\tvalue_text: '%',\n\tmessage: \"Percent of peak flow (personal best or predicted)\"\n});\n\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Respiratory rate",
+                "name": "rr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "rr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_pas"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Oxygen requirements",
+                "name": "or",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">95% on room air",
+                        "value": 1
+                    },
+                    {
+                        "label": "90-95% on room air",
+                        "value": 2
+                    },
+                    {
+                        "label": "<90% on room air or any supplemental oxygen",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Auscultation",
+                "name": "a",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal breath sounds to end-expiratory wheeze only",
+                        "value": 1
+                    },
+                    {
+                        "label": "Expiratory wheezing",
+                        "value": 2
+                    },
+                    {
+                        "label": "Inspiratory and expiratory wheezing to diminished breath sounds",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Retractions",
+                "name": "wb",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or intercostal",
+                        "value": 1
+                    },
+                    {
+                        "label": "Intercostal and substernal",
+                        "value": 2
+                    },
+                    {
+                        "label": "Intercostal, substernal, and supraclavicular",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Dyspnea",
+                "name": "d",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Speaks in sentences (or coos and babbles)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Speaks partial sentences (or short cry)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Speaks in single words or short phrases (or grunts)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Peds",
+            "asthma",
+            "albuterol",
+            "nebulizer"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Pediatrics",
+            "Pulmonology"
+        ]
+    }
+}

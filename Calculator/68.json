@@ -1,0 +1,230 @@
+{
+    "id": "68",
+    "title": "Pediatric NEXUS II Head CT Decision Instrument for Blunt Trauma",
+    "desc": "The Pediatric NEXUS II Head CT Decision Instrument for Blunt Trauma predicts need for head CT after pediatric blunt head injury, similar to PECARN.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16374287",
+                "text": "Mower WR, Hoffman JR, Herbert M, et al. Developing a decision instrument to guide computed tomographic imaging of blunt head injury patients. J Trauma. 2005;59(4):954-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16418311",
+                "text": "Oman JA, Cooper RJ, Holmes JF, et al. Performance of a decision rule to predict need for computed tomography among children with blunt head trauma. Pediatrics. 2006;117(2):e238-46."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28341799",
+                "text": "Dayan PS, Ballard DW, Tham E, et al. Use of Traumatic Brain Injury Prediction Rules With Clinical Decision Support. Pediatrics. 2017;139(4)."
+            },
+            {
+                "href": "https://pediatrics.aappublications.org/content/139/4/e20161349",
+                "text": "Jennings RM, Burtner JJ, Pellicer JF, et al. Reducing Head CT Use for Children With Head Injuries in a Community Emergency Department. Pediatrics. 2017;139(4)."
+            },
+            {
+                "href": "https://pediatrics.aappublications.org/content/136/1/e227",
+                "text": "Nigrovic LE, Stack AM, Mannix RC, et al. Quality Improvement Effort to Reduce Cranial CTs for Children With Minor Blunt Head Trauma. Pediatrics. 2015;136(1):e227-33."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28410792",
+                "text": "Babl FE, Borland ML, Phillips N, et al. Accuracy of PECARN, CATCH, and CHALICE head injury decision rules in children: a prospective cohort study. Lancet. 2017."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29971851",
+                "text": "Holmes JF, Dayan PS, Kuppermann N. Multiple Pediatric Head Injury Decision Rules but What Should the Clinician Use?. Acad Emerg Med. 2018."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Selection of the appropriate criteria:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"124\"><col width=\"324\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Detail</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Evidence of skull fracture</p>\n</td>\n<td>\n<p dir=\"ltr\">Basilar: e.g. periorbital or periauricular ecchymoses, hemotympanum, drainage of clear fluid from ears or nose</p>\n<p dir=\"ltr\">Depressed/diastatic: palpable step-off, stellate laceration from a point source, or any injury produced by an object striking a localized region of the skull (e.g. baseball bat, club, pool cue, golf ball, baseball, pipe)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Scalp hematoma</p>\n</td>\n<td>\n<p dir=\"ltr\">Injuries not involving calvarium (e.g. hematomas limited to the face/neck) are not considered scalp hematomas</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Neurologic deficit</p>\n</td>\n<td>\n<p dir=\"ltr\">Any abnormal neurologic finding revealed by detailed exam, e.g. motor or sensory deficits (abnormal weakness/sensation in &ge;1 extremity; cranial nerve abnormality (particularly II through XII); cerebellar abnormality as manifested by ataxia, dysmetria, dysdiadokinesis, or other impairment of cerebellar function (as determined by systematic testing of cerebellar function, including tests of ataxia and finger-nose-finger, heel-to-shin, and rapid alternating movements); gait abnormality or inability to walk normally due to inadequate strength, loss of balance, or ataxia; perform systematic testing of gait, including tandem and heel-to-toe walking, and Romberg testing); or any other impairment of neurologic function</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Abnormal level of alertness</p>\n</td>\n<td>\n<p dir=\"ltr\">e.g. GCS &le;14; delayed or inappropriate response to external stimuli; excessive somnolence; disorientation to person, place, time, or events; inability to remember three objects at 5 mins; perseverating speech</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Abnormal behavior</p>\n</td>\n<td>\n<p dir=\"ltr\">Any inappropriate action, e.g. excessive agitation, inconsolability, refusal to cooperate, lack of affective response to questions or events, violent activity</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Persistent vomiting</p>\n</td>\n<td>\n<p dir=\"ltr\">Recurrent projectile or forceful emesis (&gt;1 episode), either observed or by history, after trauma</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Coagulopathy</p>\n</td>\n<td>\n<p dir=\"ltr\">Any clotting impairment, e.g. hemophilia, secondary to medications (Coumadin, heparin, aspirin, etc), hepatic insufficiency</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-a46ceaca-7fff-6582-bc08-7e70d00f8ecd\"></span><span id=\"docs-internal-guid-a46ceaca-7fff-6582-bc08-7e70d00f8ecd\"><br></span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"94\"><col width=\"144\"><col width=\"210\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Criteria present</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of significant intracranial injuries</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">CT not necessary (100% sensitive for findings requiring neurosurgical intervention*)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;0</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">Consider CT</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Death due to head injury, need for craniotomy, elevation of skull fracture, intubation related to head injury, or intracranial pressure monitoring, within 7 days of head injury.<br><span id=\"docs-internal-guid-fa9ddebd-7fff-cf4a-e971-c578d9686f3b\"></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Headache",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(skull) + parseFloat(scalp) + parseFloat(deficit) + parseFloat(alert) + parseFloat(behavior) + parseFloat(coag) + parseFloat(vomit);\n\nvar rec, mini_msg, risk\n\nif (u == 0) {\n    rec = 'CT not necessary (100% sensitive for findings requiring neurosurgical intervention)';\n    mini_msg = 'CT not necessary';\n    risk = 'Low'\n}\nelse if (u > 0) {\n    rec = 'Consider CT';\n    mini_msg = 'Consider CT';\n    risk = 'High'\n}\ncalc_output.push({ \n\tname: 'mini',\n\tvalue: risk,\n\tvalue_text: 'risk',\n\tmessage: mini_msg\n});\ncalc_output.push({ \n\tname: 'NEXUS CT Head Rule',\n\tvalue: risk,\n\tvalue_text: 'risk',\n\tmessage: rec\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Criteria",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Evidence of skull fracture</p>",
+                "md_calc_info_concept": null,
+                "name": "skull",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "e.g. periorbital or periauricular ecchymoses, hemotympanum, drainage of clear fluid from ears or nose, palpable step-off, stellate laceration (see <a href='#evidence'>Evidence</a> for more detail)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Scalp hematoma</p>",
+                "md_calc_info_concept": null,
+                "name": "scalp",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Injuries not involving calvarium (e.g. hematomas limited to the face/neck) are not considered scalp hematomas",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Neurologic deficit</p>",
+                "md_calc_info_concept": null,
+                "name": "deficit",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Any abnormal neurologic finding revealed by detailed exam (see <a href='#evidence'>Evidence</a> for more detail)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Abnormal level of alertness</p>",
+                "md_calc_info_concept": null,
+                "name": "alert",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "e.g. GCS ≤14; delayed or inappropriate response to external stimuli; excessive somnolence; disorientation to person, place, time, or events; inability to remember three objects at 5 mins; perseverating speech",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Abnormal behavior</p>",
+                "md_calc_info_concept": null,
+                "name": "behavior",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Any inappropriate action, e.g. excessive agitation, inconsolability, refusal to cooperate, lack of affective response to questions or events, violent activity",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Persistent vomiting</p>",
+                "md_calc_info_concept": null,
+                "name": "vomit",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Recurrent projectile or forceful emesis (>1 episode), either observed or by history, after trauma",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Coagulopathy</p>",
+                "md_calc_info_concept": null,
+                "name": "coag",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Any clotting impairment, e.g. hemophilia, secondary to medications (Coumadin, heparin, aspirin, etc), hepatic insufficiency",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Nexus",
+            "nexus II",
+            "brain imaging",
+            "pediatric head injury",
+            "nexus head rule"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Neurology",
+            "Pediatrics",
+            "Radiology",
+            "Surgery (Trauma)"
+        ]
+    }
+}

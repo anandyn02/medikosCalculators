@@ -1,0 +1,294 @@
+{
+    "id": "676",
+    "title": "Glasgow-Blatchford Bleeding Score (GBS)",
+    "desc": "The Glasgow-Blatchford Bleeding Score (GBS) stratifies upper GI bleeding patients who are 'low-risk' and candidates for outpatient management.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736%2800%2902816-6/fulltext",
+                "text": "Blatchford O, et. al. A risk score to predict need for treatment for uppergastrointestinal haemorrhage. Lancet 2000."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736%2808%2961769-9/abstract#",
+                "text": "Stanley AJ, et. al. Outpatient management of patients with low-risk upper-gastrointestinal haemorrhage: multicentre validation and prospective evaluation. The Lancet. 2009; 373( 9657): 42-7."
+            },
+            {
+                "href": "https://jama.jamanetwork.com/article.aspx?articleid=1105075",
+                "text": "Srygley FD, et al. Does this patient have a severe upper gastrointestinal bleed?. JAMA 307.10 (2012): 1072-1079."
+            },
+            {
+                "href": "https://www.bmj.com/content/315/7107/510",
+                "text": "Blatchford O, Davidson LA, Murray WR, Blatchford M, Pell J. Acute upper gastrointestinal haemorrhage in west of Scotland: case ascertainment study. BMJ. 1997 Aug 30;315(7107):510-4."
+            },
+            {
+                "href": "https://www.giejournal.org/article/S0016-5107(10)00042-8/abstract",
+                "text": "Pang SH, Ching JY, Lau JY, et al. Comparing the Blatchford and pre-endoscopic Rockall score in predicting the need for endoscopic therapy in patients with upper GI hemorrhage. Gastrointest Endosc. 2010 Jun;71(7):1134-40."
+            },
+            {
+                "href": "https://www.cghjournal.org/article/S1542-3565(12)00786-0/abstract",
+                "text": "Laursen SB, Hansen JM, Schaffalitzky de Muckadell OB. The Glasgow Blatchford score is the most accurate assessment of patients with upper gastrointestinal hemorrhage. Clin Gastroenterol Hepatol. 2012 Oct;10(10):1130-1135."
+            },
+            {
+                "href": "https://www.sciencedirect.com/science/article/pii/S0016510711018633",
+                "text": "Saltzman JR, Tabak YP, Hyett BH, et al. A simple risk score accurately predicts in-hospital mortality, length of stay, and cost in acute upper GI bleeding. Gastrointest Endosc. 2011 Dec;74(6):1215-24."
+            },
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/10.1111/apt.12029/full",
+                "text": "Cheng DW, Lu YW, Teller T, et al. A modified Glasgow Blatchford Score improves risk stratification in upper gastrointestinal bleed: a prospective comparison of scoring systems. Aliment Pharmacol Ther. 2012 Oct;36(8):782-9."
+            },
+            {
+                "href": "https://www.bmj.com/content/356/bmj.i6432.long",
+                "text": "Stanley AJ, Laine L, Dalton HR, Ngu JH, Schultz M, Abazi R, Zakko L, Thornton S, Wilkinson K, Khor CJ, Murray IA, Laursen SB; International Gastrointestinal Bleeding Consortium. Comparison of risk scoring systems for patients presenting with upper gastrointestinal bleeding: international multicentre prospective study. BMJ. 2017 Jan 4;356:i6432. doi: 10.1136/bmj.i6432."
+            }
+        ],
+        "evidence": "<p>Addition of assigned points, as below.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<thead>\n<tr>\n<th colspan=\"2\"><strong>Glasgow-Blatchford Score</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<th colspan=\"2\">BUN (mg/dL)</th>\n</tr>\n<tr>\n<td>&lt;18.2</td>\n<td>0</td>\n</tr>\n<tr>\n<td>18.2-22.3</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>22.4-28</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>28-70</td>\n<td>+4</td>\n</tr>\n<tr>\n<td>&gt;70</td>\n<td>+6</td>\n</tr>\n<tr>\n<th colspan=\"2\">Hemoglobin (g/dL) for men</th>\n</tr>\n<tr>\n<td>&gt;13</td>\n<td>0</td>\n</tr>\n<tr>\n<td>12-13</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>10-12</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>&lt;10</td>\n<td>+6</td>\n</tr>\n<tr>\n<th colspan=\"2\">Hemoglobin (g/dL) for women</th>\n</tr>\n<tr>\n<td>&gt;12</td>\n<td>0</td>\n</tr>\n<tr>\n<td>10-12</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>&lt;10</td>\n<td>+6</td>\n</tr>\n<tr>\n<th colspan=\"2\">Systolic blood pressure (mm Hg)</th>\n</tr>\n<tr>\n<td>&ge;110</td>\n<td>0</td>\n</tr>\n<tr>\n<td>100&ndash;109</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>90&ndash;99</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&lt;90</td>\n<td>+3</td>\n</tr>\n<tr>\n<th colspan=\"2\">Other criteria</th>\n</tr>\n<tr>\n<td>Pulse &ge;100 (per min)</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Melena present</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Presentation with syncope</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Liver disease history</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Cardiac failure present</td>\n<td>+2</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><strong>Low risk = Score of 0. Any score higher than 0 is high risk for needing intervention: transfusion, endoscopy, or surgery.</strong></p>",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Hemoglobin",
+                "unit": "hgb",
+                "error_min": "0.5",
+                "error_max": "25",
+                "warn_min": "4",
+                "warn_max": "20",
+                "conversion": "10",
+                "normal_max_si": "170",
+                "normal_max_us": "17",
+                "normal_min_si": "120",
+                "normal_min_us": "12",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "BUN",
+                "unit": "bun",
+                "error_min": "1",
+                "error_max": "500",
+                "warn_min": "2",
+                "warn_max": "300",
+                "conversion": "0.357",
+                "normal_max_si": "7.1",
+                "normal_max_us": "20",
+                "normal_min_si": "2.9",
+                "normal_min_us": "8",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Dizziness",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Bleeding/Hemorrhage",
+            "GI Bleeding",
+            "Inflammatory Bowel Disease"
+        ],
+        "logic": "var calc_output = [];\n\nvar systolic_bp = parseFloat(systolic_bp);\nvar sex = parseFloat(sex);\nvar bun, bun_input, hgb, sbp, u, hemoglobin;\nvar msg = '';\nvar mini_msg = '';\nif (UOMSYSTEM == false) {\n  hemoglobin = parseFloat(hemoglobin) / 10;\n  bun_input = parseFloat(bun) / 0.357;\n}\n\nif (UOMSYSTEM == true) {\n  hemoglobin = parseFloat(hemoglobin);\n  bun_input = parseFloat(bun);\n}\n\nif (bun_input < 18.2) {\n  bun = 0;\n}\nif (bun_input >= 18.2 && bun_input < 22.4) {\n  bun = 2;\n}\nif (bun_input >= 22.4 && bun_input < 28.0) {\n  bun = 3;\n}\nif (bun_input >= 28.0 && bun_input <= 70.0) {\n  bun = 4;\n}\nif (bun_input > 70.0) {\n  bun = 6;\n}\nif (sex == 1) {\n  if (hemoglobin >= 12) {\n    hgb = 0;\n  }\n  if ((hemoglobin < 12) && (hemoglobin >= 10)) {\n    hgb = 1;\n  }\n  if (hemoglobin < 10) {\n    hgb = 6;\n  }\n}\nif (sex == 0) {\n  if (hemoglobin >= 13) {\n    hgb = 0;\n  }\n  if ((hemoglobin < 13) && (hemoglobin >= 12)) {\n    hgb = 1;\n  }\n  if ((hemoglobin < 12) && (hemoglobin >= 10)) {\n    hgb = 3;\n  }\n  if (hemoglobin < 10) {\n    hgb = 6;\n  }\n}\nif (systolic_bp >= 109) {\n  sbp = 0;\n}\nif ((systolic_bp <= 109) && (systolic_bp >= 100)) {\n  sbp = 1;\n}\nif ((systolic_bp < 100) && (systolic_bp >= 90)) {\n  sbp = 2;\n}\nif (systolic_bp < 90) {\n  sbp = 3;\n};\nu = hgb + bun + sbp + parseFloat(heart_rate_100) + parseFloat(melena) +\n  parseFloat(syncope) + parseFloat(hepatic_disease) + parseFloat(heart_failure);\nif (u == 0) {\n    msg = 'A GBS of 0 is a \\u201cLow Risk\\u201d GI bleed, and is highly sensitive (99.6% in a 2007 retrospective study) for predicting which patients did not require any \\u201cmedical intervention\\u201d: blood transfusion, endoscopy, or surgery. This was confirmed in a 2009 Lancet study where patients with a score of 0 were actually discharged and had no GI bleeding mortality at 6 month followup';\n    mini_msg = 'Low Risk for GI Bleed';\n}\nif (u > 0) {\n    msg = 'A GBS greater than zero suggests a “High Risk” GI bleed that is likely to require “medical intervention”: transfusion, endoscopy, or surgery. A higher GBS also correlated with a higher likelihood of needing intervention (scores ≥6 are associated with >50% risk of needing intervention)';\n    mini_msg = 'High Risk for GI bleed';\n}\ncalc_output.push({\n  name: 'mini',\n  value: u.toFixed(0),\n  value_text: 'points',\n  message: mini_msg\n});\ncalc_output.push({\n  name: '518_GBS Score_result',\n  value: u.toFixed(0),\n  value_text: 'points',\n  message: msg\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hemoglobin",
+                "name": "hemoglobin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hgb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "BUN",
+                "name": "bun",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bun"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Initial systolic BP",
+                "name": "systolic_bp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 1
+                    },
+                    {
+                        "label": "Male",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Heart rate ≥100",
+                "md_calc_info_concept": null,
+                "name": "heart_rate_100",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Melena present",
+                "md_calc_info_concept": null,
+                "name": "melena",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recent syncope",
+                "md_calc_info_concept": null,
+                "name": "syncope",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hepatic disease history",
+                "md_calc_info_concept": null,
+                "name": "hepatic_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cardiac failure present",
+                "md_calc_info_concept": null,
+                "name": "heart_failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "gib",
+            "gbs",
+            "ugib",
+            "blatchford",
+            "bleeding",
+            "hemorrhage"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Gastroenterology",
+            "Hematology and Oncology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

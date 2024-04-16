@@ -1,0 +1,133 @@
+{
+    "id": "609",
+    "title": "Abbreviated Mental Test 4 (AMT-4)",
+    "desc": "Assesses mental impairment in elderly patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9360037 ",
+                "text": "Swain DG, Nightingale PG. Evaluation of a shortened version of the Abbreviated Mental Test in a series of elderly patients. Clin Rehabil. 1997;11(3):243-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4669880 ",
+                "text": "Hodkinson HM. Evaluation of a mental test score for assessment of mental impairment in the elderly. Age Ageing. 1972;1(4):233-8."
+            }
+        ],
+        "evidence": "<p><span>Addition of the selected points (ask the patient the following):</span></p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p>&nbsp;</p> </td> <td> <p><strong>0 points</strong></p> </td> <td> <p><strong>1 point</strong></p> </td> </tr> <tr> <td> <p><span>Age</span></p> </td> <td> <p><span>Answers incorrectly</span></p> </td> <td> <p><span>Answers correctly</span></p> </td> </tr> <tr> <td> <p><span>Date of birth</span></p> </td> <td> <p><span>Answers incorrectly</span></p> </td> <td> <p><span>Answers correctly</span></p> </td> </tr> <tr> <td> <p><span>Place</span></p> </td> <td> <p><span>Answers incorrectly</span></p> </td> <td> <p><span>Answers correctly</span></p> </td> </tr> <tr> <td> <p><span>Year</span></p> </td> <td> <p><span>Answers incorrectly</span></p> </td> <td> <p><span>Answers correctly</span></p> </td> </tr> </tbody> </table> </div>",
+        "facts": "<p><span>Interpretation:</span></p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>AMT-4</strong></p> </td> <td> <p><strong>Interpretation</strong></p> </td> </tr> <tr> <td> <p><span>4</span></p> </td> <td> <p><span>Normal cognition</span></p> </td> </tr> <tr> <td> <p><span>&lt;4</span></p> </td> <td> <p><span>Abnormal cognition</span></p> </td> </tr> </tbody> </table> </div>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Neurologic Deficit"
+        ],
+        "disease_treated": [
+            "Delirium",
+            "Dementia"
+        ],
+        "logic": "var calc_output = [];\n \n//user inputs + addition of points\nvar score = parseFloat(age) + parseFloat(birth) + parseFloat(place) + parseFloat(year);\n\n//interpretation\nvar pt = 'points';\nvar msg = 'Abnormal';\nif(score === 4){\n\tmsg = 'Normal';\n}\nif(score === 1){\n\tpt = 'point';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: pt,\n    message: msg + ' cognition'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: pt,\n    message: 'AMT-4 Score'\n});\ncalc_output.push({\n    name: 'Interpretation',\n    value: msg,\n    value_text: 'cognition',\n    message: ''\n});",
+        "inputs": [
+            {
+                "subheading": "Ask the patient to state each of the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    },
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Date of birth",
+                "name": "birth",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    },
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Place",
+                "name": "place",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    },
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "Year",
+                "name": "year",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Incorrect",
+                        "value": 0
+                    },
+                    {
+                        "label": "Correct",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "mental test",
+            "mental elderly",
+            "abbreviated mental test",
+            "abreviated",
+            "abbreviated",
+            "amt",
+            "amt4",
+            "elderly mental status",
+            "mental status"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care",
+            "Psychiatry"
+        ]
+    }
+}

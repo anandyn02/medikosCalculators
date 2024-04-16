@@ -1,0 +1,212 @@
+{
+    "id": "71",
+    "title": "Paradise Criteria for Tonsillectomy in Children",
+    "desc": "The Paradise Criteria for Tonsillectomy in Children predicts which patients with recurring sore throat will benefit from tonsillectomy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.nejm.org/doi/full/10.1056/NEJM198403153101102",
+                "text": "Paradise JL, Bluestone CD, Bachman RZ, et al. Efficacy of tonsillectomy for recurrent throat infection in severely affected children. Results of parallel randomized and nonrandomized clinical trials. N Engl J Med. 1984;310(11):674-83."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.nejm.org/doi/full/10.1056/NEJM197802232980801",
+                "text": "Paradise JL, Bluestone CD, Bachman RZ, et al. History of recurrent sore throat as an indication for tonsillectomy. Predictive limitations of histories that are undocumented. N Engl J Med. 1978;298(8):409-13."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12093941",
+                "text": "Paradise JL, Bluestone CD, Colborn DK, Bernard BS, Rockette HE, Kurs-lasky M. Tonsillectomy and adenotonsillectomy for recurrent throat infection in moderately affected children. Pediatrics. 2002;110(1 Pt 1):7-15."
+            },
+            {
+                "href": "https://www.aafp.org/afp/2011/0901/p566.html",
+                "text": "Randel A. AAO-HNS Guidelines for Tonsillectomy in Children and Adolescents. Am Fam Physician. 2011;84(5):566-73."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Selection of the appropriate&nbsp;options (all 4&nbsp;variables must be fulfilled by at least one option). If \"None of the above\" or \"None\" is selected for any variable, patient&nbsp;does not meet Paradise Criteria.</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"164\" /><col width=\"271\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Options</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Sore throat episodes</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;7 episodes in the preceding year</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;5 episodes in each of the preceding 2 years</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;3 episodes in each of the preceding 3 years</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">None of the above</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Clinical features (sore throat plus &ge;1 feature qualifies as an episode)</p>\n</td>\n<td>\n<p dir=\"ltr\">Temperature &gt;38.3&deg;C (100.9&deg;F)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Cervical lymphadenopathy (tender or enlarged (&gt;2 cm) lymph nodes)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Tonsillar or pharyngeal exudate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Positive culture for group A &beta;-hemolytic streptococcus</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Treatment</p>\n<p dir=\"ltr\"></p>\n</td>\n<td>\n<p dir=\"ltr\">Antibiotics had been administered in conventional dosage for proven or suspected streptococcal episodes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">Documentation</td>\n<td>\n<p dir=\"ltr\">Each episode and qualifying features documented</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">If not fully documented, subsequent observance by the clinician of 2 episodes of throat infection with patterns of frequency and clinical features consistent with initial history</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">None of the above</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-ebd45575-7fff-d0c6-a23a-1a3705d68c3d\"></span><span id=\"docs-internal-guid-ebd45575-7fff-d0c6-a23a-1a3705d68c3d\"><br /></span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"153\" /><col width=\"203\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Paradise Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Meets criteria</p>\n</td>\n<td>\n<p dir=\"ltr\">Consider tonsillectomy</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Does not meet criteria</p>\n</td>\n<td>\n<p dir=\"ltr\">Watchful waiting recommended</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-d8651a07-7fff-41c8-74b2-97abae40f0a3\"></span><span id=\"docs-internal-guid-d8651a07-7fff-41c8-74b2-97abae40f0a3\"><br /></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Sore Throat"
+        ],
+        "disease_treated": [
+            "Pharyngitis"
+        ],
+        "logic": "var calc_output=[];\nvar features = parseFloat(exudate) + parseFloat(pos) + parseFloat(lymph) + parseFloat(temp)\nvar other = parseFloat(episodes) + parseFloat(treatment) + parseFloat(documentation)\nvar msg='';\nvar rec='';\n\nif(other == 3 && features > 0){\n  msg='Meets criteria';\n  rec='Consider tonsillectomy'\n} \nelse {\n  msg='Criteria not met';\n  rec='Watchful waiting recommended'\n} \ncalc_output.push({name:'mini',value:msg,value_text:'',message:rec}); \n\ncalc_output.push({name:'Criteria',value:msg,value_text:'',message:rec});",
+        "inputs": [
+            {
+                "subheading": "Clinical features of an episode",
+                "subheading_instructions": "Sore throat plus ≥1 feature qualifies as an episode:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Temperature > 38.3°C (100.9°F)",
+                "name": "temp",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cervical lymphadenopathy (tender or enlarged (>2 cm) lymph nodes)",
+                "name": "lymph",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tonsillar or pharyngeal exudate",
+                "name": "exudate",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Positive culture for group A β-hemolytic streptococcus",
+                "name": "pos",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Number of episodes",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "≥7 episodes in the last year, ≥5 episodes in each of the last 2 years, or ≥3 episodes in each of the last 3 years",
+                "name": "episodes",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Treatment",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Antibiotics given in conventional dosage for proven/suspected streptococcal episodes",
+                "name": "treatment",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Documentation",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Each episode + qualifying features documented; or, if not fully documented, subsequent observance by clinician of 2 episodes with patterns of frequency/clinical features consistent with initial history",
+                "name": "documentation",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Paradise criteria",
+            "tonsils",
+            "tonsillectomy",
+            "T and A",
+            "T&A",
+            "T & A"
+        ],
+        "specialty": [
+            "Oral and Maxillofacial Surgery",
+            "Otolaryngology",
+            "Pediatrics"
+        ]
+    }
+}

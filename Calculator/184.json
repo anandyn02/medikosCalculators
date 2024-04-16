@@ -1,0 +1,102 @@
+{
+    "id": "184",
+    "title": "Rome IV Diagnostic Criteria for Globus",
+    "desc": "The Rome IV Criteria for Globus provides criteria for diagnosis of globus.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144625",
+                "text": "Aziz Q, Fass R, Gyawali CP, Miwa H, Pandolfino JE, Zerbib F. Functional Esophageal Disorders. Gastroenterology. 2016;150:1368-1379."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">To fulfill the Rome IV criteria for globus, patient must have the following (for 3 months prior with symptom onset &ge;6 months ago with a frequency of at least once a week):</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Persistent or intermittent, nonpainful, sensation of a lump or foreign body in the throat with no structural lesion identified on physical examination, laryngoscopy, or endoscopy.</p>\n<p dir=\"ltr\" role=\"presentation\">&nbsp; &nbsp; &nbsp; &nbsp;a. Occurrence of sensation between meals.</p>\n<p dir=\"ltr\" role=\"presentation\">&nbsp; &nbsp; &nbsp; &nbsp;b. Absence of dysphagia or odynophagia.</p>\n<p dir=\"ltr\" role=\"presentation\">&nbsp; &nbsp; &nbsp; &nbsp;c. Absence of a gastric inlet patch in the proximal esophagus.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Absence of evidence that gastroesophageal reflux or <abbr title=\"Eosinophilic esophagitis\" esophagitis=\"\">EoE</abbr> is the cause of the symptom.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Absence of major esophageal motor disorders (achalasia/<abbr title=\"Esophagogastric junction\">EGJ</abbr> outflow obstruction, diffuse esophageal spasm, jackhammer esophagus, absent peristalsis).</p>\n</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Globus"
+        ],
+        "disease_treated": [
+            "Esophageal Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three);\n\nvar diag;\n\nvar msg= 'Diagnosis for globus as per Rome IV criteria';\nvar minimsg= 'Diagnosis for globus';\n\nif (criteria==3) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Globus',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago with a frequency of at least once a week",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Persistent or intermittent, nonpainful, sensation of a lump or foreign body in the throat with no structural lesion identified on physical examination, laryngoscopy, or endoscopy",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Occurrence of the sensation between meals, absence of dysphagia or odynophagia, and absence of a gastric inlet patch in the proximal esophagus",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of evidence that gastroesophageal reflux or <abbr title=\"Eosinophilic esophagitis\">EoE</abbr> is the cause of the symptom",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of major esophageal motor disorders (achalasia/<abbr title=\"Esophagogastric junction\">EGJ</abbr> outflow obstruction, diffuse esophageal spasm, jackhammer esophagus, absent peristalsis)",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Globus, Rome IV for Globus, globus, rome iv globus, rome iv for globus, rome globus, rome for globus, rome iv criteria, rome 4, rome 4 criteria, rome 4 globus, rome 4 criteria globus, rome 4 criteria for globus, globus rome, globus criteria, globus criteria rome"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

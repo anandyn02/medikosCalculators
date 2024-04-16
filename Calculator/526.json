@@ -1,0 +1,174 @@
+{
+    "id": "526",
+    "title": "ACC/AHA Heart Failure Staging",
+    "desc": "The ACC/AHA Heart Failure Staging tool describes stages of heart failure and provides recommendations for therapy by stage.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://circ.ahajournals.org/content/104/24/2996",
+                "text": "Hunt SA, Baker DW et al. ACC/AHA Guidelines for the Evaluation and Management of Chronic Heart Failure in the Adult: Executive Summary A Report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines (Committee to Revise the 1995 Guidelines for the Evaluation and Management of Heart Failure): Developed in Collaboration With the International Society for Heart and Lung Transplantation; Endorsed by the Heart Failure Society of America. Circulation. 2001 Dec 11;104(24):2996-3007."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<ul>\n<li><strong>Stage A:</strong> High risk for developing HF but no structural disorder of the heart</li>\n<li><strong>Stage B:</strong> Structural disorder of the heart but has never developed symptoms of HF</li>\n<li><strong>Stage C:</strong> Past or current symptoms of HF associated with underlying structural heart disease</li>\n<li><strong>Stage D:</strong> End-stage disease requiring specialized treatment strategies such as mechanical circulatory support, continuous inotropic infusions, cardiac transplantation, or hospice care</li>\n</ul>",
+        "facts": "<table>\n<tbody>\n<tr>\n<td>Stage</td>\n<td>Class I recommendations*</td>\n</tr>\n<tr>\n<td>A</td>\n<td>\n<ol>\n<li>Control of systolic and diastolic hypertension in accordance with recommended guidelines. (Level of Evidence: A)</li>\n<li>Treatment of lipid disorders in accordance with recommended guidelines. (Level of Evidence: B)</li>\n<li>Avoidance of patient behaviors that may increase the risk of HF (e.g., smoking, alcohol consumption, and illicit drug use). (Level of Evidence: C)</li>\n<li>Angiotensin converting enzyme (ACE) inhibition in patients with a history of atherosclerotic vascular disease, diabetes mellitus, or hypertension and associated cardiovascular risk factors. (Level of Evidence: B)</li>\n<li>Control of ventricular rate in patients with supraventricular tachyarrhythmias. (Level of Evidence: B)</li>\n<li>Treatment of thyroid disorders. (Level of Evidence: C)</li>\n<li>Periodic evaluation for signs and symptoms of HF. (Level of Evidence: C)</li>\n</ol>\n</td>\n</tr>\n<tr>\n<td>B</td>\n<td>\n<ol>\n<li>ACE inhibition in patients with a recent or remote history of myocardial infarction regardless of ejection fraction. (Level of Evidence: A)</li>\n<li>ACE inhibition in patients with a reduced ejection fraction, whether or not they have experienced a myocardial infarction. (Level of Evidence: B)</li>\n<li>Beta-blockade in patients with a recent myocardial infarction regardless of ejection fraction. (Level of Evidence: A)</li>\n<li>Beta-blockade in patients with a reduced ejection fraction, whether or not they have experienced a myocardial infarction. (Level of Evidence: B)</li>\n<li>Valve replacement or repair for patients with hemodynamically significant valvular stenosis or regurgitation. (Level of Evidence: B)</li>\n<li>Regular evaluation for signs and symptoms of HF. (Level of Evidence: C)</li>\n<li>Measures listed as class I recommendations for patients in stage A. (Levels of Evidence: A, B, and C as appropriate).</li>\n</ol>\n</td>\n</tr>\n<tr>\n<td>C</td>\n<td>\n<ol>\n<li>Diuretics in patients who have evidence of fluid retention. (Level of Evidence: A)</li>\n<li>ACE inhibition in all patients unless contraindicated. (Level of Evidence: A)</li>\n<li>Beta-adrenergic blockade in all stable patients unless contraindicated. Patients should have no or minimal evidence of fluid retention and should not have required treatment recently with an intravenous positive inotropic agent. (Level of Evidence: A)</li>\n<li>Digitalis for the treatment of symptoms of HF, unless contraindicated. (Level of Evidence: A)</li>\n<li>Withdrawal of drugs known to adversely affect the clinical status of patients (e.g., nonsteroidal anti-inflammatory drugs, most antiarrhythmic drugs, and most calcium channel blocking drugs). (Level of Evidence: B)</li>\n<li>Measures listed as class I recommendations for patients in stages A and B (Levels of Evidence: A, B, and C as appropriate).</li>\n</ol>\n</td>\n</tr>\n<tr>\n<td>D</td>\n<td>\n<ol>\n<li>Meticulous identification and control of fluid retention. (Level of Evidence: B)</li>\n<li>Referral for cardiac transplantation in eligible patients. (Level of Evidence: B)</li>\n<li>Referral to an HF program with expertise in the management of refractory HF. (Level of Evidence: A)</li>\n<li>Measures listed as class I recommendations for patients in stages A, B, and C. (Levels of Evidence: A, B, and C as appropriate).</li>\n</ol>\n</td>\n</tr>\n</tbody>\n</table>\n<p>From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/11738322\" target=\"_blank\" rel=\"noopener\">Hunt et al, 2001</a>.</p>\n<p>*Conditions for which there is evidence and/or general agreement that a given procedure/therapy is useful and effective. For full recommendations, see <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/11738322\" target=\"_blank\" rel=\"noopener\">Hunt et al, 2001</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Extremity Edema",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Heart Failure"
+        ],
+        "logic": "var bhx = bhx || 0\nvar chx = chx || 0\nvar dhx = dhx || 0\n\nvar calc_output = [];\n\nvar ahx = parseFloat(ahx);\nvar ctox = parseFloat(ctox);\nvar cm = parseFloat(cm);\nvar a = ahx + ctox + cm;\nvar b = parseFloat(bhx);\nvar c = parseFloat(chx);\nvar d = parseFloat(dhx);\nvar stage, msg, therapy;\n\nif (a >= 1) {\n    stage = 'A';\n    msg = 'At high risk for heart failure without structural heart disease or symptoms of HF';\n    therapy = '<strong>Therapy considerations:</strong><br/>Treat hypertension<br/>Encourage smoking cessation<br/>Treat lipid disorders<br/>Encourage regular exercise<br/>Discourage alcohol intake/illicit drug use<br/>ACE inhibitors in appropriate patients';\n    if (b == 1) {\n        stage = 'B';\n        msg = 'Structural heart disease without symptoms of HF;';\n        therapy = '<strong>Therapy considerations:</strong><br/>All measures under stage A<br/>ACE inhibitors in appropriate patients<br/>Beta-blockers in appropriate patients';\n        if (c == 1) {\n            stage = 'C';\n            msg = 'Structural heart disease with prior or current symptoms of HF';\n            therapy = '<strong>Therapy considerations:</strong><br/>All measures under stage A<br/>Diuretics, ACE inhibitors, beta-blockers, or digitalis for routine use<br/>Dietary salt restriction';\n            if (d == 1) {\n                stage = 'D';\n                msg = 'Refractory HF requiring specialized interventions';\n                therapy = '<strong>Therapy considerations:</strong><br/>All measures under stage A, B and C<br/>Mechanical assist devices<br/>Heart transplantation<br/>Continuous IV inotropic infusions for palliation<br/>Hospice care';\n            } else {\n                stage = 'C';\n                msg = 'Structural heart disease with prior or current symptoms of HF';\n                therapy = '<strong>Therapy considerations:</strong><br/>All measures under stage A<br/>Diuretics, ACE inhibitors, beta-blockers, or digitalis for routine use<br/>Dietary salt restriction';\n            }\n        } else {\n            stage = 'B';\n            msg = 'Structural heart disease without symptoms of HF;';\n            therapy = '<strong>Therapy considerations:</strong><br/>All measures under stage A<br/>ACE inhibitors in appropriate patients<br/>Beta-blockers in appropriate patients';\n        }\n    } else {\n        stage = 'A';\n        msg = 'At high risk for heart failure without structural heart disease or symptoms of HF';\n        therapy = '<strong>Therapy considerations:</strong><br/>Treat hypertension<br/>Encourage smoking cessation<br/>Treat lipid disorders<br/>Encourage regular exercise<br/>Discourage alcohol intake/illicit drug use<br/>ACE inhibitors in appropriate patients';\n\n    }\n} else {\n    stage = 'N/A';\n    msg = 'Patient does not have substantial risk of HF based ACC/AHA staging guidelines.';\n    therapy = '';\n}\n\n\ncalc_output.push({ \n    name: 'mini', \n    value: 'Stage: ' + stage, \n    value_text: ' ', \n    message: ' ' \n});\ncalc_output.push({ \n    name: '3826_ACC/AHA Heart Failure Staging_result', \n    value: 'Stage: ' + stage, \n    value_text: '', message: \n    msg + '<br/><br/>' + therapy \n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Patient with history of hypertension, coronary artery disease, OR diabetes",
+                "md_calc_info_concept": null,
+                "name": "ahx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Patient using cardiotoxins",
+                "md_calc_info_concept": null,
+                "name": "ctox",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Patient with family history of cardiomyopathy",
+                "md_calc_info_concept": null,
+                "name": "cm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "ahx == 1",
+                "default": null,
+                "label_en": "Patient with previous MI, LV systolic dysfunction, or asymptomatic valvular disease",
+                "md_calc_info_concept": null,
+                "name": "bhx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "bhx == 1",
+                "default": null,
+                "label_en": "Patient with known structural heart disease, shortness of breath and fatigue",
+                "md_calc_info_concept": null,
+                "name": "chx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Reduced exercise tolerance.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "chx == 1",
+                "default": null,
+                "label_en": "Patient with marked heart failure symptoms at rest, despite maximum therapy",
+                "md_calc_info_concept": null,
+                "name": "dhx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Those who are recurrently hospitalized or cannot be safely discharged from the hospital without specialized interventions.",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ACC/AHA Heart Failure Staging tool",
+            "heart failure staging tool",
+            "heart failure stages",
+            "hf stages"
+        ],
+        "specialty": [
+            "Cardiology"
+        ]
+    }
+}

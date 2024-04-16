@@ -1,0 +1,195 @@
+{
+    "id": "344",
+    "title": "Ottawa Ankle Rule",
+    "desc": "The Ottawa Ankle Rule rules out clinically significant foot and ankle fractures to reduce use of x-ray imaging.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1554175",
+                "text": "Stiell IG, Greenberg GH, McKnight RD, Nair RC, McDowell I, Worthington JR. A study to develop clinical decision rules for the use of radiography in acute ankle injuries. Ann Emerg Med. 1992; 21:384–90."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8114236",
+                "text": "Stiell, I.G., R.D. McKnight, G.H. Greenberg et collab. Implementation of the Ottawa Ankle Rules. JAMA, no 271. 1994, p. 827-832."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7663253",
+                "text": "Stiell IG, Wells GA, Laupacis A, Brison R, Verbeek R, Vandemheen K, Naylor CD.  A multicentre trial to introduce clinical decision rules for the use of radiography in acute ankle injuries.  Br Med J 1995;311:594-597."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10530658",
+                "text": "Plint AC, Bulloch B, Osmond MH, Stiell I, Dunlap H, Reed M, Tenenbein M, Klassen TP. Validation of the Ottawa Ankle Rules in children with ankle injuries. Acad Emerg Med. 1999; 6(10)10005-9"
+            },
+            {
+                "href": "https://www.bmj.com/content/326/7386/417",
+                "text": "Bachmann LM, et. al. Accuracy of Ottawa ankle rules to exclude fractures of the ankle and mid-foot: systematic review BMJ 2003;326:417. doi: http://dx.doi.org/10.1136/bmj.326.7386.417 (Published 22 February 2003)."
+            }
+        ],
+        "evidence": "",
+        "facts": "<ul>\n<li>An <strong>ankle</strong> x-ray series is only required if there is pain in the malleolar zone AND any of these findings:\n<ul>\n<li>Bone tenderness at A (posterior edge or tip of <strong>lateral</strong> malleolus), OR</li>\n<li>Bone tenderness at B (posterior edge or tip of <strong>medial</strong> malleolus), OR</li>\n<li>Inability to bear weight both immediately after injury AND&nbsp;in ED.</li>\n</ul>\n</li>\n</ul>\n<ul>\n<li>A <strong>foot</strong> x-ray series is only required if there is pain in the midfoot zone AND any of these findings:\n<ul>\n<li>Bone tenderness at C (base of 5th metatarsal), OR</li>\n<li>Bone tenderness at D (navicular), OR</li>\n<li>Inability to bear weight both immediately after injury AND in ED.</li>\n</ul>\n</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Extremity Pain",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Fracture",
+            "Sprain/Strain",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];  \n\nvar result;\nvar msg;\nvar xray;\n\n// malleolar\nif (location == 0) {\n\tresult = parseFloat(tender_a) + parseFloat(tender_b) + parseFloat(weightbear)\n\txray = 'Ankle x-ray series'\n}\n// midfoot\nif (location == 1) {\n\tresult = parseFloat(tender_c) + parseFloat(tender_d) + parseFloat(weightbear)\n\txray = 'Foot x-ray series'\n}\n\nif (result > 0) {\n\tresult = 'Cannot rule out'\n\tmsg = ' indicated.'\n}\nelse {\n\tresult = 'Ruled out'\n\tmsg = ' not indicated.'\n}\n\ncalc_output.push ({\n\tname:'mini', \n\tvalue: result, \n\tvalue_text: '', \n\tmessage: ''\n}); \ncalc_output.push ({\n\tname:'1670_Ottawa Ankle Rule_result', \n\tvalue: result, \n\tvalue_text: '', \n\tmessage: xray + msg\n});",
+        "inputs": [
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/Ottawa-Ankle-Rule-Facit-Large.png\" alt=\"\"></p>"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Location of pain",
+                "md_calc_info_concept": null,
+                "name": "location",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Malleolar",
+                        "value": 0
+                    },
+                    {
+                        "label": "Midfoot",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "location == 0",
+                "default": 0,
+                "label_en": "Bone tenderness at A",
+                "md_calc_info_concept": null,
+                "name": "tender_a",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Posterior edge or tip of lateral malleolus",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "location == 0",
+                "default": 0,
+                "label_en": "Bone tenderness at B",
+                "md_calc_info_concept": null,
+                "name": "tender_b",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Posterior edge or tip of medial malleolus",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "location == 1",
+                "default": 0,
+                "label_en": "Bone tenderness at C",
+                "md_calc_info_concept": null,
+                "name": "tender_c",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Base of 5th metatarsal",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "location == 1",
+                "default": 0,
+                "label_en": "Bone tenderness at D",
+                "md_calc_info_concept": null,
+                "name": "tender_d",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Navicular",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Inability to bear weight both immediately after injury AND in ED",
+                "md_calc_info_concept": null,
+                "name": "weightbear",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Patient unable to take four steps",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ortho"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Orthopedics",
+            "Primary Care",
+            "Rehabilitation Medicine"
+        ]
+    }
+}

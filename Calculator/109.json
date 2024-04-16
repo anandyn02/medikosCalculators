@@ -1,0 +1,314 @@
+{
+    "id": "109",
+    "title": "RESP (Respiratory ECMO Survival Prediction) Score",
+    "desc": "The Respiratory Extracorporeal Membrane Oxygenation Survival Prediction (RESP) Score predicts in-hospital survival after ECMO for acute respiratory failure.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24693864",
+                "text": "Schmidt M, Bailey M, Sheldrake J, et al. Predicting survival after extracorporeal membrane oxygenation for severe acute respiratory failure. The Respiratory Extracorporeal Membrane Oxygenation Survival Prediction (RESP) score. Am J Respir Crit Care Med. 2014;189(11):1374-82."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"228\"><col width=\"144\"><col width=\"77\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Age, years</p>\n</td>\n<td>\n<p dir=\"ltr\">18-49</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">50-59</p>\n</td>\n<td>\n<p dir=\"ltr\">-2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;60</p>\n</td>\n<td>\n<p dir=\"ltr\">-3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Immunocompromised status at time of ECMO (any malignancy, solid organ transplant, HIV, or cirrhosis)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Mechanically ventilated before ECMO</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;7 days</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">48 hours to 7 days</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;48 hours</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"7\">\n<p dir=\"ltr\">Diagnosis</p>\n</td>\n<td>\n<p dir=\"ltr\">Viral pneumonia</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Bacterial pneumonia</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Asthma</p>\n</td>\n<td>11</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Trauma or burn</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Aspiration pneumonitis</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Other acute respiratory diagnosis</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Nonrespiratory or chronic respiratory diagnosis</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">History of central nervous system dysfunction (neurotrauma, stroke, encephalopathy, cerebral embolism, or seizure/epilepsy)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-7</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Acute associated nonpulmonary infection (any other bacterial, viral, parasitic, or fungal infection not involving the lung)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Neuromuscular blockade before ECMO</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Nitric oxide before ECMO</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Bicarbonate infusion before ECMO</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Cardiac arrest before ECMO</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">PaCO₂ &ge;75 mmHg (&ge;10 kPa)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Peak inspiratory pressure &ge;42 cm H₂O (&ge;4.1 kPa)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"*\"><col width=\"*\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>RESP Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk class</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>In-hospital survival</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;6</p>\n</td>\n<td>\n<p dir=\"ltr\">I</p>\n</td>\n<td>\n<p dir=\"ltr\">92%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3-5</p>\n</td>\n<td>\n<p dir=\"ltr\">II</p>\n</td>\n<td>\n<p dir=\"ltr\">76%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-1 to 2</p>\n</td>\n<td>\n<p dir=\"ltr\">III</p>\n</td>\n<td>\n<p dir=\"ltr\">57%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">-5 to -2</p>\n</td>\n<td>\n<p dir=\"ltr\">IV</p>\n</td>\n<td>\n<p dir=\"ltr\">33%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;-6</p>\n</td>\n<td>\n<p dir=\"ltr\">V</p>\n</td>\n<td>\n<p dir=\"ltr\">18%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Respiratory Distress Syndrome",
+            "Respiratory Distress",
+            "Respiratory Failure"
+        ],
+        "logic": "//vars\nvar calc_output = [];\nvar peak = parseFloat(peak);\nvar pa = parseFloat(pa);\nvar cardiac = parseFloat(cardiac);\nvar bicarb = parseFloat(bicarb);\nvar nitric = parseFloat(nitric);\nvar ecmo = parseFloat(ecmo);\nvar acute = parseFloat(acute);\nvar cns = parseFloat(cns);\nvar diag = parseFloat(diag);\nvar status = parseFloat(status);\nvar venti = parseFloat(venti);\nvar age = parseFloat(age);\n\n//score\nvar score = peak + pa + cardiac + bicarb + nitric + ecmo + acute + cns + diag + status + venti + age;\n \n//risk\nvar risk, surv;\nif (score >= 6) {\n  risk = 'I';\n  surv = '92';\n} else if (score >= 3 && score <= 5) {\n  risk = 'II';\n  surv = '76';\n} else if (score >= -1 && score <= 2) {\n  risk = 'III';\n  surv = '57';\n} else if (score >= -5 && score <= -2) {\n  risk = 'IV';\n  surv = '33';\n} else if (score <= -6) {\n  risk = 'V';\n  surv = '18';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: surv + '% survival' \n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'RESP Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: 'Class ' + risk,\n    value_text: '',\n    message: 'Risk class' \n});\ncalc_output.push({\n    name: 'Score',\n    value: surv,\n    value_text: '%',\n    message: 'In-hospital survival' \n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "18-49",
+                        "value": 0
+                    },
+                    {
+                        "label": "50-59",
+                        "value": -2
+                    },
+                    {
+                        "label": "≥60",
+                        "value": -3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Immunocompromised status at time of ECMO</p>",
+                "name": "status",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Any malignancy, solid organ transplant, HIV, or cirrhosis",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Mechanically ventilated before ECMO initiated</p>",
+                "name": "venti",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">7 days",
+                        "value": 0
+                    },
+                    {
+                        "label": "48 hours to 7 days",
+                        "value": 1
+                    },
+                    {
+                        "label": "<48 hours",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 6,
+                "label_en": "<p>Diagnosis</p>",
+                "name": "diag",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Viral pneumonia",
+                        "value": 3
+                    },
+                    {
+                        "label": "Bacterial pneumonia",
+                        "value": 3
+                    },
+                    {
+                        "label": "Asthma",
+                        "value": 11
+                    },
+                    {
+                        "label": "Trauma or burn",
+                        "value": 3
+                    },
+                    {
+                        "label": "Aspiration pneumonitis",
+                        "value": 5
+                    },
+                    {
+                        "label": "Other acute respiratory diagnosis",
+                        "value": 1
+                    },
+                    {
+                        "label": "Nonrespiratory or chronic respiratory diagnosis",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>History of central nervous system dysfunction</p>",
+                "name": "cns",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Neurotrauma, stroke, encephalopathy, cerebral embolism, or seizure/epilepsy",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Acute associated nonpulmonary infection</p>",
+                "name": "acute",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Any other bacterial, viral, parasitic, or fungal infection not involving the lung",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Neuromuscular blockade before ECMO</p>",
+                "name": "ecmo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Nitric oxide before ECMO</p>",
+                "name": "nitric",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Bicarbonate infusion before ECMO</p>",
+                "name": "bicarb",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cardiac arrest before ECMO</p>",
+                "name": "cardiac",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>PaCO₂ &ge;75 mmHg (&ge;10 kPa)</p>",
+                "name": "pa",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Peak inspiratory pressure &ge;42 cm H₂O (&ge;4.1 kPa)</p>",
+                "name": "peak",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "acute respiratory failure",
+            "respiratory failure",
+            "ecmo survival",
+            "prediction",
+            "Ecmo",
+            "resp survival",
+            "resp score",
+            "ards"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

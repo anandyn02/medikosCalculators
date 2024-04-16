@@ -1,0 +1,103 @@
+{
+    "id": "603",
+    "title": "Modified Mallampati Classification",
+    "desc": " The Modified Mallampati Classification stratifies predicted difficulty of endotracheal intubation based on anatomic features.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4027773 ",
+                "text": "Mallampati SR, Gatt SP, Gugino LD, et al. A clinical sign to predict difficult tracheal intubation: a prospective study. Can Anaesth Soc J. 1985;32(4):429-34."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3592174",
+                "text": "Samsoon GL, Young JR. Difficult tracheal intubation: a retrospective study. Anaesthesia. 1987;42(5):487-90."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9728878",
+                "text": "Ezri T, Cohen I, Geva D, Szmuk P. Pharyngoscopic views. Anesth Analg. 1998;87(3):748."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18378973",
+                "text": "O'Leary AM, Sandison MR, Roberts KW. History of anesthesia; Mallampati revisited: 20 years on. Can J Anaesth. 2008;55(4):250-1."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28537983",
+                "text": "Hanouz JL, Bonnet V, Buléon C, et al. Comparison of the Mallampati Classification in Sitting and Supine Position to Predict Difficult Tracheal Intubation: A Prospective Observational Cohort Study. Anesth Analg. 2018;126(1):161-169."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/30782435/",
+                "text": "Green SM, Roback MG. Is the Mallampati score useful for emergency department airway management or procedural sedation? Ann Emerg Med. 2019;74(2):251-259"
+            }
+        ],
+        "evidence": "<p>Modified Mallampati Classification:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>Class I</strong></p>\n</td>\n<td>\n<p>Faucial pillars, soft palate, and uvula visualized</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Class II</strong></p>\n</td>\n<td>\n<p>Faucial pillars and soft palate visualized, but uvula masked by tongue base</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Class III</strong></p>\n</td>\n<td>\n<p>Only soft palate visualized</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Class IV</strong></p>\n</td>\n<td>\n<p>Soft palate not visualized</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>&nbsp;</p>\n<p>Original Mallampati Classification (for historical interest):</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>Class I</strong></p>\n</td>\n<td>\n<p>Faucial pillars, soft palate, and uvula visualized</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Class II</strong></p>\n</td>\n<td>\n<p>Faucial pillars and soft palate visualized, but uvula masked by tongue base</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Class III</strong></p>\n</td>\n<td>\n<p>Only soft palate visualized</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Respiratory Distress",
+            "Respiratory Failure"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar classm = parseFloat(classm);\nvar classRN, diff;\n\nif(classm === 1){\n\tclassRN = 'Class I';\n    diff = ''\n}\nif(classm === 2){\n\tclassRN = 'Class II';\n    diff = ''\n}\nif(classm === 3){\n\tclassRN = 'Class III';\n    diff = '<br/><br/>Predicted difficult airway by Mallampati. Consider supportive strategies (see Next Steps for details).'\n}\nif(classm === 4){\n\tclassRN = 'Class IV';\n    diff = '<br/><br/>Predicted difficult airway by Mallampati. Consider supportive strategies (see Next Steps for details).'\n}\n//results\ncalc_output.push({\n    name: 'mini',\n    value: classRN,\n    value_text: '',\n    message: 'Modified Mallampati Classification'\n});\ncalc_output.push({\n    name: '3989_Modified Mallampati Classification_result',\n    value: classRN,\n    value_text: '',\n    message: 'Modified Mallampati Classification' + diff\n});",
+        "inputs": [
+            {
+                "md_calc_info_concept": null,
+                "option_fhir_rules": null,
+                "type": "visual",
+                "visual": "<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/mallampati.png\" alt=\"\"></p>"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Visualization:",
+                "mdcalc_info_concept": null,
+                "name": "classm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Faucial pillars, soft palate, and uvula visualized",
+                        "value": 1
+                    },
+                    {
+                        "label": "Faucial pillars and soft palate visualized, but uvula masked by tongue base",
+                        "value": 2
+                    },
+                    {
+                        "label": "Only soft palate visualized",
+                        "value": 3
+                    },
+                    {
+                        "label": "Soft palate not visualized",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "et intubation",
+            "endotracheal intubation",
+            "et difficulty",
+            "mallampati",
+            "mallampati classification",
+            "malampati",
+            "laryngoscopy",
+            "Modified Mallampati Classification"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Pulmonology",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

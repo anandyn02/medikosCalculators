@@ -1,0 +1,204 @@
+{
+    "id": "467",
+    "title": "Clinical Pulmonary Infection Score (CPIS) for Ventilator-Associated Pneumonia (VAP)",
+    "desc": "The Clinical Pulmonary Infection Score (CPIS) assists in diagnosing ventilator-associated pneumonia (VAP) by predicting benefit of pulmonary cultures.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14566455",
+                "text": "Schurink CA, Van Nieuwenhoven CA, Jacobs JA, Rozenberg-Arska M, Joore HC, Buskens E, Hoepelman AI, Bonten MJ. Clinical pulmonary infection score for ventilator-associated pneumonia: accuracy and inter-observer variability. Intensive Care Med. 2004 Feb;30(2):217-24. Epub 2003 Oct 18."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22743372",
+                "text": "Parks NA, et al. Use of the clinical pulmonary infection score to guide therapy for ventilator-associated pneumonia risks antibiotic overexposure in patients with trauma. J Trauma Acute Care Surg. 2012 Jul;73(1):52-8; discussion 58-9. doi: 10.1097/TA.0b013e31825ac37b."
+            },
+            {
+                "href": "https://cid.oxfordjournals.org/content/51/Supplement_1/S131.full",
+                "text": "Zilberberg MD, Shorr AF. Ventilator-Associated Pneumonia: The Clinical Pulmonary Infection Score as a Surrogate for Diagnostics and Outcome. Clinical Infectious Diseases 2010; 51(S1):S131–S135."
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<p>Scores &ge; 7 may indicate higher likelihood of VAP and need for <abbr title=\"Bronchoalveolar lavage\">BAL</abbr> or mini-<abbr title=\"Bronchoalveolar lavage\">BAL</abbr>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia"
+        ],
+        "logic": "var calc_output = [];\nvar score = parseFloat(temp) +\n    parseFloat(leuks) +\n    parseFloat(trach) +\n    parseFloat(oxy) +\n    parseFloat(pulm) +\n    parseFloat(culture);\n\nvar msg, mini_msg;\n\nswitch (true) {\n\n    case (score <= 6):\n        mini_msg = 'Use clinical suspicion for decision to culture or perform BAL.';\n        msg = 'If the clinical suspicion for VAP is LOW, do NOT culture sputum. Evaluate for other potential sources of infection.<br/><br/>If the clinical suspicion for VAP is HIGH, perform bronchoalveolar lavage (BAL) or mini-BAL.';\n        break;\n\n    case (score > 6):\n        mini_msg = 'Perform bronchoalveolar lavage (BAL)';\n        msg = 'Perform bronchoalveolar lavage (BAL) or mini-BAL.';\n        break;\n\n    default:\n        msg = \"error\"\n        break;\n}\ncalc_output.push({ \n    name: 'mini', \n    value: score.toFixed(0), \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '3278_CPIS for VAP_result', \n    value: score.toFixed(0), \n    value_text: 'points', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Temperature (&deg;C)</p>",
+                "mdcalc_info_concept": null,
+                "name": "temp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "36.5-38.4",
+                        "value": 0
+                    },
+                    {
+                        "label": "38.5-38.9",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥39.0 or ≤36.0",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>White blood cell count</p>",
+                "mdcalc_info_concept": null,
+                "name": "leuks",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "4-11",
+                        "value": 0
+                    },
+                    {
+                        "label": "<4 or >11",
+                        "value": 1
+                    },
+                    {
+                        "label": "Either <4 or >11 plus band forms ≥500",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Tracheal secretions</p>",
+                "mdcalc_info_concept": null,
+                "name": "trach",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<14+",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥14+",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥14+ plus purulent secretions",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Oxygenation, PaO₂/FiO₂ mm Hg</p>",
+                "mdcalc_info_concept": null,
+                "name": "oxy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">240 or ARDS",
+                        "value": 0
+                    },
+                    {
+                        "label": "≤240 and no ARDS",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Pulmonary radiography</p>",
+                "mdcalc_info_concept": null,
+                "name": "pulm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No infiltrate",
+                        "value": 0
+                    },
+                    {
+                        "label": "Diffuse or patchy infiltrate",
+                        "value": 1
+                    },
+                    {
+                        "label": "Localized infiltrate",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Culture of tracheal aspirate specimen</p>",
+                "mdcalc_info_concept": null,
+                "name": "culture",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Pathogenic bacteria cultured  ≤1 or no growth",
+                        "value": 0
+                    },
+                    {
+                        "label": "Pathogenic bacteria cultured >1+",
+                        "value": 1
+                    },
+                    {
+                        "label": "Pathogenic bacteria cultured >1+ plus same pathogenic bacteria on gram stain >1+",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Semi-quantitative, 0, 1, 2, or 3+",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "VAP",
+            "culture",
+            "pulm cx",
+            "BAL",
+            "covid",
+            "covid-19",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

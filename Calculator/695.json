@@ -1,0 +1,296 @@
+{
+    "id": "695",
+    "title": "Sequential Organ Failure Assessment (SOFA) Score",
+    "desc": "The Sequential Organ Failure Assessment (SOFA) Score predicts ICU mortality based on lab results and clinical data.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8844239",
+                "text": "Vincent JL, Moreno R, Takala J, et al. The SOFA (Sepsis-related Organ Failure Assessment) score to describe organ dysfunction/failure. On behalf of the Working Group on Sepsis-Related Problems of the European Society of Intensive Care Medicine. In: Vol 22. 1996:707–710."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"224\"><col width=\"102\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>PaO<sub>2</sub>/FiO<sub>2</sub>*, mmHg</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;400</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">300-399</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">200-299</p>\n</td>\n<td>\n<p dir=\"ltr\">+2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;199 and NOT mechanically ventilated</p>\n</td>\n<td>\n<p dir=\"ltr\">+2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">100-199 and mechanically ventilated</p>\n</td>\n<td>\n<p dir=\"ltr\">+3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;100 and mechanically ventilated</p>\n</td>\n<td>\n<p dir=\"ltr\">+4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Platelets, &times;10<sup>3</sup>/&micro;L</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;150</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">100-149</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">50-99</p>\n</td>\n<td>\n<p dir=\"ltr\">+2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">20-49</p>\n</td>\n<td>\n<p dir=\"ltr\">+3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;20</p>\n</td>\n<td>\n<p dir=\"ltr\">+4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong><calculator id=\"64\">Glasgow Coma Scale</calculator></strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">15</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">13&ndash;14</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10&ndash;12</p>\n</td>\n<td>\n<p dir=\"ltr\">+2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6&ndash;9</p>\n</td>\n<td>\n<p dir=\"ltr\">+3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;6</p>\n</td>\n<td>\n<p dir=\"ltr\">+4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Bilirubin, mg/dL (&mu;mol/L)</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;1.2 (&lt;20)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1.2&ndash;1.9 (20-32)</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2.0&ndash;5.9 (33-101)</p>\n</td>\n<td>\n<p dir=\"ltr\">+2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6.0&ndash;11.9 (102-204)</p>\n</td>\n<td>\n<p dir=\"ltr\">+3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;12.0 (&gt;204)</p>\n</td>\n<td>\n<p dir=\"ltr\">+4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Mean arterial pressure OR administration of&nbsp;vasoactive agents&nbsp;required&nbsp;</strong><b>(listed doses are in units of mcg/kg/min)</b></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">No hypotension</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">MAP &lt;70 mmHg</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">DOPamine &le;5 or DOBUTamine (any dose)</p>\n</td>\n<td>\n<p dir=\"ltr\">+2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">DOPamine &gt;5, EPINEPHrine &le;0.1, or norEPINEPHrine &le;0.1</p>\n</td>\n<td>\n<p dir=\"ltr\">+3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">DOPamine &gt;15, EPINEPHrine &gt;0.1, or norEPINEPHrine &gt;0.1</p>\n</td>\n<td>\n<p dir=\"ltr\">+4</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Creatinine, mg/dL (&mu;mol/L) (or urine output)</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;1.2 (&lt;110)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1.2&ndash;1.9 (110-170)</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2.0&ndash;3.4 (171-299)</p>\n</td>\n<td>\n<p dir=\"ltr\">+2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3.5&ndash;4.9 (300-440) or UOP &lt;500 mL/day)</p>\n</td>\n<td>\n<p dir=\"ltr\">+3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;5.0 (&gt;440) or UOP &lt;200 mL/day</p>\n</td>\n<td>\n<p dir=\"ltr\">+4</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;</p>\n<p>*Estimating FiO₂ from oxygen flow/delivery rates:</p>\n<div dir=\"ltr\" align=\"left\">\n<table>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Type of O₂ delivery</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Flow rates, L/min</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>FiO₂</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Nasal cannula</p>\n</td>\n<td>\n<p dir=\"ltr\">1-6</p>\n</td>\n<td>\n<p dir=\"ltr\">~4% FiO₂ added above room air* per 1 L/min</p>\n<ul>\n<li>Room air = 21%&nbsp;</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">1 L/min = 25%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">2 L/min = 29%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">3 L/min = 33%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">4 L/min = 37%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">5 L/min = 41%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">6 L/min = 45%</p>\n</li>\n</ul>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Simple face mask</p>\n</td>\n<td>\n<p dir=\"ltr\">~6-12</p>\n</td>\n<td>\n<p dir=\"ltr\">35-60%*</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Non-rebreather mask</p>\n</td>\n<td>\n<p dir=\"ltr\">10-15</p>\n</td>\n<td>\n<p dir=\"ltr\">~70-90%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">High-flow nasal cannula</p>\n</td>\n<td>\n<p dir=\"ltr\">Up to 60</p>\n</td>\n<td>\n<p dir=\"ltr\">30-100%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Varies based on respiratory rate and minute ventilation.</p>\n</div>",
+        "facts": "<p>Interpretation:</p>\n<div>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"96\"><col width=\"126\"><col width=\"145\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>SOFA Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Mortality if initial score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Mortality if highest score</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-1</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">0.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2-3</p>\n</td>\n<td>\n<p dir=\"ltr\">6.4%</p>\n</td>\n<td>\n<p dir=\"ltr\">1.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4-5</p>\n</td>\n<td>\n<p dir=\"ltr\">20.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">6.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6-7</p>\n</td>\n<td>\n<p dir=\"ltr\">21.5%</p>\n</td>\n<td>\n<p dir=\"ltr\">18.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8-9</p>\n</td>\n<td>\n<p dir=\"ltr\">33.3%</p>\n</td>\n<td>\n<p dir=\"ltr\">26.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10-11</p>\n</td>\n<td>\n<p dir=\"ltr\">50.0%</p>\n</td>\n<td>\n<p dir=\"ltr\">45.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">12-14</p>\n</td>\n<td>\n<p dir=\"ltr\">95.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">80.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;14</p>\n</td>\n<td>\n<p dir=\"ltr\">95.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">89.7%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"140\"><col width=\"83\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Mean SOFA Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Mortality </strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-1.0</p>\n</td>\n<td>\n<p dir=\"ltr\">1.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1.1-2.0</p>\n</td>\n<td>\n<p dir=\"ltr\">5.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2.1-3.0</p>\n</td>\n<td>\n<p dir=\"ltr\">20.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3.1-4.0</p>\n</td>\n<td>\n<p dir=\"ltr\">36.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4.1-5.0</p>\n</td>\n<td>\n<p dir=\"ltr\">73.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;5.1</p>\n</td>\n<td>\n<p dir=\"ltr\">84.4%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/11594901\" target=\"_blank\" rel=\"noopener\">Ferreira 2001</a>.</p>\n</div>",
+        "estimation": [
+            {
+                "name": "Partial Pressure of Oxygen",
+                "unit": "pao2",
+                "error_min": "1",
+                "error_max": "650",
+                "warn_min": "10",
+                "warn_max": "600",
+                "conversion": "0.133",
+                "normal_max_si": "13.3",
+                "normal_max_us": "100",
+                "normal_min_si": "10",
+                "normal_min_us": "75",
+                "units_si": "kPa",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Fraction of Inhaled O2",
+                "unit": "fio2",
+                "error_min": "10",
+                "error_max": "100.01",
+                "warn_min": "20",
+                "warn_max": "100.001",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Fever",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Renal Failure",
+            "Sepsis"
+        ],
+        "logic": "var calc_output = [];\nvar plt = parseFloat(plt);\nvar gcs = parseFloat(gcs);\nvar bili = parseFloat(bili);\nvar po2 = parseFloat(po2);\nvar fio2 = parseFloat(fio2)/100;\nvar map = parseFloat(map);\nvar cr = parseFloat(cr);\nvar mv = parseFloat(mv);\n\nif (UOMSYSTEM == false) {\n    po2 = po2/0.133;\n}\nelse {\n\tpo2 = po2;\n}\n\nvar pf_ratio = po2 / fio2;\n\nif (pf_ratio >= 400) {\n  pf_ratio = 0;\n} else if(pf_ratio >= 300 && pf_ratio < 400) {\n  pf_ratio = 1;\n} else if (pf_ratio >= 200 && pf_ratio < 300){\n  pf_ratio = 2;\n} else if (pf_ratio >= 100 && pf_ratio < 200 && mv == 1){\n  pf_ratio = 3;\n} else if (pf_ratio >= 100 && pf_ratio < 200 && mv == 0){\n  pf_ratio = 2;\n} else if (pf_ratio < 100 && mv == 1){\n  pf_ratio = 4;\n} else if (pf_ratio < 100 && mv == 0){\n  pf_ratio = 2;\n}\n\nu = pf_ratio + plt + gcs + bili + map + cr;\n\nvar msg, mini_msg\n\nif (u <= 9) {\n    msg = 'Initial SOFA Scores ≤9 predict ≤33.3% mortality (see Evidence for details)';\n    mini_msg = 'Mortality <33%'\n}\nif (u > 9 && u < 12) {\n    msg = 'Initial SOFA Scores of 10-11 predict 50.0% mortality (see Evidence for details)';\n    mini_msg = 'Mortality 50%'\n}\nif (u >= 12 ) {\n    msg = 'Initial SOFA Scores ≥12 predict ≥95.2% mortality (see Evidence for details)';\n    mini_msg = 'Mortality >95%'\n}\ncalc_output.push({ \n  name: 'mini', \n  value: u.toFixed(0), \n  value_text: 'points', \n  message: mini_msg \n});\ncalc_output.push({ \n  name: '691_SOFA Score_result', \n  value: u.toFixed(0), \n  value_text: 'points', \n  message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>PaO₂</p>",
+                "name": "po2",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "pao2"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>FiO₂</p>",
+                "name": "fio2",
+                "optional": false,
+                "tips_en": "See <a href=\"#evidence\">Evidence</a> for estimating FiO₂ from oxygen flow/delivery rates",
+                "type": "textbox",
+                "unit": "fio2"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>On mechanical ventilation</p>",
+                "md_calc_info_concept": null,
+                "name": "mv",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Including <abbr title='Continuous positive airway pressure'>CPAP</abbr>",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Platelets, &times;10&sup3;/&micro;L</p>",
+                "mdcalc_info_concept": null,
+                "name": "plt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥150",
+                        "value": 0
+                    },
+                    {
+                        "label": "100-149",
+                        "value": 1
+                    },
+                    {
+                        "label": "50-99",
+                        "value": 2
+                    },
+                    {
+                        "label": "20-49",
+                        "value": 3
+                    },
+                    {
+                        "label": "<20",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><calculator id=\"64\">Glasgow Coma Scale</calculator></p>",
+                "mdcalc_info_concept": null,
+                "name": "gcs",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "15",
+                        "value": 0
+                    },
+                    {
+                        "label": "13-14",
+                        "value": 1
+                    },
+                    {
+                        "label": "10-12",
+                        "value": 2
+                    },
+                    {
+                        "label": "6-9",
+                        "value": 3
+                    },
+                    {
+                        "label": "<6",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "If on sedatives, estimate assumed GCS off sedatives",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Bilirubin, mg/dL (&mu;mol/L)</p>",
+                "mdcalc_info_concept": null,
+                "name": "bili",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<1.2 (<20)",
+                        "value": 0
+                    },
+                    {
+                        "label": "1.2–1.9 (20-32)",
+                        "value": 1
+                    },
+                    {
+                        "label": "2.0–5.9 (33-101)",
+                        "value": 2
+                    },
+                    {
+                        "label": "6.0–11.9 (102-204)",
+                        "value": 3
+                    },
+                    {
+                        "label": "≥12.0 (>204)",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Mean arterial pressure OR administration of vasoactive agents required</p>",
+                "mdcalc_info_concept": null,
+                "name": "map",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No hypotension",
+                        "value": 0
+                    },
+                    {
+                        "label": "MAP <70 mmHg",
+                        "value": 1
+                    },
+                    {
+                        "label": "DOPamine ≤5 or DOBUTamine (any dose)",
+                        "value": 2
+                    },
+                    {
+                        "label": "DOPamine >5, EPINEPHrine ≤0.1, or norEPINEPHrine ≤0.1",
+                        "value": 3
+                    },
+                    {
+                        "label": "DOPamine >15, EPINEPHrine >0.1, or norEPINEPHrine >0.1",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Listed doses are in units of mcg/kg/min",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Creatinine, mg/dL (&mu;mol/L) (or urine output)</p>",
+                "mdcalc_info_concept": null,
+                "name": "cr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<1.2 (<110)",
+                        "value": 0
+                    },
+                    {
+                        "label": "1.2–1.9 (110-170)",
+                        "value": 1
+                    },
+                    {
+                        "label": " 2.0–3.4 (171-299)",
+                        "value": 2
+                    },
+                    {
+                        "label": "3.5–4.9 (300-440) or UOP <500 mL/day",
+                        "value": 3
+                    },
+                    {
+                        "label": "≥5.0 (>440) or UOP <200 mL/day",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "icu",
+            "critical care",
+            "sequential organ failure",
+            "organ failure",
+            "sofa score",
+            "covid",
+            "covid19",
+            "covid-19",
+            "covid 19",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

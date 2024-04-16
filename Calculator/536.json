@@ -1,0 +1,147 @@
+{
+    "id": "536",
+    "title": "Milan Criteria for Liver Transplantation",
+    "desc": "The Milan Criteria Assess suitability of patients for liver transplant with cirrhosis and hepatocellular carcinoma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/10.1002/lt.22365/abstract",
+                "text": "Mazzaferro V, et al. Milan criteria in liver transplantation for hepatocellular carcinoma: An evidence-based analysis of 15 years of experience. Liver Transpl. 2011 Oct;17 Suppl 2:S44-57."
+            },
+            {
+                "href": "https://www.nejm.org/doi/pdf/10.1056/NEJM199603143341104",
+                "text": "Mazzaferro V, Regalia E, Doci R, et al. Liver transplantation for the treatment of small hepatocellular carcinomas in patients with cirrhosis. N Engl J Med. 1996;334(11):693-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubs.rsna.org/doi/full/10.1148/radiol.12121698",
+                "text": "Wald C, Russo MW, Heimbach JK, Hussain HK, Pomfret EA, Bruix J. New OPTN/UNOS policy for liver transplant allocation: standardization of liver imaging, diagnosis, classification, and reporting of hepatocellular carcinoma. Radiology. 2013 Feb;266(2):376-82. doi: 10.1148/radiol.12121698."
+            },
+            {
+                "href": "https://www.aasld.org/sites/default/files/guideline_documents/Evaluation_for%20LT_in_Adults_hep26972_0.pdf",
+                "text": "Martin P, DiMartini A, Feng S, Brown R Jr, Fallon M. Evaluation for liver transplantation in adults: 2013 practice guideline by the American Association for the Study of Liver Diseases and the American Society of Transplantation. Hepatology. 2014 Mar;59(3):1144-65."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4958697/",
+                "text": "Elshamy M, Aucejo F, Menon KV, Eghtesad B. Hepatocellular carcinoma beyond Milan criteria: Management and transplant selection criteria. World J Hepatol. 2016 Jul 28;8(21):874-80. doi: 10.4254/wjh.v8.i21.874."
+            }
+        ],
+        "evidence": "<ul>\n<li>Single tumor with diameter &le;5 cm OR up to 3 tumors, each with diameter &le;3 cm, AND</li>\n<li>No major vessel or extra-hepatic involvement.</li>\n</ul>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Cirrhosis",
+            "Hepatitis",
+            "Hepatocellular Carcinoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = Math.max(parseFloat(onetumor), parseFloat(threetumor)) + parseFloat(extrahep) + parseFloat(majorvess);\nvar msg, mini_msg;\nif (u < 3) {\n  msg = 'Criteria not met';\n  mini_msg = 'Milan Criteria NOT fulfilled. Patient is NOT a viable transplant candidate.';\n} else {\n  msg = 'Criteria met';\n  mini_msg = 'Milan Criteria fulfilled. Patient is a viable transplant candidate.';\n}\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: '', \n\tvalue_text: '', \n\tmessage: mini_msg \n});\ncalc_output.push({ \n\tname: '3900_Milan Criteria_result', \n\tvalue: msg, \n\tvalue_text: '', \n\tmessage: mini_msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Single tumor with diameter ≤5 cm",
+                "md_calc_info_concept": null,
+                "name": "onetumor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Up to 3 tumors each with diameter ≤3 cm",
+                "md_calc_info_concept": null,
+                "name": "threetumor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Extra-hepatic involvement",
+                "md_calc_info_concept": null,
+                "name": "extrahep",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Major vessel involvement",
+                "md_calc_info_concept": null,
+                "name": "majorvess",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "milan",
+            "hep",
+            "transplant",
+            "liver transplant",
+            "HCC"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

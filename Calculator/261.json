@@ -1,0 +1,413 @@
+{
+    "id": "261",
+    "title": "Utah COVID-19 Risk Score",
+    "desc": "The Utah COVID-19 Risk Score recommends oral antivirals for COVID-19 treatment.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://c19.health.utah.gov/surveys/?s=8TY9CN9Y4L",
+                "text": "Do I qualify for COVID-19 treatments? Coronavirus.utah.gov."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://coronavirus.utah.gov/noveltherapeutics/",
+                "text": "COVID-19 Monoclonal Antibody Therapy. Coronavirus.utah.gov."
+            },
+            {
+                "href": "https://coronavirus.utah.gov/medical-providers/",
+                "text": "Medical providers. Coronavirus.utah.gov."
+            }
+        ],
+        "evidence": "<p>The Utah COVID-19 Risk Score is calculated by the addition of the selected points:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%; height: 1580.65625px;\">\n<tbody>\n<tr style=\"height: 22px;\">\n<td colspan=\"3\" style=\"width: 71.0951526032316%; height: 22px;\"><strong>Variable</strong></td>\n<td style=\"width: 28.904847396768403%; height: 22px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"height: 220px; width: 28.545780969479356%;\" rowspan=\"10\">Age, years</td>\n<td style=\"width: 14.003590664272892%; height: 220px;\" rowspan=\"10\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">16-20</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">21-30</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1.5</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">31-40</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">2</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">41-50</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">2.5</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">51-60</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">3</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">61-70</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">3.5</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">71-80</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">4</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">81-90</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">4.5</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">91-100</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">5</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">&ge;101</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">5.5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"height: 40px; width: 100%;\" colspan=\"4\"><strong>Highest risk comorbidities</strong></td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">Diabetes mellitus</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">2</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">Obesity (BMI &gt;30 kg/m<sup>2</sup>)</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">2</td>\n</tr>\n<tr style=\"height: 41px;\">\n<td colspan=\"4\" style=\"width: 100%; height: 41px;\"><strong>Other high risk comorbidities</strong></td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">Active cancer</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1</td>\n</tr>\n<tr style=\"height: 125px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 187.21875px;\">Other immunosuppressive therapies and conditions</td>\n<td style=\"width: 14.003590664272892%; height: 187.21875px;\" rowspan=\"2\">Includes methotrexate, hydroxychloroquine, leflunomide, chronic corticosteroids, TNF inhibitors, IL 12/23 inhibitors, IL-17 inhibitors, IL-1 inhibitors, integrin inhibitors, and immunotherapy</td>\n<td style=\"width: 28.545780969479356%; height: 125px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 125px;\">0</td>\n</tr>\n<tr style=\"height: 62.21875px;\">\n<td style=\"width: 28.545780969479356%; height: 62.21875px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 62.21875px;\">1</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">Hypertension</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">Coronary artery disease</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">Cardiac arrhythmia</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">Congestive heart failure</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">Chronic kidney disease</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">Chronic pulmonary disease</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">Chronic liver disease</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1</td>\n</tr>\n<tr style=\"height: 98px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 206.21875px;\">Cerebrovascular disease</td>\n<td style=\"width: 14.003590664272892%; height: 206.21875px;\" rowspan=\"2\">Includes strokes and transient ischemic attacks, sometimes called &ldquo;mini strokes&rdquo;</td>\n<td style=\"width: 28.545780969479356%; height: 98px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 98px;\">0</td>\n</tr>\n<tr style=\"height: 108.21875px;\">\n<td style=\"width: 28.545780969479356%; height: 108.21875px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 108.21875px;\">1</td>\n</tr>\n<tr style=\"height: 208px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 342.21875px;\">Chronic neurologic disease</td>\n<td style=\"width: 14.003590664272892%; height: 342.21875px;\" rowspan=\"2\">\n<p>Includes <abbr title=\"Multiple sclerosis\">MS</abbr>, Parkinson&rsquo;s disease, dementia/other neurodegenerative conditions, and myasthenia gravis</p>\n<p>Do not mark as yes for migraines, local neuropathies, or fibromyalgia unless also positive for previously listed conditions</p>\n</td>\n<td style=\"width: 28.545780969479356%; height: 208px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 208px;\">0</td>\n</tr>\n<tr style=\"height: 134.21875px;\">\n<td style=\"width: 28.545780969479356%; height: 134.21875px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 134.21875px;\">1</td>\n</tr>\n<tr style=\"height: 38px;\">\n<td colspan=\"4\" style=\"width: 100%; height: 38px;\"><strong>Symptom risk factor</strong></td>\n</tr>\n<tr style=\"height: 22px;\">\n<td rowspan=\"2\" style=\"width: 28.545780969479356%; height: 44px;\">New shortness of breath</td>\n<td style=\"width: 14.003590664272892%; height: 44px;\" rowspan=\"2\"></td>\n<td style=\"width: 28.545780969479356%; height: 22px;\">No</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">0</td>\n</tr>\n<tr style=\"height: 22px;\">\n<td style=\"width: 28.545780969479356%; height: 22px;\">Yes</td>\n<td style=\"width: 28.904847396768403%; height: 22px;\">1</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output = [];\n\n// Declare vars\n\nvar age2 = parseFloat(age2);\nvar diabetes = parseFloat(diabetes);\nvar obesity = parseFloat(obesity);\nvar cancer = parseFloat(cancer);\nvar drugs = parseFloat(drugs);\nvar hyper = parseFloat(hyper);\nvar artery = parseFloat(artery);\nvar ca = parseFloat(ca);\nvar hf = parseFloat(hf);\nvar kidney = parseFloat(kidney);\nvar pulmonary = parseFloat(pulmonary);\nvar liver = parseFloat(liver);\nvar cd = parseFloat(cd);\nvar neuro = parseFloat(neuro);\nvar short = parseFloat(short);\n\nvar score;\nscore = age2 + diabetes + obesity + cancer + drugs + hyper + artery + ca + hf + kidney + pulmonary + liver + cd + neuro + short;\n  \ncalc_output.push({\n  name: 'mini',\n  value: score,\n  value_text: 'points',\n  message: ''\n});\ncalc_output.push({\n  name: 'score',\n  value: score,\n  value_text: 'points',\n  message: 'Utah COVID-19 Risk Score'\n});",
+        "inputs": [
+            {
+                "subheading": "<p>Demographic risk factors</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "age2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "16-20",
+                        "value": 1
+                    },
+                    {
+                        "label": "21-30",
+                        "value": 1.5
+                    },
+                    {
+                        "label": "31-40",
+                        "value": 2
+                    },
+                    {
+                        "label": "41-50",
+                        "value": 2.5
+                    },
+                    {
+                        "label": "51-60",
+                        "value": 3
+                    },
+                    {
+                        "label": "61-70",
+                        "value": 3.5
+                    },
+                    {
+                        "label": "71-80",
+                        "value": 4
+                    },
+                    {
+                        "label": "81-90",
+                        "value": 4.5
+                    },
+                    {
+                        "label": "91-100",
+                        "value": 5
+                    },
+                    {
+                        "label": "≥101",
+                        "value": 5.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "<p>Highest risk comorbidities</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Diabetes mellitus</p>",
+                "name": "diabetes",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Obesity (BMI &gt;30 kg/m2)</p>",
+                "name": "obesity",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "<p>Other high risk comorbidities</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Active cancer</p>",
+                "name": "cancer",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Other immunosuppressive therapies and conditions</p>",
+                "name": "drugs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Includes methotrexate, hydroxychloroquine, leflunomide, chronic corticosteroids, TNF inhibitors, IL 12/23 inhibitors, IL-17 inhibitors, IL-1 inhibitors, integrin inhibitors, and immunotherapy",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hypertension</p>",
+                "name": "hyper",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Coronary artery disease</p>",
+                "name": "artery",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cardiac arrhythmia</p>",
+                "name": "ca",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Congestive heart failure</p>",
+                "name": "hf",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Chronic kidney disease</p>",
+                "name": "kidney",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Chronic pulmonary disease</p>",
+                "name": "pulmonary",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Chronic liver disease</p>",
+                "name": "liver",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cerebrovascular disease</p>",
+                "name": "cd",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Includes strokes and transient ischemic attacks, sometimes called “mini strokes”",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Chronic neurologic disease</p>",
+                "name": "neuro",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Includes <abbr title=\"Multiple sclerosis\">MS</abbr>, Parkinson’s disease, dementia/other neurodegenerative conditions, and myasthenia gravis<br/><br/>Do not mark as yes for migraines, local neuropathies, or fibromyalgia unless also positive for previously listed conditions",
+                "type": "radio"
+            },
+            {
+                "subheading": "<p>Symptom risk factor</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>New shortness of breath</p>",
+                "name": "short",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Utah COVID-19 Risk Score",
+            "oral antivirals",
+            "oral antiviral treatment",
+            "covid",
+            "covid 19",
+            "covid 19 treatment",
+            "covid treatment",
+            "antiviral treatment",
+            "covid treatment recommendation",
+            "covid 19 risk",
+            "covid 19 risk score",
+            "utah"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

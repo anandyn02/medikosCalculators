@@ -1,0 +1,88 @@
+{
+    "id": "681",
+    "title": "Pediatric Endotracheal Tube (ETT) Size",
+    "desc": "The Pediatric Endotracheal Tube (ETT) Size estimates ET tube size based on age.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10149098",
+                "text": "Singh NC et al, Physiological responses to endotracheal and oral suctioning in paediatric patients: the influence of endotracheal tube sizes and suction pressures. Clin Intensive Care. 1991; 2: 345-350."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Predicted Size Uncuffed Tube = (Age/4) + 4</p>\n<p>Predicted Size Cuffed Tube = (Age/4) + 3</p>",
+        "facts": "<p>This formula typically is applicable to children ages 1-12. Below that, consider an <a href=\"https://www.smiths-medical.com/userfiles/trachealtubechart.pdf\" target=\"_blank\" rel=\"noopener\">endotracheal tube reference card</a>; above 12, typically most adult sizes (6.5-8.0) can be used.</p>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Chest Pain",
+            "Headache",
+            "Injury/Trauma",
+            "Intoxication/Overdose",
+            "Seizure",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output = [];\nvar mini_msg = 'Use Adult ETT Sizes';\nvar mini_msg1 = '';\nvar mini_msg2 = '';\nif (age > 12) {\n    calc_output.push({\n        name: 'mini', \n        value: ' ', \n        value_text: ' ', \n        message: mini_msg \n    });\n    calc_output.push({\n        name: '58_Peds ET Tube Size_result', \n        value: ' ', \n        value_text: ' ', \n        message: 'By age 12, most experts recommend switching to adult ETT sizes.' \n    });\n} else {\n    var v = 0;\n    v = (parseFloat(age) / 4) + 4;\n    if (v % 1 !== 0) {\n        v = Math.floor(v) + '-' + Math.floor(v) + '.5';\n        calc_output.push({ \n            name: '58_Peds ET Tube Size_result (uncuffed)', \n            value: v, \n            value_text: 'mm tube', \n            message: 'Predicted Uncuffed Tube Size' \n        });\n    } else {\n        calc_output.push({ \n            name: '58_Peds ET Tube Size_result (uncuffed)', \n            value: v.toFixed(1), \n            value_text: 'mm tube', \n            message: 'Predicted Uncuffed Tube Size' \n        });\n    };\n    calc_output.push({ \n        name: 'mini', \n        value: v, \n        value_text: 'mm tube', \n        message: 'Predicted Uncuffed Tube Size' \n    });\n    var u = 0;\n    u = (parseFloat(age) / 4) + 3;\n    if (u % 1 !== 0) {\n        u = Math.floor(u) + '-' + Math.floor(u) + '.5';\n        mini_msg2 = u + ' mm tube';\n        calc_output.push({ \n            name: '58_Peds ET Tube Size_result (cuffed)', \n            value: u, \n            value_text: 'mm tube', \n            message: 'Predicted Cuffed Tube Size' \n        });\n    } else {\n        mini_msg2 = u.toFixed(1) + ' mm tube';\n        calc_output.push({ \n            name: '58_Peds ET Tube Size_result (cuffed)', \n            value: u.toFixed(1), \n            value_text: 'mm tube', \n            message: 'Predicted Cuffed Tube Size' \n        });\n    }\n};",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            }
+        ],
+        "can_search": [
+            "intubation",
+            "peds",
+            "covid 19",
+            "covid-19",
+            "covid19",
+            "coronavirus",
+            "Pediatric Endotracheal Tube (ETT) Size",
+            "peds ett",
+            "ped ett",
+            "pediatric ett",
+            "ett",
+            "ped et tube size",
+            "peds et tube size",
+            "et tube size"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neonatal)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Pediatrics",
+            "Pulmonology",
+            "Surgery (General)"
+        ]
+    }
+}

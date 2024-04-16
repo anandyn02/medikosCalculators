@@ -1,0 +1,130 @@
+{
+    "id": "495",
+    "title": "Behavioral Pain Scale (BPS) for Pain Assessment in Intubated Patients",
+    "desc": "The Behavioral Pain Scale (BPS) determines pain level in patients that are critically ill and sedated.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11801819",
+                "text": "Payen JF, Bru O, Bosson JL, et al. Assessing pain in critically ill sedated patients by using a behavioral pain scale. Crit Care Med. 2001 Dec;29(12): 2258-63"
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of assigned points.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>Scores &le;3 indicate no pain.</li>\n<li>Scores 4-5 indicate mild pain.</li>\n<li>Scores 6-11 indicate an unacceptable amount of pain.*</li>\n<li>Scores &ge;12 indicate maximum pain.*</li>\n</ul>\n<p><strong>*Note:</strong> For scores &ge;6 consider sedation and/or analgesia.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS"
+        ],
+        "disease_treated": [
+            "Delirium"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(face) + parseFloat(limb) + parseFloat(vent);\nvar msg, mini_msg;\nif (u <= 3) {\n    mini_msg = \"No pain\";\n    msg = \"\";\n}\nif (u == 4 || u == 5) {\n    mini_msg = \"Mild pain\";\n    msg = \"\";\n}\nif (u >= 6 && u <= 11) {\n    mini_msg = \"Unacceptable amount of pain\";\n    msg = \"<br/><br/>Consider further sedation or other analgesia.\";\n}\nif (u >= 12) {\n    mini_msg = \"Maximum pain\";\n    msg = \"<br/><br/>Consider further sedation or other analgesia.\";\n}\n\ncalc_output.push({ name: 'mini', value: u, value_text: 'points', message: mini_msg });\ncalc_output.push({ name: '3622_Behavioral Pain Scale_result', value: u, value_text: 'points', message: mini_msg+msg });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Facial expression",
+                "mdcalc_info_concept": null,
+                "name": "face",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Relaxed",
+                        "value": 1
+                    },
+                    {
+                        "label": "Partially tightened (e.g., brow lowering)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Fully tightened (e.g., eyelid closing)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Grimacing",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Upper limb movements",
+                "mdcalc_info_concept": null,
+                "name": "limb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No movement",
+                        "value": 1
+                    },
+                    {
+                        "label": "Partially bent",
+                        "value": 2
+                    },
+                    {
+                        "label": "Fully bent with finger flexion",
+                        "value": 3
+                    },
+                    {
+                        "label": "Permanently retracted",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Compliance with mechanical ventilation",
+                "mdcalc_info_concept": null,
+                "name": "vent",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Tolerating movement",
+                        "value": 1
+                    },
+                    {
+                        "label": "Coughing but tolerating ventilation for most of the time",
+                        "value": 2
+                    },
+                    {
+                        "label": "Fighting ventilator",
+                        "value": 3
+                    },
+                    {
+                        "label": "Unable to control ventilation",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "critical",
+            "sedation",
+            "sedated",
+            "icu"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Hospitalist Medicine",
+            "Neurology",
+            "Pain Management"
+        ]
+    }
+}

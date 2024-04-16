@@ -1,0 +1,237 @@
+{
+    "id": "162",
+    "title": "Multiple Myeloma Diagnostic Criteria",
+    "desc": "The Multiple Myeloma Diagnostic Criteria (IMWG) diagnosis multiple myeloma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25439696",
+                "text": "Rajkumar SV, Dimopoulos MA, Palumbo A, et al. International Myeloma Working Group updated criteria for the diagnosis of multiple myeloma. Lancet Oncol. 2014;15(12):e538-48."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Selection of the appropriate criteria:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"439\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">(A) Clonal bone marrow plasma cells &ge;10% or (B) biopsy-proven bony or extramedullary plasmacytoma&nbsp;</p>\n<p dir=\"ltr\">AND</p>\n<p dir=\"ltr\">(C) &ge;1 myeloma defining event (C1 or C2):</p>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">(C1) End organ damage attributable underlying plasma cell proliferative disorder, specifically:&nbsp;</p>\n</li>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\"><strong>Hypercalcemia:</strong> serum calcium &gt;1 mg/dL (&gt;0.25 mmol/L) higher than upper limit of normal or &gt;11 mg/dL (&gt;2.75 mmol/L)</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\"><strong>Renal insufficiency:</strong> <calculator id=\"43\">creatinine clearance</calculator> &lt;40 mL per min or serum creatinine &gt;2 mg/dL (177 &mu;mol/L)</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\"><strong>Anemia:</strong>&nbsp;hemoglobin &gt;2 g/dL (20 g/L) below lower limit of normal, or hemoglobin &lt;10 g/dL (100 g/L)</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\"><strong>Bone lesions:</strong> &ge;1 osteolytic lesion on skeletal x-ray, CT, or PET-CT</p>\n</li>\n</ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">(C2) &ge;1 of the following biomarkers of malignancy:</p>\n</li>\n<ul>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Clonal bone marrow plasma cells &ge;60%</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">Involved:uninvolved sFLC ratio &ge;100</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\">&gt;1 focal lesion on MRI</p>\n</li>\n</ul>\n</ul>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Extremity Pain",
+            "Cancer"
+        ],
+        "disease_treated": [
+            "Multiple Myeloma"
+        ],
+        "logic": "var calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c1 = parseFloat(c1);\nvar c2 = parseFloat(c2);\nvar c3 = parseFloat(c3);\nvar c4 = parseFloat(c4);\nvar d1 = parseFloat(d1);\nvar d2 = parseFloat(d2);\nvar d3 = parseFloat(d3);\n\nvar c = c1 + c2 + c3 + c4;\n\nvar d = d1 + d2 + d3;\n\nvar diag, msg;\n\nif ((a == 1 || b == 1) && (c >= 1 || d >= 1)) {\n\tdiag = 'Positive';\n\tmsg = 'Positive for multiple myeloma by IMWG criteria';\n} else {\n\tdiag = 'Not positive';\n\tmsg = 'Not positive for multiple myeloma by IMWG criteria';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text: '',\n    message: 'Diagnosis by IMWG criteria'\n});\ncalc_output.push({\n    name: 'Score',\n    value: diag,\n    value_text: '',\n    message: msg   \n});",
+        "inputs": [
+            {
+                "subheading": "≥1 of the following (A or B)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "A. Clonal bone marrow plasma cells ≥10%",
+                "name": "a",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "B. Biopsy-proven bony or extramedullary plasmacytoma",
+                "name": "b",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "≥1 myeloma defining event (C1 or C2)",
+                "subheading_instructions": "C1. End organ damage attributable to underlying plasma cell disorder (≥1 of the following):",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hypercalcemia",
+                "name": "c1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Serum calcium >1 mg/dL (>0.25 mmol/L) higher than upper limit of normal or >11 mg/dL (>2.75 mmol/L)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Renal insufficiency",
+                "name": "c2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "<calculator id = \"43\">Creatinine clearance</calculator> <40 mL per min or serum creatinine >2 mg/dL (177 μmol/L)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anemia",
+                "name": "c3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Hemoglobin >2 g/dL (20 g/L) below lower limit of normal, or <10 g/dL (100 g/L)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bone lesions",
+                "name": "c4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "≥1 osteolytic lesion on skeletal x-ray, CT, or PET-CT",
+                "type": "toggle"
+            },
+            {
+                "subheading": "",
+                "subheading_instructions": "C2. ≥1 of the following biomarkers of malignancy:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Clonal bone marrow plasma cells ≥60%",
+                "name": "d1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Involved:uninvolved <abbr title=\"Serum free light chain\">sFLC</abbr> ratio ≥100",
+                "name": "d2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": ">1 focal lesion on MRI",
+                "name": "d3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Mm",
+            "Multiple Myeloma Diagnostic Criteria (IMWG)",
+            "multiple myeloma",
+            "disease definition",
+            "multiple myeloma disease definition",
+            "myeloma",
+            "imwg"
+        ],
+        "specialty": [
+            "Radiation Oncology",
+            "Internal Medicine",
+            "Hospitalist Medicine",
+            "Hematology and Oncology"
+        ]
+    }
+}

@@ -1,0 +1,170 @@
+{
+    "id": "510",
+    "title": "AIMS65 Score for Upper GI Bleeding Mortality",
+    "desc": "The AIMS65 Score for Upper GI Bleeding Mortality determines risk of in-hospital mortality from upper GI bleeding.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21907980",
+                "text": "Saltzman JR, Tabak YP, Hyett BH, Sun X, Travis AC, Johannes RS. A simple risk score accurately predicts in-hospital mortality, length of stay, and cost in acute upper GI bleeding. Gastrointest Endosc.2011;74:1215–1224."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4283417/ ",
+                "text": "Gaduputi V, Abdulsamad M, Tariq H, Rafeeq A, Abbas N, Kumbum K, Chilimuri S. Prognostic value of AIMS65 score in cirrhotic patients with upper gastrointestinal bleeding. Gastroenterology research and practice. 2014 Dec 22;2014."
+            },
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/10.1111/acem.12554/abstract;jsessionid=978D007E7B8104CCCC074693E04B4F9A.f03t03 ",
+                "text": "Yaka E, Yılmaz S, Özgür Doğan N, Pekdemir M. Comparison of the Glasgow‐Blatchford and AIMS65 scoring systems for risk stratification in upper gastrointestinal bleeding in the emergency department. Academic Emergency Medicine. 2015 Jan 1;22(1):22-30."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23357496",
+                "text": "Hyett BH, Abougergi MS, Charpentier JP, Kumar NL, Brozovic S, Claggett BL, Travis AC, Saltzman JR. The AIMS65 score compared with the Glasgow-Blatchford score in predicting outcomes in upper GI bleeding. Gastrointestinal endoscopy. 2013 Apr 30;77(4):551-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26515955 ",
+                "text": "Robertson M, et al. Risk stratification in acute upper GI bleeding: comparison of the AIMS65 score with the Glasgow-Blatchford and Rockall scoring systems. Gastrointestinal endoscopy 83.6 (2016): 1151-1160."
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th><strong>AIMS65 Score</strong></th>\n<th><strong>In-hospital Mortality Rate</strong></th>\n</tr>\n<tr>\n<td>0</td>\n<td>0.3%</td>\n</tr>\n<tr>\n<td>1</td>\n<td>1.2%</td>\n</tr>\n<tr>\n<td>2</td>\n<td>5.3%</td>\n</tr>\n<tr>\n<td>3</td>\n<td>10.3%</td>\n</tr>\n<tr>\n<td>4</td>\n<td>16.5%</td>\n</tr>\n<tr>\n<td>5</td>\n<td>24.5%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Blood in Stool",
+            "Hematemesis",
+            "Mass",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Bleeding/Hemorrhage",
+            "GI Bleeding"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseFloat(alb) + parseFloat(inr) + parseFloat(ams) + parseFloat(sbp) + parseFloat(age);\nvar mort;\nvar msg='In-hospital mortality.';\n\nif (u==0) {mort = '0.3% ';}\nif (u==1) {mort = '1.2% ';}\nif (u==2) {mort = '5.3% ';}\nif (u==3) {mort = '10.3% ';}\nif (u==4) {mort = '16.5% ';}\nif (u==5) {mort = '24.5% ';}\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mort+msg\n});\ncalc_output.push({\n    name: '3801_AIMS65_result',\n    value: u,\n    value_text: 'points',\n    message: mort+msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Albumin <3 g/dL (30 g/L)",
+                "md_calc_info_concept": null,
+                "name": "alb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "INR >1.5",
+                "md_calc_info_concept": null,
+                "name": "inr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Alteration in mental status",
+                "md_calc_info_concept": null,
+                "name": "ams",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "sBP ≤90 mm Hg",
+                "md_calc_info_concept": null,
+                "name": "sbp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥65 years",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Aims",
+            "aims score",
+            "aims65",
+            "aims scale",
+            "aims bleeding risk",
+            "upper GI bleeding risk",
+            "aims gi bleed"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Gastroenterology"
+        ]
+    }
+}

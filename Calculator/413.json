@@ -1,0 +1,216 @@
+{
+    "id": "413",
+    "title": "Critical Care Pain Observation Tool (CPOT)",
+    "desc": "The Critical Care Pain Observation Tool (CPOT) rates critically ill patients’ pain based on clinical observation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15043240",
+                "text": "Gélinas C, Fortier M, Viens C, Fillion L, Puntillo KA. Pain assessment and management in critically ill intubated patients: a retrospective study. Am J Crit Care. 2004;13:126-135. "
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11432212",
+                "text": "Puntillo KA, White C, Morris AB, et al. Patients' perceptions and responses to procedural pain: results from Thunder Project II. Am J Crit Care. 2001;10:238-251."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17575489",
+                "text": "Gélinas C, Johnston C. Pain assessment in the critically ill ventilated adult:validation of the Critical-Care Pain Observation Tool and physiologic indicators. Clin J Pain. 2007 Jul-Aug;23(6):497-505."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20510842",
+                "text": "Gélinas C. Nurses' evaluations of the feasibility and the clinical utility of the Critical-Care Pain Observation Tool. Pain Manag Nurs. 2010 Jun;11(2):115-25."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21651658",
+                "text": "Vázquez M, Pardavila MI, Lucia M, Aguado Y, Margall MÁ, Asiain MC. Pain assessment in turning procedures for patients with invasive mechanical ventilation. Nurs Crit Care. 2011 Jul-Aug;16(4):178-85"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23727853",
+                "text": "Stites M. Observational pain scales in critically ill adults. Crit Care Nurse. 2013 Jun;33(3):68-78."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17448662",
+                "text": "Gélinas C. Management of pain in cardiac surgery ICU patients: have we improved over time? Intensive Crit Care Nurs. 2007 Oct;23(5):298-303. Epub 2007 Apr 19."
+            }
+        ],
+        "evidence": "<p>Addition of selected points, as above.</p>",
+        "facts": "<p><strong>Scoring system and definitions of criteria:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>&nbsp;</th>\n<th>Criteria</th>\n<th>Score</th>\n<th>Definition</th>\n</tr>\n<tr>\n<td rowspan=\"3\"><strong>Facial expression</strong></td>\n<td>Relaxed, neutral</td>\n<td>0</td>\n<td>No muscular tension observed</td>\n</tr>\n<tr>\n<td>Tense</td>\n<td>1</td>\n<td>Presence of frowning, brow lowering, orbit tightening</td>\n</tr>\n<tr>\n<td>Grimacing</td>\n<td>2</td>\n<td>All of the above facial movements plus&nbsp;eyelids tightly closed</td>\n</tr>\n<tr>\n<td rowspan=\"3\"><strong>Body movements</strong></td>\n<td>Absence of movements</td>\n<td>0</td>\n<td>Does not move at all (does not necessarily mean absence of pain)</td>\n</tr>\n<tr>\n<td>Protection</td>\n<td>1</td>\n<td>Slow cautious movements, touching or rubbing the pain site, seeking attention through movements</td>\n</tr>\n<tr>\n<td>Restlessness</td>\n<td>2</td>\n<td>Pulling tube, attempting to sit up, moving limbs/thrashing, not following commands</td>\n</tr>\n<tr>\n<td rowspan=\"3\"><strong>Muscle tension</strong> <br>(Evaluation by passive flexion and <br>extension of upper extremities)</td>\n<td>Relaxed</td>\n<td>0</td>\n<td>No resistance to passive movements</td>\n</tr>\n<tr>\n<td>Tense, rigid</td>\n<td>1</td>\n<td>Resistance to passive movements</td>\n</tr>\n<tr>\n<td>Very tense or rigid</td>\n<td>2</td>\n<td>Strong resistance to passive movements; inability to complete them</td>\n</tr>\n<tr>\n<td colspan=\"4\"><strong>EITHER</strong></td>\n</tr>\n<tr>\n<td rowspan=\"3\"><strong>Compliance with the ventilator</strong> <br>(Intubated patients only)</td>\n<td>Tolerating ventilator or movement</td>\n<td>0</td>\n<td>Alarms not activated, easy ventilation</td>\n</tr>\n<tr>\n<td>Coughing but tolerating</td>\n<td>1</td>\n<td>Alarms stop spontaneously</td>\n</tr>\n<tr>\n<td>Fighting ventilator</td>\n<td>2</td>\n<td>Asynchrony: blocking ventilation, alarms frequently activated</td>\n</tr>\n<tr>\n<td colspan=\"4\"><strong>OR</strong></td>\n</tr>\n<tr>\n<td rowspan=\"3\"><strong>Vocalization</strong> <br>(Extubated patients only)</td>\n<td>Talking in normal tone or no sound</td>\n<td>0</td>\n<td>Talking in normal tone or no sound</td>\n</tr>\n<tr>\n<td>Sighing, moaning</td>\n<td>1</td>\n<td>Sighing, moaning</td>\n</tr>\n<tr>\n<td>Crying out, sobbing</td>\n<td>2</td>\n<td>Crying out, sobbing</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Pain"
+        ],
+        "disease_treated": [
+            "Anxiety",
+            "Delirium",
+            "Dementia"
+        ],
+        "logic": "var vent = vent || 0\nvar vocal = vocal || 0\n\nvar calc_output = [];\nvar msg;\nvar intubated = parseFloat(intubated);\n\nvar face = parseFloat(face);\nvar body = parseFloat(body);\nvar muscle = parseFloat(muscle);\nvocal = parseFloat(vocal);\nvent = parseFloat(vent);\nvar score = face + body + muscle;\nif (intubated == 0) {\n    score = score + vocal;\n}\nif (intubated == 1) {\n    score = score + vent;\n}\nif (score <= 2) { msg = 'Minimal or no pain present.'; }\nif (score >= 3) { msg = 'Unacceptable amount of pain. Consider further sedation or other analgesia.'; }\n\ncalc_output.push({ \n    name: 'mini', \n    value: score, \n    value_text: 'points', \n    message: msg \n});\ncalc_output.push({ \n    name: '2144_CPOT Pain Scale_result', \n    value: score, \n    value_text: 'points', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Intubated?",
+                "md_calc_info_concept": null,
+                "name": "intubated",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "intubated == 1",
+                "default": null,
+                "label_en": "Compliance with ventilator",
+                "mdcalc_info_concept": null,
+                "name": "vent",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Tolerating ventilator or movement",
+                        "value": 0
+                    },
+                    {
+                        "label": "Coughing but tolerating",
+                        "value": 1
+                    },
+                    {
+                        "label": "Fighting ventilator",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "intubated == 0",
+                "default": null,
+                "label_en": "Vocalization",
+                "mdcalc_info_concept": null,
+                "name": "vocal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Talking in normal tone or no sound",
+                        "value": 0
+                    },
+                    {
+                        "label": "Sighing, moaning",
+                        "value": 1
+                    },
+                    {
+                        "label": "Crying out, sobbing",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Facial expression",
+                "mdcalc_info_concept": null,
+                "name": "face",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Relaxed, neutral",
+                        "value": 0
+                    },
+                    {
+                        "label": "Tense",
+                        "value": 1
+                    },
+                    {
+                        "label": "Grimacing",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Body movements",
+                "mdcalc_info_concept": null,
+                "name": "body",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absence of movements",
+                        "value": 0
+                    },
+                    {
+                        "label": "Protection",
+                        "value": 1
+                    },
+                    {
+                        "label": "Restlessness",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Muscle tension",
+                "mdcalc_info_concept": null,
+                "name": "muscle",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Relaxed",
+                        "value": 0
+                    },
+                    {
+                        "label": "Tense, rigid",
+                        "value": 1
+                    },
+                    {
+                        "label": "Very tense or rigid",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "critical care",
+            "pain",
+            "analgesia",
+            "observation"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine"
+        ]
+    }
+}

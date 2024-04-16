@@ -1,0 +1,79 @@
+{
+    "id": "334",
+    "title": "Winters' Formula for Metabolic Acidosis Compensation",
+    "desc": "The Winters’ Formula for Metabolic Acidosis Compensation Calculates the expected pCO<sub>2</sub> compensation in a purely metabolic acidosis",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://annals.org/article.aspx?articleid=681186",
+                "text": "Albert MS, Dell RB, Winters RW. Quantitative Displacement of Acid-Base Equilibrium in Metabolic Acidosis. Ann Intern Med. 1967;66:312-322. doi:10.7326/0003-4819-66-2-312."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://jasn.asnjournals.org/content/21/6/920",
+                "text": "Adrogué HJ, Madias NE. Secondary responses to altered acid-base status: the rules of engagement. J Am Soc Nephrol. 2010;21(6):920-3."
+            }
+        ],
+        "evidence": "<p>Expected pCO₂ = 1.5 x HCO<sub>3</sub>- + 8 &plusmn; 2</p>\n<p>Note: although the original Winters formula used a standard error of &plusmn;2, newer data suggest that pCO₂ may vary up to &plusmn;5 (<a href=\"https://jasn.asnjournals.org/content/21/6/920\" target=\"_blank\" rel=\"noopener\">Adrogu&eacute; and Madias 2010</a>).</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Bicarbonate",
+                "unit": "bicarb",
+                "error_min": "1",
+                "error_max": "100",
+                "warn_min": "4",
+                "warn_max": "60",
+                "conversion": "1",
+                "normal_max_si": "28",
+                "normal_max_us": "28",
+                "normal_min_si": "23",
+                "normal_min_us": "23",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Intoxication/Overdose",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acid-Base Disturbance"
+        ],
+        "logic": "var calc_output = [];\nvar v, high, low, units, range;\nv = 1.5 * parseFloat(bicarbonate) + 8;\nv = Math.round(v * 1) / 1;\nhigh = v + 2;\nlow = v - 2;\nif (UOMSYSTEM == false){\n  high = high*0.133;\n  low = low*0.133\n  units = 'kPa'\n} else {units = 'mm Hg';}\nrange = low.toFixed(1) + '-' + high.toFixed(1);\ncalc_output.push({ \n  name: 'mini',\n  value: range, \n  value_text: units, \n  message: 'Expected pCO<sub>2</sub> Compensation' \n});\ncalc_output.push({ \n  name: \"117_Winter's Formula_result\", \n  value: range, \n  value_text: units, \n  message: 'Expected pCO<sub>2</sub> Compensation' \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Bicarbonate",
+                "name": "bicarbonate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bicarb"
+            }
+        ],
+        "can_search": [
+            "abg",
+            "vbg",
+            "winter's",
+            "winters",
+            "gap",
+            "ph"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Toxicology"
+        ]
+    }
+}

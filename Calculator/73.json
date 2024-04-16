@@ -1,0 +1,329 @@
+{
+    "id": "73",
+    "title": "National Early Warning Score (NEWS) 2",
+    "desc": "The National Early Warning Score (NEWS) 2 determines the degree of illness of a patient and prompts critical care intervention.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.rcplondon.ac.uk/projects/outputs/national-early-warning-score-news-2",
+                "text": "Royal College of Physicians. National Early Warning Score (NEWS) 2: Standardising the assessment of acute-illness severity in the NHS. Updated report of a working party. London: RCP, 2017."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"170\"><col width=\"170\"><col width=\"97\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Respiratory rate, breaths per minute</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;8</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">9-11</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">12-20</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">21-24</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;25</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">SpO<sub>2</sub> (on room air or supplemental)</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;91%</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">92-93%</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">94-95%</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;96%</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"7\">\n<p dir=\"ltr\">SpO<sub>2</sub> (if patient has hypercapnic respiratory failure)</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;83%</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">84-85%</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">86-87%</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">88-92%, &ge;93% on room air</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">93-94% on supplemental oxygen</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">95-96% on supplemental oxygen</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;97% on supplemental oxygen</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Room air or supplemental oxygen</p>\n</td>\n<td>\n<p dir=\"ltr\">Supplemental oxygen</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Room air</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Temperature</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;35.0&deg;C (95&deg;F)</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">35.1-36.0&deg;C (95.1-96.8&deg;F)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">36.1-38.0&deg;C (96.9-100.4&deg;F)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">38.1-39.0&deg;C (100.5-102.2&deg;F)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;39.1&deg;C (102.3&deg;F)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Systolic BP, mmHg</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;90</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">91-100</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">101-110</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">111-219</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;220</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"6\">\n<p dir=\"ltr\">Pulse, beats per minute</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;40</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">41-50</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">51-90</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">91-110</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">111-130</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;131</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Consciousness</p>\n</td>\n<td>\n<p dir=\"ltr\">Alert</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">New-onset confusion (or disorientation/agitation), responds to voice, responds to pain, or unresponsive</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-a799da09-7fff-3b85-8bf8-fe305cf40dfd\"><span id=\"docs-internal-guid-a799da09-7fff-3b85-8bf8-fe305cf40dfd\">&nbsp;</span></span></p>\n<p dir=\"ltr\"></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"93\"><col width=\"205\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>NEW Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Clinical risk</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Frequency of monitoring</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Response</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-4</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">Minimum every 12 hrs if score of 0</p>\n<p dir=\"ltr\">Minimum every 4-6 hrs if score 1-4</p>\n</td>\n<td>\n<p dir=\"ltr\">Assessment by a competent registered nurse or equivalent, to decide change in frequency of clinical monitoring or escalation of care</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Score of 3 in any individual parameter</p>\n</td>\n<td>\n<p dir=\"ltr\">Low-medium</p>\n</td>\n<td rowspan=\"2\">Minimum every hr\n<p dir=\"ltr\"></p>\n</td>\n<td>\n<p dir=\"ltr\">Urgent review by a ward-based doctor, to decide change in frequency of clinical monitoring or escalation of care</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5-6</p>\n</td>\n<td>\n<p dir=\"ltr\">Medium</p>\n</td>\n<td>\n<p dir=\"ltr\">Urgent review by a ward-based doctor or acute team nurse, to decide if critical care team assessment is needed</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;7</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">Continuous monitoring of vital signs</p>\n</td>\n<td>\n<p dir=\"ltr\">Emergent assessment by a clinical team or critical care team and usually transfer to higher level of care</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-b962a8c3-7fff-c2e9-c37c-6ecbbdc1a99c\"></span><span id=\"docs-internal-guid-b962a8c3-7fff-c2e9-c37c-6ecbbdc1a99c\"><br></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Bleeding",
+            "Chest Pain",
+            "Fever",
+            "Seizure"
+        ],
+        "disease_treated": [
+            "Any/All",
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output = []; \nvar resp = parseFloat(resp);\nvar scale1 = parseFloat(scale1);\nvar scale2 = parseFloat(scale2);\nvar room = parseFloat(room);\nvar temp = parseFloat(temp);\nvar bp = parseFloat(bp);\nvar pulse = parseFloat(pulse);\nvar acvpu = parseFloat(acvpu);\nvar failure = parseFloat(failure);\n\n\nif (failure == 0){\n\tvar u = resp + scale1 + room + temp + bp + pulse + acvpu\n}\n\nif (failure == 1){\n\tvar u = resp + scale2 + room + temp + bp + pulse + acvpu\n}\n\nvar risk;\nvar response;\nvar freq;\n\nif (u >= 0 && u <= 4){\n  if (resp == 3||scale1 == 3||scale2 == 3||temp == 3||bp == 3||pulse == 3||acvpu == 3){\n  risk = 'Low-medium';\n  response = 'Urgent review by a ward-based doctor, to decide change in frequency of clinical monitoring or escalation of care';\n  freq = 'Every 1 hour';\n} \n  else{\n  risk = 'Low';\n  response = 'Assessment by a competent registered nurse or equivalent, to decide change in frequency of clinical monitoring or escalation of care';\n\tif(u == 0){\n    freq = 'Every 12 hours';\n    }\n  \telse{\n    freq = 'Every 4-6 hours'; \n\t}\n  }\n}\n\nelse if (u >= 5 && u <= 6){\n  risk = 'Medium';\n  response = 'Urgent review by a ward-based doctor or acute team nurse, to decide if critical care team assessment is needed';\n  freq = 'Every 1 hour';\n}\nelse if (u >= 7){\n  risk = 'High'\n  response = 'Emergent assessment by a clinical team or critical care team and usually transfer to higher level of care'\n  freq = 'Continuous monitoring';\n} \n\ncalc_output.push({\n  name:'mini',\n  value: u,\n  value_text: 'points',\n  message: risk + ' risk'\n});\ncalc_output.push({\n  name:'10083_NEWS2 Score_result (score)',\n  value: u,\n  value_text: 'points',\n  message: 'National Early Warning Score'\n});\ncalc_output.push({\n  name:'10083_NEWS2 Score_result (interpretation)',\n  value:risk,\n  value_text: 'risk',\n  message: response\n});\ncalc_output.push({\n  name:'10083_NEWS2 Score_result (freq)',\n  value:freq,\n  value_text: '',\n  message: 'Frequency of monitoring'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "<p>Respiratory rate, breaths per minute</p>",
+                "mdcalc_info_concept": null,
+                "name": "resp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤8",
+                        "value": 3
+                    },
+                    {
+                        "label": "9-11",
+                        "value": 1
+                    },
+                    {
+                        "label": "12-20",
+                        "value": 0
+                    },
+                    {
+                        "label": "21-24",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥25",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Hypercapnic respiratory failure</p>",
+                "md_calc_info_concept": null,
+                "name": "failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "failure == 0",
+                "default": 3,
+                "label_en": "<p>SpO₂</p>",
+                "mdcalc_info_concept": null,
+                "name": "scale1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤91%",
+                        "value": 3
+                    },
+                    {
+                        "label": "92-93%",
+                        "value": 2
+                    },
+                    {
+                        "label": "94-95%",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥96%",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "On room air or supplemental O₂",
+                "type": "radio"
+            },
+            {
+                "conditionality": "failure == 1",
+                "default": 3,
+                "label_en": "<p>SpO₂</p>",
+                "mdcalc_info_concept": null,
+                "name": "scale2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤83%",
+                        "value": 3
+                    },
+                    {
+                        "label": "84-85%",
+                        "value": 2
+                    },
+                    {
+                        "label": "86-87%",
+                        "value": 1
+                    },
+                    {
+                        "label": "88-92%, ≥93% on room air",
+                        "value": 0
+                    },
+                    {
+                        "label": "93-94% on supplemental O₂",
+                        "value": 1
+                    },
+                    {
+                        "label": "95-96% on supplemental O₂",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥97% on supplemental O₂",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "If patient has hypercapnic respiratory failure",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 1,
+                "label_en": "<p>Room air or supplemental O₂</p>",
+                "mdcalc_info_concept": null,
+                "name": "room",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Supplemental O₂",
+                        "value": 2
+                    },
+                    {
+                        "label": "Room air",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "<p>Temperature</p>",
+                "mdcalc_info_concept": null,
+                "name": "temp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤35.0°C (95°F)",
+                        "value": 3
+                    },
+                    {
+                        "label": "35.1-36.0°C (95.1-96.8°F)",
+                        "value": 1
+                    },
+                    {
+                        "label": "36.1-38.0°C (96.9-100.4°F)",
+                        "value": 0
+                    },
+                    {
+                        "label": "38.1-39.0°C (100.5-102.2°F)",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥39.1°C (102.3°F)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 3,
+                "label_en": "<p>Systolic BP, mmHg</p>",
+                "mdcalc_info_concept": null,
+                "name": "bp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤90",
+                        "value": 3
+                    },
+                    {
+                        "label": "91-100",
+                        "value": 2
+                    },
+                    {
+                        "label": "101-110",
+                        "value": 1
+                    },
+                    {
+                        "label": "111-219",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥220",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 2,
+                "label_en": "<p>Pulse, beats per minute</p>",
+                "mdcalc_info_concept": null,
+                "name": "pulse",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤40",
+                        "value": 3
+                    },
+                    {
+                        "label": "41-50",
+                        "value": 1
+                    },
+                    {
+                        "label": "51-90",
+                        "value": 0
+                    },
+                    {
+                        "label": "91-110",
+                        "value": 1
+                    },
+                    {
+                        "label": "111-130",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥131",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Consciousness</p>",
+                "mdcalc_info_concept": null,
+                "name": "acvpu",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Alert",
+                        "value": 0
+                    },
+                    {
+                        "label": "New-onset confusion (or disorientation/agitation), responds to voice, responds to pain, or unresponsive",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "NEWS",
+            "admission",
+            "mortality",
+            "NEWS 2",
+            "news2",
+            "covid19",
+            "covid-19",
+            "covid 19",
+            "covid",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (Trauma)"
+        ]
+    }
+}

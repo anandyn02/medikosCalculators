@@ -1,0 +1,155 @@
+{
+    "id": "626",
+    "title": "RAPID Score for Pleural Infection",
+    "desc": "The RAPID Score for Pleural Infection predicts mortality in patients with pleural infection.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24264558 ",
+                "text": "Rahman NM, Kahan BC, Miller RF, Gleeson FV, Nunn AJ, Maskell NA. A clinical score (RAPID) to identify those at risk for poor outcome at presentation in patients with pleural infection. Chest. 2014;145(4):848-855."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td rowspan=\"2\">&nbsp;</td> <td colspan=\"3\"> <p><strong>Points</strong></p> </td> </tr> <tr> <td> <p><strong>0</strong></p> </td> <td> <p><strong>1</strong></p> </td> <td> <p><strong>2</strong></p> </td> </tr> <tr> <td> <p>Serum <abbr title=\"Blood urea nitrogen\">BUN</abbr> (urea)</p> </td> <td> <p>&lt;14 mg/dL (5 mmol/L)</p> </td> <td> <p>14–23 mg/dL (5–8 mmol/L)</p> </td> <td> <p>&gt;23 mg/dL</p> <p> (8 mmol/L)</p> </td> </tr> <tr> <td> <p>Age, years</p> </td> <td> <p>&lt;50</p> </td> <td> <p>50–70</p> </td> <td> <p>&gt;70</p> </td> </tr> <tr> <td> <p>Purulent pleural fluid</p> </td> <td> <p>Yes</p> </td> <td> <p>No</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Infection source</p> </td> <td> <p>Community-acquired</p> </td> <td> <p>Hospital-acquired</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Serum albumin</p> </td> <td> <p>≥2.7 g/dL (27 g/L)</p> </td> <td> <p>&lt;2.7 g/dL (27 g/L)</p> </td> <td> <p>--</p> </td> </tr> </tbody> </table> </div> <p>Note: RAPID = Renal, Age, Purulence, Infection source, and Dietary factors.</p>",
+        "facts": "<p>Interpretation:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>RAPID Score</strong></p> </td> <td> <p><strong>Risk</strong></p> </td> <td> <p><strong>3-month mortality*</strong></p> </td> </tr> <tr> <td> <p>0–2</p> </td> <td> <p>Low</p> </td> <td> <p>1.5%</p> </td> </tr> <tr> <td> <p>3–4</p> </td> <td> <p>Medium</p> </td> <td> <p>17.8%</p> </td> </tr> <tr> <td> <p>5–7</p> </td> <td> <p>High</p> </td> <td> <p>47.8%</p> </td> </tr> </tbody> </table> </div> <p>*From validation study, <a href=\"http://www.atsjournals.org/doi/full/10.1513/AnnalsATS.201505-272OC\" target=\"_blank\">White 2015</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Dyspnea",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Pleural Effusion",
+            "Pneumonia"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs - addition of points\nvar score = parseFloat(bun) + parseFloat(age) + parseFloat(pleural) + parseFloat(infection) + parseFloat(albumin);\n\n//interpretation\nvar risk = \"Low\";\nvar mort = \"1.5%\";\nif(score === 3 || score === 4){\n\trisk = \"Medium\";\n\tmort = \"17.8%\";\n}else if(score > 4){\n\trisk = \"High\";\n\tmort = \"47.8%\";\n}\n\nvar pt = \"points\";\nif(score === 1){\n\tpt = \"point\";\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: pt,\n    message: 'RAPID Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: pt,\n    message: 'RAPID Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: \"risk\",\n    message: mort + ' mortality at 3 months'\n});\n\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Blood urea nitrogen'>BUN</abbr>, serum",
+                "name": "bun",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<14 mg/dL (5 mmol/L)",
+                        "value": 0
+                    },
+                    {
+                        "label": "14–23 mg/dL (5–8 mmol/L)",
+                        "value": 1
+                    },
+                    {
+                        "label": ">23 mg/dL (8 mmol/L)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<50",
+                        "value": 0
+                    },
+                    {
+                        "label": "50-70",
+                        "value": 1
+                    },
+                    {
+                        "label": ">70",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Purulent pleural fluid",
+                "name": "pleural",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    },
+                    {
+                        "label": "No",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Infection source",
+                "name": "infection",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Community-acquired",
+                        "value": 0
+                    },
+                    {
+                        "label": "Hospital-acquired",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Serum albumin",
+                "name": "albumin",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥2.7 g/dL (27 g/L)",
+                        "value": 0
+                    },
+                    {
+                        "label": "<2.7 g/dL (27 g/L)",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "empyema",
+            "pleural infection",
+            "infected pleural eddusion",
+            "rapid score"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

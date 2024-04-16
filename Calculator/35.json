@@ -1,0 +1,182 @@
+{
+    "id": "35",
+    "title": "CASPAR Criteria for Psoriatic Arthritis",
+    "desc": "The CASPAR Criteria for Psoriatic Arthritis provides criteria for psoriatic arthritis diagnosis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16871531 ",
+                "text": "Taylor W, Gladman D, Helliwell P, et al. Classification criteria for psoriatic arthritis: development of new criteria from a large international study. Arthritis Rheum. 2006;54(8):2665-73."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">A patient must have inflammatory articular disease (joint, spine, or entheseal) with &ge;3 points from the following 5 categories:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"134\" /><col width=\"253\" /><col width=\"61\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Criteria </strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Current psoriasis, personal history of psoriasis, or family history of psoriasis</p>\n</td>\n<td>\n<p dir=\"ltr\">Current psoriasis: psoriatic skin or scalp disease present today, diagnosed by a rheumatologist or dermatologist</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Personal history of psoriasis</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Family history of psoriasis: psoriasis in a first- or second-degree relative</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Typical psoriatic nail dystrophy (onycholysis, pitting, and hyperkeratosis on exam)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Rheumatoid factor negative&nbsp;(any method except latex; ELISA or nephelometry preferred)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Current dactylitis (swelling of an entire digit) or history of dactylitis recorded by a rheumatologist</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Juxtaarticular new bone formation on hand or foot x-ray (ill-defined ossification near joint margins excluding osteophyte formation)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chronic Pain",
+            "Extremity Pain",
+            "Joint Pain",
+            "Pain"
+        ],
+        "disease_treated": [
+            "Autoimmune Disorders"
+        ],
+        "logic": "var calc_output = []; \nvar one = parseFloat(one) || 0;\nvar two = parseFloat(two) || 0;\nvar three = parseFloat(three) || 0;\nvar four = parseFloat(four) || 0;\nvar five = parseFloat(five) || 0;\nvar articulardisease = parseFloat(articulardisease);\n\nvar score, msg, longmsg;\n\nif (articulardisease == 0) {\n  score = '';\n  msg = 'Not PsA';\n  longmsg = 'Not PsA by CASPAR Criteria; required criterion not met';\n} else {\n  score = one + two + three + four + five; \n  if (score >= 3) {\n    msg = 'Positive';\n    longmsg = 'Diagnosis is positive by CASPAR Criteria';\n  } else {\n    msg = 'Negative';\n    longmsg = 'Diagnosis is negative by CASPAR Criteria';\n  }\n}\n  \n//results\ncalc_output.push({\n    name: 'mini',\n    value: msg,\n    value_text: '',\n    message: longmsg\n});\nif (articulardisease == 1) {\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Total score'   \n});\n}\ncalc_output.push({\n    name: 'risk1',\n    value: msg, \n    value_text: '',\n    message: longmsg\n});",
+        "inputs": [
+            {
+                "subheading": "Required criterion ",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Inflammatory articular disease ",
+                "name": "articulardisease",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Joint, spine, or entheseal",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Additional criteria (must fulfill ≥3 points from the following 5 categories)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "articulardisease == 1",
+                "default": 0,
+                "label_en": "Current psoriasis, personal history of psoriasis, or family history of psoriasis",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Current psoriasis: psoriatic skin or scalp disease present today, diagnosed by a rheumatologist or dermatologist",
+                        "value": 2
+                    },
+                    {
+                        "label": "Personal history of psoriasis",
+                        "value": 1
+                    },
+                    {
+                        "label": "Family history of psoriasis: psoriasis in a first- or second-degree relative",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Select the option that assigns the most points (e.g. if both current psoriasis and family history, select current psoriasis)",
+                "type": "radio"
+            },
+            {
+                "conditionality": "articulardisease == 1",
+                "default": 0,
+                "label_en": "Typical psoriatic nail dystrophy",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Onycholysis, pitting, and hyperkeratosis on exam",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "articulardisease == 1",
+                "default": 0,
+                "label_en": "Rheumatoid factor negative",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Any method except latex; <abbr title = \"Enzyme-linked immunosorbent assay\">ELISA</abbr> or nephelometry preferred",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "articulardisease == 1",
+                "default": 0,
+                "label_en": "Current dactylitis (swelling of an entire digit) or history of dactylitis recorded by a rheumatologist",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "articulardisease == 1",
+                "default": 0,
+                "label_en": "Juxtaarticular new bone formation on hand or foot x-ray",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ill-defined ossification near joint margins excluding osteophyte formation",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "CASPAR",
+            "psoriatic arthritis",
+            "arthritis",
+            "psa",
+            "caspar criteria"
+        ],
+        "specialty": [
+            "Dermatology",
+            "Family Practice",
+            "Internal Medicine",
+            "Orthopedics",
+            "Primary Care",
+            "Rheumatology"
+        ]
+    }
+}

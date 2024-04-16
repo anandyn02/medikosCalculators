@@ -1,0 +1,398 @@
+{
+    "id": "164",
+    "title": "Respiratory Score for Asthma (Liu et al)",
+    "desc": "The Respiratory Score for Asthma (Liu et al) stratifies severity of asthma exacerbation in pediatric patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ppul.10425",
+                "text": "Liu LL, Gallaher MM, Davis RL, Rutter CM, Lewis TC, Marcuse EK. Use of a respiratory clinical score among different providers. Pediatr Pulmonol. 2004;37(3):243-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://pediatrics.aappublications.org/content/pediatrics/early/2016/10/31/peds.2016-1248.full.pdf",
+                "text": "Rutman L, Atkins RC, Migita R, et al. Modification of an Established Pediatric Asthma Pathway Improves Evidence-Based, Efficient Care. Pediatrics. 2016;138(6)."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"137\" /><col width=\"226\" /><col width=\"86\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Respiratory rate, breaths per minute</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">&lt;2 months</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;60</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">61-69</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;70</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">2 months to &lt;1 year</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;50</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">51-59</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;60</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">1 to &lt;2 years</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;40</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">41-44</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;45</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">2 to 3 years</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;34</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">35-39</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;40</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">4 to 5 years</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;30</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">31-35</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;36</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">6 to 12 years</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;26</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">27-30</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;31</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">&gt;12 years</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;23</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">24-27</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;28</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Retractions</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Intercostal</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Intercostal and substernal</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Intercostal, substernal, and supraclavicular</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Dyspnea</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">&lt;2 years</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal feeding, vocalizations, and activity</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1 of the following: difficulty feeding, decreased vocalization, or agitated</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2 of the following: difficulty feeding, decreased vocalization, or agitated</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Stops feeding, no vocalizations, or drowsy or confused</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">2 to 4 years</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal feeding, vocalizations, and play</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1 of the following: decreased appetite, increased coughing after play, hyperactivity&nbsp;</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2 of the following: decreased appetite, increased coughing after play, hyperactivity&nbsp;</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Stops eating or drinking, stops playing, or drowsy or confused</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">&ge;5 years</p>\n</td>\n<td>\n<p dir=\"ltr\">Counts to &ge;10 in one breath</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Counts to 7-9 in one breath</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Counts to 4-6 in one breath</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Counts to &le;3 in one breath</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Wheezing</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Normal breathing, no wheezing present</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">End-expiratory wheeze only</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Expiratory wheeze only (greater than end-expiratory wheeze)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Inspiratory and expiratory wheeze and/or diminished breath sounds</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-bc8742d1-7fff-de66-b0e8-dc7a9c6b25a2\"><span id=\"docs-internal-guid-bc8742d1-7fff-de66-b0e8-dc7a9c6b25a2\">&nbsp;</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Respiratory Score for Asthma</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1-4</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5-8</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">9-12</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-7e3a85aa-7fff-6799-54bf-53de59faa0b2\">From <a href=\"https://www.seattlechildrens.org/pdf/asthma-pathway.pdf\" target=\"_blank\">Seattle Children&rsquo;s Hospital asthma pathway</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Asthma"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar resp1 = parseFloat(resp1) || 0;\nvar resp2 = parseFloat(resp2) || 0;\nvar resp3 = parseFloat(resp3) || 0;\nvar resp4 = parseFloat(resp4) || 0;\nvar resp5 = parseFloat(resp5) || 0;\nvar resp6 = parseFloat(resp6) || 0;\nvar resp7 = parseFloat(resp7) || 0;\nvar ret = parseFloat(ret);\nvar dys1 = parseFloat(dys1) || 0;\nvar dys2 = parseFloat(dys2) || 0;\nvar dys3 = parseFloat(dys3) || 0;\nvar wheezing = parseFloat(wheezing);\n\nvar resp, dys;\n\nif (age == 0) {\n  resp = resp1;\n  dys = dys1;\n} else if (age == 1) {\n  resp = resp2;\n  dys = dys1;\n} else if (age == 2) {\n  resp = resp3;\n  dys = dys1;\n} else if (age == 3) {\n  resp = resp4;\n  dys = dys2;\n} else if (age == 4) {\n  resp = resp5;\n  dys = dys2;\n} else if (age == 5) {\n  resp = resp5;\n  dys = dys3;\n} else if (age == 6) {\n  resp = resp6;\n  dys = dys3;\n} else if (age == 7) {\n  resp = resp7;\n  dys = dys3;\n} \n  \nvar score = resp + ret + dys + wheezing;\nvar risk;\n\nif (score >= 1 && score <= 4) {\n  risk = 'Low';\n} else if (score >= 5 && score <= 8) {\n  risk = 'Moderate';\n} else {\n  risk = 'High';\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2 months",
+                        "value": 0
+                    },
+                    {
+                        "label": "2 months to <1 year",
+                        "value": 1
+                    },
+                    {
+                        "label": "1 to <2 years",
+                        "value": 2
+                    },
+                    {
+                        "label": "2 to 3 years",
+                        "value": 3
+                    },
+                    {
+                        "label": "4 years",
+                        "value": 4
+                    },
+                    {
+                        "label": "5 years",
+                        "value": 5
+                    },
+                    {
+                        "label": "6 to 12 years",
+                        "value": 6
+                    },
+                    {
+                        "label": ">12 years",
+                        "value": 7
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 0",
+                "default": 0,
+                "label_en": "Respiratory rate, breaths per minute",
+                "name": "resp1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤60",
+                        "value": 1
+                    },
+                    {
+                        "label": "61-69",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥70",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 1",
+                "default": 0,
+                "label_en": "Respiratory rate, breaths per minute",
+                "name": "resp2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤50",
+                        "value": 1
+                    },
+                    {
+                        "label": "51-59",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥60",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 2",
+                "default": 0,
+                "label_en": "Respiratory rate, breaths per minute",
+                "name": "resp3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤40",
+                        "value": 1
+                    },
+                    {
+                        "label": "41-44",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥45",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 3",
+                "default": 0,
+                "label_en": "Respiratory rate, breaths per minute",
+                "name": "resp4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤34",
+                        "value": 1
+                    },
+                    {
+                        "label": "35-39",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥40",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 4 || age == 5",
+                "default": 0,
+                "label_en": "Respiratory rate, breaths per minute",
+                "name": "resp5",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤30",
+                        "value": 1
+                    },
+                    {
+                        "label": "31-35",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥36",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 6",
+                "default": 0,
+                "label_en": "Respiratory rate, breaths per minute",
+                "name": "resp6",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤26",
+                        "value": 1
+                    },
+                    {
+                        "label": "27-30",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥31",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 7",
+                "default": 0,
+                "label_en": "Respiratory rate, breaths per minute",
+                "name": "resp7",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤23",
+                        "value": 1
+                    },
+                    {
+                        "label": "24-27",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥28",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Retractions",
+                "name": "ret",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Intercostal",
+                        "value": 1
+                    },
+                    {
+                        "label": "Intercostal and substernal",
+                        "value": 2
+                    },
+                    {
+                        "label": "Intercostal, substernal, and supraclavicular",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 0 || age == 1 || age == 2",
+                "default": 0,
+                "label_en": "Dyspnea",
+                "name": "dys1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal feeding, vocalizations, and activity",
+                        "value": 0
+                    },
+                    {
+                        "label": "1 of the following: difficulty feeding, decreased vocalization, or agitated",
+                        "value": 1
+                    },
+                    {
+                        "label": "2 of the following: difficulty feeding, decreased vocalization, or agitated",
+                        "value": 2
+                    },
+                    {
+                        "label": "Stops feeding, no vocalizations, or drowsy or confused",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 3 || age == 4",
+                "default": 0,
+                "label_en": "Dyspnea",
+                "name": "dys2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal feeding, vocalizations, and play",
+                        "value": 0
+                    },
+                    {
+                        "label": "1 of the following: decreased appetite, increased coughing after play, hyperactivity",
+                        "value": 1
+                    },
+                    {
+                        "label": "2 of the following: decreased appetite, increased coughing after play, hyperactivity",
+                        "value": 2
+                    },
+                    {
+                        "label": "Stops eating or drinking, stops playing, or drowsy or confused",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age >= 5",
+                "default": 0,
+                "label_en": "Dyspnea",
+                "name": "dys3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Counts to ≥10 in one breath",
+                        "value": 0
+                    },
+                    {
+                        "label": "Counts to 7-9 in one breath",
+                        "value": 1
+                    },
+                    {
+                        "label": "Counts to 4-6 in one breath",
+                        "value": 2
+                    },
+                    {
+                        "label": "Counts to ≤3 in one breath",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Wheezing",
+                "name": "wheezing",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal breathing, no wheezing present",
+                        "value": 0
+                    },
+                    {
+                        "label": "End-expiratory wheeze only",
+                        "value": 1
+                    },
+                    {
+                        "label": "Expiratory wheeze only (greater than end-expiratory wheeze)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Inspiratory and expiratory wheeze and/or diminished breath sounds",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Asthma exacerbation",
+            "peds",
+            "asthma",
+            "liu",
+            "resp score"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Pediatrics",
+            "Pulmonology"
+        ]
+    }
+}

@@ -1,0 +1,163 @@
+{
+    "id": "466",
+    "title": "CURB-65 Score for Pneumonia Severity",
+    "desc": "The CURB-65 Severity Score estimates mortality of community-acquired pneumonia to help determine inpatient vs. outpatient treatment.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1746657/?tool=pmcentrez",
+                "text": "W Lim, M M van der Eerden, R Laing, W Boersma, N Karalus, G Town, S Lewis, and J Macfarlane. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. Thorax. 2003 May; 58(5): 377–382. doi: 10.1136/thorax.58.5.377."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points, as above.</p>",
+        "facts": "<p><strong>Score interpretation (as per derivation study):</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>CURB-65 score</th>\n<th>Mortality Risk</th>\n<th>Recommendation per Derivation Study</th>\n</tr>\n<tr>\n<td>0</td>\n<td>0.60%</td>\n<td>Low risk; consider home treatment</td>\n</tr>\n<tr>\n<td>1</td>\n<td>2.70%</td>\n<td>Low risk; consider home treatment</td>\n</tr>\n<tr>\n<td>2</td>\n<td>6.80%</td>\n<td>Short inpatient hospitalization or closely supervised outpatient treatment</td>\n</tr>\n<tr>\n<td>3</td>\n<td>14.00%</td>\n<td>Severe pneumonia; hospitalize and consider admitting to intensive care</td>\n</tr>\n<tr>\n<td>4 or 5</td>\n<td>27.80%</td>\n<td>Severe pneumonia; hospitalize and consider admitting to intensive care</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia"
+        ],
+        "logic": "var calc_output=[]; \n\nvar u=parseFloat(confusion)+parseFloat(bun)+parseFloat(respiratory_rate)+parseFloat(systolic_diastolic_bp)+parseFloat(age_65);\n\nvar msg=''; \nvar mini_msg='';\n\nif(u==0){\n    msg='Low risk group: 0.6% 30-day mortality.<br/><br/>Consider outpatient treatment.';\n    mini_msg='Low Risk'\n}\nif(u==1){\n    msg='Low risk group: 2.7% 30-day mortality.<br/><br/>Consider outpatient treatment.';\n    mini_msg='Low Risk'\n}\nif(u==2){\n    msg='Moderate risk group: 6.8% 30-day mortality.<br/><br/>Consider inpatient treatment or outpatient with close followup.';\n    mini_msg='Moderate Risk'\n}\nif(u==3){\n    msg='Severe risk group: 14.0% 30-day mortality.<br/><br/>Consider inpatient treatment with possible intensive care admission.';\n    mini_msg='Severe Risk'\n}\nif(u>3){\n    msg='Highest risk group: 27.8% 30-day mortality.<br/><br/>Consider inpatient treatment with possible intensive care admission.';\n    mini_msg='Highest Risk'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'324_CURB-65 Score_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Confusion</p>",
+                "md_calc_info_concept": null,
+                "name": "confusion",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>BUN &gt;19 mg/dL (&gt;7 mmol/L urea)</p>",
+                "md_calc_info_concept": null,
+                "name": "bun",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Respiratory Rate &ge;30</p>",
+                "md_calc_info_concept": null,
+                "name": "respiratory_rate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Systolic BP &lt;90 mmHg or Diastolic BP &le;60 mmHg</p>",
+                "md_calc_info_concept": null,
+                "name": "systolic_diastolic_bp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Age &ge;65</p>",
+                "md_calc_info_concept": null,
+                "name": "age_65",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "cap",
+            "pna",
+            "crb",
+            "community-acquired pneumonia",
+            "covid",
+            "covid-19",
+            "coronavirus",
+            "curb",
+            "curb 65"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Palliative Care/Hospice",
+            "Pulmonology",
+            "Rehabilitation Medicine"
+        ]
+    }
+}

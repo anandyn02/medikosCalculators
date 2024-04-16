@@ -1,0 +1,115 @@
+{
+    "id": "57",
+    "title": "Steinhart Model for Acute Heart Failure (AHF) in Undifferentiated Dyspnea",
+    "desc": "The Steinhart Model for Acute Heart Failure in Undifferentiated Dyspnea diagnoses acute heart failure with NT-proBNP in undifferentiated dyspneic patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19815122",
+                "text": "Steinhart B, Thorpe KE, Bayoumi AM, Moe G, Januzzi JL, Mazer CD. Improving the diagnosis of acute heart failure using a validated prediction model. J Am Coll Cardiol. 2009;54(16):1515-21."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Probability of clinical AHF diagnosis&nbsp;= 1 / (1 + e<sup>y</sup>)</p>\n<p dir=\"ltr\">Where y = 8 + 0.011 x age &ndash; 5.9 &times; pre-test probability &ndash; 2.3 &times; log<sub>10</sub>(NT-proBNP) + 0.82 &times; pre-test probability &times; log<span style=\"font-size: 9.16667px;\">10</span>(NT-proBNP)</p>\n<p>Note: pre-test probability is in %; NT-proBNP is in pg/mL (pmol/L).</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "NT-proBNP",
+                "unit": "nt_probnp",
+                "error_min": "0",
+                "error_max": "50000",
+                "warn_min": "0",
+                "warn_max": "500",
+                "conversion": "0.1182",
+                "normal_max_si": "15",
+                "normal_max_us": "125",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "pmol/L",
+                "units_us": "pg/mL"
+            },
+            {
+                "name": "percentages",
+                "unit": "basic_stats",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Shortness of Breath",
+            "Dyspnea"
+        ],
+        "disease_treated": [
+            "Heart Failure",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\nvar age = parseFloat(age);\nvar pre = parseFloat(pre)/100;\n if (UOMSYSTEM == true) {\nvar bnp = bnp;\n}if (UOMSYSTEM == false) {\n  var bnp = bnp/0.1182;\n}\n\nvar y = 8 + (0.011*age) - (5.9*pre) - (2.3*Math.log10(bnp)) + (0.82*pre*(Math.log10(bnp)));\nvar ahf = (1 / (1 + Math.exp(y)))*100;\n\ncalc_output.push({\n    name: 'mini',\n    value: ahf.toFixed(0),\n    value_text: '%',\n    message: 'Probability of clinical AHF diagnosis'\n});\ncalc_output.push({\n    name: 'ahf',\n    value: ahf.toFixed(0),\n    value_text: '%',\n    message: 'Probability of clinical AHF diagnosis'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Pre-test probability",
+                "name": "pre",
+                "optional": false,
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "label_en": "<abbr title='N-terminal pro-B-type natriuretic peptide'>NT-proBNP</abbr>",
+                "name": "bnp",
+                "optional": false,
+                "type": "textbox",
+                "unit": "nt_probnp"
+            }
+        ],
+        "can_search": [
+            "Acute heart failure",
+            "AHF",
+            "undifferentiated dyspnea",
+            "steinhart model"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Cardiology",
+            "Surgery (Cardiothoracic)"
+        ]
+    }
+}

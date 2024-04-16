@@ -1,0 +1,205 @@
+{
+    "id": "312",
+    "title": "Hypothermia Outcome Prediction after ECLS (HOPE) Score",
+    "desc": "The HOPE Score predicts survival following rewarming of hypothermic cardiac arrest patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/29481910/",
+                "text": "Pasquier M, Hugli O, Paal P, et al. Hypothermia outcome prediction after extracorporeal life support for hypothermic cardiac arrest patients: The HOPE score. Resuscitation. 2018;126:58-64."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The HOPE Score is calculated based on the following inputs:</span></p>\n<ul>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Sex (male = 1, female = 0).</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Hypothermia with asphyxia (yes = 1, no = 0).</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Age, years.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Potassium, mmol/L.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>CPR duration, min.</span></p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\" role=\"presentation\"><span>Temperature, &deg;C.</span></p>\n</li>\n</ul>\n<p>HOPE Score = 2.44 &ndash; 1.55*(Sex) &ndash; 1.95*(Asphyxia) &ndash; 0.0191*(Age, years) - 2.07*log<sub>2</sub>(Potassium, mmol/L) - 0.573*log<sub>2</sub>(CPR duration, min) + 0.937*(temperature, &deg;C) - 0.0247*(temperature, &deg;C)<sup>2</sup></p>",
+        "facts": "<p>Probability of survival, % = e<sup>x</sup>/(1 + e<sup>x</sup>) * 100</p>",
+        "estimation": [
+            {
+                "name": "minutes",
+                "unit": "min",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "min",
+                "units_us": "min"
+            },
+            {
+                "name": "Temperature",
+                "unit": "temp",
+                "error_min": "70",
+                "error_max": "120",
+                "warn_min": "90",
+                "warn_max": "108",
+                "conversion": "var C, F; if (C) { (C * 9/5)+32; } else { (F -32) * 5/9; } ",
+                "normal_max_si": "37.8",
+                "normal_max_us": "100",
+                "normal_min_si": "36.1",
+                "normal_min_us": "97",
+                "units_si": "C",
+                "units_us": "F"
+            },
+            {
+                "name": "Age (STUMBL)",
+                "unit": "age_stumbl",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.001",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Potassium",
+                "unit": "k",
+                "error_min": "1",
+                "error_max": "10",
+                "warn_min": "2",
+                "warn_max": "7",
+                "conversion": "1",
+                "normal_max_si": "5.2",
+                "normal_max_us": "5.2",
+                "normal_min_si": "3.5",
+                "normal_min_us": "3.5",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "Arrhythmia",
+            "Chest Pain",
+            "Dizziness",
+            "Fatigue",
+            "Nausea",
+            "Palpitations",
+            "Shortness of Breath",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Arrhythmia",
+            "Heart Failure",
+            "Cardiac Arrest"
+        ],
+        "logic": "var calc_output = [];\n\nvar sex = parseFloat(sex);\nvar asp = parseFloat(asp);\nvar age = parseFloat(age);\nvar k = parseFloat(k);\nvar cpr = parseFloat(cpr);\nvar temp = parseFloat(temp);\n\nvar score = 2.44 - 1.55*(sex) - 1.95*(asp) - 0.0191*(age) - 2.07*Math.log2(k) - 0.573*Math.log2(cpr) + 0.937*temp - 0.0247*Math.pow(temp, 2);\nvar survival = Math.exp(score)/(1 + Math.exp(score)) * 100;\n\ncalc_output.push({\n    name: 'mini',\n    value: score.toFixed(2),\n    value_text: 'points',\n    message: survival.toFixed(1) + '% probability of survival'\n});\ncalc_output.push({\n    name: '10482_HOPE Score_result (score)',\n    value: score.toFixed(2),\n    value_text: 'points',\n    message: 'HOPE Score'\n});\ncalc_output.push({\n    name: '10482_HOPE Score_result (survival)',\n    value: survival.toFixed(1),\n    value_text: '%',\n    message: 'Probability of survival'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "mdcalc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Hypothermia with asphyxia</p>",
+                "mdcalc_info_concept": null,
+                "name": "asp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_stumbl"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Potassium</p>",
+                "name": "k",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "k"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>CPR duration, min</p>",
+                "name": "cpr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "min"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Temperature</p>",
+                "name": "temp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "temp"
+            }
+        ],
+        "can_search": [
+            "HOPE Score",
+            "Hypothermia Outcome Prediction after ECLS",
+            "ECLS",
+            "Extracorporeal Life Support",
+            "life support",
+            "hypothermia",
+            "hypothermic arrest",
+            "hypothermia score"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

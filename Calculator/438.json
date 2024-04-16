@@ -1,0 +1,132 @@
+{
+    "id": "438",
+    "title": "qSOFA (Quick SOFA) Score for Sepsis",
+    "desc": "The qSOFA (Quick SOFA) Score for Sepsis identifies high-risk patients for in-hospital mortality with suspected infection outside the ICU.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jamanetwork.com/journals/jama/fullarticle/2492875 ",
+                "text": "Seymour CW, Liu VX, Iwashyna TJ, et al. Assessment of Clinical Criteria for Sepsis: For the Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):762-774."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://jama.jamanetwork.com/article.aspx?articleid=2492881",
+                "text": "Singer M, Deutschman CS, Seymour C, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):801-810. doi:10.1001/jama.2016.0287."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:&nbsp;</p>\n<table>\n<tbody>\n<tr>\n<td><strong>Parameter</strong></td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Altered mental status<strong><br></strong><abbr title=\"Glasgow Coma Scale\"><calculator id=\"64\">GCS</calculator></abbr> &lt;15</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Respiratory rate &ge;22</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Systolic blood pressure &le;100</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>qSOFA Score</strong></p>\n</td>\n<td>\n<p><strong>Risk group</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0-1</p>\n</td>\n<td>\n<p>Not high risk for in-hospital mortality</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>2-3</p>\n</td>\n<td>\n<p>High risk for in-hospital mortality (3- to 14-fold increase)</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "AMS",
+            "Cough",
+            "Dyspnea",
+            "Fever",
+            "Vomiting",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Sepsis"
+        ],
+        "logic": "var calc_output = [];\nvar msg = '';\nvar mini_msg;\nvar webLanguage = webLanguage || \"english\"\nvar txt = '';\nvar u = parseFloat(ams) + parseFloat(rr) + parseFloat(sbp);\nif (u < 2) {\n    txt = '';\n    mini_msg = 'Not high risk';\n\n    if (webLanguage == \"webProduction-chinese-traditional\") {\n\n        mini_msg = '不是高風險';\n\n        msg = 'qSOFA分數評估風險不高，如果仍懷疑敗血症，應繼續監測病患，開始適當治療，並追蹤qSOFA分數變化';\n\n    } else if (webLanguage == \"webProduction-chinese-simplified\") {\n        mini_msg = '不是高风险';\n\n        msg = 'qSOFA分数评估风险不高。如果仍怀疑败血症,应继续监测病患,开始适当治疗,并追踪qSOFA分数变化。 ';\n    } else if (webLanguage == \"webProduction-spanish\") {\n        mini_msg = 'SIN ALTO RIESGO'\n        msg = 'Si todavía hay sospechas de una septicemia, continúe el monitoreo, la evaluación e inicie el tratamiento de manera apropiada, incluyendo aprobaciones rutinarias de qSOFA.'\n    } else {\n\n        msg = 'If sepsis is still suspected, continue to monitor, evaluate, and initiate treatment as appropriate, including serial qSOFA assessments.';\n    }\n}\nif (u >= 2) {\n    txt = '';\n    mini_msg = 'High risk';\n\n    if (webLanguage == \"webProduction-chinese-traditional\") {\n        mini_msg = '高風險';\n        msg = '根據qSOFA分級為高風險。應繼續評估其餘器官衰竭指標，血液檢測也應包括乳酸，並計算出完整的SOFA評分。<br/><br/>凡是qSOFA指標有達到的病患，即便之前沒有感染的事實';\n\n    } else if (webLanguage == \"webProduction-chinese-simplified\") {\n        mini_msg = '高风险';\n        msg = '根据qSOFA分级为高风险。 应继续评估其余器官衰竭指针,血液检测也应包括乳酸,并计算出完整的SOFA评分。<br/><br/>凡是qSOFA指针有达到的病患，即便之前没有感染的事实';\n    } else if (webLanguage == \"webProduction-spanish\") {\n        mini_msg = 'ALTO RIESGO';\n        msg = 'Evaluar evidencia por mal funcionamiento de órganos con examen de sangre incluyendo lactato sérico y cálculos completos de resultados qSOFA. Pacientes con estos criterios de qSOFA deberían de considerarse con infección, aunque no hubiera sido el caso anteriormente.';\n    } else {\n\n        msg = 'qSOFA Scores 2-3 are associated with a 3- to 14-fold increase in in-hospital mortality. Assess for evidence of organ dysfunction with blood testing including serum lactate and calculation of the full SOFA Score.<br/><br/>Patients meeting these qSOFA criteria should have infection considered even if it was previously not.';\n    }\n\n}\n\nvar value_text\nvar message\n\nif (webLanguage == \"webProduction-chinese-traditional\") {\n    value_text = \"分\"\n    message = \"qSOFA敗血症辨識工具\"\n} else if (webLanguage == \"webProduction-chinese-simplified\") {\n    value_text = \"分\"\n    message = \"qSOFA败血症辨识工具\"\n} else if (webLanguage == \"webProduction-spanish\") {\n\n    if (u == 1) {\n        value_text = \"punto\"\n    } else {\n        value_text = \"puntos\"\n    }\n\n    message = \"Puntaje SOFA\"\n\n} else {\n    value_text = \"points\"\n    message = \"qSOFA Score\"\n}\n\n\ncalc_output.push({ \n    name: 'mini', \n    value: u, \n    value_text: value_text, \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '2654_qSOFA_result', \n    value: u, \n    value_text: value_text,\n    message: message \n});\ncalc_output.push({ \n    name: '2654_qSOFA_interpretation', \n    value: mini_msg, \n    value_text: '', \n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Altered mental status</p>",
+                "md_calc_info_concept": null,
+                "name": "ams",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "<abbr title='Glasgow Coma Scale'><calculator id='64'>GCS</calculator> </abbr> <15",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Respiratory rate &ge;22</p>",
+                "md_calc_info_concept": null,
+                "name": "rr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Systolic BP &le;100</p>",
+                "md_calc_info_concept": null,
+                "name": "sbp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "sirs",
+            "severe",
+            "critical",
+            "icu",
+            "ITU",
+            "septic",
+            "sepsis",
+            "mortality",
+            "critical care",
+            "quick sofa",
+            "covid",
+            "covid19",
+            "covid-19",
+            "covid 19",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

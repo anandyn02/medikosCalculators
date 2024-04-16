@@ -1,0 +1,150 @@
+{
+    "id": "659",
+    "title": "International Prognostic Index for Chronic Lymphocytic Leukemia (CLL-IPI)",
+    "desc": "The International Prognostic Index for Chronic Lymphocytic Leukemia (CLL-IPI) stratifies patients with CLL into four risk categories.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27185642 ",
+                "text": "An international prognostic index for patients with chronic lymphocytic leukaemia (CLL-IPI): a meta-analysis of individual patient data. Lancet Oncol. 2016;17(6):779-90."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the selected criteria:</p> <table> <tbody> <tr> <td> <p><strong>Criteria</strong></p> </td> <td> <p><strong>Selection</strong></p> </td> <td> <p><strong>Points</strong></p> </td> </tr> <tr> <td rowspan=\"2\"> <p>Age</p> </td> <td> <p>≤65 years</p> </td> <td> <p>0</p> </td> </tr> <tr> <td> <p>&gt;65 years </p> </td> <td> <p>1</p> </td> </tr> <tr> <td rowspan=\"2\"> <p>Clinical stage</p> </td> <td> <p>Binet A or Rai 0</p> </td> <td> <p>0</p> </td> </tr> <tr> <td> <p>Binet B-C or Rai I-IV </p> </td> <td> <p>1</p> </td> </tr> <tr> <td rowspan=\"2\"> <p>Serum β2 microglobulin, mg/L (or µg/mL)</p> </td> <td> <p>≤3.5</p> </td> <td> <p>0</p> </td> </tr> <tr> <td> <p>&gt;3.5 </p> </td> <td> <p>2</p> </td> </tr> <tr> <td rowspan=\"2\"> <p>IGHV mutational status</p> </td> <td> <p>Mutated </p> </td> <td> <p>0</p> </td> </tr> <tr> <td> <p>Unmutated</p> </td> <td> <p>2</p> </td> </tr> <tr> <td rowspan=\"2\"> <p>TP53 status</p> </td> <td> <p>No abnormalities</p> </td> <td> <p>0</p> </td> </tr> <tr> <td> <p>Deletion 17p (FISH) and/or TP53 mutation (sequencing)</p> </td> <td> <p>4</p> </td> </tr> </tbody> </table>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>CLL-IPI Score</strong></p> </td> <td> <p><strong>Risk</strong></p> </td> <td> <p><strong>5-year survival</strong></p> </td> </tr> <tr> <td> <p>0-1</p> </td> <td> <p>Low risk</p> </td> <td> <p>93.2%</p> </td> </tr> <tr> <td> <p>2-3</p> </td> <td> <p>Intermediate risk</p> </td> <td> <p>79.3%</p> </td> </tr> <tr> <td> <p>4-6</p> </td> <td> <p>High risk</p> </td> <td> <p>63.3%</p> </td> </tr> <tr> <td> <p>7-10</p> </td> <td> <p>Very high risk</p> </td> <td> <p>23.3%</p> </td> </tr> </tbody> </table> <p>&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Lymphadenopathy"
+        ],
+        "disease_treated": [
+            "Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar risk; \nvar survival;\n\nvar age = parseFloat(age);\nvar stage = parseFloat(stage);\nvar microglobulin = parseFloat(microglobulin);\nvar mutational = parseFloat(mutational);\nvar tp53 = parseFloat(tp53);\n\nvar score = age + stage + microglobulin + mutational + tp53;\n\nif (score == 0 || score == 1 ) {\n  risk = 'Low';\n  survival = '93.2% 5 year survival';\n}\nif (score == 2 || score == 3 ) {\n  risk = 'Intermediate';\n  survival = '79.3% 5 year survival';\n}\nif (score == 4 || score == 5 || score == 6) {\n  risk = 'High';\n  survival = '63.3% 5 year survival';\n}\nif (score == 7 || score == 8 || score == 9 || score == 10) {\n  risk = 'Very high';\n  survival = '23.3% 5 year survival';\n}\n\ncalc_output.push({\n  name: 'mini',\n  value: score.toFixed(0),\n  value_text: 'points',\n  message: risk + ' risk'\n});\ncalc_output.push({\n  name: 'CLL-IPI score',\n  value: score.toFixed(0),\n  value_text: 'points',\n  message: 'CLL-IPI'\n});\ncalc_output.push({\n  name: 'Risk message',\n  value: risk,\n  value_text: 'risk',\n  message: survival\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤65 years",
+                        "value": 0
+                    },
+                    {
+                        "label": ">65 years",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Clinical stage",
+                "name": "stage",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Binet A or Rai 0",
+                        "value": 0
+                    },
+                    {
+                        "label": "Binet B-C or Rai I-IV ",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Serum β2 microglobulin, mg/L (or µg/mL)",
+                "name": "microglobulin",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤3.5",
+                        "value": 0
+                    },
+                    {
+                        "label": ">3.5",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "IGHV mutational status",
+                "name": "mutational",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Mutated",
+                        "value": 0
+                    },
+                    {
+                        "label": "Unmutated",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "TP53 status",
+                "name": "tp53",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No abnormalities",
+                        "value": 0
+                    },
+                    {
+                        "label": "Deletion 17p (FISH) and/or TP53 mutation (sequencing)",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "chronic lymphocytic leukemia",
+            "CLL",
+            "prognostic markers",
+            "prognostic index",
+            "CLL-IPI",
+            "TP53 status",
+            "IGHV mutational status",
+            "international prognostic index",
+            "iWCLL criteria",
+            "chronic lymphocytic leukaemia",
+            "hematology",
+            "oncology",
+            "blood cancer",
+            "serum β2-microglobulin concentration"
+        ],
+        "specialty": [
+            "Hematology and Oncology"
+        ]
+    }
+}

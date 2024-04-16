@@ -1,0 +1,158 @@
+{
+    "id": "4",
+    "title": "Intrauterine RBC Transfusion Dosage",
+    "desc": "The Fetal RBC Intrauterine Transfusion Dose estimates the volume of donor RBCs to administer by intrauterine transfusion (IUT).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/3257068",
+                "text": "Mandelbrot L, Daffos F, Forestier F, Macaleese J, Descombey D. Assessment of fetal blood volume for computer-assisted management of in utero transfusion. Fetal Ther. 1988;3(1-2):60-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2342745 ",
+                "text": "Plecas DV, Chitkara U, Berkowitz GS, Lapinski RH, Alvarez M, Berkowitz RL. Intrauterine intravascular transfusion for severe erythroblastosis fetalis: how much to transfuse?. Obstet Gynecol. 1990;75(6):965-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2130838 ",
+                "text": "Leduc L, Moise KJ, Carpenter RJ, Cano LE. Fetoplacental blood volume estimation in pregnancies with Rh alloimmunization. Fetal Diagn Ther. 1990;5(3-4):138-46."
+            }
+        ],
+        "evidence": "<p>Transfusion volume, mL = fetoplacental volume, mL &times; [ Hct(goal) - Hct(initial) ] / Hct(transfused)</p>\n<p>Where fetoplacental volume, mL = fetal weight, g &times; 0.14 mL/g</p>\n<p>Example calculation:</p>\n<ul>\n<li>Estimated fetal weight = 1,000 g, Hct(initial) = 20, Hct(goal) = 30, Hct(transfused) = 85</li>\n<li>((1000g &times;&nbsp;0.14 mL/g) &times;&nbsp;(0.3-0.2)) / 0.85</li>\n<li>Transfuse 16.5 mL RBCs</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Fetal weight",
+                "unit": "wt_fetus",
+                "error_min": "0",
+                "error_max": "320",
+                "warn_min": "21",
+                "warn_max": "320",
+                "conversion": "28.3495",
+                "normal_max_si": "4000",
+                "normal_max_us": "160",
+                "normal_min_si": "600",
+                "normal_min_us": "21",
+                "units_si": "g",
+                "units_us": "oz"
+            },
+            {
+                "name": "Hematocrit",
+                "unit": "hct",
+                "error_min": "1",
+                "error_max": "70",
+                "warn_min": "20",
+                "warn_max": "55",
+                "conversion": "1",
+                "normal_max_si": "51",
+                "normal_max_us": "51",
+                "normal_min_si": "36",
+                "normal_min_us": "36",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Hct, sickle cell pt",
+                "unit": "hct_sickle",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "10",
+                "warn_max": "40",
+                "conversion": "1",
+                "normal_max_si": "30",
+                "normal_max_us": "30",
+                "normal_min_si": "20",
+                "normal_min_us": "20",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Donor Hct",
+                "unit": "hct_sickle_donor",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "55",
+                "warn_max": "85",
+                "conversion": "1",
+                "normal_max_si": "85",
+                "normal_max_us": "85",
+                "normal_min_si": "55",
+                "normal_min_us": "55",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Pregnancy"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Pregnancy"
+        ],
+        "logic": "var calc_output = [];\n\nif (UOMSYSTEM == true) {\n\tweight = weight * 28.3495;\n}\nelse {\n  weight = weight;\n}\n\nhct_initial = parseFloat(hct_initial) / 100;\nhct_goal = parseFloat(hct_goal) / 100;\nhct_trans = parseFloat(hct_trans) / 100;\n\nvar feto_vol = weight * 0.14;\nvar trans_vol = feto_vol * (hct_goal - hct_initial) / hct_trans;\n\nif (trans_vol <= 0) {\n\tcalc_output.push({\n\t   name: 'mini',\n\t   value: '',\n\t   value_text: '',\n\t   message: 'Goal Hct should be greater than initial Hct'\n\t});\n\tcalc_output.push({\n\t   name: '10004_Intrauterine RBC Transfusion Dosage_result',\n\t   value: '',\n\t   value_text: '',\n\t   message: 'Goal Hct should be greater than initial Hct'\n\t});\n}\nelse {\ncalc_output.push({\n   name: 'mini',\n   value: trans_vol.toFixed(1),\n   value_text: 'mL',\n   message: 'RBC volume for transfusion'\n});\ncalc_output.push({\n   name: '10004_Intrauterine RBC Transfusion Dosage_result',\n   value: trans_vol.toFixed(1),\n   value_text: 'mL',\n   message: 'RBC volume for transfusion'\n});\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Fetal weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt_fetus"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Initial fetal hematocrit",
+                "name": "hct_initial",
+                "optional": false,
+                "tips_en": "Estimate via ultrasound",
+                "type": "textbox",
+                "unit": "hct_sickle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Goal fetal hematocrit",
+                "name": "hct_goal",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hct"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hematocrit of transfused RBCs",
+                "name": "hct_trans",
+                "optional": false,
+                "tips_en": "Varies by storage solution (range 55-85%); contact blood bank or maternal-fetal medicine expert for specifics",
+                "type": "textbox",
+                "unit": "hct_sickle_donor"
+            }
+        ],
+        "can_search": [
+            "fetal",
+            "RBC",
+            "intrauterine",
+            "IUT"
+        ],
+        "specialty": [
+            "Critical Care (Neonatal)",
+            "Hematology and Oncology",
+            "OB-Gyn",
+            "Pathology",
+            "Transfusion Medicine"
+        ]
+    }
+}

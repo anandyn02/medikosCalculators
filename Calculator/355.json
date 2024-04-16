@@ -1,0 +1,548 @@
+{
+    "id": "355",
+    "title": "CIWA-Ar for Alcohol Withdrawal",
+    "desc": "The CIWA-Ar for Alcohol Withdrawal objectifies severity of alcohol withdrawal symptoms.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2597811",
+                "text": "Sullivan JT, Sykora K, Schneiderman J, Naranjo CA, Sellers EM. Assessment of alcohol withdrawal: the revised clinical institute withdrawal assessment for alcohol scale (CIWA-Ar). Br J Addict. 1989 Nov;84(11):1353-7. PubMed PMID: 2597811."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/7334148/",
+                "text": "Shaw JM, Kolesar GS, Sellers EM, Kaplan HL, Sandor P. Development of optimal treatment tactics for alcohol withdrawal. I. Assessment and effectiveness of supportive care. J Clin Psychopharmacol. 1981;1(6):382-389."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2178476",
+                "text": "Wartenberg AA, Nirenberg TD, Liepman MR, Silvia LY, Begin AM, Monti PM. Detoxification of alcoholics: improving care by symptom-triggered sedation. Alcohol Clin Exp Res. 1990 Feb;14(1):71-5."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7966928",
+                "text": "Kitchens JM. Does this patient have an alcohol problem? JAMA. 1994 Dec 14;272(22):1782-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=8046805",
+                "text": "Saitz R, Mayo-Smith MF, Roberts MS, et al. Individualized treatment for alcohol withdrawal. A randomized double-blind controlled trial. JAMA 1994; 272:519."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=8123967",
+                "text": "Bird RD, Makela EH. Alcohol withdrawal: what is the benzodiazepine of choice? Ann Pharmacother 1994; 28:67."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9214531",
+                "text": "Mayo-Smith MF. Pharmacological management of alcohol withdrawal. A meta-analysis and evidence-based practice guideline. American Society of Addiction Medicine Working Group on Pharmacological Management of Alcohol Withdrawal. JAMA. 1997 Jul 9;278(2):144-51."
+            },
+            {
+                "href": "https://accessmedicine.mhmedical.com/content.aspx?bookid=1130&sectionid=79757307",
+                "text": "Schuckit M. Alcohol and alcoholism. In: Brunwald E, Fauci AS, Kasper DL, Hauser SL, Longo DL, Jameson JL. Harrison’s Principles of Internal Medicine.Vol. 2. 15th ed. New York, NY: McGraw-Hill Professional Publishing; 2001:2561–2566."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=11444401",
+                "text": "Jaeger TM, Lohr RH, Pankratz VS. Symptom-triggered therapy for alcohol withdrawal syndrome in medical inpatients. Mayo Clin Proc 2001; 76:695."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=12020181",
+                "text": "Daeppen JB, Gache P, Landry U, et al. Symptom-triggered vs fixed-schedule doses of benzodiazepine for alcohol withdrawal: a randomized treatment trial. Arch Intern Med 2002; 162:1117. "
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/15119493/",
+                "text": "Nuss MA, Elnicki DM, Dunsworth TS, Makela EH. Utilizing CIWA-Ar to assess use of benzodiazepines in patients vulnerable to alcohol withdrawal syndrome. W V Med J. 2004 Jan-Feb;100(1):21-5."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16912820",
+                "text": "Roffman JL, Stern TA. Alcohol Withdrawal in the Setting of Elevated Blood Alcohol Levels. Primary Care Companion to The Journal of Clinical Psychiatry. 2006;8(3):170-173."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=22479099",
+                "text": "Ng K, Dahri K, Chow I, Legal M. Evaluation of an alcohol withdrawal protocol and a preprinted order set at a tertiary care hospital. Can J Hosp Pharm. 2011 Nov;64(6):436-45."
+            }
+        ],
+        "evidence": "<p>Addition of the&nbsp;selected points.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: left;\">Score</th>\n<th>\n<p style=\"text-align: left;\">Withdrawal Level</p>\n</th>\n</tr>\n<tr>\n<td>&le;8</td>\n<td>\n<p>Absent or minimal withdrawal</p>\n</td>\n</tr>\n<tr>\n<td>9-19</td>\n<td>\n<p>Mild to moderate withdrawal</p>\n</td>\n</tr>\n<tr>\n<td>&ge;20</td>\n<td>\n<p>Severe withdrawal</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "Anxious",
+            "Fever",
+            "Headache",
+            "Intoxication/Overdose",
+            "Loss of Appetite",
+            "Nausea",
+            "Seizure",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Drug/Alcohol Use"
+        ],
+        "logic": "var calc_output = [];\nvar text = '';\n\n//user inputs, addition of selected points\nvar v = parseFloat(nausea) + parseFloat(tremor) + parseFloat(sweats) + parseFloat(anxiety) + parseFloat(agitation) + parseFloat(tactile) + parseFloat(auditory) + parseFloat(visual_input) + parseFloat(headache) + parseFloat(orientation);\n\n//interpretation\nif (v < 9) { \n\ttext = 'Patients with scores \\u22648 typically do not require medication for withdrawal.'; \n}\nif (v > 8 && v < 20) { \n\ttext = 'Patients with scores \\u22659 may require medication for withdrawal.'; \n}\nif (v > 19) { \n\ttext = 'Patients with scores \\u226520 frequently require medication for withdrawal, and may also require admission to the ICU for observation for seizures or development of delirium tremens, and more frequent medication dosing.'; \n}\n\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: v.toFixed(0), \n\tvalue_text: 'points', \n\tmessage: 'CIWA-Ar for Alcohol Withdrawal' \n});\ncalc_output.push({ \n\tname: '1736_CIWA-Ar_result', \n\tvalue: v.toFixed(0), \n\tvalue_text: 'points', \n\tmessage: text \n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nausea/vomiting",
+                "mdcalc_info_concept": null,
+                "name": "nausea",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No nausea and no vomiting",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild nausea and no vomiting",
+                        "value": 1
+                    },
+                    {
+                        "label": "(More severe symptoms) ",
+                        "value": 2
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Intermittent nausea with dry heaves",
+                        "value": 4
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 5
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 6
+                    },
+                    {
+                        "label": "Constant nausea, frequent dry heaves and vomiting",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask 'Do you feel sick to your stomach? Have you vomited?'",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tremor",
+                "mdcalc_info_concept": null,
+                "name": "tremor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No tremor",
+                        "value": 0
+                    },
+                    {
+                        "label": "Not visible, but can be felt fingertip to fingertip",
+                        "value": 1
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 2
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Moderate, with patient's arms extended",
+                        "value": 4
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 5
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 6
+                    },
+                    {
+                        "label": "Severe, even with arms not extended",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Arms extended and fingers spread apart",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Paroxysmal sweats",
+                "mdcalc_info_concept": null,
+                "name": "sweats",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No sweat visible",
+                        "value": 0
+                    },
+                    {
+                        "label": "Barely perceptible sweating, palms moist",
+                        "value": 1
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 2
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Beads of sweat obvious on forehead",
+                        "value": 4
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 5
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 6
+                    },
+                    {
+                        "label": "Drenching sweats",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anxiety",
+                "mdcalc_info_concept": null,
+                "name": "anxiety",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No anxiety, at ease",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mildly anxious",
+                        "value": 1
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 2
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Moderately anxious, or guarded, so anxiety is inferred",
+                        "value": 4
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 5
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 6
+                    },
+                    {
+                        "label": "Equivalent to acute panic states as seen in severe delirium or acute schizophrenic reactions",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask, 'Do you feel nervous?'",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Agitation",
+                "mdcalc_info_concept": null,
+                "name": "agitation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal activity",
+                        "value": 0
+                    },
+                    {
+                        "label": "Somewhat more activity than normal activty",
+                        "value": 1
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 2
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Moderately fidgety and restless",
+                        "value": 4
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 5
+                    },
+                    {
+                        "label": "(More severe symptoms)",
+                        "value": 6
+                    },
+                    {
+                        "label": "Paces back and forth during most of the interview, or constantly thrashes about",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tactile disturbances",
+                "mdcalc_info_concept": null,
+                "name": "tactile",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Very mild itching, pin and needles, burning, or numbness",
+                        "value": 1
+                    },
+                    {
+                        "label": "Mild itching, pin and needles, burning, or numbness",
+                        "value": 2
+                    },
+                    {
+                        "label": "Moderate itching, pin and needles, burning, or numbness",
+                        "value": 3
+                    },
+                    {
+                        "label": "Moderately severe hallucinations",
+                        "value": 4
+                    },
+                    {
+                        "label": "Severe hallucinations",
+                        "value": 5
+                    },
+                    {
+                        "label": "Extremely severe hallucinations",
+                        "value": 6
+                    },
+                    {
+                        "label": "Continuous hallucinations",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask, 'Have you any itching, pins and needles sensations, any burning, any numbness, or do you feel bugs crawling on or under your skin?'",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Auditory disturbances",
+                "mdcalc_info_concept": null,
+                "name": "auditory",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Very mild harshness or ability to frighten",
+                        "value": 1
+                    },
+                    {
+                        "label": "Mild harshness or ability to frighten",
+                        "value": 2
+                    },
+                    {
+                        "label": "Moderate harshness or ability to frighten",
+                        "value": 3
+                    },
+                    {
+                        "label": "Moderately severe hallucinations",
+                        "value": 4
+                    },
+                    {
+                        "label": "Severe hallucinations",
+                        "value": 5
+                    },
+                    {
+                        "label": "Extremely severe hallucinations",
+                        "value": 6
+                    },
+                    {
+                        "label": "Continuous hallucinations",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask, 'Are you more aware of sounds around you? Are they harsh? Do they frighten you? Are you hearing anything that is disturbing to you? Are you hearing things you know are not there?'",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Visual disturbances",
+                "mdcalc_info_concept": null,
+                "name": "visual_input",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Very mild sensitivity",
+                        "value": 1
+                    },
+                    {
+                        "label": "Mild sensitivity",
+                        "value": 2
+                    },
+                    {
+                        "label": "Moderate sensitivity",
+                        "value": 3
+                    },
+                    {
+                        "label": "Moderately severe hallucinations",
+                        "value": 4
+                    },
+                    {
+                        "label": "Severe hallucinations",
+                        "value": 5
+                    },
+                    {
+                        "label": "Extremely severe hallucinations",
+                        "value": 6
+                    },
+                    {
+                        "label": "Continuous hallucinations",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask 'Does the light appear to be too bright? Is its color different? Does it hurt your eyes? Are you seeing anything that is disturbing to you? Are you seeing things you know are not there?'",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Headache/fullness in head",
+                "mdcalc_info_concept": null,
+                "name": "headache",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not Present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Very mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 2
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 3
+                    },
+                    {
+                        "label": "Moderately severe",
+                        "value": 4
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 5
+                    },
+                    {
+                        "label": "Very severe",
+                        "value": 6
+                    },
+                    {
+                        "label": "Extremely severe",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask 'Does your head feel different? Does it feel like there is a band around your head?' Do not rate for dizziness or lightheadedness. Otherwise, rate 'severity.'",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Orientation/clouding of sensorium",
+                "mdcalc_info_concept": null,
+                "name": "orientation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Oriented, can do serial additions",
+                        "value": 0
+                    },
+                    {
+                        "label": "Can't do serial additions or is uncertain about date",
+                        "value": 1
+                    },
+                    {
+                        "label": "Disoriented for date by no more than 2 calendar days",
+                        "value": 2
+                    },
+                    {
+                        "label": "Disoriented for date by more than 2 calendar days",
+                        "value": 3
+                    },
+                    {
+                        "label": "Disoriented to place or person",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ask 'What day is this? Where are you? Who am I?'",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "etoh",
+            "withdrawl",
+            "seizure",
+            "alcohol",
+            "booze",
+            "liquor",
+            "beer"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Psychiatry"
+        ]
+    }
+}

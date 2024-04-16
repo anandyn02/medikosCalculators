@@ -1,0 +1,170 @@
+{
+    "id": "152",
+    "title": "Local Anesthetic Dosing Calculator",
+    "desc": "The Local Anesthetic Dosing Calculator doses local anesthetics to help avoid toxic doses.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://accesspharmacy.mhmedical.com/content.aspx?sectionid=210274249&bookid=2569&Resultclick=2",
+                "text": "Sztajnkrycer MD. Local Anesthetics. In: Hoffman RS, Howland M, Lewin NA, Nelson LS, Goldfrank LR. eds. Goldfrank’s Toxicologic Emergencies, 11e New York, NY: McGraw-Hill; 2019."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10935008",
+                "text": "Tetzlaff JE. The pharmacology of local anesthetics. Anesthesiol Clin North Am. 2000;18(2):217-33."
+            },
+            {
+                "href": "https://www.aafp.org/afp/2002/0701/p91.html#afp20020701p91-b1",
+                "text": "Achar S, Kundu S. Principles of office anesthesia: part I. Infiltrative anesthesia. Am Fam Physician. 2002;66(1):91-4."
+            }
+        ],
+        "evidence": "<p>Max allowable subQ&nbsp;dose based on weight, mg = max allowable subQ dose for a drug, mg/kg&nbsp;x weight, kg</p>\n<p>Max allowable subQ&nbsp;dose based on weight, mL = max allowable subQ dose for&nbsp;a drug, mg/kg x&nbsp;(weight, kg / 10) x (1 / concentration, %)</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"*\"><col width=\"*\"><col width=\"*\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Drug</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Relative potency</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Duration of action</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><b>Max allowable subQ&nbsp;dose, mg/kg</b></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Bupivacaine</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">Long</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Lidocaine</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">Medium</p>\n</td>\n<td>\n<p dir=\"ltr\">4.5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Mepivacaine</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">Medium</p>\n</td>\n<td>\n<p dir=\"ltr\">4.4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Ropivacaine</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">Long</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>From <a href=\"https://accesspharmacy.mhmedical.com/content.aspx?sectionid=210274249&amp;bookid=2569&amp;Resultclick=2\" target=\"_blank\" rel=\"noopener\">Sztajnkrycer 2019</a>.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            }
+        ],
+        "primary_complains": [
+            "Pain"
+        ],
+        "disease_treated": [
+            "Acute Pain"
+        ],
+        "logic": "var calc_output = [];\n\nvar weight = parseFloat(weight);\nvar drug_1 = parseFloat(drug_1);\n//var epi = parseFloat(epi) ;\nvar concentration = parseFloat(concentration);\n\nvar conc_name, drug_name;\n\nif (concentration == 2.5) {\n  conc_name = '0.25%';\n} else if (concentration == 5) {\n  conc_name = '0.5%';\n} else if (concentration == 7.5) {\n  conc_name = '0.75%';\n} else if (concentration == 10) {\n  conc_name = '1%';\n} else if (concentration == 15) {\n  conc_name = '1.5%';\n} else if (concentration == 20) {\n  conc_name = '2%';\n} else if (concentration == 30) {\n  conc_name = '3%';\n} else if (concentration == 40) {\n  conc_name = '4%';\n}\n\nif (drug_1 == 1) {\n  drug_1 = 2;\n  drug_name = 'bupivacaine';\n} else if (drug_1 == 2) {\n  drug_1 = 4.5;\n  drug_name = 'lidocaine';\n} else if (drug_1 == 3) {\n  drug_1 = 4.4;\n  drug_name = 'mepivacaine';\n} else if (drug_1 == 4) {\n  drug_1 = 3;\n  drug_name = 'ropivacaine';\n}\n\nvar score = weight*drug_1;\n\nvar score2 = score/concentration;\n\n// if (epi == 1) {\n//   var range1 = (drug_1 + 4)*weight;\n//   var range1_mL = range1/concentration;\n//   var range2 = (drug_1 + 7)*weight;\n//   var range2_mL = range2/concentration;\n// }\n \nscore2 = score2.toFixed(1);\n\nvar wt, unit; \n\nif (UOMSYSTEM == true) {\n  wt = weight*2.2046;\n  unit = 'lb';\n} else {\n  wt = weight;\n  unit = 'kg';\n}\n\nwt = wt.toFixed(0);\n\nvar msg1 = 'Max allowable subQ dose of ' + conc_name + ' ' + drug_name + ' (without epi) in a ' + wt + '-' + unit + ' patient (' + score.toFixed(1) + ' mg ' + drug_name + ')';\n\n// if (epi == 1) {\n//   var msg2 = 'Max allowable subQ dose of ' + conc_name + ' ' + drug_name + ' (with epi) in a ' + wt + '-' + unit + ' patient (' + range1.toFixed(1) + '-' + range2.toFixed(1) + ' mg ' + drug_name + ')';\n// }\n\n// if(epi == 1){\n// calc_output.push({\n//     name: 'Score',\n//     value: range1_mL.toFixed(1) + '-' + range2_mL.toFixed(1),\n//     value_text: 'mL',\n//     message: msg2   \n// });\n//   calc_output.push({\n//     name: 'mini',\n//     value: range1_mL.toFixed(1) + '-' + range2_mL.toFixed(1),\n//     value_text: 'mL',\n//     message: 'Max allowable subQ dose (with epi)'\n// });\n  \n// } else {\n  calc_output.push({\n    name: 'mini',\n    value: score2,\n    value_text: 'mL',\n    message: 'Max allowable subQ dose (without epi)'\n});\n// }\n\ncalc_output.push({\n    name: 'Score',\n    value: score2,\n    value_text: 'mL',\n    message: msg1  \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Drug</p>",
+                "mdcalc_info_concept": null,
+                "name": "drug_1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Bupivacaine",
+                        "value": 1
+                    },
+                    {
+                        "label": "Lidocaine",
+                        "value": 2
+                    },
+                    {
+                        "label": "Mepivacaine",
+                        "value": 3
+                    },
+                    {
+                        "label": "Ropivacaine",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Weight</p>",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Concentration</p>",
+                "mdcalc_info_concept": null,
+                "name": "concentration",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0.25%",
+                        "value": 2.5
+                    },
+                    {
+                        "label": "0.5%",
+                        "value": 5
+                    },
+                    {
+                        "label": "0.75%",
+                        "value": 7.5
+                    },
+                    {
+                        "label": "1%",
+                        "value": 10
+                    },
+                    {
+                        "label": "1.5%",
+                        "value": 15
+                    },
+                    {
+                        "label": "2%",
+                        "value": 20
+                    },
+                    {
+                        "label": "3%",
+                        "value": 30
+                    },
+                    {
+                        "label": "4%",
+                        "value": 40
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Local anesthesia",
+            "marcaine",
+            "lido",
+            "lidocaine",
+            "mepivacaine",
+            "prilocaine",
+            "bupivacaine",
+            "etidocaine",
+            "ropivacaine",
+            "levobupivacaine",
+            "cocaine",
+            "procaine",
+            "tetracaine",
+            "chloroprocaine",
+            "benzocaine",
+            "LAST",
+            "local anesthetic systemic toxicity",
+            "nerve block",
+            "nerve block anesthesia dose",
+            "regional anesthesia",
+            "regional anesthesia dose"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Pain Management",
+            "Surgery (General)",
+            "Toxicology"
+        ]
+    }
+}

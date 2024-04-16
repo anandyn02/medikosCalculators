@@ -1,0 +1,244 @@
+{
+    "id": "614",
+    "title": "FINDRISC (Finnish Diabetes Risk Score)",
+    "desc": "The Finnish Diabetes Risk Score identifies patients at high risk for type 2 diabetes.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12610029 ",
+                "text": "Lindström J, Tuomilehto J. The diabetes risk score: a practical tool to predict type 2 diabetes risk. Diabetes Care. 2003;26(3):725-31."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20513271 ",
+                "text": "Lindström J, Absetz P, Hemiö K, Peltomäki P, Peltonen M. Reducing the risk of type 2 diabetes with nutrition and physical activity - efficacy and implementation of lifestyle interventions in Finland. Public Health Nutr. 2010;13(6A):993-9."
+            },
+            {
+                "href": "http://www.bmj.com/content/343/bmj.d7163 ",
+                "text": "Noble D, Mathur R, Dent T, Meads C, Greenhalgh T. Risk models and scores for type 2 diabetes: systematic review. BMJ. 2011;343:d7163."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td>&nbsp;</td> <td colspan=\"6\"> <p><strong>Points</strong></p> </td> </tr> <tr> <td>&nbsp;</td> <td> <p><strong>0</strong></p> </td> <td> <p><strong>1 </strong></p> </td> <td> <p><strong>2 </strong></p> </td> <td> <p><strong>3 </strong></p> </td> <td> <p><strong>4</strong></p> </td> <td> <p><strong>5 </strong></p> </td> </tr> <tr> <td> <p>Age, years</p> </td> <td> <p>&lt;45</p> </td> <td> <p>--</p> </td> <td> <p>45-54</p> </td> <td> <p>55-64</p> </td> <td> <p>64</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>BMI, kg/m²</p> </td> <td> <p>&lt;25</p> </td> <td> <p>&gt;25 to 30</p> </td> <td> <p>--</p> </td> <td> <p>&gt;30</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Waist circumference</p> </td> <td colspan=\"6\">&nbsp;</td> </tr> <tr> <td> <p>Men:</p> </td> <td> <p>&lt;94 cm (37 in)</p> </td> <td>&nbsp;</td> <td>&nbsp;</td> <td> <p>94 to &lt;102 cm (37 to &lt;40 in)</p> </td> <td> <p>≥102 cm (≥40 in)</p> </td> <td>&nbsp;</td> </tr> <tr> <td> <p>Women:</p> <br><br><br><br><br><br></td> <td> <p>&lt;80 cm (31 in)</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> <td> <p>80 to &lt;88 cm (31 to &lt;35 in)</p> </td> <td> <p>≥88 cm (≥35 in)</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Use of blood pressure medication</p> </td> <td> <p>No</p> </td> <td> <p>--</p> </td> <td> <p>Yes</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>History of high blood glucose</p> </td> <td> <p>No</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> <td> <p>Yes</p> </td> </tr> <tr> <td> <p>Physical activity &lt;4 hr/week</p> </td> <td> <p>No</p> </td> <td> <p>--</p> </td> <td> <p>Yes</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Daily consumption of vegetables, fruits, or berries</p> </td> <td> <p>Yes</p> </td> <td> <p>No</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p>Family history of diabetes</p> </td> <td> <p>No</p> </td> <td> <p>--</p> </td> <td> <p>--</p> </td> <td> <p>Yes, 2nd degree relative</p> </td> <td> <p>--</p> </td> <td> <p>Yes, 1st degree relative</p> </td> </tr> </tbody> </table> <p>&nbsp;</p> </div>",
+        "facts": "<p>Interpretation:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td rowspan=\"2\"> <p><strong>FINDRISC</strong></p> </td> <td rowspan=\"2\"> <p><strong>Risk</strong></p> </td> <td colspan=\"2\"> <p><strong>10-year risk of developing T2DM</strong></p> </td> </tr> <tr> <td> <p><strong>Men</strong></p> </td> <td> <p><strong>Women</strong></p> </td> </tr> <tr> <td> <p>0-3</p> </td> <td> <p>Very low</p> </td> <td> <p>0.3%</p> </td> <td> <p>0.1%</p> </td> </tr> <tr> <td> <p>4-8</p> </td> <td> <p>Low</p> </td> <td> <p>0.8%</p> </td> <td> <p>0.4%</p> </td> </tr> <tr> <td> <p>9-12</p> </td> <td> <p>Moderate</p> </td> <td> <p>2.6%</p> </td> <td> <p>2.2%</p> </td> </tr> <tr> <td> <p>13-20</p> </td> <td> <p>High</p> </td> <td> <p>23.1%</p> </td> <td> <p>14.1%</p> </td> </tr> <tr> <td> <p>&gt;21</p> </td> <td> <p>Very high</p> </td> <td> <p>~50%*</p> </td> <td> <p>~50%*</p> </td> </tr> </tbody> </table> <p>*From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/20513271\" target=\"_blank\">Lindström 2010</a>.</p> </div>",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Diabetes Mellitus"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar gender = parseFloat(gender); // 0=female, 1=male\nvar waist;\nif(gender === 0){\n\twaist = parseFloat(waistW)\n}else{\n\twaist = parseFloat(waistM)\n}\nvar score = parseFloat(age) + waist + parseFloat(bmi) + parseFloat(bpmed) + parseFloat(glucose) + parseFloat(physical) + parseFloat(daily) + parseFloat(famhx);\n\nvar pt = 'points';\nif(score === 1){pt = 'point'}\n\n//interpretation\nvar resultM, resultW, risk;\nvar guide = '';\nif(score > -1 && score < 4){\n\tresultM = '0.3';\n\tresultW = '0.1';\n\trisk = 'Very low';\n}else if(score > 3 && score < 9){\n\tresultM = '0.8';\n\tresultW = '0.4';\n\trisk = 'Low';\n}else if(score > 8 && score < 13){\n\tresultM = '2.6';\n\tresultW = '2.2';\n\trisk = 'Moderate';\n\tguide = 'Guidelines vary by setting, but consider formal screening with HgbA1c for moderate or greater risk patients, and addressing modifiable risk factors with all patients.';\n}else if(score > 12 && score < 21){\n\tresultM = '23.1';\n\tresultW = '14.1';\n\trisk = 'High';\n\tguide = 'Guidelines vary by setting, but consider formal screening with HgbA1c for moderate or greater risk patients, and addressing modifiable risk factors with all patients.';\n}else if(score >= 21){\n\tresultM = '50';\n\tresultW = '50';\n\trisk = 'Very high';\n\tguide = 'Guidelines vary by setting, but consider formal screening with HgbA1c for moderate or greater risk patients, and addressing modifiable risk factors with all patients.';\n}\nvar final;\nif(gender === 0){\n\tfinal = resultW;\n}else{\n\tfinal = resultM;\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: final,\n    value_text: '%',\n    message: '10-year risk of developing T2DM'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: pt,\n    message: 'FINDRISC'\n});\ncalc_output.push({\n    name: 'Result',\n    value: final,\n    value_text: '%',\n    message: '10-year risk of developing T2DM'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: 'risk',\n    message: guide\n});",
+        "inputs": [
+            {
+                "label_en": "Gender",
+                "name": "gender",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "radio"
+            },
+            {
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<45",
+                        "value": 0
+                    },
+                    {
+                        "label": "45-54",
+                        "value": 2
+                    },
+                    {
+                        "label": "55-64",
+                        "value": 3
+                    },
+                    {
+                        "label": ">64",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "label_en": "<calculator id='29'>BMI</calculator>, kg/m²",
+                "name": "bmi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<25",
+                        "value": 0
+                    },
+                    {
+                        "label": ">25 to 30",
+                        "value": 1
+                    },
+                    {
+                        "label": ">30",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "gender==1",
+                "label_en": "Waist circumference",
+                "name": "waistM",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<94 cm (37 in)",
+                        "value": 0
+                    },
+                    {
+                        "label": "94 to <102 cm (37 to <40 in)",
+                        "value": 3
+                    },
+                    {
+                        "label": "≥102 cm (≥40 in)",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "conditionality": "gender==0",
+                "label_en": "Waist circumference",
+                "name": "waistW",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<80 cm (31 in)",
+                        "value": 0
+                    },
+                    {
+                        "label": "80 to <88 cm (31 to <35 in)",
+                        "value": 3
+                    },
+                    {
+                        "label": "≥88 cm (≥35 in)",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "label_en": "Use of blood pressure medication",
+                "name": "bpmed",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No ",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "label_en": "History of high blood glucose",
+                "name": "glucose",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "label_en": "Physical activity",
+                "name": "physical",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥4 hr/week",
+                        "value": 0
+                    },
+                    {
+                        "label": "<4 hr/week",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "label_en": "Daily consumption of vegetables, fruits, or berries",
+                "name": "daily",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            },
+            {
+                "label_en": "Family history of diabetes",
+                "name": "famhx",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes, 2nd degree relative",
+                        "value": 3
+                    },
+                    {
+                        "label": "Yes, 1st degree relative",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "findrisc",
+            "findrisk",
+            "finnish",
+            "find risc"
+        ],
+        "specialty": [
+            "Endocrinology",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

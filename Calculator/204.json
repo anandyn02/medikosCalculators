@@ -1,0 +1,204 @@
+{
+    "id": "204",
+    "title": "Coronavirus Anxiety Scale (CAS)",
+    "desc": "The Coronavirus Anxiety Scale (CAS) assesses dysfunctional anxiety associated with the COVID-19 crisis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/32299304/",
+                "text": "Lee SA. Coronavirus Anxiety Scale: A brief mental health screener for COVID-19 related anxiety. Death Stud. 2020;44(7):393-401."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<table width=\"597\" height=\"554\">\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p><strong>Variable</strong></p>\n</td>\n<td><strong>Points</strong></td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p><strong>Ask the patient to choose an answer that best describes how they have felt and conducted themselves over the past 2 weeks:</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">I felt dizzy, lightheaded, or faint when I read or listened to news about the coronavirus</td>\n<td>\n<p>Not at all</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>Rare, less than a day or two</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Several days</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>More than 7 days</p>\n</td>\n<td>3</td>\n</tr>\n<tr>\n<td>\n<p>Nearly every day over the last 2 weeks</p>\n</td>\n<td>4</td>\n</tr>\n<tr>\n<td rowspan=\"5\">I had trouble falling or staying asleep because I was thinking about the coronavirus</td>\n<td>\n<p>Not at all</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>Rare, less than a day or two</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Several days</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>More than 7 days&nbsp;</p>\n</td>\n<td>3</td>\n</tr>\n<tr>\n<td>\n<p>Nearly every day over the last 2 weeks</p>\n</td>\n<td>4</td>\n</tr>\n<tr>\n<td rowspan=\"5\">I felt paralyzed or frozen when I thought about or was exposed to information about the coronavirus</td>\n<td>\n<p>Not at all&nbsp;</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>Rare, less than a day or two</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Several days</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>More than 7 days</p>\n</td>\n<td>3</td>\n</tr>\n<tr>\n<td>\n<p>Nearly every day over the last 2 weeks</p>\n</td>\n<td>4</td>\n</tr>\n<tr>\n<td rowspan=\"5\">I lost interest in eating when I thought about or was exposed to information about the coronavirus</td>\n<td>\n<p>Not at all</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>Rare, less than a day or two</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Several days</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>More than 7 days</p>\n</td>\n<td>3</td>\n</tr>\n<tr>\n<td>\n<p>Nearly every day over the last 2 weeks</p>\n</td>\n<td>4</td>\n</tr>\n<tr>\n<td rowspan=\"5\">I felt nauseous or had stomach problems when I thought about or was exposed to information about the coronavirus</td>\n<td>\n<p>Not at all</p>\n</td>\n<td>0</td>\n</tr>\n<tr>\n<td>\n<p>Rare, less than a day or two</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td>\n<p>Several days</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p>More than 7 days</p>\n</td>\n<td>3</td>\n</tr>\n<tr>\n<td>\n<p>Nearly every day over the last 2 weeks</p>\n</td>\n<td>4</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<p>Patients with score&nbsp;&ge;9 are classified as having dysfunctional anxiety (Youden's index of 75) associated with the COVID-19 crisis (90% sensitivity and 85% specificity).&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Altered Mental Status",
+            "Anxious",
+            "Dizziness",
+            "Nausea"
+        ],
+        "disease_treated": [
+            "Anxiety",
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output = [];\n\nvar total = parseFloat(one) + parseFloat(two) + parseFloat(three) + parseFloat(four) + parseFloat(five);\n\nvar diag;\n\nvar msg = 'Diagnosis for anxiety associated with the COVID-19 crisis';\nvar minimsg = ' diagnosis for COVID-19 anxiety';\n\nif (total >= 9) {\n  diag = 'Positive';\n} else {\n  diag = 'Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: total,\n    value_text: 'points',\n    message: diag + minimsg\n});\ncalc_output.push({\n    name: 'Coronavirus Anxiety Scale',\n    value: total,\n    value_text: 'points',\n    message: 'Total score'\n});\ncalc_output.push({\n    name: 'Coronavirus Anxiety Scale',\n    value: diag,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "subheading": "Ask the patient to choose an answer that best describes how they have felt and conducted themselves over the past 2 weeks:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>I felt dizzy, lightheaded, or faint when I read or listened to news about the coronavirus</p>",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rare, less than a day or two",
+                        "value": 1
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 2
+                    },
+                    {
+                        "label": "More than 7 days",
+                        "value": 3
+                    },
+                    {
+                        "label": "Nearly every day over the last 2 weeks",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>I had trouble falling or staying asleep because I was thinking about the coronavirus</p>",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rare, less than a day or two",
+                        "value": 1
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 2
+                    },
+                    {
+                        "label": "More than 7 days",
+                        "value": 3
+                    },
+                    {
+                        "label": "Nearly every day over the last 2 weeks",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>I felt paralyzed or frozen when I thought about or was exposed to information about the coronavirus</p>",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rare, less than a day or two",
+                        "value": 1
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 2
+                    },
+                    {
+                        "label": "More than 7 days",
+                        "value": 3
+                    },
+                    {
+                        "label": "Nearly every day over the last 2 weeks",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>I lost interest in eating when I thought about or was exposed to information about the coronavirus</p>",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rare, less than a day or two",
+                        "value": 1
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 2
+                    },
+                    {
+                        "label": "More than 7 days",
+                        "value": 3
+                    },
+                    {
+                        "label": "Nearly every day over the last 2 weeks",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>I felt nauseous or had stomach problems when I thought about or was exposed to information about the coronavirus</p>",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rare, less than a day or two",
+                        "value": 1
+                    },
+                    {
+                        "label": "Several days",
+                        "value": 2
+                    },
+                    {
+                        "label": "More than 7 days",
+                        "value": 3
+                    },
+                    {
+                        "label": "Nearly every day over the last 2 weeks",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Coronavirus Anxiety Scale (CAS), COVID-19, coronavirus, covid-19 anxiety scale, coronavirus anxiety scale, coronavirus anxiety, covid-19 anxiety, covid-19, anxiety scale, anxiety, CAS"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Primary Care"
+        ]
+    }
+}

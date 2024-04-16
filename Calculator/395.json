@@ -1,0 +1,311 @@
+{
+    "id": "395",
+    "title": "Padua Prediction Score for Risk of VTE",
+    "desc": "The Padua Prediction Score is a risk assessment model (RAM) for the identification of patients at risk of VTE.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20738765",
+                "text": "Barbar S, Noventa F, Rossetto V, Ferrari A, Brandolin B, Perlati M, De Bon E, Tormene D, Pagnan A, Prandoni P. A risk assessment model for the identification of hospitalized medical patients at risk for venous thromboembolism: the Padua Prediction Score. J Thromb Haemost. 2010 Nov;8(11):2450-7. doi: 10.1111/j.1538-7836.2010.04044.x."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24226257",
+                "text": "Nendaz M, Spirk D, Kucher N, Aujesky D, Hayoz D, Beer JH, Husmann M, Frauchiger B, Korte W, Wuillemin WA, Jäger K, Righini M, Bounameaux H. Multicentre validation of the Geneva Risk Score for hospitalised medical patients at risk of venous thromboembolism. Explicit ASsessment of Thromboembolic RIsk and Prophylaxis for Medical PATients in SwitzErland (ESTIMATE).Thromb Haemost. 2014 Mar 3;111(3):531-8. doi: 10.1160/TH13-05-0427. Epub 2013 Nov 14."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15758007",
+                "text": "Kucher N, Koo S, Quiroz R, Cooper JM, Paterno MD, Soukonni- kov B, Goldhaber SZ. Electronic alerts to prevent venous thrombo- embolism among hospitalized patients. N Engl J Med 2005; 352: 969–77."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20453069",
+                "text": "Decousus H, Tapson VF, Bergmann JF, et al. Factors at Admission Associated With Bleeding Risk in Medical Patients. Findings From the IMPROVE Investigators. Chest 2011;139(1):69-79"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23279085",
+                "text": "Vardi M, Ghanem-Zoubi NO, Zidan R, Yurin V, Bitterman H. Venous thromboembolism and the utility of the Padua Prediction Score in patients with sepsis admitted to internal medicine departments. J Thromb Haemost. 2013 Mar;11(3):467-73. doi: 10.1111/jth.12108."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24226257",
+                "text": "Nendaz M, Spirk D, Kucher N, et al. Multicentre validation of the Geneva Risk Score for hospitalised medical patients at risk of venous thromboembolism. Explicit Assessment of Thromboembolic RIsk and prophylaxis for Medical PATients in SwitzErland (ESTIMATE). Thromb Haemost 2014;111(3):531-538"
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/34326045/",
+                "text": "Pandor A, Tonkins M, Goodacre S, et al. Risk assessment models for venous thromboembolism in hospitalised adult patients: a systematic review. BMJ Open. 2021;11(7):e045672."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points, as above.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>Padua Score &ge;4 points - Pharmacologic prophylaxis is indicated. If high risk of bleeding, use mechanical prophylaxis.</li>\n<li>Padua Score &lt;4 points - Pharmacologic prophylaxis is <b>not</b> indicated, consider using mechanical prophylaxis.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Extremity Edema",
+            "Extremity Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output=[]; \nvar u=parseFloat(ca)+parseFloat(pvte)+parseFloat(mobile)+parseFloat(thromcon)+parseFloat(ts)+parseFloat(age)+parseFloat(hf)+parseFloat(miis)+parseFloat(inf)+parseFloat(bmi)+parseFloat(hormones); \nvar msg=''; \nvar mini_msg=''; \nif(u<4){\n    msg='Pharmacologic prophylaxis is NOT indicated. Consider using mechanical prophylaxis.';\n    mini_msg='Pharmacologic prophylaxis NOT indicated.'\n} else if(u>=4){\n    msg='Pharmacologic Prophylaxis IS indicated. If high risk of bleeding, use mechanical prophylaxis.';\n    mini_msg='Pharmacologic prophylaxis indicated.'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'2023_Padua Prediction Score_result',\n    value:u,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Active cancer",
+                "md_calc_info_concept": null,
+                "name": "ca",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Previous <abbr title='Venous thromboembolism'>VTE</abbr>",
+                "md_calc_info_concept": null,
+                "name": "pvte",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Excluding superficial vein thrombosis",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Reduced mobility",
+                "md_calc_info_concept": null,
+                "name": "mobile",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Already known thrombophilic condition",
+                "md_calc_info_concept": null,
+                "name": "thromcon",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Recent (&le;1 month) trauma and/or surgery</p>",
+                "md_calc_info_concept": null,
+                "name": "ts",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Elderly age (≥70 years)",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Heart and/or respiratory failure",
+                "md_calc_info_concept": null,
+                "name": "hf",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Acute <abbr title='Myocardial infarction'>MI</abbr> and/or ischemic stroke",
+                "md_calc_info_concept": null,
+                "name": "miis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Acute infection and/or rheumatologic disorder",
+                "md_calc_info_concept": null,
+                "name": "inf",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Obesity (<calculator id='29'>BMI</calculator> ≥30)",
+                "md_calc_info_concept": null,
+                "name": "bmi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Ongoing hormonal treatment",
+                "md_calc_info_concept": null,
+                "name": "hormones",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "VTE",
+            "PE",
+            "DVT",
+            "d-dimer",
+            "cancer",
+            "age",
+            "surgery",
+            "infection"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Hospitalist Medicine"
+        ]
+    }
+}

@@ -1,0 +1,277 @@
+{
+    "id": "232",
+    "title": "Salivary Gland Cancer Model for Survival +/- Postoperative Radiotherapy (PORT)",
+    "desc": "The Salivary Gland Cancer Postoperative Radiotherapy (PORT) Survival Score predicts overall survival with postoperative radiotherapy (PORT) for resected major salivary gland cancers.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.sciencedirect.com/science/article/pii/S1368837522002445",
+                "text": "Jacobs C.D., Barak I., et al. Prediction model to estimate overall survival benefit of postoperative radiotherapy for resected major salivary gland cancers. Oral Oncology. 2022;132:105955"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/1607900/",
+                "text": "Deyo RA, Cherkin DC, Ciol MA. Adapting a clinical comorbidity index for use with ICD-9-CM administrative databases. J Clin Epidemiol. 1992;45(6):613-619."
+            }
+        ],
+        "evidence": "<p>Risk score = (0.04213 x Age) + (0.96094 x PORT) + (0.25494 x Sex) + (0.20225 x Charlson-Deyo score) + (0.37064 x T-Stage) + (0.25776 x Ratio) + (0.28983 x Grade) + (0.23291 x Margin) - (0.32897 x Sublingual) + (0.27892 x Submandibular) - (0.21132 x T-stage/PORT interaction) - (0.01101 x Age/PORT interaction),</p>\n<p>where variables are as follows:</p>\n<table width=\"*\" height=\"*\" style=\"height: 566px;\">\n<tbody>\n<tr style=\"height: 21px;\">\n<td colspan=\"2\" style=\"height: 21px;\"><strong>Variable</strong></td>\n<td style=\"height: 21px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 43px;\">\n<td style=\"height: 43px;\">Age at diagnosis, years</td>\n<td style=\"height: 43px;\"></td>\n<td style=\"height: 43px;\">Continuous</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"height: 42px;\">Sex</td>\n<td style=\"height: 21px;\">Male</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">Female</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"4\" style=\"height: 82px;\">Charlson-Deyo score*</td>\n<td style=\"height: 21px;\">0</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">1</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 19px;\">2</td>\n<td style=\"height: 19px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">&ge;3</td>\n<td style=\"height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"4\" style=\"height: 84px;\">AJCC pathologic&nbsp;T-stage</td>\n<td style=\"height: 21px;\">1</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">2</td>\n<td style=\"height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">3</td>\n<td style=\"height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">4</td>\n<td style=\"height: 21px;\">4</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"4\" style=\"height: 84px;\">Ratio&nbsp;of nodal positivity</td>\n<td style=\"height: 21px;\">0%</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">0.1-10%</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">10.1-49.9%</td>\n<td style=\"height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">&ge;50%</td>\n<td style=\"height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"3\" style=\"height: 63px;\">Grade</td>\n<td style=\"height: 21px;\">Low</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">Intermediate</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">High</td>\n<td style=\"height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"height: 42px;\">Surgical&nbsp;margin</td>\n<td style=\"height: 21px;\">Negative</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">Positive</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 63px;\" rowspan=\"3\">Primary&nbsp;site</td>\n<td style=\"height: 21px;\">Sublingual</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">Submandibular</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">Parotid</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"height: 42px;\">Postoperative radiotherapy (PORT)</td>\n<td style=\"height: 21px;\">Yes</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">No</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n</tbody>\n</table>\n<p><strong>*Charlson-Deyo Score:</strong></p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 59.7642%; height: 675px;\">\n<tbody>\n<tr style=\"height: 21px;\">\n<td style=\"width: 78.9413%; height: 21px;\" colspan=\"2\"><strong>Variable</strong></td>\n<td style=\"width: 16.8646%; height: 21px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Myocardial infarction</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Congestive heart failure</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Peripheral vascular disease</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Cerebrovascular</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Dementia</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Chronic pulmonary disease</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 24px;\">\n<td style=\"width: 47.7733%; height: 45px;\" rowspan=\"2\">Rheumatologic disease</td>\n<td style=\"width: 31.168%; height: 24px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 24px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Peptic ulcer disease</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Mild liver disease</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Diabetes</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 43px;\">\n<td style=\"width: 47.7733%; height: 64px;\" rowspan=\"2\">Diabetes with chronic complications</td>\n<td style=\"width: 31.168%; height: 43px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 43px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Hemiplegia or paraplegia</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">Renal disease</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 20px;\">\n<td style=\"width: 47.7733%; height: 41px;\" rowspan=\"2\">Moderate or severe liver disease</td>\n<td style=\"width: 31.168%; height: 20px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 20px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 47.7733%; height: 42px;\" rowspan=\"2\">AIDS</td>\n<td style=\"width: 31.168%; height: 21px;\">Yes</td>\n<td style=\"width: 16.8646%; height: 21px;\">6</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.168%; height: 21px;\">No</td>\n<td style=\"width: 16.8646%; height: 21px;\">0</td>\n</tr>\n</tbody>\n</table>\n<p>From <a href=\"https://pubmed.ncbi.nlm.nih.gov/1607900/\" target=\"_blank\" rel=\"noopener\">Deyo 1992.</a></p>",
+        "facts": "<p>Overall survival based on risk score and time from diagnosis.</p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/content/salivary_gland.png\" width=\"100%\"></p>\n<p>From <a href=\"https://www.redjournal.org/article/S0360-3016(19)31062-4/fulltext\" target=\"_blank\" rel=\"noopener\">Jacobs 2019.</a></p>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Mass",
+            "Swelling"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Salivary Gland Cancer"
+        ],
+        "logic": "var calc_output=[];\n\nvar tstage_port = (parseFloat(five))*(parseFloat(two));\nvar age_port = (parseFloat(one))*(parseFloat(two));\n\nif (parseFloat(nine)==1){\n  var sublingual = 1;\n}\nelse{\n  var sublingual = 0;\n}\n\nif (parseFloat(nine)==2){\n  var submandibular = 1;\n}\nelse{\n  var submandibular = 0;\n}\n\nvar points = parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(five)+parseFloat(six)+parseFloat(seven)+parseFloat(eight)+parseFloat(nine);\n    \nvar risk = (0.04213*parseFloat(one))+(0.96094*parseFloat(two))+(0.25494*parseFloat(three))+(0.20225*parseFloat(four))+(0.37064*parseFloat(five))+(0.25776*parseFloat(six))+(0.28983*parseFloat(seven))+(0.23291*parseFloat(eight))-(0.32897*sublingual)+(0.27892*submandibular)-(0.21132*tstage_port)-(0.01101*age_port);\n\nvar year2 = (Math.pow(0.9965860944,Math.exp(risk))*100).toFixed(1);\nvar year5 = (Math.pow(0.9916142185,Math.exp(risk))*100).toFixed(1);\nvar year2min = (Math.pow(0.9952646729,Math.exp(risk))*100).toFixed(1);\nvar year2max = (Math.pow(0.9979092704,Math.exp(risk))*100).toFixed(1);\nvar year5min = (Math.pow(0.9884122113,Math.exp(risk))*100).toFixed(1);\nvar year5max = (Math.pow(0.9948265987,Math.exp(risk))*100).toFixed(1);\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: year2,\n    value_text: '%',\n    message: 'Estimated 2-year survival</br>(95% CI, '+year2min+'-'+year2max+'%)'\n});\ncalc_output.push({\n    name: 'survival2',\n    value: year2,\n    value_text: '%',\n    message: 'Estimated 2-year survival</br>(95% CI, '+year2min+'-'+year2max+'%)'  \n    });\ncalc_output.push({\n    name: 'survival5',\n    value: year5, \n    value_text: '%',\n    message: 'Estimated 5-year survival</br>(95% CI, '+year5min+'-'+year5max+'%)'\n    });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age at diagnosis</p>",
+                "name": "one",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "mdcalc_info_concept": null,
+                "name": "three",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Charlson-Deyo score</p>",
+                "mdcalc_info_concept": null,
+                "name": "four",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥3",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "See <a href=\"#evidence\">Evidence</a> for full score",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>AJCC pathologic T-stage</p>",
+                "mdcalc_info_concept": null,
+                "name": "five",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Ratio of nodal positivity</p>",
+                "mdcalc_info_concept": null,
+                "name": "six",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0%",
+                        "value": 0
+                    },
+                    {
+                        "label": "0.1-10%",
+                        "value": 1
+                    },
+                    {
+                        "label": "10.1-49.9%",
+                        "value": 2
+                    },
+                    {
+                        "label": "≥50%",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Grade</p>",
+                "mdcalc_info_concept": null,
+                "name": "seven",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Low",
+                        "value": 0
+                    },
+                    {
+                        "label": "Intermediate",
+                        "value": 1
+                    },
+                    {
+                        "label": "High",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Surgical margin</p>",
+                "mdcalc_info_concept": null,
+                "name": "eight",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Negative",
+                        "value": 0
+                    },
+                    {
+                        "label": "Positive",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Primary site</p>",
+                "mdcalc_info_concept": null,
+                "name": "nine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Sublingual",
+                        "value": 1
+                    },
+                    {
+                        "label": "Submandibular",
+                        "value": 2
+                    },
+                    {
+                        "label": "Parotid",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Postoperative radiotherapy (PORT)</p>",
+                "mdcalc_info_concept": null,
+                "name": "two",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Salivary Gland Cancer Postoperative Radiotherapy (PORT) Survival Score, Salivary Gland Cancer PORT Survival, salivary gland cancer, SG cancer, salivary gland cancer survival, sg port survival, salivary gland port survival, salivary gland cancer, salivary gland cancer radiotherapy, cancer radiotherapy"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Otolaryngology",
+            "Radiation Oncology"
+        ]
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "id": "120",
+    "title": "RAPID Score for Acetabular Chondrolabral Disruption",
+    "desc": "The RAPID Score for Acetabular Chondrolabral Disruption predicts probability of finding high-grade cartilage damage intraoperatively.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/30302348",
+                "text": "Hevesi M, Hartigan DE, Wu IT, et al. The Rapidly Assessed Predictor of Intraoperative Damage (RAPID) Score: An In-Clinic Predictive Model for High-Grade Acetabular Chondrolabral Disruption. Orthop J Sports Med. 2018;6(10):2325967118799068."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<table><colgroup><col width=\"*\" /><col width=\"138\" /><col width=\"160\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Sex</p>\n</td>\n<td>\n<p dir=\"ltr\">Female</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Male</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">T&ouml;nnis Grade*</p>\n</td>\n<td>\n<p dir=\"ltr\">Grade 0: No signs of osteoarthritis</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Grade 1: Increased sclerosis of the head and acetabulum, slight narrowing of the joint space, and slight lipping at the joint margins</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Grade 2: Small cysts in the head or acetabulum, increased narrowing of the joint space, and moderate loss of sphericity of the head</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Cam morphology&nbsp;(alpha angle &gt;55&deg;)</p>\n</td>\n<td>\n<p dir=\"ltr\">Not present</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Present</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*T&ouml;nnis grade 3 is an absolute contraindication to hip arthroscopy.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>RAPID Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of high-grade delamination</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n<td>\n<p dir=\"ltr\">10.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n<td>\n<p dir=\"ltr\">27.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">36.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">45.9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">73.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">88.0%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-50a4b418-7fff-739c-0086-63f510bda0d0\"><span id=\"docs-internal-guid-50a4b418-7fff-739c-0086-63f510bda0d0\">&nbsp;</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chronic Pain",
+            "Injury/Trauma",
+            "Pain"
+        ],
+        "disease_treated": [
+            "Fracture"
+        ],
+        "logic": "var calc_output = [];\nvar cam = parseFloat(cam);\nvar grade = parseFloat(grade);\nvar sex = parseFloat(sex);\n\nvar score = cam + grade + sex;\n\nvar risk = ['10.5',\n'27.0',\n'36.6',\n'45.9',\n'73.7',\n'88.0'];\n\nrisk = risk[score];\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + '% risk of high-grade delamination'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'RAPID Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: '%',\n    message: 'Risk of high-grade delamination'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tönnis classification",
+                "name": "grade",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Grade 0: No signs of osteoarthritis",
+                        "value": 0
+                    },
+                    {
+                        "label": "Grade 1: Increased sclerosis of the head and acetabulum, slight narrowing of the joint space, and slight lipping at the joint margins",
+                        "value": 2
+                    },
+                    {
+                        "label": "Grade 2: Small cysts in the head or acetabulum, increased narrowing of the joint space, and moderate loss of sphericity of the head",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Tönnis grade 3 is an absolute contraindication to hip arthroscopy",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cam morphology",
+                "name": "cam",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not present",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Alpha angle >55°",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Rapid",
+            "hip",
+            "rapid score",
+            "rapid score for acetabular chondrolabral disruption",
+            "cartilage damage",
+            "cartilage",
+            "acetabular chondrolabral disruption",
+            "high grade",
+            "high grade cartilage damage",
+            "tonnis classification",
+            "cam morphology"
+        ],
+        "specialty": [
+            "Orthopedics",
+            "Sports Medicine"
+        ]
+    }
+}

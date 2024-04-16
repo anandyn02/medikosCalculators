@@ -1,0 +1,282 @@
+{
+    "id": "328",
+    "title": "Systematic Coronary Risk Evaluation 2-Older Persons (SCORE2-OP)",
+    "desc": "SCORE2-Older Persons (SCORE2-OP) predicts 10-year CVD risk in older patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/34120185/",
+                "text": "SCORE2-OP working group and ESC Cardiovascular risk collaboration. SCORE2-OP risk prediction algorithms: estimating incident cardiovascular event risk in older persons in four geographical risk regions. Eur Heart J. 2021;42(25):2455-2467."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The model coefficients, baseline survival, and mean linear predictor to calculate 10-year risk of CVD are as follows:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 99.8773%;\"><colgroup><col width=\"102\" style=\"width: 27.2413%;\"><col width=\"143\" style=\"width: 36.7808%;\"><col width=\"104\" style=\"width: 17.9066%;\"><col width=\"99\" style=\"width: 17.9066%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Risk Factor</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Transformation</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Male</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Female</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Age, years</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>cage = age &ndash; 73</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.0634</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.0789</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Diabetes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>yes = 1, no = 0</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.4245</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.6010</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Smoking</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>current = 1, other = 0</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.3524</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.4921</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>SBP, mm Hg</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>csbp = sbp &ndash; 150</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.0094</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.0102</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Total cholesterol, mmol/L</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>ctchol = tchol &ndash; 6</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.0850</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.0605</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>HDL cholesterol, mmol/L</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>chdl = hdl &ndash; 1.4</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.3564</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.3040</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Diabetes*age interaction</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>diabetes*cage</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.0174</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.0107</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Smoking*age interaction</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>smoking*cage</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.0247</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.0255</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>SBP*age interaction</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>csbp*cage</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.0005</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.0004</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Total cholesterol*age interaction</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>ctchol*cage</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.0073</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.0009</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>HDL cholesterol*age interaction</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>chdl*cage</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.0091</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.0154</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Baseline survival</strong></p>\n</td>\n<td></td>\n<td>\n<p dir=\"ltr\"><strong>0.7576</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>0.8082</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Mean linear predictor (MLP)</strong></p>\n</td>\n<td></td>\n<td>\n<p dir=\"ltr\"><strong>0.0929</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>0.2290</strong></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span>The 10-year risk of CVD is calculated by the following:</span></p>\n<p dir=\"ltr\"><span><strong>10-year risk</strong> = 1 &ndash; (baseline survival)</span><sup><span>exp(x &ndash; MLP)</span></sup><span>,</span><b></b></p>\n<p dir=\"ltr\"><span>where <strong>x</strong> = &Sigma;[&beta;*(transformed variables)]</span><b></b></p>\n<p dir=\"ltr\"><span>The region and sex-specific scales to calculate calibrated 10-year risk are as follows:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col width=\"114\"><col width=\"85\"><col width=\"86\"><col width=\"84\"><col width=\"76\"></colgroup>\n<tbody>\n<tr>\n<td></td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Male</strong></p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Female</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Risk Region</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Scale 1</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Scale 2</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Scale 1</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Scale 2</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Low</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.34</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1.19</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.52</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1.01</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Moderate</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.01</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1.25</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>-0.10</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1.10</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>High</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.08</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1.15</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.38</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1.09</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Very high</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.05</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.70</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.38</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0.69</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span>The calibrated 10-year risk of CVD is calculated by the following:</span><b></b></p>\n<p dir=\"ltr\"><span><strong>Calibrated 10-year risk, %</strong> = [1 &ndash; exp(-exp(scale1 + scale2*ln(-ln(1 &ndash; 10-year risk))))]*100</span></p>",
+        "facts": "<p>Risk regions are defined by the following map:</p>\n<p><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/score2.png\" width=\"100%\"></p>\n<p dir=\"ltr\"><span>From </span><a href=\"https://pubmed.ncbi.nlm.nih.gov/34120185/\" target=\"_blank\" rel=\"noopener\"><span>SCORE2 Working Group 2021</span></a><span>.</span></p>",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Total Cholesterol",
+                "unit": "chol_total",
+                "error_min": "100",
+                "error_max": "1000",
+                "warn_min": "150",
+                "warn_max": "500",
+                "conversion": "0.02586",
+                "normal_max_si": "5.2",
+                "normal_max_us": "200",
+                "normal_min_si": "3.9",
+                "normal_min_us": "150",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "HDL Cholesterol",
+                "unit": "chol_hdl",
+                "error_min": "1",
+                "error_max": "150",
+                "warn_min": "1",
+                "warn_max": "95",
+                "conversion": "0.02586",
+                "normal_max_si": "1.55",
+                "normal_max_us": "60",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Age (SCORE2-OP)",
+                "unit": "age_score2_op",
+                "error_min": "70",
+                "error_max": "110",
+                "warn_min": "70",
+                "warn_max": "110",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Arrhythmia",
+            "Chest Pain",
+            "Cough",
+            "Dizziness",
+            "Fatigue",
+            "Headache",
+            "Nausea",
+            "Numbness",
+            "Shortness of Breath",
+            "Swelling",
+            "Vertigo",
+            "Weakness",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "CHF",
+            "Congestive Heart Failure",
+            "Heart Failure",
+            "Myocardial Infarction",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar sex = parseFloat(sex);\nvar age = parseFloat(age);\nvar diabetes = parseFloat(diabetes);\nvar smoking = parseFloat(smoking);\nvar sbp = parseFloat(sbp);\n\nif (UOMSYSTEM == true) {\n    var tc = parseFloat(tc)*0.02586;\n    var hdl = parseFloat(hdl)*0.02586;\n} else if (UOMSYSTEM == false) {\n    var tc = parseFloat(tc);\n    var hdl = parseFloat(hdl);\n}\n\nvar region = parseFloat(region);\n\nvar cage = age - 73;\nvar csbp = sbp - 150\nvar ctc = tc - 6;\nvar chdl = hdl - 1.4;\nvar diabetes_age = diabetes*cage;\nvar smoking_age = smoking*cage;\nvar sbp_age = csbp*cage;\nvar tc_age = ctc*cage;\nvar hdl_age = chdl*cage;\n\nvar x;\nvar risk_10;\n\nif (sex == 0) {\n    x = 0.0634*cage + 0.4245*diabetes + 0.3524*smoking + 0.0094*csbp + 0.085*ctc - 0.3564*chdl - 0.0174*diabetes_age - 0.0247*smoking_age - 0.0005*sbp_age + 0.0073*tc_age + 0.0091*hdl_age;\n    risk_10 = 1 - Math.pow(0.7576, Math.exp(x - 0.0929));\n} else {\n    x = 0.0789*cage + 0.601*diabetes + 0.4921*smoking + 0.0102*csbp + 0.0605*ctc - 0.304*chdl - 0.0107*diabetes_age - 0.0255*smoking_age - 0.0004*sbp_age - 0.0009*tc_age + 0.0154*hdl_age;\n    risk_10 = 1 - Math.pow(0.8082, Math.exp(x - 0.229));\n}\n\nvar scale1;\nvar scale2;\nif (region == 1) {\n    if (sex == 0) {\n        scale1 = -0.34;\n        scale2 = 1.19;\n    } else {\n        scale1 = -0.52;\n        scale2 = 1.01;\n    }\n} else if (region == 2) {\n    if (sex == 0) {\n        scale1 = 0.01;\n        scale2 = 1.25;\n    } else {\n        scale1 = -0.10;\n        scale2 = 1.10;\n    }\n} else if (region == 3) {\n    if (sex == 0) {\n        scale1 = 0.08;\n        scale2 = 1.15;\n    } else {\n        scale1 = 0.38;\n        scale2 = 1.09;\n    }\n} else if (region == 4) {\n    if (sex == 0) {\n        scale1 = 0.05;\n        scale2 = 0.70;\n    } else {\n        scale1 = 0.38;\n        scale2 = 0.69;\n    }\n}\n\nvar c_risk = [1 - Math.exp(-Math.exp(scale1 + scale2*Math.log(-Math.log(1 - risk_10))))]*100\n\ncalc_output.push({\n    name: 'mini',\n    value: (c_risk*100).toFixed(1),\n    value_text: '%',\n    message: '10-year risk of CVD'\n});  \ncalc_output.push({\n    name: '10499_SCORE2-OP_result',\n    value: c_risk.toFixed(1),\n    value_text: '%',\n    message: '10-year risk of CVD'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "mdcalc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_score2_op"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Diabetes</p>",
+                "mdcalc_info_concept": null,
+                "name": "diabetes",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Smoking</p>",
+                "mdcalc_info_concept": null,
+                "name": "smoking",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Other",
+                        "value": 0
+                    },
+                    {
+                        "label": "Current",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>SBP</p>",
+                "name": "sbp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Total cholesterol</p>",
+                "name": "tc",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "chol_total"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>HDL cholesterol</p>",
+                "name": "hdl",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "chol_hdl"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Risk region</p>",
+                "mdcalc_info_concept": null,
+                "name": "region",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Low",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "High",
+                        "value": 3
+                    },
+                    {
+                        "label": "Very high",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "See <a href='#evidence'>Evidence</a> for definition of risk regions.",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Systematic Coronary Risk Evaluation 2",
+            "Score2",
+            "score 2",
+            "score-2",
+            "heart disease",
+            "cvd",
+            "cvd risk",
+            "cardiovascular disease",
+            "cardiovascular disease risk",
+            "heart failure",
+            "heart failure risk",
+            "coronary heart disease",
+            "coronary heart disease risk",
+            "chd",
+            "chd risk",
+            "hf",
+            "hf risk",
+            "stroke",
+            "stroke risk",
+            "score2-op",
+            "score2 op",
+            "score2 - op",
+            "score2-older persons",
+            "score2 - older persons"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

@@ -1,0 +1,203 @@
+{
+    "id": "419",
+    "title": "Acute Gout Diagnosis Rule",
+    "desc": "The Acute Gout Diagnosis Rule determines which patients are at high risk for gout and should undergo further testing with joint fluid aspiration.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://archinte.jamanetwork.com/article.aspx?articleid=225738",
+                "text": "Janssens HM, Fransen J, van de Lisdonk EH, van Riel PM, van Weel C, Janssen M. A Diagnostic Rule for Acute Gouty Arthritis in Primary Care Without Joint Fluid Analysis.Arch Intern Med. 2010;170(13):1120-1126. doi:10.1001/archinternmed.2010.196."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of selected points, see below.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Score</th>\n<th>Prevalence of gout</th>\n</tr>\n<tr>\n<td>&le;4 points</td>\n<td>2.2%</td>\n</tr>\n<tr>\n<td>&gt;4 and &lt;8 points</td>\n<td>31.2%</td>\n</tr>\n<tr>\n<td>&ge;8 points</td>\n<td>80.4%</td>\n</tr>\n</tbody>\n</table>\n<p>Midrange scores (&gt;4 to &lt;8) are unable to rule out or rule in gout diagnosis. Further laboratory testing is suggested by the original study, using analysis of synovial fluid from the affected joint for the presence of monosodium urate (MSU) crystals.</p>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Joint Pain"
+        ],
+        "disease_treated": [
+            "Gout"
+        ],
+        "logic": "var calc_output = [];\n\nvar male, attack, onset, red, mtp, cvd, uric;\nmale = parseFloat(male);\nattack = parseFloat(attack);\nonset = parseFloat(onset);\nred = parseFloat(red);\nmtp = parseFloat(mtp);\ncvd = parseFloat(cvd);\nuric = parseFloat(uric);\n\nvar u = male + attack + onset + red + mtp + cvd + uric;\nvar msg = '';\nvar mini_msg = '';\nif (u <= 4) { mini_msg = '2.2% prevalence of gout in original study.'; msg='Gout unlikely and other diagnoses should be considered.'; }\nif (u > 4 && u < 8) { mini_msg = '31.2% prevalence of gout'; msg='Scores from >4 and <8 are equivocal. These patients often benefit the most from synovial fluid analysis for crystals.'; }\nif (u >= 8) { mini_msg = '82.5% prevalence of gout in original study.'; msg='Gout is very likely.'; }\n\ncalc_output.push({ \n    name: 'mini', \n    value: u, \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '2175_Acute Gout Diagnosis Rule_result',\n    value: u, \n    value_text: 'points', \n    message: mini_msg+'<br/><br/>'+msg \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Male sex",
+                "md_calc_info_concept": null,
+                "name": "male",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Previous patient-reported arthritis attack",
+                "md_calc_info_concept": null,
+                "name": "attack",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Onset within 1 day",
+                "md_calc_info_concept": null,
+                "name": "onset",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Joint redness",
+                "md_calc_info_concept": null,
+                "name": "red",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "1st metatarsophalangeal joint involvement",
+                "md_calc_info_concept": null,
+                "name": "mtp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Hypertension or ≥1 cardiac diseases",
+                "md_calc_info_concept": null,
+                "name": "cvd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Angina, MI, CHF, Stroke/TIA, PVD",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Serum uric acid > 5.88 mg/dL (0.35 mmol/L)",
+                "md_calc_info_concept": null,
+                "name": "uric",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "gout",
+            "arthritis",
+            "septic joint",
+            "fluid",
+            "aspiration",
+            "mtp",
+            "janssen",
+            "jansen"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Internal Medicine",
+            "Orthopedics",
+            "Primary Care",
+            "Rheumatology"
+        ]
+    }
+}

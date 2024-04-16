@@ -1,0 +1,193 @@
+{
+    "id": "436",
+    "title": "A-a O<sub>2</sub> Gradient",
+    "desc": "The A-a O2 Gradient assesses for degree of shunting and V/Q mismatch.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/436542",
+                "text": "Helmholz HF Jr. The abbreviated alveolar air equation. Chest. 1979 Jun;75(6):748"
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>A-a O<sub>2</sub> Gradient = [ (FiO<sub>2</sub>) &times; (Atmospheric Pressure - H<sub>2</sub>O Pressure) - (PaCO<sub>2</sub>/0.8) ] &ndash; PaO<sub>2</sub> from ABG</p>\n<p>H<sub>2</sub>O pressure = 47 mmHg</p>\n<p>Normal Gradient Estimate = (Age/4) + 4</p>",
+        "facts": "<p><strong>The 5 Causes of Hypoxemia</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th></th>\n<th>Causes of Hypoxemia</th>\n<th>A-a O<sub>2</sub> Gradient Shift</th>\n</tr>\n<tr>\n<td>1</td>\n<td>V/Q Mismatch (ex: PNA, CHF, PE, ARDS, atelectasis, etc)</td>\n<td>Elevation</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Shunt (ex: PFO, ASD, pulmonary AVMs)</td>\n<td>Elevation</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Alveolar Hypoventilation (ex: interstitial lung dz, environmental lung dz, PCP PNA)</td>\n<td>Elevation</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Hypoventilation (ex: COPD, CNS d/o, neuromuscular dz, etc)</td>\n<td>Depression</td>\n</tr>\n<tr>\n<td>5</td>\n<td>High altitude</td>\n<td>Depression</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Atmospheric Pressure",
+                "unit": "atm",
+                "error_min": "250",
+                "error_max": "800",
+                "warn_min": "500",
+                "warn_max": "762",
+                "conversion": "0.133",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "kPa",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Partial Pressure of CO2",
+                "unit": "paco2",
+                "error_min": "1",
+                "error_max": "150",
+                "warn_min": "10",
+                "warn_max": "60",
+                "conversion": "0.133",
+                "normal_max_si": "5.586",
+                "normal_max_us": "42",
+                "normal_min_si": "5.054",
+                "normal_min_us": "38",
+                "units_si": "kPa",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Partial Pressure of Oxygen",
+                "unit": "pao2",
+                "error_min": "1",
+                "error_max": "650",
+                "warn_min": "10",
+                "warn_max": "600",
+                "conversion": "0.133",
+                "normal_max_si": "13.3",
+                "normal_max_us": "100",
+                "normal_min_si": "10",
+                "normal_min_us": "75",
+                "units_si": "kPa",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Fraction of Inhaled O2",
+                "unit": "fio2",
+                "error_min": "10",
+                "error_max": "100.01",
+                "warn_min": "20",
+                "warn_max": "100.001",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Cough",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "CHF",
+            "COPD",
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia",
+            "Pulmonary Embolism",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output = [];\nvar units_res1, units_res2, u, v;\n\n\nif (UOMSYSTEM == true) { // US units, so let'em through\n  var atm = parseFloat(atmospheric_pressure);\n  var paco2 = parseFloat(paco2);\n  var pao2 = parseFloat(pao2);\n  var units_res1 = \"mm Hg\";\n}\n\nif (UOMSYSTEM == false) { // convert these guys to US units\n  var atm = parseFloat(atmospheric_pressure) / 0.133;\n  var paco2 = parseFloat(paco2) / 0.133;\n  var pao2 = parseFloat(pao2) / 0.133;\n  var units_res1 = \"kPa\";\n}\n\n// now we're in US units. let's make some helper vars so the math doesn't screw us up\n\nvar fio2 = parseFloat(fio2) / 100; // turn into a % regardless of unit\nvar h2o = 47; // water vapor's partial pressure in mmHg, which is fine bc we've already converted to US units above\nvar atm_h2o = atm - h2o;\nvar paco2_r = paco2 / 0.8;\nvar v = ((fio2 * atm_h2o) - paco2_r) - pao2;\n\nif (UOMSYSTEM == false) { // convert v back to kPa of course!\n  v = v * 0.133;\n}\n\n// We can keep these without making unit swaps bc we defined units above!\n\ncalc_output.push({\n  name: 'mini',\n  value: v.toFixed(1),\n  value_text: units_res1,\n  message: 'A-a Gradient'\n});\ncalc_output.push({\n  name: '243_A-a Gradient_result (gradient)',\n  value: v.toFixed(1),\n  value_text: units_res1,\n  message: 'A-a Gradient'\n});\n\n\nvar age = parseFloat(age);\n\nif (age == ' ' || age == 'null' || age == 'undefined' || age == 0 || age == '') {\n\n} else {\n\n  var u = 0;\n  u = ((age / 4) + 4); // this is the expected a-a grad for age in mm Hg\n\n  if (UOMSYSTEM == false) {\n    u = u * 0.133;\n  }\n  calc_output.push({\n    name: '243_A-a Gradient_result (expected)',\n    value: u.toFixed(1),\n    value_text: units_res1,\n    message: 'Expected A-a Gradient for Age'\n  });\n}\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Atmospheric pressure</p>",
+                "name": "atmospheric_pressure",
+                "optional": false,
+                "tips_en": "Use 760 mm Hg (101.33 kPa) at sea level",
+                "type": "textbox",
+                "unit": "atm"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>PaO₂</p>",
+                "name": "pao2",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "pao2"
+            },
+            {
+                "conditionality": "",
+                "default": 21,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>FiO₂</p>",
+                "name": "fio2",
+                "optional": false,
+                "tips_en": "Use 21% for room air",
+                "type": "textbox",
+                "unit": "fio2"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>PaCO₂</p>",
+                "name": "paco2",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "paco2"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age (for expected A-a gradient)</p>",
+                "name": "age",
+                "optional": true,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            }
+        ],
+        "can_search": [
+            "intubation",
+            "abg",
+            "aa",
+            "aaa",
+            "alveolar",
+            "PO2",
+            "PaO2",
+            "FiO2",
+            "alveolar gas",
+            "covid",
+            "covid-19",
+            "coronavirus"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "OB-Gyn",
+            "Pulmonology",
+            "Surgery (General)"
+        ]
+    }
+}

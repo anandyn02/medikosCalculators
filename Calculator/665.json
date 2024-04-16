@@ -1,0 +1,86 @@
+{
+    "id": "665",
+    "title": "Los Angeles (LA) Grading of Esophagitis",
+    "desc": "The LA Grading of Esophagitis stratifies severity of esophagitis based on endoscopic findings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8698230 ",
+                "text": "Armstrong D, Bennett JR, Blum AL, et al. The endoscopic assessment of esophagitis: a progress report on observer agreement. Gastroenterology. 1996;111(1):85-92."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.giejournal.org/article/S0016-5107(04)01555-X/abstract",
+                "text": "Nayar DS, Vaezi MF. Classifications of esophagitis: who needs them?. Gastrointest Endosc. 2004;60(2):253-7."
+            }
+        ],
+        "evidence": "<p>Selection of the appropriate criteria:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Features</strong></p>\n</td>\n<td>\n<p><strong>Grade</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Mucosal break(s) &le;5 mm, without continuity across mucosal folds</p>\n</td>\n<td>\n<p>A</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Mucosal break(s) &gt;5 mm, without continuity across mucosal folds</p>\n</td>\n<td>\n<p>B</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Mucosal break(s) continuous between &ge;2 mucosal folds, involving &lt;75% of the esophageal circumference</p>\n</td>\n<td>\n<p>C</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Mucosal break(s) involving &ge;75% of the esophageal circumference</p>\n</td>\n<td>\n<p>D</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/la-grading.png\" alt=\"\"></p>\n<p>From <a href=\"https://www.giejournal.org/article/S0016-5107(04)01555-X/abstract\" target=\"_blank\" rel=\"noopener\">Nayar 2004</a>.</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Grade</strong></p>\n</td>\n<td>\n<p><strong>Severity</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>A-B</p>\n</td>\n<td>\n<p>Mild reflux esophagitis</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>C-D</p>\n</td>\n<td>\n<p>Severe reflux esophagitis</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Gastroesophageal Reflux Disease",
+            "GERD"
+        ],
+        "logic": "var calc_output = [];\n\n// Declare vars\n\nvar grade;\nvar findings;\nvar description; \nfindings = parseFloat(findings);\n\nif (findings == 0) {\n    grade = 'Grade A',\n    description = 'Mild'\n}\nif (findings == 1) {\n   grade = 'Grade B',\n   description = 'Mild'\n}\nif (findings == 2){\n   grade = 'Grade C',\n   description = 'Severe'\n}\nif (findings == 3) {\n   grade = 'Grade D',\n   description = 'Severe'\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: grade,\n   value_text: '',\n   message: description\n});\ncalc_output.push({\n   name: 'result',\n   value: grade,\n   value_text: '',\n   message: 'LA Grading of Esophagitis'\n});\ncalc_output.push({\n   name: 'result',\n   value: description,\n   value_text: 'reflux esophagitis',\n   message: ''\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Endoscopic findings",
+                "mdcalc_info_concept": null,
+                "name": "findings",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Mucosal break(s) ≤5 mm, without continuity across mucosal folds",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mucosal break(s) >5 mm, without continuity across mucosal folds",
+                        "value": 1
+                    },
+                    {
+                        "label": "Mucosal break(s) continuous between ≥2 mucosal folds, involving <75% of the esophageal circumference",
+                        "value": 2
+                    },
+                    {
+                        "label": "Mucosal break(s) involving ≥75% of the esophageal circumference",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "gastroesophageal reflux disease",
+            "acid reflux",
+            "GERD",
+            "Los Angeles Classification of esophagitis",
+            "upper gastrointestinal endoscopy",
+            "GI endoscopy",
+            "esophagitis grading",
+            "esophageal mucosa grading",
+            "LA classification",
+            "standard endoscopy",
+            "reflux esophagitis",
+            "RO",
+            "high-grade esophagitis",
+            "low-grade esophagitis",
+            "erosive reflux disease",
+            "reflux oesophagitis",
+            "oesophagitis severity",
+            "la grading"
+        ],
+        "specialty": [
+            "Gastroenterology"
+        ]
+    }
+}

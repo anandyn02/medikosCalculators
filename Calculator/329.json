@@ -1,0 +1,269 @@
+{
+    "id": "329",
+    "title": "SIRS, Sepsis, and Septic Shock Criteria",
+    "desc": "The SIRS, Sepsis, and Septic Shock Criteria defines the severity of sepsis and septic shock.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://content.guidelinecentral.com/guideline/get/pdf/3525",
+                "text": "International Guidelines for Management of Severe Sepsis and Septic Shock: 2012"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1303622",
+                "text": "Bone RC, Balk RA, Cerra FB, Dellinger RP, Fein AM, Knaus WA, Schein RM, Sibbald WJ. Definitions for sepsis and organ failure and guidelines for the use of innovative therapies in sepsis. The ACCP/SCCM Consensus Conference Committee. American College of Chest Physicians/Society of Critical Care Medicine.Chest. 1992 Jun;101(6):1644-55."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.icnarc.org/DataServices/Attachments/Download/3d1bc8e1-1ed1-e311-a997-d48564544b14",
+                "text": "Surviving Sepsis Campaign Responds to ProCESS Trial."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12682500",
+                "text": "Levy MM, Fink MP, Marshall JC, et al. 2001 SCCM/ESICM/ACCP/ATS/SIS International Sepsis Definitions Conference. Crit Care Med. 2003;31(4):1250–1256."
+            }
+        ],
+        "evidence": "<p>Series of Yes/No questions.</p>",
+        "facts": "<ul>\n<li>SIRS - 2 YES answers meets criteria.</li>\n<li>Sepsis Criteria - 2 YES of SIRS + Suspected Source of Infection.</li>\n<li>Severe Sepsis Criteria - 2 YES of SIRS + Lactic Acidosis, SBP.</li>\n<li>Multiple Organ Dysfunction Syndrome - 2 YES of SIRS + Evidence of &ge; 2 Organs Failing.</li>\n</ul>\n<p>Check with your own hospital for its sepsis guidelines, sepsis 'bundle' or sepsis algorithm. Two excellent sepsis references (<a href=\"https://emcrit.org/severe-sepsis-resources/\" target=\"_blank\" rel=\"noopener\">1</a>, <a href=\"https://crashingpatient.com/wp-content/pdf/Loma%20Linda%20STOP%20Sepsis%20Bundle.pdf\" target=\"_blank\" rel=\"noopener\">2</a>) come from the <a href=\"https://emcrit.org/\" target=\"_blank\" rel=\"noopener\">EMCrit</a> website.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Fever"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Sepsis"
+        ],
+        "logic": "var calc_output=[];\nvar mini_msg=''; \nvar msgadd='';\nvar msg='';\n\nif(parseFloat(temperature)+parseFloat(heart_rate)+parseFloat(respiratory_rate)+parseFloat(white_blood_cell_count)>=2){\n  mini_msg='Meets SIRS criteria'; \n  msg='This patient meets SIRS criteria.';\n  if(parseFloat(infection)==1){\n    mini_msg='Meets sepsis criteria'; \n    msg='This patient meets sepsis criteria.';\n    msgadd=' Follow your guidelines for sepsis, which typically include aggressive fluid resuscitation, early, broad-spectrum antibiotics, ICU consultation, CVP evaluation, and occasionally pressors and transfusion.';}\n  if(parseFloat(lactic_acidosis)==1){\n    mini_msg='Severe sepsis'; \n    msg='This patient meets severe sepsis criteria.';\n  }\n  if(parseFloat(severe_sepsis)==1){\n    mini_msg='Septic shock'; \n    msg='This patient meets septic shock criteria.';\n  }if(parseFloat(organ_failure)==1){\n    mini_msg='Multi-organ dysfunction'; \n    msg='This patient meets multiple organ dysfunction syndrome.';\n}}\nelse{\n  mini_msg='Does not meet SIRS'; \n  msg='This patient does not meet SIRS criteria. For other causes of shock, see the Next Steps section.';\n}\n\nmsg+=msgadd; \n\ncalc_output.push({\n  name:'mini',\n  value:' ',\n  value_text:' ',\n  message:mini_msg\n});\ncalc_output.push({\n  name:'1096_SIRS & Sepsis Criteria_result',\n  value:' ',\n  value_text:' ',\n  message:msg\n}); \n",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "SIRS Criteria (≥2 meets SIRS definition)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Temp &gt;38&deg;C (100.4&deg;F) or &lt;36&deg;C (96.8&deg;F)</p>",
+                "md_calc_info_concept": null,
+                "name": "temperature",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Heart rate &gt;90</p>",
+                "md_calc_info_concept": null,
+                "name": "heart_rate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Respiratory rate &gt;20 or PaCO₂ &lt;32 mm Hg</p>",
+                "md_calc_info_concept": null,
+                "name": "respiratory_rate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>WBC &gt;12,000/mm&sup3;, &lt;4,000/mm&sup3;, or &gt;10% bands</p>",
+                "md_calc_info_concept": null,
+                "name": "white_blood_cell_count",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Sepsis Criteria (SIRS + Source of Infection)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Suspected or present source of infection</p>",
+                "md_calc_info_concept": null,
+                "name": "infection",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Severe Sepsis Criteria (Organ Dysfunction, Hypotension, or Hypoperfusion)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Lactic acidosis, SBP &lt;90 or SBP drop &ge;40 mm Hg of normal</p>",
+                "md_calc_info_concept": null,
+                "name": "lactic_acidosis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Septic Shock Criteria",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Severe sepsis with hypotension, despite adequate fluid resuscitation</p>",
+                "md_calc_info_concept": null,
+                "name": "severe_sepsis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Multiple Organ Dysfunction Syndrome Criteria",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Evidence of &ge;2 organs failing</p>",
+                "md_calc_info_concept": null,
+                "name": "organ_failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Systemic inflammatory response syndrome",
+            "sirs",
+            "sepsis",
+            "coronavirus",
+            "covid-19",
+            "covid 19",
+            "covid19",
+            "covid"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine"
+        ]
+    }
+}

@@ -1,0 +1,217 @@
+{
+    "id": "160",
+    "title": "ORBIT Bleeding Risk Score for Atrial Fibrillation",
+    "desc": "The ORBIT Bleeding Risk Score for Atrial Fibrillation predicts bleeding risk in patients on anticoagulation for afib, similar to HAS-BLED.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://academic.oup.com/eurheartj/article/36/46/3258/2398371 ",
+                "text": "O'Brien EC, Simon DN, Thomas LE, et al. The ORBIT Bleeding Score: A Simple Bedside Score to Assess Bleeding Risk in Atrial Fibrillation. Eur Heart J. 2015;36(46):3258-64."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26482233 ",
+                "text": "Senoo K, Proietti M, Lane DA, Lip GY. Evaluation of the HAS-BLED, ATRIA, and ORBIT Bleeding Risk Scores in Patients with Atrial Fibrillation Taking Warfarin. Am J Med. 2016;129(6):600-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27557850 ",
+                "text": "Esteve-Pastor MA, Garcia-Fernandez A, Macias M, et al. Is the ORBIT Risk Score Superior to the HAS-BLED Score in Anticoagulated Atrial Fibrillation Patients? Circ J. 2016;80(10):2102-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29312640",
+                "text": "Wang C, Yu Y, Zhu W, et al. Comparing the ORBIT and HAS-BLED Bleeding Risk Scores in Anticoagulated Atrial Fibrillation Patients: A Systematic Review and Meta-Analysis. Oncotarget. 2017;8(65):109703-11."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29274754",
+                "text": "Lip GYH, Skjoth F, Nielsen PB, et al. The HAS-BLED, ATRIA, and ORBIT Bleeding Scores in Atrial Fibrillation Patients Using Non-Vitamin K Antagonist Oral Anticoagulants. Am J Med. 2018;131(5):574.e13-574.e27."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"266\"><col width=\"98\"><col width=\"83\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Hemoglobin &lt;13 g/dL for males and &lt;12 g/dL for females, or hematocrit &lt;40% for males and &lt;36% for females</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Age &gt;74 years</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Yes</p>\n</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Bleeding history*</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><calculator id=\"76\">GFR</calculator> &lt;60 mL/min/1.73 m<sup>2</sup></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Treatment with antiplatelet agents</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Any history of GI bleeding, intracranial bleeding, or hemorrhagic stroke.</p>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"172\"><col width=\"126\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>ORBIT Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Bleeds per 100 patient-years</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-2</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">2.4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">Medium</p>\n</td>\n<td>\n<p dir=\"ltr\">4.7</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4-7</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">8.1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-4d745381-7fff-6200-cc6a-41d49ef2a07f\">From <a href=\"https://academic.oup.com/eurheartj/article/36/46/3258/2398371\" target=\"_blank\" rel=\"noopener\">O'Brien 2015</a>.</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Arrhythmia",
+            "Bleeding"
+        ],
+        "disease_treated": [
+            "Atrial Fibrillation",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar hemo1 = parseFloat(hemo1) || 0;\nvar hemo2 = parseFloat(hemo2) || 0;\nvar sex = parseFloat(sex);\nvar history = parseFloat(history);\nvar gfr = parseFloat(gfr);\nvar treatment = parseFloat(treatment);\n\nif (sex == 0) {\n  var score = age + hemo1 + history + gfr + treatment;\n} else {\n  var score = age + hemo2 + history + gfr + treatment;\n}\n\nvar risk, bleeds;\n\nif (score >= 0 && score <= 2) {\n  risk = 'Low';\n  bleeds = '2.4';\n} else if (score == 3) {\n  risk = 'Medium';\n  bleeds = '4.7';\n} else {\n  risk = 'High';\n  bleeds = '8.1';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '10227_ORBIT Score_result (score)',\n    value: score,\n    value_text: 'points',\n    message: 'ORBIT Score'   \n});\ncalc_output.push({\n    name: '10227_ORBIT Score_interpretation',\n    value: risk, \n    value_text: 'risk',\n    message: 'Risk group'\n});\ncalc_output.push({\n    name: '10227_ORBIT Score_result (bleeds)',\n    value: bleeds, \n    value_text: 'bleeds',\n    message: 'Per 100 patient-years'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "sex == 0",
+                "default": null,
+                "label_en": "Hemoglobin <13 g/dL or hematocrit <40%",
+                "md_calc_info_concept": null,
+                "name": "hemo1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "sex == 1",
+                "default": null,
+                "label_en": "Hemoglobin <12 g/dL or hematocrit <36%",
+                "md_calc_info_concept": null,
+                "name": "hemo2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >74 years",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bleeding history",
+                "md_calc_info_concept": null,
+                "name": "history",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Any history of GI bleeding, intracranial bleeding, or hemorrhagic stroke",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id = \"76\">GFR</calculator> <60 mL/min/1.73 m<sup>2</sup>",
+                "md_calc_info_concept": null,
+                "name": "gfr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Treatment with antiplatelet agents",
+                "md_calc_info_concept": null,
+                "name": "treatment",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Orbit",
+            "orbit score",
+            "afib",
+            "bleeding risk",
+            "bleeding risk score",
+            "bleeding risk score in afib",
+            "orbit bleeding risk score",
+            "ORBIT Bleeding Risk Score for Atrial Fibrillation",
+            "ORBIT Score for Afib"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

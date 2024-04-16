@@ -1,0 +1,136 @@
+{
+    "id": "104",
+    "title": "ABIC Score for Alcoholic Hepatitis",
+    "desc": "The ABIC Score for Alcoholic Hepatitis predicts survival in alcoholic hepatitis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18721242",
+                "text": "Dominguez M, Rincón D, Abraldes JG, et al. A new scoring system for prognostic stratification of patients with alcoholic hepatitis. Am J Gastroenterol. 2008;103(11):2747-56."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p><span id=\"docs-internal-guid-6e327eb7-7fff-bfa3-d440-9ed03c4d6834\">ABIC Score = (<strong>A</strong>ge, years &times; 0.1) + (Serum <strong>B</strong>ilirubin, mg/dL &times; 0.08) + (<strong>I</strong>NR &times; 0.8) +&nbsp;(Serum <strong>C</strong>reatinine, mg/dL &times; 0.3) </span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /><col width=\"*\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>ABIC Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Survival at&nbsp;90 days</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Survival&nbsp;at&nbsp;</strong><strong>1 year</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;6.71</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">100%</p>\n</td>\n<td>\n<p dir=\"ltr\">97.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6.71 to &lt;9.00</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">70%</p>\n</td>\n<td>\n<p dir=\"ltr\">64.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;9.00</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">25%</p>\n</td>\n<td>\n<p dir=\"ltr\">33.3%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-b2c41cf6-7fff-e27d-5755-fa62261ec5f9\"></span><span id=\"docs-internal-guid-b2c41cf6-7fff-e27d-5755-fa62261ec5f9\"><br /></span></p>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Creatinine",
+                "unit": "cr",
+                "error_min": "0.01",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "88.4",
+                "normal_max_si": "115",
+                "normal_max_us": "1.3",
+                "normal_min_si": "62",
+                "normal_min_us": "0.7",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Bilirubin",
+                "unit": "bili",
+                "error_min": "1E-8",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "17.104",
+                "normal_max_si": "32.49",
+                "normal_max_us": "1.9",
+                "normal_min_si": "5.13",
+                "normal_min_us": "0.3",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "INR",
+                "unit": "inr",
+                "error_min": "0.1",
+                "error_max": "20",
+                "warn_min": "0.5",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "1.2",
+                "normal_max_us": "1.2",
+                "normal_min_si": "0.8",
+                "normal_min_us": "0.8",
+                "units_si": " ",
+                "units_us": " "
+            }
+        ],
+        "primary_complains": [
+            "Intoxication/Overdose",
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Drug/Alcohol Use",
+            "Hepatitis"
+        ],
+        "logic": "var calc_output = [];\n\nvar inr  = parseFloat(inr);\nvar age  = parseFloat(age);\nvar cr   = parseFloat(cr);\nvar bili = parseFloat(bili);\n\nif (UOMSYSTEM == false) {\n  bili = bili/17.104;\n  cr = cr/88.4;\n}\n\nvar score = (age*0.1) + (bili*0.08) + (cr*0.3) + (inr*0.8);\nscore = score.toFixed(2);\n\nvar risk1, risk2, risk3;\n\nif (score < 6.71) {\n  risk1 = 'Low';\n  risk2 = '100';\n  risk3 = '97.1';\n} else if (score >= 6.71 && score < 9) {\n  risk1 = 'Intermediate';\n  risk2 = '70';\n  risk3 = '64.3';\n} else if (score >= 9) {\n  risk1 = 'High';\n  risk2 = '25';\n  risk3 = '33.3';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk1 + ' risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'ABIC Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: risk1,\n    value_text: 'risk',\n    message: risk2 + '% survival at 90 days<br/>' + risk3 + '% survival at 1 year' \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Serum bilirubin",
+                "name": "bili",
+                "optional": false,
+                "type": "textbox",
+                "unit": "bili"
+            },
+            {
+                "conditionality": "",
+                "label_en": "<abbr title = \"International normalized ratio\">INR</abbr>",
+                "name": "inr",
+                "optional": false,
+                "type": "textbox",
+                "unit": "inr"
+            },
+            {
+                "conditionality": "",
+                "label_en": "Serum creatinine",
+                "name": "cr",
+                "optional": false,
+                "type": "textbox",
+                "unit": "cr"
+            }
+        ],
+        "can_search": [
+            "Alcohol hepatitis",
+            "Alcoholic hepatitis score"
+        ],
+        "specialty": [
+            "Hepatology",
+            "Toxicology",
+            "Gastroenterology"
+        ]
+    }
+}

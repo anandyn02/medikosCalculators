@@ -1,0 +1,126 @@
+{
+    "id": "577",
+    "title": "OESIL Score for Syncope",
+    "desc": "The OESIL Score for Syncope estimates 12-month all-cause mortality in patients presenting with syncope.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10806018",
+                "text": "Ammirati F, Colivicchi F, Santini M. Diagnosing syncope in clinical practice. Implementation of a simplified diagnostic algorithm in a multicentre prospective trial - the OESIL 2 study (Osservatorio Epidemiologico della Sincope nel Lazio). Eur Heart J. 2000;21(11):935-40."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p><span>Addition of the selected points:</span></p> <table> <tbody> <tr> <td> <p><strong>Item</strong></p> </td> <td> <p><strong>Points</strong></p> </td> </tr> <tr> <td> <p><span>Age &gt;65 years</span></p> </td> <td> <p><span>+1</span></p> </td> </tr> <tr> <td> <p><span>Cardiovascular disease in clinical history*</span></p> </td> <td> <p><span>+1</span></p> </td> </tr> <tr> <td> <p><span>Syncope without prodrome</span></p> </td> <td> <p><span>+1</span></p> </td> </tr> <tr> <td> <p><span>Abnormal EKG**</span></p> </td> <td> <p><span>+1</span></p> </td> </tr> </tbody> </table> <p><span><br>*Cardiovascular disease was defined as any of the following: </span></p> <ul> <li><span>Previous clinical or laboratory diagnosis of any form of structural heart disease, including ischemic heart disease, valvular dysfunction, and primary myocardial disease.</span></li> <li><span>Previous diagnosis or clinical evidence of congestive heart failure. </span></li> <li><span>Previous diagnosis or clinical evidence of peripheral arterial disease. </span></li> <li><span>Previous diagnosis of stroke or TIA. &nbsp;</span></li> </ul> <p><span>**Abnormal EKG was defined as any of the following: </span></p> <ul> <li><span>Rhythm abnormalities (atrial fibrillation or flutter, supraventricular tachycardia, multifocal atrial tachycardia, frequent or repetitive premature supraventricular or ventricular complexes, sustained or non-sustained ventricular tachycardia, paced rhythms).</span></li> <li><span>Atrioventricular (AV) or intraventricular conduction disorders (complete AV block, Mobitz I or Mobitz II AV block, bundle branch block, or intraventricular conduction delay).</span></li> <li><span>Left or right ventricular hypertrophy.</span></li> <li><span>Left axis deviation.</span></li> <li><span>Old myocardial infarction.</span></li> <li><span>ST segment and T wave abnormalities consistent with or possibly related to myocardial ischemia.</span></li> </ul> <p><span>Non-specific repolarization abnormalities were </span><em><span>not</span></em><span> considered abnormal.</span></p>",
+        "facts": "<p><span>Interpretation:</span>&nbsp;</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>OESIL Score</strong></p> </td> <td> <p><strong>Mortality</strong></p> </td> </tr> <tr> <td> <p><span>0 points</span></p> </td> <td> <p><span>0%</span></p> </td> </tr> <tr> <td> <p><span>1 point</span></p> </td> <td> <p><span>0.8%</span></p> </td> </tr> <tr> <td> <p><span>2 points</span></p> </td> <td> <p><span>19.6%</span></p> </td> </tr> <tr> <td> <p><span>3 points</span></p> </td> <td> <p><span>34.7%</span></p> </td> </tr> <tr> <td> <p><span>4 points</span></p> </td> <td> <p><span>57.1%</span></p> </td> </tr> </tbody> </table> </div>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Dizziness",
+            "Seizure",
+            "Syncope"
+        ],
+        "disease_treated": [
+            "Atrial Fibrillation",
+            "Myocardial Infarction",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar age = parseFloat(age);\nvar hx = parseFloat(hx);\nvar wopro = parseFloat(wopro);\nvar aecg = parseFloat(aecg);\n\n//calculation & interpretation\nvar u = age + hx + wopro + aecg;\nvar mor;\nif(u == 0){\n\tmor = '0';\n}else if(u == 1){\n\tmor = '0.8';\n}else if(u == 2){\n\tmor = '19.6';\n}else if(u == 3){\n\tmor = '34.7';\n}else if(u == 4){\n\tmor = '57.1';\n}\n\n\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mor + '% mortality'\n});\ncalc_output.push({\n    name: 'Score',\n    value: u,\n    value_text: 'points',\n    message: 'OESIL Score'\n});\ncalc_output.push({\n    name: 'Msg',\n    value: mor,\n    value_text: '%',\n    message: '12-month all-cause mortality'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >65 years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cardiovascular disease in clinical history",
+                "name": "hx",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Structural heart disease, CHF, PAD, stroke/TIA",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Syncope without prodrome",
+                "name": "wopro",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abnormal EKG",
+                "name": "aecg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Arrhythmia, AV conduction disorders, BBB, conduction delay, LV or RV hypertrophy, left axis deviation, old MI, ST segment or T wave abnormalities related to ischemia",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "OESIL",
+            "Osservatorio Epidemiologico sulla Sincope nel Lazio",
+            "syncope",
+            "syncope score",
+            "fainting",
+            "vasovagal",
+            "LOC",
+            "stroke risk"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

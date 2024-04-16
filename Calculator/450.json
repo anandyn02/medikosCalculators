@@ -1,0 +1,79 @@
+{
+    "id": "450",
+    "title": "Serum Ascites Albumin Gradient (SAAG)",
+    "desc": "The Serum Ascites Albumin Gradient (SAAG) defines presence of portal hypertension (does not differentiate cause) in patients with ascites.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7337129",
+                "text": "Hoefs JC. The mechanism of ascitic fluid protein concentration increase during diuresis in patients with chronic liver disease. Am J Gastroenterol. 1981 Nov;76(5):423-31. PMID:7337129."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>SAAG = (albumin concentration of serum) &ndash; (albumin concentration of ascitic fluid)</p>",
+        "facts": "<p><strong>Interpretation</strong></p>\n<ul>\n<li>SAAG &gt; 1.1 g/dL indicates portal hypertension is the cause of ascites with 97% accuracy.</li>\n<li>SAAG scores do not indicate the cause of the portal hypertension.</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Jaundice"
+        ],
+        "disease_treated": [
+            "Ascites",
+            "Cirrhosis"
+        ],
+        "logic": "var calc_output = [];\n\nif (UOMSYSTEM == true) { // US units\n    var serum = parseFloat(serum);\n    var ascitic = parseFloat(ascitic);\n}\n\nif (UOMSYSTEM == false) { // SI units so convert to US units\n    var serum = parseFloat(serum) / 10;\n    var ascitic = parseFloat(ascitic)/10;\n}\n\n\nvar u = serum - ascitic;\nvar msg = '';\nvar mini_msg = '';\n\nif (u < 1.1) { mini_msg = 'Ascites not due by portal hypertension';\n    msg = 'SAAG < 1.1 g/dL<br/>Portal hypertension is not necessarily the cause of ascites.';\n} else if (u >= 1.1) { mini_msg = 'Ascites likely due by portal hypertension';\n    msg = 'SAAG > 1.1 g/dL<br/>Portal hypertension is likely the cause of ascites, with 97% accuracy.';\n}\n    calc_output.push({\n        name: 'mini',\n        value: u.toFixed(1),\n        value_text: 'g/dL',\n        message: mini_msg\n    });\n    calc_output.push({\n        name: '3096_Serum Ascites Albumin Gradient_result',\n        value: u.toFixed(1),\n        value_text: 'g/dL',\n        message: msg\n    });",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Albumin concentration of serum",
+                "name": "serum",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Albumin concentration of ascitic fluid",
+                "name": "ascitic",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            }
+        ],
+        "can_search": [
+            "SAAG",
+            "albumin",
+            "ascites",
+            "portal hypertension"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hepatology",
+            "Internal Medicine"
+        ]
+    }
+}

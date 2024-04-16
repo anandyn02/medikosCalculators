@@ -1,0 +1,196 @@
+{
+    "id": "534",
+    "title": "Ottawa Subarachnoid Hemorrhage (SAH) Rule for Headache Evaluation",
+    "desc": "Ottawa Subarchnoid Hemorrhage (SAH) Rule for Headache Evaluation rules out emergency department patients with headache for subarachnoid hemorrhage.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2966872/",
+                "text": "Perry JJ, Stiell IG, Sivilotti ML, Bullard MJ, Lee JS, Eisenhauer M, Symington C, Mortensen M, Sutherland J, Lesiuk H, Wells GA. High risk clinical characteristics for subarachnoid haemorrhage in patients with acute headache: prospective cohort study. BMJ. 2010 Oct 28;341:c5204."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC488050/ ",
+                "text": "Vermeulen  M, van Gijn J.  The diagnosis of subarachnoid haemorrhage. J Neurol Neurosurg Psychiatry. 1990;53(5):365-372."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=10872017 ",
+                "text": "McGinn TG, Guyatt GH, Wyer PC, Naylor CD, Stiell IG, Richardson WS. Users' guides to the medical literature: XXII: how to use articles about clinical decision rules. Evidence-Based Medicine Working Group. JAMA. 2000 Jul 5;284(1):79-84."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=25694274",
+                "text": "Perry JJ, Alyahya B, Sivilotti ML, Bullard MJ, Émond M, Sutherland J, Worster A, Hohl C, Lee JS, Eisenhauer MA, Pauls M, Lesiuk H, Wells GA, Stiell IG. Differentiation between traumatic tap and aneurysmal subarachnoid hemorrhage: prospective cohort study. BMJ. 2015 Feb 18;350:h568."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21768192",
+                "text": "Perry JJ, Stiell IG, Sivilotti ML, Bullard MJ, Emond M, Symington C, Sutherland J, Worster A, Hohl C, Lee JS, Eisenhauer MA, Mortensen M, Mackey D, Pauls M, Lesiuk H, Wells GA. Sensitivity of computed tomography performed within six hours of onset of headache for diagnosis of subarachnoid haemorrhage: prospective cohort study. BMJ. 2011 Jul 18;343:d4277."
+            }
+        ],
+        "evidence": "<p>Cannot rule out SAH if one or more criteria are present.</p>",
+        "facts": "<p><strong>Inclusion criteria for this rule:</strong></p>\n<ul>\n<li>Alert patients &gt;15 years with a non‐traumatic acute headache:\n<ul>\n<li>&ldquo;Alert&rdquo; is a GCS=15,</li>\n<li>&ldquo;Non‐traumatic&rdquo; is no direct head trauma in previous 7 days,</li>\n<li>&ldquo;Acute&rdquo; is maximal pain in &lt;1 hour and presents within 14 days.</li>\n</ul>\n</li>\n</ul>\n<p><strong>Exclusion criteria for this rule:</strong></p>\n<ul>\n<li>New neurologic deficits, previous aneurysm, brain tumor or SAH.</li>\n<li>Patients with chronic recurrent headaches (&ge;3 headaches of the same character and intensity for &gt;6 months).</li>\n</ul>\n<p><strong>Criteria:</strong></p>\n<ul>\n<li>Age &ge;40 years.</li>\n<li>Neck pain or stiffness.</li>\n<li>Witnessed loss of consciousness.</li>\n<li>Onset during exertion.</li>\n<li>Thunderclap headache (instantly peaking pain).</li>\n<li>Limited neck flexion on examination.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Headache",
+            "Neck Pain"
+        ],
+        "disease_treated": [
+            "Subarachnoid Hemorrhage"
+        ],
+        "logic": "var calc_output = [];\nvar calc_msg = '';\nvar mini_msg = '';\nvar yesno = '';\nvar output_score = parseInt(age) + parseInt(neckpain) + parseInt(loc) + parseInt(exertion) + parseInt(thunderclap) + parseInt(neckflexion);\nif (output_score == 0) {\n    yesno = 'Yes';\n    calc_msg = 'This patient can be ruled out for subarachnoid hemorrhage by the Ottawa SAH Rule, which was 100% sensitive for SAH in its validation.';\n    mini_msg = 'Ruled Out';\n} else {\n    yesno = 'No';\n    calc_msg ='This patient cannot be ruled out for subarachnoid hemorrhage by the Ottawa SAH Rule (the rule was 100% sensitive for SAH but only 15% specific for SAH).';\n    mini_msg = 'Cannot Rule Out';\n}\ncalc_output.push({\n    name: 'mini',\n    value: yesno,\n    value_text: ' ',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3875_Ottawa SAH Rule_result',\n    value: mini_msg,\n    value_text: ' ',\n    message: calc_msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Age &ge;40</p>",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Neck pain or stiffness</p>",
+                "md_calc_info_concept": null,
+                "name": "neckpain",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Witnessed loss of consciousness</p>",
+                "md_calc_info_concept": null,
+                "name": "loc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Onset during exertion</p>",
+                "md_calc_info_concept": null,
+                "name": "exertion",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Thunderclap headache (<span>instantly peaking pain</span>)</p>",
+                "md_calc_info_concept": null,
+                "name": "thunderclap",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Limited neck flexion on examination</p>",
+                "md_calc_info_concept": null,
+                "name": "neckflexion",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ottawa sah",
+            "ottawa subarachnoid",
+            "sah rule out",
+            "ottawa subarachnoid hemorrhage",
+            "ottawa subarachnoid hemorrhage rule",
+            "ian stiell sah",
+            "headache evaluation sah",
+            "headache sah",
+            "stroke",
+            "ICH",
+            "aneursym",
+            "aSAH"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

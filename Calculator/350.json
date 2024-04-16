@@ -1,0 +1,252 @@
+{
+    "id": "350",
+    "title": "Adult Self-Report Scale (ASRS v1.1) for ADHD",
+    "desc": "The Adult Self Report Scale (ASRS) for ADHD screens and diagnoses adult ADHD via questionnaire completed by patient.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15841682",
+                "text": "Kessler RC, Adler L, Ames M, Demler O, Faraone S, Hiripi E, Howes MJ, Jin R, Secnik K, Spencer T, Ustun TB, Walters EE. The World Health Organization Adult ADHD Self-Report Scale (ASRS): a short screening scale for use in the general population. Psychol Med. 2005 Feb;35(2):245-56. PubMed PMID: 15841682."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17623385",
+                "text": "Kessler RC, Adler LA, Gruber MJ, Sarawate CA, Spencer T, Van Brunt DL. Validity of the World Health Organization Adult ADHD Self-Report Scale (ASRS) Screener in a representative sample of health plan members. Int J Methods Psychiatr Res. 2007;16(2):52-65."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points.</p>",
+        "facts": "<ul>\n<li>Point totals &ge;4 indicate consistency with adult ADHD.</li>\n<li>As symptoms of attention deficit are increasingly common in society, the ASRS helps to try to differentiate normal trends from pathological disease.</li>\n<li>Version 1.1 is a shorter screening test than the original test.</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Anxious"
+        ],
+        "disease_treated": [
+            "ADHD"
+        ],
+        "logic": "var calc_output=[]; var msg,mini_v; var v=(parseFloat(wrapping_up)+parseFloat(organization)+parseFloat(remembering)+parseFloat(delay_task)+parseFloat(fidget)+parseFloat(overly_active));if(v<4){msg='Scores <4 are less likely to be consistent with Adult ADHD.'; mini_v='Unlikely'} else {msg='Scores \\u22654 may be consistent with Adult ADHD.'; mini_v='Likely';} \n\ncalc_output.push({\n    name:'mini',\n    value:mini_v,\n    value_text:' ',\n    message:'Adult ADHD'\n}); \ncalc_output.push({\n    name:'1730_Adult Self-Report Scale (ASRS)_result',\n    value:v.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Select the response that best describes how the patient has felt and conducted his/herself over the past 6 months.",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?</p>",
+                "mdcalc_info_concept": null,
+                "name": "wrapping_up",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 0
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Often",
+                        "value": 1
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "How often do you have difficulty getting things in order when you have to do a task that requires organization?",
+                "mdcalc_info_concept": null,
+                "name": "organization",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 0
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Often",
+                        "value": 1
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "How often do you have problems remembering appointments or obligations?",
+                "mdcalc_info_concept": null,
+                "name": "remembering",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 0
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 1
+                    },
+                    {
+                        "label": "Often",
+                        "value": 1
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "When you have a task that requires a lot of thought, how often do you avoid or delay getting started?",
+                "mdcalc_info_concept": null,
+                "name": "delay_task",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 0
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 0
+                    },
+                    {
+                        "label": "Often",
+                        "value": 1
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "How often do you fidget or squirm with your hands or feet when you have to sit down for a long time?",
+                "mdcalc_info_concept": null,
+                "name": "fidget",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 0
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 0
+                    },
+                    {
+                        "label": "Often",
+                        "value": 1
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "How often do you feel overly active and compelled to do things, like you were driven by a motor?",
+                "mdcalc_info_concept": null,
+                "name": "overly_active",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 0
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 0
+                    },
+                    {
+                        "label": "Often",
+                        "value": 1
+                    },
+                    {
+                        "label": "Very often",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "add",
+            "adhd"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Internal Medicine",
+            "Primary Care",
+            "Psychiatry"
+        ]
+    }
+}

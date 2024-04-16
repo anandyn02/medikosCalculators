@@ -1,0 +1,191 @@
+{
+    "id": "319",
+    "title": "National Comprehensive Cancer Network International Prognostic Index (NCCN-IPI)",
+    "desc": "The National Comprehensive Cancer Network International Prognostic Index (NCCN-IPI) predicts survival in patients with diffuse large B-cell lymphoma (DLBCL).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/8141877/",
+                "text": "International Non-Hodgkin’s Lymphoma Prognostic Factors Project. A predictive model for aggressive non-Hodgkin’s lymphoma. N Engl J Med. 1993;329(14):987-994."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><span>The NCCN-IPI is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 87.75%;\"><colgroup><col style=\"width: 52%;\"><col style=\"width: 28.5755%;\"><col style=\"width: 19.4245%;\"></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\"><span>Age, years</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&le;40</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>41-60</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>61-75</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&gt;75</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\"><span><abbr title=\"Lactate dehydrogenase\">LDH</abbr> ratio</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span> &le;1</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&gt;1-3</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&gt;3</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span><calculator id=\"3170\">ECOG Performance Status</calculator> &ge;2</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>Ann Arbor stages III or IV</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><span>&gt;1 extranodal disease site*</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span>*Disease in bone marrow, CNS, liver/GI tract, or lungs.</span></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col width=\"95\"><col width=\"121\"><col width=\"106\"><col width=\"126\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>NCCN-IPI</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk Level</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>5-Year PFS</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>5-Year Overall Survival</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>0-1</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Low</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>91%</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>96%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>2-3</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Low-intermediate</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>74%</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>82%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>4-5</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>High-intermediate</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>51%</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>64%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>6-8</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>High</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>30%</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>33%</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding",
+            "Chest Pain",
+            "Constipation",
+            "Cough",
+            "Diarrhea",
+            "Fatigue",
+            "Fever",
+            "Loss of Appetite",
+            "Lymphadenopathy",
+            "Nausea",
+            "Rash",
+            "Shortness of Breath",
+            "Swelling",
+            "Vomiting",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Hematologic Malignancy",
+            "Leukemia/Lymphoma",
+            "Lymphoma"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar ldh = parseFloat(ldh);\nvar ecog = parseFloat(ecog);\nvar ann = parseFloat(ann);\nvar site = parseFloat(site);\n\nvar score = age + ldh + ecog + ann + site;\n\nvar risk;\nvar pfs;\nvar overall;\n\nif (score <= 1) {\n    risk = 'Low';\n    pfs = 91;\n    overall = 96;\n} else if (score <= 3) {\n    risk = 'Low-intermediate';\n    pfs = 74;\n    overall = 82;\n} else if (score <= 5) {\n    risk = 'High-intermediate';\n    pfs = 51;\n    overall = 64;\n} else if (score <= 8) {\n    risk = 'High';\n    pfs = 30;\n    overall = 33;\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '10490_NCCN-IPI_result (score)',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '10490_NCCN-IPI_result (PFS)',\n    value: pfs,\n    value_text: '%',\n    message: '5-year progression-free survival'\n});\ncalc_output.push({\n    name: '10490_NCCN-IPI_result (overall)',\n    value: overall,\n    value_text: '%',\n    message: '5-year overall survival'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Age, years</p>",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤40",
+                        "value": 0
+                    },
+                    {
+                        "label": "41-60",
+                        "value": 1
+                    },
+                    {
+                        "label": "61-75",
+                        "value": 2
+                    },
+                    {
+                        "label": ">75",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><abbr title=\"Lactate dehydrogenase\">LDH</abbr> ratio</p>",
+                "mdcalc_info_concept": null,
+                "name": "ldh",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤1",
+                        "value": 0
+                    },
+                    {
+                        "label": ">1-3",
+                        "value": 1
+                    },
+                    {
+                        "label": ">3",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><calculator id=\"3170\">ECOG Performance Status</calculator> &ge;2</p>",
+                "mdcalc_info_concept": null,
+                "name": "ecog",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Ann Arbor stages III or IV</p>",
+                "mdcalc_info_concept": null,
+                "name": "ann",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>&gt;1 extranodal disease site</p>",
+                "mdcalc_info_concept": null,
+                "name": "site",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Disease in bone marrow, CNS, liver/GI tract, or lungs.",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "National Comprehensive Cancer Network International Prognostic Index (NCCN-IPI)",
+            "nccn ipi",
+            "nccn-ipi",
+            "nccn",
+            "ipi",
+            "international prognostic index",
+            "National Comprehensive Cancer Network",
+            "dlbcl",
+            "diffuse large b cell lymphoma",
+            "diffuse large b-cell lymphoma",
+            "cancer",
+            "lymphoma",
+            "dlbcl survival"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pathology",
+            "Primary Care"
+        ]
+    }
+}

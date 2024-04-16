@@ -1,0 +1,174 @@
+{
+    "id": "387",
+    "title": "Barnes Jewish Hospital Stroke Dysphagia Screen",
+    "desc": "The Barnes Jewish Hospital Stroke Dysphagia Screen assesses ability to swallow without aspiration after stroke.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19875722",
+                "text": "Edmiaston J, Connor LT, Loehr L, Nassief A. Validation of a dysphagia screening tool in acute stroke patients. Am J Crit Care. 2010 Jul;19(4):357-64."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Examine the patient using the 4 physical exam screening (answered Yes/No)questions of the BJH-SDS:</p>\n<ul>\n<li>If the answer to any of the screening questions (<calculator id=\"64\">GCS</calculator>&lt;13, Facial, Tongue, or Palatal Asymmetry/Weakness) is &ldquo;YES&rdquo; then the remainder of the screen should be stopped and the patient should be referred to speech pathology for further evaluation.</li>\n<li>If the answer to all 4 screening questions is no, the the patient should be given a 3oz of water to swallow in sequential drinks.\n<ul>\n<li>Assess for throat clearing, cough or voice change during the initial swallowing and at 1 minute after.\n<ul>\n<li>If any of these are present, refer to speech pathology.</li>\n<li>If patient tolerates water swallow without any of the above symptoms then they can be started on a regular diet.</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var aspiration_signs = aspiration_signs || 0\n\nvar calc_output = [];\nvar msg = '';\nvar mini_msg = '';\nvar glasgow_coma_scale_13 = parseFloat(glasgow_coma_scale_13);\nvar facial = parseFloat(facial);\nvar tongue = parseFloat(tongue);\nvar palatal = parseFloat(palatal);\n\naspiration_signs = parseFloat(aspiration_signs);\n\nif (glasgow_coma_scale_13 == 1 || facial == 1 || tongue == 1 || palatal == 1) {\n    msg = 'If any of the four screening questions are \\u2018Yes,\\u2019 refer to speech pathology; do not perform water test.';\n    mini_msg = 'Do not perform water test.';\n} else {\n    if (aspiration_signs == 1) {\n        msg = 'Failure of the water swallow screen. Refer to speech pathology prior to diet.';\n        mini_msg = 'Refer to speech pathology prior to diet.';\n    } else {\n        msg = 'Swallow screen passed. Low risk of aspiration with regular diet.';\n        mini_msg = 'Low risk.';\n    }\n}\ncalc_output.push({\n    name: 'mini',\n    value: ' ',\n    value_text: ' ',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '1894_Barnes Jewish Hospital Stroke Dysphagia Screen_result',\n    value: '',\n    value_text: '',\n    message: msg+'<br/><br/>The BJH-SDS is >90% sensitive for both dysphagia and aspiration.'\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Screening Questions",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='64'>GCS</calculator> < 13",
+                "md_calc_info_concept": null,
+                "name": "glasgow_coma_scale_13",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Facial asymmetry/weakness present",
+                "md_calc_info_concept": null,
+                "name": "facial",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tongue asymmetry/weakness present",
+                "md_calc_info_concept": null,
+                "name": "tongue",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Palatal asymmetry/weakness present",
+                "md_calc_info_concept": null,
+                "name": "palatal",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "If ALL screening questions are answered NO, proceed to the 3 oz water test.",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "glasgow_coma_scale_13 + facial + palatal + tongue == 0",
+                "default": null,
+                "label_en": "Any signs of aspiration during 3 oz water test",
+                "md_calc_info_concept": null,
+                "name": "aspiration_signs",
+                "option_fhir_rules": null,
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Dysphagia",
+            "prognosis",
+            "morbidity",
+            "stroke",
+            "speech pathology",
+            "aspiration",
+            "rehab",
+            "barnes",
+            "jewish",
+            "screen"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology"
+        ]
+    }
+}

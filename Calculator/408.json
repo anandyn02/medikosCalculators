@@ -1,0 +1,196 @@
+{
+    "id": "408",
+    "title": "NEXUS Chest Decision Instrument for Blunt Chest Trauma",
+    "desc": "The NEXUS Chest Decision Instrument for Blunt Chest Trauma aids in the decision making process for imaging patients with blunt chest trauma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21045745",
+                "text": "Rodriguez RM, Hendey GW, Mower W, Kea B, Fortman J, Merchant G, Hoffman JR. Derivation of a decision instrument for selective chest radiography in blunt trauma. J Trauma. 2011 Sep;7(3):549-53. PMID: 21045745."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points, see below.</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Point Value</th>\n</tr>\n<tr>\n<td>Age &gt; 60 years</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Rapid deceleration mechanism (fall &gt; 20 ft or MVC &gt; 40 mph)</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Chest pain</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Intoxication</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Altered mental status</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Distracting painful injury</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Tenderness to chest wall palpation</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><strong>Score interpretation:</strong></p>\n<ul>\n<li>NEXUS Score is 99% sensitive for clinically significant thoracic injury.</li>\n<li>If NEXUS &ge;1:\n<ul>\n<li>In well-appearing patient with no evidence of multi-organ injury, consider CXR only without CT.</li>\n<li>In ill-appearing patients and/or those who will receive workup for other serious injury, consider chest CT as well.</li>\n</ul>\n</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output=[]; \nvar msg=''; \nvar mini_msg=''; \nvar u=(parseInt(age)+parseInt(mech)+parseInt(cp)+parseInt(intox)+parseInt(ams)+parseInt(injury)+parseInt(ttp)); \nif (u==0){msg='No thoracic imaging required.<br/><br/>NEXUS is 99% sensitive for clinically significant thoracic injury.'; mini_msg='No thoracic imaging required.'; } \nelse {msg ='In well-appearing patient with no evidence of multi-organ injury, consider Chest X-ray (CXR) only without CT.<br/><br/>In ill-appearing patients and/or those who will receive workup for other serious injury, consider chest CT as well.'; mini_msg='Thoracic imaging required.';} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'2075_NEXUS Chest Rule_result',\n    value:u,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >60 years",
+                "md_calc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Rapid deceleration mechanism",
+                "md_calc_info_concept": null,
+                "name": "mech",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<ul><li>Fall from >20 ft (>6m)</li><li>MVC >40 mph (>64km/h)</li></ul>",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chest pain",
+                "md_calc_info_concept": null,
+                "name": "cp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intoxication",
+                "md_calc_info_concept": null,
+                "name": "intox",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Altered mental status",
+                "md_calc_info_concept": null,
+                "name": "ams",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Distracting painful injury",
+                "md_calc_info_concept": null,
+                "name": "injury",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tenderness to chest wall palpation",
+                "md_calc_info_concept": null,
+                "name": "ttp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "NEXUS",
+            "chest nexus",
+            "chest injury",
+            "chest pain",
+            "trauma",
+            "CT",
+            "CXR",
+            "imaging",
+            "prognosis"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Surgery (Trauma)"
+        ]
+    }
+}

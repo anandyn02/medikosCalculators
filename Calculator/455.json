@@ -1,0 +1,381 @@
+{
+    "id": "455",
+    "title": "Infective Endocarditis (IE) Mortality Risk Score",
+    "desc": "The IE Mortality Risk Score predicts mortality at 6 months in patients with infective endocarditis.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://jaha.ahajournals.org/content/5/4/e003016.full",
+                "text": "Park LP, Chu VH, Peterson G, Skoutelis A, Lejko-Zupa T, Bouza E, Tattevin P, Habib G, Tan R, Gonzalez J, Altclas J, Edathodu J, Fortes CQ, Siciliano RF,Pachirat O, Kanj S, Wang A; International Collaboration on Endocarditis (ICE) Investigators. Validated Risk Score for Predicting 6-Month Mortality in Infective Endocarditis. J Am Heart Assoc. 2016 Apr 18;5(4). pii: e003016. doi: 10.1161/JAHA.115.003016."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>The IE Mortality Score is calculated by the addition of the selected points:</p>\n<table style=\"width: 100%; height: 223.984px; border-width: 1px; border-style: none;\"><colgroup><col style=\"width: 33.3333%;\"><col style=\"width: 33.3333%;\"><col style=\"width: 33.3333%;\"></colgroup>\n<tbody>\n<tr style=\"height: 22.3984px;\">\n<td colspan=\"2\" style=\"height: 22.3984px;\"><strong>Variable</strong></td>\n<td style=\"height: 22.3984px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 22.3984px;\">Constant</td>\n<td style=\"height: 22.3984px;\"></td>\n<td style=\"height: 22.3984px;\">4</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td colspan=\"3\" style=\"height: 22.3984px;\"><strong>Host factors</strong></td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td rowspan=\"4\" style=\"height: 89.5936px;\">Age, years</td>\n<td style=\"height: 22.3984px;\">&le;45</td>\n<td style=\"height: 22.3984px;\">0</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 22.3984px;\">46-60</td>\n<td style=\"height: 22.3984px;\">2</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 22.3984px;\">61-70</td>\n<td style=\"height: 22.3984px;\">3</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 22.3984px;\">&gt;70</td>\n<td style=\"height: 22.3984px;\">4</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 44.7968px;\" rowspan=\"2\">History of dialysis</td>\n<td style=\"height: 22.3984px;\">No</td>\n<td style=\"height: 22.3984px;\">0</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 22.3984px;\">Yes</td>\n<td style=\"height: 22.3984px;\">3</td>\n</tr>\n<tr style=\"height: 22.3984px;\">\n<td style=\"height: 22.3984px;\" colspan=\"3\"><strong>IE factors</strong></td>\n</tr>\n<tr>\n<td rowspan=\"2\">Nosocomial IE</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Prosthetic IE</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Symptoms &gt;1 month before admission</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>-1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Staphylococcus aureus</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Viridans group streptococci</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>-2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Aortic vegetation</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Mitral vegetation</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>1</td>\n</tr>\n<tr>\n<td colspan=\"3\"><strong>IE complications</strong></td>\n</tr>\n<tr>\n<td rowspan=\"2\">NYHA class 3 or 4 heart failure</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>3</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Stroke</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Paravalvular complication</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Persistent bacteremia</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Surgical treatment</td>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>-2</td>\n</tr>\n</tbody>\n</table>\n<p></p>",
+        "facts": "<p><strong>Interpretation:</strong></p>\n<p>Probability of 6‐month mortality = 2.416*score+0.109*score<sup>2</sup>&minus;4.849</p>\n<div class=\"table-responsive\"></div>\n<p>A simplified risk score &ge;8 had sensitivity 86.7% and specificity 50.8% for predicting overall 6‐month mortality (negative predictive value of 86% and positive predictive value of 39%).</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain"
+        ],
+        "disease_treated": [
+            "Endocarditis"
+        ],
+        "logic": "var calc_output = [];\nvar u = 4 + parseInt(age) + parseInt(dialysis) + parseInt(nosocomial) + parseInt(prosthetic) + parseInt(sx) + parseInt(staph) + parseInt(viridans) + parseInt(aveg) + parseInt(mveg) + parseInt(nyha) + parseInt(stroke) + parseInt(valv) + parseInt(bact) + parseInt(surg);\nvar mort = (2.416 * u) + ((0.109 * Math.pow(u, 2)) - 4.849);\nif (mort >= 100) {\n    mort = 100.0;\n} else {\n    mort = mort;\n}\n\nvar msg = 'Mortality at 6 months';\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mort.toFixed(1) + '% predicted 6-month mortality'\n});\ncalc_output.push({\n    name: '3121_IE Risk Score_result (score)',\n    value: u,\n    value_text: 'points',\n    message: 'IE Mortality Risk Score'\n})\ncalc_output.push({\n    name: '3121_IE Risk Score_result (mortality)',\n    value: mort.toFixed(1),\n    value_text: '%',\n    message: 'Predicted 6-month mortality'\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Host Factors",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age, years</p>",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤45",
+                        "value": 0
+                    },
+                    {
+                        "label": "46-60",
+                        "value": 2
+                    },
+                    {
+                        "label": "61-70",
+                        "value": 3
+                    },
+                    {
+                        "label": ">70",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of dialysis",
+                "md_calc_info_concept": null,
+                "name": "dialysis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Infective Endocarditis (IE) Factors",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nosocomial IE",
+                "md_calc_info_concept": null,
+                "name": "nosocomial",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Prosthetic IE",
+                "md_calc_info_concept": null,
+                "name": "prosthetic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Symptoms >1 month before admission",
+                "md_calc_info_concept": null,
+                "name": "sx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Staphylococcus aureus",
+                "md_calc_info_concept": null,
+                "name": "staph",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Viridans group streptococci",
+                "md_calc_info_concept": null,
+                "name": "viridans",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Aortic vegetation",
+                "md_calc_info_concept": null,
+                "name": "aveg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Mitral vegetation",
+                "md_calc_info_concept": null,
+                "name": "mveg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Infective Endocarditis (IE) Complications",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "NYHA class 3 or 4 heart failure",
+                "md_calc_info_concept": null,
+                "name": "nyha",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stroke",
+                "md_calc_info_concept": null,
+                "name": "stroke",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Paravalvular complication",
+                "md_calc_info_concept": null,
+                "name": "valv",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Persistent bacteremia",
+                "md_calc_info_concept": null,
+                "name": "bact",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Surgical treatment",
+                "md_calc_info_concept": null,
+                "name": "surg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "International collaboration",
+            "pcs",
+            "plus",
+            "ie",
+            "infective",
+            "endocarditis",
+            "mortality"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Surgery (Cardiothoracic)",
+            "Surgery (General)"
+        ]
+    }
+}

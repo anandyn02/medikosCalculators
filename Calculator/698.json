@@ -1,0 +1,176 @@
+{
+    "id": "698",
+    "title": "NEXUS Criteria for C-Spine Imaging",
+    "desc": "The NEXUS Criteria for C-spine Imaging clears patients from cervical spine fracture clinically, without imaging.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9774931",
+                "text": "Hoffman JR, Wolfson AB, Todd K, Mower WR.Selective cervical spine radiography in blunt trauma: methodology of the National Emergency X-Radiography Utilization Study (NEXUS). Ann Emerg Med. 1998 Oct;32(4):461-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14695411",
+                "text": "Stiell IG, Clement CM, McKnight RD, Brison R, Schull MJ, Rowe BH, Worthington JR, Eisenhauer MA, Cass D, Greenberg G, MacPhail I, Dreyer J, Lee JS, Bandiera G, Reardon M, Holroyd B, Lesiuk H, Wells GA. The Canadian C-spine rule versus the NEXUS low-risk criteria in patients with trauma. N Engl J Med. 2003 Dec 25;349(26):2510-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15039695",
+                "text": "Dickinson G, Stiell IG, Schull M, Brison R, Clement CM, Vandemheen KL, Cass D, McKnight D, Greenberg G, Worthington JR, Reardon M, Morrison L, Eisenhauer MA, Dreyer J, Wells GA. Retrospective application of the NEXUS low-risk criteria for cervical spine radiography in Canadian emergency departments. Ann Emerg Med. 2004 Apr;43(4):507-14."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21610391",
+                "text": "Duane TM, Mayglothling J, Wilson SP, Wolfe LG, Aboutanos MB, Whelan JF, Malhotra AK, Ivatury RR. National Emergency X-Radiography Utilization Study criteria is inadequate to rule out fracture after significant blunt trauma compared with computed tomography. J Trauma. 2011 Apr;70(4):829-31. doi: 10.1097/TA.0b013e31820ea6b3."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23048086",
+                "text": "Michaleff ZA, Maher CG, Verhagen AP, Rebbeck T, Lin CW. Accuracy of the Canadian C-spine rule and NEXUS to screen for clinically important cervical spine injury in patients following blunt trauma: a systematic review. CMAJ. 2012;184(16):E867-76."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24480220",
+                "text": "Goode T, Young A, Wilson SP, Katzen J, Wolfe LG, Duane TM. Evaluation of cervical spine fracture in the elderly: can we trust our physical examination? Am Surg. 2014 Feb;80(2):182-4."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28274471",
+                "text": "Paykin G, O'reilly G, Ackland HM, Mitra B. The NEXUS criteria are insufficient to exclude cervical spine fractures in older blunt trauma patients. Injury. 2017;48(5):1020-1024."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28274471",
+                "text": "Paykin G, O'reilly G, Ackland HM, Mitra B. The NEXUS criteria are insufficient to exclude cervical spine fractures in older blunt trauma patients. Injury. 2017;48(5):1020-1024."
+            }
+        ],
+        "evidence": "<p>One easy mnemonic for these criteria is NSAID:</p>\n<ul>\n<li>Neuro Deficit.</li>\n<li>Spinal Tenderness (Midline).</li>\n<li>Altered Mental Status/Level of Consciousness.</li>\n<li>Intoxication.</li>\n<li>Distracting Injury.</li>\n</ul>",
+        "facts": "<p>From&nbsp;<em>The Canadian C-Spine Rule versus the NEXUS Low-Risk Criteria in Patients with Trauma</em>, see below:</p>\n<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/canadian-c-spine.jpeg\" class=\"alignnone size-full wp-image-1839\" alt=\"canadian c spine work up algorithm\"></div>",
+        "estimation": [],
+        "primary_complains": [
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output=[]; \nvar msg='';\nvar mini_msg=''; \nvar u=focal_neurologic_deficit+midline_spinal_tenderness+altered_consciousness+intoxication+injury;\nif(u>0){\n\tmini_msg='Consider imaging.'; \n\tmsg='If any of the above criteria are present, the C-Spine cannot be cleared clinically by these criteria.<br/><br/>Consider imaging.'}\n\tif(u<1){\n\t\tmini_msg='Imaging not required.'; \n\t\tmsg='If none of the above criteria are present, the C-Spine can be cleared clinically by these criteria.<br/><br/>Imaging is not required.'\n\t} \n\ncalc_output.push({\n\tname:'mini',\n\tvalue:' ',\n\tvalue_text:' ',\n\tmessage:mini_msg\n}); \ncalc_output.push({\n\tname:'703_NEXUS C-Spine Rule_result',\n\tvalue:' ',\n\tvalue_text:' ',\n\tmessage:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Focal neurologic deficit present",
+                "md_calc_info_concept": null,
+                "name": "focal_neurologic_deficit",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Midline spinal tenderness present",
+                "md_calc_info_concept": null,
+                "name": "midline_spinal_tenderness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Altered level of consciousness present",
+                "md_calc_info_concept": null,
+                "name": "altered_consciousness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Intoxication present",
+                "md_calc_info_concept": null,
+                "name": "intoxication",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Distracting injury present",
+                "md_calc_info_concept": null,
+                "name": "injury",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "trauma",
+            "neck",
+            "cspine"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Neurology",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

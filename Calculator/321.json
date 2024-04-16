@@ -1,0 +1,114 @@
+{
+    "id": "321",
+    "title": "Cardiac Power Output (CPO)",
+    "desc": "Cardiac Power Output (CPO) calculates the rate of energy output of the heart.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/15261929/",
+                "text": "Fincke R, Hochman JS, Lowe AM, et al. Cardiac power is the strongest hemodynamic correlate of mortality in cardiogenic shock: a report from the SHOCK trial registry. J Am Coll Cardiol. 2004;44(2):340-348."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/17307413/",
+                "text": "Mendoza DD, Cooper HA, Panza JA. Cardiac power output predicts mortality across a broad spectrum of patients with acute cardiac disease. Am Heart J. 2007;153(3):366-370."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/32993372/",
+                "text": "Lim HS. Cardiac power output revisited. Circ Heart Fail. 2020;13(10):e007393."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>Cardiac Power Output (CPO) is calculated by the following:</span><b></b></p>\n<p dir=\"ltr\"><span><strong>CPO, W</strong> = [(<calculator id=\"74\">mean arterial pressure, mm Hg</calculator>)*(<calculator id=\"10095\">cardiac output, L/min</calculator>)]/451</span><b></b></p>\n<p></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Mean Arterial Pressure",
+                "unit": "map",
+                "error_min": "20",
+                "error_max": "210",
+                "warn_min": "40",
+                "warn_max": "180",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "70",
+                "normal_min_us": "70",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Cardiac Output",
+                "unit": "cardiac_output",
+                "error_min": "0",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "50",
+                "conversion": "1",
+                "normal_max_si": "8",
+                "normal_max_us": "8",
+                "normal_min_si": "4",
+                "normal_min_us": "4",
+                "units_si": "L/min",
+                "units_us": "L/min"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Dizziness",
+            "Nausea",
+            "Shortness of Breath",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Cardiogenic Shock"
+        ],
+        "logic": "var calc_output = [];\n\nvar map = parseFloat(map);\nvar co = parseFloat(co);\n\nvar cpo = (map*co)/451;\n\ncalc_output.push({\n    name: 'mini',\n    value: cpo.toFixed(2),\n    value_text: 'W',\n    message: 'Cardiac power output'\n});\ncalc_output.push({\n    name: '10494_Cardiac Power Output (CPO)_result',\n    value: cpo.toFixed(2),\n    value_text: 'W',\n    message: 'Cardiac power output'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p><calculator id=\"74\">Mean arterial pressure</calculator></p>",
+                "name": "map",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "map"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p><calculator id=\"10095\">Cardiac output</calculator></p>",
+                "name": "co",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cardiac_output"
+            }
+        ],
+        "can_search": [
+            "Cardiac Power Output (CPO)",
+            "cardiac power output",
+            "cpo",
+            "heart output",
+            "energy output",
+            "cardiogenic shock",
+            "cardiac output",
+            "co",
+            "cardiac power",
+            "hemodynamic measure",
+            "hemodynamic parameters"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

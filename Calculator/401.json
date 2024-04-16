@@ -1,0 +1,164 @@
+{
+    "id": "401",
+    "title": "STONE Nephrolithometry Score for Renal Calculi",
+    "desc": "The STONE Nephrolithotomy Scoring System predicts severity of kidney stone based radiological visualization.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23540858",
+                "text": "Okhunov Z, Friedlander JI, George AK, Duty BD, Moreira DM, Srinivasan AK, Hillelsohn J, Smith AD, Okeke Z. S.T.O.N.E. Nephrolithometry: Novel Surgical Classification System for Kidney Calculi, Urology, Volume 81, Issue 6, June 2013, Pages 1154-1160, ISSN 0090-4295, http://dx.doi.org/10.1016/j.urology.2012.10.083."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.researchgate.net/profile/Jorge_Moreno-Palacios/publication/264501772_Evaluation_and_Comparison_of_Urolithiasis_Scoring_Systems_Used_in_Percutaneous_Kidney_Stone_Surgery/links/546a053e0cf2397f78300e30.pdf",
+                "text": "Kevin Labadie, Zhamshid Okhunov, Arash Akhavein, Daniel Moreira, Jorge Moreno-Palacios, Michael del Junco, Zeph Okeke, Vincent Bird, Arthur D. Smith and Jaime Landman. Evaluation and Comparison of Urolithiasis Scoring Systems in Percutaneous Kidney Stone Surgery. Journal of Urology. Vol. 193, 1-6, January 2015."
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Flank Pain",
+            "Hematuria"
+        ],
+        "disease_treated": [
+            "Kidney Stone"
+        ],
+        "logic": "var calc_output=[]; \nvar u=parseInt(size)+parseInt(tract)+parseInt(obstruction)+parseInt(calyces)+parseInt(essence); \nvar msg='';\nvar mini_msg=''; \nvar percent; \nif(u==1||u==2||u==3||u==4){percent='100%';msg='100% chance of patient being stone free after first procedure.';mini_msg='Probability of Stone Free'} \nelse if(u==5){percent='94%';msg='94% chance of patient being stone free after first procedure.';mini_msg='Probability of Stone Free'} \nelse if(u==6){percent='88%';msg='88% chance of patient being stone free after first procedure.';mini_msg='Probability of Stone Free'} \nelse if(u==7){percent='92%';msg='92% chance of patient being stone free after first procedure.';mini_msg='Probability of Stone Free'} \nelse if(u==8){percent='83%';msg='83% chance of patient being stone free after first procedure.';mini_msg='Probability of Stone Free'} \nelse if(u==9){percent='64%';msg='64% chance of patient being stone free after first procedure.';mini_msg='Probability of Stone Free'} \nelse if(u==10){percent='42%';msg='42% chance of patient being stone free after first procedure.';mini_msg='Probability of Stone Free'} \nelse if(u>=11){percent='27%';msg='27% chance of patient being stone free after first procedure.';mini_msg='Probability of Stone Free'} \n\ncalc_output.push({\n    name:'mini',\n    value:percent,\n    value_text:' ',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'2044_STONE Score (Post-CT, Renal)_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Stone size in mm²",
+                "mdcalc_info_concept": null,
+                "name": "size",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0-399",
+                        "value": 1
+                    },
+                    {
+                        "label": "400-799",
+                        "value": 2
+                    },
+                    {
+                        "label": "800-1599",
+                        "value": 3
+                    },
+                    {
+                        "label": ">1600",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Length × width in mm",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Tract length (mm)",
+                "mdcalc_info_concept": null,
+                "name": "tract",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤100",
+                        "value": 1
+                    },
+                    {
+                        "label": ">100",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Distance from center of stone to the skin measured on CT film at 0°, 45°, and 90°",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Obstruction (hydronephrosis)",
+                "mdcalc_info_concept": null,
+                "name": "obstruction",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No/mild hydronephrosis",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate/severe hydronephrosis",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Number of calyces with calculi",
+                "mdcalc_info_concept": null,
+                "name": "calyces",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1-2",
+                        "value": 1
+                    },
+                    {
+                        "label": "3",
+                        "value": 2
+                    },
+                    {
+                        "label": "Full staghorn stone",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Essence (stone density in Hounsfield units)",
+                "mdcalc_info_concept": null,
+                "name": "essence",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤950",
+                        "value": 1
+                    },
+                    {
+                        "label": ">950",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "STONE",
+            "S.T.O.N.E.",
+            "kidney",
+            "renal",
+            "colic"
+        ],
+        "specialty": [
+            "Urology"
+        ]
+    }
+}

@@ -1,0 +1,431 @@
+{
+    "id": "64",
+    "title": "Geneva Risk Score for Venous Thromboembolism (VTE) Prophylaxis",
+    "desc": "The Geneva Risk Score for VTE Thromboprophylaxis assess inpatients’ risk of VTE to thromboprophylaxis. ",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1538-7836.2006.01818.x ",
+                "text": "Chopard P, Spirk D, Bounameaux H. Identifying acutely ill medical patients requiring thromboprophylaxis. J Thromb Haemost. 2006;4(4):915-6."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=17626254 ",
+                "text": "Anderson FA, Zayaruzny M, Heit JA, Fidan D, Cohen AT. Estimated annual numbers of US acute-care hospital patients at risk for venous thromboembolism. Am J Hematol. 2007;82(9):777-82."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"224\" /><col width=\"67\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Cardiac failure</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Respiratory failure</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Recent stroke (&lt;3 months ago)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Recent myocardial infarction (&lt;4 weeks ago)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Acute infectious disease (including sepsis)</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Acute rheumatic disease</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Active malignancy</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Myeloproliferative syndrome</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Nephrotic syndrome</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">History of venous thromboembolism</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Known hypercoagulable state</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Immobilization (&lt;30 min walking per day) for &ge;3 days</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Recent travel for &gt;6 hrs</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Age &gt;60 years</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Obesity (BMI &gt;30)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Chronic venous insufficiency</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Pregnancy</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Hormonal therapy (contraceptive or replacement therapy)</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Dehydration</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"84\" /><col width=\"84\" /><col width=\"84\" /><col width=\"196\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Geneva Score for VTE Prophylaxis</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of VTE*</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;3</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">0.6%</p>\n</td>\n<td>\n<p dir=\"ltr\">No VTE prophylaxis indicated</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;3</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">3.2%</p>\n</td>\n<td>\n<p dir=\"ltr\">VTE prophylaxis indicated</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-c96466d2-fc6e-a556-c7d8-6fa0cf70b0c2\">*Composite endpoint of symptomatic VTE or VTE-related death at 90 days. From <a href=\"http://www.zlmsg.ch/uploads/media/2013_multicentre-validation-geneva-risk-score.pdf\" target=\"_blank\">Nendaz 2014</a>.</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Dyspnea",
+            "Extremity Edema",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Deep Venous Thrombosis",
+            "Pulmonary Embolism",
+            "VTE"
+        ],
+        "logic": "var calc_output = [];\n\nvar cardiac = parseFloat(cardiac)\nvar resp = parseFloat(resp)\nvar stroke = parseFloat(stroke)\nvar mi = parseFloat(mi)\nvar id = parseFloat(id)\nvar rheum = parseFloat(rheum)\nvar malignancy = parseFloat(malignancy)\nvar myelo = parseFloat(myelo)\nvar neph = parseFloat(neph)\nvar hxvte = parseFloat(hxvte)\nvar hyper = parseFloat(hyper)\nvar immob = parseFloat(immob)\nvar travel = parseFloat(travel)\nvar age = parseFloat(age)\nvar obese = parseFloat(obese)\nvar venousinsuf = parseFloat(venousinsuf)\nvar preg = parseFloat(preg)\nvar hormone = parseFloat(hormone)\nvar dehydration = parseFloat(dehydration)\n\n\nvar score = cardiac + resp + stroke + mi + id + rheum + malignancy + myelo + neph + hxvte + hyper + immob + travel + age + obese + venousinsuf + preg + hormone + dehydration\n\nvar group = ''\nvar risk = ''\nvar recommendation = '' \n\n\nif (score <3) {\n\tgroup = 'Low'\n\trisk = '0.6'\n\trecommendation = 'VTE prophylaxis NOT indicated'\n} else if (score >= 3) {\n\tgroup = 'High'\n\trisk = '3.2'\n\trecommendation = 'VTE prophylaxis indicated (presuming no contraindications)'\n}\n//results \n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: group,\n    value_text: 'risk',\n    message: recommendation\n    });\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'Geneva Risk Score for VTE Prophylaxis'\n    });\ncalc_output.push({\n    name: 'risk',\n    value: risk, \n    value_text: '%',\n    message: 'VTE risk (composite of symptomatic VTE or 90-day VTE mortality)'\n});\ncalc_output.push({\n    name: 'recommendation',\n    value: group, \n    value_text: 'risk',\n    message: recommendation\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cardiac failure",
+                "name": "cardiac",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Respiratory failure",
+                "name": "resp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recent stroke",
+                "name": "stroke",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<3 months ago",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recent myocardial infarction",
+                "name": "mi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<4 weeks ago",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acute infectious disease",
+                "name": "id",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": " Including sepsis",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Acute rheumatic disease ",
+                "name": "rheum",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Active malignancy",
+                "name": "malignancy",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Myeloproliferative syndrome",
+                "name": "myelo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Nephrotic syndrome",
+                "name": "neph",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Any prior VTE",
+                "name": "hxvte",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Known hypercoagulable state ",
+                "name": "hyper",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Immobilization for ≥3 days",
+                "name": "immob",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<30 min of walking per day",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Recent travel for >6 hrs",
+                "name": "travel",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age >60 years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Obesity ",
+                "name": "obese",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<calculator id='29'><abbr title='Body mass index'>BMI</abbr></calculator> >30",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chronic venous insufficiency ",
+                "name": "venousinsuf",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pregnancy",
+                "name": "preg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hormonal therapy ",
+                "name": "hormone",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Contraceptive or replacement therapy",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Dehydration",
+                "name": "dehydration",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Geneva risk score",
+            "inpatient VTE risk",
+            "VTE prophylaxis",
+            "Thromboprophylaxis",
+            "VTE"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)",
+            "Surgery (Vascular)"
+        ]
+    }
+}

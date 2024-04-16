@@ -1,0 +1,270 @@
+{
+    "id": "311",
+    "title": "HCM Risk-SCD",
+    "desc": "HCM Risk-SCD estimates risk of sudden cardiac death in patients with hypertrophic cardiomyopathy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24126876/",
+                "text": "O’Mahony C, Jichi F, Pavlou M, et al. A novel clinical risk prediction model for sudden cardiac death in hypertrophic cardiomyopathy (Hcm risk-scd). European Heart Journal. 2014;35(30):2010-2020."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/36017572/",
+                "text": "Zeppenfeld K, Tfelt-Hansen J, de Riva M, et al. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J. 2022;43(40):3997-4126."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/25173338/",
+                "text": "Authors/Task Force members, Elliott PM, Anastasakis A, et al. 2014 esc guidelines on diagnosis and management of hypertrophic cardiomyopathy: the task force for the diagnosis and management of hypertrophic cardiomyopathy of the european society of cardiology(Esc). Eur Heart J. 2014;35(39):2733-2779."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/36689567/",
+                "text": "Monda E, Limongelli G. Integrated sudden cardiac death risk prediction model for patients with hypertrophic cardiomyopathy. Circulation. 2023;147(4):281-283."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>The Prognostic Index is calculated based on the following inputs:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 100%; height: 1706.34px;\"><colgroup><col width=\"129\" style=\"width: 25.6998%;\"><col width=\"168\" style=\"width: 39.578%;\"><col width=\"59\" style=\"width: 12.2685%;\"><col width=\"93\" style=\"width: 22.4537%;\"></colgroup>\n<tbody>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"3\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td colspan=\"2\" style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Age at evaluation, years</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>&ndash;</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Continuous</span></p>\n</td>\n</tr>\n<tr style=\"height: 87.4922px;\">\n<td rowspan=\"2\" style=\"height: 174.992px;\">\n<p dir=\"ltr\"><span>Family history of <abbr title=\"Sudden cardiac death\">SCD</abbr></span></p>\n</td>\n<td rowspan=\"2\" style=\"height: 174.992px;\">\n<p dir=\"ltr\"><span>Hx of sudden cardiac death in&nbsp;</span>&ge;<span></span><span>1 first degree relatives &lt;40 years of age or SCD in any relative with confirmed <abbr title=\"Hypertrophic cardiomyopathy\">HCM</abbr> at any age</span></p>\n</td>\n<td style=\"height: 87.4922px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 87.4922px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 87.5px;\">\n<td style=\"height: 87.5px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 87.5px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 345.578px;\">\n<td style=\"height: 345.578px;\">\n<p dir=\"ltr\"><span>Maximum wall thickness, mm</span></p>\n</td>\n<td style=\"height: 345.578px;\">\n<p dir=\"ltr\"><span>Greatest thickness in anterior septum, posterior septum, lateral wall, and posterior wall of the LV, measured at the level of the mitral valve, papillary muscles, and apex, performed with parasternal short-axis plane using 2-D echocardiography at time of evaluation</span></p>\n</td>\n<td style=\"height: 345.578px;\">\n<p dir=\"ltr\"><span>&ndash;</span></p>\n</td>\n<td style=\"height: 345.578px;\">\n<p dir=\"ltr\"><span>Continuous</span></p>\n</td>\n</tr>\n<tr style=\"height: 233.586px;\">\n<td style=\"height: 233.586px;\">\n<p dir=\"ltr\"><span>Fractional shortening, %</span></p>\n</td>\n<td style=\"height: 233.586px;\">\n<p dir=\"ltr\"><span>(LV end diastolic dimension &ndash;<b id=\"docs-internal-guid-e17cf055-7fff-552f-4f99-9a23f2d027a4\"> </b>LV end-systolic dimension)/(LV end-diastolic dimension measured by M-Mode or 2-D echocardiography at time of evaluation)</span></p>\n</td>\n<td style=\"height: 233.586px;\">\n<p dir=\"ltr\"><span>&ndash;</span></p>\n</td>\n<td style=\"height: 233.586px;\">\n<p dir=\"ltr\"><span>Continuous</span></p>\n</td>\n</tr>\n<tr style=\"height: 166.391px;\">\n<td style=\"height: 166.391px;\">\n<p dir=\"ltr\"><span>Left atrial diameter, mm</span></p>\n</td>\n<td style=\"height: 166.391px;\">\n<p dir=\"ltr\"><span>Determined by M-Mode or 2-D echocardiography in the parasternal long axis place at time of evaluation</span></p>\n</td>\n<td style=\"height: 166.391px;\">\n<p dir=\"ltr\"><span>&ndash;</span></p>\n</td>\n<td style=\"height: 166.391px;\">\n<p dir=\"ltr\"><span>Continuous</span></p>\n</td>\n</tr>\n<tr style=\"height: 370.805px;\">\n<td style=\"height: 370.805px;\">\n<p dir=\"ltr\"><span>Maximal left ventricular outflow tract gradients, mmHg</span></p>\n</td>\n<td style=\"height: 370.805px;\">\n<p dir=\"ltr\"><span>Peak outflow tract gradients were determined using the modified Bernoulli equation: Gradient = 4</span><em>V</em><sup><span>2</span></sup><span>, where </span><em>V</em><span> is the peak aortic outflow velocity. Determined at rest and with Valsalva provocation using pulsed and continuous wave Doppler from apical 3 and 5-chamber views.</span></p>\n</td>\n<td style=\"height: 370.805px;\">\n<p dir=\"ltr\"><span>&ndash;</span></p>\n</td>\n<td style=\"height: 370.805px;\">\n<p dir=\"ltr\"><span>Continuous</span></p>\n</td>\n</tr>\n<tr style=\"height: 98.6953px;\">\n<td rowspan=\"2\" style=\"height: 197.391px;\">\n<p dir=\"ltr\"><span>Non-sustained ventricular tachycardia</span></p>\n</td>\n<td rowspan=\"2\" style=\"height: 197.391px;\">\n<p dir=\"ltr\"><span>&ge;3 consecutive ventricular beats at a rate of &ge;120 bpm and &lt;30 s in duration on Holter monitoring (minimum duration 24 hours) at or prior to evaluation</span></p>\n</td>\n<td style=\"height: 98.6953px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 98.6953px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 98.6953px;\">\n<td style=\"height: 98.6953px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 98.6953px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Unexplained syncope</span></p>\n</td>\n<td rowspan=\"2\" style=\"height: 108.797px;\">\n<p dir=\"ltr\"><span>Hx of unexplained syncope at or prior to evaluation</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3984px;\">\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3984px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>Prognostic Index = 0.15939858*(Maximal wall thickness, mm)&nbsp; &ndash; 0.00294271*(Maximal wall thickness, mm)<sup>2</sup> + 0.0259082*(Left atrial diameter, mm) + 0.00446131*(Maximal left ventricular outflow tract gradient, mmHg) + 0.4583082*(Family history of SCD) + 0.82639195*(NSVT) + 0.71650361*(Unexplained syncope) &ndash; 0.01799934*(Age at clinical evaluation, years)</p>",
+        "facts": "<p dir=\"ltr\"><span>The risk of SCD in 5 years for a patient with HCM is calculated by the following:</span></p>\n<p dir=\"ltr\">p̂<sub>SCD</sub> at 5 years = 1 &ndash; 0.998<sup>exp(Prognostic Index)</sup></p>",
+        "estimation": [
+            {
+                "name": "LA Diameter",
+                "unit": "lad_primacy",
+                "error_min": "0",
+                "error_max": "60",
+                "warn_min": "5",
+                "warn_max": "55",
+                "conversion": "1",
+                "normal_max_si": "55",
+                "normal_max_us": "55",
+                "normal_min_si": "5",
+                "normal_min_us": "5",
+                "units_si": "mm",
+                "units_us": "mm"
+            },
+            {
+                "name": "Peak LV Outflow",
+                "unit": "plvo_primacy",
+                "error_min": "0",
+                "error_max": "240",
+                "warn_min": "0",
+                "warn_max": "210",
+                "conversion": "1",
+                "normal_max_si": "210",
+                "normal_max_us": "210",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmHg",
+                "units_us": "mmHg"
+            },
+            {
+                "name": "Age (HCM Risk)",
+                "unit": "age_hcm_risk",
+                "error_min": "16",
+                "error_max": "110",
+                "warn_min": "16",
+                "warn_max": "110",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Fractional Shortening",
+                "unit": "frac_shortening",
+                "error_min": "10",
+                "error_max": "60",
+                "warn_min": "20",
+                "warn_max": "50",
+                "conversion": "1",
+                "normal_max_si": "45",
+                "normal_max_us": "45",
+                "normal_min_si": "25",
+                "normal_min_us": "25",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Maximum Wall Thickness",
+                "unit": "max_wall_thickness",
+                "error_min": "0",
+                "error_max": "40",
+                "warn_min": "5",
+                "warn_max": "11",
+                "conversion": "1",
+                "normal_max_si": "10",
+                "normal_max_us": "10",
+                "normal_min_si": "7",
+                "normal_min_us": "7",
+                "units_si": "mm",
+                "units_us": "mm"
+            }
+        ],
+        "primary_complains": [
+            "Arrhythmia",
+            "Chest Pain",
+            "Dizziness",
+            "Fatigue",
+            "Headache",
+            "Palpitations",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Hypertrophic Cardiomyopathy"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar scd = parseFloat(scd);\nvar max_wall = parseFloat(max_wall);\nvar frac_short = parseFloat(frac_short);\nvar lad = parseFloat(lad);\nvar lv_outflow = parseFloat(lv_outflow);\nvar nsvt = parseFloat(nsvt);\nvar syncope = parseFloat(syncope);\n\nvar index = 0.15939858*max_wall - 0.00294271*(Math.pow(max_wall, 2)) + 0.0259082*lad +  0.00446131*lv_outflow + 0.4583082*scd + 0.82639195*nsvt + 0.71650361*syncope - 0.01799934*age;\nvar risk = (1 - Math.pow(0.998, Math.exp(index)))*100;\n\ncalc_output.push({\n    name: 'mini',\n    value: risk.toFixed(1),\n    value_text: '%',\n    message: 'Risk of SCD in 5 years'\n});\ncalc_output.push({\n    name: '10481_HCM Risk-SCM_result (index)',\n    value: index.toFixed(2),\n    value_text: '',\n    message: 'Prognostic Index'\n});\ncalc_output.push({\n    name: '10481_HCM Risk-SCD_result (risk)',\n    value: risk.toFixed(1),\n    value_text: '%',\n    message: 'Risk of SCD in 5 years'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age at evaluation, years</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_hcm_risk"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Family history of <abbr title=\"Sudden cardiac death\">SCD</abbr></p>",
+                "mdcalc_info_concept": null,
+                "name": "scd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Hx of sudden cardiac death in >1 first degree relatives <40 years of age or SCD in any relative with confirmed <abbr title=\"Hypertrophic cardiomyopathy\">HCM</abbr> at any age",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Maximum wall thickness, mm</p>",
+                "name": "max_wall",
+                "optional": false,
+                "tips_en": "Greatest thickness in anterior septum, posterior septum, lateral wall, and posterior wall of the LV, measured at the level of the mitral valve, papillary muscles, and apex",
+                "type": "textbox",
+                "unit": "max_wall_thickness"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Fractional shortening, %</p>",
+                "name": "frac_short",
+                "optional": false,
+                "tips_en": "(LV end diastolic dimension – LV end-systolic dimension)/(LV end-diastolic dimension measured by M-Mode or 2-D echocardiography at time of evaluation)",
+                "type": "textbox",
+                "unit": "frac_shortening"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Left atrial diameter, mm</p>",
+                "name": "lad",
+                "optional": false,
+                "tips_en": "Determined by M-Mode or 2-D echocardiography in the parasternal long axis place at time of evaluation",
+                "type": "textbox",
+                "unit": "lad_primacy"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Maximal left ventricular outflow tract gradients, mmHg</p>",
+                "name": "lv_outflow",
+                "optional": false,
+                "tips_en": "Determined at rest and with Valsalva provocation using pulsed and continuous wave Doppler from apical 3 and 5-chamber views",
+                "type": "textbox",
+                "unit": "plvo_primacy"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Non-sustained ventricular tachycardia</p>",
+                "mdcalc_info_concept": null,
+                "name": "nsvt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "≥3 consecutive ventricular beats at a rate of ≥120 bpm and <30 s in duration on Holter monitoring (minimum duration 24 hours) at or prior to evaluation",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Unexplained syncope</p>",
+                "mdcalc_info_concept": null,
+                "name": "syncope",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Hx of unexplained syncope at or prior to evaluation",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "HCM Risk-SCD",
+            "HCM",
+            "SCD",
+            "sudden",
+            "sudden cardiac death",
+            "sudden cardiac",
+            "cardiac death",
+            "cardiomyopathy",
+            "hypertrophic cardiomyopathy",
+            "hcm risk",
+            "hcm risk scd",
+            "scd risk",
+            "hcm scd",
+            "scd hcm"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

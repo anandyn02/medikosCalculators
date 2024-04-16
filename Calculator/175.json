@@ -1,0 +1,122 @@
+{
+    "id": "175",
+    "title": "Rome IV Diagnostic Criteria for Functional Chest Pain",
+    "desc": "The Rome IV Criteria for Functional Chest Pain provides criteria for diagnosis of functional chest pain.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144625",
+                "text": "Aziz Q, Fass R, Gyawali CP, Miwa H, Pandolfino JE, Zerbib F. Functional Esophageal Disorders. Gastroenterology. 2016;150:1368-1379."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">To fulfill the Rome IV criteria for functional chest pain, patient must have the following (for 3 months prior with symptom onset &ge;6 months ago with a frequency of at least once a week):</p>\n<ol>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Retrosternal chest pain or discomfort; cardiac causes should be ruled out.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Absence of associated esophageal symptoms, such as heartburn and dysphagia.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Absence of evidence that gastroesophageal reflux or eosinophilic esophagitis are the cause of the symptom.</p>\n</li>\n<li dir=\"ltr\">\n<p dir=\"ltr\" role=\"presentation\">Absence of major esophageal motor disorders (achalasia/<abbr title=\"Esophagogastric junction\">EGJ</abbr> outflow obstruction, diffuse esophageal spasm, jackhammer esophagus, absent peristalsis).</p>\n</li>\n</ol>\n<p dir=\"ltr\"></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain"
+        ],
+        "disease_treated": [
+            "Esophageal Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four);\n\nvar diag;\n\nvar msg= 'Diagnosis for functional chest pain as per Rome IV criteria';\nvar minimsg= 'Diagnosis for functional chest pain';\n\nif (criteria==4) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Chest Pain',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago with a frequency of at least once a week",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Retrosternal chest pain or discomfort; cardiac causes should be ruled out",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of associated esophageal symptoms, such as heartburn and dysphagia",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of evidence that gastroesophageal reflux or eosinophilic esophagitis are the cause of the symptom",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Absence of major esophageal motor disorders (achalasia/<abbr title=\"Esophagogastric junction\">EGJ</abbr> outflow obstruction, diffuse esophageal spasm, jackhammer esophagus, absent peristalsis)",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Functional Chest Pain, Rome IV for Chest Pain, Rome IV for Functional Chest Pain, rome iv chest pain, Rome IV Criteria for Chest Pain, functional chest pain, fcp, rome 4, rome 4 criteria, rome iv criteria, functional chest pain diagnosis, fcp diagnosis, rome chest pain"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

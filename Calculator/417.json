@@ -1,0 +1,151 @@
+{
+    "id": "417",
+    "title": "du Bois Score for Idiopathic Pulmonary Fibrosis (IPF) Mortality",
+    "desc": "du Bois Score for Idiopathic Pulmonary Fibrosis (IPF) Mortality determines 1-year mortality in IPF patients using PFT and clinical indicators.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21616999",
+                "text": "du Bois RM, Weycker D, Albera C, Bradford WZ, Costabel U, Kartashov A, et al. Ascertainment of individual risk of mortality for patients with idiopathic pulmonary fibrosis. Am J Respir Crit Care Med.2011;184:459–66. doi: 10.1164/rccm.201011-1790OC."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://err.ersjournals.com/content/errev/23/132/220.full.pdf",
+                "text": "Kolb M, Collard HR. Staging of idiopathic pulmonary fibrosis: past, present and future Eur Respir Rev 2014; 23: 220–224."
+            },
+            {
+                "href": "https://thorax.bmj.com/content/67/Suppl_2/A120.1",
+                "text": "Wilkie MEM, Chalmers JD, Smith RP, Schembri S. Asthma outcomes: P134 Comparison of Two Prognostic Tools For Identifying High Risk Patients with Idiopathic Pulmonary Fibrosis. Thorax 2012;67:Suppl 2 A120 doi:10.1136/thoraxjnl-2012-202678.417"
+            }
+        ],
+        "evidence": "<p>Addition of assigned points, as above.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\" style=\"width: 72.5686%;\">\n<tbody>\n<tr>\n<th style=\"text-align: left; width: 40.3271%;\">Total Risk Score</th>\n<th style=\"text-align: left; width: 59.6729%;\">Expected 1-year Probability of Death</th>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">0&ndash;4</td>\n<td style=\"width: 59.6729%;\">&lt;2%</td>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">8&ndash;14</td>\n<td style=\"width: 59.6729%;\">2-5%</td>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">16&ndash;21</td>\n<td style=\"width: 59.6729%;\">5&ndash;10%</td>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">22&ndash;29</td>\n<td style=\"width: 59.6729%;\">10&ndash;20%</td>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">30&ndash;33</td>\n<td style=\"width: 59.6729%;\">20&ndash;30%</td>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">34&ndash;37</td>\n<td style=\"width: 59.6729%;\">30&ndash;40%</td>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">38&ndash;40</td>\n<td style=\"width: 59.6729%;\">40&ndash;50%</td>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">41&ndash;43</td>\n<td style=\"width: 59.6729%;\">50&ndash;60%</td>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">44&ndash;45</td>\n<td style=\"width: 59.6729%;\">60&ndash;70%</td>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">47&ndash;49</td>\n<td style=\"width: 59.6729%;\">70&ndash;80%</td>\n</tr>\n<tr>\n<td style=\"width: 40.3271%;\">&gt;50</td>\n<td style=\"width: 59.6729%;\">&gt;80%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Idiopathic Pulmonary Fibrosis"
+        ],
+        "logic": "var calc_output = []; \nvar u = parseInt(age) + parseInt(hosp) + parseInt(fvc) + parseInt(fvc24); \nvar string = 'Expected 1-year probability of death: '; \nvar prob; \nif (u >= 0 && u <= 4) {prob = '<2%'; } \nif (u >= 8 && u <= 14) {prob = '2 - 5%'; } \nif (u >= 16 && u <= 21) {prob = '5 - 10%'; } \nif (u >= 22 && u <= 29) {prob = '10 - 20%'; } \nif (u >= 30 && u <= 33) {prob = '20 - 30%'; } \nif (u >= 34 && u <= 37) {prob = '30 - 40%'; } \nif (u >= 38 && u <= 40) {prob = '40 - 50%'; } \nif (u >= 41 && u <= 43) {prob = '50 - 60%'; } \nif (u >= 44 && u <= 45) {prob = '60 - 70%'; } \nif (u >= 47 && u <= 49) {prob = '70 - 80%'; } \nif (u >= 50) {prob = '>80%'; } \n\ncalc_output.push({\n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: 'du Bois Score for IPF'\n}); \ncalc_output.push({\n    name: '2156_du Bois Score_result', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: string + prob \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Age",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<60 years",
+                        "value": 0
+                    },
+                    {
+                        "label": "60-69 years",
+                        "value": 4
+                    },
+                    {
+                        "label": "≥70 years",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Respiratory hospitalization in past 6 months",
+                "md_calc_info_concept": null,
+                "name": "hosp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 14
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Predicted baseline forced vital capacity (FVC)",
+                "mdcalc_info_concept": null,
+                "name": "fvc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥80%",
+                        "value": 0
+                    },
+                    {
+                        "label": "66-79%",
+                        "value": 8
+                    },
+                    {
+                        "label": "51-65%",
+                        "value": 13
+                    },
+                    {
+                        "label": "≤50%",
+                        "value": 18
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 2,
+                "label_en": "24-Week change in predicted FVC",
+                "mdcalc_info_concept": null,
+                "name": "fvc24",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤-10%",
+                        "value": 21
+                    },
+                    {
+                        "label": "-5% - -9.9%",
+                        "value": 10
+                    },
+                    {
+                        "label": "≥-4.9%",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "dubois",
+            "mortality",
+            "ipf"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Palliative Care/Hospice",
+            "Pulmonology"
+        ]
+    }
+}

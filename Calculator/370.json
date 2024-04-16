@@ -1,0 +1,139 @@
+{
+    "id": "370",
+    "title": "Kocher Criteria for Septic Arthritis",
+    "desc": "The Kocher Criteria for Septic Arthritis distinguishes septic arthritis from transient synovitis in a child with an inflamed hip.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/10608376",
+                "text": "Kocher MS, Zurakowski D, Kasser JR. Differentiating between septic arthritis and transient synovitis of the hip in children: an evidence-based clinical prediction algorithm. J Bone Joint Surg Am. 1999 Dec;81(12):1662-70."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15118038",
+                "text": "Luhmann SJ, et al. Differentiation between septic arthritis and transient synovitis of the hip in children with clinical prediction algorithms. JBJS. 2004; 86(5): 956-62."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20798450",
+                "text": "Sultan J and Hughes PJ. Septic arthritis or transient synovitis of the hip in children: The value of clinical prediction algorithms. JBJS Britain. 2010; 92(9): 1289-93."
+            }
+        ],
+        "evidence": "<p>Series of Yes/No questions, each &ldquo;Yes&rdquo; increases the risk likelihood of septic arthritis.</p>",
+        "facts": "<p>+ 1 criterion - 3% probability for septic arthritis<br>+ 2 criteria - 40% probability for septic arthritis<br>+ 3 criteria - 93% probability for septic arthritis<br>+ 4 criteria - 99.6% probability for septic arthritis</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Extremity Pain",
+            "Fever",
+            "Joint Pain"
+        ],
+        "disease_treated": [
+            "Acute Pain",
+            "Septic Arthritis",
+            "Transient Synovitis"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseInt(weight_bearing_inability) + parseInt(temperature) + parseInt(esr_40) + parseInt(white_blood_cell_count);\nvar msg = '';\nvar mini_msg = '';\nif (u == 0) {\n    msg = 'If no criteria are positive, this child is at very low risk for septic arthritis in the appropriate clinical setting and may be managed with observation only and close follow-up.';\n    mini_msg = 'Very low risk for septic arthritis.'\n}\nif (u == 1) {\n    msg = '3% probability of septic arthritis; intermediate probability and may require radiology or orthopedics consultation for hip aspiration.';\n    mini_msg = '3% probability of septic arthritis.'\n}\nif (u == 2) {\n    msg = '40% probability of septic arthritis; intermediate probability and may require radiology or orthopedics consultation for hip aspiration.';\n    mini_msg = '40% probability of septic arthritis.'\n}\nif (u == 3) {\n    msg = '93% probability of septic arthritis; may be a candidate for aspiration in the operating room instead of the radiology suite given greater likelihood that they will require surgical drainage.';\n    mini_msg = '93% probability of septic arthritis.'\n}\nif (u == 4) {\n    msg = '99% probability of septic arthritis; may be a candidate for aspiration in the operating room instead of the radiology suite given greater likelihood that they will require surgical drainage.';\n    mini_msg = '99% probability of septic arthritis.'\n}\ncalc_output.push({ \n    name: 'mini', \n    value: u, \n    value_text: 'criteria', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '1817_Kocher Criteria_result', \n    value: u, \n    value_text: 'criteria', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Non weight-bearing",
+                "md_calc_info_concept": null,
+                "name": "weight_bearing_inability",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Temp > 38.5°C / 101.3°F",
+                "md_calc_info_concept": null,
+                "name": "temperature",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Erythrocyte sedimentation rate'>ESR</abbr> > 40mm/hr",
+                "md_calc_info_concept": null,
+                "name": "esr_40",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='White blood cell count'>WBC</abbr> > 12,000 cells/mm3",
+                "md_calc_info_concept": null,
+                "name": "white_blood_cell_count",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "hip",
+            "synovitis",
+            "transient"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Infectious Disease",
+            "Orthopedics",
+            "Pediatric Subspecialty",
+            "Pediatrics"
+        ]
+    }
+}

@@ -1,0 +1,562 @@
+{
+    "id": "242",
+    "title": "COVID-19 Inpatient Risk Calculator (CIRC)",
+    "desc": "The COVID-19 Inpatient Risk Calculator (CIRC) predicts likelihood of inpatient mortality or severe disease progression in COVID patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/32960645/",
+                "text": "Garibaldi BT, Fiksel J, Muschelli J, et al. Patient trajectories among persons hospitalized for covid-19 : a cohort study. Ann Intern Med. Published online September 22, 2020."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/7722560/",
+                "text": "Charlson M, Szatrowski TP, Peterson J, Gold J. Validation of a combined comorbidity index. J Clin Epidemiol. 1994;47(11):1245-1251."
+            }
+        ],
+        "evidence": "<p><strong>FORMULA</strong></p>\n<p>Risk is calculated using the cumulative incidence of Cox proportional hazard regression models from&nbsp;<a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7530643/\" target=\"_blank\" rel=\"noopener\">Garibaldi 2020</a>.</p>\n<p><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\"></span></p>\n<p><strong>Charlson Comorbidity Index</strong></p>\n<p>Addition of the selected points:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%; height: 672px;\">\n<tbody>\n<tr style=\"height: 21px;\">\n<td colspan=\"2\" style=\"width: 63.926%; height: 21px;\"><strong>Variable</strong></td>\n<td style=\"width: 31.963%; height: 21px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"width: 31.963%; height: 42px;\">Myocardial infarction</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 42px; width: 31.963%;\" rowspan=\"2\">Congestive heart failure</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 42px; width: 31.963%;\" rowspan=\"2\">Peripheral vascular disease</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 42px; width: 31.963%;\" rowspan=\"2\">Cerebrovascular disease</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 42px; width: 31.963%;\" rowspan=\"2\">Dementia</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 42px; width: 31.963%;\" rowspan=\"2\">Chronic pulmonary disease</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 42px; width: 31.963%;\" rowspan=\"2\">Rheumatologic disease</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 42px; width: 31.963%;\" rowspan=\"2\">Peptic ulcer disease</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 63px; width: 31.963%;\" rowspan=\"3\">Liver disease</td>\n<td style=\"width: 31.963%; height: 21px;\">Moderate or severe liver disease</td>\n<td style=\"width: 31.963%; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Mild liver disease</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 63px; width: 31.963%;\" rowspan=\"3\">Diabetes</td>\n<td style=\"width: 31.963%; height: 21px;\">Diabetes with chronic complications</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Diabetes without chronic complications</td>\n<td style=\"width: 31.963%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 42px; width: 31.963%;\" rowspan=\"2\">Hemiplegia or paraplegia</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 42px; width: 31.963%;\" rowspan=\"2\">Renal disease</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 63px; width: 31.963%;\" rowspan=\"3\">Malignancy</td>\n<td style=\"width: 31.963%; height: 21px;\">Metastatic solid tumor</td>\n<td style=\"width: 31.963%; height: 21px;\">6</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">Any malignancy, including leukemia and lymphoma</td>\n<td style=\"width: 31.963%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 42px; width: 31.963%;\" rowspan=\"2\">AIDS/HIV</td>\n<td style=\"width: 31.963%; height: 21px;\">Yes</td>\n<td style=\"width: 31.963%; height: 21px;\">6</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 31.963%; height: 21px;\">No</td>\n<td style=\"width: 31.963%; height: 21px;\">0</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "hemoglobin",
+                "unit": "hemoglobin",
+                "error_min": "0",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "0.6206",
+                "normal_max_si": "11.2",
+                "normal_max_us": "18",
+                "normal_min_si": "7.4",
+                "normal_min_us": "12",
+                "units_si": "mmol/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "ddimer_circ",
+                "unit": "ddimer_circ",
+                "error_min": "0",
+                "error_max": "9.999",
+                "warn_min": "0",
+                "warn_max": "4.999",
+                "conversion": "1000",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "ng/mL",
+                "units_us": "mg/L"
+            },
+            {
+                "name": "c-reactive",
+                "unit": "creactive",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mg/dL",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "alanine_aminotransferase",
+                "unit": "alanine_aminotransferase",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0",
+                "warn_max": "400",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            },
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Body Mass Index",
+                "unit": "BMI",
+                "error_min": "0",
+                "error_max": "50",
+                "warn_min": "10",
+                "warn_max": "30",
+                "conversion": "1",
+                "normal_max_si": "25",
+                "normal_max_us": "25",
+                "normal_min_si": "20",
+                "normal_min_us": "20",
+                "units_si": "kg/m²",
+                "units_us": "kg/m²"
+            },
+            {
+                "name": "Respiratory Rate",
+                "unit": "rr",
+                "error_min": "0",
+                "error_max": "90",
+                "warn_min": "5",
+                "warn_max": "70",
+                "conversion": "1",
+                "normal_max_si": "20",
+                "normal_max_us": "20",
+                "normal_min_si": "12",
+                "normal_min_us": "12",
+                "units_si": "breaths/min",
+                "units_us": "breaths/min"
+            },
+            {
+                "name": "pulse",
+                "unit": "pulse",
+                "error_min": "0",
+                "error_max": "220",
+                "warn_min": "0",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "beats/min",
+                "units_us": "beats/min"
+            },
+            {
+                "name": "Ferritin",
+                "unit": "ferritin",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "µg/L",
+                "units_us": "ng/mL"
+            },
+            {
+                "name": "White Blood Cell Count",
+                "unit": "wbc",
+                "error_min": "0.0001",
+                "error_max": "500",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10.7",
+                "normal_max_us": "10.7",
+                "normal_min_si": "3.7",
+                "normal_min_us": "3.7",
+                "units_si": "× 10⁹ cells/L",
+                "units_us": "× 10³ cells/µL"
+            },
+            {
+                "name": "glomerular_filtration",
+                "unit": "glomerular_filtration",
+                "error_min": "0",
+                "error_max": "160",
+                "warn_min": "0",
+                "warn_max": "120",
+                "conversion": "0.0167",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL/s",
+                "units_us": "mL/min"
+            },
+            {
+                "name": "charlson_circ",
+                "unit": "charlson_circ",
+                "error_min": "0",
+                "error_max": "29",
+                "warn_min": "0",
+                "warn_max": "29",
+                "conversion": "1",
+                "normal_max_si": "29",
+                "normal_max_us": "29",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "points",
+                "units_us": "points"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 1
+                    },
+                    {
+                        "label": "Female",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>White</p>",
+                "name": "non_white",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 1
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Admitted from nursing home</p>",
+                "name": "nursing_home_admit",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Troponin observed</p>",
+                "name": "troponin_observed",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Hemoglobin</p>",
+                "name": "hemoglobin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hemoglobin"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Respiratory rate</p>",
+                "name": "respiratory_rate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "rr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>BMI</p>",
+                "name": "bmi",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "BMI"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Respiratory symptoms present</p>",
+                "name": "respiratory",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Gastrointestinal symptoms present</p>",
+                "name": "gi",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Constitutional symptoms present</p>",
+                "name": "constitutional",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Loss of taste or smell</p>",
+                "name": "losstastesmell",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Albumin</p>",
+                "name": "albumin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Glomerular filtration rate</p>",
+                "name": "gfr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "glomerular_filtration"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>D-dimer</p>",
+                "name": "d_dimer_above_1",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ddimer_circ"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Temperature &gt;100.4&deg;F (38.0&deg;C) within 24 hours of admission</p>",
+                "name": "fever",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Pulse</p>",
+                "name": "pulse",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "pulse"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>White blood cell count</p>",
+                "name": "wbc",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wbc"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Alanine aminotransferase</p>",
+                "name": "alt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alanine_aminotransferase"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>C-reactive protein</p>",
+                "name": "crp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "creactive"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Absolute lymphocyte count</p>",
+                "name": "alc",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wbc"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Ferritin</p>",
+                "name": "ferritin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ferritin"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Charlson Score</p>",
+                "name": "charlson_score",
+                "optional": false,
+                "tips_en": "See <a href=\"#evidence\">Evidence</a>",
+                "type": "textbox",
+                "unit": "charlson_circ"
+            }
+        ],
+        "can_search": [
+            "COVID Inpatient Risk Calculator, COVID, coronavirus, covid mortality, covid death, covid progression, covid-19, coronavirus mortality, coronavirus progression, covid death risk, covid death, covid mortality risk, covid progression risk"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

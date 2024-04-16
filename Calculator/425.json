@@ -1,0 +1,766 @@
+{
+    "id": "425",
+    "title": "Modified Fatigue Impact Scale (MFIS)",
+    "desc": "The Modified Fatigue Impact Scale (MFIS) measures the impact fatigue takes on a patient's daily life.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6703889",
+                "text": "Fisk JD, Pontefract A, Ritvo PG, Archibald CJ, Murray TJ. The impact of fatigue on patients with multiple sclerosis. Can J Neurol Sci. 1994 Feb;21(1):9-14."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3883028/",
+                "text": "Larson RD. Psychometric Properties of the Modified Fatigue Impact Scale.International Journal of MS Care. 2013;15(1):15-20. doi:10.7224/1537-2073.2012-019."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6703889",
+                "text": "Freal JE, Kraft GH, Coryell JK.Symptomatic fatigue in multiple sclerosis.Arch Phys Med Rehabil. 1984 Mar;65(3):135-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1579227/",
+                "text": "Kos D, Nagels G, D'Hooghe MB, Duportail M, Kerckhofs E. A rapid screening tool for fatigue impact in multiple sclerosis. BMC Neurology. 2006;6:27. doi:10.1186/1471-2377-6-27."
+            }
+        ],
+        "evidence": "<p><b>MFIS:</b></p>\n<ul>\n<li><span style=\"font-weight: 400;\">Total = Physical + Cognitive + Psychosocial</span></li>\n<li>Physical Subscale: Items 4+6+7+10+13+14+17+20+21.</li>\n<li><span style=\"font-weight: 400;\">Cognitive Subscale: Items 1+2+3+5+11+12+15+16+18+19.</span></li>\n<li><strong><span style=\"font-weight: 400;\">Psychosocial Subscale: Items 8+9</span></strong></li>\n</ul>",
+        "facts": "<p>The <calculator id=\"2197\">shortened version of the MFIS</calculator> uses questions 1, 9, 10, 17, and 19 from the longer version of the MFIS.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Multiple Sclerosis"
+        ],
+        "logic": "var calc_output = [];\nvar q1 = parseInt(q1);\nvar q2 = parseInt(q2);\nvar q3 = parseInt(q3);\nvar q4 = parseInt(q4);\nvar q5 = parseInt(q5);\nvar q6 = parseInt(q6);\nvar q7 = parseInt(q7);\nvar q8 = parseInt(q8);\nvar q9 = parseInt(q9);\nvar q10 = parseInt(q10);\nvar q11 = parseInt(q11);\nvar q12 = parseInt(q12);\nvar q13 = parseInt(q13);\nvar q14 = parseInt(q14);\nvar q15 = parseInt(q15);\nvar q16 = parseInt(q16);\nvar q17 = parseInt(q17);\nvar q18 = parseInt(q18);\nvar q19 = parseInt(q19);\nvar q20 = parseInt(q20);\nvar q21 = parseInt(q21);\nvar msg = '';\nvar mini_msg = '';\nvar total = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10 + q11 + q12 + q13 + q14 + q15 + q16 + q17 + q18 + q19 + q20 + q21;\nvar physical = q4 + q6 + q7 + q10 + q13 + q14 + q17 + q20 + q21;\nvar cognitive = q1 + q2 + q3 + q5 + q11 + q12 + q15 + q16 + q18 + q19;\nvar psychosocial = q8 + q9;\nmini_msg = 'out of 84 points';\nmsg += 'Physical: ' + physical + '/36<br/>';\nmsg += 'Cognitive: ' + cognitive + '/40<br/>';\nmsg += 'Pyschosocial: ' + psychosocial + '/8<br/>';\n\ncalc_output.push({ \n    name: 'mini', \n    value: total.toFixed(0), \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '2196_Modified Fatigue Impact Scale_result', \n    alue: total.toFixed(0), \n    value_text: 'points '+ mini_msg, \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "1. I have been less alert.",
+                "mdcalc_info_concept": null,
+                "name": "q1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "2. I have had difficulty paying attention.",
+                "mdcalc_info_concept": null,
+                "name": "q2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "3. I have been unable to think clearly.",
+                "mdcalc_info_concept": null,
+                "name": "q3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "4. I have been clumsy and uncoordinated.",
+                "mdcalc_info_concept": null,
+                "name": "q4",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "5. I have been forgetful.",
+                "mdcalc_info_concept": null,
+                "name": "q5",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "6. I have had to pace myself in my physical activities.",
+                "mdcalc_info_concept": null,
+                "name": "q6",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "7. I have been less motivated to do anything that requires physical effort.",
+                "mdcalc_info_concept": null,
+                "name": "q7",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "8. I have been less motivated to participate in social activities.",
+                "mdcalc_info_concept": null,
+                "name": "q8",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "9. I have been limited in my ability to do things away from home.",
+                "mdcalc_info_concept": null,
+                "name": "q9",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "10. I have had trouble maintaining physical effort for long periods.",
+                "mdcalc_info_concept": null,
+                "name": "q10",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "11. I have had difficulty making decisions.",
+                "mdcalc_info_concept": null,
+                "name": "q11",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "12. I have been less motivated to do anything that requires thinking.",
+                "mdcalc_info_concept": null,
+                "name": "q12",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "13. My muscles have felt weak.",
+                "mdcalc_info_concept": null,
+                "name": "q13",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "14. I have been physically uncomfortable.",
+                "mdcalc_info_concept": null,
+                "name": "q14",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "15. I have had trouble finishing tasks that require thinking.",
+                "mdcalc_info_concept": null,
+                "name": "q15",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "16. I have had difficulty organizing things.",
+                "mdcalc_info_concept": null,
+                "name": "q16",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "17. I have been less able to complete tasks that require physical effort.",
+                "mdcalc_info_concept": null,
+                "name": "q17",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "18. My thinking has been slowed down.",
+                "mdcalc_info_concept": null,
+                "name": "q18",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "19. I have had trouble concentrating.",
+                "mdcalc_info_concept": null,
+                "name": "q19",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "20. I have limited my physical activities.",
+                "mdcalc_info_concept": null,
+                "name": "q20",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "21. I have needed to rest more often or for longer periods of time.",
+                "mdcalc_info_concept": null,
+                "name": "q21",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Rarely",
+                        "value": 1
+                    },
+                    {
+                        "label": "Sometimes",
+                        "value": 2
+                    },
+                    {
+                        "label": "Often",
+                        "value": 3
+                    },
+                    {
+                        "label": "Almost Always",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "mfis",
+            "ms",
+            "multiple sclerosis",
+            "daily life",
+            "function"
+        ],
+        "specialty": [
+            "Geriatrics",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

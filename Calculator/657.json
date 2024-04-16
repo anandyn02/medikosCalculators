@@ -1,0 +1,171 @@
+{
+    "id": "657",
+    "title": "AAP Pediatric Hypertension Guidelines",
+    "desc": "The Pediatric Hypertension Guidelines (AAP) diagnose hypertension in pediatric patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://academic.oup.com/aje/article/167/6/653/154351 ",
+                "text": "Rosner B, Cook N, Portman R, Daniels S, Falkner B. Determination of blood pressure percentiles in normal-weight children: some methodological issues. Am J Epidemiol 2008; 167(6): 653-66."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Individual regression equations for boys/girls and SBP/DBP percentiles for children aged 1-12 years are published in <a href=\"https://academic.oup.com/aje/article/167/6/653/154351\" target=\"_blank\">Rosner 2008</a>.</p>",
+        "facts": "<p>Interpretation:</p>\n<p></p>\n<table>\n<tbody>\n<tr>\n<td></td>\n<td>\n<p><strong>1-12 years old</strong></p>\n</td>\n<td>\n<p><strong>&ge;13 years old</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Normal BP</strong></p>\n</td>\n<td>\n<p>SBP &lt;90th percentile, and</p>\n<p>DBP &lt;90th percentile&nbsp;</p>\n</td>\n<td style=\"white-space: nowrap;\">\n<p>SBP &lt;120</p>\n<p>DBP &lt;80</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Elevated BP</strong></p>\n</td>\n<td>\n<p>SBP &ge;90th percentile but &lt;95th percentile, or</p>\n<p>DBP &ge;90th percentile but &lt;95th percentile, or</p>\n<p>120/80 to &lt;95th percentile&nbsp;(whichever is lower)</p>\n</td>\n<td style=\"white-space: nowrap;\">\n<p>SBP 120-129</p>\n<p>DBP &lt;80</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Stage 1 HTN</strong></p>\n</td>\n<td>\n<p>SBP &ge;95th percentile&nbsp;but &lt;12 mm Hg above 95th percentile, or</p>\n<p>SBP &ge;95th percentile&nbsp;but &lt;12 mm Hg above 95th percentile, or</p>\n<p>130-139/80-89 (whichever is lower)</p>\n</td>\n<td>\n<p style=\"white-space: nowrap;\">SBP 130-139</p>\n<p>DBP 80-89</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Stage 2 HTN</strong></p>\n</td>\n<td>\n<p>SBP or DBP &ge;12 mm Hg above 95th percentile, or</p>\n<p>&ge;140/90 (whichever is lower)</p>\n</td>\n<td>\n<p style=\"white-space: nowrap;\">SBP &ge;140</p>\n<p>DBP &ge;90</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>Use the higher of the two values; e.g. if a 14 year old has BP 135/90, diagnosis is Stage 2 HTN.</p>\n<p>From <a href=\"http://pediatrics.aappublications.org/content/early/2017/08/21/peds.2017-1904\" target=\"_blank\">Flynn 2017</a>.</p>",
+        "estimation": [
+            {
+                "name": "SBP, Peds",
+                "unit": "sbp_peds",
+                "error_min": "75",
+                "error_max": "300",
+                "warn_min": "75",
+                "warn_max": "300",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "SBP, Peds",
+                "unit": "dbp_peds",
+                "error_min": "40",
+                "error_max": "200",
+                "warn_min": "40",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Height (peds)",
+                "unit": "ht_peds_htn",
+                "error_min": "10",
+                "error_max": "200",
+                "warn_min": "10",
+                "warn_max": "240",
+                "conversion": "2.54",
+                "normal_max_si": "203",
+                "normal_max_us": "80",
+                "normal_min_si": "63",
+                "normal_min_us": "25",
+                "units_si": "cm",
+                "units_us": "in"
+            },
+            {
+                "name": "Age (peds)",
+                "unit": "age_peds_htn",
+                "error_min": "1",
+                "error_max": "18",
+                "warn_min": "1",
+                "warn_max": "18",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            }
+        ],
+        "primary_complains": [
+            "Any/All"
+        ],
+        "disease_treated": [
+            "Hypertension"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age)\nvar sex = parseInt(sex)\nvar ht = parseFloat(ht)\nvar sbp = parseInt(sbp)\nvar dbp = parseInt(dbp)\n\nif (UOMSYSTEM == true) {\n    ht = ht * 2.54\n}\n\n// height constants\nif (sex == 0) {\n    var b0 = [71.0728, 102.6662, 13.6814, 10.9219] // sbp 90, sbp 95, dbp 90, dbp 95 for boys\n} else {\n    var b0 = [92.4497, 117.6411, 31.5473, 42.9427] // sbp 90, sbp 95, dbp 90, dbp 95 for girls\n}\n\nfunction add(a, b) {\n    return a + b;\n}\n\n// knots\nif (sex == 0) { // boys\n    var knot_age = [5.06, 10.79, 13.22, 14.51, 17.30]\n    var knot_ht = [107.8, 140.0, 154.5, 166.4, 179.1]\n    var knot_ageht = [-15.000, 8.900, 50.375, 112.684, 250.040]\n} else { // girls\n    var knot_age = [5.00, 10.70, 13.16, 14.51, 17.33]\n    var knot_ht = [106.7, 140.7, 154.0, 160.5, 168.9]\n    var knot_ageht = [6.701, 16.438, 46.800, 84.460, 203.608]\n}\n\nif (sex == 0) {\n    height_c = 150\n} else {\n    height_c = 147\n}\nvar ageht = (age - 10) * (ht - height_c)\n\n// regression equations\nvar y2a = Math.max(age - knot_age[0], 0)\nvar y2b = Math.max(age - knot_age[3], 0)\nvar y2c = Math.max(age - knot_age[4], 0)\nvar y3a = Math.max(age - knot_age[1], 0)\nvar y4a = Math.max(age - knot_age[2], 0)\n\nvar x2a = Math.max(ht - knot_ht[0], 0)\nvar x2b = Math.max(ht - knot_ht[3], 0)\nvar x2c = Math.max(ht - knot_ht[4], 0)\nvar x3a = Math.max(ht - knot_ht[1], 0)\nvar x4a = Math.max(ht - knot_ht[2], 0)\n\nvar w2a = Math.max(ageht - knot_ageht[0], 0)\nvar w2b = Math.max(ageht - knot_ageht[3], 0)\nvar w2c = Math.max(ageht - knot_ageht[4], 0)\nvar w3a = Math.max(ageht - knot_ageht[1], 0)\nvar w4a = Math.max(ageht - knot_ageht[2], 0)\n\n// age parameters: variables\nvar age1 = Math.pow(y2a, 3) - Math.pow(y2b, 3) * (knot_age[4] - knot_age[0]) / (knot_age[4] - knot_age[3]) + Math.pow(y2c, 3) * (knot_age[3] - knot_age[0]) / (knot_age[4] - knot_age[3])\nvar age2 = Math.pow(y3a, 3) - Math.pow(y2b, 3) * (knot_age[4] - knot_age[1]) / (knot_age[4] - knot_age[3]) + Math.pow(y2c, 3) * (knot_age[3] - knot_age[1]) / (knot_age[4] - knot_age[3])\nvar age3 = Math.pow(y4a, 3) - Math.pow(y2b, 3) * (knot_age[4] - knot_age[2]) / (knot_age[4] - knot_age[3]) + Math.pow(y2c, 3) * (knot_age[3] - knot_age[2]) / (knot_age[4] - knot_age[3])\n\nvar age_var = [age, age1 / 100, age2 / 100, age3 / 100]\n\n// age parameters: constants\nif (sex == 0) { // boys\n    var age_con_90 = [-0.5897, 0.9540, -3.2255, 5.8280]\n    var age_con_95 = [-1.2263, 0.8589, 3.2534, -15.7885]\n    var age_con_90d = [1.7899, -2.0949, 11.8906, -20.3017]\n    var age_con_95d = [1.7121, -1.5447, 6.0756, -5.5880]\n} else { // girls\n    var age_con_90 = [-1.8508, 2.5523, -13.6421, 26.2260]\n    var age_con_95 = [-2.0964, 2.6981, -11.2572, 13.4182]\n    var age_con_90d = [-0.1910, 0.8482, -4.9950, 5.5448]\n    var age_con_95d = [-0.2087, 1.2659, -7.7504, 8.4270]\n}\n\n// height parameters: variables\nvar ht1 = Math.pow(x2a, 3) - Math.pow(x2b, 3) * (knot_ht[4] - knot_ht[0]) / (knot_ht[4] - knot_ht[3]) + Math.pow(x2c, 3) * (knot_ht[3] - knot_ht[0]) / (knot_ht[4] - knot_ht[3])\nvar ht2 = Math.pow(x3a, 3) - Math.pow(x2b, 3) * (knot_ht[4] - knot_ht[1]) / (knot_ht[4] - knot_ht[3]) + Math.pow(x2c, 3) * (knot_ht[3] - knot_ht[1]) / (knot_ht[4] - knot_ht[3])\nvar ht3 = Math.pow(x4a, 3) - Math.pow(x2b, 3) * (knot_ht[4] - knot_ht[2]) / (knot_ht[4] - knot_ht[3]) + Math.pow(x2c, 3) * (knot_ht[3] - knot_ht[2]) / (knot_ht[4] - knot_ht[3])\n\nvar ht_var = [ht, ht1 / 100, ht2 / 100, ht3 / 100]\n\n// height parameters: constants\nif (sex == 0) { // boys\n    var ht_con_90 = [0.3275, -0.0005, 0.0181, -0.0707]\n    var ht_con_95 = [0.1576, 0.0072, -0.0076, -0.0516]\n    var ht_con_90d = [0.3408, -0.0062, 0.0239, -0.0268]\n    var ht_con_95d = [0.3914, -0.0095, 0.0458, -0.0634]\n} else { // girls\n    var ht_con_90 = [0.2495, 0.0000, 0.0494, -0.3050]\n    var ht_con_95 = [0.0991, 0.0053, 0.0132, -0.1836]\n    var ht_con_90d = [0.3330, -0.0093, 0.0772, -0.2338]\n    var ht_con_95d = [0.2634, -0.0082, 0.0706, -0.1836]\n}\n\n// age-height parameters: variables\nvar ageht1 = Math.pow(w2a, 3) - Math.pow(w2b, 3) * (knot_ageht[4] - knot_ageht[0]) / (knot_ageht[4] - knot_ageht[3]) + Math.pow(w2c, 3) * (knot_ageht[3] - knot_ageht[0]) / (knot_ageht[4] - knot_ageht[3])\nvar ageht2 = Math.pow(w3a, 3) - Math.pow(w2b, 3) * (knot_ageht[4] - knot_ageht[1]) / (knot_ageht[4] - knot_ageht[3]) + Math.pow(w2c, 3) * (knot_ageht[3] - knot_ageht[1]) / (knot_ageht[4] - knot_ageht[3])\nvar ageht3 = Math.pow(w4a, 3) - Math.pow(w2b, 3) * (knot_ageht[4] - knot_ageht[2]) / (knot_ageht[4] - knot_ageht[3]) + Math.pow(w2c, 3) * (knot_ageht[3] - knot_ageht[2]) / (knot_ageht[4] - knot_ageht[3])\n\nvar ageht_var = [ageht, ageht1 / 10000, ageht2 / 10000, ageht3 / 10000]\n\n// age-height parameters: constants\nif (sex == 0) { // boys\n    var ageht_con_90 = [-0.0200, 0.1457, -0.2721, 0.1573]\n    var ageht_con_95 = [-0.0325, 0.0706, -0.1432, 0.1009]\n    var ageht_con_90d = [-0.0499, 0.1898, -0.2958, 0.0953]\n    var ageht_con_95d = [-0.0340, 0.1515, -0.2269, 0.0567]\n} else { // girls\n    var ageht_con_90 = [-0.0184, -0.1813, 0.2673, -0.1041]\n    var ageht_con_95 = [-0.0338, -0.4799, 0.7190, -0.3037]\n    var ageht_con_90d = [-0.0012, -0.3665, 0.5893, -0.3214]\n    var ageht_con_95d = [0.0138, -0.4419, 0.6751, -0.3217]\n}\n\n// combine age, height, and age-height parameters \nvar age_sum_90 = 0;\nvar ht_sum_90 = 0;\nvar ageht_sum_90 = 0;\nfor (var i = 0; i < age_var.length; i++) {\n    age_sum_90 += age_var[i] * age_con_90[i];\n    ht_sum_90 += ht_var[i] * ht_con_90[i];\n    ageht_sum_90 += ageht_var[i] * ageht_con_90[i];\n}\n\nvar age_sum_95 = 0;\nvar ht_sum_95 = 0;\nvar ageht_sum_95 = 0;\nfor (var i = 0; i < age_var.length; i++) {\n    age_sum_95 += age_var[i] * age_con_95[i];\n    ht_sum_95 += ht_var[i] * ht_con_95[i];\n    ageht_sum_95 += ageht_var[i] * ageht_con_95[i];\n}\n\nvar age_sum_90d = 0;\nvar ht_sum_90d = 0;\nvar ageht_sum_90d = 0;\nfor (var i = 0; i < age_var.length; i++) {\n    age_sum_90d += age_var[i] * age_con_90d[i];\n    ht_sum_90d += ht_var[i] * ht_con_90d[i];\n    ageht_sum_90d += ageht_var[i] * ageht_con_90d[i];\n}\n\nvar age_sum_95d = 0;\nvar ht_sum_95d = 0;\nvar ageht_sum_95d = 0;\nfor (var i = 0; i < age_var.length; i++) {\n    age_sum_95d += age_var[i] * age_con_95d[i];\n    ht_sum_95d += ht_var[i] * ht_con_95d[i];\n    ageht_sum_95d += ageht_var[i] * ageht_con_95d[i];\n}\n\n// 90th percentile SBP\nvar sbp_90 = b0[0] + age_sum_90 + ht_sum_90 + ageht_sum_90\n\n// 95th percentile SBP\nvar sbp_95 = b0[1] + age_sum_95 + ht_sum_95 + ageht_sum_95\n\n// 90th percentile DBP\nvar dbp_90 = b0[2] + age_sum_90d + ht_sum_90d + ageht_sum_90d\n\n// 95th percentile DBP\nvar dbp_95 = b0[3] + age_sum_95d + ht_sum_95d + ageht_sum_95d\n\n// interpretation\n\nvar sbp_94 = sbp_95 - 1\nvar dbp_94 = dbp_95 - 1\nvar sbp_96 = sbp_95 + 12\nvar dbp_96 = dbp_95 + 12\nvar sbp_99 = sbp_95 + 30\nvar dbp_99 = dbp_95 + 30\n\nsbp_90 = sbp_90.toFixed(0)\nsbp_94 = sbp_94.toFixed(0)\nsbp_95 = sbp_95.toFixed(0)\nsbp_96 = sbp_96.toFixed(0)\nsbp_99 = sbp_99.toFixed(0)\n\ndbp_90 = dbp_90.toFixed(0)\ndbp_94 = dbp_94.toFixed(0)\ndbp_95 = dbp_95.toFixed(0)\ndbp_96 = dbp_96.toFixed(0)\ndbp_99 = dbp_99.toFixed(0)\n\nif (sex == 0) {\n    sex = 'boy'\n} else if (sex == 1) {\n    sex = 'girl'\n}\n\nvar result, msg, mgmt\n\nif (age < 13) {\n    if (sbp_90 > 120) {\n        var sbp_90 = 120\n    }\n    if (dbp_90 > 80) {\n        var dbp_90 = 80\n    }\n    if (sbp_95 > 130) {\n        var sbp_95 = 130\n    }\n    if (sbp_96 > 140) {\n        var sbp_96 = 140\n    }\n    if (dbp_96 > 90) {\n        var dbp_96 = 90\n    }\n\n    var sbp_index\n\n    if (sbp < sbp_90) {\n        sbp_index = 0\n    } else if (sbp >= sbp_90 && sbp < sbp_95) {\n        sbp_index = 1\n    } else if (sbp >= sbp_95 && sbp < sbp_96) {\n        sbp_index = 2\n    } else if (sbp >= sbp_96 && sbp < sbp_99) {\n        sbp_index = 3\n    } else if (sbp >= sbp_99) {\n        sbp_index = 4\n    }\n\n    var dbp_index\n\n    if (dbp < dbp_90) {\n        dbp_index = 0\n    } else if (dbp >= dbp_90 && dbp < dbp_95) {\n        dbp_index = 1\n    } else if (dbp >= dbp_95 && dbp < dbp_96) {\n        dbp_index = 2\n    } else if (dbp >= dbp_96 && dbp < dbp_99) {\n        dbp_index = 3\n    } else if (dbp >= dbp_99) {\n        dbp_index = 4\n    }\n\n    var normal = 'Normal BP'\n    var elevated = 'Elevated BP'\n    var stage1 = 'Stage 1 HTN'\n    var stage2 = 'Stage 2 HTN'\n    var critical = 'Critical HTN'\n\n    var results = [\n        [normal, elevated, stage1, stage2, critical],\n        [elevated, elevated, stage1, stage2, critical],\n        [stage1, stage1, stage1, stage2, critical],\n        [stage2, stage2, stage2, stage2, critical],\n        [critical, critical, critical, critical, critical]\n    ]\n\n    var result = results[sbp_index][dbp_index]\n\n    var msg, mgmt\n\n    if (result == normal) {\n        msg = \"Normal BP in this \" + age + \"-year-old \" + sex + \" is SBP <\" + sbp_90 + \" and DBP <\" + dbp_90 + \" (see Evidence for details)\"\n        mgmt = 'Check BP at next routine well-child visit.'\n    } else if (result == elevated) {\n        msg = \"Elevated BP in this \" + age + \"-year-old \" + sex + \" is SBP \" + sbp_90 + \"-\" + sbp_94 + \" and/or DBP \" + dbp_90 + \"-\" + dbp_94 + \" (see Evidence for details)\"\n        mgmt = 'Initiate lifestyle interventions; re-check BP in 6 months. See Next Steps for details.'\n    } else if (result == stage1) {\n        msg = \"Stage 1 HTN in this \" + age + \"-year-old \" + sex + \" is SBP \" + sbp_95 + \"-\" + sbp_96 + \" and/or DBP \" + dbp_95 + \"-\" + dbp_96 + \" (see Evidence for details)\"\n        mgmt = 'If asymptomatic, initiate lifestyle interventions and recheck BP in 1-2 weeks. See Next Steps for details.'\n    } else if (result == stage2) {\n        msg = \"Stage 2 HTN in this \" + age + \"-year-old \" + sex + \" is SBP ≥\" + sbp_96 + \" and/or DBP ≥\" + dbp_96 + \" (see Evidence for details)\"\n        mgmt = 'If asymptomatic, initiate lifestyle interventions and recheck BP in 1 week, OR refer directly to subspecialist within 1 week. See Next Steps for details.'\n    } else if (result == critical) {\n        msg = \"Critical HTN in this \" + age + \"-year-old \" + sex + \" is SBP ≥\" + sbp_99 + \" and/or DBP ≥\" + dbp_99 + \" (see Evidence for details)\"\n        mgmt = 'Consider urgent evaluation and treatment.'\n    }\n}\n\n\n    if (age >= 13) { // different limits if patient is 13 years or older\n        if (sbp < 120 && dbp < 80) {\n            result = 'Normal BP'\n            msg = \"Normal BP in this \" + age + \"-year-old \" + sex + \" is SBP <120 and DBP <80\"\n        }  if (sbp >= 120 && sbp <= 129 && dbp < 80) {\n            result = 'Elevated BP'\n            msg = \"Elevated BP in this \" + age + \"-year-old \" + sex + \" is SBP 120-129 and DBP <80\"\n        }  if ((sbp >= 130 && sbp <= 139) || (dbp >= 80 && dbp <= 89)) {\n            result = 'Stage 1 HTN'\n            msg = \"Stage 1 HTN in this \" + age + \"-year-old \" + sex + \" is SBP 130-139 and/or DBP 80-89\"\n        }  if (sbp >= 140 || dbp >= 90) {\n            result = 'Stage 2 HTN'\n            msg = \"Stage 2 HTN in this \" + age + \"-year-old \" + sex + \" is SBP ≥140 and/or DBP ≥90\"\n        }\n    }\n    \n    calc_output.push({\n        name: 'mini',\n        value: result,\n        value_text: '',\n        message: msg\n    });\n    calc_output.push({\n        name: 'pt sbp',\n        value: result,\n        value_text: '',\n        message: msg\n    });\n    calc_output.push({\n        name: 'rec',\n        value: '',\n        value_text: '',\n        message: mgmt\n    });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "Decimal values recommended (e.g. for a child who is 5 years and 6 months, enter 5.5)",
+                "type": "textbox",
+                "unit": "age_peds_htn"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Height",
+                "name": "ht",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ht_peds_htn"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Systolic BP",
+                "name": "sbp",
+                "optional": false,
+                "tips_en": "Normal values are age-dependent; do not use this calculator in patients with hypotension",
+                "type": "textbox",
+                "unit": "sbp_peds"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Diastolic BP",
+                "name": "dbp",
+                "optional": false,
+                "tips_en": "Normal values are age-dependent; do not use this calculator in patients with hypotension",
+                "type": "textbox",
+                "unit": "dbp_peds"
+            }
+        ],
+        "can_search": [
+            "Paediatric hypertension",
+            "paediatric htn",
+            "pediatric htn",
+            "htn",
+            "hypertension",
+            "blood pressure",
+            "guidelines",
+            "pediatric hypertension",
+            "aap pediatric hypertension guidelines",
+            "aap pediatric htn guidelines"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Family Practice",
+            "Nephrology",
+            "Pediatric Subspecialty",
+            "Pediatrics"
+        ]
+    }
+}

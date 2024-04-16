@@ -1,0 +1,129 @@
+{
+    "id": "707",
+    "title": "Oxygenation Index",
+    "desc": "The Oxygenation Index Predicts outcomes, especially in pediatric patients by helping to determine need for ECMO.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15817802",
+                "text": "Trachsel D, McCrindle BW, Nakagawa S, Bohn D. Oxygenation index predicts outcome in children with acute hypoxemic respiratory failure. Am J Respir Crit Care Med. 2005 Jul 15;172(2):206-11. Epub 2005 Apr 7. PubMed PMID: 15817802."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Oxygenation index = (F<span style=\"font-size: xx-small;\">i</span>O<sub>2</sub>&nbsp;x P<sub>AW</sub>) / P<span style=\"font-size: xx-small;\">a</span>O<sub>2</sub></p>\n<p>where variables are as follows:</p>\n<ul>\n<li>F<span style=\"font-size: xx-small;\">i</span>O<sub>2</sub>&nbsp;= fraction of inhaled oxygen, %</li>\n<li>P<sub>AW</sub>&nbsp;= mean airway pressure, cm H<sub>2</sub>O</li>\n<li>PaO<span style=\"font-size: 9.16667px;\">2</span>&nbsp;= Partial pressure of arterial oxygen, mm Hg</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Mean Airway Pressure",
+                "unit": "paw",
+                "error_min": "0",
+                "error_max": "80",
+                "warn_min": "0.01",
+                "warn_max": "40",
+                "conversion": "1.3595",
+                "normal_max_si": "30",
+                "normal_max_us": "22.1",
+                "normal_min_si": "5",
+                "normal_min_us": "7.3",
+                "units_si": "cm H₂O",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Partial Pressure of Oxygen",
+                "unit": "pao2",
+                "error_min": "1",
+                "error_max": "650",
+                "warn_min": "10",
+                "warn_max": "600",
+                "conversion": "0.133",
+                "normal_max_si": "13.3",
+                "normal_max_us": "100",
+                "normal_min_si": "10",
+                "normal_min_us": "75",
+                "units_si": "kPa",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Fraction of Inhaled O2",
+                "unit": "fio2",
+                "error_min": "10",
+                "error_max": "100.01",
+                "warn_min": "20",
+                "warn_max": "100.001",
+                "conversion": "1",
+                "normal_max_si": "NaN",
+                "normal_max_us": "NaN",
+                "normal_min_si": "NaN",
+                "normal_min_us": "NaN",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output = [];\n\nvar o2_fraction = parseFloat(o2_fraction);\n//no conversion factor\n\nif (UOMSYSTEM == true) {\n  var mean_airway_pressure = parseFloat(mean_airway_pressure) * 1.3595;\n  var partial_pressure_oxygen = parseFloat(partial_pressure_oxygen);\n}\nif (UOMSYSTEM == false) {\n  var mean_airway_pressure = parseFloat(mean_airway_pressure) ; \n  var partial_pressure_oxygen = parseFloat(partial_pressure_oxygen) / 0.133;// convert to US units\n}\n\nv = (o2_fraction * mean_airway_pressure) / partial_pressure_oxygen;\ncalc_output.push({\n  name: 'mini',\n  value: v.toFixed(1),\n  value_text: ' ',\n  message: 'Oxygenation Index'\n});\ncalc_output.push({\n  name: '80_Oxygenation Index_result',\n  value: v.toFixed(1),\n  value_text: ' ',\n  message: 'Oxygenation Index'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>FiO₂</p>",
+                "name": "o2_fraction",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "fio2"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Mean airway pressure (P<sub>AW</sub>)</p>",
+                "name": "mean_airway_pressure",
+                "optional": false,
+                "tips_en": "Note units (mm Hg vs cm H<sub>2</sub>O)",
+                "type": "textbox",
+                "unit": "paw"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>PaO<sub>2</sub></p>",
+                "name": "partial_pressure_oxygen",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "pao2"
+            }
+        ],
+        "can_search": [
+            "peds",
+            "extracorporeal membrane oxygenation",
+            "ortho",
+            "ecmo",
+            "oi"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Pediatrics",
+            "Pulmonology"
+        ]
+    }
+}

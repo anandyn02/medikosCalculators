@@ -1,0 +1,850 @@
+{
+    "id": "258",
+    "title": "Simplified Acute Physiology Score (SAPS) 3",
+    "desc": "The Simplified Acute Physiology Score (SAPS) 3 estimates the probability of mortality for ICU patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/16132892/",
+                "text": "Moreno RP, Metnitz PGH, Almeida E, et al. SAPS 3--From evaluation of the patient to evaluation of the intensive care unit. Part 2: Development of a prognostic model for hospital mortality at ICU admission. Intensive Care Med. 2005;31(10):1345-1355."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>In-hospital mortality, % =&nbsp;<em style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; caret-color: #000000;\">e<sup>x&nbsp;</sup>/<span class=\"Apple-converted-space\">&nbsp;</span></em><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; caret-color: #000000;\">1 +&nbsp;<em style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; caret-color: #000000;\">e<sup>x</sup></em></span></p>\n<p>where&nbsp;x&nbsp;=&nbsp;&nbsp;&minus;32.6659 + ln(SAPS 3 score + 20.5958) &times; 7.3068</p>\n<p>SAPS 3 score is calculated by addition of the selected points below:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%; height: 4113.359375px; border-style: none;\">\n<tbody>\n<tr style=\"height: 22.375px;\">\n<td colspan=\"3\" style=\"width: 88.50987432675045%; height: 22.375px;\"><strong>Variable</strong></td>\n<td style=\"width: 11.490125673249551%; height: 22.375px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 110px;\">\n<td style=\"width: 25.134649910233392%; height: 110px;\">ICU admission</td>\n<td style=\"width: 33.75224416517056%; height: 110px;\">Every patient gets an offset of 16 points for being admitted (to avoid negative SAPS 3 scores)</td>\n<td style=\"width: 29.622980251346497%; height: 110px;\"></td>\n<td style=\"width: 11.490125673249551%; height: 110px;\">16</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"6\" style=\"width: 25.134649910233392%; height: 240px;\">Age, years</td>\n<td rowspan=\"6\" style=\"width: 33.75224416517056%; height: 240px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">&lt;40</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">0</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">40-59</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">60-69</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">9</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">70-74</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">13</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">75-79</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">15</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">&ge;80</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">18</td>\n</tr>\n<tr style=\"height: 88px;\">\n<td rowspan=\"6\" style=\"width: 25.134649910233392%; height: 328.765625px;\">Comorbidities</td>\n<td style=\"width: 33.75224416517056%; height: 88px;\">Chemotherapy, immunosuppression, radiotherapy, steroid treatment</td>\n<td style=\"width: 29.622980251346497%; height: 88px;\">Cancer therapy</td>\n<td style=\"width: 11.490125673249551%; height: 88px;\">3</td>\n</tr>\n<tr style=\"height: 76.765625px;\">\n<td style=\"width: 33.75224416517056%; height: 76.765625px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 76.765625px;\">\n<p>Chronic</p>\n<abbr title=\"Heart failure (New York Heart Association IV)\">HF (NYHA IV)</abbr></td>\n<td style=\"width: 11.490125673249551%; height: 76.765625px;\">6</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 33.75224416517056%; height: 44px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 44px;\">Haematological cancer</td>\n<td style=\"width: 11.490125673249551%; height: 44px;\">6</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 33.75224416517056%; height: 40px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">Cirrhosis</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">8</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 33.75224416517056%; height: 40px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">AIDS</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">8</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 33.75224416517056%; height: 40px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">Metastatic cancer</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">11</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"3\" style=\"width: 25.134649910233392%; height: 120px;\">Length of stay before ICU admission, day</td>\n<td rowspan=\"3\" style=\"width: 33.75224416517056%; height: 120px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">&lt;14</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">0</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">14-27</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">6</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">&ge;28</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">7</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"3\" style=\"width: 25.134649910233392%; height: 120px;\">Intrahospital location before ICU admission</td>\n<td rowspan=\"3\" style=\"width: 33.75224416517056%; height: 120px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">Emergency room</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">Other ICU</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">7</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">Other ward</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">8</td>\n</tr>\n<tr style=\"height: 60px;\">\n<td rowspan=\"2\" style=\"width: 25.134649910233392%; height: 118.21875px;\">Use of major therapeutic options before ICU admission</td>\n<td rowspan=\"2\" style=\"width: 33.75224416517056%; height: 118.21875px;\">Not all variables collected were included in the final data model, please see original article in &ldquo;Evidence&rdquo; for further information.</td>\n<td style=\"width: 29.622980251346497%; height: 60px;\">Vasoactive drugs</td>\n<td style=\"width: 11.490125673249551%; height: 60px;\">3</td>\n</tr>\n<tr style=\"height: 58.21875px;\">\n<td style=\"width: 29.622980251346497%; height: 58.21875px;\">Other/none</td>\n<td style=\"width: 11.490125673249551%; height: 58.21875px;\">0</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"2\" style=\"width: 25.134649910233392%; height: 80px;\">Planned or unplanned ICU admission</td>\n<td rowspan=\"2\" style=\"width: 33.75224416517056%; height: 80px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">Planned</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">0</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">Unplanned</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">3</td>\n</tr>\n<tr style=\"height: 55px;\">\n<td rowspan=\"12\" style=\"width: 25.134649910233392%; height: 836px;\">Reason(s) for ICU admission</td>\n<td rowspan=\"2\" style=\"width: 33.75224416517056%; height: 110px;\">If both reasons are present, only the worse value (-4) is scored</td>\n<td style=\"width: 29.622980251346497%; height: 55px;\">Cardiovascular: rhythm disturbances</td>\n<td style=\"width: 11.490125673249551%; height: 55px;\">-5</td>\n</tr>\n<tr style=\"height: 55px;\">\n<td style=\"width: 29.622980251346497%; height: 55px;\">Neurologic: seizures</td>\n<td style=\"width: 11.490125673249551%; height: 55px;\">-4</td>\n</tr>\n<tr style=\"height: 110px;\">\n<td style=\"width: 33.75224416517056%; height: 110px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 110px;\">Cardiovascular: hypovolemic hemorrhagic shock, hypovolemic non-hemorrhagic shock</td>\n<td style=\"width: 11.490125673249551%; height: 110px;\">3</td>\n</tr>\n<tr style=\"height: 55px;\">\n<td style=\"width: 33.75224416517056%; height: 55px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 55px;\">Digestive: acute, abdomen, other</td>\n<td style=\"width: 11.490125673249551%; height: 55px;\">3</td>\n</tr>\n<tr style=\"height: 132px;\">\n<td style=\"width: 33.75224416517056%; height: 132px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 132px;\">Neurologic: coma, stupor, obtunded patient, vigilance disturbances, confusion, agitation, delirium</td>\n<td style=\"width: 11.490125673249551%; height: 132px;\">4</td>\n</tr>\n<tr style=\"height: 55px;\">\n<td style=\"width: 33.75224416517056%; height: 55px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 55px;\">Cardiovascular: septic shock</td>\n<td style=\"width: 11.490125673249551%; height: 55px;\">5</td>\n</tr>\n<tr style=\"height: 88px;\">\n<td style=\"width: 33.75224416517056%; height: 88px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 88px;\">Cardiovascular: anaphylactic shock, mixed and undefined shock</td>\n<td style=\"width: 11.490125673249551%; height: 88px;\">5</td>\n</tr>\n<tr style=\"height: 55px;\">\n<td style=\"width: 33.75224416517056%; height: 55px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 55px;\">Hepatic: liver failure</td>\n<td style=\"width: 11.490125673249551%; height: 55px;\">6</td>\n</tr>\n<tr style=\"height: 55px;\">\n<td style=\"width: 33.75224416517056%; height: 55px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 55px;\">Neurologic: focal neurologic deficit</td>\n<td style=\"width: 11.490125673249551%; height: 55px;\">7</td>\n</tr>\n<tr style=\"height: 55px;\">\n<td style=\"width: 33.75224416517056%; height: 55px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 55px;\">Digestive: severe pancreatitis</td>\n<td style=\"width: 11.490125673249551%; height: 55px;\">9</td>\n</tr>\n<tr style=\"height: 66px;\">\n<td style=\"width: 33.75224416517056%; height: 66px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 66px;\">Neurologic: intracranial mass effect</td>\n<td style=\"width: 11.490125673249551%; height: 66px;\">10</td>\n</tr>\n<tr style=\"height: 55px;\">\n<td style=\"width: 33.75224416517056%; height: 55px;\"></td>\n<td style=\"width: 29.622980251346497%; height: 55px;\">Other</td>\n<td style=\"width: 11.490125673249551%; height: 55px;\">0</td>\n</tr>\n<tr>\n<td rowspan=\"3\" style=\"width: 25.134649910233392%;\">Surgical status at ICU admission</td>\n<td rowspan=\"3\" style=\"width: 33.75224416517056%;\"></td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">Sceduled surgery</td>\n<td style=\"width: 11.490125673249551%;\">0</td>\n</tr>\n<tr>\n<td style=\"width: 29.622980251346497%; height: 40px;\">No surgery</td>\n<td style=\"width: 11.490125673249551%;\">5</td>\n</tr>\n<tr>\n<td style=\"width: 29.622980251346497%; height: 40px;\">Emergency surgery</td>\n<td style=\"width: 11.490125673249551%;\">6</td>\n</tr>\n<tr style=\"height: 80px;\">\n<td rowspan=\"5\" style=\"width: 25.134649910233392%; height: 400px;\">Anatomical site of surgery</td>\n<td rowspan=\"5\" style=\"width: 33.75224416517056%; height: 400px;\">Not all variables collected were included in the final data model, please see original article in &ldquo;Evidence&rdquo; for further information.</td>\n<td style=\"width: 29.622980251346497%; height: 80px;\">Transplant surgery</td>\n<td style=\"width: 11.490125673249551%; height: 80px;\">-11</td>\n</tr>\n<tr style=\"height: 80px;\">\n<td style=\"width: 29.622980251346497%; height: 80px;\">Trauma surgery</td>\n<td style=\"width: 11.490125673249551%; height: 80px;\">-8</td>\n</tr>\n<tr style=\"height: 80px;\">\n<td style=\"width: 29.622980251346497%; height: 80px;\">Cardiac surgery: CABG without valvular repair</td>\n<td style=\"width: 11.490125673249551%; height: 80px;\">-6</td>\n</tr>\n<tr style=\"height: 80px;\">\n<td style=\"width: 29.622980251346497%; height: 80px;\">Other surgery</td>\n<td style=\"width: 11.490125673249551%; height: 80px;\">0</td>\n</tr>\n<tr style=\"height: 80px;\">\n<td style=\"width: 29.622980251346497%; height: 80px;\">Neurosurgery: cerebrovascular accident</td>\n<td style=\"width: 11.490125673249551%; height: 80px;\">5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"3\" style=\"width: 25.134649910233392%; height: 120px;\">Acute infection at ICU admission</td>\n<td rowspan=\"3\" style=\"width: 33.75224416517056%; height: 120px;\">Not all variables collected were included in the final data model, please see original article in &ldquo;Evidence&rdquo; for further information.</td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">Nosocomial</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">4</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">Respiratory</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">Other/none</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">0</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"5\" style=\"width: 25.134649910233392%; height: 200px;\"><calculator id=\"64\">Glasgow Coma Scale/Score</calculator></td>\n<td rowspan=\"5\" style=\"width: 33.75224416517056%; height: 200px;\">Lowest within 1 hr of ICU admission</td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">3-4</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">15</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">5</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">10</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">6</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">7.5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">7-12</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">2</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">&ge;13</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">1</td>\n</tr>\n<tr style=\"height: 45px;\">\n<td rowspan=\"3\" style=\"width: 25.134649910233392%; height: 135px;\">Total bilirubin, mg/dL (&micro;mol/L)</td>\n<td rowspan=\"3\" style=\"width: 33.75224416517056%; height: 135px;\">Highest within 1 hr of ICU admission</td>\n<td style=\"width: 29.622980251346497%; height: 45px;\">&lt;2 mg/dL (&lt;34.2 &micro;mol/L)</td>\n<td style=\"width: 11.490125673249551%; height: 45px;\">1</td>\n</tr>\n<tr style=\"height: 45px;\">\n<td style=\"width: 29.622980251346497%; height: 45px;\">2-5.9 mg/dL (34.2-102.5 &micro;mol/L)</td>\n<td style=\"width: 11.490125673249551%; height: 45px;\">4</td>\n</tr>\n<tr style=\"height: 45px;\">\n<td style=\"width: 29.622980251346497%; height: 45px;\">&ge;6 mg/dL (&ge;102.6 &micro;mol/L)</td>\n<td style=\"width: 11.490125673249551%; height: 45px;\">5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"2\" style=\"width: 25.134649910233392%; height: 80px;\">Body temperature, &deg;C (&deg;F)</td>\n<td rowspan=\"2\" style=\"width: 33.75224416517056%; height: 80px;\">Highest within 1 hr of ICU admission</td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">&lt;35 &deg;C (&lt;95 &deg;F)</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">7.5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">&ge;35 &deg;C (&ge;95 &deg;F)</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">1</td>\n</tr>\n<tr style=\"height: 45px;\">\n<td rowspan=\"7\" style=\"width: 25.134649910233392%; height: 315px;\">Creatinine,&nbsp;mg/dL (&micro;mol/L)</td>\n<td rowspan=\"7\" style=\"width: 33.75224416517056%; height: 315px;\">Highest within 1 hr of ICU admission</td>\n<td style=\"width: 29.622980251346497%; height: 45px;\">(3-4 &micro;mol/L)</td>\n<td style=\"width: 11.490125673249551%; height: 45px;\">15</td>\n</tr>\n<tr style=\"height: 45px;\">\n<td style=\"width: 29.622980251346497%; height: 45px;\">(5 &micro;mol/L)</td>\n<td style=\"width: 11.490125673249551%; height: 45px;\">10</td>\n</tr>\n<tr style=\"height: 45px;\">\n<td style=\"width: 29.622980251346497%; height: 45px;\">(6 &micro;mol/L)</td>\n<td style=\"width: 11.490125673249551%; height: 45px;\">7.5</td>\n</tr>\n<tr style=\"height: 45px;\">\n<td style=\"width: 29.622980251346497%; height: 45px;\">&lt;1.2 mg/dL (&lt;106.1 &micro;mol/L)</td>\n<td style=\"width: 11.490125673249551%; height: 45px;\">1</td>\n</tr>\n<tr style=\"height: 45px;\">\n<td style=\"width: 29.622980251346497%; height: 45px;\">1.2-1.9 mg/dL (106.1-176.7 &micro;mol/L)</td>\n<td style=\"width: 11.490125673249551%; height: 45px;\">2</td>\n</tr>\n<tr style=\"height: 45px;\">\n<td style=\"width: 29.622980251346497%; height: 45px;\">2-3.4 mg/dL (176.8-309.3 &micro;mol/L)</td>\n<td style=\"width: 11.490125673249551%; height: 45px;\">7</td>\n</tr>\n<tr style=\"height: 45px;\">\n<td style=\"width: 29.622980251346497%; height: 45px;\">&ge;3.5 mg/dL (&ge;309.4 &micro;mol/L)</td>\n<td style=\"width: 11.490125673249551%; height: 45px;\">8</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"3\" style=\"width: 25.134649910233392%; height: 120px;\">Heart rate, beats/min</td>\n<td rowspan=\"3\" style=\"width: 33.75224416517056%; height: 120px;\">Highest within 1 hr of ICU admission</td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">&lt;120</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">1</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">120-159</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">&ge;160</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">7</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"2\" style=\"width: 25.134649910233392%; height: 80px;\">Leukocytes, G/L</td>\n<td rowspan=\"2\" style=\"width: 33.75224416517056%; height: 80px;\">Highest within 1 hr of ICU admission</td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">&lt;15</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">1</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">&ge;15</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">2</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"2\" style=\"width: 25.134649910233392%; height: 80px;\">pH</td>\n<td rowspan=\"2\" style=\"width: 33.75224416517056%; height: 80px;\">Lowest within 1 hr of ICU admission</td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">&le;7.25</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">3</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">&gt;7.25</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">1</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"4\" style=\"width: 25.134649910233392%; height: 160px;\">Platelets, G/L</td>\n<td rowspan=\"4\" style=\"width: 33.75224416517056%; height: 160px;\">Lowest within 1 hr of ICU admission</td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">&lt;20</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">13</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">20-49</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">8</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">50-99</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">&ge;100</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">1</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td rowspan=\"4\" style=\"width: 25.134649910233392%; height: 160px;\">Systolic blood pressure, mm Hg</td>\n<td rowspan=\"4\" style=\"width: 33.75224416517056%; height: 160px;\">Lowest within 1 hr of ICU admission</td>\n<td style=\"width: 29.622980251346497%; height: 40px;\">&lt;40</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">12</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">40-69</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">8</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">70-119</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">3</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">&ge;120</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">1</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td rowspan=\"4\" style=\"width: 25.134649910233392%; height: 168px;\">Oxygenation</td>\n<td rowspan=\"4\" style=\"width: 33.75224416517056%; height: 168px;\">\n<p>PaO2, FiO2&nbsp;refer to arterial oxygen pressure (lowest), inspiratory oxygen concentration&nbsp;</p>\n<p><abbr title=\"Ventilatory support and mechanical ventilation\">MV</abbr></p>\n</td>\n<td style=\"width: 29.622980251346497%; height: 44px;\">PaO2/FiO2&lt;100 and MV</td>\n<td style=\"width: 11.490125673249551%; height: 44px;\">11</td>\n</tr>\n<tr style=\"height: 44px;\">\n<td style=\"width: 29.622980251346497%; height: 44px;\">PaO2/FiO2&ge;100 and MV</td>\n<td style=\"width: 11.490125673249551%; height: 44px;\">7</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">PaO2&lt;60 and no MV</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">5</td>\n</tr>\n<tr style=\"height: 40px;\">\n<td style=\"width: 29.622980251346497%; height: 40px;\">PaO2&ge;60 and no MV</td>\n<td style=\"width: 11.490125673249551%; height: 40px;\">1</td>\n</tr>\n</tbody>\n</table>\n<p></p>",
+        "facts": "<p>Interpretation:</p>\n<p>In-hospital mortality, % &nbsp;=&nbsp;<em style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; caret-color: #000000;\">e<sup>x&nbsp;</sup>/<span class=\"Apple-converted-space\">&nbsp;</span></em><span style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; caret-color: #000000;\">1 +&nbsp;<em style=\"font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; caret-color: #000000;\">e<sup>x</sup></em></span></p>\n<p>where x = &nbsp;&minus;32.6659 + ln(SAPS 3 score + 20.5958) &times; 7.3068</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Fever",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Cirrhosis",
+            "HIV/AIDS"
+        ],
+        "logic": "var calc_output = [];\n\n// Declare vars\n\nvar age = parseFloat(age);\nvar stay = parseFloat(stay);\nvar location = parseFloat(location);\nvar therapy = parseFloat(therapy);\nvar unplanned = parseFloat(unplanned);\nvar surgerysite = parseFloat(surgerysite); \nvar surgerystatus = parseFloat(surgerystatus);\nvar acuteinf = parseFloat(acuteinf);\nvar gcs = parseFloat(gcs);\nvar bilirubin = parseFloat(bilirubin);\nvar temp = parseFloat(temp);\nvar creatinine = parseFloat(creatinine);\nvar hr = parseFloat(hr);\nvar leukocytes = parseFloat(leukocytes);\nvar hydrogen = parseFloat(hydrogen); \nvar platelets = parseFloat(platelets);\nvar sbp = parseFloat(sbp);\nvar oxygen = parseFloat(oxygen);\nvar cancertherapy = parseFloat(cancertherapy);\nvar chronichf = parseFloat(chronichf);\nvar hemcancer = parseFloat(hemcancer);\nvar cirrhosis = parseFloat(cirrhosis);\nvar aids = parseFloat(aids);\nvar metacancer = parseFloat(metacancer);\nvar cardioneuro = parseFloat(cardioneuro);\nvar cardiohem = parseFloat(cardiohem);\nvar digestiveacute = parseFloat(digestiveacute);\nvar neurocoma = parseFloat(neurocoma);\nvar cardioseptic = parseFloat(cardioseptic);\nvar cardioshock = parseFloat(cardioshock);\nvar hepatic = parseFloat(hepatic); \nvar neurofocal = parseFloat(neurofocal);\nvar digestivepan = parseFloat(digestivepan); \nvar neuromass = parseFloat(neuromass);\n\nvar score = 16 + age + stay + location + therapy + unplanned + surgerystatus + acuteinf + gcs + bilirubin + temp + creatinine + hr + leukocytes + hydrogen + platelets + sbp + oxygen + cancertherapy + chronichf + hemcancer + cirrhosis + aids + metacancer + cardioneuro + cardiohem + digestiveacute + neurocoma + cardioseptic + cardioshock + hepatic + neurofocal + digestivepan + neuromass;\n\nif (surgerystatus == 0 || surgerystatus == 6) {\n  score = score + surgerysite;\n}\n\nvar x = -32.6659 + Math.log(score + 20.5958) * 7.3068;\nvar mortality = Math.exp(x)/(1 + Math.exp(x)) * 100;\n\ncalc_output.push({\n   name: 'mini',\n   value: score,\n   value_text: 'points',\n   message: mortality.toFixed(1) + '% in-hospital mortality'\n});\ncalc_output.push({\n   name: 'score',\n   value: score,\n   value_text: 'points',\n   message: 'SAPS III Score'\n});\ncalc_output.push({\n   name: 'SAPS risk',\n   value: mortality.toFixed(1),\n   value_text: '%',\n   message: 'In-hospital mortality by SAPS III'\n});\n\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Age, years</p>",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<40",
+                        "value": 0
+                    },
+                    {
+                        "label": "40-59",
+                        "value": 5
+                    },
+                    {
+                        "label": "60-69",
+                        "value": 9
+                    },
+                    {
+                        "label": "70-74",
+                        "value": 13
+                    },
+                    {
+                        "label": "75-79",
+                        "value": 15
+                    },
+                    {
+                        "label": "≥80",
+                        "value": 18
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Length of stay before ICU admission, days</p>",
+                "name": "stay",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<14",
+                        "value": 0
+                    },
+                    {
+                        "label": "14-27",
+                        "value": 6
+                    },
+                    {
+                        "label": "≥28",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Intrahospital location before ICU admission</p>",
+                "name": "location",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Emergency room",
+                        "value": 5
+                    },
+                    {
+                        "label": "Other ICU",
+                        "value": 7
+                    },
+                    {
+                        "label": "Other ward",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Use of major therapeutic options before ICU admission</p>",
+                "name": "therapy",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Other/none",
+                        "value": 0
+                    },
+                    {
+                        "label": "Vasoactive drugs",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Not all variables collected were included in the final data model, please see original article in “Evidence” for further information.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Planned or unplanned ICU admission</p>",
+                "name": "unplanned",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Planned",
+                        "value": 0
+                    },
+                    {
+                        "label": "Unplanned",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Surgical status at ICU admission</p>",
+                "name": "surgerystatus",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Scheduled surgery",
+                        "value": 0
+                    },
+                    {
+                        "label": "No surgery",
+                        "value": 5
+                    },
+                    {
+                        "label": "Emergency surgery",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "surgerystatus == 0 || surgerystatus == 6",
+                "default": null,
+                "label_en": "<p>Anatomical site of surgery</p>",
+                "name": "surgerysite",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Transplant surgery",
+                        "value": -11
+                    },
+                    {
+                        "label": "Trauma surgery",
+                        "value": -8
+                    },
+                    {
+                        "label": "Cardiac surgery: CABG without valvular repair",
+                        "value": -6
+                    },
+                    {
+                        "label": "Other surgery",
+                        "value": 0
+                    },
+                    {
+                        "label": "Neurosurgery: cerebrovascular accident",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Not all variables collected were included in the final data model, please see original article in “Evidence” for further information.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Acute infection at ICU admission</p>",
+                "name": "acuteinf",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Other/none",
+                        "value": 0
+                    },
+                    {
+                        "label": "Nosocomial",
+                        "value": 4
+                    },
+                    {
+                        "label": "Respiratory",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Not all variables collected were included in the final data model, please see original article in “Evidence” for further information.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><calculator id=\"64\">Glasgow Coma Scale/Score</calculator></p>",
+                "name": "gcs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥13",
+                        "value": 1
+                    },
+                    {
+                        "label": "7-12",
+                        "value": 2
+                    },
+                    {
+                        "label": "6",
+                        "value": 7.5
+                    },
+                    {
+                        "label": "5",
+                        "value": 10
+                    },
+                    {
+                        "label": "3-4",
+                        "value": 15
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Lowest within 1 hr of ICU admission",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Total bilirubin, mg/dL (&micro;mol/L)</p>",
+                "name": "bilirubin",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2 mg/dL (<34.2 µmol/L)",
+                        "value": 1
+                    },
+                    {
+                        "label": "2-5.9 mg/dL (34.2-102.5 µmol/L) ",
+                        "value": 4
+                    },
+                    {
+                        "label": "≥6 mg/dL (≥102.6 µmol/L)",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Highest within 1 hr of ICU admission",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Body temperature, &deg;C (&deg;F)</p>",
+                "name": "temp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥35 °C (≥95 °F)",
+                        "value": 1
+                    },
+                    {
+                        "label": "<35 °C (<95 °F)",
+                        "value": 7.5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Highest within 1 hr of ICU admission",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Creatinine, mg/dL (&micro;mol/L)</p>",
+                "name": "creatinine",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "(3-4 µmol/L)",
+                        "value": 15
+                    },
+                    {
+                        "label": "(5 µmol/L)",
+                        "value": 10
+                    },
+                    {
+                        "label": "(6 µmol/L)",
+                        "value": 7.5
+                    },
+                    {
+                        "label": "<1.2 mg/dL (<106.1 µmol/L)",
+                        "value": 1
+                    },
+                    {
+                        "label": "1.2-1.9 mg/dL (106.1-176.7 µmol/L)",
+                        "value": 2
+                    },
+                    {
+                        "label": "2-3.4 mg/dL (176.8-309.3 µmol/L)",
+                        "value": 7
+                    },
+                    {
+                        "label": "≥3.5 mg/dL (≥309.4 µmol/L)",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Highest within 1 hr of ICU admission",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Heart rate, beats/min</p>",
+                "name": "hr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<120",
+                        "value": 1
+                    },
+                    {
+                        "label": "120-159",
+                        "value": 5
+                    },
+                    {
+                        "label": "≥160",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Highest within 1 hr of ICU admission",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Leukocytes, G/L</p>",
+                "name": "leukocytes",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<15",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥15",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Highest within 1 hr of ICU admission",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>pH</p>",
+                "name": "hydrogen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">7.25",
+                        "value": 1
+                    },
+                    {
+                        "label": "≤7.25",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Lowest within 1 hr of ICU admission",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Platelets, G/L</p>",
+                "name": "platelets",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥100",
+                        "value": 1
+                    },
+                    {
+                        "label": "50-99",
+                        "value": 5
+                    },
+                    {
+                        "label": "20-49",
+                        "value": 8
+                    },
+                    {
+                        "label": "<20",
+                        "value": 13
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Lowest within 1 hr of ICU admission",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Systolic blood pressure, mm Hg</p>",
+                "name": "sbp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥120",
+                        "value": 1
+                    },
+                    {
+                        "label": "70-119",
+                        "value": 3
+                    },
+                    {
+                        "label": "40-69",
+                        "value": 8
+                    },
+                    {
+                        "label": "<40",
+                        "value": 12
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Lowest within 1 hr of ICU admission",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Oxygenation</p>",
+                "name": "oxygen",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "PaO₂≥60 and no MV",
+                        "value": 1
+                    },
+                    {
+                        "label": "PaO₂<60 and no MV",
+                        "value": 5
+                    },
+                    {
+                        "label": "PaO₂/FiO₂≥100 and MV",
+                        "value": 7
+                    },
+                    {
+                        "label": "PaO₂/FiO₂<100 and MV",
+                        "value": 11
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "PaO₂, FiO₂ refer to arterial oxygen pressure (lowest), inspiratory oxygen concentration and MV refers to ventilatory support and mechanical ventilation",
+                "type": "radio"
+            },
+            {
+                "subheading": "<p>Comorbidities</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cancer therapy</p>",
+                "name": "cancertherapy",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Chemotherapy, immunosuppression, radiotherapy, steroid treatment",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Chronic <abbr title=\"Heart failure (New York Heart Association IV)\">HF (NYHA IV)</abbr></p>",
+                "name": "chronichf",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Haematological cancer</p>",
+                "name": "hemcancer",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cirrhosis</p>",
+                "name": "cirrhosis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>AIDS</p>",
+                "name": "aids",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 8
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Metastatic cancer</p>",
+                "name": "metacancer",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 11
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "<p>Reason(s) for ICU admission</p>",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "",
+                "name": "cardioneuro",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Neither",
+                        "value": 0
+                    },
+                    {
+                        "label": "Cardiovascular: rhythm disturbances",
+                        "value": -5
+                    },
+                    {
+                        "label": "Neurologic: seizures",
+                        "value": -4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "If both reasons are present, only the worse value (-4) is scored; select \"Neurologic: seizures\"",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cardiovascular: hypovolemic hemorrhagic shock, hypovolemic non-hemorrhagic shock</p>",
+                "name": "cardiohem",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Digestive: acute abdomen, other</p>",
+                "name": "digestiveacute",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Neurologic: coma, stupor, obtunded patient, vigilance disturbances, confusion, agitation, delirium</p>",
+                "name": "neurocoma",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cardiovascular: septic shock</p>",
+                "name": "cardioseptic",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cardiovascular: anaphylactic shock, mixed and undefined shock</p>",
+                "name": "cardioshock",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hepatic: liver failure</p>",
+                "name": "hepatic",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Neurologic: focal neurologic deficit</p>",
+                "name": "neurofocal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Digestive: severe pancreatitis</p>",
+                "name": "digestivepan",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 9
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Neurologic: intracranial mass effect</p>",
+                "name": "neuromass",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Simplified Acute Physiology Score (SAPS) III",
+            "SAPS",
+            "SAPS III",
+            "Simplified Acute Physiology Score III",
+            "SAPS 3",
+            "mortality risk",
+            "saps ii",
+            "icu mortality",
+            "icu",
+            "acute physiology"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

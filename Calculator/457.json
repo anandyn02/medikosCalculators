@@ -1,0 +1,172 @@
+{
+    "id": "457",
+    "title": "NEDOCS Score for Emergency Department Overcrowding",
+    "desc": "The National Emergency Department Overcrowding Scale (NEDOCS) estimates severity of overcrowding in emergency departments.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14709427",
+                "text": "Weiss SJ, et al. Estimating the Degree of Emergency Department Overcrowding in Academic Medical Centers: Results of the National ED Overcrowding Study (NEDOCS). Acad Emerg Med. 2004 Jan;11(1):38-50."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1839284/",
+                "text": "Hoot N, Aronsky D. An Early Warning System for Overcrowding in the Emergency Department. AMIA Annual Symposium Proceedings 2006;2006:339-343."
+            }
+        ],
+        "evidence": "<p style=\"text-align: left;\">Nomogram:</p>\n<p><a href=\"https://cdn-web-img.mdcalc.com/content/nedocs.png\" target=\"_blank\" rel=\"noopener\"><img src=\"https://cdn-web-img.mdcalc.com/content/nedocs.png\" alt=\"\" width=\"100%\"></a></p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: left;\">\n<p>Level</p>\n</th>\n<th style=\"text-align: left;\">Score</th>\n<th style=\"text-align: left;\">Interpretation</th>\n</tr>\n<tr>\n<td>\n<p>Level 1</p>\n</td>\n<td>1-20</td>\n<td>Not busy</td>\n</tr>\n<tr>\n<td>\n<p>Level 2</p>\n</td>\n<td>21-60</td>\n<td>Busy</td>\n</tr>\n<tr>\n<td>\n<p>Level 3</p>\n</td>\n<td>61-100</td>\n<td>Extremely busy but not overcrowded</td>\n</tr>\n<tr>\n<td>\n<p>Level 4</p>\n</td>\n<td>101-140</td>\n<td>Overcrowded</td>\n</tr>\n<tr>\n<td>\n<p>Level 5</p>\n</td>\n<td>141-180</td>\n<td>Severely overcrowded</td>\n</tr>\n<tr>\n<td>\n<p>Level 6</p>\n</td>\n<td>181-200</td>\n<td>Dangerously overcrowded</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "Patients",
+                "unit": "patients",
+                "error_min": "-1",
+                "error_max": "500",
+                "warn_min": "1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "patients",
+                "units_us": "patients"
+            },
+            {
+                "name": "Hours",
+                "unit": "time",
+                "error_min": "0",
+                "error_max": "72",
+                "warn_min": "0.999",
+                "warn_max": "24.001",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "hours",
+                "units_us": "hours"
+            },
+            {
+                "name": "Beds",
+                "unit": "beds",
+                "error_min": "-1",
+                "error_max": "10000",
+                "warn_min": "1",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "beds",
+                "units_us": "beds"
+            }
+        ],
+        "primary_complains": [
+            "Any/All"
+        ],
+        "disease_treated": [
+            "Public Health"
+        ],
+        "logic": " var calc_output = [];\n var msg = '';\n var level = '';\n var c = parseFloat(edbeds);\n var d = parseFloat(totalpts);\n var e = parseFloat(vents);\n var f = parseFloat(waitingtime_admit);\n var g = parseFloat(hospitalbeds);\n var h = parseFloat(admits);\n var i = parseFloat(waitingtime_wr);\n if (e >= 2) { e = 2; }\n var gtot = (-20 + (d / c) * 85.8 + (h / g) * 600 + e * 13.4 + f * 0.93 + i * 5.64);\n if (gtot >= 200) { gtot = 200; }\n if (gtot < 21) {\n     level = 'Level 1';\n     msg = 'Not busy';\n }\n if (gtot > 20 && gtot < 61) {\n     level = 'Level 2';\n     msg = 'Busy';\n }\n if (gtot > 60 && gtot < 101) {\n     level = 'Level 3';\n     msg = 'Extremely busy but not overcrowded';\n }\n if (gtot > 100 && gtot < 141) {\n     level = 'Level 4';\n     msg = 'Overcrowded';\n }\n if (gtot > 140 && gtot < 181) {\n     level = 'Level 5';\n     msg = 'Severely overcrowded';\n }\n if (gtot > 180) {\n     level = 'Level 6';\n     msg = 'Dangerously overcrowded';\n }\n\n calc_output.push({\n     name: 'mini',\n     value: level,\n     value_text: '('+gtot.toFixed(0)+')',\n     message: msg\n });\n calc_output.push({\n     name: '3143_NEDOCS_result',\n     value: level,\n     value_text: '('+gtot.toFixed(0)+')',\n     message: msg\n });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of ED beds",
+                "name": "edbeds",
+                "optional": false,
+                "tips_en": "Total licensed number of beds",
+                "type": "textbox",
+                "unit": "beds"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of hospital beds",
+                "name": "hospitalbeds",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "beds"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Total patients in the ED",
+                "name": "totalpts",
+                "optional": false,
+                "tips_en": "Include patients doubled up in rooms and hallway beds",
+                "type": "textbox",
+                "unit": "patients"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Patients on ventilators in the ED",
+                "name": "vents",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "patients"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of admits in the ED",
+                "name": "admits",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "patients"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Waiting time of longest admitted patient",
+                "name": "waitingtime_admit",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "time"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Waiting time of longest waiting room patient",
+                "name": "waitingtime_wr",
+                "optional": false,
+                "tips_en": "Technically “Last roomed patient’s prior wait time”",
+                "type": "textbox",
+                "unit": "time"
+            }
+        ],
+        "can_search": [
+            "DOCS",
+            "emergency",
+            "overcrowding",
+            "crowded"
+        ],
+        "specialty": [
+            "Administration",
+            "Emergency Medicine",
+            "Pediatrics"
+        ]
+    }
+}

@@ -1,0 +1,241 @@
+{
+    "id": "19",
+    "title": "ACTION ICU Score for Intensive Care in NSTEMI",
+    "desc": "The ACTION ICU Score for Intensive Care in NSTEMI predicts risk of NSTEMI complications requiring ICU care.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://jaha.ahajournals.org/content/7/11/e008894 ",
+                "text": "Fanaroff AC, Chen AY, Thomas LE, et al. Risk Score to Predict Need for Intensive Care in Initially Hemodynamically Stable Adults With Non-ST-Segment-Elevation Myocardial Infarction. J Am Heart Assoc. 2018;7(11)."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21167342",
+                "text": "Chin CT, Chen AY, Wang TY, et al. Risk adjustment for in-hospital mortality of contemporary patients with acute myocardial infarction: the acute coronary treatment and intervention outcomes network (ACTION) registry-get with the guidelines (GWTG) acute myocardial infarction mortality model and risk score. Am Heart J. 2011;161(1):113-122.e2."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/books/NBK83609/",
+                "text": "National Clinical Guidelines Centre (UK). Stable Angina: Methods, Evidence & Guidance [Internet]. London: Royal College of Physicians (UK); 2011 Jul. (NICE Clinical Guidelines, No. 126.) 14, Risk scores. Available from: https://www.ncbi.nlm.nih.gov/books/NBK83609/."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5776676/",
+                "text": "Fanaroff AC, Peterson ED, Chen AY, et al. Intensive Care Unit Utilization and Mortality Among Medicare Patients Hospitalized with Non-ST-Segment Elevation Myocardial Infarction. JAMA Cardiol. 2017;2(1):36-44."
+            }
+        ],
+        "evidence": "<table><colgroup><col width=\"152\" /><col width=\"61\" /><col width=\"53\" /><col width=\"62\" /><col width=\"63\" /><col width=\"61\" /></colgroup>\n<tbody>\n<tr>\n<td></td>\n<td>\n<p dir=\"ltr\"><strong>0 points</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>1 point</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>2 points</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>3 points</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>5 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Age, years</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;70</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;70</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Serum creatinine, mg/dL</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;1.1</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;1.1</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Heart rate, bpm</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;85</p>\n</td>\n<td>\n<p dir=\"ltr\">85-100</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;100</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Systolic blood pressure, mmHg</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;145</p>\n</td>\n<td>\n<p dir=\"ltr\">125-145</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;125</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Initial troponin, times above upper limit of normal</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;12</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">&ge;12</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Heart failure signs or symptoms</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>ST depression on EKG</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Prior revascularization</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Chronic lung disease</strong></p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n<td>\n<p dir=\"ltr\">--</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<div dir=\"ltr\">\n<div dir=\"ltr\">\n<table>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>ACTION ICU Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk of complications requiring ICU care&nbsp;among initially uncomplicated patients with NSTEM</strong>I<strong>*</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&le;1</p>\n</td>\n<td>\n<p dir=\"ltr\">3.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n<td>\n<p dir=\"ltr\">4.9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n<td>\n<p dir=\"ltr\">5.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n<td>\n<p dir=\"ltr\">6.9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n<td>\n<p dir=\"ltr\">9.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">6</p>\n</td>\n<td>\n<p dir=\"ltr\">12%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">7</p>\n</td>\n<td>\n<p dir=\"ltr\">14.6%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8</p>\n</td>\n<td>\n<p dir=\"ltr\">17.4%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">9</p>\n</td>\n<td>\n<p dir=\"ltr\">20.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n<td>\n<p dir=\"ltr\">23.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">11</p>\n</td>\n<td>\n<p dir=\"ltr\">27.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">12</p>\n</td>\n<td>\n<p dir=\"ltr\">31%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">13</p>\n</td>\n<td>\n<p dir=\"ltr\">31.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">14</p>\n</td>\n<td>\n<p dir=\"ltr\">39.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;14</p>\n</td>\n<td>\n<p dir=\"ltr\">&gt;39.3%</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Cardiac arrest, shock, high-grade atrioventricular block, respiratory failure, stroke, or death during index admission.&nbsp;</p>\n<p></p>\n<p><span style=\"font-size: 10pt; font-family: Arial; color: #0000ff; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">&nbsp;</span></p>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age)\nvar cr = parseFloat(cr)\nvar hr = parseFloat(hr)\nvar bp = parseFloat(bp)\nvar troponin = parseFloat(troponin)\nvar hf = parseFloat(hf)\nvar stdep = parseFloat(stdep)\nvar pci = parseFloat(pci)\nvar lung = parseFloat(lung)\n\nvar score = age + cr + hr + bp + troponin + hf + stdep + pci + lung\n\nvar risk = [ \"3.4\", \"3.4\", \"4.9\", \"5.5\", \"6.9\", \"9.3\", \"12\", \"14.6\", \"17.4\", \"20.8\", \"23.3\", \"27.7\", \"31\", \"31.5\", \"39.3\", \">39.3\", \">39.3\", \">39.3\", \">39.3\", \">39.3\", \">39.3\" ]\n\nvar comp = risk[score]\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: comp + '% risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'ACTION ICU Score'\n});\ncalc_output.push({\n    name: 'comp',\n    value: comp,\n    value_text: '%',\n    message: 'Risk of complications requiring ICU care among initially uncomplicated patients with NSTEMI (cardiac arrest, shock, high-grade AV block, respiratory failure, stroke, or death during index admission)'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age, years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<70",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥70",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Serum creatinine, mg/dL",
+                "name": "cr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<1.1",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥1.1",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Heart rate, bpm",
+                "name": "hr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<85",
+                        "value": 0
+                    },
+                    {
+                        "label": "85-100",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥100",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Systolic blood pressure, mmHg",
+                "name": "bp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥145",
+                        "value": 0
+                    },
+                    {
+                        "label": "125-145",
+                        "value": 1
+                    },
+                    {
+                        "label": "<125",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ratio of initial troponin to upper limit of normal",
+                "name": "troponin",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<12",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥12",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Signs or symptoms of heart failure",
+                "name": "hf",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "ST segment depression on EKG",
+                "name": "stdep",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Prior revascularization",
+                "name": "pci",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    },
+                    {
+                        "label": "No",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chronic lung disease",
+                "name": "lung",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ICU risk score",
+            "stemi",
+            "nstemi complications",
+            "mortality risk score"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Family Practice",
+            "Internal Medicine"
+        ]
+    }
+}

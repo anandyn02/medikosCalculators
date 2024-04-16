@@ -1,0 +1,295 @@
+{
+    "id": "365",
+    "title": "HEMORR<sub>2</sub>HAGES Score for Major Bleeding Risk",
+    "desc": "The HEMORR2HAGES Score quantifies the bleeding risk for elderly patients with atrial fibrillation who are anticoagulated with coumadin/warfarin.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16504638",
+                "text": "Gage BF, Yan Y, Milligan PE, et al. Clinical classification schemes for predicting hemorrhage: results from the National Registry of Atrial Fibrillation. Am Heart J 2006; 151:713-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25012972",
+                "text": "Caldeira D, Costa J, Fernandes RM, Pinto FJ, Ferreira JJ. Performance of the HAS-BLED high bleeding-risk category, compared to ATRIA and HEMORR2HAGES in patients with atrial fibrillation: a systematic review and meta-analysis. J Interv Card Electrophysiol. 2014;40(3):277-284."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points, see below:</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Points</th>\n</tr>\n<tr>\n<td>Hepatic or renal disease</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Ethanol abuse</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Malignancy</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Older (age &gt; 75)</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Reduced platelet count or function</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Rebleeding (Prior Bleed)</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>Hypertension (uncontrolled)</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Anemia</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Genetic factors (CYP 2C9 single-nucleotide polymorphisms)</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Excessive fall risk</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>Stroke</td>\n<td>+1</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding"
+        ],
+        "disease_treated": [
+            "Atrial Fibrillation",
+            "Bleeding/Hemorrhage",
+            "Intracranial Hemorrhage",
+            "Stroke/TIA",
+            "Subarachnoid Hemorrhage"
+        ],
+        "logic": "var calc_output=[]; var msg,recs,mini_msg; var u=parseInt(hepatic_renal_disease)+parseInt(ethanol_alcohol_abuse)+parseInt(malignancy)+parseInt(age_75)+parseInt(reduced_platelet)+parseInt(rebleeding)+parseInt(hypertension)+parseInt(anemia)+parseInt(genetic)+parseInt(fall_risk)+parseInt(stroke_history);if(u<5){switch(u){case 0:msg='1.9% risk of bleeding per 100 patient-years of warfarin.';recs='Consider initiation of warfarin therapy if clinically indicated as risk of thrombotic events likely outweighs the risk of bleeding.';mini_msg='1.9% risk of bleeding.'; break; case 1:msg='2.5% risk of bleeding per 100 patient-years of warfarin.';recs='Consider initiation of warfarin therapy if clinically indicated as risk of thrombotic events likely outweighs the risk of bleeding.';mini_msg='2.5% risk of bleeding.'; break; case 2:msg='5.3% risk of bleeding per 100 patient-years of warfarin.';recs='Consider alternatives to anticoagulation unless strong indications for warfarin therapies exist.';mini_msg='5.3% risk of bleeding.'; break; case 3:msg='8.4% risk of bleeding per 100 patient-years of warfarin.';recs='Consider alternatives to anticoagulation unless strong indications for warfarin therapies exist.';mini_msg='8.4% risk of bleeding.'; break; case 4:msg='10.4% risk of bleeding per 100 patient-years of warfarin.';recs='Alternative options should often be considered in patients with high-risk of major bleeding events in need of anticoagulation.';mini_msg='10.4% risk of bleeding.'; break}} else{msg='12.3% risk of bleeding per 100 patient-years of warfarin.';recs='Alternative options should often be considered in patients with high-risk of major bleeding events in need of anticoagulation.';mini_msg='12.3% risk of bleeding.';} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1785_HEMORR2HAGES Score_result',\n    value:u,\n    value_text:'points',\n    message:msg+'<br/><br/>'+recs\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hepatic or Renal Disease</p>",
+                "md_calc_info_concept": null,
+                "name": "hepatic_renal_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Ethanol (Alcohol) Abuse</p>",
+                "md_calc_info_concept": null,
+                "name": "ethanol_alcohol_abuse",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Malignancy History</p>",
+                "md_calc_info_concept": null,
+                "name": "malignancy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Older (Age &gt; 75)</p>",
+                "md_calc_info_concept": null,
+                "name": "age_75",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Reduced Platelet Count or Function</p>",
+                "md_calc_info_concept": null,
+                "name": "reduced_platelet",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Includes aspirin use, any thrombocytopenia or blood dyscrasia, like hemophilia",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Rebleeding Risk</p>",
+                "md_calc_info_concept": null,
+                "name": "rebleeding",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "History of past bleeding",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hypertension (Uncontrolled)</p>",
+                "md_calc_info_concept": null,
+                "name": "hypertension",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Anemia</p>",
+                "md_calc_info_concept": null,
+                "name": "anemia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Hgb <13 g/dL for Men; Hgb <12 g/dL for Women",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Genetic Factors</p>",
+                "md_calc_info_concept": null,
+                "name": "genetic",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "CYP 2C9 single-nucleotide polymorphisms",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Excessive Fall Risk</p>",
+                "md_calc_info_concept": null,
+                "name": "fall_risk",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Stroke History</p>",
+                "md_calc_info_concept": null,
+                "name": "stroke_history",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "hemorr2hages",
+            "bleeding",
+            "coumadin",
+            "warfarin",
+            "afib",
+            "stroke risk"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

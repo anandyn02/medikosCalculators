@@ -1,0 +1,191 @@
+{
+    "id": "481",
+    "title": "Asthma Predictive Index (API)",
+    "desc": "The Asthma Predictive Index (API) determines likelihood of pediatric patients developing childhood asthma.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11029352",
+                "text": "Castro-Rodríguez JA, et al. A clinical index to define risk of asthma in young children with recurrent wheezing. Am J Respir Crit Care Med. 2000; 162: 1403–1406."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21453960",
+                "text": "Leonardi NA, et al. Validation of the Asthma Predictive Index and comparison with simpler clinical prediction rules. J Allergy Clin Immunol. 2011 Jun;127(6):1466-72.e6."
+            }
+        ],
+        "evidence": "<p><strong>Strict Criteria:</strong></p>\n<ul>\n<li>&ge;3 episodes of wheezing per year, AND</li>\n<li>&ge;1 major criteria OR &ge;2 minor criteria</li>\n</ul>\n<p><strong>Loose Criteria:</strong></p>\n<ul>\n<li>&lt;3 episodes of wheezing per year, AND</li>\n<li>&ge;1 major criteria OR &ge;2 minor criteria</li>\n</ul>",
+        "facts": "<p>In the derivation study:</p>\n<ul>\n<li>59% of children with a positive loose index had active asthma at school age (defined at 15 years).</li>\n<li>76% of those with a positive strict index had active asthma at school age (defined at 15 years).</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath",
+            "Wheezing"
+        ],
+        "disease_treated": [
+            "Asthma"
+        ],
+        "logic": "var calc_output = [];\n\nvar wheezing = parseInt(wheezing);\nvar major = parseInt(asthma) + parseInt(eczema);\nvar minor = parseInt(rhin) + parseInt(cold) + parseInt(eos);\nvar msg;\nvar mini_msg;\nvar string;\n\n\nif (wheezing == 1) { // Early wheezer but not early FREQUENT wheezer\n    if (major > 0) {\n        string = \"Positive\";\n        mini_msg = \"By ‘loose’ criteria\";\n        msg = \"; 80% specific for later childhood asthma diagnosis.\";\n    } else if (major == 0 && minor <= 1) {\n        string = \"Negative\";\n        mini_msg = \"By ‘loose’ criteria\";\n        msg = \"; less likely to develop childhood asthma.\";\n    } else if (major == 0 && minor > 1) {\n        string = \"Positive\";\n        mini_msg = \"By ‘loose’ criteria\";\n        msg = \"; 80% specific for later childhood asthma diagnosis.\";\n    }\n}\nif (wheezing == 2) {\n    if (major > 0) {\n        string = \"Positive\";\n        mini_msg = \"By strict criteria\";\n        msg = \"; >95% specific for later childhood asthma diagnosis.\";\n    } else if (major == 0 && minor <= 1) {\n        string = \"Negative\";\n        mini_msg = \"By strict criteria\";\n        msg = \"; less likely to develop childhood asthma.\";\n    } else if (major == 0 && minor > 1) {\n        string = \"Positive\";\n        mini_msg = \"By strict criteria\";\n        msg = \"; >95% specific for later childhood asthma diagnosis.\";\n    }\n}\n\ncalc_output.push({ name: 'mini', value: string, value_text: ' ', message: mini_msg });\ncalc_output.push({ name: '3381_Asthma Predictive Index_result', value: string, value_text: ' ', message: mini_msg + msg });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Wheezing episodes/year",
+                "md_calc_info_concept": null,
+                "name": "wheezing",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥3",
+                        "value": 2
+                    },
+                    {
+                        "label": "<3",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Major Criteria",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Parent with asthma",
+                "md_calc_info_concept": null,
+                "name": "asthma",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Patient with eczema",
+                "md_calc_info_concept": null,
+                "name": "eczema",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Minor Criteria",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Patient has allergic rhinitis",
+                "md_calc_info_concept": null,
+                "name": "rhin",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Wheezing apart from colds",
+                "md_calc_info_concept": null,
+                "name": "cold",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Eosinophilia (≥4% on CBC)",
+                "md_calc_info_concept": null,
+                "name": "eos",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Asthma",
+            "diagnosis",
+            "student"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Family Practice",
+            "Internal Medicine",
+            "Pediatrics",
+            "Primary Care",
+            "Pulmonology"
+        ]
+    }
+}

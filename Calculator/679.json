@@ -1,0 +1,112 @@
+{
+    "id": "679",
+    "title": "Maddrey's Discriminant Function for Alcoholic Hepatitis",
+    "desc": "The Maddrey’s Discriminant Function suggests which patients with alcoholic hepatitis may have a poor prognosis and benefit from steroid administration.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/352788",
+                "text": "Maddrey WC, Boitnott JK, Bedine MS, Weber FL, Mezey E, White RI (1978). Corticosteroid therapy of alcoholic hepatitis. Gastroenterology 75 (2): 193–9. PMID 352788"
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Discriminant Function = 4.6 * (Pt's PT - Control PT) + TBili</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "PT ",
+                "unit": "pt",
+                "error_min": "8",
+                "error_max": "100",
+                "warn_min": "9",
+                "warn_max": "50",
+                "conversion": "1",
+                "normal_max_si": "13",
+                "normal_max_us": "13",
+                "normal_min_si": "11",
+                "normal_min_us": "11",
+                "units_si": "sec",
+                "units_us": "sec"
+            },
+            {
+                "name": "Bilirubin",
+                "unit": "bili",
+                "error_min": "1E-8",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "17.104",
+                "normal_max_si": "32.49",
+                "normal_max_us": "1.9",
+                "normal_min_si": "5.13",
+                "normal_min_us": "0.3",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Alcoholism",
+            "Cirrhosis",
+            "Drug/Alcohol Use",
+            "Hepatitis"
+        ],
+        "logic": "var calc_output = [];\nvar msg = '';\nvar mini_msg = '';\nvar bili;\n\nif (UOMSYSTEM == true) {\n  bili = parseFloat(bilirubin);\n}\n\nif (UOMSYSTEM == false) // need US units for bilirubin\n{\n  bili = parseFloat(bilirubin) / 17.104;\n}\n\n\n\nvar v = 4.6 * (parseFloat(pt) - parseFloat(pt_control)) + bili;\nif (v <= 32) {\n  msg = 'Good Prognosis.';\n  mini_msg = 'Good Prognosis.'\n}\nif (v > 32) {\n  msg = 'Poor Prognosis.';\n  mini_msg = 'Poor Prognosis.'\n}\nmsg +=\n  '<br/><br/>Discriminant Function<br/>> 32 points indicates poor prognosis and patient may benefit from glucocorticoid therapy.';\ncalc_output.push({\n  name: 'mini',\n  value: v.toFixed(1),\n  value_text: 'points',\n  message: mini_msg\n});\ncalc_output.push({\n  name: \"56_Maddrey's Discriminant Function_result\",\n  value: v.toFixed(1),\n  value_text: 'points',\n  message: msg\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "PT",
+                "name": "pt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "pt"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "PT control/reference level",
+                "name": "pt_control",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "pt"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Total bilirubin",
+                "name": "bilirubin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bili"
+            }
+        ],
+        "can_search": [
+            "liver",
+            "etoh",
+            "maddreys",
+            "madrey"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Gastroenterology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Toxicology"
+        ]
+    }
+}

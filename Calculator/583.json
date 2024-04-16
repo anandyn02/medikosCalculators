@@ -1,0 +1,124 @@
+{
+    "id": "583",
+    "title": "Los Angeles Motor Scale (LAMS)",
+    "desc": "The Los Angeles Motor Scale (LAMS) stratifies stroke severity in the field.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14691787",
+                "text": "Llanes JN, Kidwell CS, Starkman S, Leary MC, Eckstein M, Saver JL. The Los Angeles Motor Scale (LAMS): a new measure to characterize stroke severity in the field. Prehosp Emerg Care. 2004;8(1):46-50."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td>&nbsp;</td> <td> <p><strong>0 points</strong></p> </td> <td> <p><strong>1 point</strong></p> </td> <td> <p><strong>2 points</strong></p> </td> </tr> <tr> <td> <p><strong>Facial droop</strong></p> </td> <td> <p>Absent</p> </td> <td> <p>Present</p> </td> <td> <p>--</p> </td> </tr> <tr> <td> <p><strong>Arm drift</strong></p> </td> <td> <p>Absent</p> </td> <td> <p>Drifts down</p> </td> <td> <p>Falls rapidly</p> </td> </tr> <tr> <td> <p><strong>Grip strength</strong></p> </td> <td> <p>Normal</p> </td> <td> <p>Weak grip</p> </td> <td> <p>No grip</p> </td> </tr> </tbody> </table> </div>",
+        "facts": "<p>Interpretation:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><strong>LAMS</strong></p> </td> <td> <p><strong>Interpretation</strong></p> </td> </tr> <tr> <td> <p><span>&lt;4</span></p> </td> <td> <p><span>LVO less likely. Stroke is minor or moderate in severity, but may still benefit from acute treatment.</span></p> </td> </tr> <tr> <td> <p><span>≥4</span></p> </td> <td> <p><span>LVO likely. Stroke is severe and requires acute treatment. Transfer to stroke center with endovascular capabilities.</span></p> </td> </tr> </tbody> </table> </div> <p><span><br>In the </span><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/14691787\" target=\"_blank\"><span>derivation study</span></a><span>, lower mean LAMS correlated with lower <calculator id=\"1890\">Modified Rankin Scale score</calculator> (i.e., better functional outcome) at 3 months (mean entry LAMS 2.2 versus 3.7 for mRS ≤1 or &gt;1, respectively).</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Dizziness",
+            "Seizure",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar facial = parseFloat(facial);\nvar arm = parseFloat(arm);\nvar grip = parseFloat(grip);\n\n//add up points\nvar u = facial + arm + grip;\n\nvar msg, minimsg;\nif (u < 4) {\n\tmsg = 'LVO less likely. Stroke is MINOR or MODERATE in severity, but may still benefit from acute treatment.';\n    minimsg = 'Minor';\n}\nif (u >=4) {\n    msg = 'LVO likely. Stroke is SEVERE and requires acute treatment. Transfer to stroke center with endovascular capabilities.';\n    minimsg = 'Severe, LVO likely';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: minimsg \n});\ncalc_output.push({\n    name: 'Score',\n    value: u,\n    value_text: 'points',\n    message: msg\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Facial droop",
+                "name": "facial",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Arm drift",
+                "name": "arm",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drifts down",
+                        "value": 1
+                    },
+                    {
+                        "label": "Falls rapidly",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Grip strength",
+                "name": "grip",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Weak grip",
+                        "value": 1
+                    },
+                    {
+                        "label": "No grip",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "stroke",
+            "CVA",
+            "cerebrovascular accident",
+            "TIA",
+            "transient ischemic attack",
+            "EMS",
+            "EMT",
+            "emergency medical services",
+            "emergency medical technician",
+            "EMTs",
+            "ambulance",
+            "rule out",
+            "ischemic stroke",
+            "hemorrhagic stroke",
+            "LA stoke scale",
+            "lams"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

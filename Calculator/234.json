@@ -1,0 +1,144 @@
+{
+    "id": "234",
+    "title": "RCVS<sub>2</sub> Score for Reversible Cerebral Vasoconstriction Syndrome",
+    "desc": "RCVS2 Score for Reversible Cerebral Vasoconstriction Syndrome diagnoses reversible cerebral vasoconstriction syndrome from other intracranial arteriopathies at admission.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/30635475/",
+                "text": "Rocha EA, Topcuoglu MA, Silva GS, Singhal AB. RCVS2 score and diagnostic approach for reversible cerebral vasoconstriction syndrome. Neurology. 2019;92(7):e639-e647."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ana.24652",
+                "text": "Singhal AB, Topcuoglu MA, Fok JW, et al. Reversible cerebral vasoconstriction syndromes and primary angiitis of the central nervous system: clinical, imaging, and angiographic comparison. Ann Neurol. 2016;79(6):882-894."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table width=\"412\" height=\"285\" style=\"height: 231px;\">\n<tbody>\n<tr style=\"height: 21px;\">\n<td colspan=\"2\" style=\"height: 21px;\"><strong>Variable</strong></td>\n<td style=\"height: 21px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"height: 42px;\">Recurrent or single thunderclap headache</td>\n<td style=\"height: 21px;\">Present</td>\n<td style=\"height: 21px;\">5</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">Absent</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"height: 42px;\">Intracranial carotid artery involvement</td>\n<td style=\"height: 21px;\">Affected</td>\n<td style=\"height: 21px;\">-2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">Not affected</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"height: 42px;\">Vasoconstrictive trigger identified</td>\n<td style=\"height: 21px;\">Yes</td>\n<td style=\"height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">No</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"height: 42px;\">Sex</td>\n<td style=\"height: 21px;\">Female</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">Male</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"2\" style=\"height: 42px;\">Subarachnoid hemorrhage present on imaging</td>\n<td style=\"height: 21px;\">Present</td>\n<td style=\"height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"height: 21px;\">Absent</td>\n<td style=\"height: 21px;\">0</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<table width=\"239\" height=\"56\">\n<tbody>\n<tr>\n<td><strong>RCVS<sub>2&nbsp;</sub>Score</strong></td>\n<td><strong>RCVS diagnosis</strong></td>\n</tr>\n<tr>\n<td>&le;2</td>\n<td>Negative</td>\n</tr>\n<tr>\n<td>3-4</td>\n<td>Equivocal</td>\n</tr>\n<tr>\n<td>&ge;5</td>\n<td>Positive</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Headache",
+            "Seizure"
+        ],
+        "disease_treated": [
+            "Reversible Cerebral Vasoconstriction Syndrome",
+            "Arteriopathy"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(five);\n\nvar diag;\nif (criteria<=2) {\n  diag='Negative';\n} \nif (criteria>=3 & criteria<=4) {\n  diag='Equivocal';\n}\nif (criteria>=5) {\n  diag='Positive';\n}\n\nvar msg = 'Diagnosis for RCVS';\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:msg\n});\ncalc_output.push({\n    name: 'RCVS2 Score',\n    value: criteria,\n    value_text:'points',\n    message:'RCVS<sub>2</sub> Score'\n});\ncalc_output.push({\n    name: 'Diagnosis for RCVS',\n    value: diag,\n    value_text:'',\n    message:msg\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Recurrent or single thunderclap headache",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Intracranial carotid artery involvement",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not affected",
+                        "value": 0
+                    },
+                    {
+                        "label": "Affected ",
+                        "value": -2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Vasoconstrictive trigger identified",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Subarachnoid hemorrhage present on imaging",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Absent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Present",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "RCVS2 Score for Reversible Cerebral Vasoconstriction Syndrome, RCVS2 Score, reversible cerebral vasoconstriction syndrome, rcvs, arteriopathy, cerebral vasoconstriction, arteriopathies, rcvs2, intracranial arteriopathies"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

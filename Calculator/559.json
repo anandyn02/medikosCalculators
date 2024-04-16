@@ -1,0 +1,532 @@
+{
+    "id": "559",
+    "title": "POSSUM for Operative Morbidity and Mortality Risk",
+    "desc": "The POSSUM estimates morbidity and mortality for patients undergoing general surgery.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2021856",
+                "text": "Copeland GP, Jones D, Walters M. POSSUM: a scoring system for surgical audit. Br J Surg 1991;78(3):355-60."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9752863",
+                "text": "Prytherch DR, Whiteley MS, Higgins B, Weaver PC, Prout WG, Powell SJ. POSSUM and Portsmouth POSSUM for predicting mortality. Physiological and Operative Severity Score for the enUmeration of Mortality and morbidity. Br J Surg 1998 Sep;85(9):1217-20."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "http://jamanetwork.com/journals/jamasurgery/fullarticle/212013",
+                "text": "Copeland GP. The POSSUM System of Surgical Audit. Arch Surg. 2002;137(1):15-19. doi:10.1001/archsurg.137.1.15."
+            }
+        ],
+        "evidence": "<p>Addition of selected points. </p> <p>NOTE: Physiological score and operation severity score are weighted differently.</p><p>“Under the Respiratory component of the Physiological Severity Score, xray changes are in addition to the clinical findings, and the latter are more important,” according to Dr. Copeland (creator of the POSSUM). See our interview under “From the Creator” for more of Dr. Copeland's insights.</p>",
+        "facts": "<p><strong>Severity of surgeries:</strong></p> <ul> <li>Moderate: appendectomy, cholecystectomy, mastectomy, TURP</li> <li>Major: laparotomy, bowel resection, cholecystectomy w choledochotomy, peripheral vascular procedure or major amputation</li> <li>Major+: aortic procedure, abdominoperineal resection, pancreatic or liver resection, esophagogastrectomy</li> </ul> <p><strong>Morbidity was defined as any of the following:</strong></p> <ul> <li>Hemorrhage</li> <li>Infection (including pneumonia, wound infection, UTI, deep infection, septicemia, and fever of unknown origin)</li> <li>Wound dehiscence or anastomotic leak</li> <li>Thrombosis (including) DVT, PE, CVA, or MI</li> <li>Cardiac failure</li> <li>Impaired renal function (urea increase &gt;5 mmol/L from pre-op)</li> <li>Hypotension (respiratory failure)</li> <li>“Any other complication”</li> </ul>",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Hemoglobin",
+                "unit": "hgb",
+                "error_min": "0.5",
+                "error_max": "25",
+                "warn_min": "4",
+                "warn_max": "20",
+                "conversion": "10",
+                "normal_max_si": "170",
+                "normal_max_us": "17",
+                "normal_min_si": "120",
+                "normal_min_us": "12",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Volume",
+                "unit": "volume",
+                "error_min": "0",
+                "error_max": "20000",
+                "warn_min": "1",
+                "warn_max": "5000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mL",
+                "units_us": "mL"
+            },
+            {
+                "name": "White Blood Cell Count",
+                "unit": "wbc",
+                "error_min": "0.0001",
+                "error_max": "500",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10.7",
+                "normal_max_us": "10.7",
+                "normal_min_si": "3.7",
+                "normal_min_us": "3.7",
+                "units_si": "× 10⁹ cells/L",
+                "units_us": "× 10³ cells/µL"
+            },
+            {
+                "name": "Sodium",
+                "unit": "na",
+                "error_min": "100",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "170",
+                "conversion": "1",
+                "normal_max_si": "145",
+                "normal_max_us": "145",
+                "normal_min_si": "136",
+                "normal_min_us": "136",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            },
+            {
+                "name": "Glasgow Coma Scale",
+                "unit": "gcs",
+                "error_min": "3",
+                "error_max": "16",
+                "warn_min": "3",
+                "warn_max": "15",
+                "conversion": "1",
+                "normal_max_si": "15",
+                "normal_max_us": "15",
+                "normal_min_si": "3",
+                "normal_min_us": "3",
+                "units_si": "points",
+                "units_us": "points"
+            },
+            {
+                "name": "Heart Rate/Pulse",
+                "unit": "hr",
+                "error_min": "10",
+                "error_max": "300",
+                "warn_min": "20",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "beats/min",
+                "units_us": "beats/min"
+            },
+            {
+                "name": "BUN",
+                "unit": "bun",
+                "error_min": "1",
+                "error_max": "500",
+                "warn_min": "2",
+                "warn_max": "300",
+                "conversion": "0.357",
+                "normal_max_si": "7.1",
+                "normal_max_us": "20",
+                "normal_min_si": "2.9",
+                "normal_min_us": "8",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Potassium",
+                "unit": "k",
+                "error_min": "1",
+                "error_max": "10",
+                "warn_min": "2",
+                "warn_max": "7",
+                "conversion": "1",
+                "normal_max_si": "5.2",
+                "normal_max_us": "5.2",
+                "normal_min_si": "3.5",
+                "normal_min_us": "3.5",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Appendicitis",
+            "CHF",
+            "Cholecystitis",
+            "Congestive Heart Failure",
+            "COPD",
+            "Heart Failure",
+            "Hernia",
+            "Sepsis"
+        ],
+        "logic": "var calc_output = [];\nvar age = parseFloat(age);\nvar sbp = parseFloat(sbp);\nvar pulse = parseFloat(pulse);\nvar gcs = parseFloat(gcs);\nif (UOMSYSTEM == false) {\n       var hb = parseFloat(hb) / 10;\n     }\n     \n   if (UOMSYSTEM == true) {\n       var hb = parseFloat(hb);\n}\nvar wbc = parseFloat(wbc);\nif (UOMSYSTEM == false) {\n       var bun = parseFloat(bun) / 0.357;\n     }\n     \n   if (UOMSYSTEM == true) {\n       var bun = parseFloat(bun);\n}\nvar na = parseFloat(na);\nvar k = parseFloat(k);\nvar bloodloss = parseFloat(bloodloss);\n\nvar agescore, sbpscore, pulsescore, gcsscore, hbscore, wbcscore, bunscore, nascore, kscore, bloodlossscore;\n\nif (age < 61) {\n    agescore = 1;\n}\nif (age >= 61 && age < 71) {\n    agescore = 2;\n}\nif (age >= 71) {\n    agescore = 4;\n}\n\nif (sbp < 90) {\n    sbpscore = 8;\n}\nif (sbp >= 90 && sbp < 100) {\n    sbpscore = 4;\n}\nif (sbp >= 100 && sbp < 110) {\n    sbpscore = 2;\n}\nif (sbp >= 110 && sbp <= 130) {\n    sbpscore = 1;\n}\nif (sbp > 130 && sbp <= 170) {\n    sbpscore = 2;\n}\nif (sbp > 170) {\n    sbpscore = 4;\n}\n\nif (pulse < 40) {\n    pulsescore = 8;\n}\nif (pulse >= 40 && pulse < 50) {\n    pulsescore = 2;\n}\nif (pulse >= 50 && pulse < 81) {\n    pulsescore = 1;\n}\nif (pulse >= 81 && pulse < 101) {\n    pulsescore = 2;\n}\nif (pulse >= 101 && pulse <= 120) {\n    pulsescore = 4;\n}\nif (pulse > 120) {\n    pulsescore = 8;\n}\n\n\nif (gcs <= 8) {\n    gcsscore = 8;\n}\nif (gcs >= 9 && gcs <= 11) {\n    gcsscore = 4;\n}\nif (gcs >= 12 && gcs <= 14) {\n    gcsscore = 2;\n}\nif (gcs == 15) {\n    gcsscore = 1;\n}\n\n\nif (hb < 10) {\n    hbscore = 8;\n}\nif (hb >= 10.0 && hb < 11.5) {\n    hbscore = 4;\n}\nif (hb >= 11.5 && hb < 13) {\n    hbscore = 2;\n}\nif (hb >= 13 && hb <= 16) {\n    hbscore = 1;\n}\nif (hb > 16 && hb <= 17.0) {\n    hbscore = 2;\n}\nif (hb > 17 && hb <= 18.0) {\n    hbscore = 4;\n}\nif (hb > 18) {\n    hbscore = 8;\n}\n\n\nif (wbc < 3.1) {\n    wbcscore = 4;\n}\nif (wbc >= 3.1 && wbc < 4) {\n    wbcscore = 2;\n}\nif (wbc >= 4 && wbc <= 10) {\n    wbcscore = 1;\n}\nif (wbc > 10 && wbc <= 20) {\n    wbcscore = 2;\n}\nif (wbc > 20) {\n    wbcscore = 4;\n}\n\n\nif (bun < 21) {\n    bunscore = 1;\n}\nif (bun >= 21 && bun < 28) {\n    bunscore = 2;\n}\nif (bun >= 28 && bun <= 42) {\n    bunscore = 4;\n}\nif (bun > 42) {\n    bunscore = 8;\n}\n\nif (na < 125) {\n    nascore = 8;\n}\nif (na >= 125 && na < 131) {\n    nascore = 4;\n}\nif (na >= 131 && na <= 136) {\n    nascore = 2;\n}\nif (na > 136) {\n    nascore = 1;\n}\n\nif (k < 2.9) {\n    kscore = 8;\n}\nif (k >= 2.9 && k < 3.2) {\n    kscore = 4;\n}\nif (k >= 3.2 && k < 3.5) {\n    kscore = 2;\n}\nif (k >= 3.5 && k <= 5.0) {\n    kscore = 1;\n}\nif (k > 5.0 && k <= 5.3) {\n    kscore = 4;\n}\nif (k > 5.3 && k < 6.0) {\n    kscore = 4;\n}\nif (k >= 6.0) {\n    kscore = 8;\n}\n\nif (bloodloss <= 100) {\n    bloodlossscore = 1;\n}\nif (bloodloss > 100 && bloodloss <= 500) {\n    bloodlossscore = 2;\n}\nif (bloodloss > 500 && bloodloss < 1000) {\n    bloodlossscore = 4;\n}\nif (bloodloss >= 1000) {\n    bloodlossscore = 8;\n}\n\n\nvar phys = agescore + sbpscore + pulsescore + gcsscore + hbscore + wbcscore + bunscore + nascore + kscore + parseFloat(card) + parseFloat(resp) + parseFloat(ekg);\nvar op = parseFloat(opsev) + parseFloat(proc) + bloodlossscore + parseFloat(soil) + parseFloat(malig) + parseFloat(mode);\n\n\nvar morb = 1 / (1 + (1 / Math.exp(-5.91 + (0.16 * phys) + (0.19 * op))));\nvar mort = 1 / (1 + (1 / Math.exp(-7.04 + (0.13 * phys) + (0.16 * op))));\nvar morbval = morb * 100;\nvar mortval = mort * 100;\n\ncalc_output.push({\n    name: 'mini',\n    value: mortval.toFixed(1),\n    value_text: '%',\n    message: 'Predicted mortality'\n});\ncalc_output.push({\n    name: 'POSSUM mort',\n    value: mortval.toFixed(1),\n    value_text: '%',\n    message: 'Predicted mortality'\n});\ncalc_output.push({\n    name: 'POSSUM morb',\n    value: morbval.toFixed(1),\n    value_text: '%',\n    message: 'Predicted morbidity'\n});\ncalc_output.push({\n    name: 'POSSUM score',\n    value: ' ',\n    value_text: ' ',\n    message: 'Physiological score: ' + phys + ' points<br/><br/>Operative severity score: ' + op + ' points'\n});",
+        "inputs": [
+            {
+                "subheading": "Physiological score",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Cardiac",
+                "name": "card",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No failure",
+                        "value": 1
+                    },
+                    {
+                        "label": "Diuretic, digoxin or angina/hypertension meds",
+                        "value": 2
+                    },
+                    {
+                        "label": "Peripheral edema, warfarin, or borderline cardiomegaly on chest X-ray (CXR)",
+                        "value": 4
+                    },
+                    {
+                        "label": "Raised jugular venous pressure, or cardiomegaly on CXR",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Respiratory",
+                "name": "resp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No dyspnea",
+                        "value": 1
+                    },
+                    {
+                        "label": "Exertional dyspnea or mild COPD on CXR",
+                        "value": 2
+                    },
+                    {
+                        "label": "Limiting dyspnea or moderate COPD on CXR",
+                        "value": 4
+                    },
+                    {
+                        "label": "Dyspnea at rest or fibrosis/consolidation on CXR",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "sBP",
+                "name": "sbp",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "HR",
+                "name": "pulse",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "GCS",
+                "name": "gcs",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "gcs"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Hgb",
+                "name": "hb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hgb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "WBC",
+                "name": "wbc",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wbc"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "BUN",
+                "name": "bun",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bun"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sodium",
+                "name": "na",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Potassium",
+                "name": "k",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "k"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "ECG",
+                "name": "ekg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 1
+                    },
+                    {
+                        "label": "Atrial fibrillation (HR 60-90)",
+                        "value": 2
+                    },
+                    {
+                        "label": "5 ectopic beats/min, Q waves or ST/T wave changes",
+                        "value": 8
+                    },
+                    {
+                        "label": "Any other abnormal rhythm",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Operative severity score",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Operative severity",
+                "name": "opsev",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Minor",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Major",
+                        "value": 4
+                    },
+                    {
+                        "label": "Major+",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "See About section for examples of surgeries in each category.",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Number of procedures",
+                "name": "proc",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 4
+                    },
+                    {
+                        "label": ">2",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Estimated blood loss",
+                "name": "bloodloss",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "volume"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Peritoneal soiling",
+                "name": "soil",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 1
+                    },
+                    {
+                        "label": "Minor (serous fluid)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Local pus",
+                        "value": 4
+                    },
+                    {
+                        "label": "Free bowel content, pus or blood",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Presence of malignancy",
+                "name": "malig",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 1
+                    },
+                    {
+                        "label": "Primary only",
+                        "value": 2
+                    },
+                    {
+                        "label": "Lymph node mets",
+                        "value": 4
+                    },
+                    {
+                        "label": "Distant mets",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Diagnosed before or during surgery",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Mode of surgery",
+                "name": "mode",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Elective",
+                        "value": 1
+                    },
+                    {
+                        "label": "Emergency (within 24h), resuscitation >2h possible",
+                        "value": 4
+                    },
+                    {
+                        "label": "Emergency (within 2h)",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "POSSUM",
+            "surgery",
+            "risk"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Hospitalist Medicine",
+            "Surgery (Cardiothoracic)",
+            "Surgery (General)",
+            "Surgery (Vascular)"
+        ]
+    }
+}

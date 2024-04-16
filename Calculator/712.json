@@ -1,0 +1,187 @@
+{
+    "id": "712",
+    "title": "PELD Score (Pediatric End-Stage Liver Disease) (younger than 12)",
+    "desc": "The PELD Score (Pediatric End-Stage Liver Disease) calculates the pediatric version of the MELD score for liver cirrhosis severity and transplant planning",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12151728",
+                "text": "McDiarmid SV, Anand R, Lindblad AS; Principal Investigators and Institutions of the Studies of Pediatric Liver Transplantation (SPLIT) Research Group. Development of a pediatric end-stage liver disease score to predict poor outcome in children awaiting liver transplantation.Transplantation. 2002 Jul 27;74(2):173-81."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15973720",
+                "text": "Shneider BL, Neimark E, Frankenberg T, Arnott L, Suchy FJ, Emre S. Critical analysis of the pediatric end-stage liver disease scoring system: a single center experience.Liver Transpl. 2005 Jul;11(7):788-95."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15880084",
+                "text": "Bourdeaux C,  et al. PELD score and posttransplant outcome in pediatric liver transplantation: a retrospective study of 100 recipients. Transplantation. 2005 May 15;79(9):1273-6."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16498644",
+                "text": "Barshes NR, et. al.The pediatric end-stage liver disease (PELD) model as a predictor of survival benefit and posttransplant survival in pediatric liver transplant recipients.Liver Transpl. 2006 Mar;12(3):475-80."
+            }
+        ],
+        "evidence": "<p>PELD Score = 10* (0.480 * ln(bilirubin) + 1.857 * ln(INR) - 0.687 * ln(albumin) + 0.436 (if patient &lt; 1 year: scores for patients listed for liver transplantation before the patient's first birthday continue to include the value assigned for age (&lt;&nbsp;1 Year) until the patient reaches the age of 24 months) + 0.667 (if patient has growth failure (&lt;-2 Standard deviation))</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Age",
+                "unit": "age_peds",
+                "error_min": "0.001",
+                "error_max": "12",
+                "warn_min": "0.1",
+                "warn_max": "11",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Bilirubin",
+                "unit": "bili",
+                "error_min": "1E-8",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "17.104",
+                "normal_max_si": "32.49",
+                "normal_max_us": "1.9",
+                "normal_min_si": "5.13",
+                "normal_min_us": "0.3",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "INR",
+                "unit": "inr",
+                "error_min": "0.1",
+                "error_max": "20",
+                "warn_min": "0.5",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "1.2",
+                "normal_max_us": "1.2",
+                "normal_min_si": "0.8",
+                "normal_min_us": "0.8",
+                "units_si": " ",
+                "units_us": " "
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Cirrhosis",
+            "Hepatitis"
+        ],
+        "logic": "var calc_output = [];\nvar bili = parseFloat(bilirubin);\nvar alb = parseFloat(albumin);\nvar inr = parseFloat(inr);\nvar v = 0;\nvar msg = '';\nvar growth, infant;\nvar wlsurv = '';\nvar ptsurv = '';\nif (UOMSYSTEM == false) {\n  bili = bili/17.104;\n  alb = alb/10;\n  //only inputs that need conversion\n}\nif (growth_failure == 1) { growth = 0.667 } else { growth = 0 }\nif (parseFloat(age) > 11) { \n    calc_output.push({ \n        name: 'mini', \n        value: ' ', \n        value_text: ' ', \n        message: 'Please use MELD' \n    });\n    calc_output.push({ \n        name: '87_PELD Score_result', \n        value: ' ', \n        value_text: ' ', \n        message: 'For patients 12 and older, please use the MELD Calculator. PELD is for patients less than 12 years old.' \n    }); \n} else {\n    if (age < 2) { \n        infant = .436;\n        msg = '<br/><br/>Note: For children under 1 year already listed for transplant, their PELD score should be calculated using an age of 1 until they reach 2 years of age. (The age of 1 adds points to the PELD score.)' } else { infant = 0 }\n    v = 10 * ((.48 * Math.log(bili)) + (1.857 * Math.log(inr)) - (.687 * Math.log(alb)) + infant + growth);\n    if (v < 0){\n        v = 0;\n    } else {\n        v = v;\n    }\n    if (v <= 6) { wlsurv = '86.8%';\n        ptsurv = '93.6%' }\n    if (v >= 7 && v <= 16) { wlsurv = '76.3%';\n        ptsurv = '90.9%' }\n    if (v >= 17 && v <= 27) { wlsurv = '65.5%';\n        ptsurv = '89.4%' }\n    if (v >= 28) { wlsurv = '66.1%';\n        ptsurv = '84.6%' }\n    calc_output.push({\n        name: 'mini', \n        value: v.toFixed(1), \n        value_text: 'points', \n        message: 'PELD Score' \n    });\n    calc_output.push({ \n        name: '87_PELD Score_result (score)', \n        value: v.toFixed(1), \n        value_text: 'points', \n        message: 'PELD Score' + msg \n    });\n    calc_output.push({ \n        name: '87_PELD Score_result (waiting list)', \n        value: wlsurv, \n        value_text: ' ', \n        message: '1-Year Waiting List Survival'\n    });\n    calc_output.push({ \n        name: '87_PELD Score_result (posttransplant)', \n        value: ptsurv, \n        value_text: ' ', \n        message: '1-Year Posttransplant Survival' \n    }); \n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_peds"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Bilirubin</p>",
+                "name": "bilirubin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bili"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Albumin</p>",
+                "name": "albumin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>INR</p>",
+                "name": "inr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "inr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>History of growth failure</p>",
+                "md_calc_info_concept": null,
+                "name": "growth_failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<a href='https://cdn-web-img.mdcalc.com/MELD_PELD.pdf' target='_blank'>UNOS Growth Failure Chart</a>",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "cirrhosis",
+            "peld",
+            "meld",
+            "hepatitis"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Pediatric)",
+            "Gastroenterology",
+            "Hematology and Oncology",
+            "Hepatology",
+            "Pediatric Subspecialty",
+            "Pediatrics",
+            "Surgery (General)"
+        ]
+    }
+}

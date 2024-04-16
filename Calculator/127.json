@@ -1,0 +1,588 @@
+{
+    "id": "127",
+    "title": "Morphine Milligram Equivalents (MME) Calculator",
+    "desc": "The Morphine Milligram Equivalents (MME) Calculator calculates total daily morphine milligram equivalents.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18574361",
+                "text": "Von Korff M, Saunders K, et al. De facto long-term opioid therapy for noncancer pain. Clin J Pain. 2008;24(6):521-7."
+            },
+            {
+                "href": "https://europepmc.org/articles/pmc3000551",
+                "text": "Dunn KM, Saunders KW, Rutter CM, et al. Opioid prescriptions for chronic pain and overdose: a cohort study. Ann Intern Med. 2010;152(2):85-92."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6101a3.htm",
+                "text": "Centers for Disease Control and Prevention. CDC grand rounds: prescription drug overdoses - a U.S. epidemic. 2012;61(01):10-13."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29296093",
+                "text": "Fudin J, Raouf M, Wegrzyn EL, Schatman ME. Safety concerns with the Centers for Disease Control opioid calculator. J Pain Res. 2018;11:1-4."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">MME/day = Dosage<sup>1</sup> x&nbsp;Doses per day x MME conversion factor</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"199\"><col width=\"103\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Opioid</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Common dosages</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>MME conversion factor<sup>2</sup></strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Codeine</p>\n</td>\n<td>\n<p dir=\"ltr\">15mg, 30mg, 60mg, 2.4 mg/mL, 6 mg/mL</p>\n</td>\n<td>\n<p dir=\"ltr\">0.15</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">FentaNYL buccal or&nbsp;sublingual&nbsp;tablets</p>\n</td>\n<td>\n<p dir=\"ltr\">100 mcg, 200 mcg, 300 mcg, 400 mcg, 600 mcg, 800 mcg</p>\n</td>\n<td>\n<p dir=\"ltr\">0.13</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">FentaNYL patch (Duragesic)</p>\n</td>\n<td>\n<p dir=\"ltr\">12.5 mcg, 25 mcg, 37.5 mcg, 50 mcg, 62.5 mcg, 75 mcg, 87.5 mcg, 100 mcg</p>\n</td>\n<td>\n<p dir=\"ltr\">2.4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">HYDROcodone (Vicodin, Norco, Lortab)</p>\n</td>\n<td>\n<p dir=\"ltr\">2.5 mg, 5 mg, 7.5 mg, 10 mg, 1 mg/mL, 0.5 mg/mL, 0.667 mg/mL</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">HYDROmorphone (Dilaudid)</p>\n</td>\n<td>\n<p dir=\"ltr\">2 mg, 4 mg, 8 mg, 12 mg, 16 mg, 32 mg, 1 mg/mL</p>\n</td>\n<td>\n<p dir=\"ltr\">5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Methadone<sup>3</sup></p>\n</td>\n<td>\n<p dir=\"ltr\">5 mg, 10 mg, 40 mg</p>\n</td>\n<td>4.7</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Morphine</p>\n</td>\n<td>\n<p dir=\"ltr\">10 mg, 15 mg, 20 mg, 40 mg, 45 mg, 50 mg, 60 mg, 70 mg, 75 mg, 80 mg, 90 mg, 100 mg, 120 mg, 130 mg, 150 mg, 200 mg, 2 mg/mL, 20 mg/mL</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">OxyCODONE (OxyCONTIN, Roxicodone)</p>\n</td>\n<td>\n<p dir=\"ltr\">5 mg, 7.5 mg, 10 mg, 15 mg, 20 mg, 30 mg, 40 mg, 60 mg, 80 mg, 1 mg/mL, 20 mg/mL</p>\n</td>\n<td>\n<p dir=\"ltr\">1.5</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">OxyMORphone</p>\n</td>\n<td>\n<p dir=\"ltr\">5 mg, 7.5 mg, 10 mg, 15 mg, 20 mg, 30 mg, 40 mg, 1 mg/mL</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Tapentadol<sup>3</sup>, mg</p>\n</td>\n<td></td>\n<td>\n<p dir=\"ltr\">0.4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">TraMADol (Ultram), mg</p>\n</td>\n<td></td>\n<td>\n<p dir=\"ltr\">0.2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Buprenorphine<sup>4</sup></p>\n</td>\n<td></td>\n<td>\n<p dir=\"ltr\">10</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><sup>1</sup>Dosage in mcg/hr for fentaNYL patch, in mcg for fentaNYL buccal or sublingual tablets, and in mg for all other opioids.</p>\n<p dir=\"ltr\"><sup>2</sup>These dose conversions are estimated and cannot account for individual differences in genetics and pharmacokinetics.</p>\n<p dir=\"ltr\"><sup>3</sup>Conversion of methadone and tapentadol is particularly complex.</p>\n<p dir=\"ltr\"><sup>4</sup>Buprenorphine&nbsp;is listed but, as a partial opioid agonist,&nbsp;is not expected to be associated with overdose risk in the same dose-dependent manner as doses for full agonist opioids and&nbsp;is therefore omitted from the calculator.</p>\n<p dir=\"ltr\"></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"77\"><col width=\"114\"><col width=\"167\"><col width=\"95\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>MME range</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Comparative risk*</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Annual overdose rate</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">1&nbsp;to &lt;20 MME/day</p>\n</td>\n<td>\n<p dir=\"ltr\">Reference</p>\n</td>\n<td>\n<p dir=\"ltr\">Acceptable therapeutic range for acute pain and opioid-na&iuml;ve patients</p>\n</td>\n<td>\n<p dir=\"ltr\">0.2%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">20 to &lt;50 MME/day</p>\n</td>\n<td>\n<p dir=\"ltr\">2x higher risk of overdose</p>\n</td>\n<td>\n<p>There is no completely safe opioid dose; use caution when prescribing opioids at any dose and always prescribe the lowest effective dose</p>\n</td>\n<td>\n<p dir=\"ltr\">Data not available</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">50 to &lt;100 MME/day</p>\n</td>\n<td>\n<p dir=\"ltr\">3.7x higher risk of overdose</p>\n</td>\n<td>\n<p dir=\"ltr\">Strongly consider non-opioid analgesics and decreasing daily opioid dose</p>\n</td>\n<td>\n<p dir=\"ltr\">0.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;100 MME/day</p>\n</td>\n<td>\n<p dir=\"ltr\">8.9x higher risk of overdose</p>\n</td>\n<td>\n<p dir=\"ltr\">Consult pain specialist to reassess pain regimen and decrease dosage and/or wean off opioids</p>\n</td>\n<td>\n<p dir=\"ltr\">1.8%</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Compared&nbsp;to&nbsp;&lt;20 MME/day.</p>\n<p>From <a href=\"https://europepmc.org/articles/pmc3000551\" target=\"_blank\" rel=\"noopener\">Dunn et al 2010</a>.</p>\n</div>",
+        "estimation": [
+            {
+                "name": "Dosage",
+                "unit": "mg_per_dose",
+                "error_min": "-1",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "10000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mg/dose",
+                "units_us": "mg/dose"
+            },
+            {
+                "name": "mcg_mme",
+                "unit": "mcg_mme",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "0",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mcg/dose",
+                "units_us": "mcg/dose"
+            },
+            {
+                "name": "doses per day",
+                "unit": "units per day",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "doses/day",
+                "units_us": "doses/day"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Chest Pain",
+            "Chronic Pain",
+            "Extremity Pain",
+            "Flank Pain",
+            "Joint Pain",
+            "Neck Pain",
+            "Pain"
+        ],
+        "disease_treated": [
+            "Chronic Pain"
+        ],
+        "logic": "\n//define vars\nvar calc_output = [];\nvar drug = parseFloat(drug);\nvar amount = parseFloat(amount) || 1;\nvar amount2 = parseFloat(amount2) || 1;\nvar amount3 = parseFloat(amount3) || 1;\nvar dosage_1 = parseFloat(dosage_1) || 0;\nvar dosage_2 = parseFloat(dosage_2) || 0;\nvar dosage_3 = parseFloat(dosage_3) || 0;\nvar dosage2_1 = parseFloat(dosage2_1) || 0;\nvar dosage2_2 = parseFloat(dosage2_2) || 0;\nvar dosage2_3 = parseFloat(dosage2_3) || 0;\nvar dosage3_1 = parseFloat(dosage3_1) || 0;\nvar dosage3_2 = parseFloat(dosage3_2) || 0;\nvar dosage3_3 = parseFloat(dosage3_3) || 0;\nvar add1 = parseFloat(add1) || 0;\nvar add2 = parseFloat(add2) || 0;\nvar drug2 = parseFloat(drug2) || 0;\nvar drug3 = parseFloat(drug3) || 0;\nvar dosage;\n\nif (drug == 1) {\n  dosage = dosage_3;\n} else if (drug == 10) {\n  dosage = dosage_2;\n} else {\n  dosage = dosage_1;\n}\n\nvar dosage2;\n\nif (drug2 == 1) {\n  dosage2 = dosage2_3;\n} else if (drug2 == 10) {\n  dosage2 = dosage2_2;\n} else {\n  dosage2 = dosage2_1;\n}\n\nvar dosage3;\n\nif (drug3 == 1) {\n  dosage3 = dosage3_3;\n} else if (drug3 == 10) {\n  dosage3 = dosage3_2;\n} else {\n  dosage3 = dosage3_1;\n}\n\nvar names = ['codeine',\n'fentanyl patch',\n'hydrocodone',\n'hydromorphone',\n'methadone',\n'morphine',\n'oxycodone',\n'oxymorphone',\n'tramadol',\n'tapentadol',\n'fentanyl buccal or sublingual tablets'];\n\n\nvar conversion = [0.15,\n2.4,\n1,\n5,\n4.7,\n1,\n1.5,\n3,\n0.2,\n0.4,\n0.13];\n\nvar convert = conversion[drug];\nvar convert2 = conversion[drug2];\nvar convert3 = conversion[drug3];\n  \n//calculation\nvar mme = dosage*amount*convert + dosage2*amount2*convert2 + dosage3*amount3*convert3;\n\nvar rec;\n\nif (mme > 0 && mme < 20) {\n  rec = '<br/><br/>Acceptable therapeutic range for acute pain and opioid-naïve patients';\n} else if (mme >= 20 && mme < 50) {\n  rec = '<br/><br/>2x higher risk of overdose than <20 MME/day; there is no completely safe opioid dose; use caution when prescribing opioids at any dose and always prescribe the lowest effective dose';\n} else if (mme >= 50 && mme < 100) {\n  rec = '<br/><br/>3.7x higher risk of overdose; strongly consider non-opioid analgesics and decreasing daily opioid dose';\n} else if (mme >= 100) {\n  rec = '<br/><br/>8.9x higher risk of overdose; consult pain specialist to reassess pain regimen and decrease dosage and/or wean off opioids';\n}\n\nif (drug == 10) {\n      unit1 = 'mcg';\n} else if (drug == 1) {\n      unit1 = 'mcg/hr';\n} else {\n      unit1 = 'mg';\n}\nif (drug2 == 10) {\n      unit2 = 'mcg';\n} else if (drug2 == 1) {\n      unit2 = 'mcg/hr';\n} else {\n      unit2 = 'mg';\n}\nif (drug3 == 10) {\n      unit3 = 'mcg';\n} else if (drug3 == 1) {\n      unit3 = 'mcg/hr';\n} else {\n      unit3 = 'mg';\n}\nvar i, f, g;\n\nif(add1 == 0) {\n  i = dosage*amount;\n  i = i.toFixed(1);\n  var breakdown = i + ' ' + unit1 + ' ' + names[drug];\n} else if (add1 == 1 && add2 == 0) {\n  i = dosage*amount;\n  i = i.toFixed(1);\n  f = dosage2*amount2;\n  f = f.toFixed(1);\n  var breakdown = i + ' ' + unit1 + ' ' + names[drug] + '<br/>' + f + ' ' + unit2 + ' ' + names[drug2];\n} else if (add1 == 1 && add2 == 1) {\n  i = dosage*amount;\n  i = i.toFixed(1);\n  f = dosage2*amount2;\n  f = f.toFixed(1); \n  g = dosage3*amount3;\n  g = g.toFixed(1); \n  var breakdown = i + ' ' + unit1 + ' ' + names[drug] + '<br/>' + f + ' ' + unit2 + ' ' + names[drug2] + '<br/>' + g + ' ' + unit3 + ' ' + names[drug3];\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: mme.toFixed(1),\n    value_text: '',\n    message: 'MME/day'\n});\ncalc_output.push({\n    name: '10170_MME_result (per day)',\n    value: mme.toFixed(1),\n    value_text: '',\n    message: 'MME/day' + rec\n});\ncalc_output.push({\n    name: '10170_MME_result (list)',\n    value: '',\n    value_text: '',\n    message: 'Drug(s):<br/>' + breakdown\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Drug</p>",
+                "mdcalc_info_concept": null,
+                "name": "drug",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Codeine",
+                        "value": 0
+                    },
+                    {
+                        "label": "FentaNYL buccal or sublingual tablets",
+                        "value": 10
+                    },
+                    {
+                        "label": "FentaNYL patch (Duragesic)",
+                        "value": 1
+                    },
+                    {
+                        "label": "HYDROcodone (Vicodin, Norco, Lortab)",
+                        "value": 2
+                    },
+                    {
+                        "label": "HYDROmorphone (Dilaudid)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Methadone",
+                        "value": 4
+                    },
+                    {
+                        "label": "Morphine",
+                        "value": 5
+                    },
+                    {
+                        "label": "OxyCODONE (OxyCONTIN, Roxicodone)",
+                        "value": 6
+                    },
+                    {
+                        "label": "OxyMORphone",
+                        "value": 7
+                    },
+                    {
+                        "label": "Tapentadol",
+                        "value": 9
+                    },
+                    {
+                        "label": "TraMADol (Ultram)",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "dropdown"
+            },
+            {
+                "conditionality": "drug != 1 && drug != 10",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Dosage</p>",
+                "name": "dosage_1",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "mg_per_dose"
+            },
+            {
+                "conditionality": "drug == 10",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Dosage</p>",
+                "name": "dosage_2",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "mcg_mme"
+            },
+            {
+                "conditionality": "drug == 1",
+                "default": null,
+                "label_en": "<p>Dosage, mcg/hr</p>",
+                "mdcalc_info_concept": null,
+                "name": "dosage_3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "12.5",
+                        "value": 12.5
+                    },
+                    {
+                        "label": "25",
+                        "value": 25
+                    },
+                    {
+                        "label": "37.5",
+                        "value": 37.5
+                    },
+                    {
+                        "label": "50",
+                        "value": 50
+                    },
+                    {
+                        "label": "62.5",
+                        "value": 62.5
+                    },
+                    {
+                        "label": "75",
+                        "value": 75
+                    },
+                    {
+                        "label": "87.5",
+                        "value": 87.5
+                    },
+                    {
+                        "label": "100",
+                        "value": 100
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Assumes 1 patch every 3 days",
+                "type": "dropdown"
+            },
+            {
+                "conditionality": "drug != 1",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Doses per day</p>",
+                "name": "amount",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "units per day"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Add another drug</p>",
+                "md_calc_info_concept": null,
+                "name": "add1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "add1 == 1",
+                "default": null,
+                "label_en": "<p>Drug</p>",
+                "mdcalc_info_concept": null,
+                "name": "drug2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Codeine",
+                        "value": 0
+                    },
+                    {
+                        "label": "FentaNYL buccal or sublingual tablets",
+                        "value": 10
+                    },
+                    {
+                        "label": "FentaNYL patch (Duragesic)",
+                        "value": 1
+                    },
+                    {
+                        "label": "HYDROcodone (Vicodin, Norco, Lortab)",
+                        "value": 2
+                    },
+                    {
+                        "label": "HYDROmorphone (Dilaudid)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Methadone",
+                        "value": 4
+                    },
+                    {
+                        "label": "Morphine",
+                        "value": 5
+                    },
+                    {
+                        "label": "OxyCODONE (OxyCONTIN, Roxicodone)",
+                        "value": 6
+                    },
+                    {
+                        "label": "OxyMORphone",
+                        "value": 7
+                    },
+                    {
+                        "label": "Tapentadol",
+                        "value": 9
+                    },
+                    {
+                        "label": "TraMADol (Ultram)",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "dropdown"
+            },
+            {
+                "conditionality": "add1 == 1 && drug2 != 1 && drug2 != 10",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Dosage</p>",
+                "name": "dosage2_1",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "mg_per_dose"
+            },
+            {
+                "conditionality": "add1 == 1 && drug2 == 10",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Dosage</p>",
+                "name": "dosage2_2",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "mcg_mme"
+            },
+            {
+                "conditionality": "add1 == 1 && drug2 == 1",
+                "default": null,
+                "label_en": "<p>Dosage, mcg/hr</p>",
+                "mdcalc_info_concept": null,
+                "name": "dosage2_3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "12.5",
+                        "value": 12.5
+                    },
+                    {
+                        "label": "25",
+                        "value": 25
+                    },
+                    {
+                        "label": "37.5",
+                        "value": 37.5
+                    },
+                    {
+                        "label": "50",
+                        "value": 50
+                    },
+                    {
+                        "label": "62.5",
+                        "value": 62.5
+                    },
+                    {
+                        "label": "75",
+                        "value": 75
+                    },
+                    {
+                        "label": "87.5",
+                        "value": 87.5
+                    },
+                    {
+                        "label": "100",
+                        "value": 100
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Assumes 1 patch every 3 days",
+                "type": "dropdown"
+            },
+            {
+                "conditionality": "add1 == 1 && drug2 != 1",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Doses per day</p>",
+                "name": "amount2",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "units per day"
+            },
+            {
+                "conditionality": "add1 == 1",
+                "default": 0,
+                "label_en": "<p>Add another drug</p>",
+                "md_calc_info_concept": null,
+                "name": "add2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "add1 == 1 && add2 == 1",
+                "default": null,
+                "label_en": "<p>Drug</p>",
+                "mdcalc_info_concept": null,
+                "name": "drug3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Codeine",
+                        "value": 0
+                    },
+                    {
+                        "label": "FentaNYL buccal or sublingual tablets",
+                        "value": 10
+                    },
+                    {
+                        "label": "FentaNYL patch (Duragesic)",
+                        "value": 1
+                    },
+                    {
+                        "label": "HYDROcodone (Vicodin, Norco, Lortab)",
+                        "value": 2
+                    },
+                    {
+                        "label": "HYDROmorphone (Dilaudid)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Methadone",
+                        "value": 4
+                    },
+                    {
+                        "label": "Morphine",
+                        "value": 5
+                    },
+                    {
+                        "label": "OxyCODONE (OxyCONTIN, Roxicodone)",
+                        "value": 6
+                    },
+                    {
+                        "label": "OxyMORphone",
+                        "value": 7
+                    },
+                    {
+                        "label": "Tapentadol",
+                        "value": 9
+                    },
+                    {
+                        "label": "TraMADol (Ultram)",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "dropdown"
+            },
+            {
+                "conditionality": "add1 == 1 && add2 == 1 && drug3 != 1 && drug3 != 10",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Dosage</p>",
+                "name": "dosage3_1",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "mg_per_dose"
+            },
+            {
+                "conditionality": "add1 == 1 && add2 == 1 && drug3 == 10",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Dosage</p>",
+                "name": "dosage3_2",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "mcg_mme"
+            },
+            {
+                "conditionality": "add1 == 1 && add2 == 1 && drug3 == 1",
+                "default": null,
+                "label_en": "<p>Dosage, mcg/hr</p>",
+                "mdcalc_info_concept": null,
+                "name": "dosage3_3",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "12.5",
+                        "value": 12.5
+                    },
+                    {
+                        "label": "25",
+                        "value": 25
+                    },
+                    {
+                        "label": "37.5",
+                        "value": 37.5
+                    },
+                    {
+                        "label": "50",
+                        "value": 50
+                    },
+                    {
+                        "label": "62.5",
+                        "value": 62.5
+                    },
+                    {
+                        "label": "75",
+                        "value": 75
+                    },
+                    {
+                        "label": "87.5",
+                        "value": 87.5
+                    },
+                    {
+                        "label": "100",
+                        "value": 100
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "dropdown"
+            },
+            {
+                "conditionality": "add1 == 1 && add2 == 1 && drug3 != 1",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Doses per day</p>",
+                "name": "amount3",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "units per day"
+            }
+        ],
+        "can_search": [
+            "MEDD",
+            "MME",
+            "MED",
+            "opioid dose calculator",
+            "morphine equivalent daily dosage",
+            "morphine milligram equivalents",
+            "morphine equivalent dose",
+            "opioid overdose",
+            "chronic pain",
+            "opioid analgesia",
+            "morphine equivalents",
+            "codeine",
+            "fentaNYL",
+            "HYDROcodone",
+            "dilaudid",
+            "OxyCONTIN",
+            "dosing",
+            "oral morphine equivalents",
+            "ome",
+            "opioid conversion",
+            "opiate conversion"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pain Management",
+            "Primary Care",
+            "Toxicology"
+        ]
+    }
+}

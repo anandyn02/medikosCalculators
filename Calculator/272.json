@@ -1,0 +1,338 @@
+{
+    "id": "272",
+    "title": "Cancer and Aging Research Group Chemotherapy Toxicity Tool (CARG-TT)",
+    "desc": "The Cancer and Aging Research Group Chemotherapy Toxicity Tool (CARG-TT) estimates the risk of severe chemotherapy-related side effects (Grade 3 or greater toxicity) in older cancer patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31548802/",
+                "text": "Mariano C, Jamal R, Bains P, et al. Utility of a chemotherapy toxicity prediction tool for older patients in a community setting. Curr Oncol. 2019;26(4):234-239."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/21810685/",
+                "text": "Hurria A, Togawa K, Mohile SG, et al. Predicting chemotherapy toxicity in older adults with cancer: a prospective multicenter study. J Clin Oncol. 2011;29(25):3457-3465."
+            },
+            {
+                "href": "https://ses.library.usyd.edu.au/handle/2123/21876",
+                "text": "Moth EB. Understanding and Optimising Decision-Making about Chemotherapy for Older Adults with Cancer. Thesis. 2019."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/33444080/",
+                "text": "Magnuson A, Sedrak MS, Gross CP, et al. Development and validation of a risk tool for predicting severe toxicity in older adults receiving chemotherapy for early-stage breast cancer. J Clin Oncol. 2021;39(6):608-618."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>The CARG-TT Score is calculated by the addition of the selected points:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 91.6382%; height: 1414.98px;\"><colgroup><col width=\"122\" style=\"width: 40.4096834264432%;\"><col width=\"132\" style=\"width: 37.243947858473%;\"><col width=\"92\" style=\"width: 21.973929236499067%;\"></colgroup>\n<tbody>\n<tr style=\"height: 54.3906px;\">\n<td colspan=\"2\" style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td rowspan=\"2\" style=\"height: 108.781px;\">\n<p dir=\"ltr\"><span>Age, years</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>&lt;72</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>&ge;72</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td rowspan=\"2\" style=\"height: 131.172px;\">\n<p dir=\"ltr\"><span>Cancer type</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>Other</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 76.7812px;\">\n<td style=\"height: 76.7812px;\">\n<p dir=\"ltr\"><span>Gastrointestinal or genitourinary</span></p>\n</td>\n<td style=\"height: 76.7812px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td rowspan=\"2\" style=\"height: 108.781px;\">\n<p dir=\"ltr\"><span>Dosage (for first dose of chemotherapy)</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>Reduced dose</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>Standard dose</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td rowspan=\"2\" style=\"height: 108.781px;\">\n<p dir=\"ltr\"><span>Number of chemotherapy drugs</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>&gt;1</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 92.7812px;\">\n<td rowspan=\"2\" style=\"height: 185.562px;\">\n<p dir=\"ltr\"><span>Hemoglobin, g/dL</span></p>\n</td>\n<td style=\"height: 92.7812px;\">\n<p dir=\"ltr\"><span>&ge;11 g/dL (male)</span></p>\n<p dir=\"ltr\"><span>&ge;10 g/dL (female)</span></p>\n</td>\n<td style=\"height: 92.7812px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 92.7812px;\">\n<td style=\"height: 92.7812px;\">\n<p dir=\"ltr\"><span>&lt;11 g/dL (male)</span></p>\n<p dir=\"ltr\"><span>&lt;10 g/dL (female)</span></p>\n</td>\n<td style=\"height: 92.7812px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td rowspan=\"2\" style=\"height: 108.781px;\">\n<p dir=\"ltr\"><span><calculator id=\"43\">Creatinine clearance</calculator>, mL/min</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>&ge;34 mL/min</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>&lt;34 mL/min</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td rowspan=\"2\" style=\"height: 130.391px;\">\n<p dir=\"ltr\"><span>Hearing</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>Excellent/good</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 76px;\">\n<td style=\"height: 76px;\">\n<p dir=\"ltr\"><span>Fair/poor/totally deaf</span></p>\n</td>\n<td style=\"height: 76px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td rowspan=\"2\" style=\"height: 108.781px;\">\n<p dir=\"ltr\"><span>Number of falls (in the past six months)</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>None</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>&ge;1</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td rowspan=\"2\" style=\"height: 108.781px;\">\n<p dir=\"ltr\"><span>Needs help taking meds</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td rowspan=\"2\" style=\"height: 108.781px;\">\n<p dir=\"ltr\"><span>Walking ability (within one block)</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>Not limited</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54.3906px;\">\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>Limited</span></p>\n</td>\n<td style=\"height: 54.3906px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 76px;\">\n<td rowspan=\"2\" style=\"height: 152px;\">\n<p dir=\"ltr\"><span>Social activity</span></p>\n</td>\n<td style=\"height: 76px;\">\n<p dir=\"ltr\"><span>Not decreased due to health</span></p>\n</td>\n<td style=\"height: 76px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 76px;\">\n<td style=\"height: 76px;\">\n<p dir=\"ltr\"><span>Decreased due to health</span></p>\n</td>\n<td style=\"height: 76px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 75.93856655290104%;\"><colgroup><col style=\"width: 31.264367816091955%;\"><col style=\"width: 68.50574712643677%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>CARG-TT Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>% Risk of Grade 3 or greater toxicity</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>0-5</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>30% (low)</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>6-9</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>52% (intermediate)</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>10-23</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>83% (high)</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding",
+            "Cancer",
+            "Constipation",
+            "Diarrhea",
+            "Fatigue",
+            "Headache",
+            "Infertility",
+            "Loss of Appetite",
+            "Nausea",
+            "Numbness",
+            "Pain",
+            "Seizure",
+            "Vomiting",
+            "Weakness",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar cancer = parseFloat(cancer);\nvar dose = parseFloat(dose);\nvar drugs = parseFloat(drugs);\nvar hg = parseFloat(hg);\nvar hg2 = parseFloat(hg2);\nvar creatinine = parseFloat(creatinine);\nvar hearing = parseFloat(hearing);\nvar falls = parseFloat(falls);\nvar meds = parseFloat(meds);\nvar walking = parseFloat(walking);\nvar social = parseFloat(social);\n\nvar score = age + cancer + dose + drugs + creatinine + hearing + falls + meds + walking + social;\n\nif (sex == 0) {\n    score = score + hg;\n} else {\n    score = score + hg2;\n}\n\nvar risk;\nvar risk2;\n\nif (score <= 5) {\n    risk = 30;\n    risk2 = 'Low';\n} else if (score <=9) {\n    risk = 52;\n    risk2 = 'Intermediate';\n} else {\n    risk = 83;\n    risk2 = 'High';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'CARG-TT Score'\n});\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'CARG-TT Score'\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '%',\n    message: risk2 + ' risk'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "name": "sex",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 0
+                    },
+                    {
+                        "label": "Male",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<72",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥72",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Cancer type</p>",
+                "name": "cancer",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Other",
+                        "value": 0
+                    },
+                    {
+                        "label": "Gastrointestinal or genitourinary",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Dosage</p>",
+                "name": "dose",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Reduced dose",
+                        "value": 0
+                    },
+                    {
+                        "label": "Standard dose",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "For first dose of chemotherapy",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Number of chemotherapy drugs</p>",
+                "name": "drugs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1",
+                        "value": 0
+                    },
+                    {
+                        "label": ">1",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "sex == 0",
+                "default": 0,
+                "label_en": "<p>Hemoglobin, g/dL</p>",
+                "name": "hg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥10 g/dL",
+                        "value": 0
+                    },
+                    {
+                        "label": "<10 g/dL",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "sex == 1",
+                "default": 0,
+                "label_en": "<p>Hemoglobin, g/dL</p>",
+                "name": "hg2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥11 g/dL",
+                        "value": 0
+                    },
+                    {
+                        "label": "<11 g/dL",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p><calculator id=\"43\">Creatinine clearance</calculator>, mL/min</p>",
+                "name": "creatinine",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥34 mL/min",
+                        "value": 0
+                    },
+                    {
+                        "label": "<34 mL/min",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Hearing</p>",
+                "name": "hearing",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Excellent/good",
+                        "value": 0
+                    },
+                    {
+                        "label": "Fair/poor/totally deaf",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Number of falls</p>",
+                "name": "falls",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥1",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "In the past six months",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Needs help taking meds</p>",
+                "name": "meds",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Walking ability</p>",
+                "name": "walking",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not limited",
+                        "value": 0
+                    },
+                    {
+                        "label": "Limited",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Within one block",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Social activity</p>",
+                "name": "social",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not decreased due to health",
+                        "value": 0
+                    },
+                    {
+                        "label": "Decreased due to health",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Cancer and Aging Research Group Chemotherapy Toxicity Tool (CARG-TT)",
+            "carg",
+            "carg tt",
+            "carg-tt",
+            "chemo",
+            "chemotherapy",
+            "toxicity tool",
+            "chemotherapy toxicity tool",
+            "toxicity",
+            "geriatrics",
+            "chemo tox",
+            "chemo tox tool",
+            "chemotherapy tox",
+            "chemotherapy toxicity",
+            "chemo toxicity tool",
+            "chemotherapy tox tool",
+            "chemo toxicity"
+        ],
+        "specialty": [
+            "Geriatrics",
+            "Hematology and Oncology",
+            "Radiation Oncology",
+            "Toxicology"
+        ]
+    }
+}

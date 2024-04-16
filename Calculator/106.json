@@ -1,0 +1,141 @@
+{
+    "id": "106",
+    "title": "Ganzoni Equation for Iron Deficiency Anemia",
+    "desc": "The Ganzoni Equation for Iron Deficiency Anemia calculates iron deficit for dosing IV iron.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/5413918/",
+                "text": "Ganzoni AM. [Intravenous iron-dextran: therapeutic and experimental possibilities]. Schweiz Med Wochenschr. 1970;100(7):301-3."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.hindawi.com/journals/anemia/2015/763576/",
+                "text": "Koch TA, Myers J, Goodnough LT. Intravenous Iron Therapy in Patients with Iron Deficiency Anemia: Dosing Considerations. Anemia. 2015;2015:763576."
+            }
+        ],
+        "evidence": "<p><span id=\"docs-internal-guid-1aba3310-7fff-9e89-450f-3a80d3e3740b\">Total iron deficit, mg = weight, kg x (target hemoglobin, g/dL &ndash; actual hemoglobin, g/dL) x 2.4 + iron stores, mg</span></p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "iron_stores_mg",
+                "unit": "iron_stores_mg",
+                "error_min": "100",
+                "error_max": "2000",
+                "warn_min": "100",
+                "warn_max": "2000",
+                "conversion": "1",
+                "normal_max_si": "1000",
+                "normal_max_us": "1000",
+                "normal_min_si": "200",
+                "normal_min_us": "200",
+                "units_si": "mg",
+                "units_us": "mg"
+            },
+            {
+                "name": "Hemoglobin",
+                "unit": "hgb",
+                "error_min": "0.5",
+                "error_max": "25",
+                "warn_min": "4",
+                "warn_max": "20",
+                "conversion": "10",
+                "normal_max_si": "170",
+                "normal_max_us": "17",
+                "normal_min_si": "120",
+                "normal_min_us": "12",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            }
+        ],
+        "primary_complains": [
+            "Dizziness",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Anemia"
+        ],
+        "logic": "var calc_output = [];\nvar stores = parseFloat(stores);\nvar ahb = parseFloat(ahb);\nvar thb = parseFloat(thb);\nvar weight = parseFloat(weight);\n\nif (UOMSYSTEM == false) { \n  ahb = ahb/10;\n  thb = thb/10;\n}\nif (UOMSYSTEM == true) {\n  ahb = ahb;\n  thb = thb;\n}\n\nvar deficit = weight*(thb-ahb)*2.4 + stores;\ndeficit = deficit.toFixed(0);\nvar unit = 'mg';\nvar msg = 'Total iron deficit';\n\nif (thb <= ahb) {\n  deficit = '';\n  unit = '';\n  msg = 'Target hemoglobin should be greater than actual hemoglobin';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: deficit,\n    value_text: unit,\n    message: msg\n});\ncalc_output.push({\n    name: '10139_Ganzoni Equation for Anemia_result',\n    value: deficit,\n    value_text: unit,\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Target hemoglobin",
+                "name": "thb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hgb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Actual hemoglobin",
+                "name": "ahb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hgb"
+            },
+            {
+                "conditionality": "",
+                "default": 500,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Iron stores",
+                "name": "stores",
+                "optional": false,
+                "tips_en": "Use 500 mg for adults and children ≥35 kg; use 15 mg/kg if <35 kg",
+                "type": "textbox",
+                "unit": "iron_stores_mg"
+            }
+        ],
+        "can_search": [
+            "iron deficiency",
+            "ida",
+            "equation",
+            "anemic",
+            "ganzoni",
+            "iron",
+            "dosing",
+            "IV"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

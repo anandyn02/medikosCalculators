@@ -1,0 +1,186 @@
+{
+    "id": "400",
+    "title": "Steroid Conversion Calculator",
+    "desc": "The Steroid Conversion Calculator converts steroid dosages using dosing equivalencies.",
+    "data": {
+        "orgreference": [],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/888843/",
+                "text": "Meikle AW and Tyler FH. Potency and duration of action of glucocorticoids. Am J of Med 1977;63;200.(456)."
+            },
+            {
+                "href": "https://oxfordmedicine.com/view/10.1093/med/9780199235339.001.0001/med-9780199235339",
+                "text": "Webb R, Singer M. Oxford Handbook of Critical Care. Oxford ; New York : Oxford University Press, 2005"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15634032",
+                "text": "Czock D, Keller F, Rasche FM, Häussler U. Pharmacokinetics and pharmacodynamics of systemically administered glucocorticoids. Clin Pharmacokinet. 2005;44(1):61-98."
+            }
+        ],
+        "evidence": "<p>Corticosteroid Conversions:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\" data-sortable=\"\">\n<thead>\n<tr>\n<th data-sorted=\"true\" data-sorted-direction=\"descending\">Compound</th>\n<th data-sorted=\"true\" data-sorted-direction=\"descending\">Route</th>\n<th>Equivalent Dose (mg)</th>\n<th><abbr title=\"Based on Half-Life\">Duration of Action</abbr></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Betamethasone</td>\n<td>IV</td>\n<td>0.75</td>\n<td data-sortable=\"3\">Long (36-72 Hours)</td>\n</tr>\n<tr>\n<td>Cortisone</td>\n<td>PO</td>\n<td>25</td>\n<td data-sortable=\"1\">Short (8-12 Hours)</td>\n</tr>\n<tr>\n<td>Dexamethasone (Decadron)</td>\n<td>IV or PO</td>\n<td>0.75</td>\n<td data-sortable=\"3\">Long (36-72 Hours)</td>\n</tr>\n<tr>\n<td>Hydrocortisone</td>\n<td>IV or PO</td>\n<td>20</td>\n<td data-sortable=\"1\">Short (8-12 Hours)</td>\n</tr>\n<tr>\n<td>MethylPrednisoLONE&nbsp;</td>\n<td>IV or PO</td>\n<td>4</td>\n<td data-sortable=\"2\">Medium (12-36 Hours)</td>\n</tr>\n<tr>\n<td>PrednisoLONE</td>\n<td>PO</td>\n<td>5</td>\n<td data-sortable=\"2\">Medium (12-36 Hours)</td>\n</tr>\n<tr>\n<td>PredniSONE</td>\n<td>PO</td>\n<td>5</td>\n<td data-sortable=\"2\">Medium (12-36 Hours)</td>\n</tr>\n<tr>\n<td>Triamcinolone</td>\n<td>IV</td>\n<td>4</td>\n<td data-sortable=\"2\">Medium (12-36 Hours)</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>Fludrocortisone is not used for its glucocorticoid effects.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Dosage",
+                "unit": "drugmg",
+                "error_min": "-1",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mg",
+                "units_us": "mg"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Anxious",
+            "Bleeding",
+            "Rash",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Autoimmune Disorders",
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\nvar msg;\nvar equivin;\nvar equivout;\nvar ihalf;\nvar ohalf;\nvar adjust = \"\";\nvar druginputname = \"\";\nvar drugoutputname = \"\";\nvar drugmg = parseFloat(drug_dosage);\nvar drug_input = parseFloat(drug_input);\nvar drug_output = parseFloat(drug_output);\nif (drug_input == 1) {\n    equivin = 0.75;\n    ihalf = 3;\n    druginputname = \"Betamethasone\";\n} else if (drug_input == 2) {\n    equivin = 25;\n    ihalf = 1;\n    druginputname = \"Cortisone\";\n} else if (drug_input == 3) {\n    equivin = 0.75;\n    ihalf = 3;\n    druginputname = \"Dexamethasone (Decadron)\";\n} else if (drug_input == 4) {\n    equivin = 20;\n    ihalf = 1;\n    druginputname = \"Hydrocortisone\";\n} else if (drug_input == 5) {\n    equivin = 4;\n    ihalf = 2;\n    druginputname = \"Methylprednisolone (Solu-Medrol)\";\n} else if (drug_input == 6) {\n    equivin = 5;\n    ihalf = 2;\n    druginputname = \"Prednisolone\";\n} else if (drug_input == 7) {\n    equivin = 5;\n    ihalf = 2;\n    druginputname = \"Prednisone\";\n} else if (drug_input == 8) {\n    equivin = 4;\n    ihalf = 2;\n    druginputname = \"Triamcinolone\";\n} else {\n    equivin = 0;\n    ihalf = 0;\n    druginputname = \"N/A\";\n}\nif (drug_output == 1) {\n    equivout = 0.75;\n    ohalf = 3;\n    drugoutputname = \"Betamethasone\";\n} else if (drug_output == 2) {\n    equivout = 25;\n    ohalf = 1;\n    drugoutputname = \"Cortisone\";\n} else if (drug_output == 3) {\n    equivout = 0.75;\n    ohalf = 3;\n    drugoutputname = \"Dexamethasone (Decadron)\";\n} else if (drug_output == 4) {\n    equivout = 20;\n    ohalf = 1;\n    drugoutputname = \"Hydrocortisone\";\n} else if (drug_output == 5) {\n    equivout = 4;\n    ohalf = 2;\n    drugoutputname = \"Methylprednisolone (Solu-Medrol)\";\n} else if (drug_output == 6) {\n    equivout = 5;\n    ohalf = 2;\n    drugoutputname = \"Prednisolone\";\n} else if (drug_output == 7) {\n    equivout = 5;\n    ohalf = 2;\n    drugoutputname = \"Prednisone\";\n} else if (drug_output == 8) {\n    equivout = 4;\n    ohalf = 2;\n    drugoutputname = \"Triamcinolone\";\n} else {\n    equivin = 0;\n    ihalf = 0;\n    druginputname = \"N/A\";\n}\nvar u = drugmg * equivout / equivin;\nif (ihalf > ohalf) { adjust = \"<br/><br/>You are converting to a drug with a shorter half-life, consider increasing dosing frequency.\"; }\nif (ihalf < ohalf) { adjust = \"<br/><br/>You are converting to a drug with a longer half-life, consider reducing dosing frequency.\"; }\nmsg = \"Approximate <strong>\" + drugoutputname + \"</strong> Equivalence to:<br/><br/>\" + drugmg + \"mg of \" + druginputname + adjust;\n\nif(drug_input == drug_output){\n  calc_output.push({ \n      name: \"mini\", \n      value: 'N/A', \n      value_text: \"\", \n      message: 'Conversion not applicable if converting between the same steroid' \n    });\n  calc_output.push({ \n      name: \"2040_Steroid Conversion_result\", \n      value: 'N/A', \n      value_text: \"\", \n      message: 'Conversion not applicable if converting between the same steroid' \n    });\n} else {\n  calc_output.push({ \n      name: \"mini\", \n      value: u.toFixed(1), \n      value_text: \"mg\", \n      message: drugoutputname \n    });\n  calc_output.push({ \n      name: \"2040_Steroid Conversion_result\", \n      value: u.toFixed(1), \n      value_text: \"mg\", \n      message: msg \n    });\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Converting From:",
+                "mdcalc_info_concept": null,
+                "name": "drug_input",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Betamethasone (IV)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Cortisone (PO)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Dexamethasone (IV or PO)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Hydrocortisone (IV or PO)",
+                        "value": 4
+                    },
+                    {
+                        "label": "MethylPrednisoLONE (IV or PO)",
+                        "value": 5
+                    },
+                    {
+                        "label": "PrednisoLONE (PO)",
+                        "value": 6
+                    },
+                    {
+                        "label": "PredniSONE (PO)",
+                        "value": 7
+                    },
+                    {
+                        "label": "Triamcinolone (IV)",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Drug Dosage in mg",
+                "name": "drug_dosage",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "drugmg"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Converting To:",
+                "mdcalc_info_concept": null,
+                "name": "drug_output",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Betamethasone (IV)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Cortisone (PO)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Dexamethasone (IV or PO)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Hydrocortisone (IV or PO)",
+                        "value": 4
+                    },
+                    {
+                        "label": "MethylPrednisoLONE (IV or PO)",
+                        "value": 5
+                    },
+                    {
+                        "label": "PrednisoLONE (IV or PO)",
+                        "value": 6
+                    },
+                    {
+                        "label": "PredniSONE (PO)",
+                        "value": 7
+                    },
+                    {
+                        "label": "Triamcinolone (IV)",
+                        "value": 8
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "glucocorticoid",
+            "predniSONE",
+            "decadron",
+            "solumedrol",
+            "convert"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Critical Care",
+            "Dermatology",
+            "Emergency Medicine",
+            "Endocrinology",
+            "Family Practice",
+            "Gastroenterology",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Palliative Care/Hospice",
+            "Pediatrics",
+            "Pharmacy",
+            "Primary Care",
+            "Pulmonology",
+            "Rheumatology",
+            "Toxicology"
+        ]
+    }
+}

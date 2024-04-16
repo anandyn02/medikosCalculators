@@ -1,0 +1,205 @@
+{
+    "id": "249",
+    "title": "Refractory Epilepsy Screening Tool for Lennox–Gastaut Syndrome (REST-LGS)",
+    "desc": "The Refractory Epilepsy Screening Tool for Lennox–Gastaut Syndrome (REST-LGS) provides diagnostic criteria for Lennox-Gastaut Syndrome (LGS).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.epilepsybehavior.com/article/S1525-5050(18)30566-3/fulltext",
+                "text": "Piña-Garza JE, Boyce D, Tworek DM, et al. The refractory epilepsy screening tool for Lennox–Gastaut syndrome (Rest-lgs). Epilepsy Behav. 2019;90:148-153."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\"><strong>Evaluation of the patient with the following criteria:</strong></p>\n<p dir=\"ltr\" style=\"padding-left: 40px;\">Major criteria:</p>\n<ol>\n<li style=\"list-style-type: none;\">\n<ol>\n<li dir=\"ltr\" role=\"presentation\">&ge;2 seizure types.</li>\n<li dir=\"ltr\" role=\"presentation\">Seizure onset before age of 12 years.</li>\n<li dir=\"ltr\" role=\"presentation\">History of EEG with generalized slow spike-and-wave (SSW) discharges (&lt;2.5 Hz).</li>\n<li dir=\"ltr\" role=\"presentation\">Cognitive impairment since childhood (may include past or current learning difficulties, history of special education, autism, intellectual disabilities, or developmental delays).</li>\n</ol>\n</li>\n</ol>\n<p dir=\"ltr\" style=\"padding-left: 40px;\">Minor criteria:</p>\n<p><span id=\"docs-internal-guid-e618b57a-7fff-4bba-9078-a7ea6857aa8f\"></span></p>\n<ol>\n<li style=\"list-style-type: none;\">\n<ol>\n<li dir=\"ltr\" role=\"presentation\">Persistent seizures despite trial of &ge;2 antiseizure medications.</li>\n<li dir=\"ltr\" role=\"presentation\">History of vagal nerve stimulator (VNS), ketogenic diet, or epilepsy surgery.</li>\n<li dir=\"ltr\" role=\"presentation\">Evidence of seizure-related helmet use, or head or face injuries.</li>\n<li dir=\"ltr\" role=\"presentation\">One of the following EEG abnormalities: multifocal spikes, symptomatic generalized discharges, generalized polyspikes, generalized periods of attenuation of background/electrodecrement, or paroxysmal fast activity.</li>\n</ol>\n</li>\n</ol>",
+        "facts": "<p>Note: The original study only notes that &ldquo;a majority of patients with confirmed LGS diagnosis met 3 major criteria and 2-3 minor criteria.&rdquo; Because of that, this tool provides a &ldquo;likely diagnosis&rdquo; for users that input at least 3 major and at least 2 minor criteria <span id=\"docs-internal-guid-ac693b98-7fff-2892-16d0-3d537b88b9b3\">(<a href=\"https://www.epilepsybehavior.com/article/S1525-5050(18)30566-3/fulltext\">Pi&ntilde;a-Garza 2019</a>).</span></p>\n<p></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Seizure"
+        ],
+        "disease_treated": [
+            "Achalasia",
+            "Epilepsy",
+            "Seizure Disorder"
+        ],
+        "logic": "var calc_output=[];\n\nvar major =parseFloat(seizure)+parseFloat(onset)+parseFloat(eeg)+parseFloat(impairment);\nvar minor =parseFloat(medication)+parseFloat(vns)+parseFloat(helmet)+parseFloat(abnormalities);\n\nvar diag;\n\nvar msg= 'Diagnosis for Lennox-Gastaut Syndrome as per REST-LGS criteria<br/><br/>In a diagnosis-blinded retrospective chart review, application of the REST-LGS tool revealed that a majority of patients with confirmed LGS diagnosis met 3 major criteria and 2-3 minor criteria.';\n\nif (major>=3 && minor>=2) {\n  diag='Likely';\n} else {\n  diag='Unlikely';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:'Diagnosis for Lennox-Gastaut Syndrome'\n});\ncalc_output.push({\n    name: 'REST-LGS',\n    value: diag,\n    value_text:'',\n    message:msg\n});\n",
+        "inputs": [
+            {
+                "subheading": "Major criteria",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>&ge;2 seizure types</p>",
+                "name": "seizure",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Seizure onset before age of 12 years</p>",
+                "name": "onset",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>History of EEG with generalized slow spike-and-wave (SSW) discharges (&lt;2.5 Hz)</p>",
+                "name": "eeg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Cognitive impairment since childhood</p>",
+                "name": "impairment",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "May include past or current learning difficulties, history of special education, autism, intellectual disabilities, or developmental delays.",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Minor criteria",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Persistent seizures despite trial of &ge;2 antiseizure medications</p>",
+                "name": "medication",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>History of vagal nerve stimulator (VNS), ketogenic diet, or epilepsy surgery</p>",
+                "name": "vns",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Evidence of seizure-related helmet use, or head or face injuries</p>",
+                "name": "helmet",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>One of the following EEG abnormalities: multifocal spikes, symptomatic generalized discharges, generalized polyspikes, generalized periods of attenuation of background/electrodecrement, or paroxysmal fast activity</p>",
+                "name": "abnormalities",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Refractory Epilepsy Screening Tool for Lennox–Gastaut Syndrome (REST-LGS), REST-LGS, lennox gastaut syndrome, lennox gastaut, lennox, lgs, rest"
+        ],
+        "specialty": [
+            "Administration",
+            "Neurology"
+        ]
+    }
+}

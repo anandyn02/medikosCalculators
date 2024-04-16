@@ -1,0 +1,256 @@
+{
+    "id": "364",
+    "title": "CRUSADE Score for Post-MI Bleeding Risk",
+    "desc": "The CRUSADE Score risk stratifies patients with NSTEMI who are undergoing anticoagulation to determine their risk of bleeding.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19332461",
+                "text": "Subherwal S, Bach RG, Chen AY, Gage BF, Rao SV, Newby LK, Wang TY, Gibler WB, Ohman EM, Roe MT, Pollack CV Jr.,Peterson ED, Alexander KP. Baseline risk of major bleeding in non‐ST‐segment‐elevation myocardial infarction: the CRUSADE (Can Rapid risk stratification of Unstable angina patients Suppress Adverse outcomes with Early Implementation of the ACC/AHA Guidelines) Bleeding Score. Circulation. 2009; 119:1873-1882"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24062910",
+                "text": "Abu-Assi E, Raposeiras-Roubin S, Lear P, et al. Comparing the predictive validity of three contemporary bleeding risk scores in acute coronary syndrome. Eur Heart J Acute Cardiovasc Care 2012; 1(3):222-31."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24112751",
+                "text": "Ariza-Solé A, Sánchez-Elvira G, Sánchez-Salado JC, et al. CRUSADE bleeding risk score validation for ST-segment-elevation myocardial infarction undergoing primary percutaneous coronary intervention. Thromb Res 2013; 132(6):652-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24062930",
+                "text": "Flores-Ríos X, Couto-Mallón D, Rodríguez-Garrido J, et al. Comparison of the performance of the CRUSADE, ACUITY-HORIZONS, and ACTION bleeding risk scores in STEMI undergoing primary PCI: insights from a cohort of 1391 patients. Eur Heart J Acute Cardiovasc Care 2013; 2(1):19-26. "
+            }
+        ],
+        "evidence": "<p>Addition of the selected points; points assigned below:</p>",
+        "facts": "<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Value</th>\n<th>Points</th>\n</tr>\n<tr>\n<th rowspan=\"5\">Baseline hematocrit</th>\n<td>&lt;31</td>\n<td>+9</td>\n</tr>\n<tr>\n<td>31-33.9</td>\n<td>+7</td>\n</tr>\n<tr>\n<td>34-36.9</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>37-39.9</td>\n<td>+2</td>\n</tr>\n<tr>\n<td>&ge;40</td>\n<td>0</td>\n</tr>\n<tr>\n<th rowspan=\"6\">Creatinine clearance, mL/min</th>\n<td>&le;15</td>\n<td>+39</td>\n</tr>\n<tr>\n<td>&gt;15-30</td>\n<td>+35</td>\n</tr>\n<tr>\n<td>&gt;30-60</td>\n<td>+28</td>\n</tr>\n<tr>\n<td>&gt;60-90</td>\n<td>+17</td>\n</tr>\n<tr>\n<td>&gt;90-120</td>\n<td>+7</td>\n</tr>\n<tr>\n<td>&gt;120</td>\n<td>0</td>\n</tr>\n<tr>\n<th rowspan=\"7\">Heart rate</th>\n<td>&le;70</td>\n<td>0</td>\n</tr>\n<tr>\n<td>71-80</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>81-90</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>91-100</td>\n<td>+6</td>\n</tr>\n<tr>\n<td>101-110</td>\n<td>+8</td>\n</tr>\n<tr>\n<td>111-120</td>\n<td>+10</td>\n</tr>\n<tr>\n<td>&ge;121</td>\n<td>+11</td>\n</tr>\n<tr>\n<th rowspan=\"2\">Sex</th>\n<td>Male</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Female</td>\n<td>+8</td>\n</tr>\n<tr>\n<th rowspan=\"2\">Signs of CHF at presentation</th>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>+7</td>\n</tr>\n<tr>\n<th rowspan=\"2\">Diabetes mellitus</th>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>+6</td>\n</tr>\n<tr>\n<th rowspan=\"2\">Prior vascular disease</th>\n<td>No</td>\n<td>0</td>\n</tr>\n<tr>\n<td>Yes</td>\n<td>+6</td>\n</tr>\n<tr>\n<th rowspan=\"6\">Systolic blood pressure, mm Hg</th>\n<td>&le;90</td>\n<td>+10</td>\n</tr>\n<tr>\n<td>91-100</td>\n<td>+8</td>\n</tr>\n<tr>\n<td>101-120</td>\n<td>+5</td>\n</tr>\n<tr>\n<td>121-180</td>\n<td>+1</td>\n</tr>\n<tr>\n<td>181-200</td>\n<td>+3</td>\n</tr>\n<tr>\n<td>&ge;201</td>\n<td>+5</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Hematocrit",
+                "unit": "hct",
+                "error_min": "1",
+                "error_max": "70",
+                "warn_min": "20",
+                "warn_max": "55",
+                "conversion": "1",
+                "normal_max_si": "51",
+                "normal_max_us": "51",
+                "normal_min_si": "36",
+                "normal_min_us": "36",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Creatinine Clearance",
+                "unit": "crcl",
+                "error_min": "0",
+                "error_max": "150",
+                "warn_min": "88",
+                "warn_max": "137",
+                "conversion": "1",
+                "normal_max_si": "137",
+                "normal_max_us": "137",
+                "normal_min_si": "88",
+                "normal_min_us": "88",
+                "units_si": "mL/min",
+                "units_us": "mL/min"
+            },
+            {
+                "name": "Heart Rate/Pulse",
+                "unit": "hr",
+                "error_min": "10",
+                "error_max": "300",
+                "warn_min": "20",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "beats/min",
+                "units_us": "beats/min"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseInt(congestive_heart_failure) + parseInt(vascular_disease) +\n  parseInt(diabetes) + parseInt(sex);\n\nvar hematocrit = parseFloat(hematocrit);\n\nif (hematocrit < 31) {\n  u = u + 9\n}\nif (hematocrit >= 31 && hematocrit < 34) {\n  u = u + 7\n}\nif (hematocrit >= 34 && hematocrit < 37) {\n  u = u + 3\n}\nif (hematocrit >= 37 && hematocrit < 40) {\n  u = u + 2\n}\nif (hematocrit >= 40) {\n  u = u + 0\n}\n\nvar creatinine_clearance = parseFloat(creatinine_clearance);\n\nif (creatinine_clearance <= 15) {\n  u = u + 39\n}\nif (creatinine_clearance > 15 && creatinine_clearance <= 30) {\n  u = u + 35\n}\nif (creatinine_clearance > 30 && creatinine_clearance <= 60) {\n  u = u + 28\n}\nif (creatinine_clearance > 60 && creatinine_clearance <= 90) {\n  u = u + 17\n}\nif (creatinine_clearance > 90 && creatinine_clearance <= 120) {\n  u = u + 7\n}\nif (creatinine_clearance > 120) {\n  u = u + 0\n}\n\nvar heart_rate = parseFloat(heart_rate);\n\nif (heart_rate <= 70) {\n  u = u + 0\n}\nif (heart_rate >= 71 && heart_rate <= 80) {\n  u = u + 1\n}\nif (heart_rate >= 81 && heart_rate <= 90) {\n  u = u + 3\n}\nif (heart_rate >= 91 && heart_rate <= 100) {\n  u = u + 6\n}\nif (heart_rate >= 101 && heart_rate <= 110) {\n  u = u + 8\n}\nif (heart_rate >= 111 && heart_rate <= 120) {\n  u = u + 10\n}\nif (heart_rate >= 121) {\n  u = u + 11\n}\n\nvar systolic_blood_pressure = parseFloat(systolic_blood_pressure);\n\nif (systolic_blood_pressure <= 90) {\n  u = u + 10\n}\nif (systolic_blood_pressure >= 91 && systolic_blood_pressure <= 100) {\n  u = u + 8\n}\nif (systolic_blood_pressure >= 101 && systolic_blood_pressure <= 120) {\n  u = u + 5\n}\nif (systolic_blood_pressure >= 121 && systolic_blood_pressure <= 180) {\n  u = u + 1\n}\nif (systolic_blood_pressure >= 181 && systolic_blood_pressure <= 200) {\n  u = u + 3\n}\nif (systolic_blood_pressure >= 201) {\n  u = u + 5\n}\n\nvar riskclass;\nvar recs;\n\nif (u <= 20) {\n  riskclass = 'Very Low Risk';\n  recs =\n    'Initiation of anti-thrombotic and invasive therapies is reasonable given a relatively low risk of major bleeding.'\n}\nif (u >= 21 && u <= 30) {\n  riskclass = 'Low Risk';\n  recs =\n    'Initiation of anti-thrombotic and invasive therapies should be considered as benefits likely outweigh the risks.'\n}\nif (u >= 31 && u <= 40) {\n  riskclass = 'Moderate Risk';\n  recs =\n    'Initiation of anti-thrombotic and invasive therapies should be considered and discussed with the patient as the benefits likely outweigh the risks.'\n}\nif (u >= 41 && u <= 50) {\n  riskclass = 'High Risk';\n  recs =\n    'Judicious use of anti-thrombotic and invasive therapies is prudent in this high risk of bleeding group.'\n}\nif (u > 50) {\n  riskclass = 'Very High Risk';\n  recs =\n    'Judicious use of anti-thrombotic and invasive therapies is prudent in this very high risk of bleeding group.'\n}\nvar bleedingrisk = new Array('2.5%', '2.6%', '2.7%', '2.8%', '2.9%', '3%',\n  '3.1%', '3.2%', '3.3%', '3.4%', '3.5%', '3.6%', '3.8%', '3.9%', '4%',\n  '4.1%', '4.3%', '4.4%', '4.6%', '4.7%', '4.9%', '5%', '5.2%', '5.4%',\n  '5.6%', '5.7%', '5.9%', '6.1%', '6.3%', '6.5%', '6.7%', '6.9%', '7.2%',\n  '7.4%', '7.6%', '7.9%', '8.1%', '8.4%', '8.6%', '8.9%', '9.2%', '9.5%',\n  '9.8%', '10.1%', '10.4%', '10.7%', '11.1%', '11.4%', '11.7%', '12.1%',\n  '12.5%', '12.8%', '13.2%', '13.6%', '14%', '14.4%', '14.9%', '15.3%',\n  '15.7%', '16.2%', '16.7%', '17.1%', '17.6%', '18.1%', '18.6%', '19.2%',\n  '19.7%', '20.2%', '20.8%', '21.4%', '21.9%', '22.5%', '23.1%', '23.7%',\n  '24.4%', '25%', '25.6%', '26.3%', '27%', '27.6%', '28.3%', '29%', '29.7%',\n  '30.4%', '31.2%', '31.9%', '32.6%', '33.4%', '34.2%', '34.9%', '35.7%',\n  '36.5%', '37.3%', '38.1%', '38.9%', '39.7%', '40.5%', '41.3%', '42.2%',\n  '43%', '43.8%');\ncalc_output.push({\n  name: 'mini',\n  value: u,\n  value_text: 'points',\n  message: riskclass\n});\ncalc_output.push({\n  name: '1784_CRUSADE Score_result (score)',\n  value: u,\n  value_text: 'points',\n  message: riskclass + '<br/>' + recs\n});\ncalc_output.push({\n  name: '1784_CRUSADE Score_result (risk)',\n  value: bleedingrisk[u],\n  value_text: ' ',\n  message: 'Risk of In-Hospital Major Bleeding'\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Heart rate</p>",
+                "name": "heart_rate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hr"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Systolic BP</p>",
+                "name": "systolic_blood_pressure",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Hematocrit</p>",
+                "name": "hematocrit",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hct"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p><calculator id=\"43\">Creatinine clearance</calculator></p>",
+                "name": "creatinine_clearance",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "crcl"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Sex</p>",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 8
+                    },
+                    {
+                        "label": "Male",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Signs of CHF at presentation</p>",
+                "md_calc_info_concept": null,
+                "name": "congestive_heart_failure",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 7
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Ex: Orthopnea, SOB, DOE, rales, JVD, CXR findings of CHF",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>History of vascular disease</p>",
+                "md_calc_info_concept": null,
+                "name": "vascular_disease",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>History of diabetes mellitus</p>",
+                "md_calc_info_concept": null,
+                "name": "diabetes",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 6
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "bleeding",
+            "nstemi",
+            "stemi",
+            "mi",
+            "cards",
+            "acs",
+            "hemorrhage"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Geriatrics",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

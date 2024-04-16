@@ -1,0 +1,258 @@
+{
+    "id": "141",
+    "title": "Gupta Postoperative Respiratory Failure Risk",
+    "desc": "The Gupta Postoperative Respiratory Failure Risk predicts risk of mechanical ventilation for >48 hrs postop or reintubation within 30 days.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21757571",
+                "text": "Gupta H, Gupta PK, Fang X, et al. Development and validation of a risk calculator predicting postoperative respiratory failure. Chest. 2011;140(5):1207-1215."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Postoperative respiratory failure risk*, % = <em>e</em><sup>x</sup> / (1 + <em>e</em><sup>x</sup>)</p>\n<p>Where x = &minus;1.7397 + sum of the values of the selected variables.</p>\n<p dir=\"ltr\">*Defined as requiring mechanical ventilation &gt;48 hrs after surgery, or unplanned intubation&nbsp;&le;30 days of surgery.</p>\n<div dir=\"ltr\">\n<table>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Options</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Value</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Functional status</p>\n</td>\n<td>\n<p dir=\"ltr\">Independent</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Partially dependent</p>\n</td>\n<td>\n<p dir=\"ltr\">0.7678</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Totally dependent</p>\n</td>\n<td>\n<p dir=\"ltr\">1.4046</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\"><calculator id=\"10024\">ASA class</calculator></p>\n</td>\n<td>\n<p dir=\"ltr\">1: normal healthy patient</p>\n</td>\n<td>\n<p dir=\"ltr\">-3.5265</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2: mild systemic disease</p>\n</td>\n<td>\n<p dir=\"ltr\">-2.0008</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3: severe systemic disease</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.6201</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4: severe systemic disease that is a constant threat to life*</p>\n</td>\n<td>\n<p dir=\"ltr\">0.2441</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5: moribund, not expected to survive without surgery</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Sepsis</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.7840</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Preoperative systemic inflammatory response syndrome</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Preoperative sepsis</p>\n</td>\n<td>\n<p dir=\"ltr\">0.2752</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Preoperative septic shock</p>\n</td>\n<td>\n<p dir=\"ltr\">0.9035</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Emergency case</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.5739</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"21\">\n<p dir=\"ltr\">Type of procedure</p>\n</td>\n<td>\n<p dir=\"ltr\">Anorectal</p>\n</td>\n<td>\n<p dir=\"ltr\">-1.3530</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Aortic</p>\n</td>\n<td>\n<p dir=\"ltr\">1.0781</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Bariatric</p>\n</td>\n<td>\n<p dir=\"ltr\">-1.0112</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Brain</p>\n</td>\n<td>\n<p dir=\"ltr\">0.7336</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Breast</p>\n</td>\n<td>\n<p dir=\"ltr\">-2.6462</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Cardiac</p>\n</td>\n<td>\n<p dir=\"ltr\">0.2744</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">ENT (except thyroid/parathyroid)</p>\n</td>\n<td>\n<p dir=\"ltr\">0.1060</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Foregut or hepatopancreatobiliary</p>\n</td>\n<td>\n<p dir=\"ltr\">0.9694</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Gallbladder, appendix, adrenals, or spleen</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.5668</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Hernia (ventral, inguinal, femoral)</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Intestinal</p>\n</td>\n<td>\n<p dir=\"ltr\">0.5737</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Neck (thyroid/parathyroid)</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.5271</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Obstetric/gynecologic</p>\n</td>\n<td>\n<p dir=\"ltr\">-1.2431</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Orthopedic and non-vascular extremity</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.8577</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Other abdominal</p>\n</td>\n<td>\n<p dir=\"ltr\">0.2416</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Peripheral vascular</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.2389</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Skin</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.3206</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Spine</p>\n</td>\n<td>\n<p dir=\"ltr\">-0.5220</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Non-esophageal thoracic</p>\n</td>\n<td>\n<p dir=\"ltr\">0.6715</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Vein</p>\n</td>\n<td>\n<p dir=\"ltr\">-2.0080</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Urology</p>\n</td>\n<td>\n<p dir=\"ltr\">0.3093</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*i.e., patient could die acutely without intervention.</p>\n<p></p>\n<p><span style=\"font-size: 8.5pt; font-family: Verdana; background-color: transparent; font-weight: bold; font-variant-numeric: normal; font-variant-east-asian: normal; vertical-align: baseline; white-space: pre-wrap;\">&nbsp;</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Respiratory Distress",
+            "Respiratory Failure"
+        ],
+        "logic": "var calc_output = [];\nvar procedure = parseFloat(procedure);\nvar emergency = parseFloat(emergency);\nvar sepsis = parseFloat(sepsis);\nvar class1 = parseFloat(class1);\nvar status = parseFloat(status);\n\nvar b = -1.7397 + status + class1 + sepsis + emergency + procedure;\n\nvar risk = Math.exp(b)/(1 + Math.exp(b)) * 100;\n\ncalc_output.push({\n   name: 'mini',\n   value: risk.toFixed(1),\n   value_text: '%',\n   message: 'Risk of mechanical ventilation for >48 hrs postop or reintubation ≤30 days'\n});\ncalc_output.push({\n   name: 'Gupta score',\n   value: risk.toFixed(1),\n   value_text: '%',\n   message: 'Risk of mechanical ventilation for >48 hrs after surgery, or unplanned intubation ≤30 days of surgery'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Functional status",
+                "name": "status",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Independent",
+                        "value": 0
+                    },
+                    {
+                        "label": "Partially dependent",
+                        "value": 0.77
+                    },
+                    {
+                        "label": "Totally dependent",
+                        "value": 1.4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id = \"10024\">ASA class</calculator>",
+                "name": "class1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "1: normal healthy patient",
+                        "value": -3.53
+                    },
+                    {
+                        "label": "2: mild systemic disease",
+                        "value": -2
+                    },
+                    {
+                        "label": "3: severe systemic disease",
+                        "value": -0.62
+                    },
+                    {
+                        "label": "4: severe systemic disease that is a constant threat to life (i.e., patient could die acutely without intervention)",
+                        "value": 0.24
+                    },
+                    {
+                        "label": "5: moribund, not expected to survive without surgery",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sepsis",
+                "name": "sepsis",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": -0.78
+                    },
+                    {
+                        "label": "Preoperative systemic inflammatory response syndrome",
+                        "value": 0
+                    },
+                    {
+                        "label": "Preoperative sepsis",
+                        "value": 0.28
+                    },
+                    {
+                        "label": "Preoperative septic shock",
+                        "value": 0.9
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Emergency case",
+                "name": "emergency",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": -0.57
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Type of procedure</p>",
+                "name": "procedure",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Anorectal",
+                        "value": -1.35
+                    },
+                    {
+                        "label": "Aortic",
+                        "value": 1.08
+                    },
+                    {
+                        "label": "Bariatric",
+                        "value": -1.01
+                    },
+                    {
+                        "label": "Brain",
+                        "value": 0.73
+                    },
+                    {
+                        "label": "Breast",
+                        "value": -2.65
+                    },
+                    {
+                        "label": "Cardiac",
+                        "value": 0.27
+                    },
+                    {
+                        "label": "ENT (except thyroid/parathyroid)",
+                        "value": 0.11
+                    },
+                    {
+                        "label": "Foregut (esophagus, stomach) or hepatopancreatobiliary",
+                        "value": 0.97
+                    },
+                    {
+                        "label": "Gallbladder, appendix, adrenals, or spleen",
+                        "value": -0.57
+                    },
+                    {
+                        "label": "Hernia (ventral, inguinal, femoral)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Intestinal",
+                        "value": 0.57
+                    },
+                    {
+                        "label": "Neck (thyroid/parathyroid)",
+                        "value": -0.53
+                    },
+                    {
+                        "label": "Obstetric/gynecologic",
+                        "value": -1.24
+                    },
+                    {
+                        "label": "Orthopedic and non-vascular extremity",
+                        "value": -0.86
+                    },
+                    {
+                        "label": "Other abdominal",
+                        "value": 0.24
+                    },
+                    {
+                        "label": "Peripheral vascular",
+                        "value": -0.24
+                    },
+                    {
+                        "label": "Skin",
+                        "value": -0.32
+                    },
+                    {
+                        "label": "Spine",
+                        "value": -0.52
+                    },
+                    {
+                        "label": "Non-esophageal thoracic (lung, mediastinum, etc)",
+                        "value": 0.67
+                    },
+                    {
+                        "label": "Vein",
+                        "value": -2.01
+                    },
+                    {
+                        "label": "Urology",
+                        "value": 0.31
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "dropdown"
+            }
+        ],
+        "can_search": [
+            "Respiratory failure",
+            "post-operative risk",
+            "postop risk",
+            "postoperative risk",
+            "postop respiratory failure",
+            "postoperative respiratory failure",
+            "post-operative respiratory failure",
+            "gupta",
+            "post op",
+            "post-op",
+            "postop"
+        ],
+        "specialty": [
+            "Anesthesiology",
+            "Critical Care",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Oral and Maxillofacial Surgery",
+            "Pulmonology",
+            "Surgery (Cardiothoracic)",
+            "Surgery (General)",
+            "Surgery (Plastic)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

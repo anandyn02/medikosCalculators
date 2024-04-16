@@ -1,0 +1,133 @@
+{
+    "id": "335",
+    "title": "ABC Score for Massive Transfusion",
+    "desc": "The ABC Score for Massive Transfusion Determines need for massive transfusion in trauma patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19204506",
+                "text": "Nunez TC, Voskresensky IV, Dossett LA, Shinall R, Dutton WD, Cotton BA. Early prediction of massive transfusion in trauma: simple as ABC (assessment of blood consumption)? J Trauma. 2009 Feb;66(2):346-52. PubMed PMID: 19204506."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://jamanetwork.com/journals/jama/fullarticle/2107789",
+                "text": "Holcomb JB, Tilley BC, Baraniuk S, et al. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio and mortality in patients with severe trauma: the PROPPR randomized clinical trial. JAMA. 2015;313(5):471-82."
+            }
+        ],
+        "evidence": "<p>Addition of selected points:<span id=\"docs-internal-guid-b16876ea-6448-50b9-6452-1dcc2b56ef51\"><br></span><span></span></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"*\"><col width=\"*\"><col width=\"*\"></colgroup>\n<tbody>\n<tr>\n<td></td>\n<td>\n<p dir=\"ltr\"><strong>No</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Yes</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Penetrating mechanism</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Systolic BP &le;90 in ED</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">HR &ge;120 in ED</p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Positive <calculator id=\"4037\">FAST</calculator></p>\n</td>\n<td>\n<p dir=\"ltr\">0 points</p>\n</td>\n<td>\n<p dir=\"ltr\">1 point</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-b16876ea-6448-50b9-6452-1dcc2b56ef51\"></span><span id=\"docs-internal-guid-b16876ea-6448-50b9-6452-1dcc2b56ef51\"><br></span></p>",
+        "facts": "<p><strong>Interpretation:</strong></p>\n<table width=\"294\" height=\"55\">\n<tbody>\n<tr>\n<td><strong>ABC Score</strong></td>\n<td><strong>Interpretation</strong></td>\n</tr>\n<tr>\n<td>0-1</td>\n<td>Not likely to require massive transfusion (&ge;10 units pRBCs)</td>\n</tr>\n<tr>\n<td>2-4</td>\n<td>Likely to require massive transfusion&nbsp;</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Bleeding",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Bleeding/Hemorrhage",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\nvar u = parseFloat(penetrating_mechanism) + parseFloat(ed_systolic_bp_90) + parseFloat(ed_hr_120) + parseFloat(positive_fast_exam);\nvar msg = '';\nvar mini_msg;\n\nif (u < 2) {\n    msg = 'Less likely to require massive transfusion (≥10 units pRBCs).<br/><br/>In the ABC Score studies, scores <2 were unlikely to require massive transfusion, with sensitivity and specificity ranging from 75% to 90% and 67% to 88%, respectively, at multiple trauma centers.';\n    mini_msg = 'Less likely to require massive transfusion.';\n}\nif (u >= 2) {\n\tmsg = 'Likely to require massive transfusion (≥10 units pRBCs).<br/><br/>In the ABC Score studies, scores ≥2 were likely to require massive transfusion, with sensitivity and specificity ranging from 75% to 90% and 67% to 88%, respectively, at multiple trauma centers.';\n\tmini_msg = 'Likely to require massive transfusion.';\n}\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '1228_ABC Score_result',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Penetrating mechanism</p>",
+                "md_calc_info_concept": null,
+                "name": "penetrating_mechanism",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Systolic BP &le;90 in ED</p>",
+                "md_calc_info_concept": null,
+                "name": "ed_systolic_bp_90",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>HR &ge;120 in ED</p>",
+                "md_calc_info_concept": null,
+                "name": "ed_hr_120",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Positive <calculator id=\"4037\">FAST</calculator></p>",
+                "md_calc_info_concept": null,
+                "name": "positive_fast_exam",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "trauma",
+            "transfusion"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

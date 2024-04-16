@@ -1,0 +1,343 @@
+{
+    "id": "280",
+    "title": "Modified Brain Injury Guideline (mBIG)",
+    "desc": "The Modified Brain Injury Guideline (mBIG) defines the management of traumatic brain injury.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/32537518/",
+                "text": "Khan AD, Elseth AJ, Brosius JA, et al. Multicenter assessment of the Brain Injury Guidelines and a proposal of guideline modifications. Trauma Surg Acute Care Open. 2020;5(1):e000483."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/24662858/",
+                "text": "Joseph B, Friese RS, Sadoun M, et al. The BIG (Brain injury guidelines) project: defining the management of traumatic brain injury by acute care surgeons. J Trauma Acute Care Surg. 2014;76(4):965-969."
+            }
+        ],
+        "evidence": "<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/mBIG%20Flowchart.png\" class=\"alignnone size-full wp-image-1839\" alt=\"\"></div>\n<p>EDH: epidural hematoma, EtOH: blood alcohol level, GCS: Glasgow Coma Score, ICH: intracranial hemorrhage, IPH: intraparenchymal hemorrhage, IVH: intraventricular hemorrhage, SAH: subarachnoid hemorrhage, SDH: subdural hematoma, TBI: traumatic brain injury</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "Anxious",
+            "Depressed",
+            "Dizziness",
+            "Fatigue",
+            "Headache",
+            "Head Injury",
+            "Nausea",
+            "Numbness",
+            "Seizure",
+            "Vision Loss",
+            "Vomiting",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Trauma",
+            "Traumatic Brain Injury"
+        ],
+        "logic": "var calc_output = [];\r\n\r\nvar meds = parseFloat(meds);\r\nvar edh = parseFloat(edh);\r\nvar ivh = parseFloat(ivh);\r\nvar displaced = parseFloat(displaced);\r\nvar sdh8 = parseFloat(sdh8);\r\nvar iph8 = parseFloat(iph8);\r\nvar sah_bi = parseFloat(sah_bi);\r\n\r\nvar etoh = parseFloat(etoh);\r\nvar nondisplaced = parseFloat(nondisplaced);\r\nvar sdh4 = parseFloat(sdh4);\r\nvar iph4 = parseFloat(iph4);\r\nvar sah1 = parseFloat(sah1);\r\n\r\nvar mbig;\r\nvar msg;\r\n\r\nif (meds == 1 || edh == 1 || ivh == 1 || displaced == 1 || sdh8 == 1 || iph8 == 1 || sah_bi == 1) {\r\n    mbig = 'mBIG 3';\r\n    msg = 'Proceed with current standard care'\r\n} else if (etoh == 1 || nondisplaced == 1 || sdh4 == 1 || iph4 == 1 || sah1 == 1) {\r\n    mbig = 'mBIG 2';\r\n    msg = 'Proceed with hospital admission to ward for 24-48 hrs<br/>No repeat head CT<br/>No neurosurgery consult<br/>Q2 neurological assessment<br/>Trauma team assessment at 3 hrs<br/>Attending assessment at 6-12 hrs<br/>GCS 15 for discharge'\r\n} else {\r\n    mbig = 'mBIG 1';\r\n    msg = 'No hospital admission necessary<br/>Proceed with 6 hr ED observation<br/>No repeat head CT<br/>No neurosurgery consult<br/>Q2 neurological assessment<br/>Trauma team assessment at 3 hrs<br/>Attending assessment at 6 hrs<br/>GCS 15 for discharge'\r\n}\r\n\r\ncalc_output.push({\r\n    name: 'mini',\r\n    value: mbig,\r\n    value_text: '',\r\n    message: msg\r\n});\r\ncalc_output.push({\r\n    name: 'mBIG',\r\n    value: mbig,\r\n    value_text: '',\r\n    message: msg\r\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "mBIG 3 Criteria",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "<p>Anticoagulation/antiplatelet medications</p>",
+                "mdcalc_info_concept": null,
+                "name": "meds",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "meds == 0",
+                "default": null,
+                "label_en": "<p><abbr title=\"Epidural hematoma\">EDH</abbr></p>",
+                "mdcalc_info_concept": null,
+                "name": "edh",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "edh == 0",
+                "default": null,
+                "label_en": "<p><abbr title=\"Intraventricular hemorrhage\">IVH</abbr></p>",
+                "mdcalc_info_concept": null,
+                "name": "ivh",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "ivh == 0",
+                "default": null,
+                "label_en": "<p>Displaced skull fracture</p>",
+                "mdcalc_info_concept": null,
+                "name": "displaced",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "displaced == 0",
+                "default": null,
+                "label_en": "<p><abbr title=\"Subdural hematoma\">SDH</abbr> &ge;8 mm</p>",
+                "mdcalc_info_concept": null,
+                "name": "sdh8",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "sdh8 == 0",
+                "default": null,
+                "label_en": "<p><abbr title=\"Intraparenchymal hemorrhage\">IPH</abbr> &ge;8 mm or multiple</p>",
+                "mdcalc_info_concept": null,
+                "name": "iph8",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "iph8 == 0",
+                "default": null,
+                "label_en": "<p><abbr title=\"Subarachnoid hemorrhage\">SAH</abbr> bihemispheric or &gt;3 mm</p>",
+                "mdcalc_info_concept": null,
+                "name": "sah_bi",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "mBIG 2 Criteria",
+                "subheading_instructions": null,
+                "type": "subheading"
+            },
+            {
+                "conditionality": "meds == 0 && edh == 0 && ivh == 0 && displaced == 0 && sdh8 == 0 && iph8 == 0 && sah_bi == 0",
+                "default": null,
+                "label_en": "<p><abbr title=\"Blood alcohol level\">EtOH</abbr> &gt;80 mg/dL</p>",
+                "mdcalc_info_concept": null,
+                "name": "etoh",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "meds == 0 && edh == 0 && ivh == 0 && displaced == 0 && sdh8 == 0 && iph8 == 0 && sah_bi == 0 && etoh == 0",
+                "default": null,
+                "label_en": "<p>Nondisplaced skull fracture</p>",
+                "mdcalc_info_concept": null,
+                "name": "nondisplaced",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "meds == 0 && edh == 0 && ivh == 0 && displaced == 0 && sdh8 == 0 && iph8 == 0 && sah_bi == 0 && nondisplaced == 0",
+                "default": null,
+                "label_en": "<p>SDH &gt;4 to &lt;8 mm</p>",
+                "mdcalc_info_concept": null,
+                "name": "sdh4",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "meds == 0 && edh == 0 && ivh == 0 && displaced == 0 && sdh8 == 0 && iph8 == 0 && sah_bi == 0 && sdh4 == 0",
+                "default": null,
+                "label_en": "<p>IPH &gt;4 to &lt;8 mm</p>",
+                "mdcalc_info_concept": null,
+                "name": "iph4",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "meds == 0 && edh == 0 && ivh == 0 && displaced == 0 && sdh8 == 0 && iph8 == 0 && sah_bi == 0 && iph4 == 0",
+                "default": null,
+                "label_en": "<p>SAH 1 hemisphere, &gt;3 sulci, 1-3 mm</p>",
+                "mdcalc_info_concept": null,
+                "name": "sah1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Modified Brain Injury Guideline (BIG)",
+            "Brain Injury Guideline (BIG)",
+            "mbig",
+            "big",
+            "brain",
+            "brain injury",
+            "brain trauma",
+            "trauma",
+            "traumatic brain injury",
+            "injury guideline",
+            "traumatic brain injury guideline"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

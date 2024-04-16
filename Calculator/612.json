@@ -1,0 +1,145 @@
+{
+    "id": "612",
+    "title": "ALT-70 Score for Cellulitis",
+    "desc": "The ALT-70 Score for Cellulitis predicts likelihood of lower extremity cellulitis over other diagnoses.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://www.jaad.org/article/S0190-9622(17)30018-X/abstract",
+                "text": "Raff AB, Weng QY, Cohen JM, et al. A predictive model for diagnosis of lower extremity cellulitis: A cross-sectional study. J Am Acad Dermatol. 2017;76(4):618-625.e2."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21564054",
+                "text": "Levell NJ, Wingfield CG, Garioch JJ. Severe lower limb cellulitis is best diagnosed by dermatologists and managed with shared care between primary and secondary care. Br J Dermatol. 2011;164(6):1326-8."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25143179",
+                "text": "Arakaki RY, Strazzula L, Woo E, Kroshinsky D. The impact of dermatology consultation on diagnostic accuracy and antibiotic use among patients with suspected cellulitis seen at outpatient internal medicine offices: a randomized clinical trial. JAMA Dermatol. 2014;150(10):1056-61."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26089048",
+                "text": "Strazzula L, Cotliar J, Fox LP, et al. Inpatient dermatology consultation aids diagnosis of cellulitis among hospitalized patients: A multi-institutional analysis. J Am Acad Dermatol. 2015;73(1):70-5."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27434444",
+                "text": "Raff AB, Kroshinsky D. Cellulitis: A Review. JAMA. 2016;316(3):325-37."
+            },
+            {
+                "href": "https://jamanetwork.com/journals/jamadermatology/fullarticle/2578851",
+                "text": "Weng QY, Raff AB, Cohen JM, et al. Costs and Consequences Associated With Misdiagnosed Lower Extremity Cellulitis. JAMA Dermatol. 2016."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29453874",
+                "text": "Li DG, Xia FD, Khosravi H, et al. Outcomes of Early Dermatology Consultation for Inpatients Diagnosed With Cellulitis. JAMA Dermatol. 2018;154(5):537-543."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29453872",
+                "text": "Ko LN, Garza-mayers AC, St john J, et al. Effect of Dermatology Consultation on Outcomes for Patients With Presumed Cellulitis: A Randomized Clinical Trial. JAMA Dermatol. 2018;154(5):529-536."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"219\" /><col width=\"119\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Asymmetric</p>\n</td>\n<td>\n<p dir=\"ltr\">+3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Age &ge;70 years</p>\n</td>\n<td>\n<p dir=\"ltr\">+2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">WBC in ED &ge;10,000/&micro;L</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">HR in ED &ge;90 bpm</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"72\" /><col width=\"190\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>ALT-70 Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Recommendation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-2</p>\n</td>\n<td>\n<p dir=\"ltr\">Reassess (&gt;83.3% likelihood of pseudocellulitis)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">3-4</p>\n</td>\n<td>\n<p dir=\"ltr\">Consult dermatology and/or infectious disease</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5-7</p>\n</td>\n<td>\n<p dir=\"ltr\">Treat (&gt;82.2% likelihood of true cellulitis)</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Extremity Edema",
+            "Extremity Pain"
+        ],
+        "disease_treated": [
+            "Cellulitis/Abscess"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar score = parseFloat(asy) + parseFloat(age) + parseFloat(wbc) + parseFloat(hr);\n\n//results\nvar rec;\nvar msg;\n\nif(score >=0 && score <3){\n\trec = \"Reassess\";\n  \tmsg = '>83.3% likelihood of pseudocellulitis';\n}else if(score === 3 || score === 4){\n\trec = \"Consult\";\n  \tmsg = 'Dermatology and/or infectious disease consultation'\n}else if(score > 4){\n\trec = \"Treat\";\n  \tmsg = '>82.2% likelihood of true cellulitis'\n}\n\nvar pt = 'points';\nif(score === 1){\n\tpt = 'point';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: rec\n});\ncalc_output.push({\n    name: 'Result',\n    value: score,\n    value_text: pt,\n    message: 'ALT-70 Score'\n});\ncalc_output.push({\n    name: 'Recommendation',\n    value: rec,\n    value_text: '',\n    message: msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Asymmetric",
+                "name": "asy",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥70 years",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "WBC in ED ≥10,000/µL",
+                "name": "wbc",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "HR in ED ≥90 bpm",
+                "name": "hr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "cellulitis score",
+            "Alt 70"
+        ],
+        "specialty": [
+            "Dermatology",
+            "Family Practice",
+            "Internal Medicine"
+        ]
+    }
+}

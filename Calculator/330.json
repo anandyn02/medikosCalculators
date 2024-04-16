@@ -1,0 +1,253 @@
+{
+    "id": "330",
+    "title": "GRACE ACS Risk and Mortality Calculator",
+    "desc": "The GRACE ACS Risk and Mortality Calculator estimates admission-6 month mortality for patients with acute coronary syndrome.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17032691",
+                "text": "Fox KA, Dabbous OH, Goldberg RJ, Pieper KS, Eagle KA, Van de Werf F, Avezum A,Goodman SG, Flather MD, Anderson FA Jr, Granger CB. Prediction of risk of death and myocardial infarction in the six months after presentation with acute coronary syndrome: prospective multinational observational study (GRACE). BMJ. 2006 Nov 25;333(7578):1091. Epub 2006 Oct 10. PubMed PMID: 17032691; PubMed Central PMCID: PMC1661748."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24561498",
+                "text": "Fox KA, Fitzgerald G, Puymirat E, et al. Should patients with acute coronary disease be stratified for management according to their risk? Derivation, external validation and outcomes using the updated GRACE risk score. BMJ Open. 2014;4(2):e004425."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.outcomes-umassmed.org/grace/files/GRACE_RiskModel_Coefficients.pdf",
+                "text": "Anderson F, FitzGerald G. Methods and formulas used to calculate the GRACE Risk Scores for patients presenting to hospital with an acute coronary syndrome: Center for Outcomes Research, University of Massachusetts Medical School."
+            }
+        ],
+        "evidence": "<p>Nomogram, as detailed under&nbsp;<a href=\"https://www.outcomes-umassmed.org/grace/files/GRACE_RiskModel_Coefficients.pdf\" target=\"_blank\" rel=\"noopener\" data-saferedirecturl=\"https://www.google.com/url?q=https://www.outcomes-umassmed.org/grace/files/GRACE_RiskModel_Coefficients.pdf&amp;source=gmail&amp;ust=1547656443563000&amp;usg=AFQjCNE5xfJqjLWc_ktIvAFOrlABYb7f3A\">8. Fox Model for&nbsp;Death between Hospital Admission and 6 months later</a>.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Grace Score Range</th>\n<th>Mortality Risk</th>\n</tr>\n<tr>\n<td>0-87</td>\n<td>0-2%</td>\n</tr>\n<tr>\n<td>88-128</td>\n<td>3-10%</td>\n</tr>\n<tr>\n<td>129-149</td>\n<td>10-20%</td>\n</tr>\n<tr>\n<td>150-173</td>\n<td>20-30%</td>\n</tr>\n<tr>\n<td>174-182</td>\n<td>40%</td>\n</tr>\n<tr>\n<td>183-190</td>\n<td>50%</td>\n</tr>\n<tr>\n<td>191-199</td>\n<td>60%</td>\n</tr>\n<tr>\n<td>200-207</td>\n<td>70%</td>\n</tr>\n<tr>\n<td>208-218</td>\n<td>80%</td>\n</tr>\n<tr>\n<td>219-284</td>\n<td>90%</td>\n</tr>\n<tr>\n<td>&ge; 285</td>\n<td>99%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Age",
+                "unit": "age",
+                "error_min": "0.001",
+                "error_max": "120",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Creatinine",
+                "unit": "cr",
+                "error_min": "0.01",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "88.4",
+                "normal_max_si": "115",
+                "normal_max_us": "1.3",
+                "normal_min_si": "62",
+                "normal_min_us": "0.7",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Heart Rate/Pulse",
+                "unit": "hr",
+                "error_min": "10",
+                "error_max": "300",
+                "warn_min": "20",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "beats/min",
+                "units_us": "beats/min"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\nvar age2, pulse2, sbsbp2, crt2, chfs, value, prob;\nprob = 0;\nvar msg1 = 'GRACE Score';\nvar msg2 = 'Probability of death from admission to 6 months';\nif (0 <= age && age < 35) {\n  age2 = 0\n} else if (35 <= age && age < 45) {\n  age2 = 0 + (age - 35) * (1.8)\n} else if (45 <= age && age < 55) {\n  age2 = 18 + (age - 45) * (1.8)\n} else if (55 <= age && age < 65) {\n  age2 = 36 + (age - 55) * (1.8)\n} else if (65 <= age && age < 75) {\n  age2 = 54 + (age - 65) * (1.9)\n} else if (75 <= age && age < 85) {\n  age2 = 73 + (age - 75) * (1.8)\n} else if (85 <= age && age < 90) {\n  age2 = 91 + (age - 85) * (1.8)\n} else if (age >= 90) {\n  age2 = 100\n}\nif (0 <= heart_rate && heart_rate < 70) {\n  pulse2 = 0\n} else if (70 <= heart_rate && heart_rate < 80) {\n  pulse2 = 0 + (heart_rate - 70) * (.3)\n} else if (80 <= heart_rate && heart_rate < 90) {\n  pulse2 = 3 + (heart_rate - 80) * (.2)\n} else if (90 <= heart_rate && heart_rate < 100) {\n  pulse2 = 5 + (heart_rate - 90) * (.3)\n} else if (100 <= heart_rate && heart_rate < 110) {\n  pulse2 = 8 + (heart_rate - 100) * (.2)\n} else if (110 <= heart_rate && heart_rate < 150) {\n  pulse2 = 10 + (heart_rate - 110) * (.3)\n} else if (150 <= heart_rate && heart_rate < 200) {\n  pulse2 = 22 + (heart_rate - 150) * (.3)\n} else if (heart_rate >= 200) {\n  pulse2 = 34\n}\nif (0 <= systolic_blood_pressure && systolic_blood_pressure < 80) {\n  sysbp2 = 40\n} else if (80 <= systolic_blood_pressure && systolic_blood_pressure < 100) {\n  sysbp2 = 40 - (systolic_blood_pressure - 80) * (.3)\n} else if (100 <= systolic_blood_pressure && systolic_blood_pressure < 110) {\n  sysbp2 = 34 - (systolic_blood_pressure - 100) * (.3)\n} else if (110 <= systolic_blood_pressure && systolic_blood_pressure < 120) {\n  sysbp2 = 31 - (systolic_blood_pressure - 110) * (.4)\n} else if (120 <= systolic_blood_pressure && systolic_blood_pressure < 130) {\n  sysbp2 = 27 - (systolic_blood_pressure - 120) * (.3)\n} else if (130 <= systolic_blood_pressure && systolic_blood_pressure < 140) {\n  sysbp2 = 24 - (systolic_blood_pressure - 130) * (.3)\n} else if (140 <= systolic_blood_pressure && systolic_blood_pressure < 150) {\n  sysbp2 = 20 - (systolic_blood_pressure - 140) * (.4)\n} else if (150 <= systolic_blood_pressure && systolic_blood_pressure < 160) {\n  sysbp2 = 17 - (systolic_blood_pressure - 150) * (.3)\n} else if (160 <= systolic_blood_pressure && systolic_blood_pressure < 180) {\n  sysbp2 = 14 - (systolic_blood_pressure - 160) * (.3)\n} else if (180 <= systolic_blood_pressure && systolic_blood_pressure < 200) {\n  sysbp2 = 8 - (systolic_blood_pressure - 180) * (.4)\n} else if (systolic_blood_pressure >= 200) {\n  sysbp2 = 0\n}\n\n// need cr in US units\n\nif (UOMSYSTEM == false) {\n  creatinine = parseFloat(creatinine) / 88.4;\n}\n\n\nif (0.0 <= creatinine && creatinine < 0.2) {\n  crt2 = 0 + (creatinine - 0) * (1 / .2)\n} else if (0.2 <= creatinine && creatinine < 0.4) {\n  crt2 = 1 + (creatinine - 0.2) * (2 / .2)\n} else if (0.4 <= creatinine && creatinine < 0.6) {\n  crt2 = 3 + (creatinine - 0.4) * (1 / .2)\n} else if (0.6 <= creatinine && creatinine < 0.8) {\n  crt2 = 4 + (creatinine - 0.6) * (2 / .2)\n} else if (0.8 <= creatinine && creatinine < 1.0) {\n  crt2 = 6 + (creatinine - 0.8) * (1 / .2)\n} else if (1.0 <= creatinine && creatinine < 1.2) {\n  crt2 = 7 + (creatinine - 1.0) * (1 / .2)\n} else if (1.2 <= creatinine && creatinine < 1.4) {\n  crt2 = 8 + (creatinine - 1.2) * (2 / .2)\n} else if (1.4 <= creatinine && creatinine < 1.6) {\n  crt2 = 10 + (creatinine - 1.4) * (1 / .2)\n} else if (1.6 <= creatinine && creatinine < 1.8) {\n  crt2 = 11 + (creatinine - 1.6) * (2 / .2)\n} else if (1.8 <= creatinine && creatinine < 2.0) {\n  crt2 = 13 + (creatinine - 1.8) * (1 / .2)\n} else if (2.0 <= creatinine && creatinine < 3.0) {\n  crt2 = 14 + (creatinine - 2.0) * (7 / 1)\n} else if (3.0 <= creatinine && creatinine < 4.0) {\n  crt2 = 21 + (creatinine - 3.0) * (7 / 1)\n} else if (creatinine >= 4.0) {\n  crt2 = 28\n}\nif (signs_symptoms == 1) {\n  chfs = 0\n} else if (signs_symptoms == 2) {\n  chfs = 15\n} else if (signs_symptoms == 3) {\n  chfs = 29\n} else if (signs_symptoms == 4) {\n  chfs = 44\n}\nvalue = chfs + sysbp2 + pulse2 + age2 + crt2 + 17 * st_segment_deviation + 13 *\n  elevated_cardiac_enzymes + 30 * cardiac_arrest;\nif (value >= 6) {\n  prob = 0.2\n}\nif (value >= 27) {\n  prob = 0.4\n}\nif (value >= 39) {\n  prob = 0.6\n}\nif (value >= 48) {\n  prob = 0.8\n}\nif (value >= 55) {\n  prob = 1.0\n}\nif (value >= 60) {\n  prob = 1.2\n}\nif (value >= 65) {\n  prob = 1.4\n}\nif (value >= 69) {\n  prob = 1.6\n}\nif (value >= 73) {\n  prob = 1.8\n}\nif (value >= 76) {\n  prob = 2\n}\nif (value >= 88) {\n  prob = 3\n}\nif (value >= 97) {\n  prob = 4\n}\nif (value >= 104) {\n  prob = 5\n}\nif (value >= 110) {\n  prob = 6\n}\nif (value >= 115) {\n  prob = 7\n}\nif (value >= 119) {\n  prob = 8\n}\nif (value >= 123) {\n  prob = 9\n}\nif (value >= 126) {\n  prob = 10\n}\nif (value >= 129) {\n  prob = 11\n}\nif (value >= 132) {\n  prob = 12\n}\nif (value >= 134) {\n  prob = 13\n}\nif (value >= 137) {\n  prob = 14\n}\nif (value >= 139) {\n  prob = 15\n}\nif (value >= 141) {\n  prob = 16\n}\nif (value >= 143) {\n  prob = 17\n}\nif (value >= 145) {\n  prob = 18\n}\nif (value >= 147) {\n  prob = 19\n}\nif (value >= 149) {\n  prob = 20\n}\nif (value >= 150) {\n  prob = 21\n}\nif (value >= 152) {\n  prob = 22\n}\nif (value >= 153) {\n  prob = 23\n}\nif (value >= 155) {\n  prob = 24\n}\nif (value >= 156) {\n  prob = 25\n}\nif (value >= 158) {\n  prob = 26\n}\nif (value >= 159) {\n  prob = 27\n}\nif (value >= 160) {\n  prob = 28\n}\nif (value >= 162) {\n  prob = 29\n}\nif (value >= 163) {\n  prob = 30\n}\nif (value >= 174) {\n  prob = 40\n}\nif (value >= 183) {\n  prob = 50\n}\nif (value >= 191) {\n  prob = 60\n}\nif (value >= 200) {\n  prob = 70\n}\nif (value >= 208) {\n  prob = 80\n}\nif (value >= 219) {\n  prob = 90\n}\nif (value >= 285) {\n  prob = 99\n}\n\ncalc_output.push({\n  name: 'mini',\n  value: value.toFixed(0),\n  value_text: 'points',\n  message: prob + '% probability of death'\n});\ncalc_output.push({\n  name: '1099_GRACE Score_result (score)',\n  value: value.toFixed(0),\n  value_text: 'points',\n  message: msg1\n});\ncalc_output.push({\n  name: '1099_GRACE Score_result (risk)',\n  value: prob,\n  value_text: '%',\n  message: msg2\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Heart rate/pulse",
+                "name": "heart_rate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Systolic BP",
+                "name": "systolic_blood_pressure",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Creatinine",
+                "name": "creatinine",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Cardiac arrest at admission",
+                "md_calc_info_concept": null,
+                "name": "cardiac_arrest",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "ST segment deviation on EKG?",
+                "md_calc_info_concept": null,
+                "name": "st_segment_deviation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Abnormal cardiac enzymes",
+                "md_calc_info_concept": null,
+                "name": "elevated_cardiac_enzymes",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Killip class (signs/symptoms)",
+                "mdcalc_info_concept": null,
+                "name": "signs_symptoms",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No CHF",
+                        "value": 1
+                    },
+                    {
+                        "label": "Rales and/or JVD",
+                        "value": 2
+                    },
+                    {
+                        "label": "Pulmonary edema",
+                        "value": 3
+                    },
+                    {
+                        "label": "Cardiogenic shock",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "MI"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

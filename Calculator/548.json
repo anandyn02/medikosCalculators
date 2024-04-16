@@ -1,0 +1,323 @@
+{
+    "id": "548",
+    "title": "Barthel Index for Activities of Daily Living (ADL)",
+    "desc": "The Barthel Index for Activities of Daily Living (ADL) assesses functional independence, generally in stroke patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14258950",
+                "text": "Mahoney FI, Barthel D. Functional evaluation: The Barthel Index. Maryland State Medical Journal 1965;14:56-61."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/14157579",
+                "text": "Wylie CM, White BK. A measure of disability. Arch Environ Health. 1964;8:834–839."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9215334",
+                "text": "Sinoff G, Ore L. The Barthel activities of daily living index: self-reporting versus actual performance in the old-old (> or = 75 years). J Am Geriatr Soc. 1997;45(7):832-6."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>5 points</strong></p>\n</td>\n<td>\n<p><strong>10 points</strong></p>\n</td>\n<td>\n<p><strong>15 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Feeding</strong></p>\n</td>\n<td>\n<p>Unable</p>\n</td>\n<td>\n<p>Needs help</p>\n</td>\n<td>\n<p>Independent</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Bathing</strong></p>\n</td>\n<td>\n<p>Unable</p>\n</td>\n<td>\n<p>Independent</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Grooming</strong></p>\n</td>\n<td>\n<p>Unable</p>\n</td>\n<td>\n<p>Independent</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Dressing</strong></p>\n</td>\n<td>\n<p>Unable</p>\n</td>\n<td>\n<p>Needs help</p>\n</td>\n<td>\n<p>Independent</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Bowel control</strong></p>\n</td>\n<td>\n<p>Incontinence (or needs to be given enemas)</p>\n</td>\n<td>\n<p>Occasional accident</p>\n</td>\n<td>\n<p>Continent</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Bladder control</strong></p>\n</td>\n<td>\n<p>Incontinence (catheterized and unable to manage alone)</p>\n</td>\n<td>\n<p>Occasional accident</p>\n</td>\n<td>\n<p>Continent</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Toilet use</strong></p>\n</td>\n<td>\n<p>Unable</p>\n</td>\n<td>\n<p>Needs help</p>\n</td>\n<td>\n<p>Independent</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Transfers (bed to chair and back)</strong></p>\n</td>\n<td>\n<p>Unable</p>\n</td>\n<td>\n<p>Needs major help (one or two people, physical), can sit</p>\n</td>\n<td>\n<p>Needs minor help (verbal or physical)</p>\n</td>\n<td>\n<p>Independent</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Mobility on level surfaces</strong></p>\n</td>\n<td>\n<p>Immobile or &lt;50 yards</p>\n</td>\n<td>\n<p>Wheelchair independent, including corners, &gt;50 yards</p>\n</td>\n<td>\n<p>Walks with help of one person (verbal or physical) &gt;50 yards</p>\n</td>\n<td>\n<p>Independent (but may use any aid, e.g. stick) &gt;50 yards</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Stairs</strong></p>\n</td>\n<td>\n<p>Unable</p>\n</td>\n<td>\n<p>Needs help (verbal, physical, carrying aid)</p>\n</td>\n<td>\n<p>Independent</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Barthel Index</strong></p>\n</td>\n<td>\n<p><strong>Interpretation (from </strong><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/9215334\" target=\"_blank\" rel=\"noopener\"><strong>Sinoff 1997</strong></a><strong>)</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>80&ndash;100</span></p>\n</td>\n<td>\n<p><span>Independent</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>60&ndash;79</span></p>\n</td>\n<td>\n<p><span>Minimally dependent</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>40&ndash;59</span></p>\n</td>\n<td>\n<p><span>Partially dependent</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>20&ndash;39</span></p>\n</td>\n<td>\n<p><span>Very dependent</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>&lt;20</span></p>\n</td>\n<td>\n<p><span>Totally dependent</span></p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Neurologic Deficit",
+            "Pain",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\nvar u, msg, mini_msg;\n\n\nu = parseFloat(stairs) + parseFloat(mobile) + parseFloat(transfer) + parseFloat(toilet) + parseFloat(bowel) + parseFloat(bladder) + parseFloat(dress) + parseFloat(groom) + parseFloat(bath) + parseFloat(feed);\n\n\n\n\nif (u < 20) {\n    mini_msg = \"Totally dependent\";\n    msg = \"Poor outcome predicted\";\n} else if (u >= 20 && u <= 39) {\n    mini_msg = \"Very dependent\";\n    msg = \"Poor outcome predicted\";\n} else if (u >= 40 && u <= 59) {\n    mini_msg = \"Partially dependent\";\n    msg = \"Intermediate outcome predicted\";\n} else if (u >= 60 && u <= 79) {\n    mini_msg = \"Minimally dependent\";\n    msg = \"Good outcome predicted\";\n} else if (u >= 80) {\n    mini_msg = \"Totally independent\";\n    msg = \"Good outcome predicted\";\n}\n\ncalc_output.push({ \n    name: 'mini', \n    value: u, \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '3912_Barthel Index_result', \n    value: u, \n    value_text: 'points', \n    message: mini_msg\n});",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Rank the patient's independence in the following areas:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Feeding",
+                "mdcalc_info_concept": null,
+                "name": "feed",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Independent",
+                        "value": 10
+                    },
+                    {
+                        "label": "Needs help",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Bathing",
+                "mdcalc_info_concept": null,
+                "name": "bath",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Independent",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Grooming",
+                "mdcalc_info_concept": null,
+                "name": "groom",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Independent",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Dressing",
+                "mdcalc_info_concept": null,
+                "name": "dress",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Independent",
+                        "value": 10
+                    },
+                    {
+                        "label": "Needs help",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Bowel control",
+                "mdcalc_info_concept": null,
+                "name": "bowel",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Continent",
+                        "value": 10
+                    },
+                    {
+                        "label": "Occasional accident",
+                        "value": 5
+                    },
+                    {
+                        "label": "Incontinent (or needs to be given enemas)",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Bladder control",
+                "mdcalc_info_concept": null,
+                "name": "bladder",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Continent",
+                        "value": 10
+                    },
+                    {
+                        "label": "Occasional accident",
+                        "value": 5
+                    },
+                    {
+                        "label": "Incontinent (catheterized, unable to manage alone)",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Toilet use",
+                "mdcalc_info_concept": null,
+                "name": "toilet",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Independent",
+                        "value": 10
+                    },
+                    {
+                        "label": "Needs help",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Transfers (bed to chair and back)",
+                "mdcalc_info_concept": null,
+                "name": "transfer",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Independent",
+                        "value": 15
+                    },
+                    {
+                        "label": "Needs minor help (verbal or physical)",
+                        "value": 10
+                    },
+                    {
+                        "label": "Needs major help (1-2 people, physical), can sit",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Mobility on level surfaces",
+                "mdcalc_info_concept": null,
+                "name": "mobile",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Independent (but may use any aid, e.g. stick) >50 yards",
+                        "value": 15
+                    },
+                    {
+                        "label": "Walks with help of one person (verbal or physical) >50 yards",
+                        "value": 10
+                    },
+                    {
+                        "label": "Wheelchair independent, including corners, >50 yards",
+                        "value": 5
+                    },
+                    {
+                        "label": "Immobile or <50 yards",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Stairs",
+                "mdcalc_info_concept": null,
+                "name": "stairs",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Independent",
+                        "value": 10
+                    },
+                    {
+                        "label": "Needs help (verbal, physical, carrying aid)",
+                        "value": 5
+                    },
+                    {
+                        "label": "Unable",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "stroke",
+            "rehab",
+            "independence",
+            "ability",
+            "discharge ability",
+            "geriatrics",
+            "psych",
+            "neuro",
+            "neuro"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Family Practice",
+            "Geriatrics",
+            "Internal Medicine",
+            "Neurology",
+            "Pain Management"
+        ]
+    }
+}

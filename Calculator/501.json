@@ -1,0 +1,132 @@
+{
+    "id": "501",
+    "title": "Rockall Score for Upper GI Bleeding (Pre-Endoscopy)",
+    "desc": "The Rockall Score for Upper GI Bleeding (Pre-Endoscopy) determines severity of GI (gastrointestinal) bleeding prior to diagnosed GI bleeding by endoscopy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8675081",
+                "text": "Rockall TA, Logan RF, Devlin HB, Northfield TC. Risk assessment after acute upper gastrointestinal haemorrhage. Gut. 1996 Mar;38(3):316-21. PMID: 8675081."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20598244",
+                "text": "Pang SH, Ching JY, Lau JY, Sung JJ, Graham DY, Chan FK. Comparing the Blatchford and pre-endoscopic Rockall score in predicting the need for endoscopic therapy in patients with upper GI hemorrhage. Gastrointest Endosc. 2010 Jun;71(7):1134-40. doi: 10.1016/j.gie.2010.01.028."
+            }
+        ],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th colspan=\"2\">Mortality rates, by pre-endoscopy score</th>\n</tr>\n<tr>\n<td style=\"text-align: center;\"><strong>Score</strong></td>\n<td style=\"text-align: center;\"><strong>% Chance of mortality</strong></td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: center;\">0.2%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">1</td>\n<td style=\"text-align: center;\">2.4%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">2</td>\n<td style=\"text-align: center;\">5.6%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">3</td>\n<td style=\"text-align: center;\">11%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">4</td>\n<td style=\"text-align: center;\">24.6%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">5</td>\n<td style=\"text-align: center;\">39.6%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">6</td>\n<td style=\"text-align: center;\">48.9%</td>\n</tr>\n<tr>\n<td style=\"text-align: center;\">7</td>\n<td style=\"text-align: center;\">50%</td>\n</tr>\n</tbody>\n</table>\n<p>Adapted from <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/8675081\" target=\"_blank\" rel=\"noopener\">Rockall et al.</a></p>\n</div>\n<p><strong>Comorbidities were defined as any of the following:</strong></p>\n<ul>\n<li>Cardiac failure</li>\n<li>Ischaemic heart disease</li>\n<li>Asthma</li>\n<li>COPD</li>\n<li>Diabetes mellitus</li>\n<li>Rheumatoid arthritis</li>\n<li>Liver failure</li>\n<li>Renal failure</li>\n<li>Disseminated malignancy</li>\n<li>Other</li>\n<li>Pneumonia</li>\n<li>Dementia</li>\n<li>Recent major operation</li>\n<li>Malignancy</li>\n<li>CVA/TIA</li>\n<li>Haematological malignancy</li>\n<li>Hypertension</li>\n<li>Trauma/burns</li>\n<li>Other cardiac disease</li>\n<li>Major sepsis</li>\n<li>Other liver disease</li>\n</ul>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Blood in Stool",
+            "Hematemesis",
+            "Melena",
+            "Vomiting",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "GI Bleeding"
+        ],
+        "logic": "var calc_output = [];\n\n\nvar u, msg, pcntm, pcntr;\nu =  parseFloat(age)+parseFloat(shock)+parseFloat(comor);\n\nswitch (u) {\ncase 0: pcntm = \"0.2\"; break;\ncase 1: pcntm = \"2.4\"; break;\ncase 2: pcntm = \"5.6\"; break;\ncase 3: pcntm = \"11\"; break;\ncase 4: pcntm = \"24.6\"; break;\ncase 5: pcntm = \"39.6\"; break;\ncase 6: pcntm = \"48.9\"; break;\ncase 7: pcntm = \"50\"; break;\ndefault: pcntm = \"50\"; break;\n}\n\nmsg = pcntm + \"% mortality prior to endoscopy.\";\n\ncalc_output.push({ name: 'mini', value: u, value_text: 'points', message: msg });\ncalc_output.push({ name: '3643_Rockall Score (Pre-Endoscopy)_result', value: u, value_text: 'points', message: msg });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<60 years",
+                        "value": 0
+                    },
+                    {
+                        "label": "60-79 years",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥80 years",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Shock",
+                "mdcalc_info_concept": null,
+                "name": "shock",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No shock (SBP ≥100 AND HR <100)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Tachycardia (SBP ≥100 AND HR ≥100)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Hypotension (SBP <100)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Comorbidities",
+                "mdcalc_info_concept": null,
+                "name": "comor",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No major comorbidity",
+                        "value": 0
+                    },
+                    {
+                        "label": "Any comorbidity EXCEPT renal failure, liver failure, and/or disseminated malignancy",
+                        "value": 2
+                    },
+                    {
+                        "label": "Renal failure, liver failure, and/or disseminated malignancy",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "rockall",
+            "GI bleed",
+            "melena",
+            "prognosis",
+            "mortality",
+            "BRBPR",
+            "rectal bleeding",
+            "hematochezia",
+            "prs"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Gastroenterology",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

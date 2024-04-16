@@ -1,0 +1,210 @@
+{
+    "id": "570",
+    "title": "Troponin-only Manchester Acute Coronary Syndromes (T-MACS) Decision Aid",
+    "desc": "The Troponin-only Manchester Acute Coronary Syndromes (T-MACS) Decision Aid rules out acute coronary syndrome.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27565197 ",
+                "text": "Body R, Carlton E, Sperrin M, et al. Troponin-only Manchester Acute Coronary Syndromes (T-MACS) decision aid: single biomarker re-derivation and external validation in three cohorts. Emerg Med J. 2016; Epub ahead of print."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Probability of ACS (p)&nbsp;=&nbsp;</p>\n<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/t-macs.png\" alt=\"\"></p>\n<p>where:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>No</strong></p>\n</td>\n<td>\n<p><strong>Yes</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>E: EKG ischemia</strong></p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>A: Worsening or crescendo angina</strong></p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>R: Pain radiation to the right arm or shoulder</strong></p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>V: Pain associated with vomiting</strong></p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>S: Sweating observed</strong></p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>H: Hypotension</strong></p>\n</td>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>T: hs-cTnT concentration on arrival</strong></p>\n</td>\n<td colspan=\"2\">\n<p>hs-cTnT value&nbsp;</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><span><br>Remember, hs-cTnT has low specificity&mdash;troponin may be elevated by a number of non-ACS etiologies, including:</span></p>\n<table>\n<tbody>\n<tr>\n<td colspan=\"3\">\n<p align=\"center\"><strong>Cardiac causes</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Cardiac contusion (trauma)</span></p>\n</td>\n<td>\n<p><span>Heart failure, acute and chronic</span></p>\n</td>\n<td>\n<p><span>Tachy- or bradyarrhythmia, heart block</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Cardiac surgery</span></p>\n</td>\n<td>\n<p><span>Aortic dissection</span></p>\n</td>\n<td>\n<p><span>Apical ballooning syndrome</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Cardioversion</span></p>\n</td>\n<td>\n<p><span>Aortic valve disease</span></p>\n</td>\n<td>\n<p><span>Post-PCI</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Endomyocardial biopsy</span></p>\n</td>\n<td>\n<p><span>Hypertrophic cardiomyopathy</span></p>\n</td>\n<td>\n<p><span>Rhabdomyolysis with myocyte necrosis</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Myocarditis</span></p>\n</td>\n<td>\n<p><span>Endocarditis</span></p>\n</td>\n<td>\n<p><span>Pericarditis</span></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p align=\"center\"><strong>Non-cardiac causes</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>PE</span></p>\n</td>\n<td>\n<p><span>Severe pulmonary HTN</span></p>\n</td>\n<td>\n<p><span>Renal failure</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Stroke, SAH</span></p>\n</td>\n<td>\n<p><span>Amyloidosis, other infiltrative diseases</span></p>\n</td>\n<td>\n<p><span>Cardiotoxic drugs</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Critical illness</span></p>\n</td>\n<td>\n<p><span>Sepsis</span></p>\n</td>\n<td>\n<p><span>Extensive burns</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Extreme exertion</span></p>\n</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr>\n</tbody>\n</table>\n<p><span>From </span><a href=\"https://circ.ahajournals.org/content/124/21/2350/tab-figures-data#fig-data-figures\" target=\"_blank\" rel=\"noopener\"><span>Mahajan 2011</span></a><span>.</span></p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Probability</strong></p>\n</td>\n<td>\n<p><strong>Risk</strong></p>\n</td>\n<td>\n<p><strong>Interpretation</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&lt;0.02</p>\n</td>\n<td>\n<p>Very low</p>\n</td>\n<td>\n<p>ACS ruled out. Consider discharge.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;0.02 and &lt;0.05</p>\n</td>\n<td>\n<p>Low</p>\n</td>\n<td>\n<p>Consider serial troponin in ED ward, e.g. 3h troponin; consider discharge if normal.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;0.05 and &lt;0.95</p>\n</td>\n<td>\n<p>Moderate</p>\n</td>\n<td>\n<p>Serial troponin in general ward and consider stress testing and/or CT coronary angiography thereafter.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;0.95</p>\n</td>\n<td>\n<p>High</p>\n</td>\n<td>\n<p>ACS ruled in. Refer to cardiology, treat for ACS.</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [
+            {
+                "name": "hs-cTnT",
+                "unit": "hsctnt",
+                "error_min": "0",
+                "error_max": "10",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1000",
+                "normal_max_si": "14",
+                "normal_max_us": "0.014",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "ng/L",
+                "units_us": "µg/L"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Anxious",
+            "Chest Pain",
+            "Dizziness",
+            "Dyspnea"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome"
+        ],
+        "logic": "//outputs\nvar calc_output = [];\n\n//user inputs\nvar ecg = parseFloat(ecg);\nvar ang = parseFloat(ang);\nvar pnrad = parseFloat(pnrad);\nvar vomit = parseFloat(vomit);\nvar sweat = parseFloat(sweat);\nvar hypo = parseFloat(hypo);\n\nvar tnt = parseFloat(tnt);\n\nif (UOMSYSTEM == true) {\n\ttnt = tnt * 1000\n}\n\n//calculation\nvar u = 1 / (1 + Math.exp(-(1.713*ecg + 0.847*ang + 0.607*pnrad + 1.417*vomit + 2.058*sweat + 1.208*hypo + 0.089*tnt - 4.766)));\nu = u.toFixed(2)\nrisk_acs = u * 100\n\n//results\nvar risk, msg\nif (u < 0.02){\n\trisk = 'Very low';\n\tmsg = 'ACS ruled out. Consider discharge.';\n}else if ( u >= 0.02 && u < 0.05){\n\trisk = 'Low';\n\tmsg = 'Consider serial troponin in ED ward, e.g. 3h troponin; consider discharge if normal.';\n}else if ( u >= 0.05 && u < 0.95){\n\trisk = 'Moderate';\n\tmsg = 'Serial troponin in general ward, consider stress testing and/or CT coronary angiography.';\n}else{\n\trisk = 'High';\n\tmsg = 'ACS ruled in. Refer to cardiology, treat for ACS.';\n}\n\n//result for user\ncalc_output.push({\n\tname: 'mini',\n\tvalue: risk,\n\tvalue_text: 'risk',\n\tmessage: risk_acs + '% risk for ACS'\n});\ncalc_output.push({\n\tname: 'Risk',\n\tvalue: risk,\n\tvalue_text: 'risk',\n\tmessage: msg\n});\ncalc_output.push({\n\tname: 'Score',\n\tvalue: risk_acs.toFixed(0),\n\tvalue_text: '%',\n\tmessage: 'Risk of ACS or MACE in 30 days'\n});\n\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "EKG ischemia",
+                "md_calc_info_concept": null,
+                "name": "ecg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "As determined by treating clinician",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Worsening or crescendo angina",
+                "md_calc_info_concept": null,
+                "name": "ang",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Pain radiating to right arm or shoulder",
+                "md_calc_info_concept": null,
+                "name": "pnrad",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Pain associated with vomiting",
+                "md_calc_info_concept": null,
+                "name": "vomit",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Sweating observed",
+                "md_calc_info_concept": null,
+                "name": "sweat",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "As observed by treating clinician",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Hypotension",
+                "md_calc_info_concept": null,
+                "name": "hypo",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "<abbr title='Systolic blood pressure'>sBP</abbr> <100 mmHg on arrival to ED",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<abbr title='High sensitivity cardiac troponin T'>hs-cTnT</abbr> concentration on arrival",
+                "name": "tnt",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hsctnt"
+            }
+        ],
+        "can_search": [
+            "ACS",
+            "MACS",
+            "TMACS",
+            "T MACS",
+            "T-MACS",
+            "troponin",
+            "trop",
+            "heart attack",
+            "MI",
+            "myocardial infarction",
+            "angina",
+            "crescendo angina",
+            "ecg",
+            "ekg"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine"
+        ]
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "id": "473",
+    "title": "Modified Glasgow Prognostic Score (mGPS) for Cancer Outcomes",
+    "desc": "The Modified Glasgow Prognostic Score uses biomarkers to indicate systemic inflammatory response previously associated with poor prognoses in cancer.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049591/",
+                "text": "Proctor MJ, Morrison DS, Talwar D, Balmer SM, O'Reilly DS, Foulis AK et al. An inflammation-based prognostic score (mGPS) predicts cancer survival independent of tumour site: a Glasgow Inflammation Outcome Study. Br J Cancer 2011; 104(4):726–734"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26598040",
+                "text": "de Paula Pantano N, Paiva BS, Hui D, Paiva CE. Validation of the Modified Glasgow Prognostic Score in Advanced Cancer Patients Receiving Palliative Care. J Pain Symptom Manage. 2016 Feb;51(2):270-7. doi: 10.1016/j.jpainsymman.2015.09.010. Epub 2015 Oct 24."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21724383",
+                "text": " Proctor MJ, et al. A comparison of inflammation-based prognostic scores in patients with cancer. A Glasgow Inflammation Outcome Study. Eur J Cancer. 2011 Nov;47(17):2633-41. doi: 10.1016/j.ejca.2011.03.028. Epub 2011 Jul 1."
+            }
+        ],
+        "evidence": "<p>Selection of appropriate criteria.</p>",
+        "facts": "<p>The modified GPS uses the same parameters as the <calculator id=\"3311\">original GPS</calculator> (CRP and albumin), but weighs the inflammatory component more heavily; i.e., patients with low albumin are still assigned a score of 0 even if CRP is elevated. This modification was shown to have better correlation with survival (in colon and rectal cancer from the original paper, and in other cancers from the validation papers).</p>\n<p>The mGPS has been shown to be accurate in different types of cancer, including renal, lung, gastric cancers, as well as in primary care. The predictive values are listed below for each type of cancer.</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Type of cancer</th>\n<th>mGPS</th>\n<th>Median Survival</th>\n</tr>\n<tr>\n<td>Gastric</td>\n<td>0</td>\n<td>5 year Overall Survival: 74.6%</td>\n</tr>\n<tr>\n<td></td>\n<td>1</td>\n<td>5 year Overall Survival: 61.4%</td>\n</tr>\n<tr>\n<td></td>\n<td>2</td>\n<td>5 year Overall Survival: 34.6%</td>\n</tr>\n<tr>\n<td>Renal</td>\n<td>0</td>\n<td>1 year RFS: 90.9%</td>\n</tr>\n<tr>\n<td></td>\n<td>1</td>\n<td>1 year RFS: 61.1%</td>\n</tr>\n<tr>\n<td></td>\n<td>2</td>\n<td>1 year RFS: 10.1%</td>\n</tr>\n<tr>\n<td>Lung (Small Cell)</td>\n<td>0</td>\n<td>3 Month Survival: 99%</td>\n</tr>\n<tr>\n<td></td>\n<td>2</td>\n<td>3 Month Survival: 71%</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Chemotherapy",
+            "Pancreatic Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nvar crp = parseInt(crp);\nvar alb =  parseInt(alb);\n\nvar string1, string2, string3;\n\nif (crp == 1 && alb == 2) {string1 = \"mGPS 0\";string2=\"Good Prognosis<br/><br/>\";}\nif (crp == 2 && alb == 1) {string1 = \"mGPS 2\";string2=\"Poor Prognosis<br/><br/>\";}\nif (crp == 2 && alb == 2) {string1 = \"mGPS 1\";string2=\"Intermediate Prognosis<br/><br/>\";}\nif (crp == 1 && alb == 1) {string1 = \"mGPS 0\";string2=\"Good Prognosis<br/><br/>\";}\n\nstring3 = 'See Evidence for more info.';\n\ncalc_output.push({ name: 'mini', value: string1, value_text: ' ', message: string2 });\ncalc_output.push({ name: '3312_mGPS for Cancer Outcomes_result', value: string1, value_text: ' ', message: string2+string3 });",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "CRP",
+                "mdcalc_info_concept": null,
+                "name": "crp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "CRP ≤10 mg/L",
+                        "value": 1
+                    },
+                    {
+                        "label": "CRP >10 mg/L",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Albumin",
+                "mdcalc_info_concept": null,
+                "name": "alb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Albumin <3.5 g/dL (35 g/L)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Albumin ≥3.5 g/dL (35 g/L)",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Crp",
+            "alb",
+            "mgps",
+            "glasgow",
+            "cancer",
+            "CA"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hematology and Oncology",
+            "Hepatology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Radiation Oncology"
+        ]
+    }
+}

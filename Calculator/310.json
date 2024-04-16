@@ -1,0 +1,83 @@
+{
+    "id": "310",
+    "title": "Tenecteplase (TNK) Dosing for Ischemic Stroke Calculator",
+    "desc": "Tenecteplase Dosing doses tenecteplase for use in ischemic stroke.",
+    "data": {
+        "orgreference": [],
+        "other_refer": [],
+        "evidence": "<p>Tenecteplase dosing is calculated by the following:</p>\n<p>Dose, mL = [0.25*(Weight, kg)]/5</p>\n<p>Waste, mL = 10 - (Dose, mL)</p>\n<p>Note: Total maximum dose is 5 mL (equivalent to 25mg)</p>",
+        "facts": "<p><img src=\"https://cdn-web-img.mdcalc.com/TNKvsALT.png\" width=\"100%\" alt=\"\"></p>\n<p><img src=\"https://cdn-web-img.mdcalc.com/TNKhigh-vs-low.png\" width=\"100%\" alt=\"\"></p>",
+        "estimation": [
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Dizziness",
+            "Extremity Pain",
+            "Headache",
+            "Nausea",
+            "Numbness",
+            "Shortness of Breath",
+            "Vision Loss",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Intracranial Hemorrhage",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\nvar weight = parseFloat(weight);\n\nvar dose_initial = (weight * 0.25)/5;\nvar dose_final;\n\nif (dose_initial >= 5){\n    dose_final = 5\n}\nelse {\n    dose_final = dose_initial\n}\n\nvar dose_mg = dose_final.toFixed(1)*5;\nvar waste = 10 - dose_final;\nvar waste_mg = waste.toFixed(1)*5;\n\ncalc_output.push({\n    name: 'mini',\n    value: dose_final.toFixed(1),\n    value_text: 'mL, equivalent to ' + dose_mg.toFixed(1) + ' mg',\n    message: 'Tenecteplase dosing'\n});\ncalc_output.push({\n    name: '10480_TNK Dosing_result (dose)',\n    value: dose_final.toFixed(1),\n    value_text: 'mL, equivalent to ' + dose_mg.toFixed(1) + ' mg',\n    message: 'Tenecteplase dosing'\n});\ncalc_output.push({\n    name: '10480_TNK Dosing_result (waste)',\n    value: waste.toFixed(1),\n    value_text: 'mL, equivalent to ' + waste_mg.toFixed(1) + ' mg',\n    message: 'Waste, to be discarded'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Weight</p>",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            }
+        ],
+        "can_search": [
+            "tenecteplase dosing",
+            "tenecteplase",
+            "tnk",
+            "tnkase",
+            "tnkase dosing",
+            "tnk dosing",
+            "stroke",
+            "ischemic stroke",
+            "ischemic",
+            "thrombolytics",
+            "thrombolytics dosing",
+            "tpa",
+            "thrombolysis"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

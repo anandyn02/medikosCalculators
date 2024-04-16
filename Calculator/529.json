@@ -1,0 +1,95 @@
+{
+    "id": "529",
+    "title": "Fisher Grading Scale for Subarachnoid Hemorrhage (SAH)",
+    "desc": "The Fisher Grading Scale rates severity of aneurysmal subarachnoid hemorrhage (aSAH) based on amount and distribution of blood on CT of the head.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7354892",
+                "text": "Fisher C, Kistler J, Davis J. Relation of cerebral vasospasm to subarachnoid hemorrhage visualized by computerized tomographic scanning. Neurosurgery. 1980;6(1):1-9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11546890",
+                "text": "Claassen J, Bernardini GL, Kreiter K, Bates J, Du YE, Copeland D, Connolly ES, Mayer SA. Effect of cisternal and ventricular blood on risk of delayed cerebral ischemia after subarachnoid hemorrhage: the Fisher scale revisited. Stroke. 2001; 32 (9): 2012-2020."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9588539",
+                "text": "Ogilvy CS, Carter BS. A Proposed Comprehensive Grading System to Predict Outcome for Surgical Management of Intracranial Aneurysms. Neurosurgery. 1998; 42(5): 959-968."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/12975744",
+                "text": "Woertgen C, Ullrich OW, Rothoerl RD, Brawanski A. Comparison of the Claassen and Fisher CT classification scale to predict ischemia after aneurysmatic SAH? Central European Neurosurgery. 2003; 64(3):104-108."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/8985947",
+                "text": "Svensson E, Starmark JE, Ekholm S, von Essen C, Johansson A. Analysis of interobserver disagreement in the assessment of subarachnoid blood and acute hydrocephalus on CT scans. Neurol Res. 1996; 18(6):487-494."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16159052",
+                "text": "Rosen DS, Macdonald RL. Subarachnoid Grading Scales: A Systematic Review. Neurocritical Care. 2005;2:110-118."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11534685",
+                "text": "Osawa M, et al. Results of direct surgery for aneurysmal subarachnoid haemorrhage: outcome of 2055 patients who underwent direct aneurysm surgery and profile of ruptured intracranial aneurysms. Acta Neurochir (Wien). 2001;143(7):655-63; discussion 663-4."
+            }
+        ],
+        "evidence": "<p>Selection of appropriate criteria.</p>",
+        "facts": "<p><strong>Score interpretation:</strong></p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th>Fisher grade</th>\n<th>Blood on CT*</th>\n<th>Risk of vasospasm</th>\n</tr>\n<tr>\n<td>I</td>\n<td>No SAH detected</td>\n<td>Low (range 0-21%)</td>\n</tr>\n<tr>\n<td>II</td>\n<td>Diffuse or vertical layer of subarachnoid blood &lt; 1mm thick</td>\n<td>Low (range 0-25%)</td>\n</tr>\n<tr>\n<td>III</td>\n<td>Localized clot and/or vertical layer within the subarachnoid space &gt; 1mm thick</td>\n<td>Low to high (range 23-96%)</td>\n</tr>\n<tr>\n<td>IV</td>\n<td>ICH or IVH with diffuse or no SAH</td>\n<td>Low to moderate (range 0-35%)</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>*Measurements were made on printed EMI CT scans. The measurements were not scaled to the actual thickness.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Headache"
+        ],
+        "disease_treated": [
+            "Subarachnoid Hemorrhage"
+        ],
+        "logic": "var calc_output = [];\n\nvar u = parseInt(fisher);\nvar string = '';\nvar msg = '';\n\nif (u == 1) {\n    string = 'Grade I';\n    msg = 'Low risk of vasospasm (range 0-21%)';\n}\nif (u == 2) {\n    string = 'Grade II';\n    msg = 'Low risk of vasospasm (range 0-25%)';\n}\nif (u == 3) {\n    string = 'Grade III';\n    msg = 'Low to high risk of vasospasm (range 23-96%)';\n}\nif (u == 4) {\n    string = 'Grade IV';\n    msg = 'Low to moderate risk of vasospasm (range 0-35%)';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: string,\n    value_text: ' ',\n    message: msg\n});\ncalc_output.push({\n    name: '3836_Fisher Grading Scale_result',\n    value: string,\n    value_text: '',\n    message: msg\n});\n",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "label_en": "Signs/symptoms",
+                "mdcalc_info_concept": null,
+                "name": "fisher",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No SAH detected",
+                        "value": 1
+                    },
+                    {
+                        "label": "Diffuse or vertical layer of subarachnoid blood < 1mm thick",
+                        "value": 2
+                    },
+                    {
+                        "label": "Localized clot and/or vertical layer within the subarachnoid space > 1mm thick",
+                        "value": 3
+                    },
+                    {
+                        "label": "Intracerebral hemorrhage (ICH) or intraventricular hemorrhage (IVH) with diffuse or no SAH ",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "aSAH",
+            "ICH",
+            "SAH",
+            "subarachnoid",
+            "clot",
+            "IVH"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery"
+        ]
+    }
+}

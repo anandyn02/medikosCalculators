@@ -1,0 +1,220 @@
+{
+    "id": "584",
+    "title": "Shorr Score for MRSA Pneumonia",
+    "desc": "The Shorr Score for MRSA Pneumonia rules out MRSA in patients presenting with pneumonia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://bmcinfectdis.biomedcentral.com/articles/10.1186/1471-2334-13-268 ",
+                "text": "Shorr AF, Myers DE, Huang DB, Nathanson BH, Emons MF, Kollef MH. A risk score for identifying methicillin-resistant Staphylococcus aureus in patients presenting to the hospital with pneumonia. BMC Infect Dis. 2013;13:268."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22109951 ",
+                "text": "Shorr AF, Zilberberg MD, Reichley R, et al. Validation of a clinical score for assessing the risk of resistant pathogens in patients with pneumonia presenting to the emergency department. Clin Infect Dis. 2012;54(2):193-8."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n<td>\n<p><strong>2 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Age &lt;30 years or &gt;79 years</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Nursing home, skilled nursing facility, or long term acute care exposure </strong></p>\n<p>Within 90 days</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Prior IV antibiotic therapy </strong></p>\n<p>Within 30 days</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Hospitalization for &ge;2 days </strong></p>\n<p>Within 90 days</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>ICU admission</strong></p>\n<p>On or before index culture</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Any cerebrovascular disease </strong></p>\n<p>Prior to admission</p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Dementia</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Female with diabetes mellitus</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "facts": "<p>Interpretation:</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<td>\n<p><strong>Shorr Score</strong></p>\n</td>\n<td>\n<p><strong>Risk for MRSA</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>0-1</strong></p>\n</td>\n<td>\n<p>Low risk for MRSA. Consider routine antibiotic coverage.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>2-5</strong></p>\n</td>\n<td>\n<p>Intermediate risk for MRSA. Use clinical judgment regarding antibiotic coverage.</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>6-10</strong></p>\n</td>\n<td>\n<p>High risk for MRSA. Consider extended antibiotic coverage.</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Cough",
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar age = parseFloat(age);\nvar nursing = parseFloat(nursing);\nvar prioriv = parseFloat(prioriv);\nvar hospital = parseFloat(hospital);\nvar icu = parseFloat(icu);\nvar cereb = parseFloat(cereb);\nvar dementia = parseFloat(dementia);\nvar fdiabetes = parseFloat(fdiabetes);\n\n//add points up\nvar u = age + nursing + prioriv + hospital + icu + cereb + dementia + fdiabetes;\n\n//results\nvar risk, minirisk, msg;\nif (u < 2){\n\trisk = 'Low';\n    minirisk = 'Low';\n\tmsg = 'Consider routine antibiotic coverage.';\n}else if(1 < u < 6){\n\trisk = 'Intermediate';\n    minirisk = 'Medium';\n\tmsg = 'Use clinical judgment regarding antibiotic coverage.';\n}\nif(u > 5){\n\trisk = 'High';\n    minirisk = 'High';\n\tmsg = 'Consider extended antibiotic coverage.';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: minirisk,\n    value_text: '',\n    message: 'Risk for MRSA'\n});\ncalc_output.push({\n    name: 'Score',\n    value: u,\n    value_text: 'points',\n    message: 'Shorr Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: 'risk',\n    message: msg\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Age 19-29 or &gt;79 years</p>",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Nursing home, skilled nursing facility, or long term acute care exposure</p>",
+                "name": "nursing",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Within 90 days",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Prior IV antibiotic therapy</p>",
+                "name": "prioriv",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Within 30 days",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hospitalization for &ge;2 days</p>",
+                "name": "hospital",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Within 90 days",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>ICU admission</p>",
+                "name": "icu",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "On or before index culture",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Any cerebrovascular disease</p>",
+                "name": "cereb",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Prior to admission",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Dementia</p>",
+                "name": "dementia",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Female with diabetes mellitus</p>",
+                "name": "fdiabetes",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Shorr score",
+            "shor score",
+            "shorr",
+            "penumonia",
+            "chest infection",
+            "CAP",
+            "HCAP",
+            "pna",
+            "icu",
+            "severity",
+            "covid-19",
+            "coronavirus",
+            "covid 19",
+            "covid19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

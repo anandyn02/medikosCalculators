@@ -1,0 +1,202 @@
+{
+    "id": "208",
+    "title": "Rome IV Diagnostic Criteria for Infant Functional Constipation",
+    "desc": "The Rome IV criteria for infant functional constipation provides criteria for the diagnosis of infant functional constipation.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27144631/",
+                "text": "Benninga MA, Faure C, Hyman PE, St james roberts I, Schechter NL, Nurko S. Childhood Functional Gastrointestinal Disorders: Neonate/Toddler. Gastroenterology. 2016; 1443-1455."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>To fulfill the Rome IV criteria for infant functional constipation, patient must have&nbsp;1 month of &ge;2 of the following (for infants &lt;4 years of age):</p>\n<ol>\n<li>&le;2 defecations per week.</li>\n<li>History of excessive stool retention.</li>\n<li>History of painful or hard bowel movements.</li>\n<li>History of large-diameter stools.</li>\n<li>Presence of a large fecal mass in the rectum.</li>\n</ol>\n<p>In toilet-trained children, the following additional criteria may be used:</p>\n<ol>\n<li>At least 1 episode/week of incontinence after the&nbsp;acquisition of toileting skills.</li>\n<li>History of large-diameter stools that may obstruct the toilet.</li>\n</ol>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Constipation"
+        ],
+        "disease_treated": [
+            "Neonate/Toddler Functional GI Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\n \nif (trained==0) {\nvar \ncriteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(five);\n}\nif (trained==1) {\nvar criteria=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four)+parseFloat(five)+parseFloat(six)+parseFloat(seven);\n}\n  \n\nvar diag;\n\nvar msg= 'Diagnosis for infant functional constipation as per Rome IV criteria';\nvar minimsg= 'Diagnosis for infant functional constipation';\n\nif (criteria>=2) {\n  diag='Positive';\n} else {\n  diag='Negative';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Infant Constipation',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "The child is toilet-trained",
+                "name": "trained",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Must have 1 month of ≥2 of the following:",
+                "subheading_instructions": "For infants <4 years of age",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "≤2 defecations per week",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of excessive stool retention",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of painful or hard bowel movements",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "History of large-diameter stools",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Presence of a large fecal mass in the rectum",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "trained==1",
+                "default": 0,
+                "label_en": "≥1 episode/week of incontinence following after the acquisition of toileting skills",
+                "name": "six",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "trained==1",
+                "default": 0,
+                "label_en": "History of large-diameter stools that may obstruct the toilet ",
+                "name": "seven",
+                "optional": true,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Infant Functional Constipation, Rome IV for Infant Constipation, rome iv infant functional constipation, rome iv infant constipation, rome iv functional constipation, rome iv for infant constipation, rome infant constipation, rome functional constipation, rome infant functional constipation, rome 4 infant constipation, rome 4 constipation, rome 4 infant functional constipation, rome 4 functional constipation"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

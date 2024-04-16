@@ -1,0 +1,103 @@
+{
+    "id": "49",
+    "title": "Binet Staging System for Chronic Lymphocytic Leukemia (CLL)",
+    "desc": "The Binet Staging System for Chronic Lymphocytic Leukemia (CLL) stages chronic lymphocytic leukemia, similar to Rai classification.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/890666",
+                "text": "Binet JL, Leporrier M, Dighiero G, et al. A clinical staging system for chronic lymphocytic leukemia: prognostic significance. Cancer. 1977;40(2):855-64."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25461996",
+                "text": "Nabhan C, Rosen ST. Chronic lymphocytic leukemia: a clinical review. JAMA. 2014;312(21):2265-76."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Selection of the appropriate features:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"170\" /><col width=\"170\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Clinical features</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Binet&nbsp;</strong><b>Stage</b></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;3 areas of lymphadenopathy*, and normal hemoglobin and platelet count</p>\n</td>\n<td>\n<p dir=\"ltr\">A</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;3 areas of lymphadenopathy*, and normal hemoglobin and platelet count</p>\n</td>\n<td>\n<p dir=\"ltr\">B</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Anemia (Hgb &lt;10 g/dL) and/or thrombocytopenia (platelets &lt;100,000/mm&sup3;), regardless of number of areas of lymphadenopathy</p>\n</td>\n<td>\n<p dir=\"ltr\">C</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">*Nodal areas: cervical, axillary, inguinal (one side or both), spleen, and liver.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"74\" /><col width=\"112\" /><col width=\"92\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Binet&nbsp;</strong><b>Stage</b></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Overall survival</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">A</p>\n</td>\n<td>\n<p dir=\"ltr\">Low</p>\n</td>\n<td>\n<p dir=\"ltr\">12 years</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">B</p>\n</td>\n<td>\n<p dir=\"ltr\">Intermediate</p>\n</td>\n<td>\n<p dir=\"ltr\">7 years</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">C</p>\n</td>\n<td>\n<p dir=\"ltr\">High</p>\n</td>\n<td>\n<p dir=\"ltr\">2-4 years</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-db1c8aa4-89e0-7dc5-54a5-ccb9897d2d3c\">From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/25461996\" target=\"_blank\">Nabhan 2014</a>.</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue",
+            "Fever",
+            "Abdominal Pain",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Hematologic Malignancy",
+            "Cancer"
+        ],
+        "logic": "var calc_output = [];\n\nareas = parseFloat(areas)\nanemia = parseFloat(anemia)\nthrombocytopenia = parseFloat(thrombocytopenia)\n\nvar binet\nvar risk\nvar survival\n\nif (thrombocytopenia + anemia == 0) {\n  \tif (areas == 0){\n\tbinet = 'A'\n  \trisk = 'Low'\n  \tsurvival = '12'\n    }\n  \telse {\n\tbinet = 'B'\n  \trisk = 'Intermediate'\n  \tsurvival = '7'\n\t}\n}\nelse {\n  \tbinet = 'C'\n  \trisk = 'High'\n\tsurvival = '2-4'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: 'Stage ' + binet,\n    value_text: '',\n    message: survival + ' years overall survival'\n});\ncalc_output.push({\n    name: 'classification',\n    value: 'Stage ' + binet,\n    value_text: '',\n    message: 'Binet Stage'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: 'risk',\n    message: ''\n});\ncalc_output.push({\n    name: 'survival',\n    value: survival,\n    value_text: 'years',\n    message: 'Overall survival'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Areas of lymphadenopathy",
+                "name": "areas",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<3",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥3",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Cervical, axillary, inguinal, spleen, and liver",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anemia",
+                "name": "anemia",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Hgb <10 g/dL",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Thrombocytopenia",
+                "name": "thrombocytopenia",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Platelets <100,000/mm³",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Binet staging system",
+            "chronic lymphocytic leukemia ",
+            "CLL"
+        ],
+        "specialty": [
+            "Hematology and Oncology"
+        ]
+    }
+}

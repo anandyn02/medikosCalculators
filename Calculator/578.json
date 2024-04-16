@@ -1,0 +1,226 @@
+{
+    "id": "578",
+    "title": "Canadian Syncope Risk Score",
+    "desc": "The Canadian Syncope Risk Score predicts 30-day serious adverse events in patients presenting with syncope.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/27378464/",
+                "text": "Thiruganasambandamoorthy V, Kwong K, Wells GA, et al. Development of the Canadian Syncope Risk Score to predict serious adverse events after emergency department assessment of syncope. CMAJ. 2016;188(12):E289-98."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p><strong>Category</strong></p>\n</td>\n<td>\n<p><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p><strong>Clinical evaluation</strong>&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Predisposition to vasovagal symptoms*</p>\n</td>\n<td>\n<p>-1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>History of heart disease</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Any systolic pressure reading &lt;90 or &gt;180 mmHg</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p><strong>Investigations</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Elevated troponin level (&gt;99th percentile of normal population)</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Abnormal QRS axis (&lt;-30&deg; or &gt;100&deg;)</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>QRS duration &gt;130 ms</p>\n</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p>Corrected QT interval &gt;480 ms</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p><strong>Diagnosis in emergency department</strong>&nbsp;</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p>ED diagnosis&nbsp;(based on ED evaluation)</p>\n</td>\n<td>\n<p>Vasovagal syncope</p>\n</td>\n<td>\n<p>-2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Cardiac&nbsp;syncope</p>\n</td>\n<td>\n<p>2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Neither</p>\n</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Triggered by being in a warm crowded place, prolonged standing, fear, emotion or pain.</p>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Score</strong></p>\n</td>\n<td>\n<p><strong>Estimated risk of serious adverse event**</strong></p>\n</td>\n<td>\n<p><strong>Risk category</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>-3</p>\n</td>\n<td>\n<p>0.4%</p>\n</td>\n<td rowspan=\"2\">\n<p>Very low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>-2</p>\n</td>\n<td>\n<p>0.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>-1</p>\n</td>\n<td>\n<p>1.2%</p>\n</td>\n<td rowspan=\"2\">\n<p>Low</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>0</p>\n</td>\n<td>\n<p>1.9%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>1</p>\n</td>\n<td>\n<p>3.1%</p>\n</td>\n<td rowspan=\"3\">\n<p>Medium</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>2</p>\n</td>\n<td>\n<p>5.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>3</p>\n</td>\n<td>\n<p>8.1%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>4</p>\n</td>\n<td>\n<p>12.9%</p>\n</td>\n<td rowspan=\"2\">\n<p>High</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>5</p>\n</td>\n<td>\n<p>19.7%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>6</p>\n</td>\n<td>\n<p>28.9%</p>\n</td>\n<td rowspan=\"6\">\n<p>Very high</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>7</p>\n</td>\n<td>\n<p>40.3%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>8</p>\n</td>\n<td>\n<p>52.8%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>9</p>\n</td>\n<td>\n<p>65.0%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>10</p>\n</td>\n<td>\n<p>75.5%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>11</p>\n</td>\n<td>\n<p>83.6%</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>**Death, arrhythmia, myocardial infarction, serious structural heart disease, aortic dissection, pulmonary embolism, severe pulmonary hypertension, severe hemorrhage, subarachnoid hemorrhage, or any other serious condition causing syncope and procedural interventions for the treatment of syncope.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Dizziness",
+            "Seizure",
+            "Syncope"
+        ],
+        "disease_treated": [
+            "Atrial Fibrillation",
+            "Myocardial Infarction",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar predis = parseFloat(predis);\nvar hx = parseFloat(hx);\nvar sys = parseFloat(sys);\nvar trop = parseFloat(trop);\nvar abn = parseFloat(abn);\nvar qrs = parseFloat(qrs);\nvar cqt = parseFloat(cqt);\nvar syncope = parseFloat(syncope);\n\n//calculation & interpretation\nvar est;\nvar risk;\n\nvar u = predis + hx + sys + trop + abn + qrs + cqt + syncope;\n\nvar assign ={'-3': 0.4, '-2': 0.7, '-1': 1.2, '0': 1.9, '1': 3.1, '2': 5.1, '3': 8.1, '4': 12.9, '5': 19.7, '6': 28.9, '7': 40.3, '8': 52.8, '9': 65.0, '10': 75.5, '11': 83.6};\n\nfor(var key in assign){\n    if (u == key){\n        est = assign[key];\n    }\n}\n\nif (u == -3 || u == -2){\n    risk = 'Very low';\n}else if(u == -1 || u == 0){\n    risk = 'Low';\n}else if(u >= 1 && u <= 3){\n    risk = 'Medium';\n }else if(u == 4 || u == 5){\n    risk = 'High';\n}else if(u >= 6){\n    risk = 'Very high';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '3951_Canadian Syncope Risk Score_result',\n    value: u,\n    value_text: 'points',\n    message: 'Canadian Syncope Risk Score'\n});\ncalc_output.push({\n    name: '3951_Canadian Syncope Risk Score_interpretation',\n    value: risk,\n    value_text: ' risk',\n    message: est + '% risk of 30-day serious adverse event (death, arrhythmia, MI — full list in Evidence)'\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Predisposition to vasovagal symptoms",
+                "md_calc_info_concept": null,
+                "name": "predis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Triggered by being in a warm crowded place, prolonged standing, fear, emotion, or pain",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Heart disease history",
+                "md_calc_info_concept": null,
+                "name": "hx",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "CAD, atrial fibrillation or flutter, CHF, valvular disease",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<abbr title='Systolic Blood Pressure'>sBP</abbr> <90 or >180 mmHg",
+                "md_calc_info_concept": null,
+                "name": "sys",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "On any reading",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Elevated troponin",
+                "md_calc_info_concept": null,
+                "name": "trop",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "&gt;99th percentile of normal population",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abnormal QRS axis",
+                "md_calc_info_concept": null,
+                "name": "abn",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "&lt;-30° or &gt;100°",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "QRS duration &gt;130 ms",
+                "md_calc_info_concept": null,
+                "name": "qrs",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<calculator id='48'>Corrected QT interval</calculator> >480 ms",
+                "md_calc_info_concept": null,
+                "name": "cqt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "ED diagnosis",
+                "mdcalc_info_concept": null,
+                "name": "syncope",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Vasovagal syncope",
+                        "value": -2
+                    },
+                    {
+                        "label": "Cardiac syncope",
+                        "value": 2
+                    },
+                    {
+                        "label": "Neither",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Based on ED evaluation",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Canadian Syncope Risk Score",
+            "Risk Stratification of Syncope in the Emergency Department",
+            "syncope",
+            "syncope score",
+            "fainting",
+            "vasovagal",
+            "LOC",
+            "stroke risk"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

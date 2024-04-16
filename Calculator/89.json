@@ -1,0 +1,138 @@
+{
+    "id": "89",
+    "title": "Stool Osmolar/Osmotic Gap",
+    "desc": "The Stool Osmolar/Osmotic Gap determines if chronic diarrhea is osmotic or secretory in nature.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1634072",
+                "text": "Eherer AJ, Fordtran JS. Fecal osmotic gap and pH in experimental diarrhea of various causes. Gastroenterology. 1992;103(2):545."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22917163",
+                "text": "Steffer KJ, Santa Ana CA, Cole JA, Fordtran JS. The practical value of comprehensive stool analysis in detecting the cause of idiopathic chronic diarrhea. Gastroenterol Clin North Am 2012;41:539-560"
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9370895",
+                "text": "Castro-Rodriguez JA, Differentiation of osmotic and secretory diarrhoea by stool carbohydrate and osmolar gap measurements.Arch Dis Child. 1997 Sep;77(3):201-5."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16855263",
+                "text": "Binder HJ, Causes of chronic diarrhea. N Engl J Med. 2006 Jul 20;355(3):236-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1583385",
+                "text": "Duncan A, Robertson C, Russell RI. The fecal osmotic gap: technical aspects regarding its calculation. J Lab Clin Med. 1992 Apr;119(4):359-63."
+            },
+            {
+                "href": "https://www.elsevier.com/books/sleisenger-and-fordtrans-gastrointestinal-and-liver-disease-2-volume-set/feldman/978-0-323-60962-3",
+                "text": "Schiller L, Sellin J. Diarrhea. In: Sleisenger MH, Feldman M, Friedman LS, Brandt LJ, eds. Sleisenger and Fordtran’s Gastrointestinal and Liver Disease: Pathophysiology, Diagnosis, Management. 9th ed. Philadelphia, Pa.: Saunders/Elsevier; 2010:211-232."
+            }
+        ],
+        "evidence": "<p>Stool Osmolal Gap = Stool Osm - (2 * (Na + K))<br>Stool Osmolal Gap = 290[mOsm/kg] - (2 * (Na + K))</p>",
+        "facts": "<ul>\n<li>Causes of osmotic diarrhea include:\n<ul>\n<li>Carbohydrate malabsorption\n<ul>\n<li>Lactose</li>\n<li>Fructose</li>\n</ul>\n</li>\n<li>Dietary (high FODMAP)</li>\n<li>Enteric feeding</li>\n<li>Osmotic laxatives\n<ul>\n<li>Mg+ based</li>\n<li>PEG</li>\n<li>Lactulose</li>\n</ul>\n</li>\n<li>Sorbitol ingestion</li>\n<li>Short gut syndrome</li>\n</ul>\n</li>\n<li>Causes of Secretory Diarrhea include:\n<ul>\n<li>Addison&rsquo;s disease</li>\n<li>Bile acid malabsorption</li>\n<li>Congenital electrolyte transport disorders</li>\n<li>Hyperthyroidism</li>\n<li>Stimulant laxatives (bisocodyl, senna)</li>\n<li>Small intestinal bacterial overgrowth</li>\n<li>Tumors (rare)\n<ul>\n<li>Carcinoid</li>\n<li>Lymphoma</li>\n<li>VIPoma</li>\n<li>Gastrinoma (Zollinger Ellison syndrome)</li>\n</ul>\n</li>\n<li>Whipple&rsquo;s disease</li>\n</ul>\n</li>\n<li>Fatty diarrhea / Malabsorption / steatorrhea usually has an osmolar gap &gt;50, but not invariably.</li>\n<li>Inflammatory and infectious diarrhea often have a low gap (&lt;50) but should generally be considered as distinct clinical entities.\n<ul>\n<li>Inflammatory/Infectious diarrhea are characterized by positive fecal leukocytes or other markers of inflammation in the gut like fecal calprotectin or stool lactoferrin. Very few causes in the secretory list should cause (+) fecal leukocytes.</li>\n<li>As an aside, infectious diarrhea is more often acute but exceptions include giardia, c.dif, e.histolytica, and parasites. These should all give (+) fecal leukocytes</li>\n</ul>\n</li>\n<li>Overlap between disorders with both osmotic and secretory components is common (ex. infection, celiac disease, motility disorders, and functional disorders like irritable bowel syndrome)</li>\n</ul>",
+        "estimation": [
+            {
+                "name": "Stool Osm",
+                "unit": "osm_stool",
+                "error_min": "200",
+                "error_max": "500",
+                "warn_min": "250",
+                "warn_max": "400",
+                "conversion": "1",
+                "normal_max_si": "300",
+                "normal_max_us": "300",
+                "normal_min_si": "275",
+                "normal_min_us": "275",
+                "units_si": "mmol/kg",
+                "units_us": "mOsm/kg"
+            },
+            {
+                "name": "Stool Sodium",
+                "unit": "na_stool",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "1",
+                "warn_max": "300",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            },
+            {
+                "name": "Stool Potassium",
+                "unit": "k_stool",
+                "error_min": "0",
+                "error_max": "1000",
+                "warn_min": "1",
+                "warn_max": "300",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            }
+        ],
+        "primary_complains": [
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Inflammatory Bowel Disease"
+        ],
+        "logic": "var calc_output = [];\n//no need for unit conversion, all 1:1\nvar v = parseFloat(stool_osm) - (2 * (parseFloat(stool_potassium) + parseFloat(stool_sodium)));\nvar msg = '';\nvar mini_msg = '';\nif (v > 100) { mini_msg = 'Osmotic Diarrhea';\n    msg = 'While definitions vary, some sources suggest a Stool Osmolar Gap > 100 as being a predominantly osmotic diarrhea.' }\nif (v <= 100) { mini_msg = 'Secretory Diarrhea';\n    msg = 'While definitions vary, some sources suggest a Stool Osmolar Gap \\u2264 100 as being a predominantly secretory diarrhea.' }\ncalc_output.push({ \n    name: 'mini', \n    value: v.toFixed(0), \n    value_text: 'mOsm/kg', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '101_Stool Osmolar Gap_result', \n    value: v.toFixed(0), \n    value_text: 'mOsm/kg', \n    message: msg \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Stool sodium",
+                "name": "stool_sodium",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na_stool"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Stool potassium",
+                "name": "stool_potassium",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "k_stool"
+            },
+            {
+                "conditionality": "",
+                "default": 290,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Stool Osm",
+                "name": "stool_osm",
+                "optional": false,
+                "tips_en": "Stool osmolarity is assumed to be equal to normal serum osmolarity of 290 mOsm/kg",
+                "type": "textbox",
+                "unit": "osm_stool"
+            }
+        ],
+        "can_search": [
+            "diarrhea"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine"
+        ]
+    }
+}

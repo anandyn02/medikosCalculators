@@ -1,0 +1,122 @@
+{
+    "id": "341",
+    "title": "Shock Index",
+    "desc": "The Shock Index indicates level of occult shock, especially in trauma or acute hemorrhage, based on heart rate and systolic blood pressure.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.thieme-connect.com/DOI/DOI?10.1055/s-0028-1106070",
+                "text": "Allgöwer M, Burri C. The “shock-index”. Dtsch med Wochenschr 1967; 92(43): 1947-1950. DOI: 10.1055/s-0028-1106070"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23911630",
+                "text": "Heffner AC, Swords DS, Neale MN, Jones AE. Incidence and factors associated with cardiac arrest complicating emergency airway management. Resuscitation. 2013;84(11):1500–1504."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3628475/",
+                "text": "Berger T, Green J, Horeczko T, et al. Shock Index and Early Recognition of Sepsis in the Emergency Department: Pilot Study. WestJEM. 2013;14(2):168–174."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24635773 ",
+                "text": "ProCESS Investigators, Yealy DM, Kellum JA, et al. A randomized trial of protocol-based care for early septic shock. N Engl J Med. 2014;370(18):1683–1693."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25638631",
+                "text": "Acker SN, Ross JT, Partrick DA, Tong S, Bensard DD. Pediatric specific shock index accurately identifies severely injured children. J Pediatr Surg. 2015;50(2):331-4."
+            },
+            {
+                "href": "https://www.injuryjournal.com/article/S0020-1383(17)30625-3/pdf",
+                "text": "Schroll R, Swift D, Tatum D, et al. Accuracy of shock index versus ABC score to predict need for massive transfusion in trauma patients. Injury. 2018;49(1):15-19."
+            },
+            {
+                "href": "https://emj.bmj.com/content/36/5/293",
+                "text": "Al Jalbout N, Balhara KS, Hamade B, Hsieh YH, Kelen GD, Bayram JD. Shock index as a predictor of hospital admission and inpatient mortality in a US national database of emergency departments. Emerg Med J. 2019;36(5):293-297."
+            }
+        ],
+        "evidence": "<p>Shock Index = HR/SBP</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Systolic BP",
+                "unit": "sbp",
+                "error_min": "30",
+                "error_max": "300",
+                "warn_min": "40",
+                "warn_max": "250",
+                "conversion": "1",
+                "normal_max_si": "120",
+                "normal_max_us": "120",
+                "normal_min_si": "100",
+                "normal_min_us": "100",
+                "units_si": "mm Hg",
+                "units_us": "mm Hg"
+            },
+            {
+                "name": "Heart Rate/Pulse",
+                "unit": "hr",
+                "error_min": "10",
+                "error_max": "300",
+                "warn_min": "20",
+                "warn_max": "200",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "beats/min",
+                "units_us": "beats/min"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Injury/Trauma"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Bleeding/Hemorrhage",
+            "Trauma"
+        ],
+        "logic": "var calc_output=[]; \nvar u=parseInt(heart_rate)/parseInt(systolic_blood_pressure); \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(1),\n    value_text:' ',\n    message:'Shock Index'\n}); \ncalc_output.push({\n    name:'1316_Shock Index_result',\n    value:u.toFixed(1),\n    value_text:' ',\n    message:'0.5-0.7 is believed to be a normal shock index. Higher numbers have been shown to be more sensitive than vital signs alone in diagnosing occult shock, need for transfusion and/or operation.'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Heart Rate/Pulse",
+                "name": "heart_rate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Systolic BP",
+                "name": "systolic_blood_pressure",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "sbp"
+            }
+        ],
+        "can_search": [
+            "trauma",
+            "hemorrhage",
+            "occult"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)",
+            "Surgery (Trauma)"
+        ]
+    }
+}

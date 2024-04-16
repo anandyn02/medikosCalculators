@@ -1,0 +1,173 @@
+{
+    "id": "671",
+    "title": "Pregnancy Due Dates Calculator",
+    "desc": "The Pregnancy Due Dates Calculator Calculates pregnancy dates, forward from last period or backward from due date.",
+    "data": {
+        "orgreference": [],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26171896",
+                "text": "Whitworth M, Bricker L, Mullan C. Ultrasound for fetal assessment in early pregnancy. Cochrane Database Syst Rev. 2015;(7):CD007058."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9579429",
+                "text": "Chervenak FA, Skupski DW, Romero R, et al: How accurate is fetal biometry in the assessment of fetal age? Am J Obstet Gynecol 1998; 178:678."
+            }
+        ],
+        "evidence": "<p><img src=\"https://cdn-web-img.mdcalc.com/content/PDD2.png\" style=\"width: 100%;\"><br><br>Estimated gestational age (EGA) = time since 1<sup>st</sup>&nbsp;day of last menstrual period (LMP)</p>\n<p>Estimated date of conception (EDC) =&nbsp;two weeks* since 1<sup>st</sup>&nbsp;day of LMP</p>\n<p>Estimated due date (EDD) = 1<sup>st</sup> day of LMP + 40 weeks* (Naegele's Rule)</p>\n<p>*Assumes 28 day cycle. If cycle is longer than 28 days, this calculator adds the number of days more than 28 to obtain EDD. Example: if cycle length is 35 days, add 7 days (= 35 &ndash; 28) to 40 weeks.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "cyclelength",
+                "unit": "cyclelength",
+                "error_min": "7",
+                "error_max": "63",
+                "warn_min": "7",
+                "warn_max": "63",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "days",
+                "units_us": "days"
+            },
+            {
+                "name": "",
+                "unit": "date",
+                "error_min": "0",
+                "error_max": "0",
+                "warn_min": "0",
+                "warn_max": "0",
+                "conversion": "",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "",
+                "units_us": "undefined"
+            },
+            {
+                "name": "",
+                "unit": "gestational_age",
+                "error_min": "0",
+                "error_max": "0",
+                "warn_min": "0",
+                "warn_max": "0",
+                "conversion": "",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "",
+                "units_us": "undefined"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Pregnancy"
+        ],
+        "logic": "var calc_output = [];\ndate_type = parseInt(date_type);\nvar cyclelength = parseFloat(cyclelength) - 28;\n\nvar weekday = [\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\"];\n\nvar months = [ 'Jan',\n  'Feb',\n  'Mar',\n  'Apr',\n  'May',\n  'Jun',\n  'Jul',\n  'Aug',\n  'Sept',\n  'Oct',\n  'Nov',\n  'Dec'];\n\n\nvar ONE_DAY = 1000 * 60 * 60 * 24;\n\nfunction wksndays(date1, date2) {\n    var date1_ms = date1.getTime();\n    var date2_ms = date2.getTime();\n    var difference_ms = date1_ms - date2_ms;\n    var days = Math.floor(difference_ms / ONE_DAY);\n    var weeks = Math.floor(days / 7);\n    var remainder = days - 7 * weeks;\n    return [weeks, remainder, days];\n}\n\nfunction formatDate(date) {\n    var d = new Date(date.getTime());\n    return weekday[d.getUTCDay()] + \", \" + (months[d.getUTCMonth()]) + \" \" + d.getUTCDate() + \", \" + d.getUTCFullYear();\n}\n\nswitch (date_type) {\n\n    // LMP Selected\n    case 0:\n        // Current Gestational Age\n        var LMP = wksndays(new Date(), new Date(date));\n        calc_output.push({\n            name: 'mini',\n            value: ' ',\n            value_text: ' ',\n            message: 'Gestational age: ' + LMP[0] + ' weeks and ' + LMP[1] + ' days'\n        });\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (GA)\",\n            value: \"Gestational age\",\n            value_text: ' ',\n            message: LMP[0] + ' weeks & ' + LMP[1] + ' days'\n        });\n\n        // Due Date\n        var due = new Date((280+cyclelength)* ONE_DAY + new Date(date).getTime());\n        due = formatDate(due);\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (due date)\",\n            value: \"Due date\",\n            value_text: ' ',\n            message: due\n        });\n\n        // Date of Conception\n        var doc = new Date(14 * ONE_DAY + new Date(date).getTime());\n        doc = formatDate(doc);\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (conception)\",\n            value: \"Date of conception\",\n            value_text: ' ',\n            message: doc\n        });\n        break;\n\n\n        // EGA Selected\n    case 1:\n\n        var parsed = {};\n        var weeks = 0;\n        var days = 0;\n\n        if (date.split(\"w\").length > 1) {\n            weeks = parseInt(date.split(\"w\")[0]);\n            date = date.split(\"w\")[1];\n        }\n        if (date.split(\"d\").length > 1) {\n            days = parseInt(date.split(\"d\")[0]);\n        }\n\n        var daysRemaining = (280+cyclelength) - (7 * weeks) - days;\n        var dueDate = new Date(new Date().getTime() + (daysRemaining * ONE_DAY));\n        dueDate = formatDate(dueDate);\n\n        calc_output.push({\n            name: 'mini',\n            value: ' ',\n            value_text: ' ',\n            message: 'Due date: ' + dueDate\n        });\n\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (due date)\",\n            value: \"Due date\",\n            value_text: ' ',\n            message: dueDate\n        });\n\n        var totalDays = (7 * weeks) + days;\n        var LMP = new Date(new Date().getTime() - (totalDays * ONE_DAY));\n        LMP = formatDate(LMP);\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (LMP)\",\n            value: \"Last menstrual period\",\n            value_text: ' ',\n            message: LMP\n        });\n\n        var DOC = new Date(new Date().getTime() - (totalDays * ONE_DAY) + (14 * ONE_DAY));\n        DOC = formatDate(DOC);\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (conception)\",\n            value: \"Date of conception\",\n            value_text: ' ',\n            message: DOC\n        });\n        break;\n\n        //EDD selected\n    case 2:\n\n        var GA = new Date(new Date(date).getTime() - (ONE_DAY * (280+cyclelength)));\n        var DD = wksndays(new Date(), new Date(GA));\n\n        calc_output.push({\n            name: 'mini',\n            value: ' ',\n            value_text: ' ',\n            message: 'Gestational age: ' + DD[0] + ' weeks and ' + DD[1] + ' days'\n        });\n\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (GA)\",\n            value: \"Gestational age\",\n            value_text: ' ',\n            message: DD[0] + ' weeks and ' + DD[1] + ' days'\n        });\n\n        var formattedLMP = formatDate(GA);\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (LMP)\",\n            value: \"Last menstrual period\",\n            value_text: ' ',\n            message: formattedLMP\n        });\n\n        var DOC = new Date(new Date(date).getTime() - (ONE_DAY * (280+cyclelength)) + (ONE_DAY * 14));\n        var formattedDOC = formatDate(DOC);\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (conception)\",\n            value: \"Date of conception\",\n            value_text: ' ',\n            message: formattedDOC\n        });\n        break;\n\n        // EGA 2 Selected\n    case 3:\n\n       var parsed = {};\n        var weeks = 0;\n        var days = 0;\n\n        if (date.split(\"w\").length > 1) {\n            weeks = parseInt(date.split(\"w\")[0]);\n            date = date.split(\"w\")[1];\n        }\n        if (date.split(\"d\").length > 1) {\n            days = parseInt(date.split(\"d\")[0]);\n        }\n\n        var daysRemaining = (280+cyclelength) - (7 * weeks) - days;\n        var dueDate = new Date(new Date(date2).getTime() + (daysRemaining * ONE_DAY));\n        dueDate = formatDate(dueDate);\n\n        var placeholder = wksndays(new Date(), new Date(date2));\n        var ga_weeks = placeholder[0] + weeks;\n        var ga_days = placeholder[1] + days;\n\n        calc_output.push({\n            name: 'mini',\n            value: ' ',\n            value_text: ' ',\n            message: 'Due date: ' + dueDate\n        });\n\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (due date)\",\n            value: \"Due date\",\n            value_text: ' ',\n            message: dueDate + ' (EGA as of today is ' + ga_weeks + ' weeks and ' + ga_days + ' days)'\n        });\n\n        var totalDays = (7 * weeks) + days;\n        var LMP = new Date(new Date(date2).getTime() - (totalDays * ONE_DAY));\n        LMP = formatDate(LMP);\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (LMP)\",\n            value: \"Last menstrual period\",\n            value_text: ' ',\n            message: LMP\n        });\n\n        var DOC = new Date(new Date(date2).getTime() - (totalDays * ONE_DAY) + (14 * ONE_DAY));\n        DOC = formatDate(DOC);\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (conception)\",\n            value: \"Date of conception\",\n            value_text: ' ',\n            message: DOC\n        });\n        break;\n\n        //EDC Selected\n    case 4:\n\n        var GA = new Date(new Date(date).getTime() - (ONE_DAY * 14));\n        var DD = wksndays(new Date(), new Date(GA));\n\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (GA)\",\n            value: \"Gestational age\",\n            value_text: ' ',\n            message: DD[0] + ' weeks and ' + DD[1] + ' days'\n        });\n\n        var formattedLMP = formatDate(GA);\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (LMP)\",\n            value: \"Last menstrual period\",\n            value_text: ' ',\n            message: formattedLMP\n        });\n\n        var DOC = new Date(new Date(date).getTime() - (ONE_DAY * 14) + (ONE_DAY * (280+cyclelength)));\n        var formattedDOC = formatDate(DOC);\n        calc_output.push({\n            name: \"423_Pregnancy Due Dates_result (due date)\",\n            value: \"Due date\",\n            value_text: ' ',\n            message: formattedDOC\n        });\n        calc_output.push({\n            name: 'mini',\n            value: ' ',\n            value_text: ' ',\n            message: 'Due date: ' + formattedDOC\n        });        \n        break;\n\n    default:\n        console.log(error);\n}\n\n\n// Input validations.\nif ((date_type == 0) && (isNaN(LMP[0]) || isNaN[LMP[1]])) {\n    calc_output = [];\n    calc_output.push({\n        name: \"mini\",\n        message: \"Please enter the correct format.\"\n    });\n    calc_output.push({\n        message: \"Please enter the correct format.\"\n    });\n}\n\n\nif ((date_type == 0 || date_type == 1) && (new Date(date) > new Date())) {\n    calc_output = [];\n    calc_output.push({\n        name: \"mini\",\n        message: \"Date cannot be in the future.\"\n    });\n    calc_output.push({\n        message: \"Date cannot be in the future.\"\n    });\n}\n\nvar datePlus21 = new Date(new Date(date).valueOf() + (21*ONE_DAY));\n\nif ((date_type == 2) && (new Date() > datePlus21)) {\n    calc_output = [];\n    calc_output.push({\n        name: \"mini\",\n        message: \"Date cannot be in the past.\"\n    });\n    calc_output.push({\n        message: \"Date cannot be in the past.\"\n    });\n}\n\nvar outOfRange = new Date(new Date().getTime() - ((294+cyclelength)* ONE_DAY) + 14);\nif ((date_type == 0) && (new Date(date) <= outOfRange)) {\n    calc_output = [];\n    calc_output.push({\n        name: \"mini\",\n        message: \"N/A (date out of range)\"\n    });\n    calc_output.push({\n        message: \"N/A (date out of range)\"\n    });\n}\n\nif ((date_type == 1) && (((weeks * 7) + days) > 300)) {\n    calc_output = [];\n    calc_output.push({\n        name: \"mini\",\n        message: \"N/A (date out of range)\"\n    });\n    calc_output.push({\n        message: \"N/A (date out of range)\"\n    });\n}\n\nif ((date_type == 1) && (date.indexOf('d') == -1) && (date.indexOf('w') == -1)) {\n    calc_output = [];\n    calc_output.push({\n        name: \"mini\",\n        message: \"For results based on CGA, please enter dates in the week-day format, e.g.: 7w3d\"\n    });\n    calc_output.push({\n        message: \"For results based on CGA, please enter dates in the week-day format, e.g.: 7w3d\"\n    });\n}\n\nvar outOfRange2 = new Date(new Date().getTime() + 14*ONE_DAY);\nif (date_type == 4 && (new Date(date) > outOfRange2)) {\n  calc_output = [];\n    calc_output.push({\n        name: \"mini\",\n        message: \"N/A (date of conception is in the future)\"\n    });\n    calc_output.push({\n        message: \"N/A (date of conception is in the future)\"\n    });\n}\n\nvar outOfRange3 = new Date().getTime() - new Date(date).getTime();\nif (date_type == 4 && (outOfRange3 > 302*ONE_DAY)) {\n  calc_output = [];\n    calc_output.push({\n        name: \"mini\",\n        message: \"N/A (date of conception is out of range)\"\n    });\n    calc_output.push({\n        message: \"N/A (date of conception is out of range)\"\n    });\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 28,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Cycle length",
+                "name": "cyclelength",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cyclelength"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Dates to enter",
+                "mdcalc_info_concept": null,
+                "name": "date_type",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Last menstrual period",
+                        "value": 0
+                    },
+                    {
+                        "label": "Estimated gestational age (EGA) as of today",
+                        "value": 1
+                    },
+                    {
+                        "label": "EGA as of another date",
+                        "value": 3
+                    },
+                    {
+                        "label": "Estimated date of conception",
+                        "value": 4
+                    },
+                    {
+                        "label": "Estimated due date",
+                        "value": 2
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "\"Last menstrual period\" should be first day of LMP; EGA on other date can be taken from a past ultrasound",
+                "type": "radio"
+            },
+            {
+                "conditionality": "date_type == 0 || date_type == 2 || date_type == 4",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Date",
+                "name": "date",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "date"
+            },
+            {
+                "conditionality": "date_type == 3",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Date of EGA (e.g. date of ultrasound)",
+                "name": "date2",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "date"
+            },
+            {
+                "conditionality": "date_type == 1 || date_type == 3",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "EGA",
+                "name": "gestational_age",
+                "optional": false,
+                "tips_en": "Format: e.g. 7w3d",
+                "type": "textbox",
+                "unit": "gestational_age"
+            }
+        ],
+        "can_search": [
+            "preggers",
+            "edd",
+            "preg wheel",
+            "pregnancy wheel",
+            "edc",
+            "pregnant"
+        ],
+        "specialty": [
+            "Emergency Medicine",
+            "Family Practice",
+            "OB-Gyn",
+            "Pediatrics",
+            "Primary Care"
+        ]
+    }
+}

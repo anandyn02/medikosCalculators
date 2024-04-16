@@ -1,0 +1,333 @@
+{
+    "id": "61",
+    "title": "Harvey-Bradshaw Index (HBI) for Crohn's Disease",
+    "desc": "The Harvey-Bradshaw Index (HBI) stratifies severity of Crohn's disease.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6102236",
+                "text": "Harvey RF, Bradshaw JM. A simple index of Crohn's-disease activity. Lancet. 1980;1(8167):514."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmedhealth/PMH0068978/ ",
+                "text": "National Clinical Guideline Centre (UK). Crohn's Disease: Management in Adults, Children and Young People. London: Royal College of Physicians (UK); 2012 Oct 10."
+            },
+            {
+                "href": "https://www.sciencedirect.com/science/article/pii/S1542356515007879",
+                "text": "Peyrin-Biroulet L, Panés J, Sandborn WJ, et al. Defining Disease Severity in Inflammatory Bowel Diseases: Current and Future Directions. Clin Gastroenterol Hepatol. 2016;14(3):348-354.e17."
+            }
+        ],
+        "evidence": "<p><span id=\"docs-internal-guid-091bc530-d81c-1927-7252-4b333a737aab\"><span id=\"docs-internal-guid-2165fc3c-d81c-a3c4-843d-a15daf7f2d4d\">Addition of selected points:<br /></p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"151\" /><col width=\"151\" /><col width=\"67\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Input</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Options</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">General well-being*</p>\n</td>\n<td>\n<p dir=\"ltr\">Very well</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Slightly below par</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Poor</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Very poor</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Terrible</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Abdominal pain*</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Mild</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Number of liquid/soft stools*</p>\n</td>\n<td>\n<p dir=\"ltr\">1 per stool</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"4\">\n<p dir=\"ltr\">Abdominal mass</p>\n</td>\n<td>\n<p dir=\"ltr\">None</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Dubious</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Definite</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Definite and tender</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Complications</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Arthralgia</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Uveitis</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Erythema nodosum</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Aphthous ulcers</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Pyoderma gangrenosum</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Anal fissures</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">New fistula</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\">Abscess</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*For the previous day, as reported by the patient.&nbsp;</p>\n</div>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"160\" /><col width=\"160\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Harvey-Bradshaw Index</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Severity</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;5</p>\n</td>\n<td>\n<p dir=\"ltr\">Remission</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">5-7</p>\n</td>\n<td>\n<p dir=\"ltr\">Mild disease</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">8-16</p>\n</td>\n<td>\n<p dir=\"ltr\">Moderate disease</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;16</p>\n</td>\n<td>\n<p dir=\"ltr\">Severe disease</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>From <a href=\"https://www.sciencedirect.com/science/article/pii/S1542356515007879\" target=\"_blank\">Peyrin-Biroulet 2016</a>.</p>\n</div>",
+        "estimation": [
+            {
+                "name": "Stools",
+                "unit": "stools",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "60",
+                "conversion": "1",
+                "normal_max_si": "2",
+                "normal_max_us": "2",
+                "normal_min_si": "0.5",
+                "normal_min_us": "0.5",
+                "units_si": "stools",
+                "units_us": "stools"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Mass",
+            "Arthralgia",
+            "Mass",
+            "Fever",
+            "Diarrhea",
+            "Abdominal Pain"
+        ],
+        "disease_treated": [
+            "Inflammatory Bowel Disease",
+            "Crohn's Disease"
+        ],
+        "logic": "var calc_output = [];\n\nvar wellbeing = parseFloat(wellbeing);\nvar abpain = parseFloat(abpain);\nvar stools = parseFloat(stools);\nvar mass = parseFloat(mass);\nvar comp1 = parseFloat(comp1);\nvar comp2 = parseFloat(comp2);\nvar comp3 = parseFloat(comp3);\nvar comp4 = parseFloat(comp4);\nvar comp5 = parseFloat(comp5);\nvar comp6 = parseFloat(comp6);\nvar comp7 = parseFloat(comp7);\nvar comp8 = parseFloat(comp8);\n\nvar score = wellbeing + abpain + stools + mass + comp1 + comp2 + comp3 + comp4 + comp5 + comp6 + comp7 + comp8;\n\nvar index; \n\n\nif (score <5) {\n    index = 'Remission';\n}    \nelse if (score >= 5 && score <=7) { \n    index = 'Mild disease';\n}\nelse if (score >= 8 && score <=16) { \n    index = 'Moderate disease';\n}\nelse {\n    index = 'Severe disease';\n}\n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: index \n    });\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'Harvey-Bradshaw Index'\n    });\ncalc_output.push({\n    name: 'Index',\n    value: index, \n    value_text: '',\n    message: ''\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "General well-being",
+                "name": "wellbeing",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Very well",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slightly below par",
+                        "value": 1
+                    },
+                    {
+                        "label": "Poor",
+                        "value": 2
+                    },
+                    {
+                        "label": "Very poor",
+                        "value": 3
+                    },
+                    {
+                        "label": "Terrible",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "For the previous day, as reported by the patient",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abdominal pain",
+                "name": "abpain",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "For the previous day, as reported by the patient",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Number of liquid/soft stools",
+                "name": "stools",
+                "optional": false,
+                "tips_en": "For the previous day, as reported by the patient",
+                "type": "textbox",
+                "unit": "stools"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abdominal mass",
+                "name": "mass",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Dubious",
+                        "value": 1
+                    },
+                    {
+                        "label": "Definite",
+                        "value": 2
+                    },
+                    {
+                        "label": "Definite and tender",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Complications",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Arthralgia",
+                "name": "comp1",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Uveitis",
+                "name": "comp2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Erythema nodosum",
+                "name": "comp3",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Aphthous ulcers",
+                "name": "comp4",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pyoderma gangrenosum",
+                "name": "comp5",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anal fissures",
+                "name": "comp6",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "New fistula",
+                "name": "comp7",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abscess",
+                "name": "comp8",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Harvey bradshaw index",
+            "HBI",
+            "CD",
+            "crohns disease",
+            "Crohn's disease",
+            "abdominal mass",
+            "Crohn's disease activity index",
+            "CDAI"
+        ],
+        "specialty": [
+            "Gastroenterology"
+        ]
+    }
+}

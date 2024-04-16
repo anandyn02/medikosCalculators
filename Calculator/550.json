@@ -1,0 +1,310 @@
+{
+    "id": "550",
+    "title": "SMART-COP Score for Pneumonia Severity",
+    "desc": "The SMART-COP Score for Pneumonia Severity predicts need for intensive respiratory or vasopressor support in community-acquired pneumonia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18558884 ",
+                "text": "Charles PG, Wolfe R, Whitby M, et al. SMART-COP: a tool for predicting the need for intensive respiratory or vasopressor support in community-acquired pneumonia. Clin Infect Dis. 2008;47(3):375-84."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26393850 ",
+                "text": "Valley TS, Sjoding MW, Ryan AM, Iwashyna TJ, Cooke CR. Association of Intensive Care Unit Admission With Mortality Among Older Patients With Pneumonia. JAMA. 2015;314(12):1272-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3021366/ ",
+                "text": "Restrepo MI, Mortensen EM, Rello J, Brody J, Anzueto A. Late admission to the ICU in patients with community-acquired pneumonia is associated with higher mortality. Chest. 2010;137(3):552-7."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n<td>\n<p><strong>2 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>S</strong><strong>ystolic BP &lt;90</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>M</strong><strong>ultilobar CXR involvement</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>A</strong><strong>lbumin &lt;3.5 g/dL</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>R</strong><strong>espiratory rate</strong></p>\n</td>\n<td>\n<p>&lt;25, if age &le;50</p>\n<p>&lt;30, if age &gt;50</p>\n</td>\n<td>\n<p>&ge;25, if age &le;50</p>\n<p>&ge;30, if age &gt;50</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Tachycardia &ge;125</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>C</strong><strong>onfusion (new onset)</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n<td>\n<p>--</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>O</strong><strong>xygen low</strong></p>\n</td>\n<td>\n<p>PaO2 &ge;60 (or SaO2 &gt;90% or P/F ratio &ge;250), if age &gt;50</p>\n<p>PaO2 &ge;70 (or SaO2 &gt;93% or P/F ratio &ge;333), if age &le;50</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>PaO2 &lt;60 (or SaO2 &le;90% or P/F ratio &lt;250), if age &gt;50</p>\n<p>PaO2 &lt;70 (or SaO2 &le;93% or P/F ratio &lt;333), if age &le;50</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Arterial </strong><strong>p</strong><strong>H &lt;7.35</strong></p>\n</td>\n<td>\n<p>No</p>\n</td>\n<td>\n<p>--</p>\n</td>\n<td>\n<p>Yes</p>\n</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>SMART-COP Score</strong></p>\n</td>\n<td>\n<p><strong>Risk Group</strong></p>\n</td>\n<td>\n<p><strong>Risk* </strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>0&ndash;2</strong></p>\n</td>\n<td>\n<p>Low</p>\n</td>\n<td>\n<p>Minimal</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>3&ndash;4</strong></p>\n</td>\n<td>\n<p>Moderate</p>\n</td>\n<td>\n<p>1 in 8</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>5&ndash;6</strong></p>\n</td>\n<td>\n<p>High</p>\n<p>Consider ICU admission</p>\n</td>\n<td>\n<p>1 in 3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>&ge;7</strong></p>\n</td>\n<td>\n<p>Very high</p>\n<p>Consider ICU admission</p>\n</td>\n<td>\n<p>2 in 3</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>*Of requiring intensive respiratory or vasopressor support (IRVS).</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Cough",
+            "Dyspnea",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "Pneumonia",
+            "Respiratory Distress"
+        ],
+        "logic": "var calc_output = [];\n\nvar sbp = parseFloat(sbp);\nvar cxr = parseFloat(cxr);\nvar albumin = parseFloat(albumin);\nvar hr = parseFloat(hr);\nvar confusion = parseFloat(confusion);\nvar ph = parseFloat(ph);\n\n\nvar age = parseFloat(age);\nvar u, pri_u;\n\nif (age == \"0\") {\n    // var rr25 = parseFloat(rr25) ? 1 : 0;\n   // var oxygen70 = parseFloat(oxygen70) ? 1 : 0;\n    var rr25 = parseFloat(rr25);\n    var oxygen70 = parseFloat(oxygen70);\n    u = sbp + cxr + albumin + hr + confusion + ph + rr25 + oxygen70; \n    pri_u = sbp + cxr + hr + confusion + rr25;   \n}\nif (age == \"1\") {\n    // var rr30 = parseFloat(rr30) ? 1 : 0;\n    // var oxygen60 = parseFloat(oxygen60) ? 1 : 0;\n    var rr30 = parseFloat(rr30);\n    var oxygen60 = parseFloat(oxygen60);\n    u = sbp + cxr + albumin + hr + confusion + ph + rr30 + oxygen60;\n    pri_u = sbp + cxr + hr + confusion + rr30; \n}\n\n//interpretation\nvar msg, risk;\nvar add = '';\nif (u <= 2) {\n    msg = 'Low';\n    risk = 'Minimal';\n}else if (u == 3 || u == 4) {\n    msg = 'Moderate';\n    risk = '1 in 8';\n}else if (u == 5 || u == 6) {\n    msg = 'High';\n    add = 'Consider ICU admission.';\n    risk = '1 in 3';\n}else { //if (u >= 7) \n    msg = 'Very high';\n    add = 'Consider ICU admission.';\n    risk = '2 in 3';\n}\n\n//primary care interpretation\nvar pri_msg, pri_risk;\nif (pri_u == 0) {\n    pri_msg = 'Very low';\n    pri_risk = 'Minimal';\n}else if (pri_u == 1) {\n    pri_msg = 'Low';\n    pri_risk = '1 in 20';\n}else if (pri_u == 2) {\n    pri_msg = 'Moderate';\n    pri_risk = '1 in 10';\n}else if (pri_u == 3) {\n    pri_msg = 'High';\n    pri_risk = '1 in 6';\n}else {  //if (u >= 4) \n    pri_msg = 'High';\n    pri_risk = '1 in 3';\n}\n\ncalc_output.push({ \n    name: 'mini',\n    value: u, \n    value_text: 'points', \n    message: msg + ' risk' \n});\ncalc_output.push({ \n    name: '3914_SMART-COP Score_result', \n    value: u, \n    value_text: 'points', \n    message: 'SMART-COP Score'\n});\ncalc_output.push({ \n    name: '3914_SMART-COP Score_interpretation', \n    value: msg, \n    value_text: 'risk ', \n    message: risk + ' risk of IRVS. ' + add\n});\n\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age (years)</p>",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤50",
+                        "value": 0
+                    },
+                    {
+                        "label": ">50",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age == 0 || age == 1",
+                "default": 0,
+                "label_en": "<p>Multi-lobar involvement on chest x-ray</p>",
+                "md_calc_info_concept": null,
+                "name": "cxr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 0 || age == 1",
+                "default": 0,
+                "label_en": "<p>Albumin &lt;3.5 g/dL (35 g/L)</p>",
+                "md_calc_info_concept": null,
+                "name": "albumin",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 0",
+                "default": 0,
+                "label_en": "<p>Respiratory rate &ge;25</p>",
+                "md_calc_info_concept": null,
+                "name": "rr25",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 1",
+                "default": 0,
+                "label_en": "<p>Respiratory rate &ge;30</p>",
+                "md_calc_info_concept": null,
+                "name": "rr30",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 0 || age == 1",
+                "default": 0,
+                "label_en": "<p>Tachycardia &ge;125</p>",
+                "md_calc_info_concept": null,
+                "name": "hr",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 0 || age == 1",
+                "default": 0,
+                "label_en": "<p>Confusion (new onset)</p>",
+                "md_calc_info_concept": null,
+                "name": "confusion",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 1",
+                "default": 0,
+                "label_en": "<p>PaO₂ &lt;60 mmHg, SaO₂ &le;90%, or PaO₂/FiO₂ &lt;250</p>",
+                "md_calc_info_concept": null,
+                "name": "oxygen60",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 0",
+                "default": 0,
+                "label_en": "<p>PaO₂ &lt;70 mmHg, SaO₂ &le;93%, or PaO₂/FiO₂ &lt;333</p>",
+                "md_calc_info_concept": null,
+                "name": "oxygen70",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 0 || age == 1",
+                "default": 0,
+                "label_en": "<p>pH &lt;7.35</p>",
+                "md_calc_info_concept": null,
+                "name": "ph",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "age == 0 || age == 1",
+                "default": 0,
+                "label_en": "<p><abbr title=\"Systolic Blood Pressure\">sBP</abbr> &lt;90 mmHg</p>",
+                "md_calc_info_concept": null,
+                "name": "sbp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "pna",
+            "smrtco",
+            "smartcop",
+            "SMART",
+            "COP",
+            "CAP",
+            "pneumonia",
+            "prognosis",
+            "cough",
+            "shortness of breath",
+            "pna",
+            "covid",
+            "covid-19",
+            "coronavirus",
+            "covid 19",
+            "covid19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

@@ -1,0 +1,139 @@
+{
+    "id": "99",
+    "title": "Thoracolumbar Injury Classification and Severity Scale (TLICS)",
+    "desc": "The Thoracolumbar Injury Classification and Severity Scale (TLICS) classifies thoracolumbar spine injury and provides treatment recommendations.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://link.springer.com/article/10.1007/s00776-005-0956-y",
+                "text": "Lee JY, Vaccaro AR, Lim MR, et al. Thoracolumbar injury classification and severity score: a new paradigm for the treatment of thoracolumbar spine trauma. J Orthop Sci. 2005;10(6):671-5."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"207\" /><col width=\"182\" /><col width=\"60\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Morphology</p>\n</td>\n<td>\n<p dir=\"ltr\">Compression fracture</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Burst fracture</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Translational/rotational</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Distraction</p>\n</td>\n<td>\n<p dir=\"ltr\">4</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">None of the above</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"5\">\n<p dir=\"ltr\">Neurologic involvement</p>\n</td>\n<td>\n<p dir=\"ltr\">Intact</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Nerve root</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Complete cord</p>\n</td>\n<td>2</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Incomplete cord</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Cauda equina</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Posterior ligamentous complex</p>\n</td>\n<td>\n<p dir=\"ltr\">Intact</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Injury suspected or indeterminate</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Injured</p>\n</td>\n<td>\n<p dir=\"ltr\">3</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-389010e1-7fff-b3ed-22ba-fc69f04d8f59\"></span><span id=\"docs-internal-guid-389010e1-7fff-b3ed-22ba-fc69f04d8f59\"><br /></span></p>",
+        "facts": "<p dir=\"ltr\">Interpretation:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"99\" /><col width=\"349\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>TLICS</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Management</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">0-3 points</p>\n</td>\n<td>\n<p dir=\"ltr\">Non-operative (recommend bracing)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">4 points</p>\n</td>\n<td>\n<p dir=\"ltr\">Non-operative or operative</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;5 points</p>\n</td>\n<td>\n<p dir=\"ltr\">Operative (stabilization with or without fracture reduction as appropriate)</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-5b9e4d5f-7fff-ef2f-5598-6c466339041e\"></span><span id=\"docs-internal-guid-5b9e4d5f-7fff-ef2f-5598-6c466339041e\"><br /></span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Back Pain",
+            "Injury/Trauma",
+            "Neurologic Deficit"
+        ],
+        "disease_treated": [
+            "Acute Pain",
+            "Fracture",
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\nvar pos = parseFloat(pos);\nvar neuro = parseFloat(neuro);\nvar morph = parseFloat(morph);\n\nvar score = pos + neuro + morph;\n\nvar rec, msg;\n\nif (score >= 0 && score <= 3) {\n  rec = 'Non-operative';\n  msg = 'Recommend bracing';\n} else if (score == 4) {\n  rec = 'Non-operative or operative';\n  msg = '';\n} else {\n  rec = 'Operative';\n  msg = 'Stabilization with or without fracture reduction as appropriate';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: rec\n});\ncalc_output.push({\n    name: 'score',\n    value: score, \n    value_text: 'points',\n    message: 'TLICS'\n});\ncalc_output.push({\n    name: 'risk1',\n    value: rec, \n    value_text: '',\n    message: msg\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Morphology",
+                "name": "morph",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Compression fracture",
+                        "value": 1
+                    },
+                    {
+                        "label": "Burst fracture",
+                        "value": 2
+                    },
+                    {
+                        "label": "Translational/rotational",
+                        "value": 3
+                    },
+                    {
+                        "label": "Distraction",
+                        "value": 4
+                    },
+                    {
+                        "label": "None of the above",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Neurologic involvement",
+                "name": "neuro",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Intact",
+                        "value": 0
+                    },
+                    {
+                        "label": "Nerve root",
+                        "value": 2
+                    },
+                    {
+                        "label": "Complete cord",
+                        "value": 2
+                    },
+                    {
+                        "label": "Incomplete cord",
+                        "value": 3
+                    },
+                    {
+                        "label": "Cauda equina",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Posterior ligamentous complex",
+                "name": "pos",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Intact",
+                        "value": 0
+                    },
+                    {
+                        "label": "Injury suspected or indeterminate",
+                        "value": 2
+                    },
+                    {
+                        "label": "Injured",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "thoracolumbar burst fracture",
+            "TLICS score",
+            "Thoracolumbar injury classification and severity",
+            "Thoracolumbar injury score",
+            "Thoracolumbar trauma",
+            "tlcis"
+        ],
+        "specialty": [
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Neurology",
+            "Neurosurgery",
+            "Orthopedics",
+            "Surgery (Trauma)"
+        ]
+    }
+}

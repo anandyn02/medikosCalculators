@@ -1,0 +1,100 @@
+{
+    "id": "10",
+    "title": "Maternal-Fetal Hemorrhage Rh(D) Immune Globulin Dosage",
+    "desc": "The RhIG Dosing tool calculates amount of RhIG to be administered to the mother to prevent hemolytic disease of the fetus and newborn (HDFN).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://ebooks.aabb.org/product/technical-manual-18th-edition",
+                "text": "Kennedy, M, Delaney M, Scrape S. Perinatal issues in transfusion practice. In: Fung M, Grossman B, Hillyer C, Westhoff C, eds. Technical Manual.18th ed. Bethesda, MD: AABB; 2014:561–569."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Number of RhIG vials = fetal cells/total cells counted &times; maternal blood volume, mL / 30 mL</p>\n<p>Then, round&nbsp;to the nearest&nbsp;whole number and add 1.</p>\n<p><strong>Example:</strong></p>\n<ul>\n<li>Flow cytometry of fetal cells in maternal blood stream = 1.7%</li>\n<li>Total maternal blood volume =&nbsp;3,700 mL</li>\n<li>Volume of fetal blood in maternal blood stream =&nbsp;3,700 x 0.017 = 62.9 mL</li>\n<li>Number of RhIG vials = 62.9 / 30 = 2.1 vials --&gt; round down to 2 and add 1</li>\n<li>RhIG vials to administer = 3 vials</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Blood volume",
+                "unit": "bloodvol",
+                "error_min": "0",
+                "error_max": "10000",
+                "warn_min": "1000",
+                "warn_max": "8000",
+                "conversion": "1",
+                "normal_max_si": "6000",
+                "normal_max_us": "6000",
+                "normal_min_si": "2500",
+                "normal_min_us": "2500",
+                "units_si": "mL",
+                "units_us": "mL"
+            },
+            {
+                "name": "Fetal cells",
+                "unit": "fetal_cells",
+                "error_min": "0",
+                "error_max": "10",
+                "warn_min": "0",
+                "warn_max": "50",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Pregnancy"
+        ],
+        "disease_treated": [
+            "Anemia",
+            "Bleeding/Hemorrhage"
+        ],
+        "logic": "var calc_output = [];\n\nvar vials = parseFloat(bv) * (fetal / 100) / 30\n\nvials = vials.toFixed(0)\n\nvials = parseFloat(vials) + 1\n\ncalc_output.push({\n   name: 'mini',\n   value: vials,\n   value_text: 'vials',\n   message: 'RhIG'\n});\ncalc_output.push({\n   name: '10010_RhIG (RhoGAM) Dosing_result',\n   value: vials,\n   value_text: 'vials',\n   message: 'RhIG to give (assumes each vial is 30 mL)'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Maternal <calculator id='4065'>blood volume</calculator>",
+                "name": "bv",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bloodvol"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Fetal cells in mother",
+                "name": "fetal",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "fetal_cells"
+            }
+        ],
+        "can_search": [
+            "rhogam",
+            "rh factor",
+            "maternal fetal hemorrhage",
+            "hdfn"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "OB-Gyn",
+            "Pathology",
+            "Transfusion Medicine"
+        ]
+    }
+}

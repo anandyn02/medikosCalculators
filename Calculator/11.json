@@ -1,0 +1,773 @@
+{
+    "id": "11",
+    "title": "RBC Units to Screen for Compatibility",
+    "desc": "RBC Compatibility Testing determines number of donors needed to be antigen typed to obtain appropriate number of antigen-negative donors.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://ebooks.aabb.org/product/technical-manual-18th-edition",
+                "text": "AABB Technical Manual 18th Ed 2014.pdf. By Mark K. Fung, Brenda J. Grossman, Christopher D. Hillyer, and Connie Westhoff."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11604582 ",
+                "text": "Shulman IA, Downes KA, Sazama K, Maffei LM. Pretransfusion compatibility testing for red blood cell administration. Curr Opin Hematol 2001;8:397-404."
+            }
+        ],
+        "evidence": "<p>x = number of&nbsp;units required / frequency of&nbsp;units negative for the antigen</p>\n<p>where x = minimum number of&nbsp;units to antigen type</p>\n<p>Example for patients with single antibodies:</p>\n<ul>\n<li>Four c-negative donors are required for a patient with anti-c.</li>\n<li>The frequency of the c antigen is 80%.&nbsp;</li>\n<li>x = 4 / (1 - 0.8) = 20</li>\n<li>Answer: a minimum of 20 donors should be antigen typed.</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "percentages",
+                "unit": "basic_stats",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "100",
+                "normal_max_us": "100",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "Patients",
+                "unit": "unitless",
+                "error_min": "-1",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": " ",
+                "units_us": " "
+            }
+        ],
+        "primary_complains": [
+            "Bleeding",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Anemia"
+        ],
+        "logic": "var calc_output = [];\n\nvar bigk, lilk, bigm, bign, bigs, lils, fya, fyb, jka, jkb, bigc, lilc, bige, lile, cw, lea, leb, p1, lua, lub\n\nif (bigk == 1) {\n bigk = 1 - parseFloat(bigk_value) / 100  \n}\nelse if (bigk == 0) {\n  bigk = 1\n}\n\nif (lilk == 1) {\n lilk = 1 - parseFloat(lilk_value) / 100  \n}\nelse if (lilk == 0){\n  lilk = 1\n}\n\nif (bigm == 1) {\n bigm = 1 - parseFloat(bigm_value) / 100\n}\nelse if (bigm == 0){\n  bigm = 1\n}\n\nif (bign == 1) {\n bign = 1 - parseFloat(bign_value) / 100\n}\nelse if (bign == 0){\n  bign = 1\n}\n\nif (bigs == 1) {\n bigs = 1 - parseFloat(bigs_value) / 100\n}\nelse if (bigs == 0){\n  bigs = 1\n}\n\nif (lils == 1) {\n lils = 1 - parseFloat(lils_value) / 100\n}\nelse if (lils == 0){\n  lils = 1\n}\n\nif (fya == 1) {\n fya = 1 - parseFloat(fya_value) / 100\n}\nelse if (fya == 0){\n  fya = 1\n}\n\nif (fyb == 1) {\n fyb = 1 - parseFloat(fyb_value) / 100\n}\nelse if (fyb == 0){\n  fyb = 1\n}\n\nif (jka == 1) {\n jka = 1 - parseFloat(jka_value) / 100\n}\nelse if (jka == 0){\n  jka = 1\n}\n\nif (jkb == 1) {\n jkb = 1 - parseFloat(jkb_value) / 100\n}\nelse if (jkb == 0){\n  jkb = 1\n}\n\nif (bigc == 1) {\n bigc = 1 - parseFloat(bigc_value) / 100\n}\nelse if (bigc == 0){\n  bigc = 1\n}\n\nif (lilc == 1) {\n lilc = 1 - parseFloat(lilc_value) / 100\n}\nelse if (lilc == 0){\n  lilc = 1\n}\n\nif (bige == 1) {\n bige = 1 - parseFloat(bige_value) / 100\n}\nelse if (bige == 0){\n  bige = 1\n}\n\nif (lile == 1) {\n lile = 1 - parseFloat(lile_value) / 100\n}\nelse if (lile == 0){\n  lile = 1\n}\n\nif (cw == 1) {\n cw = 1 - parseFloat(cw_value) / 100\n}\nelse if (cw == 0){\n  cw = 1\n}\n\nif (lea == 1) {\n lea = 1 - parseFloat(lea_value) / 100\n}\nelse if (lea == 0){\n  lea = 1\n}\n\nif (leb == 1) {\n leb = 1 - parseFloat(leb_value) / 100\n}\nelse if (leb == 0){\n  leb = 1\n}\n\nif (p1 == 1) {\n p1 = 1 - parseFloat(p1_value) / 100\n}\nelse if (p1 == 0){\n  p1 = 1\n}\n\nif (lua == 1) {\n lua = 1 - parseFloat(lua_value) / 100\n}\nelse if (lua == 0){\n  lua = 1\n}\n\nif (lub == 1) {\n lub = 1 - parseFloat(lub_value) / 100\n}\nelse if (lub == 0){\n  lub = 1\n}\n\nvar prod = parseFloat(bigk) * parseFloat(lilk) * parseFloat(bigm) * parseFloat(bign) * parseFloat(bigs) * parseFloat(lils) * parseFloat(fya) * parseFloat(fyb) * parseFloat(jka) * parseFloat(jkb) * parseFloat(bigc) * parseFloat(lilc) * parseFloat(bige) * parseFloat(lile) * parseFloat(cw) * parseFloat(lea) * parseFloat(leb) * parseFloat(p1) * parseFloat(lua) * parseFloat(lub)\n\nvar screening = parseFloat(units) / prod\n\n// if ((screening - Math.floor(screening)) != 0) {\n//  screening = Math.ceil(screening)\n// }\n// else {\n//  screening = screening\n// }\n\nvar msg \n\nif (screening >= 25) {\n  msg = '. Screening a large number of units (≥25) may be impractical for certain blood banks. Consideration of alternative methods to obtain rare units may be desirable (i.e., regional blood donor center, rare blood unit registry).'\n}\nelse {\n  msg = ''\n}\n\nprod = prod*100;\n\ncalc_output.push({\n   name: 'mini',\n   value: screening.toFixed(0),\n   value_text: 'units',\n   message: 'Number of units estimated to be screened'\n});\ncalc_output.push({\n   name: '10011_RBC Compatibility Testing_result (units)',\n   value: screening.toFixed(0),\n   value_text: 'units',\n   message: 'Number of units estimated to be screened' + msg\n});\ncalc_output.push({\n   name: '10011_RBC Compatibility Testing_result (percent)',\n   value: prod.toFixed(0),\n   value_text: '%',\n   message: 'Approximate percent of compatible donor units'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of desired units",
+                "name": "units",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "unitless"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Antigen profile: should the screen exclude RBC units with this antigen?",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "C",
+                "md_calc_info_concept": null,
+                "name": "bigc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "bigc == 1",
+                "default": 68,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "C frequency",
+                "name": "bigc_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "c",
+                "md_calc_info_concept": null,
+                "name": "lilc",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "lilc == 1",
+                "default": 80,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "c frequency",
+                "name": "lilc_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "E",
+                "md_calc_info_concept": null,
+                "name": "bige",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "bige == 1",
+                "default": 29,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "E frequency",
+                "name": "bige_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "e",
+                "md_calc_info_concept": null,
+                "name": "lile",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "lile == 1",
+                "default": 98,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "e frequency",
+                "name": "lile_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "K",
+                "md_calc_info_concept": null,
+                "name": "bigk",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "bigk == 1",
+                "default": 9,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "K frequency",
+                "name": "bigk_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "k",
+                "md_calc_info_concept": null,
+                "name": "lilk",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "lilk == 1",
+                "default": 99,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "k frequency",
+                "name": "lilk_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Jk(a)",
+                "md_calc_info_concept": null,
+                "name": "jka",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "jka == 1",
+                "default": 76,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Jk(a) frequency",
+                "name": "jka_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Jk(b)",
+                "md_calc_info_concept": null,
+                "name": "jkb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "jkb == 1",
+                "default": 74,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Jk(b) frequency",
+                "name": "jkb_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Fy(a)",
+                "md_calc_info_concept": null,
+                "name": "fya",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "fya == 1",
+                "default": 68,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Fy(a) frequency",
+                "name": "fya_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Fy(b)",
+                "md_calc_info_concept": null,
+                "name": "fyb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "fyb == 1",
+                "default": 80,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Fy(b) frequency",
+                "name": "fyb_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "M",
+                "md_calc_info_concept": null,
+                "name": "bigm",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "bigm == 1",
+                "default": 79,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "M frequency",
+                "name": "bigm_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "N",
+                "md_calc_info_concept": null,
+                "name": "bign",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "bign == 1",
+                "default": 70,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "N frequency",
+                "name": "bign_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "S",
+                "md_calc_info_concept": null,
+                "name": "bigs",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "bigs == 1",
+                "default": 52,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "S frequency",
+                "name": "bigs_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "s",
+                "md_calc_info_concept": null,
+                "name": "lils",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "lils == 1",
+                "default": 90,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "s frequency",
+                "name": "lils_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Le(a)",
+                "md_calc_info_concept": null,
+                "name": "lea",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "lea == 1",
+                "default": 22,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Le(a) frequency",
+                "name": "lea_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Le(b)",
+                "md_calc_info_concept": null,
+                "name": "leb",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "leb == 1",
+                "default": 72,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Le(b) frequency",
+                "name": "leb_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lu(a)",
+                "md_calc_info_concept": null,
+                "name": "lua",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "lua == 1",
+                "default": 8,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Lu(a) frequency",
+                "name": "lua_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Lu(b)",
+                "md_calc_info_concept": null,
+                "name": "lub",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "lub == 1",
+                "default": 99.9,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Lu(b) frequency",
+                "name": "lub_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "P1",
+                "md_calc_info_concept": null,
+                "name": "p1",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "p1 == 1",
+                "default": 79,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "P1 frequency",
+                "name": "p1_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "C(w)",
+                "md_calc_info_concept": null,
+                "name": "cw",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "cw == 1",
+                "default": 2,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "C(w) frequency",
+                "name": "cw_value",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "basic_stats"
+            }
+        ],
+        "can_search": [
+            "inventory screen",
+            "antigen profile",
+            "red blood cell",
+            "APPROXIMATE NUMBER OF UNITS FOR COMPATIBILITY TESTING"
+        ],
+        "specialty": [
+            "Hematology and Oncology",
+            "Pathology",
+            "Transfusion Medicine"
+        ]
+    }
+}

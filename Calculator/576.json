@@ -1,0 +1,189 @@
+{
+    "id": "576",
+    "title": "ROSE (Risk Stratification of Syncope in the Emergency Department) Rule",
+    "desc": "The ROSE (Risk Stratification of Syncope in the Emergency Department) Rule predicts 1-month serious outcome or death in patients presenting with syncope.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "http://content.onlinejacc.org/article.aspx?articleid=1140471 ",
+                "text": "Reed MJ, Newby DE, Coull AJ, Prescott RJ, Jacques KG, Gray AJ. The ROSE (risk stratification of syncope in the emergency department) study. J Am Coll Cardiol. 2010;55(8):713-21."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Admit if&nbsp;<span>any</span> of the following are present:</p> <div class=\"table-responsive\"> <table class=\"table table-bordered\"> <tbody> <tr> <td> <p><span>BNP Level </span><span>≥300 pg/ml</span></p> </td> </tr> <tr> <td> <p><span>Bradycardia </span></p> <p><span>*≤50 bpm in ED or pre-hospital</span></p> </td> </tr> <tr> <td> <p><span>Rectal examination showing fecal occult blood</span></p> <p><span>*If suspicion of gastrointestinal bleed</span></p> </td> </tr> <tr> <td> <p><span>Anemia</span></p> <p><span>*Hemoglobin ≤90 g/l</span></p> </td> </tr> <tr> <td> <p><span>Chest pain</span></p> <p><span>*Associated with syncope</span></p> </td> </tr> <tr> <td> <p><span>ECG showing Q wave</span></p> <p><span>*Not in lead III</span></p> </td> </tr> <tr> <td> <p><span>Saturation ≤94% on room air</span></p> </td> </tr> </tbody> </table> </div>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "AMS",
+            "Dizziness",
+            "Seizure",
+            "Syncope"
+        ],
+        "disease_treated": [
+            "Atrial Fibrillation",
+            "Myocardial Infarction",
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nvar bnp = parseFloat(bnp);\nvar brady = parseFloat(brady);\nvar rectal = parseFloat(rectal);\nvar ane = parseFloat(ane);\nvar cxpn = parseFloat(cxpn);\nvar ecg = parseFloat(ecg);\nvar sat = parseFloat(sat);\n\n//see if it's higher than 1 - any criteria met\nvar msg, rec;\nvar u = bnp + brady + rectal + ane + cxpn + ecg + sat;\nif(u > 0){\n\tmsg = 'High risk';\n\trec = 'Strongly consider admitting patient.'\n}else{\n\tmsg = 'Low risk';\n\trec = '';\n}\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: msg,\n    value_text: 'patient',\n    message: ''\n});\ncalc_output.push({\n    name: 'Msg',\n    value: msg,\n    value_text: 'patient',\n    message: rec\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "BNP Level ≥300 pg/ml",
+                "name": "bnp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Bradycardia ",
+                "name": "brady",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "≤50 bpm in ED or pre-hospital.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Rectal examination showing fecal occult blood",
+                "name": "rectal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "If suspicion of gastrointestinal bleed.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Anemia",
+                "name": "ane",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Hemoglobin ≤90 g/l.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chest pain",
+                "name": "cxpn",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Associated with syncope.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "ECG showing Q wave",
+                "name": "ecg",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Not in lead III.",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Saturation ≤94% on room air",
+                "name": "sat",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "ROSE",
+            "Risk Stratification of Syncope in the Emergency Department",
+            "syncope",
+            "syncope score",
+            "fainting",
+            "vasovagal",
+            "LOC",
+            "stroke risk"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Neurology"
+        ]
+    }
+}

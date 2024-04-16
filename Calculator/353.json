@@ -1,0 +1,198 @@
+{
+    "id": "353",
+    "title": "LRINEC Score for Necrotizing Soft Tissue Infection",
+    "desc": "The LRINEC score screens for necrotizing soft tissue infections that require emergent surgery.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/15241098",
+                "text": "Wong CH, Khin LW, Heng KS, Tan KC, Low CO. The LRINEC (Laboratory Risk Indicator for Necrotizing Fasciitis) score: a tool for distinguishing necrotizing fasciitis from other soft tissue infections. Crit Care Med. 2004 Jul;32(7):1535-41. PubMed PMID: 15241098."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18959694",
+                "text": "Su YC, et al. Laboratory risk indicator for necrotizing fasciitis score and the outcomes. ANZ J. Surg. 2008; 78:968-72."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/19681416",
+                "text": "Holland MJ. Application of the Laboratory Risk Indicator in Necrotising Fasciitis (LRINEC) score to patients in a tropical tertiary referral center. Anaesth Intensive Care 2009; 37:588-92."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29672405",
+                "text": "Fernando SM, Tran A, Cheng W, et al. Necrotizing Soft Tissue Infection: Diagnostic Accuracy of Physical Examination, Imaging, and LRINEC Score: A Systematic Review and Meta-Analysis. Ann Surg. 2018."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points.</p>",
+        "facts": "<table class=\"table table-bordered\">\n<tbody>\n<tr>\n<th>Criteria</th>\n<th>Value</th>\n<th>Points</th>\n</tr>\n<tr>\n<td rowspan=\"2\">CRP (mg/L)</td>\n<td>&lt;150</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&ge;150</td>\n<td>4</td>\n</tr>\n<tr>\n<td rowspan=\"3\">WBC per mm&sup3;</td>\n<td>&lt;15</td>\n<td>0</td>\n</tr>\n<tr>\n<td>15-25</td>\n<td>1</td>\n</tr>\n<tr>\n<td>&gt;25</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"3\">Hemoglobin (g/dL)</td>\n<td>&gt;13.5</td>\n<td>0</td>\n</tr>\n<tr>\n<td>11-13.5</td>\n<td>1</td>\n</tr>\n<tr>\n<td>&lt;11</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Sodium</td>\n<td>&ge;135</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&lt;135</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Creatinine</td>\n<td>&le; 1.6 mg/dL / 141 &micro;mol/L</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&gt;1.6 mg/dL / 141 &micro;mol/L</td>\n<td>2</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Glucose</td>\n<td>&le;180 mg/dL / 10 mmol/L</td>\n<td>0</td>\n</tr>\n<tr>\n<td>&gt;180 mg/dL / 10 mmol/L</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [],
+        "primary_complains": [
+            "Extremity Pain",
+            "Fever"
+        ],
+        "disease_treated": [
+            "Acute Pain",
+            "Cellulitis/Abscess"
+        ],
+        "logic": "var calc_output=[]; \nvar v=parseInt(crp)+parseInt(white_blood_cell_count)+parseInt(hemoglobin)+parseInt(sodium)+parseInt(creatinine)+parseInt(glucose); \nvar text='If high suspicion for necrotizing fasciitis through clinical history and physical exam, do not calculate a LRINEC score, and go straight to operative debridement.<br/><br/>'; \nvar mini_msg=''; \n\nif(v<=5){\n    text+='Consider IV antibiotics and serial labs to monitor response to treatment. Scores <6 were low risk \\u2014 but not no risk \\u2014 for necrotizing soft tissue infections.';\n    mini_msg='Low Risk, but not no risk.'\n} \n\nif(v==6||v==7){\n    text+='Scores of 6 had a PPV of 92% and NPV of 96% for NSTIs. Intermediate Risk for Necrotizing Soft Tissue Infection.<br/><br/>Consider urgent MRI, frozen section biopsy or finger test (manual probing of area in question under local anesthesia). If positive, emergent operative debridement. If negative, IV antibiotics, close observation, serial labs.';\n    mini_msg='Intermediate Risk.'\n} \n\nif(v>7){\n    text+='High Risk for Necrotizing Soft Tissue Infection. <br/>Scores of 8 had a PPV of 93.4% for NSTIs.<br/>Work-up as above or emergent operative debridement.';\n    mini_msg='High Risk.'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:v,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1734_LRINEC Score_result',\n    value:v,\n    value_text:'points',\n    message:text\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "C-reactive protein",
+                "mdcalc_info_concept": null,
+                "name": "crp",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<15 mg/dL (150 mg/L)",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥15 mg/dL (150 mg/L)",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "White blood cell count (x10,000/µL)",
+                "mdcalc_info_concept": null,
+                "name": "white_blood_cell_count",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<15",
+                        "value": 0
+                    },
+                    {
+                        "label": "15-25",
+                        "value": 1
+                    },
+                    {
+                        "label": ">25",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemoglobin (g/dL)",
+                "mdcalc_info_concept": null,
+                "name": "hemoglobin",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": ">13.5",
+                        "value": 0
+                    },
+                    {
+                        "label": "11-13.5",
+                        "value": 1
+                    },
+                    {
+                        "label": "<11",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Sodium (mEq/L)",
+                "mdcalc_info_concept": null,
+                "name": "sodium",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥135",
+                        "value": 0
+                    },
+                    {
+                        "label": "<135",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Creatinine",
+                "mdcalc_info_concept": null,
+                "name": "creatinine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤1.6 mg/dL (141 µmol/L)",
+                        "value": 0
+                    },
+                    {
+                        "label": ">1.6 mg/dL (141 µmol/L)",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Glucose",
+                "mdcalc_info_concept": null,
+                "name": "glucose",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤180 mg/dL (10 mmol/L)",
+                        "value": 0
+                    },
+                    {
+                        "label": ">180 mg/dL (10 mmol/L)",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "necfasc",
+            "fasciitis",
+            "nec fasc",
+            "necrotizing",
+            "gas"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Orthopedics",
+            "Podiatry",
+            "Surgery (General)"
+        ]
+    }
+}

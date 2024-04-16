@@ -1,0 +1,60 @@
+{
+    "id": "246",
+    "title": "Immune-Related Adverse Events for Endocrine Toxicities - Hypothyroidism",
+    "desc": "The Immune-Related Adverse Events for Endocrine Toxicities - Hypothyroidism grades severity of hypothyroidism secondary to immune checkpoint inhibitor therapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29442540 ",
+                "text": "Brahmer JR, Lacchetti C, Schneider BJ, et al. Management of Immune-Related Adverse Events in Patients Treated With Immune Checkpoint Inhibitor Therapy: American Society of Clinical Oncology Clinical Practice Guideline. J Clin Oncol. 2018;36(17):1714-1768."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<div dir=\"ltr\" align=\"left\">\n<table><colgroup><col /><col /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Hypothyroidism grade</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">TSH &lt;10 mIU/L and asymptomatic</p>\n</td>\n<td>\n<p dir=\"ltr\">G1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate symptoms; able to perform ADLs; TSH persistently &gt;10 mIU/L</p>\n</td>\n<td>\n<p dir=\"ltr\">G2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Severe symptoms, medically significant or life-threatening consequences, unable to perform ADLs</p>\n</td>\n<td>\n<p dir=\"ltr\">G3-4</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\">See Next Steps for details on management.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Fatigue",
+            "Weight Loss/Gain"
+        ],
+        "disease_treated": [
+            "Hypothyroidism"
+        ],
+        "logic": "var calc_output = [];\n\nvar grading = parseFloat(grading);\nvar rec;\n\nswitch (grading) {\n  case 1:\n    rec = 'Continue ICPi with close follow-up, monitor TSH and FT4; see Next Steps for details';\n    break;\n  case 2:\n    rec = 'May hold ICPi until symptoms resolve; consult endocrinology; start thyroid hormone supplementation if symptomatic, or asymptomatic with TSH is persistently > 10 mIU/L; monitor TSH every 6-8 weeks; see Next Steps for details';\n    break;\n  case 3:\n    rec = 'Start thyroid hormone supplementation; Hold ICPi until symptoms resolve with supplementation; consult endocrinology; may admit for IV therapy if signs of myxedema; see Next Steps for details';\n    grading = '3-4';\n\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: 'G'+grading,\n    value_text: '',\n    message: 'Hypothyroidism grade'   \n});\ncalc_output.push({\n    name: 'Score',\n    value: 'G'+grading,\n    value_text: '',\n    message: 'Hypothyroidism grade'   \n});\ncalc_output.push({\n    name: 'risk1',\n    value: '', \n    value_text: '',\n    message: rec\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Criteria",
+                "name": "grading",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "TSH <10 mIU/L and asymptomatic",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate symptoms; able to perform ADLs; TSH persistently >10 mIU/L",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe symptoms, medically significant or life-threatening consequences, unable to perform ADLs",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "Immune Related Adverse Events, irae, hypothyroidism, immune checkpoint inhibitor therapy, ICPi therapy, ASCO guideline, ASCO"
+        ],
+        "specialty": [
+            "Allergy and Immunology",
+            "Endocrinology",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

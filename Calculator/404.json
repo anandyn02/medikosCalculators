@@ -1,0 +1,192 @@
+{
+    "id": "404",
+    "title": "Revised Urinary Incontinence Scale (RUIS)",
+    "desc": "The Revised Urinary Incontinence Scale (RUIS) assess urinary incontinence and monitors patient outcomes following treatment.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.bladderbowel.gov.au/assets/doc/ncms/Phase3InformationAndEvidence/ContinenceToolsValidationReport.pdf",
+                "text": "Sansoni J, Hawthorne G, Marosszeky N, Moore K, Fleming G and Owen E. (2011), The Technical Manual for the Revised Incontinence and Patient Satisfaction Tools. Centre for Health Service Development, University of Wollongong."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of selected points.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Urinary Incontinence"
+        ],
+        "disease_treated": [
+            "Urinary Incontinence"
+        ],
+        "logic": "var calc_output=[]; \nvar msg='';\nvar mini_msg=''; \nvar u=parseInt(urgency)+parseInt(activity)+parseInt(drops)+parseInt(leakfreq)+parseInt(lose); \nif(u<4){msg='Indicates that patient has NO urinary incontinence or very mild incontinence symptoms.';mini_msg='Very mild, if any, incontinence symptoms'} \nif(u>=4&&u<=8){msg='Indicates that patient has mild urinary incontinence symptoms.';mini_msg='Mild incontinence symptoms'} \nif(u>=9&&u<=12){msg='Indicates that patient has moderate urinary incontinence symptoms.';mini_msg='Moderate incontinence symptoms'} \nif(u>=13){msg='Indicates that patient has severe urinary incontinence symptoms.';mini_msg='Severe incontinence symptoms'} msg+='<br/><br/>The average score of a patient receiving treatment for incontinence was 10.9 in one study.'; \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'2047_RUIS (Urinary Incontinence) Score_result',\n    value:u,\n    value_text:'points',\n    message:msg\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Urine leakage relate to the feeling of urgency",
+                "mdcalc_info_concept": null,
+                "name": "urgency",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slightly",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderately",
+                        "value": 2
+                    },
+                    {
+                        "label": "Greatly",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Urine leakage related to physical activity, coughing or sneezing",
+                "mdcalc_info_concept": null,
+                "name": "activity",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slightly",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderately",
+                        "value": 2
+                    },
+                    {
+                        "label": "Greatly",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Small amounts of urine leakage (drops)",
+                "mdcalc_info_concept": null,
+                "name": "drops",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Not at all",
+                        "value": 0
+                    },
+                    {
+                        "label": "Slightly",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderately",
+                        "value": 2
+                    },
+                    {
+                        "label": "Greatly",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "How often do you experience urine leakage?",
+                "mdcalc_info_concept": null,
+                "name": "leakfreq",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Never",
+                        "value": 0
+                    },
+                    {
+                        "label": "Less than once a month",
+                        "value": 1
+                    },
+                    {
+                        "label": "A few times a month",
+                        "value": 2
+                    },
+                    {
+                        "label": "A few times a week",
+                        "value": 3
+                    },
+                    {
+                        "label": "Every day and/or night",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "How much urine do you lose each time?",
+                "mdcalc_info_concept": null,
+                "name": "lose",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drops",
+                        "value": 1
+                    },
+                    {
+                        "label": "Small splashes",
+                        "value": 2
+                    },
+                    {
+                        "label": "More",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "incontinence",
+            "urine",
+            "pee"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Internal Medicine",
+            "OB-Gyn",
+            "Primary Care",
+            "Urology"
+        ]
+    }
+}

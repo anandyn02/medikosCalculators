@@ -1,0 +1,278 @@
+{
+    "id": "201",
+    "title": "COVID-GRAM Critical Illness Risk Score",
+    "desc": "The COVID-GRAM Critical Illness Risk Score predicts risk of critical illness in hospitalized COVID-19 patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/32396163",
+                "text": "Liang W, Liang H, Ou L, et al. Development and Validation of a Clinical Risk Score to Predict the Occurrence of Critical Illness in Hospitalized Patients With COVID-19. JAMA Intern Med. 2020."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p dir=\"ltr\">COVID-GRAM Risk Score = (X-ray abnormality x 27.1464) + (Age x 0.6139) + (Hemoptysis x 33.6210) + (Dyspnea x 14.0569) + (Unconsciousness x 34.4617) + (Number of comorbidities&nbsp;x 10.3826) + (Cancer history x 31.2211) + (Neutrophil to lymphocyte ratio x 1.25) + (Lactate dehydrogenase x 0.0534) + (Direct bilirubin x 3.0605), where variables are&nbsp;as follows:&nbsp;</p>\n<table width=\"606\" height=\"343\">\n<tbody>\n<tr>\n<td colspan=\"2\"><strong>Variable</strong></td>\n<td>\n<p><b>Points</b></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p>X-ray abnormality</p>\n</td>\n<td>Yes</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>No</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">Age, years</td>\n<td>\n<p>Continuous</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Hemoptysis</td>\n<td>Yes</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>No</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Dyspnea</td>\n<td>Yes</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>No</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Unconsciousness</td>\n<td>Yes</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>No</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">Number of comorbidities*</td>\n<td>\n<p>Continuous</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">Cancer history</td>\n<td>Yes</td>\n<td>\n<p>1</p>\n</td>\n</tr>\n<tr>\n<td>No</td>\n<td>\n<p>0</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">Neutrophil to lymphocyte ratio</td>\n<td>\n<p>Continuous</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">Lactate dehydrogenase, U/L</td>\n<td>\n<p>Continuous</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"2\">Direct bilirubin, &mu;mol/L</td>\n<td>\n<p>Continuous</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p dir=\"ltr\">*Includes COPD, hypertension, diabetes, coronary heart disease, chronic heart disease, chronic kidney disease, cancer, cerebral vascular disease, Hepatitis B, and immunodeficiency.</p>",
+        "facts": "<p>Risk of critical illness<sub>&dagger;</sub>, % = e<sup>x</sup> / (1 + e<sup>x</sup>),</p>\n<p>Where x = (X-ray abnormality x 1.2205) + (Age x 0.0276) + (Hemoptysis&nbsp; x 1.5116) + (Dyspnea x 0.632) + (Unconsciousness x 1.5494) + (Number of comorbidities x 0.4668) + (Cancer history x 1.4037) + (Neutrophil to lymphocyte ratio x 0.0562) + (Lactate dehydrogenase x 0.0024) + (Direct bilirubin x 0.1376) - 6.6127 and variables are as&nbsp;listed in the table above.&nbsp;&nbsp;</p>\n<p dir=\"ltr\"><sub>&dagger;</sub>Defined by admission to the intensive care unit (ICU), invasive ventilation, or death.</p>\n<p dir=\"ltr\">Interpretation:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Risk of critical illness</strong></p>\n</td>\n<td><strong>Risk group</strong></td>\n</tr>\n<tr>\n<td>\n<p>&lt;1.7%</p>\n</td>\n<td>Low</td>\n</tr>\n<tr>\n<td>\n<p>1.7% to &lt;40.4%</p>\n</td>\n<td>Medium</td>\n</tr>\n<tr>\n<td>\n<p>&ge;40.4%</p>\n</td>\n<td>High</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [
+            {
+                "name": "years",
+                "unit": "time_years",
+                "error_min": "0",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "100000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Bilirubin",
+                "unit": "bili",
+                "error_min": "1E-8",
+                "error_max": "50",
+                "warn_min": "0",
+                "warn_max": "20",
+                "conversion": "17.104",
+                "normal_max_si": "32.49",
+                "normal_max_us": "1.9",
+                "normal_min_si": "5.13",
+                "normal_min_us": "0.3",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Patients",
+                "unit": "unitless",
+                "error_min": "-1",
+                "error_max": "100000",
+                "warn_min": "0",
+                "warn_max": "1000",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": " ",
+                "units_us": " "
+            },
+            {
+                "name": "Upper Limit of Normal Serum LDH",
+                "unit": "ldh_labmax",
+                "error_min": "0",
+                "error_max": "2000",
+                "warn_min": "0",
+                "warn_max": "2000",
+                "conversion": "1",
+                "normal_max_si": "160",
+                "normal_max_us": "160",
+                "normal_min_si": "60",
+                "normal_min_us": "60",
+                "units_si": "U/L",
+                "units_us": "U/L"
+            }
+        ],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output = [];\nvar pxray = parseFloat(xray);\nvar page = parseFloat(age);\nvar phemo = parseFloat(hemo);\nvar pdys = parseFloat(dys);\nvar puncon = parseFloat(uncon);\nvar pcomorbid = parseFloat(comorbid);\nvar pcancer = parseFloat(cancer);\nvar pratio = parseFloat(ratio);\nvar plactate = parseFloat(lactate);\n\nif (UOMSYSTEM == false) {\n  var pbili = parseFloat(bili);\n}\n\nif (UOMSYSTEM == true) {\n  var pbili = parseFloat(bili) * 17.104;\n}\n\nvar totalPoint = (pxray*27.14635231) + (page*0.613879004) + (phemo*33.62099644) + (pdys*14.0569395) + (puncon*34.46174377) + (pcomorbid*10.38256228) + (pcancer*31.22108541) + (pratio*1.25) + (plactate*0.053380783) + (pbili*3.060498221);\n\nvar rate = (1.2205*pxray) + (0.0276*page) + (1.5116*phemo) + (0.632*pdys) + (1.5494*puncon) + (0.4668*pcomorbid) + (1.4037*pcancer) + (0.0562*pratio) + (0.0024*plactate) + (0.1376*pbili);\n\nvar x = rate - 6.6127;\n\nvar risk = (Math.exp(x) / (1 + Math.exp(x)))*100;\n\nvar group;\n\nif(risk < 1.67924) {\n  group = \"Low\";}\nif(risk >= 1.67924 & risk < 40.40535) {\n  group = \"Medium\";}\nif(risk>=40.40535) {\n  group = \"High\";}\n\ncalc_output.push({\n   name: 'mini',\n   value: risk.toFixed(1),\n   value_text: '%',\n   message: 'Risk of critical illness'\n});\ncalc_output.push({\n   name: 'COVID-GRAM Score',\n   value: totalPoint.toFixed(0),\n   value_text: 'points',\n   message: 'COVID-GRAM Risk Score'\n});\ncalc_output.push({\n   name: 'COVID-GRAM Score',\n   value: risk.toFixed(1),\n   value_text: '%',\n   message: 'Risk of critical illness, defined by admission to the intensive care unit (ICU), invasive ventilation, or death'\n});\ncalc_output.push({\n   name: 'COVID-GRAM Score',\n   value: group,\n   value_text: 'risk',\n   message: 'Risk group'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>X-ray abnormality</p>",
+                "name": "xray",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Age</p>",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "time_years"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Hemoptysis</p>",
+                "name": "hemo",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Dyspnea</p>",
+                "name": "dys",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Unconsciousness</p>",
+                "name": "uncon",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Number of comorbidities</p>",
+                "name": "comorbid",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 1
+                    },
+                    {
+                        "label": "2",
+                        "value": 2
+                    },
+                    {
+                        "label": "3",
+                        "value": 3
+                    },
+                    {
+                        "label": "4",
+                        "value": 4
+                    },
+                    {
+                        "label": "5",
+                        "value": 5
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Includes COPD, hypertension, diabetes, coronary heart disease, chronic heart disease, chronic kidney disease, cancer, cerebral vascular disease, Hepatitis B, and immunodeficiency",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Cancer history</p>",
+                "name": "cancer",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><calculator id=\"10305\">Neutrophil-lymphocyte ratio (NLR)</calculator></p>",
+                "name": "ratio",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "unitless"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Lactate dehydrogenase</p>",
+                "name": "lactate",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "ldh_labmax"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Direct bilirubin</p>",
+                "name": "bili",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bili"
+            }
+        ],
+        "can_search": [
+            "COVID-GRAM Critical Illness Risk Score, COVID-GRAM Score, covid-19 risk, covid risk, covid-19 critical illness, covid-19 critical illness risk, covid 19 critical illness, covid critical illness, covid 19 risk, covid 19 critical illness, covid-gram, covid-19 risk score, covid risk score, covid-19 illness risk, covid critical illness risk, covid gram"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

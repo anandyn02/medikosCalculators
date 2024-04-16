@@ -1,0 +1,230 @@
+{
+    "id": "239",
+    "title": "COVID Home Safely Now (CHOSEN) Risk Score for COVID-19",
+    "desc": "The COVID Home Safely Now (CHOSEN) Risk Score for COVID-19 predicts predicts suitability for discharge in COVID-19 patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/33274414/",
+                "text": "Levine DM, Lipsitz SR, Co Z, Song W, Dykes PC, Samal L. Derivation of a clinical risk score to predict 14-day occurrence of hypoxia, icu admission, and death among patients with coronavirus disease 2019. J GEN INTERN MED. Published online December 3, 2020."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>The CHOSEN Risk Score is calculated by the addition of the selected points:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%; height: 273px;\">\n<tbody>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 21px;\" colspan=\"2\"><strong>Variable</strong></td>\n<td style=\"width: 29.9567%; height: 21px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 84px;\" rowspan=\"4\">Age, years</td>\n<td style=\"width: 29.9567%; height: 21px;\">18-45</td>\n<td style=\"width: 29.9567%; height: 21px;\">5</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 21px;\">46-59</td>\n<td style=\"width: 29.9567%; height: 21px;\">2</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 21px;\">60-73</td>\n<td style=\"width: 29.9567%; height: 21px;\">1</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 21px;\">&gt;73</td>\n<td style=\"width: 29.9567%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 84px;\" rowspan=\"4\">SpO<sub>2</sub></td>\n<td style=\"width: 29.9567%; height: 21px;\">&lt;94%</td>\n<td style=\"width: 29.9567%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 21px;\">94-96%</td>\n<td style=\"width: 29.9567%; height: 21px;\">9</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 21px;\">97-98%</td>\n<td style=\"width: 29.9567%; height: 21px;\">14</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 21px;\">&gt;98%</td>\n<td style=\"width: 29.9567%; height: 21px;\">21</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 84px;\" rowspan=\"4\">Albumin level</td>\n<td style=\"width: 29.9567%; height: 21px;\">&lt;2.8 g/dL (&lt;28 g/L)</td>\n<td style=\"width: 29.9567%; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 21px;\">2.8-3.3 g/dL (28-33 g/L)</td>\n<td style=\"width: 29.9567%; height: 21px;\">5</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 21px;\">3.4-3.7 g/dL (34-37 g/L)</td>\n<td style=\"width: 29.9567%; height: 21px;\">15</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 29.9567%; height: 21px;\">&gt;3.7 g/dL (&gt;37 g/L)</td>\n<td style=\"width: 29.9567%; height: 21px;\">29</td>\n</tr>\n</tbody>\n</table>\n<p>If albumin lab value is not available, the Modified CHOSEN Risk Score is calculated by the addition of the selected points from table below:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%; height: 273px;\">\n<tbody>\n<tr style=\"height: 21px;\">\n<td colspan=\"2\" style=\"width: 426px; height: 21px;\"><strong>Variable</strong></td>\n<td style=\"width: 212px; height: 21px;\"><strong>Points</strong></td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"4\" style=\"width: 213px; height: 84px;\">Age, years</td>\n<td style=\"width: 213px; height: 21px;\">18-45</td>\n<td style=\"width: 212px; height: 21px;\">12</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 213px; height: 21px;\">46-59</td>\n<td style=\"width: 212px; height: 21px;\">8</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 213px; height: 21px;\">60-73</td>\n<td style=\"width: 212px; height: 21px;\">3</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 213px; height: 21px;\">&gt;73</td>\n<td style=\"width: 212px; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"4\" style=\"width: 213px; height: 84px;\">SpO<sub>2</sub></td>\n<td style=\"width: 213px; height: 21px;\">&lt;94%</td>\n<td style=\"width: 212px; height: 21px;\">0</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 213px; height: 21px;\">94-96%</td>\n<td style=\"width: 212px; height: 21px;\">9</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 213px; height: 21px;\">97-98%</td>\n<td style=\"width: 212px; height: 21px;\">15</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 213px; height: 21px;\">&gt;98%</td>\n<td style=\"width: 212px; height: 21px;\">20</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td rowspan=\"4\" style=\"width: 213px; height: 84px;\">Respiratory rate, breaths per minute</td>\n<td style=\"width: 213px; height: 21px;\">&lt;18</td>\n<td style=\"width: 212px; height: 21px;\">16</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 213px; height: 21px;\">18-20</td>\n<td style=\"width: 212px; height: 21px;\">12</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 213px; height: 21px;\">21-24</td>\n<td style=\"width: 212px; height: 21px;\">5</td>\n</tr>\n<tr style=\"height: 21px;\">\n<td style=\"width: 213px; height: 21px;\">&gt;24</td>\n<td style=\"width: 212px; height: 21px;\">0</td>\n</tr>\n</tbody>\n</table>",
+        "facts": "<p>Interpretation:</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%;\">\n<tbody>\n<tr>\n<td style=\"width: 46.4639%;\"><strong>CHOSEN Score</strong></td>\n<td style=\"width: 46.7031%;\"><strong>Assessment for discharge*</strong></td>\n</tr>\n<tr>\n<td style=\"width: 46.4639%;\">0-29</td>\n<td style=\"width: 46.7031%;\">Unlikely suitable</td>\n</tr>\n<tr>\n<td style=\"width: 46.4639%;\">30-55</td>\n<td style=\"width: 46.7031%;\">Likely suitable</td>\n</tr>\n</tbody>\n</table>\n<p>*The 30 point cutoff score showed an 83% sensitivity and 82% specificity in the original study <a href=\"https://pubmed.ncbi.nlm.nih.gov/33274414/\" target=\"_blank\" rel=\"noopener\">(Levine 2020)</a>.</p>\n<table border=\"0\" style=\"border-collapse: collapse; width: 100%;\">\n<tbody>\n<tr>\n<td style=\"width: 46.4639%;\"><strong>Modified CHOSEN Score</strong></td>\n<td style=\"width: 46.7031%;\"><strong>Assessment for discharge*</strong></td>\n</tr>\n<tr>\n<td style=\"width: 46.4639%;\">0-19</td>\n<td style=\"width: 46.7031%;\">Unlikely suitable</td>\n</tr>\n<tr>\n<td style=\"width: 46.4639%;\">&gt;19</td>\n<td style=\"width: 46.7031%;\">Likely suitable</td>\n</tr>\n</tbody>\n</table>\n<p>*The 19 point cutoff score showed an 72.2% sensitivity and 73.2% specificity in the original study&nbsp;<a href=\"https://pubmed.ncbi.nlm.nih.gov/33274414/\" target=\"_blank\" rel=\"noopener\">(Levine 2020)</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Cough",
+            "Fever",
+            "Hypoxia",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19"
+        ],
+        "logic": "var calc_output=[];\nvar diag;\nvar msg= 'Assessment for discharge';\nvar name;\nvar sensitivity;\n\nif (avail==1){\nvar criteria=parseFloat(age)+parseFloat(spo2)+parseFloat(albumin);\n  name = 'CHOSEN Score';\n  sensitivity = '83% sensitivity and 82% specificity';\n  if (criteria>=30) {\n  \tdiag='Likely suitable for discharge';\n  } \n  else {\n \t diag='Unlikely suitable for discharge';\n  }\n}\n\nif (avail==0){\nvar criteria=parseFloat(age2)+parseFloat(resp)+parseFloat(oxysat);\n  name = 'Modified CHOSEN Score';\n  sensitivity = '72.2% sensitivity and 73.2% specificity';\n  if (criteria>19) {\n  \tdiag='Likely suitable for discharge';\n  } \n  else {\n \t diag='Unlikely suitable for discharge';\n  }\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:msg\n});\ncalc_output.push({\n    name: 'CHOSEN Score',\n    value: criteria,\n    value_text:'points',\n    message:name\n});\ncalc_output.push({\n    name: 'Assessment for discharge',\n    value: diag,\n    value_text:'',\n    message:msg + '<br/><br/>'+sensitivity\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Albumin lab value available</p>",
+                "name": "avail",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    },
+                    {
+                        "label": "No",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "avail==1",
+                "default": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "age",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "18-45",
+                        "value": 5
+                    },
+                    {
+                        "label": "46-59",
+                        "value": 2
+                    },
+                    {
+                        "label": "60-73",
+                        "value": 1
+                    },
+                    {
+                        "label": ">73",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "avail==1",
+                "default": null,
+                "label_en": "<p>SpO<sub>2</sub></p>",
+                "name": "spo2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<94%",
+                        "value": 0
+                    },
+                    {
+                        "label": "94-96%",
+                        "value": 9
+                    },
+                    {
+                        "label": "97-98%",
+                        "value": 14
+                    },
+                    {
+                        "label": ">98%",
+                        "value": 21
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "avail==1",
+                "default": null,
+                "label_en": "<p>Albumin level</p>",
+                "name": "albumin",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2.8 g/dL (<28 g/L)",
+                        "value": 0
+                    },
+                    {
+                        "label": "2.8-3.3 g/dL (28-33 g/L)",
+                        "value": 5
+                    },
+                    {
+                        "label": "3.4-3.7 g/dL (34-37 g/L)",
+                        "value": 15
+                    },
+                    {
+                        "label": ">3.7 g/dL (>37 g/L)",
+                        "value": 29
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "avail==0",
+                "default": null,
+                "label_en": "<p>Age, years</p>",
+                "name": "age2",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "18-45",
+                        "value": 12
+                    },
+                    {
+                        "label": "46-59",
+                        "value": 8
+                    },
+                    {
+                        "label": "60-73",
+                        "value": 3
+                    },
+                    {
+                        "label": ">73",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "avail==0",
+                "default": null,
+                "label_en": "<p>Respiratory rate, breaths per minute</p>",
+                "name": "resp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<18",
+                        "value": 16
+                    },
+                    {
+                        "label": "18-20 ",
+                        "value": 12
+                    },
+                    {
+                        "label": "21-24 ",
+                        "value": 5
+                    },
+                    {
+                        "label": ">24 ",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "avail==0",
+                "default": null,
+                "label_en": "<p>SpO<sub>2</sub></p>",
+                "name": "oxysat",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<94%",
+                        "value": 0
+                    },
+                    {
+                        "label": "94-96%",
+                        "value": 9
+                    },
+                    {
+                        "label": "97-98%",
+                        "value": 15
+                    },
+                    {
+                        "label": ">98%",
+                        "value": 20
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "COVID Home Safely Now (CHOSEN) Risk Score for COVID-19, CHOSEN Risk Score, CHOSEN score, CHOSEN, covid-19, covid, coronavirus, covid risk, covid-19 risk, covid risk score, covid-19 risk score, chosen risk, chosen risk score, hypoxia, icu, covid mortality, covid death, covid-19 mortality, covid discharge, covid-19 discharge"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

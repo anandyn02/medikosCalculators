@@ -1,0 +1,590 @@
+{
+    "id": "699",
+    "title": "NIH Stroke Scale/Score (NIHSS)",
+    "desc": "The NIH Stroke Scale/Score (NIHSS) quantifies stroke severity based on weighted evaluation findings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/7974549",
+                "text": "Lyden P, Brott T, Tilley B, et al. Improved reliability of the NIH Stroke Scale using video training. Stroke 1994;25:2220-2226"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20595665",
+                "text": "Yoo AJ, Barak ER, Copen WA, Kamalian S, Gharai LR, Pervez MA, Schwamm LH, González RG, Schaefer PW. Combining acute diffusion-weighted imaging and mean transmit time lesion volumes with National Institutes of Health Stroke Scale Score improves the prediction of acute stroke outcome. Stroke. 2010 Aug;41(8):1728-35. doi: 10.1161/STROKEAHA.110.582874. Epub 2010 Jul 1. PubMed PMID: 20595665."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9368550",
+                "text": "Intracerebral hemorrhage after intravenous t-PA therapy for ischemic stroke. The NINDS t-PA Stroke Study Group. Stroke. 1997 Nov;28(11):2109-18. PubMed PMID: 9368550."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2749846",
+                "text": "Brott T, Adams HP Jr, Olinger CP, Marler JR, Barsan WG, Biller J, Spilker J,Holleran R, Eberle R, Hertzberg V, et al. Measurements of acute cerebral infarction: a clinical examination scale. Stroke. 1989 Jul;20(7):864-70. PubMed PMID: 2749846."
+            }
+        ],
+        "evidence": "<p>Addition of the selected points, as above.</p>",
+        "facts": "<p>&nbsp;<strong>Language/aphasia test</strong></p>\n<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/dysarthria-test.jpeg\" alt=\"\"></p>\n<p><strong>Dysarthria test</strong></p>\n<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/nihss-2.gif\" alt=\"\"></p>\n<div class=\"authorimage\">For more information see the&nbsp;<a href=\"https://nihstrokescale.org/\" target=\"_blank\" rel=\"noopener\">NIH Stroke Scale Website</a>.</div>",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Stroke/TIA"
+        ],
+        "logic": "var calc_output=[]; \nvar u=parseFloat(consciousness)+parseFloat(month_age)+parseFloat(blink_squeeze)+parseFloat(horizontal_movements)+parseFloat(visual_fields)+parseFloat(facial_palsy)+parseFloat(left_arm_drift)+parseFloat(right_arm_drift)+parseFloat(left_leg_drift)+parseFloat(right_leg_drift)+parseFloat(limb_ataxia)+parseFloat(sensation)+parseFloat(language)+parseFloat(dysarthria)+parseFloat(extinction); \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:'NIH Stroke Scale'\n}); \ncalc_output.push({\n    name:'715_NIHSS_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:'NIH Stroke Scale'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "1A: Level of consciousness",
+                "mdcalc_info_concept": null,
+                "name": "consciousness",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Alert; keenly responsive",
+                        "value": 0
+                    },
+                    {
+                        "label": "Arouses to minor stimulation",
+                        "value": 1
+                    },
+                    {
+                        "label": "Requires repeated stimulation to arouse",
+                        "value": 2
+                    },
+                    {
+                        "label": "Movements to pain",
+                        "value": 2
+                    },
+                    {
+                        "label": "Postures or unresponsive",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "May be assessed casually while taking history",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "1B: Ask month and age",
+                "mdcalc_info_concept": null,
+                "name": "month_age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Both questions right",
+                        "value": 0
+                    },
+                    {
+                        "label": "1 question right",
+                        "value": 1
+                    },
+                    {
+                        "label": "0 questions right ",
+                        "value": 2
+                    },
+                    {
+                        "label": "Dysarthric/intubated/trauma/language barrier ",
+                        "value": 1
+                    },
+                    {
+                        "label": "Aphasic",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "1C: 'Blink eyes' & 'squeeze hands'",
+                "mdcalc_info_concept": null,
+                "name": "blink_squeeze",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Performs both tasks",
+                        "value": 0
+                    },
+                    {
+                        "label": "Performs 1 task",
+                        "value": 1
+                    },
+                    {
+                        "label": "Performs 0 tasks",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Pantomime commands if communication barrier",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "2: Horizontal extraocular movements",
+                "mdcalc_info_concept": null,
+                "name": "horizontal_movements",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Partial gaze palsy: can be overcome",
+                        "value": 1
+                    },
+                    {
+                        "label": "Partial gaze palsy: corrects with oculocephalic reflex",
+                        "value": 1
+                    },
+                    {
+                        "label": "Forced gaze palsy: cannot be overcome",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Only assess horizontal gaze",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "3: Visual fields",
+                "mdcalc_info_concept": null,
+                "name": "visual_fields",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No visual loss",
+                        "value": 0
+                    },
+                    {
+                        "label": "Partial hemianopia",
+                        "value": 1
+                    },
+                    {
+                        "label": "Complete hemianopia",
+                        "value": 2
+                    },
+                    {
+                        "label": "Patient is bilaterally blind",
+                        "value": 3
+                    },
+                    {
+                        "label": "Bilateral hemianopia",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "4: Facial palsy",
+                "mdcalc_info_concept": null,
+                "name": "facial_palsy",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal symmetry",
+                        "value": 0
+                    },
+                    {
+                        "label": "Minor paralysis (flat nasolabial fold, smile asymmetry)",
+                        "value": 1
+                    },
+                    {
+                        "label": "Partial paralysis (lower face)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Unilateral complete paralysis (upper/lower face)",
+                        "value": 3
+                    },
+                    {
+                        "label": "Bilateral complete paralysis (upper/lower face)",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Use grimace if obtunded",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "5A: Left arm motor drift",
+                "mdcalc_info_concept": null,
+                "name": "left_arm_drift",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No drift for 10 seconds",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drift, but doesn't hit bed",
+                        "value": 1
+                    },
+                    {
+                        "label": "Drift, hits bed",
+                        "value": 2
+                    },
+                    {
+                        "label": "Some effort against gravity",
+                        "value": 2
+                    },
+                    {
+                        "label": "No effort against gravity",
+                        "value": 3
+                    },
+                    {
+                        "label": "No movement",
+                        "value": 4
+                    },
+                    {
+                        "label": "Amputation/joint fusion",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Count out loud and use your fingers to show the patient your count",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "5B: Right arm motor drift",
+                "mdcalc_info_concept": null,
+                "name": "right_arm_drift",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No drift for 10 seconds",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drift, but doesn't hit bed",
+                        "value": 1
+                    },
+                    {
+                        "label": "Drift, hits bed",
+                        "value": 2
+                    },
+                    {
+                        "label": "Some effort against gravity",
+                        "value": 2
+                    },
+                    {
+                        "label": "No effort against gravity",
+                        "value": 3
+                    },
+                    {
+                        "label": "No movement",
+                        "value": 4
+                    },
+                    {
+                        "label": "Amputation/joint fusion",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Count out loud and use your fingers to show the patient your count",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "6A: Left leg motor drift",
+                "mdcalc_info_concept": null,
+                "name": "left_leg_drift",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No drift for 5 seconds",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drift, but doesn't hit bed",
+                        "value": 1
+                    },
+                    {
+                        "label": "Drift, hits bed",
+                        "value": 2
+                    },
+                    {
+                        "label": "Some effort against gravity",
+                        "value": 2
+                    },
+                    {
+                        "label": "No effort against gravity",
+                        "value": 3
+                    },
+                    {
+                        "label": "No movement",
+                        "value": 4
+                    },
+                    {
+                        "label": "Amputation/joint fusion",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Count out loud and use your fingers to show the patient your count",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "6B: Right leg motor drift",
+                "mdcalc_info_concept": null,
+                "name": "right_leg_drift",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No drift for 5 seconds",
+                        "value": 0
+                    },
+                    {
+                        "label": "Drift, but doesn't hit bed",
+                        "value": 1
+                    },
+                    {
+                        "label": "Drift, hits bed",
+                        "value": 2
+                    },
+                    {
+                        "label": "Some effort against gravity",
+                        "value": 2
+                    },
+                    {
+                        "label": "No effort against gravity",
+                        "value": 3
+                    },
+                    {
+                        "label": "No movement",
+                        "value": 4
+                    },
+                    {
+                        "label": "Amputation/joint fusion",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Count out loud and use your fingers to show the patient your count",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "7: Limb Ataxia",
+                "mdcalc_info_concept": null,
+                "name": "limb_ataxia",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No ataxia",
+                        "value": 0
+                    },
+                    {
+                        "label": "Ataxia in 1 Limb",
+                        "value": 1
+                    },
+                    {
+                        "label": "Ataxia in 2 Limbs",
+                        "value": 2
+                    },
+                    {
+                        "label": "Does not understand",
+                        "value": 0
+                    },
+                    {
+                        "label": "Paralyzed",
+                        "value": 0
+                    },
+                    {
+                        "label": "Amputation/joint fusion",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "FNF/heel-shin",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "8: Sensation",
+                "mdcalc_info_concept": null,
+                "name": "sensation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal; no sensory loss",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild-moderate loss: less sharp/more dull ",
+                        "value": 1
+                    },
+                    {
+                        "label": "Mild-moderate loss: can sense being touched ",
+                        "value": 1
+                    },
+                    {
+                        "label": "Complete loss: cannot sense being touched at all",
+                        "value": 2
+                    },
+                    {
+                        "label": "No response and quadriplegic ",
+                        "value": 2
+                    },
+                    {
+                        "label": "Coma/unresponsive",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "9: Language/aphasia",
+                "mdcalc_info_concept": null,
+                "name": "language",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal; no aphasia",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild-moderate aphasia: some obvious changes, without significant limitation",
+                        "value": 1
+                    },
+                    {
+                        "label": "Severe aphasia: fragmentary expression, inference needed, cannot identify materials",
+                        "value": 2
+                    },
+                    {
+                        "label": "Mute/global aphasia: no usable speech/auditory comprehension",
+                        "value": 3
+                    },
+                    {
+                        "label": "Coma/unresponsive",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Describe the scene; name the items; read the sentences (see <a href=\"#evidence\">Evidence</a>)",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "10: Dysarthria",
+                "mdcalc_info_concept": null,
+                "name": "dysarthria",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild-moderate dysarthria: slurring but can be understood",
+                        "value": 1
+                    },
+                    {
+                        "label": "Severe dysarthria: unintelligible slurring or out of proportion to dysphasia",
+                        "value": 2
+                    },
+                    {
+                        "label": "Mute/anarthric",
+                        "value": 2
+                    },
+                    {
+                        "label": "Intubated/unable to test",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Read the words (see <a href=\"#evidence\">Evidence</a>)",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "11: Extinction/inattention",
+                "mdcalc_info_concept": null,
+                "name": "extinction",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No abnormality",
+                        "value": 0
+                    },
+                    {
+                        "label": "Visual/tactile/auditory/spatial/personal inattention",
+                        "value": 1
+                    },
+                    {
+                        "label": "Extinction to bilateral simultaneous stimulation",
+                        "value": 1
+                    },
+                    {
+                        "label": "Profound hemi-inattention (ex: does not recognize own hand)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Extinction to >1 modality",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "tia",
+            "cva",
+            "tpa",
+            "stroke"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Neurology"
+        ]
+    }
+}

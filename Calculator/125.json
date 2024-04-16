@@ -1,0 +1,300 @@
+{
+    "id": "125",
+    "title": "Withdrawal Assessment Tool (WAT-1) for Pediatric Withdrawal",
+    "desc": "The Withdrawal Assessment Tool (WAT-1) screens pediatric patients for opioid and benzodiazepine withdrawal symptoms.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2775493/",
+                "text": "Franck LS, Harris SK, Soetenga DJ, Amling JK, Curley MA. The Withdrawal Assessment Tool-1 (WAT-1): an assessment instrument for monitoring opioid and benzodiazepine withdrawal symptoms in pediatric patients. Pediatr Crit Care Med. 2008;9(6):573-80."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1626525/",
+                "text": "Curley MA, Harris SK, Fraser KA, Johnson RA, Arnold JH. State Behavioral Scale: a sedation assessment instrument for infants and young children supported on mechanical ventilation. Pediatr Crit Care Med. 2006;7(2):107-14."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Addition of the selected points:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"226\" /><col width=\"141\" /><col width=\"82\" /></colgroup>\n<tbody>\n<tr>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Criteria</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Previous 12 hours</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Any loose or watery stools</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Any vomiting, retching, or gagging</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Temperature &gt;100.0 &deg;F (37.8&deg;C)</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Observe 2 mins before stimulus (e.g. routine care)</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">State Behavioral Scale (SBS)*</p>\n</td>\n<td>\n<p dir=\"ltr\">&le;0 OR asleep or awake and calm</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;1 OR awake and distressed</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Tremor</p>\n</td>\n<td>\n<p dir=\"ltr\">None or mild</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate to severe</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Any sweating</p>\n</td>\n<td>\n<p dir=\"ltr\">No</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Yes</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Uncoordinated and/or repetitive movement</p>\n</td>\n<td>\n<p dir=\"ltr\">None or mild</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate to severe</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Yawning or sneezing</p>\n</td>\n<td>\n<p dir=\"ltr\">0-1 time</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;2 times</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Observe during 1 min progressive stimulus</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Startle to touch</p>\n</td>\n<td>\n<p dir=\"ltr\">None or mild</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Moderate to severe</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\">Muscle tone</p>\n</td>\n<td>\n<p dir=\"ltr\">Normal</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Increased</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"3\">\n<p dir=\"ltr\"><strong>Post-stimulus recovery</strong></p>\n</td>\n</tr>\n<tr>\n<td rowspan=\"3\">\n<p dir=\"ltr\">Time to gain calm state (SBS* &le;0)</p>\n</td>\n<td>\n<p dir=\"ltr\">&lt;2 min</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">2-5 min</p>\n</td>\n<td>\n<p dir=\"ltr\">1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&gt;5 min</p>\n</td>\n<td>\n<p dir=\"ltr\">2</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p></p>\n<p dir=\"ltr\">*State Behavioral Scale:</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"208\" /><col width=\"73\" /></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Unresponsive</p>\n</td>\n<td>\n<p dir=\"ltr\">-3</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Responsive to noxious stimuli</p>\n</td>\n<td>\n<p dir=\"ltr\">-2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Responsive to gentle touch or voice</p>\n</td>\n<td>\n<p dir=\"ltr\">-1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Awake and able to be calmed</p>\n</td>\n<td>\n<p dir=\"ltr\">0</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Restless and difficult to calm</p>\n</td>\n<td>\n<p dir=\"ltr\">+1</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">Agitated</p>\n</td>\n<td>\n<p dir=\"ltr\">+2</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p>From&nbsp;<a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1626525/\" target=\"_blank\">Curley 2006</a>.</p>",
+        "facts": "<p dir=\"ltr\">Interpretation: &nbsp;</p>\n<div dir=\"ltr\">\n<table><colgroup><col width=\"135\" /><col width=\"131\" /><col width=\"146\" /></colgroup>\n<tbody>\n<tr>\n<td rowspan=\"2\">\n<p dir=\"ltr\"><strong>WAT-1 Score</strong></p>\n</td>\n<td colspan=\"2\">\n<p dir=\"ltr\"><strong>Median duration of weaning (<abbr title=\"Interquartile range\">IQR</abbr>)</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>Opioids</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Benzodiazepines</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&lt;3 (every time)</p>\n</td>\n<td>\n<p dir=\"ltr\">6 days (3-9)</p>\n</td>\n<td>\n<p dir=\"ltr\">6 days (3-11)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\">&ge;3 (at any time)</p>\n</td>\n<td>\n<p dir=\"ltr\">10 days (6-14)</p>\n</td>\n<td>\n<p dir=\"ltr\">10 days (5-14)</p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p><span id=\"docs-internal-guid-67c2ed61-7fff-dff8-7363-6ef88920d9f6\">From <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3254588/\" target=\"_blank\">Franck 2012</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Agitation",
+            "AMS",
+            "Headache",
+            "Intoxication/Overdose",
+            "Nausea",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Substance Withdrawal"
+        ],
+        "logic": "var calc_output = [];\nvar time = parseFloat(time);\nvar tone = parseFloat(tone);\nvar touch = parseFloat(touch);\nvar yawn = parseFloat(yawn);\nvar move = parseFloat(move);\nvar sweat = parseFloat(sweat);\nvar tremor = parseFloat(tremor);\nvar sbs = parseFloat(sbs);\nvar temp = parseFloat(temp);\nvar vomit = parseFloat(vomit);\nvar stools = parseFloat(stools);\n\nvar score = time + tone + touch + yawn + move + sweat + tremor + sbs + temp + vomit + stools;\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'WAT-1 Score'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'WAT-1 Score'\n});\ncalc_output.push({\n    name: 'risk1',\n    value: '', \n    value_text: '',\n    message: 'For patients with scores <3 every time, median duration of opioid or benzodiazepine weaning is 6 days, versus 10 days for those with a score ≥3 at any time (see Evidence for details)'\n});\n",
+        "inputs": [
+            {
+                "subheading": "Previous 12 hours",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Any loose or watery stools",
+                "name": "stools",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Any vomiting, retching, or gagging",
+                "name": "vomit",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Temperature >100.0 °F (37.8°C)",
+                "name": "temp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Observe 2 mins before stimulus (e.g. routine care)",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "State Behavioral Scale (SBS)",
+                "name": "sbs",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤0 OR asleep or awake and calm",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥1 OR awake and distressed",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "See <a href = \"#evidence\">Evidence</a> for SBS scoring",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tremor",
+                "name": "tremor",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or mild",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderate to severe",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Any sweating",
+                "name": "sweat",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Uncoordinated and/or repetitive movement",
+                "name": "move",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or mild",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderate to severe",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Yawning or sneezing",
+                "name": "yawn",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0-1 time",
+                        "value": 0
+                    },
+                    {
+                        "label": "≥2 times",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Observe during 1 min progressive stimulus",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Startle to touch",
+                "name": "touch",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or mild",
+                        "value": 0
+                    },
+                    {
+                        "label": "Moderate to severe ",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Muscle tone",
+                "name": "tone",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Normal",
+                        "value": 0
+                    },
+                    {
+                        "label": "Increased",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "subheading": "Post-stimulus recovery",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Time to gain calm state (SBS ≤0)",
+                "name": "time",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<2 min",
+                        "value": 0
+                    },
+                    {
+                        "label": "2-5 min",
+                        "value": 1
+                    },
+                    {
+                        "label": ">5 min",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "See <a href = \"#evidence\">Evidence</a> for SBS scoring",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "WAT-1",
+            "WAT",
+            "withdrawal",
+            "pediatric withdrawal",
+            "substance abuse",
+            "opioid",
+            "benzodiazepine"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pediatrics",
+            "Primary Care",
+            "Rehabilitation Medicine",
+            "Toxicology"
+        ]
+    }
+}

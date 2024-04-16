@@ -1,0 +1,160 @@
+{
+    "id": "687",
+    "title": "Fractional Excretion of Urea (FEUrea)",
+    "desc": "The Fractional Excretion of Urea (FEUrea) determines the cause of renal failure. Similar to the FENa, but can be used on patients on diuretics.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1415365",
+                "text": "Kaplan AA, Kohn OF. Fractional excretion of urea as a guide to renal dysfunction. Am J Nephrol. 1992;12(1-2):49-54."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Fractional Excretion of Urea (FEUrea) = (Serum<sub>Cr</sub> * U<sub>Urea</sub>) / (Serum<sub>Urea</sub> x U<sub>Cr</sub>) %</p>",
+        "facts": "<p>This test can provide similar information to the <calculator id=\"60\">FENa</calculator> equation, but can still be used in patients on diuretic therapy (diuretics alter the sodium concentration, making the FENa equation unusable).</p>\n<table>\n<tbody>\n<tr>\n<th></th>\n<th>\n<p>Prerenal</p>\n</th>\n<th>Intrinsic renal</th>\n<th>Postrenal</th>\n</tr>\n<tr>\n<td>\n<p>FENa</p>\n</td>\n<td>&lt;1%</td>\n<td>&gt;1%</td>\n<td>&gt;4%</td>\n</tr>\n<tr>\n<td>\n<p>FEUrea</p>\n</td>\n<td>&le; 35%</td>\n<td>&gt;50%</td>\n<td>N/A</td>\n</tr>\n</tbody>\n</table>",
+        "estimation": [
+            {
+                "name": "Creatinine",
+                "unit": "cr",
+                "error_min": "0.01",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "88.4",
+                "normal_max_si": "115",
+                "normal_max_us": "1.3",
+                "normal_min_si": "62",
+                "normal_min_us": "0.7",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Urine Urea",
+                "unit": "urea_urine",
+                "error_min": "0",
+                "error_max": "1800",
+                "warn_min": "1",
+                "warn_max": "700",
+                "conversion": "0.357",
+                "normal_max_si": "250",
+                "normal_max_us": "700",
+                "normal_min_si": "125",
+                "normal_min_us": "350",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "Urine Creatinine",
+                "unit": "cr_urine",
+                "error_min": "0",
+                "error_max": "700",
+                "warn_min": "1",
+                "warn_max": "450",
+                "conversion": "88.4",
+                "normal_max_si": "32708",
+                "normal_max_us": "370",
+                "normal_min_si": "1768",
+                "normal_min_us": "20",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "BUN",
+                "unit": "bun",
+                "error_min": "1",
+                "error_max": "500",
+                "warn_min": "2",
+                "warn_max": "300",
+                "conversion": "0.357",
+                "normal_max_si": "7.1",
+                "normal_max_us": "20",
+                "normal_min_si": "2.9",
+                "normal_min_us": "8",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Dizziness",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Acid-Base Disturbance",
+            "Acute Kidney Injury",
+            "CHF",
+            "Renal Failure"
+        ],
+        "logic": "var calc_output = [];\n\n// these guys cancel each other out just like FENa so no converions needed.\n\nvar v = 100 * (parseFloat(urine_urea) * parseFloat(creatinine)) / (parseFloat(\n  urine_creatinine) * parseFloat(bun));\nvar msg = '';\nif (v < 35) {\n  msg = 'FEUrea <35% suggests pre-renal disease';\n}\nif (v > 35) {\n  msg = 'FEUrea >35% suggests intrinsic renal disease';\n}\ncalc_output.push({\n  name: 'mini',\n  value: v.toFixed(1),\n  value_text: '%',\n  message: 'FEUrea'\n});\ncalc_output.push({\n  name: '62_FEUrea_result',\n  value: v.toFixed(1),\n  value_text: '%',\n  message: msg\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "BUN or serum urea",
+                "name": "bun",
+                "optional": false,
+                "tips_en": "Enter BUN in mg/dL or serum urea in mmol/L",
+                "type": "textbox",
+                "unit": "bun"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Serum creatinine",
+                "name": "creatinine",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Urine urea",
+                "name": "urine_urea",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "urea_urine"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Urine creatinine",
+                "name": "urine_creatinine",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cr_urine"
+            }
+        ],
+        "can_search": [
+            "renal",
+            "aki",
+            "arf",
+            "fena",
+            "feurea",
+            "urea",
+            "excretion",
+            "fractional"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Geriatrics",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Primary Care"
+        ]
+    }
+}

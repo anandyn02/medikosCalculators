@@ -1,0 +1,163 @@
+{
+    "id": "480",
+    "title": "Phenytoin (Dilantin) Correction for Albumin/Renal Failure",
+    "desc": "The Phenytoin (Dilantin) Correction for Albumin / Renal Failure corrects serum phenytoin level for renal failure and/or hypoalbuminemia.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/599408",
+                "text": "Martin E, Tozer TN, Sheiner LB, Riegelman S. The clinical pharmacokinetics of phenytoin. J Pharmacokinet Biopharm. 1977 Dec;5(6):579-96."
+            },
+            {
+                "href": "https://books.google.com/books?id=DPW0AAAAIAAJ&source=gbs_book_other_versions",
+                "text": "Sheiner LB, Tozer TN. Clinical pharmacokinetics: the use of plasma concentrations of drugs. In: Melmon KL, Morelli HF, editors. Clinical Pharmacology: Basic Principles in Therapeutics. New York: Macmillan; 1978. p.71-109."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1805474/",
+                "text": "Winter MG, Tozer TN. Chapter 20. Phenytoin. In: Burton ME, Shaw LM, Schentag JJ, Evans WE. Applied pharmacokinetics: principles of therapeutic drug monitoring. 4th ed. Baltimore, MD: Lippincott Williams &amp; Wilkins, ©2006."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/25470190",
+                "text": "Vajda FJ, Eadie MJ. The clinical pharmacology of traditional antiepileptic drugs. Epileptic Disord. 2014;16:395-408."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730613/",
+                "text": "Hong JM, Choi YC, Kim WJ. Differences between the Measured and Calculated Free Serum Phenytoin Concentrations in Epileptic Patients. Yonsei Medical Journal. 2009;50(4):517-520."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/6538287",
+                "text": "Liponi DF, Winter ME, Tozer TN. Renal function and therapeutic concentrations of phenytoin. Neurology 1984;34:395-7."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23606554",
+                "text": "Kane SP, Bress AP, Tesoro EP. Characterization of unbound phenytoin concentrations in neurointensive care unit patients using a revised Winter-Tozer equation. Ann Pharmacother. 2013;47(5):628-36."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9066931",
+                "text": "Anderson GD, Pak C, Doane KW, et al. Revised Winter-Tozer equation for normalized phenytoin concentrations in trauma and elderly patients with hypoalbuminemia. Ann Pharmacother. 1997;31(3):279-84."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27621486",
+                "text": "Cheng W, Kiang TKL, Bring P, Ensom MHH. Predictive Performance of the Winter–Tozer and Derivative Equations for Estimating Free Phenytoin Concentration. The Canadian Journal of Hospital Pharmacy. 2016;69(4):269-279."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28470115",
+                "text": "Soriano VV, Tesoro EP, Kane SP. Characterization of Free Phenytoin Concentrations in End-Stage Renal Disease Using the Winter-Tozer Equation. Ann Pharmacother. 2017;:1060028017707541."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26825643",
+                "text": "Kiang TK, Ensom MH. A Comprehensive Review on the Predictive Performance of the Sheiner-Tozer and Derivative Equations for the Correction of Phenytoin Concentrations. Ann Pharmacother. 2016;50(4):311-25."
+            }
+        ],
+        "evidence": "<p dir=\"ltr\">Corrected phenytoin = measured phenytoin level/( (adjustment x albumin, g/dL) + 0.1)</p>\n<p>Adjustment = 0.275; in patients with creatinine clearance &lt;20 mL/min, adjustment = 0.2.</p>\n<p>Note: no correction is needed for albumin &gt;3.2 g/dL. This calculation is derived from the original Winter-Tozer formula, which used an albumin coefficient of 0.2, and 0.1 for renal failure.</p>",
+        "facts": "<p>The &ldquo;Sheiner-Tozer Equation&rdquo; is the official name of this correction.</p>",
+        "estimation": [
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Phenytoin",
+                "unit": "phenytoin",
+                "error_min": "-0.00001",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "80",
+                "conversion": "3.968",
+                "normal_max_si": "79",
+                "normal_max_us": "20",
+                "normal_min_si": "39",
+                "normal_min_us": "10",
+                "units_si": "µmol/L",
+                "units_us": "µg/mL"
+            }
+        ],
+        "primary_complains": [
+            "Seizure",
+            "Syncope"
+        ],
+        "disease_treated": [
+            "Hypocalcemia",
+            "Renal Failure",
+            "Seizure Disorder"
+        ],
+        "logic": "var calc_output = [];\nvar phenytoin = parseFloat(phenytoin);\nvar albumin = parseFloat(albumin);\nvar crcl_20 = parseFloat(crcl_20);\nvar units;\nif (crcl_20 == 1) {\n    var factor = 0.2;\n} else {\n    var factor = 0.275;\n}\n\nif (UOMSYSTEM == false) {\n    //needed in US units, convert when in SI\n    albumin = albumin / 10;\n    phenytoin = phenytoin / 3.968;\n}\nvar v = phenytoin / ((factor * albumin) + 0.1);\nif (UOMSYSTEM == true) {\n  units = '\\u00b5g/mL';\n}\nif (UOMSYSTEM == false){\n  v = v * 3.968;\n  units = '\\u00b5mol/L';\n}\ncalc_output.push({ \n  name: 'mini', \n  value: v.toFixed(1), \n  value_text: units, \n  message: 'Corrected Phenytoin' \n});\ncalc_output.push({ \n  name: '333_Phenytoin Correction_result', \n  value: v.toFixed(1), \n  value_text: units, \n  message: 'Corrected Phenytoin Level' \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Measured phenytoin level",
+                "name": "phenytoin",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "phenytoin"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Albumin",
+                "name": "albumin",
+                "optional": false,
+                "tips_en": "If albumin >3.2 g/dL (32 g/L), this correction is not needed",
+                "type": "textbox",
+                "unit": "alb"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Creatinine clearance <20 mL/min",
+                "md_calc_info_concept": null,
+                "name": "crcl_20",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "dilantin",
+            "Phenytoin",
+            "seizure"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology",
+            "Neurology",
+            "Pharmacy",
+            "Toxicology"
+        ]
+    }
+}

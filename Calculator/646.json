@@ -1,0 +1,168 @@
+{
+    "id": "646",
+    "title": "DigiFab (Digibind) Dosing for Digoxin Poisoning",
+    "desc": "The DigiFab Dosing calculator doses DigiFab in patients with confirmed digoxin poisoning or overdose.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/18824911 ",
+                "text": "Lapostolle F, Borron SW, Verdier C, Taboulet P, Guerrier G, Adnet F, Clemessy JL, Bismuth C, Baud FJ. Digoxin-specific Fab fragments as single first-line therapy in digitalis poisoning. Crit Care Med. 2008 Nov;36(11):3014-8. doi: 10.1097/CCM.0b013e31818b341c."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/2188752 ",
+                "text": "Antman EM, Wenger TL, Butler VP Jr, Haber E, Smith TW. Treatment of 150 cases of Life-Threatening Digitalis Intoxication With Digoxin-Specific Fab Antibody Fragments: Final Report of a Multicenter Study. Circulation. 1990;81:1744-52."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/4715199 ",
+                "text": "Bismuth C, Gaultier M, Conso F, Efthymiou ML. Hyperkalemia in Acute Digitalis Poisoning: Prognostic Significance and Therapeutic Implications. Clin Toxicol. 1973;6(2):153-62."
+            },
+            {
+                "href": "https://www.gsk.com.au/resources.ashx/prescriptionmedicinesproductschilddataproinfo/854/FileName/6C4EF0296B7C0A32232861F2B1609EB3/PI_Digibind_Injection.pdf ",
+                "text": "Digibind® Injection Information, Manufacturer's Guidelines"
+            },
+            {
+                "href": "https://accesspharmacy.mhmedical.com/book.aspx?bookid=1163 ",
+                "text": "Hack JB. Cardioactive Steroids. In: Hoffman R, Howland MA, Lewin N et al. Goldfrank's Toxicologic Emergencies, Tenth Edition. McGraw-Hill Education / Medical; 2014."
+            },
+            {
+                "href": "https://accesspharmacy.mhmedical.com/book.aspx?bookid=1163",
+                "text": "Howland MA. Digoxin-Specific Antibody Fragments. In: Hoffman R, Howland MA, Lewin N et al. Goldfrank's Toxicologic Emergencies, Tenth Edition. McGraw-Hill Education / Medical; 2014."
+            }
+        ],
+        "evidence": "<p>Number of vials = ( serum digoxin level, ng/mL x patient weight, kg ) / 100</p>\n<p>OR</p>\n<p>Number of vials = ( amount ingested, mg / 0.5 mg/vial ) x 80% bioavailability</p>\n<p>Number of vials should always be rounded up to the next whole number.</p>\n<p><strong>Empiric therapy for acute poisoning:</strong></p>\n<p>10-20 vials (adult or child)</p>\n<p><strong>Empiric therapy for chronic poisoning:</strong></p>\n<p>Adult: 3-6 vials</p>\n<p>Child: 1-2 vials</p>\n<p>Example: 60-year old woman (65 kg) develops acute kidney injury from gastroenteritis and presents to the ED with altered mental status and bradycardia. Her serum digoxin level is 2.8 ng/mL (3.6 nmol/L). How many vials of DigiFab should be administered?</p>\n<ul>\n<li>No. of vials = ( serum digoxin level, ng/mL x patient weight, kg ) / 100</li>\n<li>No. of vials = 2.8 ng/mL x 65 kg / 100</li>\n<li>No. of vials = 1.82 = 2 vials</li>\n<li>(No. of vials should be rounded up)</li>\n</ul>\n<p>Example: a 30-year old man (70 kg) presents to the ED after intentionally ingesting 4 mg of a family member&rsquo;s digoxin. Atropine IV is ineffective and his heart rate remains 20-30. How many vials of DigiFab should be administered?</p>\n<ul>\n<li>No. of vials = ( amount ingested, mg / 0.5 mg/vial ) x 80% bioavailability</li>\n<li>No. of vials = 4 mg / 0.5 (mg/vial) x 80%</li>\n<li>No. of vials = 6.4 = 7 vials</li>\n<li>(No. of vials should be rounded up)</li>\n</ul>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Serum digoxin level",
+                "unit": "dig",
+                "error_min": "0",
+                "error_max": "10",
+                "warn_min": "0",
+                "warn_max": "3",
+                "conversion": "1.281",
+                "normal_max_si": "2.6",
+                "normal_max_us": "2",
+                "normal_min_si": "1",
+                "normal_min_us": "0.8",
+                "units_si": "nmol/L",
+                "units_us": "ng/mL"
+            },
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Amount digoxin ingested",
+                "unit": "dig_mg",
+                "error_min": "0",
+                "error_max": "20",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "2",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mg",
+                "units_us": "mg"
+            }
+        ],
+        "primary_complains": [
+            "Intoxication/Overdose"
+        ],
+        "disease_treated": [
+            "Drug/Alcohol Use",
+            "Ingestion/Overdose"
+        ],
+        "logic": "var calc_output = [];\n\n//user inputs\nif (choose == 0) {\n    var weight = parseFloat(weight)\n    var dig = parseFloat(dig)\n    if (UOMSYSTEM == true) {\n        var dig = parseFloat(dig)\n    }\n    else {\n        var dig = parseFloat(dig) / 1.281\n    }\n    var vials = dig * weight / 100\n}\n\nif (choose == 1) {\n    var amount = parseFloat(amount)\n    var vials = amount / 0.5 * 0.8\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: Math.ceil(vials),\n    value_text: 'vials',\n    message: 'DigiFab dose (40 mg vials)'\n});\ncalc_output.push({\n    name: '4036_DigiFab (Digibind) Dosing_result',\n    value: Math.ceil(vials),\n    value_text: 'vials',\n    message: 'DigiFab dose (assumes each vial contains 40 mg)'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Choose available data</p>",
+                "md_calc_info_concept": null,
+                "name": "choose",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Serum digoxin level",
+                        "value": 0
+                    },
+                    {
+                        "label": "Amount ingested",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "choose == 0",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Patient body weight</p>",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "choose == 0",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Serum digoxin level</p>",
+                "name": "dig",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "dig"
+            },
+            {
+                "conditionality": "choose == 1",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Amount ingested</p>",
+                "name": "amount",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "dig_mg"
+            }
+        ],
+        "can_search": [
+            "digoxin",
+            "overdose",
+            "DigiFab",
+            "dosing",
+            "poisoning",
+            "treatment"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pharmacy",
+            "Toxicology"
+        ]
+    }
+}

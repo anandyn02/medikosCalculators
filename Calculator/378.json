@@ -1,0 +1,205 @@
+{
+    "id": "378",
+    "title": "ADAPT Protocol for Cardiac Event Risk",
+    "desc": "The ADAPT Protocol for Cardiac Event Risk uses a 2-hour accelerated diagnostic protocol to assess patients with chest pain for 30 day risk of cardiac event.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/22578923",
+                "text": "Than M, et. al. 2-Hour Accelerated Diagnostic Protocol to Assess Patients With Chest Pain Symptoms Using Contemporary Troponins as the Only Biomarker : The ADAPT Trial. J Am Coll Cardiol. 2012 Jun 5;59(23):2091-8. doi: 10.1016/j.jacc.2012.02.035. Epub 2012 May 9."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>1 point</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Abnormal troponin*</p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Abnormal EKG**</p>\n</td>\n<td>\n<p><span>No</span></p>\n</td>\n<td>\n<p><span>Yes</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>TIMI Risk Score for UA/NSTEMI</p>\n</td>\n<td>\n<p><span>0</span></p>\n</td>\n<td>\n<p><span>&gt;0</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><span><br>*cTnI level at 0 and 2 hours above institutional cutoff for elevated troponin.</span><br><span>**ST-segment depression of at least 0.05 mV in &ge;2 contiguous leads (including reciprocal changes), T-wave inversion of at least 0.1 mV, or Q waves &ge;30 ms in width and &ge;0.1 mV in depth in at least 2 contiguous leads.</span></p>",
+        "facts": "<p>&nbsp;</p>\n<table>\n<tbody>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>Risk group</strong></p>\n</td>\n<td>\n<p><strong>Risk of major adverse cardiac event (MACE) in 30 days</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Normal troponin, normal EKG and TIMI 0</span></p>\n</td>\n<td>\n<p><span>Low</span></p>\n</td>\n<td>\n<p><span>0-0.3%*</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Normal troponin, normal EKG and TIMI 1</span></p>\n</td>\n<td>\n<p><span>Intermediate</span></p>\n</td>\n<td>\n<p><span>0.8%**</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><span>Abnormal troponin or abnormal EKG and any TIMI</span></p>\n</td>\n<td>\n<p><span>High</span></p>\n</td>\n<td>\n<p><span>15.3%***</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><span><br>*Per </span><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/22578923\" target=\"_blank\" rel=\"noopener\"><span>Than 2012</span></a><span>.</span></p>\n<p><span>**Per </span><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/23583250\" target=\"_blank\" rel=\"noopener\"><span>Cullen 2013</span></a><span>. The study examined patients with TIMI 0 or 1, with no reported data for patients with TIMI &gt;1 (presuming according to TIMI data, risk of MACE increases with increasing TIMI Score).</span></p>\n<p><span>***Per </span><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/22578923\" target=\"_blank\" rel=\"noopener\"><span>Than 2012</span></a><span>. In the original paper, 15.3% of patients studied (302 of 1,975 total) had a MACE, and only 1 patient was identified as low risk.</span></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain"
+        ],
+        "disease_treated": [
+            "Acute Coronary Syndrome",
+            "Myocardial Infarction"
+        ],
+        "logic": "var calc_output = [];\n\nvar timi = parseFloat(age_65) + parseFloat(cad_risk_factors) + parseFloat(known_cad) + parseFloat(aspirin_use) + parseFloat(angina);\n\nvar risk;\nvar interpretation;\n\nif (abnormal_troponin == 1 || abnormal_ekg == 1) {\n\trisk = 'High'\n\tinterpretation = 'Evaluate through standard chest pain diagnostic pathway.'\n}\nif (abnormal_troponin == 0 && abnormal_ekg == 0 && timi == 0) {\n\trisk = 'Low'\n\tinterpretation = '0-0.3% risk of major cardiac event in 30 days.'\n}\nif (abnormal_troponin == 0 && abnormal_ekg == 0 && timi == 1) {\n\trisk = 'Intermediate'\n\tinterpretation = '0.8% risk of major cardiac event in 30 days.'\n}\nif (abnormal_troponin == 0 && abnormal_ekg == 0 && timi > 1) {\n\trisk = 'Intermediate'\n\tinterpretation = 'At least 0.8% risk of major cardiac event in 30 days (see Facts & Figures for details).'\n}\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: risk, \n\tvalue_text: ' risk', \n\tmessage: ''\n});\ncalc_output.push({ \n\tname: '1857_ADAPT Protocol_result', \n\tvalue: risk, \n\tvalue_text: 'risk', \n\tmessage: interpretation \n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abnormal troponin at 0 or 2 hours",
+                "md_calc_info_concept": null,
+                "name": "abnormal_troponin",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Ischemic changes on EKG",
+                "md_calc_info_concept": null,
+                "name": "abnormal_ekg",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "<calculator id='111'>TIMI Risk Score for UA/NSTEMI</calculator><br/>Note: The TIMI Risk Score for UA/NSTEMI includes cardiac enzymes and ST deviation which are listed above and therefore excluded from the TIMI inputs below.",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Age ≥65 years",
+                "md_calc_info_concept": null,
+                "name": "age_65",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "≥3 CAD risk factors",
+                "md_calc_info_concept": null,
+                "name": "cad_risk_factors",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Hypertension, hypercholesterolemia, diabetes, family history of coronary artery disease, or current smoker",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Known CAD (stenosis ≥50%)",
+                "md_calc_info_concept": null,
+                "name": "known_cad",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Aspirin use in past 7 days",
+                "md_calc_info_concept": null,
+                "name": "aspirin_use",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Severe angina (≥2 episodes in 24 hrs or persisting discomfort)",
+                "md_calc_info_concept": null,
+                "name": "angina",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "acs",
+            "troponin",
+            "cp",
+            "chest pain"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine"
+        ]
+    }
+}

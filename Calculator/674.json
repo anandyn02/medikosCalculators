@@ -1,0 +1,294 @@
+{
+    "id": "674",
+    "title": "Sodium Correction Rate in Hyponatremia and Hypernatremia",
+    "desc": "The Sodium Correction Rate for Hyponatremia Calculates recommended fluid type, rate and volume to correct hyponatremia slowly (or more rapidly if seizing).",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://content.nejm.org/cgi/content/short/342/21/1581",
+                "text": " Adrogué HJ, Madias NE. Hyponatremia. NEJM, 2000."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Fluid rate, mL/hr = (1000 x rate of sodium correction, mmol/L/hr) / change in serum sodium</p>\n<p>Change in serum sodium = (fluid sodium, mmol/L - serum sodium, mmol/L) / (total body water + 1)</p>\n<p>Total body water&nbsp;= weight,&nbsp;kg x % body water, defined as follows:</p>\n<p><strong>% body water:</strong></p>\n<table class=\"data\">\n<tbody>\n<tr>\n<td>\n<p><strong>Age</strong></p>\n</td>\n<td><strong>Male</strong></td>\n<td><strong>Female</strong></td>\n</tr>\n<tr>\n<td>\n<p>Child</p>\n</td>\n<td>0.6</td>\n<td>0.6</td>\n</tr>\n<tr>\n<td>\n<p>Adult</p>\n</td>\n<td>0.6</td>\n<td>0.5</td>\n</tr>\n<tr>\n<td>\n<p>Elderly</p>\n</td>\n<td>0.5</td>\n<td>0.45</td>\n</tr>\n</tbody>\n</table>\n<p>Experts recommend correcting <strong>no faster than 12 mmol/L/day (0.5mmol/L/hr)</strong> to avoid osmotic demylination syndrome (ODS), previously known as central pontine myelinolysis (CPM), and only correcting it faster &mdash; and only using hypertonic (3%) saline &mdash; <strong>if the patient is seriously symptomatic at a rate of 1-2 mmol/L/hr</strong>, and even then, only correcting it at 1-2 mmol/L/hr.</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "rate_Na_correction",
+                "unit": "rate_Na_correction",
+                "error_min": "0",
+                "error_max": "2",
+                "warn_min": "0.5",
+                "warn_max": "0.5",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mmol/L/hr",
+                "units_us": "mEq/L/hr"
+            },
+            {
+                "name": "Weight",
+                "unit": "wt",
+                "error_min": "0.5",
+                "error_max": "620",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "150",
+                "normal_max_us": "330",
+                "normal_min_si": "1",
+                "normal_min_us": "2",
+                "units_si": "kg",
+                "units_us": "lbs"
+            },
+            {
+                "name": "Sodium",
+                "unit": "na",
+                "error_min": "100",
+                "error_max": "200",
+                "warn_min": "0",
+                "warn_max": "170",
+                "conversion": "1",
+                "normal_max_si": "145",
+                "normal_max_us": "145",
+                "normal_min_si": "136",
+                "normal_min_us": "136",
+                "units_si": "mmol/L",
+                "units_us": "mEq/L"
+            },
+            {
+                "name": "Weight",
+                "unit": "wt_nonadult",
+                "error_min": "0.5",
+                "error_max": "600",
+                "warn_min": "0.5",
+                "warn_max": "500",
+                "conversion": "0.453592",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "kg",
+                "units_us": "lbs"
+            }
+        ],
+        "primary_complains": [
+            "AMS",
+            "Seizure",
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Acid-Base Disturbance",
+            "Hypernatremia",
+            "Hyponatremia"
+        ],
+        "logic": "var fluid_type_140 = parseFloat(fluid_type_140) || 0\nvar fluid_type_hyper = parseFloat(fluid_type_hyper) || 0;\nvar fluid_type_hypo = parseFloat(fluid_type_hypo) || 0;\nvar weight_nonadult = parseFloat(weight_nonadult) || 0;\nvar weight = parseFloat(weight) || 0 ;\n\nvar calc_output = [];\nvar sex = parseFloat(sex);\nfluid_type_hypo = parseFloat(fluid_type_hypo);\nfluid_type_140 = parseFloat(fluid_type_140);\nfluid_type_hyper = parseFloat(fluid_type_hyper);\nvar v, v1, v2, v3, na, tbw, totalna;\nif (UOMSYSTEM == true) {\n  weight_nonadult = weight_nonadult*0.453592;\n}\nif (weight_nonadult != 0) {\n  var wt = weight_nonadult;\n} else if (weight != 0) {\n  var wt = weight;\n}\n//var wt = parseFloat(weight); // weight already in kg so no need to change!\nvar age = parseFloat(age);\nvar na = parseFloat(sodium);\nvar fltype;\nvar origrate = parseFloat(origrate);\nvar rate = origrate*24;\n\n//hypo\nif (na <= 135) {\n\nif (age == 3) {\n  if (sex == 1) {\n    tbw = .45\n  } else {\n    tbw = .5\n  }\n}\nif (age == 2) {\n  if (sex == 1) {\n    tbw = .5\n  } else {\n    tbw = .6\n  }\n}\nif (age == 1) {\n  tbw = 0.6\n}\ntbw = tbw * wt;\nif (fluid_type_hypo == 1) {\n  totalna = 513;\n  fltype = '3% saline'\n} else if (fluid_type_hypo == 0) {\n  totalna = 341;\n  fltype = '2% saline'\n} else if (fluid_type_hypo == 2) {\n  totalna = 154;\n  fltype = 'NS'\n} else if (fluid_type_hypo == 3) {\n  totalna = 130;\n  fltype = 'LR';\n} else if (fluid_type_hypo == 4) {\n  totalna = 856;\n  fltype = '5% saline';\n} else if (fluid_type_hypo == 5) {\n  totalna = 34;\n  fltype = '0.2 NS'\n} else if (fluid_type_hypo == 6) {\n  totalna = 0;\n  fltype = 'D5W'\n}\nif (na > totalna) {\n  calc_output.push({\n    name: 'mini',\n    value: ' ',\n    value_text: ' ',\n    message: 'Choose a different fluid!'\n  });\n  calc_output.push({\n    name: '480_Na Correction Rate in Hyponatremia/Hypernatremia_result',\n    value: ' ',\n    value_text: ' ',\n    message: 'Choose a different fluid: your patient\\u2019s serum Na is higher than the fluid\\u2019s Na!'\n  });\n} else {\n  v = (totalna - na) / (tbw + 1);\n  v1 = rate / v;\n  v1 = v1 / 24;\n  v1 = v1 * 1000;\n  v2 = rate / v;\n  v2 = v2 / 24;\n  v2 = v2 * 1000;\n  v3 = rate / v;\n  v3 = v3 / 24;\n  v3 = v3 * 1000;\n\n\n  if (v1 < 0) {\n    v1 = v1*(-1);\n  } if (v2 < 0) {\n    v2 = v2*(-1);\n  } if (v3 < 0) {\n    v3 = v3*(-1);\n  } if (v1 > 0) {\n    v1 = v1;\n  } if (v2 > 0) {\n    v2 = v2;\n  } if (v3 > 0) {\n    v3 = v3;\n  }  \n\n  var msg = '';\n  \n  if (v1.toFixed(0) >= 250) {\n    var msg = 'Calculated rate is very high; note that patient Na levels may change more rapidly than the math, and always use your clinical judgment over a calculator';\n  }\n\n\n  calc_output.push({\n    name: 'mini',\n    value: v1.toFixed(0),\n    value_text: 'mL/hr',\n    message: 'Fluid rate to increase Na by '+ origrate+ ' mmol/L/hr'\n  });\n  calc_output.push({\n    name: '480_Na Correction Rate in Hyponatremia/Hypernatremia_result',\n    value: v1.toFixed(0),\n    value_text: 'mL/hr',\n    message: 'Fluid rate to increase Na by '+ origrate+ ' mmol/L/hr with ' + fltype + '<br/><br/>' + msg\n  });\n}\n}\n//hyper\nelse if (na >= 146) {\nif (age == 3) {\n  if (sex == 1) {\n    tbw = .45\n  } else {\n    tbw = .5\n  }\n}\nif (age == 2) {\n  if (sex == 1) {\n    tbw = .5\n  } else {\n    tbw = .6\n  }\n}\nif (age == 1) {\n  tbw = 0.6\n}\ntbw = tbw * wt;\nif (fluid_type_hyper == 1) {\n  totalna = 513;\n  fltype = '3% saline'\n} else if (fluid_type_hyper == 2) {\n  totalna = 154;\n  fltype = 'NS'\n} else if (fluid_type_hyper == 3) {\n  totalna = 130;\n  fltype = 'LR'\n} else if (fluid_type_hyper == 4) {\n  totalna = 77;\n  fltype = '1/2 NS'\n} else if (fluid_type_hyper == 5) {\n  totalna = 34;\n  fltype = '0.2 NS'\n} else if (fluid_type_hyper == 6) {\n  totalna = 0;\n  fltype = 'D5W'\n}\n\nif (na < totalna) {\n  calc_output.push({\n    name: 'mini',\n    value: ' ',\n    value_text: ' ',\n    message: 'Choose a different fluid!'\n  });\n  calc_output.push({\n    name: '480_Na Correction Rate in Hyponatremia/Hypernatremia_result',\n    value: ' ',\n    value_text: ' ',\n    message: 'Choose a different fluid: your patient\\u2019s serum Na is less than the fluid\\u2019s Na!'\n  });\n} else {\n  v = (totalna - na) / (tbw + 1);\n  v1 = rate / v;\n  v1 = v1 / 24;\n  v1 = v1 * 1000;\n  v2 = rate / v;\n  v2 = v2 / 24;\n  v2 = v2 * 1000;\n  v3 = rate / v;\n  v3 = v3 / 24;\n  v3 = v3 * 1000;\n\n\n  if (v1 < 0) {\n    v1 = v1*(-1);\n  } if (v2 < 0) {\n    v2 = v2*(-1);\n  } if (v3 < 0) {\n    v3 = v3*(-1);\n  } if (v1 > 0) {\n    v1 = v1;\n  } if (v2 > 0) {\n    v2 = v2;\n  } if (v3 > 0) {\n    v3 = v3;\n  }  \n\n  var msg = '';\n  \n  if (v1.toFixed(0) >= 250) {\n    var msg = 'Calculated rate is very high; note that patient Na levels may change more rapidly than the math, and always use your clinical judgment over a calculator';\n  } \n\n  calc_output.push({\n    name: 'mini',\n    value: v1.toFixed(0),\n    value_text: 'mL/hr',\n    message: 'Fluid rate to decrease Na by '+ origrate+ ' mmol/L/hr'\n  });\n  calc_output.push({\n    name: '480_Na Correction Rate in Hyponatremia/Hypernatremia_result',\n    value: v1.toFixed(0),\n    value_text: 'mL/hr',\n    message: 'Fluid rate to decrease Na by '+ origrate+ ' mmol/L/hr with ' + fltype + '<br/><br/>' + msg\n  });\n}\n\n\n}\n//nls\nelse {\nif (age == 3) {\n  if (sex == 1) {\n    tbw = .45\n  } else {\n    tbw = .5\n  }\n}\nif (age == 2) {\n  if (sex == 1) {\n    tbw = .5\n  } else {\n    tbw = .6\n  }\n}\nif (age == 1) {\n  tbw = 0.6\n}\ntbw = tbw * wt;\nif (fluid_type_140 == 1) {\n  totalna = 513;\n  fltype = '3% saline'\n} else if (fluid_type_140 == 2) {\n  totalna = 154;\n  fltype = 'NS'\n} else if (fluid_type_140 == 3) {\n  totalna = 130;\n  fltype = 'LR'\n} else if (fluid_type_140 == 4) {\n  totalna = 77;\n  fltype = '1/2 NS'\n} else if (fluid_type_140 == 5) {\n  totalna = 34;\n  fltype = '0.2 NS'\n} else if (fluid_type_140 == 6) {\n  totalna = 0;\n  fltype = 'D5W'\n}\n\n  v = (totalna - na) / (tbw + 1);\n  v1 = rate / v;\n  v1 = v1 / 24;\n  v1 = v1 * 1000;\n  v2 = rate / v;\n  v2 = v2 / 24;\n  v2 = v2 * 1000;\n  v3 = rate / v;\n  v3 = v3 / 24;\n  v3 = v3 * 1000;\n\n\n  if (v1 < 0) {\n    v1 = v1*(-1);\n  } if (v2 < 0) {\n    v2 = v2*(-1);\n  } if (v3 < 0) {\n    v3 = v3*(-1);\n  } if (v1 > 0) {\n    v1 = v1;\n  } if (v2 > 0) {\n    v2 = v2;\n  } if (v3 > 0) {\n    v3 = v3;\n  }  \n\n  var msg = '';\n  \n  if (v1.toFixed(0) >= 250) {\n    var msg = 'Calculated rate is very high; note that patient Na levels may change more rapidly than the math, and always use your clinical judgment over a calculator';\n  }\n\n  calc_output.push({\n    name: 'mini',\n    value: v1.toFixed(0),\n    value_text: 'mL/hr',\n    message: 'NOTE: Na is within normal.'\n  });\n  calc_output.push({\n    name: '480_Na Correction Rate in Hyponatremia/Hypernatremia_result',\n    value: v1.toFixed(0),\n    value_text: 'mL/hr',\n    message: 'Fluid rate to increase Na by '+ origrate+ ' mmol/L/hr with ' + fltype + '<br/><br/>NOTE: Na is within normal. Confirm correction is needed.' + '<br/><br/>' + msg\n  });\n}",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Female",
+                        "value": 1
+                    },
+                    {
+                        "label": "Male",
+                        "value": 0
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Age range",
+                "mdcalc_info_concept": null,
+                "name": "age",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Child",
+                        "value": 1
+                    },
+                    {
+                        "label": "Adult",
+                        "value": 2
+                    },
+                    {
+                        "label": "Elderly",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "age != 1",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt"
+            },
+            {
+                "conditionality": "age == 1",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Weight",
+                "name": "weight_nonadult",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "wt_nonadult"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Serum sodium",
+                "name": "sodium",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "na"
+            },
+            {
+                "conditionality": "sodium >135 && sodium <146",
+                "default": null,
+                "label_en": "Fluid type",
+                "mdcalc_info_concept": null,
+                "name": "fluid_type_140",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Lactated Ringer's (130 mmol/L Na)",
+                        "value": 3
+                    },
+                    {
+                        "label": "1/2 Normal saline (77 mmol/L Na)",
+                        "value": 4
+                    },
+                    {
+                        "label": "0.2 Normal saline (34 mmol/L Na)",
+                        "value": 5
+                    },
+                    {
+                        "label": "5% Dextrose in water (0 mmol/L Na)",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "sodium >= 146",
+                "default": null,
+                "label_en": "Fluid type",
+                "mdcalc_info_concept": null,
+                "name": "fluid_type_hyper",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Lactated Ringer's (130 mmol/L Na)",
+                        "value": 3
+                    },
+                    {
+                        "label": "1/2 Normal saline (77 mmol/L Na)",
+                        "value": 4
+                    },
+                    {
+                        "label": "0.2 Normal saline (34 mmol/L Na)",
+                        "value": 5
+                    },
+                    {
+                        "label": "5% Dextrose in water (0 mmol/L Na)",
+                        "value": 6
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "sodium <= 135 && sodium > 0",
+                "default": null,
+                "label_en": "Fluid type",
+                "mdcalc_info_concept": null,
+                "name": "fluid_type_hypo",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "5% saline (856 mmol/L Na)",
+                        "value": 4
+                    },
+                    {
+                        "label": "3% saline (513 mmol/L Na)",
+                        "value": 1
+                    },
+                    {
+                        "label": "2% saline (341 mmol/L Na)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Normal saline (154 mmol/L Na)",
+                        "value": 2
+                    },
+                    {
+                        "label": "Lactated Ringer's (130 mmol/L Na)",
+                        "value": 3
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0.5,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Rate of sodium correction",
+                "name": "origrate",
+                "optional": false,
+                "tips_en": "To avoid central pontine myelinolysis, sodium should not be corrected faster than 0.5 mmol/L/hr unless patient is seriously symptomatic",
+                "type": "textbox",
+                "unit": "rate_Na_correction"
+            }
+        ],
+        "can_search": [
+            "na"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Critical Care (Neurologic)",
+            "Critical Care (Pediatric)",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Nephrology",
+            "Neurology",
+            "Pediatrics"
+        ]
+    }
+}

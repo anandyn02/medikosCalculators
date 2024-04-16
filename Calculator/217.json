@@ -1,0 +1,170 @@
+{
+    "id": "217",
+    "title": "Rome IV Diagnostic Criteria for Functional Anorectal Pain",
+    "desc": "The Rome IV Criteria for Functional Anorectal Pain provides criteria for diagnosis of functional anorectal pain.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5035713/",
+                "text": "Rao SS, Bharucha AE, Chiarioni G, et al. Functional Anorectal Disorders. Gastroenterology. 2016; 150: 1430-1442."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/31407463/",
+                "text": "Carrington EV, Heinrich H, Knowles CH, et al. The international anorectal physiology working group (Iapwg) recommendations: Standardized testing protocol and the London classification for disorders of anorectal function. Neurogastroenterol Motil. 2020;32(1):e13679."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/20044997/",
+                "text": "Chiarioni G, Nardo A, Vantini I, et al. Biofeedback is superior to electrogalvanic stimulation and massage for treatment of levator ani syndrome. Gastroenterology 2010; 138: 1321–1329."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6511340/",
+                "text": "Ooijevaar RE, Felt-bersma RJF, Han-geurts IJ, Van reijn D, Vollebregt PF, Molenaar CBH. Botox treatment in patients with chronic functional anorectal pain: experiences of a tertiary referral proctology clinic. Tech Coloproctol. 2019;23(3):239-244."
+            }
+        ],
+        "evidence": "<p><strong>Levator Ani Syndrome</strong></p>\n<p>To fulfill the Rome IV criteria for levator ani syndrome, patient must have the following (for 3 months prior with symptom onset &ge;6 months ago):</p>\n<ol>\n<li>Chronic or recurrent rectal pain or aching.</li>\n<li>Episodes last &ge;30 minutes.</li>\n<li>Tenderness during traction on the puborectalis.</li>\n<li>Exclusion of other causes of rectal pain, such as inflammatory bowel disease, intramuscular abscess and fissure, thrombosed hemorrhoids, prostatitis, coccygodynia, and major structural alterations of the pelvic floor.</li>\n</ol>\n<p><strong>Unspecified Functional Anorectal Pain</strong></p>\n<p>To fulfill the Rome IV criteria for unspecified functional anorectal pain, patient must have the following:</p>\n<ol>\n<li>Symptom criteria for levator ani syndrome but no tenderness during posterior traction on the puborectalis muscle.</li>\n</ol>\n<p></p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Anorectal Pain"
+        ],
+        "disease_treated": [
+            "Functional Anorectal Disorders",
+            "Disorders of Gut-Brain Interaction (DGBI)"
+        ],
+        "logic": "var calc_output=[];\n\nvar criteria1=parseFloat(one)+parseFloat(two)+parseFloat(three)+parseFloat(four);\nvar\ncriteria2=parseFloat(five);\n\nvar diag;\n\nif (criteria1==4) {\n  diag='Positive';\n  var msg= 'Positive diagnosis for <strong>levator ani syndrome</strong> as per Rome IV criteria';\n  var minimsg= 'Positive diagnosis for <strong>levator ani syndrome</strong>';\n} else if (criteria2==1) {\n  diag='Positive';\n  var msg= 'Positive diagnosis for <strong>unspecified functional anorectal pain</strong> as per Rome IV criteria';\n  var minimsg= 'Positive diagnosis for <strong>unspecified functional anorectal pain</strong>';\n} else {\n  diag='Negative';\n  var msg= 'Negative diagnosis for levator ani syndrome <strong>AND</strong> unspecified functional anorectal pain as per Rome IV criteria';\n  var minimsg= 'Negative diagnosis for levator ani syndrome <strong>AND</strong> unspecified functional anorectal pain';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: diag,\n    value_text:'',\n    message:minimsg\n});\ncalc_output.push({\n    name: 'Rome IV for Levator Ani Syndrome',\n    value: diag,\n    value_text:'',\n    message:msg\n});",
+        "inputs": [
+            {
+                "subheading": "Levator ani syndrome",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Chronic or recurrent rectal pain or aching",
+                "name": "one",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Episodes last ≥30 minutes",
+                "name": "two",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Tenderness during traction on the puborectalis",
+                "name": "three",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Exclusion of other causes of rectal pain, such as inflammatory bowel disease, intramuscular abscess and fissure, thrombosed hemorrhoids, prostatitis, coccygodynia, and major structural alterations of the pelvic floor",
+                "name": "four",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "subheading": "Unspecified functional anorectal pain",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "subheading": "Must have the following:",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Symptom criteria for chronic levator ani syndrome but no tenderness during posterior traction on the puborectalis muscle",
+                "name": "five",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "Rome IV Criteria for Functional Anorectal Pain, Rome IV for Anorectal Pain, rome iv anorectal pain, rome iv functional anorectal pain, rome anorectal pain, rome, anorectal pain, anorectal pain rome, rome 4 for anorectal pain, rome 4 anorectal pain, levator ani syndrome, rome iv levator ani syndrome, rome 4 levator ani syndrome, rome levator ani syndrome"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Primary Care"
+        ]
+    }
+}

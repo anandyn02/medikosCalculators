@@ -1,0 +1,114 @@
+{
+    "id": "432",
+    "title": "Absolute Lymphocyte Count (ALC)",
+    "desc": "The Absolute Lymphocyte Count (ALC) assesses number of lymphocytes and predicts CD4 count.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9737494",
+                "text": "Shapiro NI, Karras DJ, Leech SH, Heilpern KL. Absolute lymphocyte count as a predictor of CD4 count. Ann Emerg Med. 1998 Sep;32(3 Pt 1):323-8."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/9803965",
+                "text": "van der Ryst E, Kotze M, Joubert G, Steyn M, Pieters H, van der Westhuizen M, van Staden M, Venter C. Correlation among total lymphocyte count, absolute CD4+ count, and CD4+ percentage in a group of HIV-1-infected South African patients. J Acquir Immune Defic Syndr Hum Retrovirol. 1998 Nov 1;19(3):238-44."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/22676809-total-lymphocyte-count-as-a-surrogate-marker-for-cd4-count-in-resource-limited-settings/",
+                "text": "Obirikorang C, Quaye L, Acheampong I. Total lymphocyte count as a surrogate marker for CD4 count in resource-limited settings. BMC Infect Dis. 2012;12:128."
+            }
+        ],
+        "evidence": "<p>ALC = WBC count x 1000 x % lymphs</p>",
+        "facts": "<p><b>Predicted CD4 from ALC</b> (<a href=\"https://www.ncbi.nlm.nih.gov/pubmed/9803965\" target=\"_blank\" rel=\"noopener\">van der Ryst E 1998</a>)</p>\n<div class=\"table-responsive\">\n<table class=\"table table-bordered table-hover\">\n<tbody>\n<tr>\n<th style=\"text-align: left;\">\n<p>ALC</p>\n</th>\n<th style=\"text-align: left;\">Predicted CD4 Count</th>\n</tr>\n<tr>\n<td style=\"text-align: left;\">\n<p>&lt;1000 cells/mm<sup>3</sup></p>\n</td>\n<td style=\"text-align: left;\">&lt;200 cells/mm<sup>3</sup></td>\n</tr>\n<tr>\n<td style=\"text-align: left;\">\n<p>1000-2000 cells/mm<sup>3</sup></p>\n</td>\n<td style=\"text-align: left;\">Unable to predict</td>\n</tr>\n<tr>\n<td style=\"text-align: left;\">\n<p>&gt;2000 cells/mm<sup>3</sup></p>\n</td>\n<td style=\"text-align: left;\">&gt;200 cells/mm<sup>3</sup></td>\n</tr>\n</tbody>\n</table>\n</div>",
+        "estimation": [
+            {
+                "name": "% Neutrophils",
+                "unit": "neut",
+                "error_min": "-0.01",
+                "error_max": "100.01",
+                "warn_min": "0",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "White Blood Cell Count",
+                "unit": "wbc",
+                "error_min": "0.0001",
+                "error_max": "500",
+                "warn_min": "0.1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "10.7",
+                "normal_max_us": "10.7",
+                "normal_min_si": "3.7",
+                "normal_min_us": "3.7",
+                "units_si": "× 10⁹ cells/L",
+                "units_us": "× 10³ cells/µL"
+            }
+        ],
+        "primary_complains": [
+            "Fever"
+        ],
+        "disease_treated": [
+            "Coronavirus",
+            "COVID-19",
+            "HIV/AIDS"
+        ],
+        "logic": "var calc_output = [];\nvar lymphs = parseFloat(lymph) / 100;\nvar unit, msg;\nvar v = parseFloat(wbc) * lymphs * 1000;\nunit = \"cells/mm\\u00B3\";\nmini_msg = \"Absolute Lymphocyte Count\";\n\nif (v < 1000) {\n    msg = \"If the patient is HIV+, he/she likely has AIDS (CD4 < 200 with 96% specificity).\";\n}\nif (v >= 1000 && v < 2000) {\n    msg = \"Cannot reliably predict if CD4 is > or < 200.\";\n}\nif (v >= 2000) {\n    msg = \"The patient likely does not have AIDS (CD4 > 200 with 90-97% sensitivity).\";\n}\ncalc_output.push({\n    name: 'mini',\n    value: v.toFixed(0),\n    value_text: unit,\n    message: mini_msg\n});\ncalc_output.push({\n    name: '2203_Absolute Lymphocyte Count_result',\n    value: v.toFixed(0),\n    value_text: unit,\n    message: mini_msg + '<br/><br/>' + msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Lymphocytes</p>",
+                "name": "lymph",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "neut"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>White Blood Cell Count</p>",
+                "name": "wbc",
+                "optional": false,
+                "tips_en": "Per 1000. Enter as 8.4, not 8400",
+                "type": "textbox",
+                "unit": "wbc"
+            }
+        ],
+        "can_search": [
+            "alc",
+            "lymph",
+            "cd4",
+            "cd8",
+            "natural killer cells",
+            "immune",
+            "coronavirus",
+            "covid",
+            "covid19",
+            "covid-19",
+            "covid 19"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Family Practice",
+            "Hematology and Oncology",
+            "Infectious Disease",
+            "Internal Medicine",
+            "Palliative Care/Hospice"
+        ]
+    }
+}

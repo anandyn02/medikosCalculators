@@ -1,0 +1,101 @@
+{
+    "id": "661",
+    "title": "Abbreviated Injury Score (AIS) for Inhalation Injury",
+    "desc": "The Abbreviated Injury Score classifies inhalation injury severity based on bronchoscopic findings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/17211205",
+                "text": "Endorf FW, Gamelli RL. Inhalation injury, pulmonary perturbations, and fluid resuscitation. J Burn Care Res. 2007;28(1):80-3. "
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4624587/ ",
+                "text": "Walker PF, Buehner MF, Wood LA, et al. Diagnosis and management of inhalation injury: an updated review. Crit Care. 2015;19:351. "
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/20006445 ",
+                "text": "Hassan Z, Wong JK, Bush J, Bayat A, Dunn KW. Assessing the severity of inhalation injuries in adults. Burns. 2010;36(2):212-6."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/27518664 ",
+                "text": "Sheridan RL. Fire-Related Inhalation Injury. N Engl J Med. 2016;375(5):464-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1152086",
+                "text": "Hunt JL, Agee RN, Pruitt BA. Fiberoptic bronchoscopy in acute inhalation injury. J Trauma. 1975;15(8):641-9."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26594859 ",
+                "text": "Spano S, Hanna S, Li Z, Wood D, Cartotto R. Does Bronchoscopic Evaluation of Inhalation Injury Severity Predict Outcome?. J Burn Care Res. 2016;37(1):1-11."
+            }
+        ],
+        "evidence": "<p>Selection of the appropriate findings:</p> <table> <tbody> <tr> <td> <p><strong>Features</strong></p> </td> <td> <p><strong>Grade</strong></p> </td> <td> <p><strong>Description</strong></p> </td> </tr> <tr> <td> <p>No carbonaceous deposits, erythema, edema, bronchorrhea, or obstruction</p> </td> <td> <p>0</p> </td> <td> <p>No injury</p> </td> </tr> <tr> <td> <p>Minor or patchy areas of erythema, carbonaceous deposits, bronchorrhea, or bronchial obstruction present</p> </td> <td> <p>1</p> </td> <td> <p>Mild injury</p> </td> </tr> <tr> <td> <p>Moderate erythema, carbonaceous deposits, bronchorrhea, or bronchial obstruction present</p> </td> <td> <p>2</p> </td> <td> <p>Moderate injury</p> </td> </tr> <tr> <td> <p>Severe inflammation with friability, copious carbonaceous deposits, bronchorrhea, or obstruction present</p> </td> <td> <p>3</p> </td> <td> <p>Severe injury</p> </td> </tr> <tr> <td> <p>Mucosal sloughing, necrosis, or endoluminal obstruction present</p> </td> <td> <p>4</p> </td> <td> <p>Massive injury</p> </td> </tr> </tbody> </table> <p>&nbsp;</p>",
+        "facts": "<p>Interpretation:</p> <table> <tbody> <tr> <td> <p><strong>Grade</strong></p> </td> <td> <p><strong>In-hospital Survival*</strong></p> </td> </tr> <tr> <td> <p>0-1</p> </td> <td> <p>84%</p> </td> </tr> <tr> <td> <p>2-4</p> </td> <td> <p>57%</p> </td> </tr> </tbody> </table> <p>*From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/17211205\" target=\"_blank\">Endorf and Gamelli</a>.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Pain"
+        ],
+        "disease_treated": [
+            "Trauma"
+        ],
+        "logic": "var calc_output = [];\n\n// Declare vars\n\nvar grade; \nvar findings; \nvar description; \nvar survival;\nfindings = parseFloat(findings);\n\nif (findings == 0) {\n    grade = 'Grade 0';\n    description = 'No injury';\n    survival = '84% in-hospital survival';\n}\nif (findings == 1) {\n   grade = 'Grade 1';\n   description = 'Mild injury';\n   survival = '84% in-hospital survival';\n}\nif (findings == 2){\n   grade = 'Grade 2';\n   description = 'Moderate injury';\n   survival = '57% in-hospital survival';\n}\nif (findings == 3) {\n   grade = 'Grade 3';\n   description = 'Severe injury';\n   survival = '57% in-hospital survival';\n}\nif (findings == 4) {\n   grade = 'Grade 4';\n   description = 'Massive injury';\n   survival = '57% in-hospital survival';\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: grade,\n   value_text: '',\n   message: description\n});\ncalc_output.push({\n   name: 'grade',\n   value: grade,\n   value_text: '',\n   message: 'AIS for inhalation injury'\n});\ncalc_output.push({\n   name: 'severity',\n   value: description,\n   value_text: '',\n   message: survival\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Bronchoscopic findings",
+                "name": "findings",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No carbonaceous deposits, erythema, edema, bronchorrhea, or obstruction",
+                        "value": 0
+                    },
+                    {
+                        "label": "Minor or patchy areas of erythema, carbonaceous deposits, bronchorrhea, or bronchial obstruction present",
+                        "value": 1
+                    },
+                    {
+                        "label": "Moderate erythema, carbonaceous deposits, bronchorrhea, or bronchial obstruction present",
+                        "value": 2
+                    },
+                    {
+                        "label": "Severe inflammation with friability, copious carbonaceous deposits, bronchorrhea, or obstruction present",
+                        "value": 3
+                    },
+                    {
+                        "label": "Mucosal sloughing, necrosis, or endoluminal obstruction present",
+                        "value": 4
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "AIS",
+            "bronchoscopy",
+            "abbreviated injury score",
+            "inhalation injury",
+            "bronchoscopic scoring",
+            "acute pulmonary inflammatory response",
+            "smoke inhalation",
+            "INHI",
+            "burns",
+            "P:F ratio",
+            "lung injury",
+            " fluid resuscitation",
+            "lung compliance"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Pulmonology",
+            "Surgery (Trauma)"
+        ]
+    }
+}

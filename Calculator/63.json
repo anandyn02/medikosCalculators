@@ -1,0 +1,344 @@
+{
+    "id": "63",
+    "title": "REVEAL Registry Risk Score 2.0 for Pulmonary Arterial Hypertension (PAH)",
+    "desc": "The REVEAL Registry Risk Score for Pulmonary Arterial Hypertension (PAH) predicts survival in patients with pulmonary arterial hypertension.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/21680644",
+                "text": "Benza RL, Gomberg-Maitland M, Miller DP, et al. The REVEAL Registry risk score calculator in patients newly diagnosed with pulmonary arterial hypertension. Chest. 2012;141(2):354-62."
+            },
+            {
+                "href": "https://pubmed.ncbi.nlm.nih.gov/30772387/",
+                "text": "Benza RL, Gomberg-Maitland M, Elliott CG, et al. Predicting survival in patients with pulmonary arterial hypertension: the reveal risk score calculator 2. 0 and comparison with esc/ers-based risk assessment strategies. Chest. 2019;156(2):323-337."
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "",
+                "text": ""
+            }
+        ],
+        "evidence": "<p dir=\"ltr\"><span>The REVEAL Score is calculated by the addition of the selected points + 6:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table height=\"2480\" style=\"width: 92.32081911262799%; height: 1972px;\"><colgroup><col width=\"195\" style=\"width: 40.29574861367837%;\"><col width=\"143\" style=\"width: 35.304990757855826%;\"><col width=\"70\" style=\"width: 24.214417744916823%;\"></colgroup>\n<tbody>\n<tr style=\"height: 54px;\">\n<td colspan=\"2\" style=\"height: 54px;\">\n<p dir=\"ltr\"><strong>Variable</strong></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><strong>Points</strong></p>\n</td>\n</tr>\n<tr style=\"height: 98px;\">\n<td rowspan=\"4\" style=\"height: 304px;\">\n<p dir=\"ltr\"><span>WHO group 1 subgroup</span></p>\n</td>\n<td style=\"height: 98px;\">\n<p dir=\"ltr\"><span>Associated PAH-connective tissue disease</span></p>\n</td>\n<td style=\"height: 98px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 98px;\">\n<td style=\"height: 98px;\">\n<p dir=\"ltr\"><span>Associated PAH-portopulmonary hypertension</span></p>\n</td>\n<td style=\"height: 98px;\">\n<p dir=\"ltr\"><span>3</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Familial PAH</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Other</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"2\" style=\"height: 108px;\">\n<p dir=\"ltr\"><span>eGFR &lt;60 mL/min/1.73 m</span><span>2 </span><span>or renal insufficiency (if eGFR is unavailable)</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"2\" style=\"height: 108px;\"><br>\n<p dir=\"ltr\"><span>Male age &gt;60 years</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"4\" style=\"height: 216px;\">\n<p dir=\"ltr\"><span>NYHA/WHO functional class</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>I</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>-1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>II</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>III</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>IV</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"2\" style=\"height: 108px;\">\n<p dir=\"ltr\"><span>Systolic BP, mmHg</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>&ge;110 mmHg</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>&lt;110 mmHg</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"2\" style=\"height: 108px;\">\n<p dir=\"ltr\"><span>Heart rate, bpm</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>&le;96 bpm</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>&gt;96 bpm</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"2\" style=\"height: 108px;\">\n<p dir=\"ltr\"><span>Any hospitalizations within 6 months (for any cause)</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"4\" style=\"height: 216px;\">\n<p dir=\"ltr\"><span>6-minute walk test</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>&ge;</span><span>440 m</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>-2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>320 to &lt;440 m</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>-1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>165 to &lt;320 m</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>&lt;165 m</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"4\" style=\"height: 216px;\">\n<p dir=\"ltr\"><span>BNP*, pg/mL</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>&lt;50 pg/mL</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>-2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>50 to &lt;200 pg/mL</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>200 to &lt;800 pg/mL</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>&ge;800 pg/mL</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>2</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"2\" style=\"height: 108px;\">\n<p dir=\"ltr\"><span>Pericardial effusion on echocardiogram</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"2\" style=\"height: 108px;\">\n<p dir=\"ltr\"><span>DL</span><span>CO </span><span>on pulmonary function test</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>&ge;40%</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>&lt;40%</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 48px;\">\n<td rowspan=\"2\" style=\"height: 102px;\">\n<p dir=\"ltr\"><span>Mean right atrial pressure &gt;20 mmHg within 1 year on right heart catheterization</span><span></span></p>\n</td>\n<td style=\"height: 48px;\">\n<p dir=\"ltr\">No</p>\n</td>\n<td style=\"height: 48px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\">Yes</p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td rowspan=\"2\" style=\"height: 108px;\">\n<p dir=\"ltr\"><span>Pulmonary vascular resistance &lt;5 Wood units on right heart catheterization</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>Yes</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>-1</span></p>\n</td>\n</tr>\n<tr style=\"height: 54px;\">\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>No</span></p>\n</td>\n<td style=\"height: 54px;\">\n<p dir=\"ltr\"><span>0</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"><span>*If N-terminal proBNP is available and BNP is not, listed cut points can be replaced with &lt;300 pg/mL and &ge;1,100 pg/mL.</span></p>",
+        "facts": "<p dir=\"ltr\"><span>Interpretation:</span><b></b></p>\n<div dir=\"ltr\" align=\"left\">\n<table style=\"width: 84.47098976109214%;\"><colgroup><col width=\"151\" style=\"width: 32.92929292929293%;\"><col width=\"126\" style=\"width: 32.12121212121212%;\"><col width=\"123\" style=\"width: 34.54545454545455%;\"></colgroup>\n<tbody>\n<tr>\n<td>\n<p dir=\"ltr\"><strong>REVEAL Score</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Risk group</strong></p>\n</td>\n<td>\n<p dir=\"ltr\"><strong>Predicted 1-year survival</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&le;6</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Low</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&ge;94%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>7-8</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>Intermediate</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>70% to &lt;94%</span></p>\n</td>\n</tr>\n<tr>\n<td>\n<p dir=\"ltr\"><span>&ge;9</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>High</span></p>\n</td>\n<td>\n<p dir=\"ltr\"><span>&lt;70%</span></p>\n</td>\n</tr>\n</tbody>\n</table>\n</div>\n<p dir=\"ltr\"></p>",
+        "estimation": [],
+        "primary_complains": [
+            "Dizziness",
+            "Dyspnea",
+            "Shortness of Breath"
+        ],
+        "disease_treated": [
+            "Heart Failure"
+        ],
+        "logic": "var calc_output = [];\n\nvar who = parseFloat(who);\nvar renal = parseFloat(renal);\nvar male = parseFloat(male);\nvar nyha = parseFloat(nyha);\nvar bp = parseFloat(bp);\nvar hr = parseFloat(hr);\nvar min = parseFloat(min);\nvar bnp = parseFloat(bnp);\nvar eff = parseFloat(eff);\nvar dl = parseFloat(dl);\nvar pressure = parseFloat(pressure);\nvar resistance = parseFloat(resistance);\nvar hosp = parseFloat(hosp);\n\nvar score = 6 + who + renal + male + nyha + bp + hr + min + bnp + eff + dl + pressure + resistance + hosp;\n\nvar group = ''\nvar survival = ''\n\nif (score <= 6) {\n  group = 'Low';\n  survival = '≥94';\n} else if (score <= 8) {\n  group = 'Intermediate';\n  survival = '70 to <94';\n} else {\n  group = 'High';\n  survival = '<70'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: group,\n    value_text: 'risk',\n    message: survival + '% 1-year survival'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'REVEAL Score'\n});\ncalc_output.push({\n    name: 'Group',\n    value: group,\n    value_text: 'risk',\n    message: ''\n});\ncalc_output.push({\n    name: 'Survival',\n    value: survival,\n    value_text: '%',\n    message: 'Predicted 1-year survival'\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p><abbr title=\"World Health Organization\">WHO</abbr> group 1 subgroup</p>",
+                "name": "who",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Associated PAH-portopulmonary hypertension",
+                        "value": 3
+                    },
+                    {
+                        "label": "Familial PAH",
+                        "value": 2
+                    },
+                    {
+                        "label": "Associated PAH-connective tissue disease",
+                        "value": 1
+                    },
+                    {
+                        "label": "Other",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>eGFR &lt;60 mL/min/1.73 m<sup>2&nbsp;</sup>or renal insufficiency</p>",
+                "name": "renal",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "(if eGFR is unavailable)",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<p>Male age &gt;60 years</p>",
+                "name": "male",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><abbr title=\"New York Heart Association\">NYHA</abbr>/<abbr title=\"World Health Organization\">WHO</abbr> functional class</p>",
+                "name": "nyha",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "I",
+                        "value": -1
+                    },
+                    {
+                        "label": "II",
+                        "value": 0
+                    },
+                    {
+                        "label": "III",
+                        "value": 1
+                    },
+                    {
+                        "label": "IV",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Systolic BP, mmHg</p>",
+                "name": "bp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥110 mmHg",
+                        "value": 0
+                    },
+                    {
+                        "label": "<110 mmHg",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Heart rate, bpm</p>",
+                "name": "hr",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≤96 bpm",
+                        "value": 0
+                    },
+                    {
+                        "label": ">96 bpm",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "<p>Any hospitalizations within 6 months</p>",
+                "name": "hosp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "(for any cause)",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><calculator id=\"3983\">6-minute walk test</calculator></p>",
+                "name": "min",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥440 m",
+                        "value": -2
+                    },
+                    {
+                        "label": "320 to <440 m",
+                        "value": -1
+                    },
+                    {
+                        "label": "165 to <320 m",
+                        "value": 0
+                    },
+                    {
+                        "label": "<165 m",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p><abbr title=\"Brain natriuretic peptide\">BNP</abbr>, pg/mL</p>",
+                "name": "bnp",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<50 pg/mL",
+                        "value": -2
+                    },
+                    {
+                        "label": "50 to <200 pg/mL",
+                        "value": 0
+                    },
+                    {
+                        "label": "200 to <800 pg/mL",
+                        "value": 1
+                    },
+                    {
+                        "label": "≥800 pg/mL",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "If N-terminal proBNP is available and BNP is not, listed cut points can be replaced with <300 pg/mL and ≥1,100 pg/mL",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Pericardial effusion on echocardiogram</p>",
+                "name": "eff",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>DLCO on pulmonary function test</p>",
+                "name": "dl",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "≥40%",
+                        "value": 0
+                    },
+                    {
+                        "label": "<40%",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Mean right atrial pressure &gt;20 mmHg within 1 year on right heart catheterization</p>",
+                "name": "pressure",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Pulmonary vascular resistance &lt;5 Wood units on right heart catheterization</p>",
+                "name": "resistance",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Yes",
+                        "value": -1
+                    },
+                    {
+                        "label": "No",
+                        "value": 0
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "REVEAL registry ",
+            "REVEAL score ",
+            "PAH",
+            "Pulmonary Arterial Hypertension",
+            "pulmonary hypertension",
+            "Arterial Hypertension"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Pulmonology"
+        ]
+    }
+}

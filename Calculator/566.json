@@ -1,0 +1,111 @@
+{
+    "id": "566",
+    "title": "BWH Egg Freezing Counseling Tool (EFCT)",
+    "desc": "Brigham and Women’s Hospital (BWH) Egg Freezing Counseling Tool predicts likelihood of live birth for elective egg freezing in women.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/28166330",
+                "text": "Goldman RH, Racowsky C, Farland LV, Munné S, Ribustello L, Fox JH. Predicting the likelihood of live birth for elective oocyte cryopreservation: a counseling tool for physicians and patients. Hum Reprod. 2017;32(4):853-859. "
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/26604065",
+                "text": "Doyle JO, Richter KS, Lim J, Stillman RJ, Graham JR, Tucker MJ. Successful elective and medically indicated oocyte vitrification and warming for autologous in vitro fertilization, with predicted birth probabilities for fertility preservation according to number of cryopreserved oocytes and age at retrieval. Fertil Steril. 2016;105(2):459-66.e2."
+            },
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/24034939 ",
+                "text": "Harton GL, Munné S, Surrey M, et al. Diminished effect of maternal age on implantation after preimplantation genetic diagnosis with array comparative genomic hybridization. Fertil Steril. 2013;100(6):1695-703."
+            }
+        ],
+        "evidence": "<p>p(Livebirth) = 1 &ndash; [1 &ndash; 0.6 &times; p(Euploid) &times; p(Blast)] ^ (Number of mature eggs)</p>\n<p>where</p>\n<p>p(Blast) = 0.95 &times;&nbsp;exp(2.8043 &ndash; 0.1112 &times;&nbsp;Age) if Age &lt;36</p>\n<p>p(Blast) = 0.85 &times;&nbsp;exp(2.8043 &ndash; 0.1112 &times;&nbsp;Age) if Age &ge;36</p>\n<p>and</p>\n<p>p(Euploid) is from table below</p>\n<p><em>Note:</em> number of mature eggs assumes 95% survival of thawed eggs (85% if age is &ge;36 years).</p>",
+        "facts": "<table>\n<tbody>\n<tr>\n<td>\n<p><strong>Age (years)</strong></p>\n</td>\n<td>\n<p><strong>p(Euploid)</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Egg donors (for reference)</p>\n</td>\n<td>\n<p>0.647</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&le;35</p>\n</td>\n<td>\n<p>0.574</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>36</p>\n</td>\n<td>\n<p>0.564</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>37</p>\n</td>\n<td>\n<p>0.486</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>38</p>\n</td>\n<td>\n<p>0.466</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>39</p>\n</td>\n<td>\n<p>0.440</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>40</p>\n</td>\n<td>\n<p>0.359</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>41</p>\n</td>\n<td>\n<p>0.327</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>42</p>\n</td>\n<td>\n<p>0.285</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>43</p>\n</td>\n<td>\n<p>0.206</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>44</p>\n</td>\n<td>\n<p>0.127</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p><em>Note:</em> In the study, ages 24&ndash;35 were grouped together, as&nbsp;fertility is fairly stable&nbsp;up to age 35 and begins to decrease appreciably after that age.</p>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age_bwh",
+                "error_min": "24",
+                "error_max": "44",
+                "warn_min": "24",
+                "warn_max": "44",
+                "conversion": "1",
+                "normal_max_si": "44",
+                "normal_max_us": "44",
+                "normal_min_si": "24",
+                "normal_min_us": "24",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "eggs",
+                "unit": "eggs",
+                "error_min": "1",
+                "error_max": "101",
+                "warn_min": "1",
+                "warn_max": "100",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "eggs",
+                "units_us": "eggs"
+            }
+        ],
+        "primary_complains": [
+            "Infertility"
+        ],
+        "disease_treated": [
+            "Infertility",
+            "Pregnancy"
+        ],
+        "logic": "var calc_output = [];\n\n//initialize user inputs\nvar age = parseFloat(age);\nvar eggs = parseFloat(eggs);\n\n//declare variables\nvar pBlast, pEuploid;\nvar msg = ' (assumes 85% survival of thawed eggs)'\n\n// pBlast by age\nif (age <= 35) {\n\tage = 35\n\tpBlast = 0.95 * Math.exp(2.8043 - 0.1112 * age)\n}\nelse {\n\tpBlast = 0.85 * Math.exp(2.8043 - 0.1112 * age)\n}\n\n// pEuploid values by age\nif (age <= 35) {\n\tpEuploid = 0.574\n\tmsg = ' (assumes 95% survival of thawed eggs)'\n}\nif (age == 36) {\n\tpEuploid = 0.564\n}\nif (age == 37) {\n\tpEuploid = 0.486\n}\nif (age == 38) {\n\tpEuploid = 0.466\n}\nif (age == 39) {\n\tpEuploid = 0.440\n}\nif (age == 40) {\n\tpEuploid = 0.359\n}\nif (age == 41) {\n\tpEuploid = 0.327\n}\nif (age == 42) {\n\tpEuploid = 0.285\n}\nif (age == 43) {\n\tpEuploid = 0.206\n}\nif (age == 44) {\n\tpEuploid = 0.127\n}\n\n// var pBirth1 = 1 - Math.pow(1 - 0.6 * pEuploid * pBlast, eggs)\nvar q = 0.6 * pEuploid * pBlast\n\n// var pBirth1 = 1 - Math.pow(1 - q, eggs)\n// var pBirth1 = pBirth1 * 100\n\n// var pBirth2 = pBirth1 - eggs * q * Math.pow(1 - q, eggs - 1)\n// var pBirth2 = pBirth2 * 100\n\n// var pBirth3 = pBirth2 - eggs * (eggs - 1) / 2 * Math.pow(q, 2) * Math.pow(1 - q, eggs - 2)\n// var pBirth3 = pBirth3 * 100\n\nvar pBirth0ex = Math.pow(1 - q, eggs)\nvar pBirth1ex = eggs * q * Math.pow(1 - q, (eggs - 1))\nvar pBirth2ex = eggs * (eggs - 1) / 2 * Math.pow(q, 2) * Math.pow(1 - q, (eggs - 2))\n\nvar pBirth1 = 1 - pBirth0ex\nvar pBirth2 = 1 - pBirth0ex - pBirth1ex\nvar pBirth3 = 1 - pBirth0ex - pBirth1ex - pBirth2ex\n\nvar pBirth1 = pBirth1 * 100\nvar pBirth2 = pBirth2 * 100\nvar pBirth3 = pBirth3 * 100\n\nif (pBirth1 > 99) {\n\tpBirth1 = '>99'\n}\nif (pBirth2 > 99) {\n\tpBirth2 = '>99'\n}\nif (pBirth3 > 99) {\n\tpBirth3 = '>99'\n}\n\nif (pBirth1 < 1) {\n\tpBirth1 = '<1'\n}\nif (pBirth2 < 1) {\n\tpBirth2 = '<1'\n}\nif (pBirth3 < 1) {\n\tpBirth3 = '<1'\n}\n\nif (pBirth1 >= 1 && pBirth1 <= 99) {\n\tpBirth1 = pBirth1.toFixed(0)\n}\nif (pBirth2 >= 1 && pBirth2 <= 99) {\n\tpBirth2 = pBirth2.toFixed(0)\n}\nif (pBirth3 >= 1 && pBirth3 <= 99) {\n\tpBirth3 = pBirth3.toFixed(0)\n}\n\n\ncalc_output.push({\n\tname: 'mini',\n\tvalue: pBirth1,\n\tvalue_text: '%',\n\tmessage: 'Probability of at least 1 live birth',\n});\ncalc_output.push({\n\tname: '3937_BWH Egg Freezing_result (1 birth)',\n\tvalue: pBirth1,\n\tvalue_text: '%',\n\tmessage: 'Probability of at least 1 live birth' + msg,\n});\ncalc_output.push({\n\tname: '3937_BWH Egg Freezing_result (2 births)',\n\tvalue: pBirth2,\n\tvalue_text: '%',\n\tmessage: 'Probability of at least 2 live births' + msg,\n});\ncalc_output.push({\n\tname: '3937_BWH Egg Freezing_result (3 births)',\n\tvalue: pBirth3,\n\tvalue_text: '%',\n\tmessage: 'Probability of at least 3 live births' + msg,\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_bwh"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Number of mature eggs",
+                "name": "eggs",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "eggs"
+            }
+        ],
+        "can_search": [
+            "egg freezing",
+            "male factor",
+            "Egg",
+            "oocyte",
+            "oocytes",
+            "cryopreservation",
+            "infertility",
+            "fertility",
+            "pregnancy",
+            "birth",
+            "ivf",
+            "intracytoplasmic sperm injection",
+            "tubal",
+            "in vitro fertilization",
+            "icsi"
+        ],
+        "specialty": [
+            "OB-Gyn"
+        ]
+    }
+}

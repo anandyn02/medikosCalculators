@@ -1,0 +1,406 @@
+{
+    "id": "543",
+    "title": "Pediatric Crohn’s Disease Activity Index (PCDAI)",
+    "desc": "Pediatric Crohn’s Disease Activity Index (PCDAI) determines severity of Crohn’s Disease in pediatric patients.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/1678008",
+                "text": "Hyams JS, et al. Development and validation of a pediatric Crohn's disease activity index. J Pediatr Gastroenterol Nutr. 1991 May;12(4):439-47."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<p>Addition of the selected points:</p>\n<table>\n<tbody>\n<tr>\n<td colspan=\"4\">\n<p><strong>History (based on recall within the previous week)</strong></p>\n</td>\n</tr>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>5 points</strong></p>\n</td>\n<td>\n<p><strong>10 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Abdominal pain</strong></p>\n</td>\n<td>\n<p>None</p>\n</td>\n<td>\n<p>Mild (brief, does not interfere with activities)</p>\n</td>\n<td>\n<p>Moderate to severe (daily, longer lasting, affects activities, or nocturnal pain)</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Stools per day</strong></p>\n</td>\n<td>\n<p>0&ndash;1 liquid stools, no blood</p>\n</td>\n<td>\n<p>Up to 2 semi-formed stool with small blood, or 2&ndash;5 liquid stools</p>\n</td>\n<td>\n<p>Gross bleeding or &ge;6 liquid stools, or nocturnal diarrhea</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>General well-being</strong></p>\n</td>\n<td>\n<p>Well (no limitation of activities)</p>\n</td>\n<td>\n<p>Below par (occasional difficulty in maintaining age-appropriate activities)</p>\n</td>\n<td>\n<p>Very poor (frequent limitation of activity)</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"4\">\n<p><strong>Examination</strong></p>\n</td>\n</tr>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>5 points</strong></p>\n</td>\n<td>\n<p><strong>10 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Weight</strong></p>\n</td>\n<td>\n<p>Weight gain, weight voluntarily stable, or voluntary weight loss</p>\n</td>\n<td>\n<p>Weight involuntarily stable or weight loss 1&ndash;9%</p>\n</td>\n<td>\n<p>Weight loss &ge;10%</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Height*</strong></p>\n</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td>\n<p>At diagnosis, or</p>\n</td>\n<td>\n<p>&lt;1 channel decrease</p>\n</td>\n<td>\n<p>1 &le; channel decrease &lt; 2</p>\n</td>\n<td>\n<p>&ge;2 channel decrease</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>At follow-up</p>\n</td>\n<td>\n<p>Height velocity &ge;-1SD</p>\n</td>\n<td>\n<p>-1SD &gt; height velocity &gt; -2SD</p>\n</td>\n<td>\n<p>Height velocity &le;-2SD</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Abdomen</strong></p>\n</td>\n<td>\n<p>No tenderness, no mass</p>\n</td>\n<td>\n<p>Tenderness, or mass without tenderness</p>\n</td>\n<td>\n<p>Tenderness, involuntary guarding, or definite mass</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Peri-rectal disease</strong></p>\n</td>\n<td>\n<p>None or asymptomatic tags</p>\n</td>\n<td>\n<p>1&ndash;2 indolent fistulae, scant drainage, and no tenderness</p>\n</td>\n<td>\n<p>Active fistula, drainage, tenderness, or abscess</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Extra-intestinal manifestations: </strong>Fever &ge;38.5&ordm;C (101.3&ordm;F) for 3 days over past week, definite arthritis, uveitis, erythema nodosum, or pyoderma gangrenosum</p>\n</td>\n<td>\n<p>None</p>\n</td>\n<td>\n<p>1</p>\n</td>\n<td>\n<p>&ge;2</p>\n</td>\n</tr>\n<tr>\n<td colspan=\"4\">\n<p><strong>Laboratory</strong></p>\n</td>\n</tr>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>2.5 points</strong></p>\n</td>\n<td>\n<p><strong>5 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Hematocrit, %</strong></p>\n</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n<td>&nbsp;</td>\n</tr>\n<tr>\n<td>\n<p>&lt;10 years</p>\n</td>\n<td>\n<p>&gt;33</p>\n</td>\n<td>\n<p>28&ndash;32</p>\n</td>\n<td>\n<p>&lt;28</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Female, 11&ndash;19 years</p>\n</td>\n<td>\n<p>&ge;34</p>\n</td>\n<td>\n<p>29&ndash;33</p>\n</td>\n<td>\n<p>&lt;29</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Male, 11&ndash;14 years</p>\n</td>\n<td>\n<p>&ge;35</p>\n</td>\n<td>\n<p>30&ndash;34</p>\n</td>\n<td>\n<p>&lt;30</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Male, 15&ndash;19 years</p>\n</td>\n<td>\n<p>&ge;37</p>\n</td>\n<td>\n<p>32&ndash;36</p>\n</td>\n<td>\n<p>&lt;32</p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>ESR, mm/hr</strong></p>\n</td>\n<td>\n<p>&lt;20</p>\n</td>\n<td>\n<p>20&ndash;50</p>\n</td>\n<td>\n<p>&gt;50</p>\n</td>\n</tr>\n<tr>\n<td>&nbsp;</td>\n<td>\n<p><strong>0 points</strong></p>\n</td>\n<td>\n<p><strong>5 points</strong></p>\n</td>\n<td>\n<p><strong>10 points</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p><strong>Albumin, g/dL (g/L)</strong></p>\n</td>\n<td>\n<p>&ge;3.5 (35)</p>\n</td>\n<td>\n<p>3.1&ndash;3.4 (31&ndash;34)</p>\n</td>\n<td>\n<p>&le;3.0 (30)</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>&nbsp;Height velocity can be referenced <a href=\"https://prokiids.com/uploads/Height_Velocity_Z_Score_Ref.pdf\" target=\"_blank\" rel=\"noopener\">here</a>.</p>",
+        "facts": "<p><strong>Interpretation</strong>:</p>\n<table>\n<tbody>\n<tr>\n<td>\n<p><strong>PCDAI</strong></p>\n</td>\n<td>\n<p><strong>Severity</strong></p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&lt;10</p>\n</td>\n<td>\n<p>Remission</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>10&ndash;27.5</p>\n</td>\n<td>\n<p>Mild Crohn&rsquo;s Disease</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>30&ndash;37.5</p>\n</td>\n<td>\n<p>Moderate Crohn&rsquo;s Disease</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>&ge;40</p>\n</td>\n<td>\n<p>Severe Crohn&rsquo;s Disease</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>From <a href=\"https://www.ncbi.nlm.nih.gov/pubmed/20372111\" target=\"_blank\" rel=\"noopener\">Turner 2010</a>, <em>American Journal of Gastroenterology</em>.</p>",
+        "estimation": [
+            {
+                "name": "Age",
+                "unit": "age_pas",
+                "error_min": "2",
+                "error_max": "19",
+                "warn_min": "2",
+                "warn_max": "19",
+                "conversion": "1",
+                "normal_max_si": "0",
+                "normal_max_us": "0",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "years",
+                "units_us": "years"
+            },
+            {
+                "name": "Albumin",
+                "unit": "alb",
+                "error_min": "0",
+                "error_max": "7",
+                "warn_min": "1",
+                "warn_max": "6",
+                "conversion": "10",
+                "normal_max_si": "55",
+                "normal_max_us": "5.5",
+                "normal_min_si": "35",
+                "normal_min_us": "3.5",
+                "units_si": "g/L",
+                "units_us": "g/dL"
+            },
+            {
+                "name": "Hematocrit",
+                "unit": "hct",
+                "error_min": "1",
+                "error_max": "70",
+                "warn_min": "20",
+                "warn_max": "55",
+                "conversion": "1",
+                "normal_max_si": "51",
+                "normal_max_us": "51",
+                "normal_min_si": "36",
+                "normal_min_us": "36",
+                "units_si": "%",
+                "units_us": "%"
+            },
+            {
+                "name": "CRP",
+                "unit": "esr",
+                "error_min": "0",
+                "error_max": "100",
+                "warn_min": "0",
+                "warn_max": "50",
+                "conversion": "1",
+                "normal_max_si": "20",
+                "normal_max_us": "20",
+                "normal_min_si": "0",
+                "normal_min_us": "0",
+                "units_si": "mm/hr",
+                "units_us": "mm/hr"
+            }
+        ],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Crohn's Disease",
+            "Inflammatory Bowel Disease"
+        ],
+        "logic": "var calc_output = [];\n\nvar msg;\nvar sex = parseFloat(sex);\nvar age = parseFloat(age);\nvar hct = parseFloat(hct);\nvar esr = parseFloat(esr);\nif (UOMSYSTEM == true) {\n    var alb = parseFloat(alb);\n} else {\n    var alb = parseFloat(alb) / 10;\n}\nvar ap = parseFloat(ap);\nvar stools = parseFloat(stools);\nvar func = parseFloat(func);\nvar wt = parseFloat(wt);\nvar ht = parseFloat(ht);\nvar abd = parseFloat(abd);\nvar peri = parseFloat(peri);\nvar intest = parseFloat(intest);\nvar hctscore, esrscore, albscore, score;\n\n//hct\nif (age <= 10) {\n    if (hct > 33) { hctscore = 0 }\n    if (hct >= 28 && hct <= 33) { hctscore = 2.5 }\n    if (hct < 28) { hctscore = 5 }\n}\nif (age >= 11 && age <= 14 && sex == 0) {\n    if (hct >= 35) { hctscore = 0 }\n    if (hct >= 30 && hct < 35) { hctscore = 2.5 }\n    if (hct < 30) { hctscore = 5 }\n}\nif (age >= 11 && age <= 19 && sex == 1) {\n    if (hct >= 34) { hctscore = 0 }\n    if (hct >= 29 && hct < 34) { hctscore = 2.5 }\n    if (hct < 29) { hctscore = 5 }\n}\nif (age > 14 && age <= 19 && sex == 0) {\n    if (hct >= 37) { hctscore = 0 }\n    if (hct >= 32 && hct < 37) { hctscore = 2.5 }\n    if (hct < 32) { hctscore = 5 }\n}\n// if (age > 19) { msg = 'The PCDAI does not apply to patients >19 years old.';\n//     score = 'N/A' }\n\n//esr\nif (esr < 20) { esrscore = 0 }\nif (esr >= 20 && esr <= 50) { esrscore = 2.5 }\nif (esr > 50) { esrscore = 5 }\n\n//alb\nif (alb >= 3.5) { albscore = 0 }\nif (alb >= 3.1 && alb < 3.5) { albscore = 5 }\nif (alb < 3.1) { albscore = 10 }\n\nvar score = ap + stools + func + wt + ht + abd + peri + intest + hctscore + esrscore + albscore;\n\nif (score < 10) { msg = \"Remission\"; }\nif (score >= 10 && score <= 27.5) { msg = \"Mild Crohn's Disease Activity\"; }\nif (score > 27.5 && score <= 40) { msg = \"Moderate Crohn's Disease Activity\"; }\nif (score >= 40) { msg = \"Severe Crohn's Disease Activity\"; }\n\ncalc_output.push({\n    name: 'mini',\n    value: score.toFixed(1),\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: '3907_PCDAI Score_result',\n    value: score.toFixed(1),\n    value_text: 'points',\n    message: msg\n});\n",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "History: Based on recall from the previous week",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abdominal pain",
+                "mdcalc_info_concept": null,
+                "name": "ap",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "Mild: Does not interfere with activities",
+                        "value": 5
+                    },
+                    {
+                        "label": "Moderate/Severe: Daily, longer lasting, affects activities, nocturnal",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Stools per day",
+                "mdcalc_info_concept": null,
+                "name": "stools",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "0–1 liquid stools, no blood",
+                        "value": 0
+                    },
+                    {
+                        "label": "2-5 liquid or ≤2 semi-formed with small blood",
+                        "value": 5
+                    },
+                    {
+                        "label": "≥6 liquid, gross blood, or nocturnal diarrhea",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "General well-being",
+                "mdcalc_info_concept": null,
+                "name": "func",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Well (no limitation of activities)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Below par (occasional difficulty in maintaining age-appropriate activities)",
+                        "value": 5
+                    },
+                    {
+                        "label": "Very poor (frequent limitation of activity)",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Examination",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Weight",
+                "mdcalc_info_concept": null,
+                "name": "wt",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Weight gain, weight voluntarily stable, or voluntary weight loss",
+                        "value": 0
+                    },
+                    {
+                        "label": "Weight involuntarily stable or weight loss 1–9%",
+                        "value": 5
+                    },
+                    {
+                        "label": "Weight loss ≥10%",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Based on previous measurement at least 4-6 months earlier",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Height at diagnosis (or at follow-up)",
+                "mdcalc_info_concept": null,
+                "name": "ht",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "<1 channel decrease (or height velocity ≥ -1SD)",
+                        "value": 0
+                    },
+                    {
+                        "label": "Channel decrease ≥1 and <2 (or height velocity <-1SD and >-2SD)",
+                        "value": 5
+                    },
+                    {
+                        "label": "≥2 channel decrease (or height velocity ≤-2SD)",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Abdomen",
+                "mdcalc_info_concept": null,
+                "name": "abd",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No tenderness, no mass",
+                        "value": 0
+                    },
+                    {
+                        "label": "Tenderness, or mass without tenderness",
+                        "value": 5
+                    },
+                    {
+                        "label": "Tenderness, involuntary guarding, or definite mass",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Peri-rectal disease",
+                "mdcalc_info_concept": null,
+                "name": "peri",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None or asymptomatic tags",
+                        "value": 0
+                    },
+                    {
+                        "label": "1–2 indolent fistulae, scant drainage, and no tenderness",
+                        "value": 5
+                    },
+                    {
+                        "label": "Active fistula, drainage, tenderness, or abscess",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Extra-intestinal manifestations",
+                "mdcalc_info_concept": null,
+                "name": "intest",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "None",
+                        "value": 0
+                    },
+                    {
+                        "label": "1",
+                        "value": 5
+                    },
+                    {
+                        "label": "≥2",
+                        "value": 10
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Fever ≥38.5ºC (101.3ºF) for 3 days over past week, arthritis, uveitis, erythema nodosum, or pyoderma gangrenosum",
+                "type": "radio"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Laboratory",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "Sex",
+                "md_calc_info_concept": null,
+                "name": "sex",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Male",
+                        "value": 0
+                    },
+                    {
+                        "label": "Female",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Age",
+                "name": "age",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "age_pas"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Hematocrit",
+                "name": "hct",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "hct"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "ESR",
+                "name": "esr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "esr"
+            },
+            {
+                "conditionality": "",
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "Albumin",
+                "name": "alb",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "alb"
+            }
+        ],
+        "can_search": [
+            "Peds",
+            "cd",
+            "crohns",
+            "bowel",
+            "IBD",
+            "crohns disease",
+            "Pediatric Crohn’s Disease Activity Index (PCDAI)",
+            "pcdai",
+            "crohn's disease",
+            "pediatric crohn's disease",
+            "pediatric crohns"
+        ],
+        "specialty": [
+            "Family Practice",
+            "Gastroenterology",
+            "Pediatrics"
+        ]
+    }
+}

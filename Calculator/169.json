@@ -1,0 +1,71 @@
+{
+    "id": "169",
+    "title": "Immune-Related Adverse Events for GI Toxicity - Colitis",
+    "desc": "The Immune-Related Adverse Events for GI Toxicity - Colitis grades severity of colitis secondary to immune checkpoint inhibitor therapy.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/29442540",
+                "text": "Brahmer JR, Lacchetti C, Schneider BJ, et al. Management of Immune-Related Adverse Events in Patients Treated With Immune Checkpoint Inhibitor Therapy: American Society of Clinical Oncology Clinical Practice Guideline. J Clin Oncol. 2018;36(17):1714-1768."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "<table>\n<tbody>\n<tr>\n<td>\n<p><strong>CTCAE for diarrhea</strong></p>\n</td>\n<td><strong>Colitis grade</strong></td>\n</tr>\n<tr>\n<td>Increase of &lt;4 stools per day over baseline; mild increase in ostomy output compared with baseline</td>\n<td>\n<p>G1</p>\n</td>\n</tr>\n<tr>\n<td>Increase of 4-6 stools per day over baseline; moderate increase in ostomy output compared with baseline</td>\n<td>\n<p>G2</p>\n</td>\n</tr>\n<tr>\n<td>\n<p>Increase of &ge;7 stools per day over baseline; incontinence; hospitalization indicated; severe increase in ostomy output compared with baseline; limiting self-care/activities of daily living</p>\n</td>\n<td>\n<p>G3</p>\n</td>\n</tr>\n<tr>\n<td>Life-threatening consequences; urgent intervention indicated</td>\n<td>\n<p>G4</p>\n</td>\n</tr>\n</tbody>\n</table>\n<p>See Next Steps for details on management.</p>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Abdominal Pain",
+            "Diarrhea"
+        ],
+        "disease_treated": [
+            "Cancer",
+            "Colitis"
+        ],
+        "logic": "var calc_output = [];\n\nvar grading = parseFloat(grading);\nvar rec;\n\nswitch (grading) {\n  case 1:\n    rec = 'Continue ICPi (or hold temporarily and resume if toxicity remains grade ≤1); monitor for dehydration; recommend dietary changes; GI consult for prolonged cases; see Next Steps for details';\n    break;\n  case 2:\n    rec = 'Hold ICPi until pt recovers to grade 1; consider permanently d/c CTLA-4; may restart PD-1, PD-L1 if pt recovers to grade ≤1; consider steroids; consider loperamide if infection is ruled out; If diarrhea is not transient, start steroids, then taper if symptoms improve to grade ≤1; GI consult; consider EGD/colonoscopy; see Next Steps for details';\n    break;\n  case 3:\n    rec = 'Consider permanently d/c CTLA-4; may restart PD-1, PD-L1 if pt recovers to grade ≤1; start steroids; consider admission or outpatient facility if dehydration/electrolyte imbalance; consider IV steroids or infliximab if persistent/recurrent symptoms; consider colonoscopy if on immunosuppression; see Next Steps for details';\n    break;\n  case 4:\n    rec = 'Permanently d/c ICPis; admit if clinically indicated (monitor closely if outpatient); start steroids and give until symptoms improve, then taper; consider early infliximab if steroid-refractory; consider lower GI endoscopy if refractory symptoms or concern for new infections; see Next Steps for details';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: 'G'+grading,\n    value_text: '',\n    message: 'Colitis grade'   \n});\ncalc_output.push({\n    name: 'Score',\n    value: 'G'+grading,\n    value_text: '',\n    message: 'Colitis grade'   \n});\ncalc_output.push({\n    name: 'risk1',\n    value: '', \n    value_text: '',\n    message: rec\n});\n",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": null,
+                "label_en": "<abbr title = \"Common Terminology Criteria for Adverse Events\">CTCAE</abbr> for diarrhea",
+                "name": "grading",
+                "optional": false,
+                "options": [
+                    {
+                        "label": "Increase of <4 stools per day over baseline; mild increase in ostomy output compared with baseline",
+                        "value": 1
+                    },
+                    {
+                        "label": "Increase of 4-6 stools per day over baseline; moderate increase in ostomy output compared with baseline",
+                        "value": 2
+                    },
+                    {
+                        "label": "Increase of ≥7 stools per day over baseline; incontinence; hospitalization indicated; severe increase in ostomy output compared with baseline; limiting self-care/activities of daily living",
+                        "value": 3
+                    },
+                    {
+                        "label": "Life-threatening consequences; urgent intervention indicated",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            }
+        ],
+        "can_search": [
+            "IRAE for GI Toxicity - Colitis",
+            "Immune-Related Adverse Events for GI Toxicity - Colitis",
+            "irae for colitis",
+            "irae colitis",
+            "colitis",
+            "irae gi toxicity"
+        ],
+        "specialty": [
+            "Gastroenterology",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Surgery (General)"
+        ]
+    }
+}

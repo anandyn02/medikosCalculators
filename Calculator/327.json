@@ -1,0 +1,114 @@
+{
+    "id": "327",
+    "title": "BUN Creatinine Ratio",
+    "desc": "The BUN Creatinine Ratio measures renal function.",
+    "data": {
+        "orgreference": [],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/books/NBK538145/",
+                "text": "Tyagi A, Aeddula NR. Azotemia. In: StatPearls. StatPearls Publishing; 2024."
+            }
+        ],
+        "evidence": "<p>BUN creatinine ratio = (blood urea nitrogen, mg/dL)/(serum creatinine, mg/dL)</p>",
+        "facts": "",
+        "estimation": [
+            {
+                "name": "Creatinine",
+                "unit": "cr",
+                "error_min": "0.01",
+                "error_max": "40",
+                "warn_min": "0",
+                "warn_max": "10",
+                "conversion": "88.4",
+                "normal_max_si": "115",
+                "normal_max_us": "1.3",
+                "normal_min_si": "62",
+                "normal_min_us": "0.7",
+                "units_si": "µmol/L",
+                "units_us": "mg/dL"
+            },
+            {
+                "name": "BUN",
+                "unit": "bun",
+                "error_min": "1",
+                "error_max": "500",
+                "warn_min": "2",
+                "warn_max": "300",
+                "conversion": "0.357",
+                "normal_max_si": "7.1",
+                "normal_max_us": "20",
+                "normal_min_si": "2.9",
+                "normal_min_us": "8",
+                "units_si": "mmol/L",
+                "units_us": "mg/dL"
+            }
+        ],
+        "primary_complains": [
+            "Anuria",
+            "Chest Pain",
+            "Extremity Edema",
+            "Fatigue",
+            "Loss of Appetite",
+            "Nausea",
+            "Peripheral Edema",
+            "Polyuria",
+            "Shortness of Breath",
+            "Swelling",
+            "Vomiting"
+        ],
+        "disease_treated": [
+            "Chronic Kidney Disease",
+            "Kidney Failure",
+            "Renal Failure"
+        ],
+        "logic": "var calc_output = [];\n\nif (UOMSYSTEM == true) {\n    var bun = parseFloat(bun);\n    var cr = parseFloat(cr);\n}\nif (UOMSYSTEM == false) {\n    var bun = parseFloat(bun)/0.357;\n    var cr = parseFloat(cr)/88.4;\n}\n\nvar ratio = bun/cr;\n\ncalc_output.push({\n    name: 'mini',\n    value: ratio.toFixed(2),\n    value_text: '',\n    message: 'BUN creatinine ratio'\n});\ncalc_output.push({\n    name: '10501_BUN Creatinine Ratio_result',\n    value: ratio.toFixed(2),\n    value_text: '',\n    message: 'BUN creatinine ratio'\n});",
+        "inputs": [
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>BUN</p>",
+                "name": "bun",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "bun"
+            },
+            {
+                "conditionality": null,
+                "default": null,
+                "fhir_rules": null,
+                "inct": null,
+                "label_en": "<p>Creatinine</p>",
+                "name": "cr",
+                "optional": false,
+                "tips_en": "",
+                "type": "textbox",
+                "unit": "cr"
+            }
+        ],
+        "can_search": [
+            "BUN Creatinine Ratio",
+            "BUN",
+            "creatinine",
+            "renal function",
+            "bun cr",
+            "bun cr ratio",
+            "renal dysfunction",
+            "chronic renal disease",
+            "renal disease",
+            "renal failure",
+            "acute renal dysfunction",
+            "acute kidney disease"
+        ],
+        "specialty": [
+            "Critical Care",
+            "Emergency Medicine",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "Nephrology"
+        ]
+    }
+}

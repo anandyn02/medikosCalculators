@@ -1,0 +1,357 @@
+{
+    "id": "427",
+    "title": "Revised McDonald Criteria for Multiple Sclerosis Diagnosis",
+    "desc": "The Revised McDonald Criteria for Multiple Sclerosis (MS) Diagnosis determines presence of MS using MRI findings.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/11456302",
+                "text": "McDonald WI, Compston A, Edan G, et al. Recommended diagnostic criteria for multiple sclerosis: guidelines from the International Panel on the diagnosis of multiple sclerosis. Ann Neurol. 2001;50:121–127"
+            }
+        ],
+        "other_refer": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/23906114",
+                "text": "Runia TF, Jafari N and Hintzen RQ. Application of the 2010 revised criteria for the diagnosis of multiple sclerosis to patients with clinically isolated syndromes. European Journal of Neurology, 2013; 20:1510–1516. doi: 10.1111/ene.12243"
+            }
+        ],
+        "evidence": "<p>The Revised McDonald Criteria also includes diagnosis of <b>Primary progressive multiple sclerosis (PPMS). Positive if:</b></p>\n<ul>\n<li>&ge;1 year of disease progression (this can be determined either prospectively or retrospectively)</li>\n<li>Plus two of the following three criteria\n<ul>\n<li>Brain dissemination in space ( &ge;1 T2 bright lesions in &ge;1 of juxtacortical, periventricular, infratentorial areas)</li>\n<li>Spinal cord dissemination in space (&ge;2 T2 bright lesions)</li>\n<li>Positive CSF (oligoclonal bands and/or elevated IgG index)</li>\n</ul>\n</li>\n</ul>",
+        "facts": "",
+        "estimation": [],
+        "primary_complains": [
+            "Weakness"
+        ],
+        "disease_treated": [
+            "Multiple Sclerosis"
+        ],
+        "logic": "var csf = csf || 0\nvar disspine = disspine || 0\nvar infra = infra || 0\nvar juxta = juxta || 0\nvar perivent = perivent || 0\nvar prog = prog || 0\nvar simultaneous = simultaneous || 0\nvar spine = spine || 0\nvar t2 = t2 || 0\n\nvar calc_output = [];\nvar value = parseInt(attacks) + parseInt(lesions) + parseInt(both);\nvar none = parseInt(none);\n\nvar dis, dit, ppms;\ndis = parseInt(spine) + parseInt(infra) + parseInt(juxta) + parseInt(perivent);\ndit = parseInt(t2) + parseInt(simultaneous);\nprog = parseInt(prog);\nppms = parseInt(disspine) + parseInt(csf);\n\n\nvar string1, string2;\nvar string3 = '';\n    if (attacks == 1 && lesions == 1) {       \n            string1 = \"Definite MS\";\n            string2 = \"No additional tests required; however, if both MRI and CSF negative, take extreme caution before making MS diagnosis (i.e., no better explanation for clinical picture after alternate diagnoses considered).\";\n        } else if (value == 0 && none == 0 && dis == 0 && dit == 0 && prog == 0 && ppms == 0) {\n            string1 = \"Not MS\";\n            string2 = \"For rule-in criteria of MS, see the Next Steps section.\";\n            string3 = \" \";\n        } else if (value >= 1 && none == 0 && dis == 0 && dit == 0 && prog == 0 && ppms == 0) {\n            string1 = \"Definite MS\";\n            string2 = \"No additional tests required; however, if both MRI and CSF negative, take extreme caution before making MS diagnosis (i.e., no better explanation for clinical picture after alternate diagnoses considered).\";\n        } else if (none == 1 && value == 0 && dis == 0 && dit == 0 && prog == 0 && ppms == 0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && dis > 0 && dit > 0 && prog > 0 && ppms > 0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && dis > 0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && dit > 0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && ppms > 0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && prog > 0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && dis > 0 && dit >0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && dis > 0 && ppms >0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && dis > 0 && prog >0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && dit > 0 && prog >0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && dit > 0 && ppms >0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (none == 0 && value == 0 && ppms > 0 && prog >0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n        } else if (dis >= 2 && dit == 0 && value == 0 && none == 1 && prog == 0 && ppms == 0) {\n            string1 = \"Not MS\";\n            string2 = \"Additional Criteria for MS diagnosis not met.\";\n            string3 = \"Not PPMS\";\n        } else if (dis >= 2 && dit > 0 && value == 0 && none == 1 && prog == 0 && ppms == 0) {\n            string1 = \"Definite MS\";\n            string2 = \"No additional tests required; however, if both MRI and CSF negative, take extreme caution before making MS diagnosis (i.e., no better explanation for clinical picture after alternate diagnoses considered).\";\n            string3 = \"Not PPMS\";\n        } else if (dis >= 2 && dit > 0 && value == 0 && none == 1 && prog > 0 && ppms > 0) {\n            string1 = \"MS & PPMS\";\n            string2 = \"No additional tests required; however, if both MRI and CSF negative, take extreme caution before making MS diagnosis (i.e., no better explanation for clinical picture after alternate diagnoses considered).\";\n            string3 = \"\";\n        } else if (dis >= 2 && dit > 0 && value == 0 && none == 1 && prog == 0 && ppms > 0) {\n            string1 = \"Definite MS\";\n            string2 = \"No additional tests required; however, if both MRI and CSF negative, take extreme caution before making MS diagnosis (i.e., no better explanation for clinical picture after alternate diagnoses considered).\";\n            string3 = \"Not PPMS\";\n        } else if (dis >= 0 && dit > 0 && value == 0 && none == 1 && prog > 0 && ppms > 0) {\n            string1 = \"Possible MS\";\n            string2 = \"See Next Steps for full rule-in criteria.\";\n            string3 = \"Not PPMS\";\n        } else if (dis == 1 && dit == 1 && value == 0 && none == 1 && ppms==0 && prog == 0) {\n            string1 = \"Possible MS\";\n            string2 = \"See Next Steps for full rule-in criteria.\";\n            string3 = \"Not PPMS\";\n        } else if (dis == 1 && dit == 2 && value == 0 && none == 1 && ppms==0 && prog == 0) {\n            string1 = \"Possible MS\";\n            string2 = \"See Next Steps for full rule-in criteria.\";\n            string3 = \"Not PPMS\";\n        } else if (dis == 1 && dit == 1 && value == 0 && none == 1 && ppms==0 && prog == 1) {\n            string1 = \"Possible MS\";\n            string2 = \"See Next Steps for full rule-in criteria.\";\n            string3 = \"Not PPMS\";\n        } else if (dis == 0 && dit == 1 && value == 0 && none == 1) {\n            string1 = \"Not MS\";\n            string2 = \"See Next Steps for full rule-in criteria.\";\n            string3 = \"Not PPMS\";\n        } else if (dis == 0 && dit == 0 && value == 0 && none == 1) {\n            string1 = \"Not MS\";\n            string2 = \"See Next Steps for full rule-in criteria.\";\n            string3 = \"Not PPMS\";\n        } else if (dis == 1 && dit == 0 && value == 0 && none == 1) {\n            string1 = \"Not MS\";\n            string2 = \"See Next Steps for full rule-in criteria.\";\n            string3 = \"Not PPMS\";\n        } else if (dis == 1 && dit == 1 && value == 0 && none == 1 && prog >0) {\n            string1 = \"Possible MS\";\n            string2 = \"See Next Steps for full rule-in criteria.\";\n            string3 = \"Not PPMS\";\n        } else if (dis == 1  && dit == 1 && value == 0 && none == 1 && prog >0 && ppms >0) {\n            string1 = \"MS & PPMS\";\n            string2 = \"See Next Steps for full rule-in criteria.\";\n            string3 = \"\";\n        } else if (dis >= 1  && dit >= 1 && value == 0 && none == 1 && prog >0 && ppms >= 0) {\n            string1 = \"MS & PPMS\";\n            string2 = \"No additional tests required; however, if both MRI and CSF negative, take extreme caution before making MS diagnosis (i.e., no better explanation for clinical picture after alternate diagnoses considered).\";\n            string3 = \"\";\n        } else if (prog == 1 && ppms >= 2 && value == 0 && none == 1) {\n            string1 = \"MS & PPMS\";\n            string2 = \"No additional tests required; however, if both MRI and CSF negative, take extreme caution before making MS diagnosis (i.e., no better explanation for clinical picture after alternate diagnoses considered).\";\n            string3 = \"\";\n        } else if (prog == 1 && ppms >= 1 && dis >= 1 && dit > 0 && value == 0 && none == 1) {\n            string1 = \"MS & PPMS\";\n            string2 = \"No additional tests required; however, if both MRI and CSF negative, take extreme caution before making MS diagnosis (i.e., no better explanation for clinical picture after alternate diagnoses considered).\";\n            string3 = \"\";\n        } else if (prog > 0 && ppms > 0 && dis > 0 && dit > 0 && value == 0 && none == 1) {\n            string1 = \"MS & PPMS\";\n            string2 = \"No additional tests required; however, if both MRI and CSF negative, take extreme caution before making MS diagnosis (i.e., no better explanation for clinical picture after alternate diagnoses considered).\";\n            string3 = \"\";\n        } else if (prog == 0 && value == 0 && none == 1) {\n            string3 = \"Not PPMS\";\n        } else {\n            string1 = \"Not MS\";\n            string2 = \"See Next Steps for full rule-in criteria.\";\n            string3 = \"Not PPMS\";\n        }\n\n\ncalc_output.push({ \n    name: 'mini', \n    value: string1, \n    value_text: ' ', \n    message: string2 \n});\ncalc_output.push({ \n    name: '2198_Revised McDonald Criteria_result', \n    value: string1, \n    value_text: ' ', \n    message: string2 + '<br/>' + string3 \n});\n",
+        "inputs": [
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Primary Criteria",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "≥2 attacks",
+                "md_calc_info_concept": null,
+                "name": "attacks",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Per Polman, et. al, 2010: “An attack is defined as a neurologic disturbance of the kind seen in MS. It can be documented by subjective report or by objective observation, but it must last for at least 24 hours. Pseudoattacks and single paroxysmal episodes must be excluded. To be considered separate attacks, at least 30 days must elapse between onset of one event and onset of another event.”",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Objective clinical evidence of ≥2 lesions on MRI",
+                "md_calc_info_concept": null,
+                "name": "lesions",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": null,
+                "default": 0,
+                "label_en": "Objective clinical evidence of 1 lesion with reasonable historical evidence of a prior attack",
+                "md_calc_info_concept": null,
+                "name": "both",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Per Polman, et. al, 2010: “Clinical diagnosis based on objective clinical findings for 2 attacks is most secure. Reasonable historical evidence for 1 past attack, in the absence of documented objective neurological findings, can include historical events with symptoms and evolution characteristics for prior inflammatory demyelinating even; at least 1 attack however must be supported by objective findings.”",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "lesions==0 && attacks==0 && both==0",
+                "default": 0,
+                "label_en": "<b>If none of these apply, click here to continue to additional criteria</b>",
+                "md_calc_info_concept": null,
+                "name": "none",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Dissemination in Space",
+                "subheading_instructions": "Demonstrated by ?1 T2 lesion in at least 2 of the following 4 CNS Regions)",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "none == 1",
+                "default": 0,
+                "label_en": "Periventricular",
+                "md_calc_info_concept": null,
+                "name": "perivent",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "none == 1",
+                "default": 0,
+                "label_en": "Juxtacordial",
+                "md_calc_info_concept": null,
+                "name": "juxta",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "none == 1",
+                "default": 0,
+                "label_en": "Infratentorial",
+                "md_calc_info_concept": null,
+                "name": "infra",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "none == 1",
+                "default": 0,
+                "label_en": "Spinal Cord",
+                "md_calc_info_concept": null,
+                "name": "spine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Dissemination in Time",
+                "subheading_instructions": "Demonstrated by ?1 of the following:",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "none == 1",
+                "default": 0,
+                "label_en": "A new T2 and/or gadolinium-enhancing lesion(s) on follow-up MRI, with reference to a baseline scan, irrespective of the timing of baseline scan.",
+                "md_calc_info_concept": null,
+                "name": "t2",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "none == 1",
+                "default": 0,
+                "label_en": "Simultaneous presence of asymptomatic gadolinium-enhancing and nonenhancing lesions at any time.",
+                "md_calc_info_concept": null,
+                "name": "simultaneous",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "inct": null,
+                "option_fhir_rules": null,
+                "subheading": "Primary Progressive Multiple Sclerosis (PPMS) Criteria",
+                "subheading_instructions": "",
+                "type": "subheading"
+            },
+            {
+                "conditionality": "none == 1",
+                "default": 0,
+                "label_en": "One year of disease progression (retrospective or prospective)",
+                "md_calc_info_concept": null,
+                "name": "prog",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "none == 1",
+                "default": 0,
+                "label_en": "Evidence of dissemination in space in the spinal cord",
+                "md_calc_info_concept": null,
+                "name": "disspine",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Based on ≥2 T2 lesions in the spinal cord",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "none == 1",
+                "default": 0,
+                "label_en": "Positive CSF",
+                "md_calc_info_concept": null,
+                "name": "csf",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": false,
+                "tips_en": "Isoelectric focusing evidence of oligoclonal bands and/or elevated IgG index",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "MS",
+            "Mcdonald",
+            "MRI",
+            "dissemination",
+            "time",
+            "space"
+        ],
+        "specialty": [
+            "Neurology",
+            "Radiology"
+        ]
+    }
+}

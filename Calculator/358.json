@@ -1,0 +1,231 @@
+{
+    "id": "358",
+    "title": "Geneva Score (Revised) for Pulmonary Embolism",
+    "desc": "The Geneva Score (Revised) For Pulmonary Embolism Objectifies risk of PE, like Wells’ score.",
+    "data": {
+        "orgreference": [
+            {
+                "href": "https://www.ncbi.nlm.nih.gov/pubmed/16461960",
+                "text": "Le Gal G, Righini M, Roy PM, Sanchez O, Aujesky D, Bounameaux H, Perrier A. Prediction of pulmonary embolism in the emergency department: the revised Geneva score. Ann Intern Med. 2006 Feb 7;144(3):165-71. PubMed PMID: 16461960."
+            }
+        ],
+        "other_refer": [],
+        "evidence": "",
+        "facts": "<p>The Revised Geneva scores, along with the <calculator id=\"115\">Wells&rsquo; PE criteria</calculator> are the most commonly used scores to evaluate for pulmonary embolism. Some physicians prefer the Revised Geneva score because of its objectivity, since the Wells&rsquo; score heavily weighs the subjective \"PE Is #1 Diagnosis, or Equally Likely\" value.</p>\n<p>Interestingly, Penaloza et. al's study (see below) comparing Wells to Revised Geneva to clinician gestalt found that clinician gestalt faired comparably (and possibly even favorably) to these scores as well.</p>\n<p>Why is the original Geneva Score not used or included on MDCalc? It requires both a chest x-ray and arterial blood gas and has fallen out of favor given the need for this testing and interpretation of it prior to being able to apply the rule.</p>",
+        "estimation": [],
+        "primary_complains": [
+            "Chest Pain",
+            "Palpitations",
+            "Shortness of Breath",
+            "Syncope"
+        ],
+        "disease_treated": [
+            "Pulmonary Embolism"
+        ],
+        "logic": "var calc_output=[]; \n\nvar u=parseInt(age_65)+parseInt(dvt_pe)+parseInt(surgery_limb_fracture)+parseInt(malignant_condition)+parseInt(limb_pain)+parseInt(hemoptysis)+parseInt(heart_rate)+parseInt(pain_on_limb_palpatation); \n\nvar mini_msg=''; \nvar msg=''; \n\nif(u<4){\n    mini_msg='Low risk group'; \n    msg='7-9% incidence of PE from several studies.'\n} \nif(u>=4&&u<=10){\n    mini_msg='Moderate risk group'; \n    msg='~20-30% incidence of PE from several studies.'\n} \nif(u>10){\n    mini_msg='High risk group'; \n    msg='> 60% incidence of PE from several studies.'\n}  \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n});  \ncalc_output.push({\n    name:'1750_Geneva Score (Revised)_result',\n    value:u,\n    value_text:'points',\n    message:mini_msg+': '+msg\n});",
+        "inputs": [
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "<p>Age &gt;65</p>",
+                "md_calc_info_concept": null,
+                "name": "age_65",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 1
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Previous DVT or PE",
+                "md_calc_info_concept": null,
+                "name": "dvt_pe",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Surgery (under general anesthesia) or lower limb fracture in past month",
+                "md_calc_info_concept": null,
+                "name": "surgery_limb_fracture",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Active malignant condition",
+                "md_calc_info_concept": null,
+                "name": "malignant_condition",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "Solid or hematologic malignant condition, currently active or considered cured <1 year",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Unilateral lower limb pain",
+                "md_calc_info_concept": null,
+                "name": "limb_pain",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 3
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Hemoptysis",
+                "md_calc_info_concept": null,
+                "name": "hemoptysis",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 2
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Heart rate",
+                "mdcalc_info_concept": null,
+                "name": "heart_rate",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "< 75",
+                        "value": 0
+                    },
+                    {
+                        "label": "75-94",
+                        "value": 3
+                    },
+                    {
+                        "label": "≥ 95",
+                        "value": 5
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "radio"
+            },
+            {
+                "conditionality": "",
+                "default": 0,
+                "label_en": "Pain on lower limb palpation and unilateral edema",
+                "md_calc_info_concept": null,
+                "name": "pain_on_limb_palpatation",
+                "option_fhir_rules": null,
+                "optional": false,
+                "options": [
+                    {
+                        "label": "No",
+                        "value": 0
+                    },
+                    {
+                        "label": "Yes",
+                        "value": 4
+                    }
+                ],
+                "show_points": true,
+                "tips_en": "",
+                "type": "toggle"
+            }
+        ],
+        "can_search": [
+            "pe",
+            "revised geneva",
+            "dvt",
+            "wells",
+            "geneva score",
+            "pulmonary embolism",
+            "pe risk",
+            "geneva pulmonary embolism"
+        ],
+        "specialty": [
+            "Cardiology",
+            "Critical Care",
+            "Emergency Medicine",
+            "Hematology and Oncology",
+            "Hospitalist Medicine",
+            "Internal Medicine",
+            "OB-Gyn",
+            "Orthopedics",
+            "Pulmonology",
+            "Surgery (General)"
+        ]
+    }
+}
