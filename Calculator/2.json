@@ -37,8 +37,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Bothersome postprandial fullness",
-                "md_calc_info_concept": null,
+                "label_en": "annoying feeling of fullness after eating. ",
                 "name": "fullness",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -59,8 +58,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Bothersome early satiation",
-                "md_calc_info_concept": null,
+                "label_en": "unsettling satiation in the early stages. ",
                 "name": "satiation",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -81,8 +79,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Bothersome epigastric pain",
-                "md_calc_info_concept": null,
+                "label_en": "extrem de dureros în zona epigastriei. ",
                 "name": "pain",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -103,8 +100,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Bothersome epigastric burning",
-                "md_calc_info_concept": null,
+                "label_en": "disturbing burning in the epigastrium. ",
                 "name": "burning",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -132,8 +128,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "No evidence of organic, systemic, metabolic or structural disease likely to explain symptoms",
-                "md_calc_info_concept": null,
+                "label_en": "Nothing indicates that the symptoms are caused by a systemic, metabolic, organic, or structural disease. ",
                 "name": "ruleout",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -161,8 +156,7 @@
             {
                 "conditionality": "fullness + satiation + pain + burning >= 1 && ruleout == 1",
                 "default": 0,
-                "label_en": "Bothersome postprandial fullnesss and early satiation ≥3 days/week",
-                "md_calc_info_concept": null,
+                "label_en": "postprandial fullness and early satiation that can irritate people for up to three days. ",
                 "name": "day3",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -183,8 +177,7 @@
             {
                 "conditionality": "fullness + satiation + pain + burning >= 1 && ruleout == 1",
                 "default": 0,
-                "label_en": "Bothersome epigastric pain and burning ≥1 day/week",
-                "md_calc_info_concept": null,
+                "label_en": "≥1 day per week of uncomfortable burning and epigastric discomfort. ",
                 "name": "day1",
                 "option_fhir_rules": null,
                 "optional": false,

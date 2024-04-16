@@ -76,7 +76,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Respiratory failure not fully explained by cardiac failure/fluid overload</p>",
+                "label_en": "Potassium ≤3.5 mEq/L. ",
                 "name": "req3",
                 "optional": false,
                 "options": [
@@ -101,7 +101,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Risk factor</p>",
+                "label_en": "Risk factor",
                 "name": "risk1",
                 "optional": false,
                 "options": [
@@ -125,12 +125,13 @@
             {
                 "subheading": "Severity",
                 "subheading_instructions": "Based on oxygenation, select one of the following:",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Bekreftelse av sepsis. "
             },
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Oxygenation</p>",
+                "label_en": "Oxygenation",
                 "name": "severity",
                 "optional": false,
                 "options": [

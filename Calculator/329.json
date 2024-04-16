@@ -47,7 +47,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "<p>Temp &gt;38&deg;C (100.4&deg;F) or &lt;36&deg;C (96.8&deg;F)</p>",
-                "md_calc_info_concept": null,
                 "name": "temperature",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -68,8 +67,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Heart rate &gt;90</p>",
-                "md_calc_info_concept": null,
+                "label_en": "heart rate surpasses 90. ",
                 "name": "heart_rate",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -90,8 +88,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Respiratory rate &gt;20 or PaCO₂ &lt;32 mm Hg</p>",
-                "md_calc_info_concept": null,
+                "label_en": "greater than 20 or less than 32 mm Hg of PaCO₂. ",
                 "name": "respiratory_rate",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -112,8 +109,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>WBC &gt;12,000/mm&sup3;, &lt;4,000/mm&sup3;, or &gt;10% bands</p>",
-                "md_calc_info_concept": null,
+                "label_en": "WBC greater than 12,000/mm^. <4,000/mm³, or > 10 percent intervals. ",
                 "name": "white_blood_cell_count",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -141,8 +137,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Suspected or present source of infection</p>",
-                "md_calc_info_concept": null,
+                "label_en": "potential or current infection source. ",
                 "name": "infection",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -170,8 +165,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Lactic acidosis, SBP &lt;90 or SBP drop &ge;40 mm Hg of normal</p>",
-                "md_calc_info_concept": null,
+                "label_en": "SBP drop ≥40 mm Hg of normal, lactic acidosis, and SBP <90. ",
                 "name": "lactic_acidosis",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -199,8 +193,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Severe sepsis with hypotension, despite adequate fluid resuscitation</p>",
-                "md_calc_info_concept": null,
+                "label_en": "hypotensive severe sepsis even with sufficient fluid replacement. ",
                 "name": "severe_sepsis",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -228,8 +221,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Evidence of &ge;2 organs failing</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Evidence of at least two failing organs. ",
                 "name": "organ_failure",
                 "option_fhir_rules": null,
                 "optional": false,

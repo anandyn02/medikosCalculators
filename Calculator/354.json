@@ -31,7 +31,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "BUN >25 mg/dL (8.92 mmol/L)",
-                "md_calc_info_concept": null,
                 "name": "bun_25",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -52,8 +51,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Impaired mental status",
-                "md_calc_info_concept": null,
+                "label_en": "Leukemia cell count (x10,000/µL). ",
                 "name": "mental_status",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -74,8 +72,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<calculator id='1096'>≥2 SIRS Criteria</calculator>",
-                "md_calc_info_concept": null,
+                "label_en": "Cel puțin două criterii SIRS. ",
                 "name": "sirs_criteria",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -96,8 +93,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Age >60 years",
-                "md_calc_info_concept": null,
+                "label_en": "Older than sixty years. ",
                 "name": "age_60",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -118,8 +114,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Pleural effusion present",
-                "md_calc_info_concept": null,
+                "label_en": "Il y a une effusion pleurale présente. ",
                 "name": "pleural_effusion",
                 "option_fhir_rules": null,
                 "optional": false,

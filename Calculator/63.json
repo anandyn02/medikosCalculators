@@ -63,7 +63,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>eGFR &lt;60 mL/min/1.73 m<sup>2&nbsp;</sup>or renal insufficiency</p>",
+                "label_en": "renal impairment or an eGFR <60 mL/min/1.73 m2. ",
                 "name": "renal",
                 "optional": false,
                 "options": [
@@ -103,7 +103,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p><abbr title=\"New York Heart Association\">NYHA</abbr>/<abbr title=\"World Health Organization\">WHO</abbr> functional class</p>",
+                "label_en": "NYHA/WHO functional group. ",
                 "name": "nyha",
                 "optional": false,
                 "options": [
@@ -131,7 +131,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Systolic BP, mmHg</p>",
+                "label_en": "Systolic blood pressure, millimeter-Hg. ",
                 "name": "bp",
                 "optional": false,
                 "options": [
@@ -151,7 +151,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Heart rate, bpm</p>",
+                "label_en": "heart beats per minute. ",
                 "name": "hr",
                 "optional": false,
                 "options": [
@@ -171,7 +171,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Any hospitalizations within 6 months</p>",
+                "label_en": "Hospital stays within a six-month period. ",
                 "name": "hosp",
                 "optional": false,
                 "options": [
@@ -191,7 +191,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p><calculator id=\"3983\">6-minute walk test</calculator></p>",
+                "label_en": "6-minute walk test. ",
                 "name": "min",
                 "optional": false,
                 "options": [
@@ -219,7 +219,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p><abbr title=\"Brain natriuretic peptide\">BNP</abbr>, pg/mL</p>",
+                "label_en": "BNP, pg/mL",
                 "name": "bnp",
                 "optional": false,
                 "options": [
@@ -247,7 +247,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Pericardial effusion on echocardiogram</p>",
+                "label_en": "echocardiogram demonstrating pericardial effusion. ",
                 "name": "eff",
                 "optional": false,
                 "options": [
@@ -267,7 +267,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>DLCO on pulmonary function test</p>",
+                "label_en": "lung function test results for DLCO. ",
                 "name": "dl",
                 "optional": false,
                 "options": [
@@ -287,7 +287,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Mean right atrial pressure &gt;20 mmHg within 1 year on right heart catheterization</p>",
+                "label_en": "After a right heart catheterization, the mean right atrial pressure was greater than 20 mmHg in just a year. ",
                 "name": "pressure",
                 "optional": false,
                 "options": [
@@ -307,7 +307,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Pulmonary vascular resistance &lt;5 Wood units on right heart catheterization</p>",
+                "label_en": "During right heart catheterization, the pulmonary vascular resistance was less than 5 Wood units. ",
                 "name": "resistance",
                 "optional": false,
                 "options": [

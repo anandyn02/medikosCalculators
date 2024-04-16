@@ -38,8 +38,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p><abbr title=\"Lactate dehydrogenase\">LDH</abbr> &gt;1.5&times; upper limit of normal</p>",
-                "md_calc_info_concept": null,
+                "label_en": "LDH > 1 point 5 ×, the upper bound of normal. ",
                 "name": "ldh",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -60,8 +59,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Hemoglobin &lt;lower limit of normal</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Lower bound of normal hemoglobin. ",
                 "name": "hgb",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -82,8 +80,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Corrected serum calcium &gt;10 mg/dL (2.5 mmol/L)</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Corrected serum calcium >10 mg/dL (2.5 mmol/L). ",
                 "name": "ca",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -105,7 +102,6 @@
                 "conditionality": null,
                 "default": 0,
                 "label_en": "<p>Time from initial diagnosis to systemic treatment &lt;1 year</p>",
-                "md_calc_info_concept": null,
                 "name": "time",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -126,8 +122,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Prior treatment with radiation</p>",
-                "md_calc_info_concept": null,
+                "label_en": "previous radiotherapy treatment. ",
                 "name": "radiation",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -148,8 +143,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>&ge;2 sites of metastasis</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Metastases at least twice. ",
                 "name": "mets",
                 "option_fhir_rules": null,
                 "optional": false,

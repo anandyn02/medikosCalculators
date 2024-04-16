@@ -77,7 +77,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Sex",
+                "label_en": "Proteina din sângele monoclonal, în g/dL. ",
                 "name": "sex",
                 "optional": false,
                 "options": [
@@ -263,7 +263,7 @@
             {
                 "conditionality": "options == 1 || options ==2",
                 "default": null,
-                "label_en": "<calculator id='29'>BMI</calculator>",
+                "label_en": "BMI",
                 "name": "bmi",
                 "optional": false,
                 "options": [

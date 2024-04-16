@@ -27,7 +27,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Platelet count <30 x 10<sup>9</sup>/L",
+                "label_en": "Nombre de plateaux <30 x 109/L. ",
                 "name": "platelet",
                 "optional": false,
                 "options": [
@@ -87,7 +87,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "History of solid-organ or stem-cell transplant",
+                "label_en": "Past experiences with stem cell or solid organ transplantation. ",
                 "name": "history",
                 "optional": false,
                 "options": [
@@ -127,7 +127,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<abbr title = \"International normalized ratio\">INR</abbr>  <1.5",
+                "label_en": "INR < 1 point 5. ",
                 "name": "inr",
                 "optional": false,
                 "options": [
@@ -147,7 +147,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Creatinine <2.0 mg/dL (176.8 μmol/L)",
+                "label_en": "La créatinine ne dépasse pas 2 points 0 mg/dL (176 points 8 μmol/L). ",
                 "name": "cr",
                 "optional": false,
                 "options": [

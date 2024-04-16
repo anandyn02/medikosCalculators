@@ -41,7 +41,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>P</strong></span>opulation</p>",
+                "label_en": "Population",
                 "name": "population",
                 "optional": false,
                 "options": [
@@ -65,7 +65,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>H</strong></span>ypertension</p>",
+                "label_en": "Hypertension",
                 "name": "hypertension",
                 "optional": false,
                 "options": [
@@ -85,7 +85,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p><strong><span style=\"text-decoration: underline;\">A</span></strong>ge</p>",
+                "label_en": "Age",
                 "name": "age",
                 "optional": false,
                 "options": [
@@ -133,7 +133,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p><span style=\"text-decoration: underline;\"><strong>E</strong></span>arlier <abbr title=\"subarachnoid hemorrhage\">SAH</abbr> from another aneurysm</p>",
+                "label_en": "A previous aneurysm-related SAH. ",
                 "name": "sah",
                 "optional": false,
                 "options": [

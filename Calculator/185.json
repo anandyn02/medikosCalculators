@@ -33,7 +33,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Patient wheezing OR unable to speak in full sentences while at rest/with minimal effort</p>",
+                "label_en": "sensation of a lump or foreign body in the throat, either constant or sporadic, without any pain and without any structural lesion found during physical examination, laryngoscopy, or endoscopy. ",
                 "name": "criteria1",
                 "optional": false,
                 "options": [
@@ -53,7 +53,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Respiratory rate &gt;22</p>",
+                "label_en": "Lack of proof linking the symptom to reflux disease or gastric emptying (GERE). ",
                 "name": "criteria2",
                 "optional": false,
                 "options": [
@@ -73,7 +73,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>PaO<sub>2</sub> &lt;65 mmHg or SpO<sub>2</sub> &lt;90%</p>",
+                "label_en": "Absence of significant dysphagia/EGJ outflow blockage, diffuse dysphagia, jackhammer esophagus, and absent peristalsis are examples of esophageal motor disorders. ",
                 "name": "criteria3",
                 "optional": false,
                 "options": [
@@ -163,7 +163,7 @@
             {
                 "conditionality": "question1==1",
                 "default": null,
-                "label_en": "<p><calculator>PaO</calculator><sub>2</sub><calculator>/FiO</calculator><sub>2</sub><calculator id=\"4062\"></calculator> &lt;150 mmHg</p>",
+                "label_en": "PaO2/FiO2 <150 mmHg. ",
                 "name": "question2",
                 "optional": false,
                 "options": [

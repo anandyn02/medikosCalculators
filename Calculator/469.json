@@ -30,7 +30,6 @@
                 "conditionality": null,
                 "default": 0,
                 "label_en": "Peritonitis (rebound tenderness/guarding)",
-                "md_calc_info_concept": null,
                 "name": "peri",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -51,8 +50,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Creatinine ≥2 mg/dL (177 µmol/L)",
-                "md_calc_info_concept": null,
+                "label_en": "Defecating brought relief. ",
                 "name": "creat",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -73,8 +71,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Hematocrit ≥ 43% (male) or 39.6% (female)",
-                "md_calc_info_concept": null,
+                "label_en": "the beginning of a shift in the frequency of stools. ",
                 "name": "hct",
                 "option_fhir_rules": null,
                 "optional": false,

@@ -57,7 +57,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Age</p>",
+                "label_en": "Age",
                 "name": "age",
                 "optional": false,
                 "tips_en": "",
@@ -67,7 +67,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p><abbr title=\"NIH Stroke Scale\">NIHSS</abbr><calculator id=\"715\"> Score</calculator></p>",
+                "label_en": "Oxfordshire Community Stroke Project categorization. ",
                 "name": "severe",
                 "optional": false,
                 "tips_en": "",
@@ -97,7 +97,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Any new visual field defect</p>",
+                "label_en": "any brand-new flaw in the visual field. ",
                 "name": "defect",
                 "optional": false,
                 "options": [
@@ -137,7 +137,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Impaired consciousness</p>",
+                "label_en": "Impaired consciousness",
                 "name": "loc",
                 "optional": false,
                 "options": [

@@ -49,8 +49,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Related to defecation</p>",
-                "md_calc_info_concept": null,
+                "label_en": "concerning the bowels. ",
                 "name": "related",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -71,8 +70,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Associated with a change in stool frequency",
-                "md_calc_info_concept": null,
+                "label_en": "connected to an adjustment in the frequency of stools. ",
                 "name": "frequency",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -94,7 +92,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Associated with a change in stool form (appearance)",
-                "md_calc_info_concept": null,
                 "name": "form",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -115,8 +112,7 @@
             {
                 "conditionality": "(related + frequency + form) >= 2",
                 "default": 3,
-                "label_en": "<p>Subtypes</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Subtypes",
                 "name": "subtype",
                 "option_fhir_rules": null,
                 "optional": true,

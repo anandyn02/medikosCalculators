@@ -43,12 +43,13 @@
             {
                 "subheading": "Must have the following:",
                 "subheading_instructions": "For 3 months prior with symptom onset ≥6 months ago",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "standards for the pain in the bile. "
             },
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Chronic or recurrent rectal pain or aching",
+                "label_en": "dilated bile duct OR elevated liver enzymes, but not both at the same time. ",
                 "name": "one",
                 "optional": false,
                 "options": [
@@ -68,7 +69,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Episodes last ≥30 minutes",
+                "label_en": "Episodes last ≥30 minutes. ",
                 "name": "two",
                 "optional": false,
                 "options": [

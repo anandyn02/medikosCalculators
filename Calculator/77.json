@@ -68,7 +68,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Intra-aortic balloon pump",
+                "label_en": "pompa a pallone intraaortica. ",
                 "name": "pump",
                 "optional": false,
                 "options": [
@@ -87,7 +87,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Congestive heart failure",
+                "label_en": "failure of the heart in congestion. ",
                 "name": "chf",
                 "optional": false,
                 "options": [
@@ -107,7 +107,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Age >75 years",
+                "label_en": "over 75 years old. ",
                 "name": "age",
                 "optional": false,
                 "options": [
@@ -164,7 +164,7 @@
             },
             {
                 "conditionality": "",
-                "label_en": "Contrast media volume",
+                "label_en": "Comparați volumul dintre medii. ",
                 "name": "cmv",
                 "optional": false,
                 "type": "textbox",

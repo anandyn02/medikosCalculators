@@ -24,8 +24,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Age</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Age",
                 "name": "age",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -50,8 +49,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>CD4 count</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "CD4 count",
                 "name": "cd4",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -88,8 +86,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>HIV-1 RNA</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "HIV-1 RNA",
                 "name": "rna",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -114,8 +111,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Hemoglobin</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Hemoglobin",
                 "name": "hgb",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -144,8 +140,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p><calculator id=\"2200\">FIB-4 Index</calculator></p>",
-                "mdcalc_info_concept": null,
+                "label_en": "FIB-4 Index",
                 "name": "fib4",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -170,8 +165,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p><calculator id=\"76\">eGFR</calculator></p>",
-                "mdcalc_info_concept": null,
+                "label_en": "eGFR",
                 "name": "egfr",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -201,7 +195,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "<p>Hepatitis C co-infection</p>",
-                "md_calc_info_concept": null,
                 "name": "hepc",
                 "option_fhir_rules": null,
                 "optional": false,

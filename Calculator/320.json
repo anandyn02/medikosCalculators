@@ -63,7 +63,7 @@
                 "default": null,
                 "fhir_rules": null,
                 "inct": null,
-                "label_en": "<p>Age</p>",
+                "label_en": "Age",
                 "name": "age",
                 "optional": false,
                 "tips_en": "",
@@ -73,8 +73,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Histological grade</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Histological grade",
                 "name": "grade",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -95,8 +94,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Receptor status</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "ECOG Execution Level ≥2. ",
                 "name": "receptor",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -134,7 +132,6 @@
                 "conditionality": null,
                 "default": 0,
                 "label_en": "<p>Number of non brain metastatic sites</p>",
-                "mdcalc_info_concept": null,
                 "name": "sites",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -160,7 +157,6 @@
                 "type": "subheading"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<p><img src=\"https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/nomogram-cropped.png\"></p>"

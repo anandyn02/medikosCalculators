@@ -111,7 +111,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Current <abbr title = \"Prostate-specific antigen\">PSA</abbr> value",
+                "label_en": "Current PSA value. ",
                 "name": "psa",
                 "optional": false,
                 "tips_en": "",
@@ -121,7 +121,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Time since diagnosis",
+                "label_en": "Date successive alla diagnosi. ",
                 "name": "time",
                 "optional": false,
                 "tips_en": "",
@@ -151,7 +151,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Neutrophil to lymphocyte ratio <2.5",
+                "label_en": "sudden inadequacy of the kidneys. ",
                 "name": "nlr",
                 "optional": false,
                 "options": [
@@ -211,7 +211,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<10 bone metastases on bone scan",
+                "label_en": "A bone scan revealed less than ten bone metastases. ",
                 "name": "bone",
                 "optional": false,
                 "options": [
@@ -231,7 +231,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Alkaline phosphatase less than upper limit of normal",
+                "label_en": "Lower than normal upper limit of alkaline phosphatase. ",
                 "name": "alp",
                 "optional": false,
                 "options": [
@@ -251,7 +251,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Pattern of spread",
+                "label_en": "The spread pattern. ",
                 "name": "spread",
                 "optional": false,
                 "options": [

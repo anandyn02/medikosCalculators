@@ -36,7 +36,8 @@
             {
                 "subheading": "History",
                 "subheading_instructions": "",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "number of packs smoked daily of cigarettes. "
             },
             {
                 "conditionality": "",
@@ -79,7 +80,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Intubation for respiratory distress",
+                "label_en": "for respiratory distress, intubation. ",
                 "name": "intu",
                 "optional": false,
                 "options": [
@@ -104,7 +105,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "HR ≥110/min ",
+                "label_en": "HR ≥110/min . ",
                 "name": "hr",
                 "optional": false,
                 "options": [
@@ -124,7 +125,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Too ill to do walk test after treatment in ED",
+                "label_en": "Too sick to walk after receiving ED treatment. ",
                 "name": "walk",
                 "optional": false,
                 "options": [
@@ -149,7 +150,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Acute ischemic changes on EKG",
+                "label_en": "alterations in the EKG caused by acute ischemia. ",
                 "name": "ekg",
                 "optional": false,
                 "options": [
@@ -189,7 +190,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Hemoglobin <10 g/dL (100 g/L)",
+                "label_en": "Hemoglobin <10 g/dL (100 g/L). ",
                 "name": "hemo",
                 "optional": false,
                 "options": [
@@ -208,7 +209,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Urea ≥12 mmol/L (BUN ≥34 mg/dL)",
+                "label_en": "Urea ≥12 mmol/L (BUN ≥34 mg/dL). ",
                 "name": "urea",
                 "optional": false,
                 "options": [
@@ -227,7 +228,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Serum CO<sub>2</sub> ≥35 mEq/L (35 mmol/L)",
+                "label_en": "Serum CO2 ≥35 mEq/L (35 mmol/L). ",
                 "name": "co2",
                 "optional": false,
                 "options": [

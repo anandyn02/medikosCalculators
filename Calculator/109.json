@@ -26,7 +26,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Age, years</p>",
+                "label_en": "Age, years",
                 "name": "age",
                 "optional": false,
                 "options": [
@@ -50,7 +50,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Immunocompromised status at time of ECMO</p>",
+                "label_en": "at the time of ECMO, immunocompromised state. ",
                 "name": "status",
                 "optional": false,
                 "options": [
@@ -70,7 +70,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Mechanically ventilated before ECMO initiated</p>",
+                "label_en": "ventilated by machine prior to starting ECMO. ",
                 "name": "venti",
                 "optional": false,
                 "options": [
@@ -94,7 +94,7 @@
             {
                 "conditionality": "",
                 "default": 6,
-                "label_en": "<p>Diagnosis</p>",
+                "label_en": "Diagnosis",
                 "name": "diag",
                 "optional": false,
                 "options": [
@@ -134,7 +134,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>History of central nervous system dysfunction</p>",
+                "label_en": "Central nervous system dysfunction in the past. ",
                 "name": "cns",
                 "optional": false,
                 "options": [
@@ -174,7 +174,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Neuromuscular blockade before ECMO</p>",
+                "label_en": "Înainte de ECMO, blocarea neuromusculară. ",
                 "name": "ecmo",
                 "optional": false,
                 "options": [
@@ -194,7 +194,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Nitric oxide before ECMO</p>",
+                "label_en": "Oxigenul nitric înainte de ECMO. ",
                 "name": "nitric",
                 "optional": false,
                 "options": [
@@ -214,7 +214,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Bicarbonate infusion before ECMO</p>",
+                "label_en": "preceding ECMO, bicarbonate infusion. ",
                 "name": "bicarb",
                 "optional": false,
                 "options": [
@@ -234,7 +234,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Cardiac arrest before ECMO</p>",
+                "label_en": "prior to ECMO, cardiac arrest. ",
                 "name": "cardiac",
                 "optional": false,
                 "options": [

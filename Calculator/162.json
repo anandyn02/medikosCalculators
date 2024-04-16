@@ -50,7 +50,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "B. Biopsy-proven bony or extramedullary plasmacytoma",
+                "label_en": "Immunofixation can detect the presence of serum and urine M components, but not electrophoresis; alternatively, there must be a reduction of at least 90% in both the serum and urine M components to less than 100 mg per 24 hours. ",
                 "name": "b",
                 "optional": false,
                 "options": [
@@ -70,7 +70,8 @@
             {
                 "subheading": "≥1 myeloma defining event (C1 or C2)",
                 "subheading_instructions": "C1. End organ damage attributable to underlying plasma cell disorder (≥1 of the following):",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Less than 50% decrease in serum M protein and less than 90% decrease in 24-hour urine M protein, or less than 200 mg per day; if soft tissue plasmacytomas were present at baseline, less than 50% reduction in their size is also necessary. "
             },
             {
                 "conditionality": "",
@@ -135,7 +136,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Bone lesions",
+                "label_en": "There is a difference between involved and uninvolved FLC levels only in patients with non-measurable serum and urine M protein levels. ",
                 "name": "c4",
                 "optional": false,
                 "options": [
@@ -180,7 +181,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Involved:uninvolved <abbr title=\"Serum free light chain\">sFLC</abbr> ratio ≥100",
+                "label_en": "onset of hypercalcemia that is exclusively related to the disease known as plasma cell proliferation. ",
                 "name": "d2",
                 "optional": false,
                 "options": [

@@ -42,7 +42,6 @@
         "logic": "var calc_output = [];  \n\nvar result;\nvar msg;\nvar xray;\n\n// malleolar\nif (location == 0) {\n\tresult = parseFloat(tender_a) + parseFloat(tender_b) + parseFloat(weightbear)\n\txray = 'Ankle x-ray series'\n}\n// midfoot\nif (location == 1) {\n\tresult = parseFloat(tender_c) + parseFloat(tender_d) + parseFloat(weightbear)\n\txray = 'Foot x-ray series'\n}\n\nif (result > 0) {\n\tresult = 'Cannot rule out'\n\tmsg = ' indicated.'\n}\nelse {\n\tresult = 'Ruled out'\n\tmsg = ' not indicated.'\n}\n\ncalc_output.push ({\n\tname:'mini', \n\tvalue: result, \n\tvalue_text: '', \n\tmessage: ''\n}); \ncalc_output.push ({\n\tname:'1670_Ottawa Ankle Rule_result', \n\tvalue: result, \n\tvalue_text: '', \n\tmessage: xray + msg\n});",
         "inputs": [
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/Ottawa-Ankle-Rule-Facit-Large.png\" alt=\"\"></p>"
@@ -50,8 +49,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Location of pain",
-                "md_calc_info_concept": null,
+                "label_en": "the pain's location. ",
                 "name": "location",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -72,8 +70,7 @@
             {
                 "conditionality": "location == 0",
                 "default": 0,
-                "label_en": "Bone tenderness at A",
-                "md_calc_info_concept": null,
+                "label_en": "Sensitivitet over for A. ",
                 "name": "tender_a",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -95,7 +92,6 @@
                 "conditionality": "location == 0",
                 "default": 0,
                 "label_en": "Bone tenderness at B",
-                "md_calc_info_concept": null,
                 "name": "tender_b",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -116,8 +112,7 @@
             {
                 "conditionality": "location == 1",
                 "default": 0,
-                "label_en": "Bone tenderness at C",
-                "md_calc_info_concept": null,
+                "label_en": "Sensitivitet til C. ",
                 "name": "tender_c",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -138,8 +133,7 @@
             {
                 "conditionality": "location == 1",
                 "default": 0,
-                "label_en": "Bone tenderness at D",
-                "md_calc_info_concept": null,
+                "label_en": "Sensitivitet til D. ",
                 "name": "tender_d",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -160,8 +154,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Inability to bear weight both immediately after injury AND in ED",
-                "md_calc_info_concept": null,
+                "label_en": "incapacity to support weight in the ED as well as right after the injury. ",
                 "name": "weightbear",
                 "option_fhir_rules": null,
                 "optional": false,

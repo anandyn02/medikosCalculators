@@ -39,8 +39,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Age (years)</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Age (years)",
                 "name": "age",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -61,8 +60,7 @@
             {
                 "conditionality": "age == 0 || age == 1",
                 "default": 0,
-                "label_en": "<p>Multi-lobar involvement on chest x-ray</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Il y a une implication multiple dans une radiographie de la poitrine. ",
                 "name": "cxr",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -83,8 +81,7 @@
             {
                 "conditionality": "age == 0 || age == 1",
                 "default": 0,
-                "label_en": "<p>Albumin &lt;3.5 g/dL (35 g/L)</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Le taux d'albumin est de <3 point 5 g/dL, soit 35 g/L. ",
                 "name": "albumin",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -105,8 +102,7 @@
             {
                 "conditionality": "age == 0",
                 "default": 0,
-                "label_en": "<p>Respiratory rate &ge;25</p>",
-                "md_calc_info_concept": null,
+                "label_en": "A heart rate of at least 25. ",
                 "name": "rr25",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -127,8 +123,7 @@
             {
                 "conditionality": "age == 1",
                 "default": 0,
-                "label_en": "<p>Respiratory rate &ge;30</p>",
-                "md_calc_info_concept": null,
+                "label_en": "30-plus respiratory rate. ",
                 "name": "rr30",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -149,8 +144,7 @@
             {
                 "conditionality": "age == 0 || age == 1",
                 "default": 0,
-                "label_en": "<p>Tachycardia &ge;125</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Tachycardia ≥125",
                 "name": "hr",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -171,8 +165,7 @@
             {
                 "conditionality": "age == 0 || age == 1",
                 "default": 0,
-                "label_en": "<p>Confusion (new onset)</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Bewilderment (fresh start). ",
                 "name": "confusion",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -193,8 +186,7 @@
             {
                 "conditionality": "age == 1",
                 "default": 0,
-                "label_en": "<p>PaO₂ &lt;60 mmHg, SaO₂ &le;90%, or PaO₂/FiO₂ &lt;250</p>",
-                "md_calc_info_concept": null,
+                "label_en": "SaO ≤90 percent, PaO <60 mmHg, or PaO /FiO <250. ",
                 "name": "oxygen60",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -216,7 +208,6 @@
                 "conditionality": "age == 0",
                 "default": 0,
                 "label_en": "<p>PaO₂ &lt;70 mmHg, SaO₂ &le;93%, or PaO₂/FiO₂ &lt;333</p>",
-                "md_calc_info_concept": null,
                 "name": "oxygen70",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -237,8 +228,7 @@
             {
                 "conditionality": "age == 0 || age == 1",
                 "default": 0,
-                "label_en": "<p>pH &lt;7.35</p>",
-                "md_calc_info_concept": null,
+                "label_en": "pH <7.35",
                 "name": "ph",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -259,8 +249,7 @@
             {
                 "conditionality": "age == 0 || age == 1",
                 "default": 0,
-                "label_en": "<p><abbr title=\"Systolic Blood Pressure\">sBP</abbr> &lt;90 mmHg</p>",
-                "md_calc_info_concept": null,
+                "label_en": "sBP mindre än 90 mmHg. ",
                 "name": "sbp",
                 "option_fhir_rules": null,
                 "optional": false,

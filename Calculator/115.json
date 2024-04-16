@@ -82,7 +82,8 @@
             {
                 "subheading": null,
                 "subheading_instructions": "The binge eating episodes are associated with ≥3 of the following:",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Dementia diagnosed through clinical assessment, verified by neuropsychological testing, and recorded using the Mini-Mental Test, Blessed Dementia Scale, or a comparable assessment. "
             },
             {
                 "conditionality": null,
@@ -127,7 +128,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Eating large amounts of food when not feeling physically hungry</p>",
+                "label_en": "not a waking disruption. ",
                 "name": "e",
                 "optional": false,
                 "options": [
@@ -167,7 +168,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Feeling disgusted with oneself, depressed, or very guilty afterward</p>",
+                "label_en": "The progressive impairments in memory and cognition are not caused by systemic disorders or other brain diseases. ",
                 "name": "g",
                 "optional": false,
                 "options": [
@@ -212,7 +213,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>The binge eating occurs, on average, at least once a week for 3 months</p>",
+                "label_en": "a second brain or systemic illness that is present and is thought to be contributing to the dementia but is not the cause of the dementia itself. ",
                 "name": "i",
                 "optional": false,
                 "options": [
@@ -252,7 +253,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p>Binge eating episodes per week</p>",
+                "label_en": "episodes van hongerverslawing elke week. ",
                 "name": "episodes",
                 "optional": true,
                 "options": [

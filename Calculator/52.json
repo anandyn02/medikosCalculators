@@ -23,7 +23,6 @@
         "logic": "var calc_output = [];\n\nvar line = parseFloat(line)\n\nvar acuity;\nvar a_meter;\n\nif (line == 0){\n  acuity = '20/200'\n  a_meter = '6/60'\n  msg = 'Visual acuity worse than 20/25 (6/7.5 if non-US) should be evaluated by a licensed eye professional to determine whether corrective lenses or other treatments may be necessary'\n}\nelse if (line == 1){\n\tacuity = '20/100'\n    a_meter = '6/30'\n    msg = 'Visual acuity worse than 20/25 (6/7.5 if non-US) should be evaluated by a licensed eye professional to determine whether corrective lenses or other treatments may be necessary'\n}\nelse if (line == 2){\n\tacuity = '20/70'\n    a_meter = '6/21'  \n    msg = 'Visual acuity worse than 20/25 (6/7.5 if non-US) should be evaluated by a licensed eye professional to determine whether corrective lenses or other treatments may be necessary'\n}\nelse if (line == 3){\n\tacuity = '20/50'\n    a_meter = '6/15'  \n    msg = 'Visual acuity worse than 20/25 (6/7.5 if non-US) should be evaluated by a licensed eye professional to determine whether corrective lenses or other treatments may be necessary'\n}\nelse if (line == 4){\n\tacuity = '20/40'\n    a_meter = '6/12'  \n    msg = 'Visual acuity worse than 20/25 (6/7.5 if non-US) should be evaluated by a licensed eye professional to determine whether corrective lenses or other treatments may be necessary'\n}\nelse if (line == 5){\n\tacuity = '20/30'\n    a_meter = '6/9'  \n    msg = 'Visual acuity worse than 20/25 (6/7.5 if non-US) should be evaluated by a licensed eye professional to determine whether corrective lenses or other treatments may be necessary'\n}\nelse if (line == 6){\n  acuity = '20/25';\n  a_meter = '6/7.5'  \n  msg = '';\n}\nelse {\n  acuity = '20/20';\n  a_meter = '6/6'  \n  msg = '';\n}\n\n//results \ncalc_output.push({\n    name: 'mini',\n    value: acuity,\n    value_text: '',\n    message: 'Equivalent to ' + a_meter\n    });\ncalc_output.push({\n    name: '10060_Snellen Chart_result',\n    value: acuity,\n    value_text: '',\n    message: 'Visual acuity<br/><br/>Equivalent to ' + a_meter + ' (non-US)'\n    });\nif(msg != ''){\ncalc_output.push({\n    name: '10060_Snellen Chart_interpretation',\n    value: '',\n    value_text: '',\n    message: msg\n    });\n}\n",
         "inputs": [
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src='https://cdn-web-img.mdcalc.com/content/snellen2.png'>"
@@ -32,7 +31,6 @@
                 "conditionality": "",
                 "default": null,
                 "label_en": "Select lowest line that patient can read correctly.",
-                "mdcalc_info_concept": null,
                 "name": "line",
                 "option_fhir_rules": null,
                 "optional": false,

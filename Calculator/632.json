@@ -77,7 +77,7 @@
             },
             {
                 "conditionality": "gender == 0",
-                "label_en": "Previous gestational diabetes",
+                "label_en": "ICH volume ≥30mL. ",
                 "name": "gest",
                 "optional": false,
                 "options": [
@@ -151,7 +151,7 @@
             },
             {
                 "default": 0,
-                "label_en": "<calculator id='29'>BMI</calculator>, kg/m²",
+                "label_en": "BMI, kg/m²",
                 "name": "bmi",
                 "optional": false,
                 "options": [

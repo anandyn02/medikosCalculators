@@ -62,7 +62,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Infant &lt;1 year old</p>",
+                "label_en": "Tonsil swelling or exudate. ",
                 "name": "infant_year",
                 "optional": true,
                 "options": [
@@ -82,7 +82,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Asymptomatic on presentation</p>",
+                "label_en": "the anterior cervical lymph nodes are tender and swollen. ",
                 "name": "asymptomatic",
                 "optional": true,
                 "options": [
@@ -102,7 +102,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>No explanation for the event after conducting history and physical</p>",
+                "label_en": "Le temps dépasse 38°C (100 points 4°F). ",
                 "name": "explanation",
                 "optional": true,
                 "options": [
@@ -147,7 +147,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Absent, decreased, or irregular breathing</p>",
+                "label_en": "Breathing that is absent, reduced, or irregular. ",
                 "name": "absent",
                 "optional": false,
                 "options": [
@@ -187,7 +187,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Altered level of responsiveness</p>",
+                "label_en": "a changed sensitivity level. ",
                 "name": "altered",
                 "optional": false,
                 "options": [
@@ -212,7 +212,7 @@
             {
                 "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
                 "default": null,
-                "label_en": "<p>Age, days</p>",
+                "label_en": "Age, days",
                 "name": "age",
                 "optional": false,
                 "tips_en": "",
@@ -242,7 +242,7 @@
             {
                 "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
                 "default": 0,
-                "label_en": "<p>History of multiple events or event clusters</p>",
+                "label_en": "Multiple event history or clustered events. ",
                 "name": "multiple",
                 "optional": true,
                 "options": [

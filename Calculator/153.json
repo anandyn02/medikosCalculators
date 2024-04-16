@@ -103,7 +103,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Patient’s home address",
+                "label_en": "adresse du domicile du patient. ",
                 "name": "homeaddress",
                 "optional": false,
                 "options": [
@@ -142,7 +142,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Date of birth",
+                "label_en": "Birthdate. ",
                 "name": "date",
                 "optional": false,
                 "options": [
@@ -161,7 +161,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Year World War I started",
+                "label_en": "year that the First World War broke out. ",
                 "name": "ww1",
                 "optional": false,
                 "options": [
@@ -200,7 +200,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Count backwards from 20 to 1",
+                "label_en": "From 20 to 1, count backwards. ",
                 "name": "count",
                 "optional": false,
                 "options": [

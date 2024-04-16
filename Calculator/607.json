@@ -96,7 +96,7 @@
             },
             {
                 "conditionality": "type == 0",
-                "label_en": "Type of inputs",
+                "label_en": "During the day, do you frequently feel worn out, exhausted, or sleepy? ",
                 "name": "inputs",
                 "optional": false,
                 "options": [
@@ -115,7 +115,7 @@
             },
             {
                 "conditionality": "inputs==0",
-                "label_en": "True positives (TP)",
+                "label_en": "Has somebody noticed that you stop breathing when you're sleeping? ",
                 "name": "truePosZ",
                 "optional": false,
                 "show_points": false,
@@ -133,7 +133,7 @@
             },
             {
                 "conditionality": "inputs==0",
-                "label_en": "False negatives (FN)",
+                "label_en": "False negatives (FN). ",
                 "name": "falseNegZ",
                 "optional": false,
                 "show_points": false,
@@ -142,7 +142,7 @@
             },
             {
                 "conditionality": "inputs==0",
-                "label_en": "True negatives (TN)",
+                "label_en": "True negatives (TN). ",
                 "name": "trueNegZ",
                 "optional": false,
                 "show_points": false,
@@ -160,7 +160,7 @@
             },
             {
                 "conditionality": "type == 1",
-                "label_en": "# of experimental patients without expected outcome (B)",
+                "label_en": "without the anticipated result (B) of experimental patients. ",
                 "name": "falsePos",
                 "optional": false,
                 "show_points": false,
@@ -169,7 +169,7 @@
             },
             {
                 "conditionality": "type == 1",
-                "label_en": "# of controls with expected outcome (C)",
+                "label_en": "with the anticipated result (C) of controls. ",
                 "name": "falseNeg",
                 "optional": false,
                 "show_points": false,
@@ -187,7 +187,7 @@
             },
             {
                 "conditionality": "inputs == 1",
-                "label_en": "Prevalence (or pre-test probability), %",
+                "label_en": "Percentage of prevalence, also known as pre-test probability. ",
                 "name": "preval",
                 "optional": false,
                 "show_points": false,

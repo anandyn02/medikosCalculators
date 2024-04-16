@@ -27,7 +27,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Age, years</p>",
+                "label_en": "Age, years",
                 "name": "age",
                 "optional": false,
                 "options": [
@@ -131,7 +131,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Planned or unplanned ICU admission</p>",
+                "label_en": "Ratele estimate de filtrare glomerulară. ",
                 "name": "unplanned",
                 "optional": false,
                 "options": [
@@ -151,7 +151,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Surgical status at ICU admission</p>",
+                "label_en": "state of surgery upon ICU admission. ",
                 "name": "surgerystatus",
                 "optional": false,
                 "options": [
@@ -175,7 +175,7 @@
             {
                 "conditionality": "surgerystatus == 0 || surgerystatus == 6",
                 "default": null,
-                "label_en": "<p>Anatomical site of surgery</p>",
+                "label_en": "surgery's anatomical site. ",
                 "name": "surgerysite",
                 "optional": false,
                 "options": [
@@ -207,7 +207,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Acute infection at ICU admission</p>",
+                "label_en": "acute infection upon admission to the intensive care unit. ",
                 "name": "acuteinf",
                 "optional": false,
                 "options": [
@@ -231,7 +231,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p><calculator id=\"64\">Glasgow Coma Scale/Score</calculator></p>",
+                "label_en": "Scala del Glasgow Coma e punteggio. ",
                 "name": "gcs",
                 "optional": false,
                 "options": [
@@ -263,7 +263,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Total bilirubin, mg/dL (&micro;mol/L)</p>",
+                "label_en": "mga miligram/dL (μmol/L) ng kabuuang bilirubin. ",
                 "name": "bilirubin",
                 "optional": false,
                 "options": [
@@ -307,7 +307,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Creatinine, mg/dL (&micro;mol/L)</p>",
+                "label_en": "livelli di creatinina a milligrammi/dL (μmol/L). ",
                 "name": "creatinine",
                 "optional": false,
                 "options": [
@@ -347,7 +347,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Heart rate, beats/min</p>",
+                "label_en": "heart rate in beats per minute. ",
                 "name": "hr",
                 "optional": false,
                 "options": [
@@ -371,7 +371,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Leukocytes, G/L</p>",
+                "label_en": "Leukocytes, G/L",
                 "name": "leukocytes",
                 "optional": false,
                 "options": [
@@ -391,7 +391,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>pH</p>",
+                "label_en": "pH",
                 "name": "hydrogen",
                 "optional": false,
                 "options": [
@@ -411,7 +411,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Platelets, G/L</p>",
+                "label_en": "Platelets, G/L",
                 "name": "platelets",
                 "optional": false,
                 "options": [
@@ -439,7 +439,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Systolic blood pressure, mm Hg</p>",
+                "label_en": "Blood pressure at the systolic level, in millimeters of mercury. ",
                 "name": "sbp",
                 "optional": false,
                 "options": [
@@ -467,7 +467,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Oxygenation</p>",
+                "label_en": "Oxygenation",
                 "name": "oxygen",
                 "optional": false,
                 "options": [
@@ -500,7 +500,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Cancer therapy</p>",
+                "label_en": "Cancer therapy",
                 "name": "cancertherapy",
                 "optional": false,
                 "options": [
@@ -520,7 +520,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Chronic <abbr title=\"Heart failure (New York Heart Association IV)\">HF (NYHA IV)</abbr></p>",
+                "label_en": "persistent heart failure (NYHA IV). ",
                 "name": "chronichf",
                 "optional": false,
                 "options": [
@@ -540,7 +540,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Haematological cancer</p>",
+                "label_en": "Haematological cancer",
                 "name": "hemcancer",
                 "optional": false,
                 "options": [
@@ -560,7 +560,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Cirrhosis</p>",
+                "label_en": "Cirrhosis",
                 "name": "cirrhosis",
                 "optional": false,
                 "options": [
@@ -580,7 +580,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>AIDS</p>",
+                "label_en": "AIDS",
                 "name": "aids",
                 "optional": false,
                 "options": [
@@ -600,7 +600,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Metastatic cancer</p>",
+                "label_en": "Metastatic cancer",
                 "name": "metacancer",
                 "optional": false,
                 "options": [
@@ -669,7 +669,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Digestive: acute abdomen, other</p>",
+                "label_en": "Digestive: acute abdomen, other. ",
                 "name": "digestiveacute",
                 "optional": false,
                 "options": [
@@ -689,7 +689,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Neurologic: coma, stupor, obtunded patient, vigilance disturbances, confusion, agitation, delirium</p>",
+                "label_en": "Il paziente può essere in coma, stupito, affamato, con problemi di vigilanza, confusione, agitazione e delirium. ",
                 "name": "neurocoma",
                 "optional": false,
                 "options": [
@@ -709,7 +709,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Cardiovascular: septic shock</p>",
+                "label_en": "cardiovascular: shock from sepsis. ",
                 "name": "cardioseptic",
                 "optional": false,
                 "options": [
@@ -749,7 +749,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Hepatic: liver failure</p>",
+                "label_en": "Failure of the liver (hepatic). ",
                 "name": "hepatic",
                 "optional": false,
                 "options": [
@@ -769,7 +769,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Neurologic: focal neurologic deficit</p>",
+                "label_en": "Neurologic: deficit la nivel focal. ",
                 "name": "neurofocal",
                 "optional": false,
                 "options": [
@@ -789,7 +789,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Digestive: severe pancreatitis</p>",
+                "label_en": "Pancreatitis severe in the digestive system. ",
                 "name": "digestivepan",
                 "optional": false,
                 "options": [
@@ -809,7 +809,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Neurologic: intracranial mass effect</p>",
+                "label_en": "cerebral mass effect in neurology. ",
                 "name": "neuromass",
                 "optional": false,
                 "options": [

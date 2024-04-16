@@ -30,7 +30,6 @@
         "logic": "var calc_output = [];\n\nvar stool = parseFloat(stool)\n\nvar type = stool + 1\n\nvar msg\n\nif (type == 3 || type == 4) {\n\tmsg = 'Normal'\n\tmini_msg = 'Normal'\n}\nif (type ==\t1 || type == 2) {\n\tmsg = 'Associated with constipation'\n\tmini_msg = 'Constipation'\n}\nif (type == 5) {\n\tmsg = 'Associated with diarrhea to some degree'\n\tmini_msg = 'Diarrhea'\n}\nif (type == 6 || type == 7) {\n\tmsg = 'Associated with diarrhea'\n\tmini_msg = 'Diarrhea'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: 'Type ' + type,\n    value_text: '',\n    message: mini_msg\n});\ncalc_output.push({\n    name: 'Score',\n    value: 'Type ' + type,\n    value_text: '',\n    message: msg\n});\n",
         "inputs": [
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/bristol.png\" alt=\"\"></p>"
@@ -39,7 +38,6 @@
                 "conditionality": "",
                 "default": null,
                 "label_en": "Stool Type",
-                "mdcalc_info_concept": null,
                 "name": "stool",
                 "option_fhir_rules": null,
                 "optional": false,

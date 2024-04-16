@@ -35,8 +35,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Temperature (&deg;C)</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Temperature (°C)",
                 "name": "temp",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -61,8 +60,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>White blood cell count</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "the number of white blood cells. ",
                 "name": "leuks",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -87,8 +85,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Tracheal secretions</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Tracheal secretions",
                 "name": "trach",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -113,8 +110,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Oxygenation, PaO₂/FiO₂ mm Hg</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Diastolic blood pressure of at least 60 mmHg or Systolic blood pressure of less than 90 mmHg. ",
                 "name": "oxy",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -135,8 +131,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Pulmonary radiography</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Pulmonary radiography",
                 "name": "pulm",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -162,7 +157,6 @@
                 "conditionality": "",
                 "default": null,
                 "label_en": "<p>Culture of tracheal aspirate specimen</p>",
-                "mdcalc_info_concept": null,
                 "name": "culture",
                 "option_fhir_rules": null,
                 "optional": false,

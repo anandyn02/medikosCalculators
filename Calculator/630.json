@@ -34,8 +34,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>BUN &ge;25 mg/dL (8.9 mmol/L)</p>",
-                "md_calc_info_concept": null,
+                "label_en": "eMRCD stands for Extended MRC Dyspnea Scale. ",
                 "name": "bun",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -57,7 +56,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "<p>Altered mental status</p>",
-                "md_calc_info_concept": null,
                 "name": "ams",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -78,8 +76,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Pulse &ge;109 beats/min</p>",
-                "md_calc_info_concept": null,
+                "label_en": "A chest x-ray showing consolidation. ",
                 "name": "pulse",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -100,8 +97,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Age, years</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Age, years",
                 "name": "age",
                 "option_fhir_rules": null,
                 "optional": false,

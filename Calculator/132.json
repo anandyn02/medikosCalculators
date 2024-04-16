@@ -46,7 +46,8 @@
             {
                 "subheading": "Patient factors",
                 "subheading_instructions": "",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "younger than 25 years old. "
             },
             {
                 "conditionality": "",
@@ -58,7 +59,7 @@
             },
             {
                 "conditionality": "",
-                "label_en": "Sex",
+                "label_en": "Dejour A-D dysplasia. ",
                 "name": "sex",
                 "optional": false,
                 "options": [
@@ -77,7 +78,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Insulin-dependent diabetes mellitus",
+                "label_en": "Diabetes mellitus die op insuline is gebaseerd. ",
                 "name": "diabetes",
                 "optional": false,
                 "options": [
@@ -96,7 +97,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Chronic pulmonary dysfunction",
+                "label_en": "long-term lung damage. ",
                 "name": "pulmonary",
                 "optional": false,
                 "options": [
@@ -115,7 +116,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Neurological or musculoskeletal dysfunction severely affecting mobility",
+                "label_en": "Mobility is substantially impacted by musculoskeletal or neurological dysfunction. ",
                 "name": "neuro",
                 "optional": false,
                 "options": [
@@ -187,7 +188,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<calculator id = \"3987\">NYHA</calculator> class",
+                "label_en": "NYHA class",
                 "name": "nyha",
                 "optional": false,
                 "options": [
@@ -214,7 +215,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<calculator id = \"10067\">CCS</calculator> class 4",
+                "label_en": "Fourth Class CCS. ",
                 "name": "ccs",
                 "optional": false,
                 "options": [
@@ -234,7 +235,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Extracardiac arteriopathy ",
+                "label_en": "arteriopatie extracardiovasculară. ",
                 "name": "eca",
                 "optional": false,
                 "options": [
@@ -254,7 +255,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Previous cardiac surgery",
+                "label_en": "earlier heart surgery. ",
                 "name": "previous",
                 "optional": false,
                 "options": [
@@ -321,7 +322,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Recent <abbr title = \"Myocardial infarction\">MI</abbr>",
+                "label_en": "Recent MI",
                 "name": "mi",
                 "optional": false,
                 "options": [
@@ -341,7 +342,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Pulmonary artery systolic pressure, mm Hg",
+                "label_en": "Systolic pulmonary artery pressure, measured in millimeter-Hg. ",
                 "name": "sbp",
                 "optional": false,
                 "options": [
@@ -424,7 +425,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Thoracic aorta surgery",
+                "label_en": "surgery on the aorta thoracic. ",
                 "name": "aorta",
                 "optional": false,
                 "options": [

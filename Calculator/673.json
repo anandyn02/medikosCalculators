@@ -102,8 +102,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Formula</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Formula",
                 "name": "formula",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -138,7 +137,7 @@
                 "default": null,
                 "fhir_rules": null,
                 "inct": null,
-                "label_en": "<p>Heart rate/pulse</p>",
+                "label_en": "Heart rate/pulse",
                 "name": "heart_rate",
                 "optional": false,
                 "tips_en": "",
@@ -149,7 +148,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "<p>Paper speed, mm/sec</p>",
-                "mdcalc_info_concept": null,
                 "name": "speed",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -172,7 +170,7 @@
                 "default": null,
                 "fhir_rules": null,
                 "inct": null,
-                "label_en": "<p>QT interval</p>",
+                "label_en": "QT interval",
                 "name": "qt_interval",
                 "optional": false,
                 "tips_en": "Toggle unit to use msec or small boxes; 1 small box = 40 msec (see below for example where QT interval = 4 small boxes)",
@@ -184,7 +182,7 @@
                 "default": null,
                 "fhir_rules": null,
                 "inct": null,
-                "label_en": "<p>QT interval</p>",
+                "label_en": "QT interval",
                 "name": "qt_interval2",
                 "optional": false,
                 "tips_en": "Toggle unit to use msec or small boxes; 1 small box = 20 msec (see below for example where QT interval = 4 small boxes)",
@@ -192,7 +190,6 @@
                 "unit": "qt3"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/qtc_updated3.png\" class=\"alignnone size-full wp-image-1839\" alt=\"\"></div>"

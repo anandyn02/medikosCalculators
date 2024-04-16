@@ -98,7 +98,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Amyloid <abbr title = \"Positron emission tomography\">PET</abbr>: increased tracer retention",
+                "label_en": "Tracer retention is higher in amyloid PET. ",
                 "name": "partb2",
                 "optional": false,
                 "options": [
@@ -136,12 +136,13 @@
             {
                 "subheading": "Exclusion criteria for typical AD: history",
                 "subheading_instructions": "(if any are present, diagnosis is not typical AD)",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "eating by oneself when one is embarrassed by how much they are consuming. "
             },
             {
                 "conditionality": "(parta1 + parta2) == 2 && (partb1 + partb2 + partb3) > 0",
                 "default": 0,
-                "label_en": "Sudden onset",
+                "label_en": "subsequently experiencing depression, extreme guilt, or disgust with oneself. ",
                 "name": "history1",
                 "optional": false,
                 "options": [
@@ -179,7 +180,8 @@
             {
                 "subheading": "Exclusion criteria for typical AD: clinical features",
                 "subheading_instructions": "(if any are present, diagnosis is not typical AD)",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "There's a noticeable amount of distress with binge eating. "
             },
             {
                 "conditionality": "(parta1 + parta2) == 2 && (partb1 + partb2 + partb3) > 0",
@@ -203,7 +205,7 @@
             {
                 "conditionality": "(parta1 + parta2) == 2 && (partb1 + partb2 + partb3) > 0",
                 "default": 0,
-                "label_en": "Early extrapyramidal signs ",
+                "label_en": "earliest extrapyramidal symptoms. ",
                 "name": "clinical2",
                 "optional": false,
                 "options": [
@@ -341,7 +343,7 @@
             {
                 "conditionality": "(parta1 + parta2) == 2 && (partb1 + partb2 + partb3) > 0",
                 "default": 0,
-                "label_en": "MRI <abbr title = \"Fluid-attenuated inversion recovery\">FLAIR</abbr> or T2 signal changes in the medial temporal lobe that are consistent with infectious or vascular insults",
+                "label_en": "The medial temporal lobe may exhibit MRI FLAIR or T2 signal alterations that are indicative of vascular or infectious insults. ",
                 "name": "other5",
                 "optional": false,
                 "options": [

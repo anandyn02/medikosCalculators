@@ -37,12 +37,13 @@
             {
                 "subheading": "<p>Demographic risk factors</p>",
                 "subheading_instructions": "",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Which amount, on average over the previous week, best captures your level of pain? "
             },
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Age, years</p>",
+                "label_en": "Which figure best captures how pain has limited your enjoyment of life over the last week? ",
                 "name": "age2",
                 "optional": false,
                 "options": [
@@ -94,12 +95,13 @@
             {
                 "subheading": "<p>Highest risk comorbidities</p>",
                 "subheading_instructions": "",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Which figure best sums up how pain has limited your daily activities over the past week? "
             },
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Diabetes mellitus</p>",
+                "label_en": "Diabetes mellitus",
                 "name": "diabetes",
                 "optional": false,
                 "options": [
@@ -144,7 +146,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Active cancer</p>",
+                "label_en": "Active cancer",
                 "name": "cancer",
                 "optional": false,
                 "options": [
@@ -184,7 +186,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Hypertension</p>",
+                "label_en": "Hypertension",
                 "name": "hyper",
                 "optional": false,
                 "options": [
@@ -204,7 +206,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Coronary artery disease</p>",
+                "label_en": "cardiovascular conditions. ",
                 "name": "artery",
                 "optional": false,
                 "options": [
@@ -224,7 +226,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Cardiac arrhythmia</p>",
+                "label_en": "Cardiac arrhythmia",
                 "name": "ca",
                 "optional": false,
                 "options": [
@@ -244,7 +246,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Congestive heart failure</p>",
+                "label_en": "failure of the heart in congestion. ",
                 "name": "hf",
                 "optional": false,
                 "options": [
@@ -264,7 +266,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Chronic kidney disease</p>",
+                "label_en": "chronic illness of the kidneys. ",
                 "name": "kidney",
                 "optional": false,
                 "options": [
@@ -324,7 +326,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Cerebrovascular disease</p>",
+                "label_en": "Cerebrovascular disease",
                 "name": "cd",
                 "optional": false,
                 "options": [

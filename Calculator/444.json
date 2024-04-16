@@ -43,8 +43,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<1 year from time of diagnosis to systemic therapy",
-                "md_calc_info_concept": null,
+                "label_en": "Less than a year passes between the diagnosis and the start of systemic therapy. ",
                 "name": "dx",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -65,8 +64,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<calculator id = \"3168\">Karnofsky Performance Status</calculator> <80%",
-                "md_calc_info_concept": null,
+                "label_en": "Karnofsky Performance Status: approximately 80%. ",
                 "name": "perf",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -88,7 +86,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Hemoglobin < lower limit of normal",
-                "md_calc_info_concept": null,
                 "name": "hgb",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -109,8 +106,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<calculator id=\"31\">Corrected calcium</calculator> > upper limit of normal",
-                "md_calc_info_concept": null,
+                "label_en": "Less than a year passed between the initial diagnosis and the start of systemic treatment. ",
                 "name": "ca",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -131,8 +127,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Neutrophils > upper limit of normal",
-                "md_calc_info_concept": null,
+                "label_en": "> upper limit of normal neutrophil counts. ",
                 "name": "neut",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -153,8 +148,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Platelets > upper limit of normal",
-                "md_calc_info_concept": null,
+                "label_en": "Platelets < upper bound of normal. ",
                 "name": "plt",
                 "option_fhir_rules": null,
                 "optional": false,

@@ -25,7 +25,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Negative immunofixation of serum and urine AND disappearance of any soft tissue plasmacytomas AND <5% plasma cells in bone marrow",
+                "label_en": "Less than 5% of plasma cells in the bone marrow, absence of any soft tissue plasmacytomas, and negative immunofixation of the serum and urine. ",
                 "name": "one",
                 "optional": false,
                 "options": [
@@ -45,7 +45,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Criteria above plus normal <abbr title = \"Free light chain\">FLC</abbr> ratio (0.26-1.65) AND absence of clonal cells in bone marrow by immunohistochemistry or immunofluorescence",
+                "label_en": "the aforementioned requirements in addition to a normal FLC ratio (0.26–1.65) AND the lack of clonal cells in the bone marrow as determined by immunohistochemistry or immunofluorescence. ",
                 "name": "two",
                 "optional": false,
                 "options": [
@@ -65,7 +65,7 @@
             {
                 "conditionality": "one != 1",
                 "default": 0,
-                "label_en": "Serum and urine M component detectable by immunofixation but not on electrophoresis OR ≥90% reduction in serum M component plus urine M component <100 mg per 24 hrs",
+                "label_en": "either hematocrit <36 percent or hemoglobin <12 g/dL. ",
                 "name": "three",
                 "optional": false,
                 "options": [
@@ -85,7 +85,7 @@
             {
                 "conditionality": "one != 1",
                 "default": 0,
-                "label_en": "≥50% reduction of serum M protein and reduction in 24 hr urinary M protein by ≥90% or to <200 mg per 24 hrs; if present at baseline, ≥50% reduction in the size of soft tissue plasmacytomas is also required",
+                "label_en": ">74 years of age. ",
                 "name": "four",
                 "optional": false,
                 "options": [
@@ -110,7 +110,7 @@
             {
                 "conditionality": "one != 1",
                 "default": 0,
-                "label_en": "Serum M component",
+                "label_en": "Serum M component. ",
                 "name": "five",
                 "optional": false,
                 "options": [
@@ -130,7 +130,7 @@
             {
                 "conditionality": "one != 1",
                 "default": 0,
-                "label_en": "Urine M component",
+                "label_en": "componenti di urina M. ",
                 "name": "six",
                 "optional": false,
                 "options": [
@@ -170,7 +170,7 @@
             {
                 "conditionality": "one != 1",
                 "default": 0,
-                "label_en": "Bone marrow plasma cell percentage",
+                "label_en": "Il numero di plasmacelle nella marrow. ",
                 "name": "eight",
                 "optional": false,
                 "options": [
@@ -190,7 +190,7 @@
             {
                 "conditionality": "one != 1",
                 "default": 0,
-                "label_en": "Definite development of new bone lesions or soft tissue plasmacytomas or definite increase in the size of existing bone lesions or soft tissue plasmacytomas",
+                "label_en": "a clear increase in the size of pre-existing soft tissue plasmacytomas or bone lesions, or the definitive development of new ones in these tissues. ",
                 "name": "nine",
                 "optional": false,
                 "options": [

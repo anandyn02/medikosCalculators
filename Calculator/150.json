@@ -36,7 +36,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Platelet count, cells x 10<sup>9</sup>/L</p>",
+                "label_en": "Platelet count, cells x 109/L. ",
                 "name": "platelet",
                 "optional": false,
                 "options": [
@@ -84,7 +84,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Prolonged <abbr title=\"Prothrombin time\">PT</abbr>, seconds</p>",
+                "label_en": "Extended PT, in seconds. ",
                 "name": "pt",
                 "optional": false,
                 "options": [
@@ -108,7 +108,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Fibrinogen level, g/L</p>",
+                "label_en": "kvantitet af fibrinogen i g/L. ",
                 "name": "fib",
                 "optional": false,
                 "options": [

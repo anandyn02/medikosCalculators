@@ -31,7 +31,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Stroke or <abbr title='transient ischemic attack'>TIA</abbr>",
+                "label_en": "TIA eller hjerneslag. ",
                 "name": "stroke",
                 "optional": false,
                 "options": [
@@ -51,7 +51,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Intubation for respiratory distress",
+                "label_en": "for respiratory distress, intubation. ",
                 "name": "resp",
                 "optional": false,
                 "options": [
@@ -76,7 +76,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Heart rate on ED arrival ≥110",
+                "label_en": "heart rate ≥110 when arriving at the ED. ",
                 "name": "heart",
                 "optional": false,
                 "options": [
@@ -96,7 +96,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "SaO₂ <90% on arrival",
+                "label_en": "SaO₂ <90 percent on arrival. ",
                 "name": "sao",
                 "optional": false,
                 "options": [
@@ -116,7 +116,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Heart rate ≥110 during 3-minutes walk test (or too ill to perform walk test)",
+                "label_en": "A 3-minute walk test with a heart rate of at least 110 (or too sick to walk). ",
                 "name": "min",
                 "optional": false,
                 "options": [
@@ -136,7 +136,8 @@
             {
                 "subheading": "Investigations",
                 "subheading_instructions": "",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "the anticipated result (A) of experimental patients. "
             },
             {
                 "conditionality": null,
@@ -161,7 +162,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Urea ≥12 mmol/L (33 mg/dL)",
+                "label_en": "Urea ≥12 mmol/L (33 mg/dL). ",
                 "name": "urea",
                 "optional": false,
                 "options": [
@@ -181,7 +182,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Serum CO₂ ≥35 mmol/L (mEq/L)",
+                "label_en": "without the anticipated result (D) of controls. ",
                 "name": "serum",
                 "optional": false,
                 "options": [

@@ -25,8 +25,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Time from diagnosis to systemic treatment <1 year",
-                "md_calc_info_concept": null,
+                "label_en": "Diagnose to systemic treatment in less than a year. ",
                 "name": "neph",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -48,7 +47,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Hemoglobin < Lower Limit of Normal",
-                "md_calc_info_concept": null,
                 "name": "hb",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -69,8 +67,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Calcium >10mg/dL (>2.5 mmol/L)",
-                "md_calc_info_concept": null,
+                "label_en": "Calcium >10mg/dL (>2.5 mmol/L). ",
                 "name": "ca",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -91,8 +88,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "LDH > 1.5x Upper Limit of Normal",
-                "md_calc_info_concept": null,
+                "label_en": "Upper Limit of Normal (LDH) > 1 point 5x. ",
                 "name": "ldh",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -113,8 +109,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Performance status <80% (Karnofsky)",
-                "md_calc_info_concept": null,
+                "label_en": "Karnofsky's performance status was less than 80%. ",
                 "name": "karnofsky",
                 "option_fhir_rules": null,
                 "optional": false,

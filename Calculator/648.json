@@ -83,8 +83,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Functional status</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Functional status",
                 "name": "status",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -109,8 +108,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p><calculator id=\"10024\">ASA class</calculator></p>",
-                "mdcalc_info_concept": null,
+                "label_en": "ASA class",
                 "name": "asa",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -143,8 +141,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Creatinine</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Creatinine",
                 "name": "creatinine",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -170,7 +167,6 @@
                 "conditionality": null,
                 "default": null,
                 "label_en": "<p>Type of procedure</p>",
-                "mdcalc_info_concept": null,
                 "name": "surgery",
                 "option_fhir_rules": null,
                 "optional": false,

@@ -28,8 +28,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Confusion</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Confusion",
                 "name": "confusion",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -50,8 +49,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>BUN &gt;19 mg/dL (&gt;7 mmol/L urea)</p>",
-                "md_calc_info_concept": null,
+                "label_en": "BUN >19 mg/dL (>7 mmol/L urea). ",
                 "name": "bun",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -72,8 +70,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Respiratory Rate &ge;30</p>",
-                "md_calc_info_concept": null,
+                "label_en": "@30 for Respiratory Rate. ",
                 "name": "respiratory_rate",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -95,7 +92,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "<p>Systolic BP &lt;90 mmHg or Diastolic BP &le;60 mmHg</p>",
-                "md_calc_info_concept": null,
                 "name": "systolic_diastolic_bp",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -116,8 +112,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Age &ge;65</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Age ≥65",
                 "name": "age_65",
                 "option_fhir_rules": null,
                 "optional": false,

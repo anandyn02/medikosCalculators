@@ -74,7 +74,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Asymptomatic on presentation",
+                "label_en": "fluid purulent pleural. ",
                 "name": "asx",
                 "optional": false,
                 "options": [
@@ -139,7 +139,7 @@
             {
                 "conditionality": "infant == 1 && asx == 1 && hp == 1 && episode == 1",
                 "default": 0,
-                "label_en": "Cyanosis or pallor",
+                "label_en": "cianosis o palidez. ",
                 "name": "cyanosis",
                 "optional": false,
                 "options": [
@@ -159,7 +159,7 @@
             {
                 "conditionality": "infant == 1 && asx == 1 && hp == 1 && episode == 1",
                 "default": 0,
-                "label_en": "Absent, decreased, or irregular breathing",
+                "label_en": "Due to alcohol consumption, the patient has run afoul at work. ",
                 "name": "breathing",
                 "optional": false,
                 "options": [
@@ -199,7 +199,7 @@
             {
                 "conditionality": "infant == 1 && asx == 1 && hp == 1 && episode == 1",
                 "default": 0,
-                "label_en": "Altered level of responsiveness",
+                "label_en": "a changed sensitivity level. ",
                 "name": "altered",
                 "optional": false,
                 "options": [
@@ -224,7 +224,7 @@
             {
                 "conditionality": "cyanosis == 1 || breathing == 1 || tone == 1 || altered == 1",
                 "default": 0,
-                "label_en": "Episode duration <1 minute",
+                "label_en": "Une épisode de moins d'une minute. ",
                 "name": "duration",
                 "optional": false,
                 "options": [
@@ -264,7 +264,7 @@
             {
                 "conditionality": "cyanosis == 1 || breathing == 1 || tone == 1 || altered == 1",
                 "default": 0,
-                "label_en": "No history of prematurity",
+                "label_en": "lack of prior prematurity. ",
                 "name": "prematurity",
                 "optional": false,
                 "options": [
@@ -284,7 +284,7 @@
             {
                 "conditionality": "cyanosis == 1 || breathing == 1 || tone == 1 || altered == 1",
                 "default": 0,
-                "label_en": "No prior BRUE",
+                "label_en": "No prior BRUE. ",
                 "name": "prior",
                 "optional": false,
                 "options": [
@@ -304,7 +304,7 @@
             {
                 "conditionality": "cyanosis == 1 || breathing == 1 || tone == 1 || altered == 1",
                 "default": 0,
-                "label_en": "No need for CPR by medical provider",
+                "label_en": "No requirement for a medical professional to perform CPR. ",
                 "name": "cpr",
                 "optional": false,
                 "options": [

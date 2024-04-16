@@ -33,8 +33,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Any nodal or extranodal tumor mass >7 cm diameter",
-                "md_calc_info_concept": null,
+                "label_en": "Any nodal or extranodal tumor mass >7 cm diameter. ",
                 "name": "tumor",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -55,8 +54,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Involvement of at least 3 nodal sites, each with diameter >3 cm",
-                "md_calc_info_concept": null,
+                "label_en": "involving three or more nodal sites, each larger than three centimeters in diameter. ",
                 "name": "nodal",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -77,8 +75,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Presence of any systemic or B symptoms",
-                "md_calc_info_concept": null,
+                "label_en": "any systemic symptoms or B symptoms present. ",
                 "name": "systemic",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -99,8 +96,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Splenic enlargement with inferior margin below the umbilical line",
-                "md_calc_info_concept": null,
+                "label_en": "Beneath the umbilical line is an inferior margin splenic augmentation. ",
                 "name": "spleen",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -121,8 +117,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Compression syndrome (ureteral, orbital, gastrointestinal)",
-                "md_calc_info_concept": null,
+                "label_en": "sindrome di compressione (ureterale, orbitale, gastrointestinale). ",
                 "name": "compress",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -143,8 +138,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Pleural or peritoneal serous effusion (irrespective of cell content)",
-                "md_calc_info_concept": null,
+                "label_en": "Serious effusion in the peritoneum or pleura, regardless of the amount of cells present. ",
                 "name": "pleural",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -166,7 +160,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Leukemic phase (>5.0 x10⁹/L circulating malignant cells)",
-                "md_calc_info_concept": null,
                 "name": "leuk",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -187,8 +180,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Cytopenia (granulocyte count &lt;1.0x10⁹/L and/or platelets &lt;100x10⁹/L)</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Granulocyte count <1.0x10⁳/L and/or platelets <100x10⁹/L are indicative of cyclopenia. ",
                 "name": "cytopenia",
                 "option_fhir_rules": null,
                 "optional": false,

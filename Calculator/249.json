@@ -31,7 +31,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>&ge;2 seizure types</p>",
+                "label_en": "≥2 seizure types. ",
                 "name": "seizure",
                 "optional": false,
                 "options": [
@@ -51,7 +51,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Seizure onset before age of 12 years</p>",
+                "label_en": "the beginning of a seizure before turning twelve. ",
                 "name": "onset",
                 "optional": false,
                 "options": [
@@ -71,7 +71,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>History of EEG with generalized slow spike-and-wave (SSW) discharges (&lt;2.5 Hz)</p>",
+                "label_en": "Evolution of electroencephalogram exhibiting widespread slow spike-and-wave (SSW) eruptions (<2.5 Hz). ",
                 "name": "eeg",
                 "optional": false,
                 "options": [
@@ -116,7 +116,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Persistent seizures despite trial of &ge;2 antiseizure medications</p>",
+                "label_en": "persistent seizures even after taking at least two anti-seizure medications. ",
                 "name": "medication",
                 "optional": false,
                 "options": [
@@ -136,7 +136,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>History of vagal nerve stimulator (VNS), ketogenic diet, or epilepsy surgery</p>",
+                "label_en": "Background with regard to epilepsy surgery, ketogenic diet, or vagal nerve stimulator (VNS). ",
                 "name": "vns",
                 "optional": false,
                 "options": [
@@ -156,7 +156,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Evidence of seizure-related helmet use, or head or face injuries</p>",
+                "label_en": "indications of head or facial injuries, or the use of a helmet during a seizure. ",
                 "name": "helmet",
                 "optional": false,
                 "options": [
@@ -176,7 +176,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>One of the following EEG abnormalities: multifocal spikes, symptomatic generalized discharges, generalized polyspikes, generalized periods of attenuation of background/electrodecrement, or paroxysmal fast activity</p>",
+                "label_en": "A generalized period of attenuation of background/electrodecrement, paroxysmal fast activity, multifocal spikes, symptomatic generalized discharges, polyspikes, or any combination of these EEG abnormalities. ",
                 "name": "abnormalities",
                 "optional": false,
                 "options": [

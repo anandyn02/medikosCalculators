@@ -32,7 +32,8 @@
             {
                 "subheading": "<p>Within the last year&hellip;</p>",
                 "subheading_instructions": null,
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Method: fall or blunt trauma. "
             },
             {
                 "conditionality": null,
@@ -57,7 +58,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Have you been <span style=\"text-decoration: underline;\">afraid</span> of your partner or ex-partner?</p>",
+                "label_en": "Has your current or past partner caused you any fear? ",
                 "name": "afraid",
                 "optional": false,
                 "options": [
@@ -77,7 +78,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Have you been <span style=\"text-decoration: underline;\">raped</span> or forced to have any kind of sexual activity by your partner or ex-partner?</p>",
+                "label_en": "Incapable of supporting oneself in the ED (4 steps; limping is permitted). ",
                 "name": "rape",
                 "optional": false,
                 "options": [

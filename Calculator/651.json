@@ -32,7 +32,7 @@
         "inputs": [
             {
                 "default": 0,
-                "label_en": "Age, years",
+                "label_en": "Stretch of BE's circumference above the GE Junction (C value). ",
                 "name": "age",
                 "optional": false,
                 "options": [
@@ -143,7 +143,7 @@
             },
             {
                 "default": 0,
-                "label_en": "<calculator id='64'>GCS</calculator>",
+                "label_en": "GCS",
                 "name": "gcs",
                 "optional": false,
                 "options": [
@@ -174,7 +174,7 @@
             },
             {
                 "default": 3,
-                "label_en": "PaO₂/FiO₂, if on mechanical ventilation or <abbr title='Continuous positive airway pressure'>CPAP</abbr> ",
+                "label_en": "PaO₂/FiO₂, in case you are using CPAP or mechanical breathing. ",
                 "name": "mmhg",
                 "optional": false,
                 "options": [
@@ -201,7 +201,7 @@
             },
             {
                 "default": 0,
-                "label_en": "BUN, mg/dL or serum urea, mmol/L",
+                "label_en": "BUN, mg/dL sau serum urea, mmol/L. ",
                 "name": "bun",
                 "optional": false,
                 "options": [
@@ -246,7 +246,7 @@
             },
             {
                 "default": 1,
-                "label_en": "Sodium, mEq/L or mmol/L",
+                "label_en": "Sodium, mEq/L or mmol/L. ",
                 "name": "sodium",
                 "optional": false,
                 "options": [
@@ -338,7 +338,7 @@
             },
             {
                 "default": 1,
-                "label_en": "WBC, x 10³/mm³",
+                "label_en": "WBC, x 10³/mm³. ",
                 "name": "wbc",
                 "optional": false,
                 "options": [
@@ -387,7 +387,7 @@
             },
             {
                 "default": 0,
-                "label_en": "Type of admission",
+                "label_en": "The kind of entry. ",
                 "name": "admission",
                 "optional": false,
                 "options": [

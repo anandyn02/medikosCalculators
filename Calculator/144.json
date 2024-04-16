@@ -134,7 +134,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Increase in goal directed activity (either socially, at work or school, or sexually) or psychomotor agitation (i.e., purposeless non-goal directed activity)",
+                "label_en": "Being too or inappropriately guilty, or feeling worthless. ",
                 "name": "manicsymptom6",
                 "optional": false,
                 "options": [
@@ -154,7 +154,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Excessive involvement in activities with high potential for painful consequences (e.g. unrestrained buying sprees, sexual indiscretions, foolish business investments)",
+                "label_en": "Abundant participation in activities that carry a high risk of unpleasant outcomes (e.g. G. immoral business ventures, unbridled shopping binges, and sexual transgressions). ",
                 "name": "manicsymptom7",
                 "optional": false,
                 "options": [
@@ -179,7 +179,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Distinct period of mood disturbance",
+                "label_en": "distinct time frame during which mood disorders occur. ",
                 "name": "manic1",
                 "optional": false,
                 "options": [
@@ -239,12 +239,13 @@
             {
                 "subheading": "Hypomanic episode",
                 "subheading_instructions": "Manic symptoms: during period of mood disturbance and increased energy/activity, ≥3 of the following symptoms (4 if the mood is only irritable) present to a significant degree and are a noticeable change from usual behavior",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "The episode cannot be more accurately explained by delusional disorder, schizophrenia, schizoaffective disorder, schizophreniform disorder, or any other specific or unspecific psychotic disorder. "
             },
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Inflated self-esteem or grandiosity",
+                "label_en": "overblown grandiosity or self-worth. ",
                 "name": "hypomanicsymptom1",
                 "optional": false,
                 "options": [
@@ -284,7 +285,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "More talkative than usual, or pressure to keep talking",
+                "label_en": "more chatty than normal or under constant pressure to talk. ",
                 "name": "hypomanicsymptom3",
                 "optional": false,
                 "options": [
@@ -304,7 +305,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Flight of ideas or subjectively racing thoughts",
+                "label_en": "thoughts that are rushing through your head or flying off. ",
                 "name": "hypomanicsymptom4",
                 "optional": false,
                 "options": [
@@ -324,7 +325,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Distractibility (i.e., attention too easily drawn to unimportant or irrelevant external stimuli), as reported or observed",
+                "label_en": "Distractibility (e.g. E. as stated or observed, attention being drawn too quickly to unimportant or irrelevant external stimuli. ",
                 "name": "hypomanicsymptom5",
                 "optional": false,
                 "options": [
@@ -344,7 +345,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Increase in goal directed activity (either socially, at work or school, or sexually) or psychomotor agitation (i.e., purposeless, non-goal directed activity)",
+                "label_en": "A rise in sexual activity, goal-directed behavior in the workplace or at school, or psychomotor agitation (i.e. E. goal-directed activity that lacks purpose). ",
                 "name": "hypomanicsymptom6",
                 "optional": false,
                 "options": [
@@ -389,7 +390,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Distinct period of mood disturbance",
+                "label_en": "distinct time frame during which mood disorders occur. ",
                 "name": "hypomanic1",
                 "optional": false,
                 "options": [
@@ -409,7 +410,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Episode associated with an unequivocal change in functioning uncharacteristic of person when not symptomatic",
+                "label_en": "episode linked to a clear shift in functioning that is out of character for the person when they are not exhibiting symptoms. ",
                 "name": "hypomanic2",
                 "optional": false,
                 "options": [
@@ -429,7 +430,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Mood disturbance and change in functioning are observable by others",
+                "label_en": "There are external observers of mood disorders and functional changes. ",
                 "name": "hypomanic3",
                 "optional": false,
                 "options": [
@@ -449,7 +450,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Episode not severe enough to cause marked impairment in social/occupational functioning or to necessitate hospitalization (if psychotic features present, the episode is manic)",
+                "label_en": "If psychotic features are present, the episode is manic; otherwise, it is not severe enough to require hospitalization or to significantly impair social or vocational functioning. ",
                 "name": "hypomanic4",
                 "optional": false,
                 "options": [
@@ -469,7 +470,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Episode not attributable to a substance (e.g. drug of abuse, medication, other treatment) or other medical condition",
+                "label_en": "Incident not related to a drug (e.g. G. abused substance, prescription medicine, other therapy, or another health issue. ",
                 "name": "hypomanic5",
                 "optional": false,
                 "options": [
@@ -514,7 +515,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Loss of interest/pleasure",
+                "label_en": "decrease in enjoyment or interest. ",
                 "name": "loss",
                 "optional": true,
                 "options": [
@@ -534,7 +535,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Weight loss or gain",
+                "label_en": "gaining or losing weight. ",
                 "name": "weight",
                 "optional": true,
                 "options": [
@@ -554,7 +555,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Insomnia or hypersomnia",
+                "label_en": "sömnstörningar eller hypersomni. ",
                 "name": "insomnia",
                 "optional": true,
                 "options": [
@@ -574,7 +575,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Psychomotor agitation or retardation",
+                "label_en": "Anxiety or slowness in psychomotor function. ",
                 "name": "psycho",
                 "optional": true,
                 "options": [
@@ -614,7 +615,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Feeling worthless or excessive/inappropriate guilt",
+                "label_en": "Being too or inappropriately guilty, or feeling worthless. ",
                 "name": "guilt",
                 "optional": true,
                 "options": [
@@ -654,7 +655,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Thoughts of death/suicide",
+                "label_en": "ideas about suicide or death. ",
                 "name": "suicide",
                 "optional": true,
                 "options": [
@@ -679,7 +680,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Symptoms cause clinically significant distress or impairment in social, occupational, or other important areas of functioning",
+                "label_en": "An inability to function in social, occupational, or other critical domains is brought on by symptoms that cause clinically significant distress. ",
                 "name": "two",
                 "optional": true,
                 "options": [
@@ -699,7 +700,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Episode not attributable to physiological effects of a substance or another medical condition",
+                "label_en": "Episode not related to drug's physiological effects or any other disease. ",
                 "name": "three",
                 "optional": true,
                 "options": [

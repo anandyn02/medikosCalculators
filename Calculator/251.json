@@ -60,7 +60,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p>Age, months or years</p>",
+                "label_en": "Performance Score for Karnofsky. ",
                 "name": "age",
                 "optional": false,
                 "tips_en": "",
@@ -100,7 +100,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Crackles</p>",
+                "label_en": "Total number of brain metastases. ",
                 "name": "crackles",
                 "optional": false,
                 "options": [
@@ -120,7 +120,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Wheezing</p>",
+                "label_en": "Wheezing",
                 "name": "wheezing",
                 "optional": false,
                 "options": [

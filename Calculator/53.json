@@ -28,7 +28,6 @@
         "logic": "var calc_output = [];\n\nvar plate1 = parseFloat(twelve);\nvar plate2 = parseFloat(eight);\nvar plate3 = parseFloat(five);\nvar plate4 = parseFloat(twentynine);\nvar plate5 = parseFloat(seventyfour);\nvar plate6 = parseFloat(seven);\nvar plate7 = parseFloat(fortyfive);\nvar plate8 = parseFloat(two);\nvar plate9 = parseFloat(sixteen);\nvar plate10 = parseFloat(thirtyfive);\nvar plate11 = parseFloat(ninetysix);\n\nvar diagnosis;\nvar msg = 'Ishihara test diagnosis';\n\nif (plate1 == 12 && plate2 == 8 && plate3 == 5 && plate4 == 29 && plate5 == 74 && plate6 == 7 && plate7 == 45 && plate8 == 2 && plate9 == 16 && plate10 == 35 && plate11 == 96) {\n\tdiagnosis = 'Normal vision';\n}\nelse if (plate1 == 12 && plate2 == 3 && plate3 == 2 && plate4 == 70 && plate5 == 21 && plate6 == 0 && plate7 == 0 && plate8 == 0 && plate9 == 0) {\n\tif (plate10 == 5 && plate11 == 6) {\n      diagnosis = 'Red-green color deficiency';\n      msg = 'Strong protan color blindness';\n\t} else if (plate10 == 3 && plate11 == 9) {\n      diagnosis = 'Red-green color deficiency';\n      msg = 'Strong deutan color blindness';\n\t} else if (plate10 == 35 && plate11 == 96 && q1 == 1 && q2 == 1) {\n      diagnosis = 'Red-green color deficiency';\n      msg = 'Mild deutan color blindness';\n\t} else if (plate10 == 35 && plate11 == 96 && q1 == 2 && q2 == 2) {\n      diagnosis = 'Red-green color deficiency';\n      msg = 'Mild protan color blindness';\n\t} else {\n      diagnosis = 'Not definite';\n    }\n}\nelse if (plate1 == 12 && plate2 == 0 && plate3 == 0 && plate4 == 0 && plate5 == 0 && plate6 == 0 && plate7 == 0 && plate8 == 0 && plate9 == 0) {\n\tdiagnosis = 'Total color blindness';\n} else {\n\tdiagnosis = 'Not definite';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: diagnosis,\n    value_text: '',\n    message: msg \n});\ncalc_output.push({\n    name: 'diagnosis',\n    value: diagnosis,\n    value_text: '',\n    message: msg\n});",
         "inputs": [
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara12.png\" width = \"50%\"> "
@@ -36,8 +35,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
+                "label_en": "If the patient can correctly read the lowest line, choose it. ",
                 "name": "twelve",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -60,7 +58,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara8.png\" width = \"50%\">"
@@ -68,8 +65,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
+                "label_en": "The patient is seeing what number? ",
                 "name": "eight",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -96,7 +92,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara5.png\" width = \"50%\">"
@@ -104,8 +99,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
+                "label_en": "The patient is seeing what number? ",
                 "name": "five",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -132,7 +126,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara29.png\" width = \"50%\">"
@@ -140,8 +133,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
+                "label_en": "The patient is seeing what number? ",
                 "name": "twentynine",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -168,7 +160,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara74.png\" width = \"50%\"> "
@@ -177,7 +168,6 @@
                 "conditionality": "",
                 "default": null,
                 "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
                 "name": "seventyfour",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -204,7 +194,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara7.png\" width = \"50%\"> "
@@ -212,8 +201,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
+                "label_en": "The patient is seeing what number? ",
                 "name": "seven",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -236,7 +224,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara45.png\" width = \"50%\">"
@@ -244,8 +231,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
+                "label_en": "The patient is seeing what number? ",
                 "name": "fortyfive",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -268,7 +254,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara2.png\" width = \"50%\"> "
@@ -276,8 +261,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
+                "label_en": "The patient is seeing what number? ",
                 "name": "two",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -300,7 +284,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara16.png\" width = \"50%\">"
@@ -308,8 +291,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
+                "label_en": "The patient is seeing what number? ",
                 "name": "sixteen",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -332,7 +314,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara35.png\" width = \"50%\">"
@@ -341,7 +322,6 @@
                 "conditionality": "",
                 "default": null,
                 "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
                 "name": "thirtyfive",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -374,8 +354,7 @@
             {
                 "conditionality": "thirtyfive == 35",
                 "default": null,
-                "label_en": "Are both digits equally clear?",
-                "mdcalc_info_concept": null,
+                "label_en": "How clear are the two digits? ",
                 "name": "q1",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -398,7 +377,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<img src=\"https://cdn-web-img.mdcalc.com/content/ishihara96.png\" width = \"50%\">"
@@ -406,8 +384,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "What number does the patient see?",
-                "mdcalc_info_concept": null,
+                "label_en": "The patient is seeing what number? ",
                 "name": "ninetysix",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -440,8 +417,7 @@
             {
                 "conditionality": "ninetysix == 96",
                 "default": null,
-                "label_en": "Are both digits equally clear?",
-                "mdcalc_info_concept": null,
+                "label_en": "How clear are the two digits? ",
                 "name": "q2",
                 "option_fhir_rules": null,
                 "optional": false,

@@ -54,7 +54,8 @@
             {
                 "subheading": "Criteria for Probable Alzheimer's Disease",
                 "subheading_instructions": "Must have all 6",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Classificazione modificata dei mallampati. "
             },
             {
                 "conditionality": "",
@@ -78,7 +79,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Deficits in ≥2 areas of cognition",
+                "label_en": "shortfalls in at least two cognitive domains. ",
                 "name": "deficits",
                 "optional": false,
                 "options": [
@@ -97,7 +98,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Progressive worsening of memory and other cognitive functions",
+                "label_en": "memory and other cognitive abilities gradually getting worse. ",
                 "name": "memory",
                 "optional": false,
                 "options": [
@@ -116,7 +117,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "No disturbance of consciousness",
+                "label_en": "A difficult intubation history. ",
                 "name": "disturbance",
                 "optional": false,
                 "options": [
@@ -135,7 +136,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Onset at age >40 to <90 years",
+                "label_en": "beginning between the ages of 40 and 90. ",
                 "name": "onset",
                 "optional": false,
                 "options": [
@@ -178,7 +179,7 @@
             {
                 "conditionality": "tests + deficits + memory + disturbance + onset + absence < 6",
                 "default": 0,
-                "label_en": "Dementia syndrome, in the absence of other neurologic, psychiatric, or systemic disorders sufficient to cause dementia, and presence of variations in onset, in presentation, or in clinical course",
+                "label_en": "dementia syndrome when there are differences in the onset, presentation, or clinical course of the illness and no additional neurologic, psychiatric, or systemic disorders that are significant enough to cause dementia. ",
                 "name": "syndrome",
                 "optional": false,
                 "options": [
@@ -216,7 +217,7 @@
             {
                 "conditionality": "tests + deficits + memory + disturbance + onset + absence < 6",
                 "default": 0,
-                "label_en": "A single, gradually progressive severe cognitive deficit is identified in the absence of other identifiable cause",
+                "label_en": "In the absence of any other apparent cause, a single, severely progressive cognitive deficit is found to exist. ",
                 "name": "other",
                 "optional": false,
                 "options": [

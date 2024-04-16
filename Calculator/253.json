@@ -37,7 +37,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>In general, how would you describe your relationship?</p>",
+                "label_en": "Could you sum up your relationship in general terms? ",
                 "name": "one",
                 "optional": false,
                 "options": [
@@ -61,7 +61,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Do you and your partner work out arguments with:</p>",
+                "label_en": "ulcerations and erosions. ",
                 "name": "two",
                 "optional": false,
                 "options": [
@@ -114,7 +114,7 @@
             {
                 "conditionality": "one == 3 && two == 3",
                 "default": 0,
-                "label_en": "<p>Do arguments ever result in hitting, kicking, or pushing?</p>",
+                "label_en": "Does hitting, kicking, or pushing ever follow an argument? ",
                 "name": "four",
                 "optional": false,
                 "options": [
@@ -186,7 +186,7 @@
             {
                 "conditionality": "one == 3 && two == 3",
                 "default": 0,
-                "label_en": "<p>Has your partner ever abused you emotionally?</p>",
+                "label_en": "Did your spouse ever emotionally abuse you? ",
                 "name": "seven",
                 "optional": false,
                 "options": [

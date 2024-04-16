@@ -101,7 +101,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Jaw</p>",
+                "label_en": "previous cesarean delivery-related arrest disorder. ",
                 "name": "jaw",
                 "optional": false,
                 "options": [
@@ -133,7 +133,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Tongue</p>",
+                "label_en": "Tongue",
                 "name": "tongue",
                 "optional": false,
                 "options": [
@@ -165,7 +165,8 @@
             {
                 "subheading": "Extremity Movements",
                 "subheading_instructions": null,
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "handled long-term hypertension. "
             },
             {
                 "conditionality": null,
@@ -239,7 +240,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Neck, shoulders, hips</p>",
+                "label_en": "spine, shoulders, and hips. ",
                 "name": "trunk",
                 "optional": false,
                 "options": [
@@ -340,7 +341,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p>Patient's awareness of abnormal movements</p>",
+                "label_en": "The knowledge of the patient about unusual movements. ",
                 "name": "aware",
                 "optional": true,
                 "options": [
@@ -377,7 +378,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p>Current problems with teeth and/or dentures?</p>",
+                "label_en": "Existing issues with your dentures or teeth? ",
                 "name": "problems",
                 "optional": true,
                 "options": [
@@ -397,7 +398,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p>Are dentures usually worn?</p>",
+                "label_en": "Do people typically wear dentures? ",
                 "name": "dentures",
                 "optional": true,
                 "options": [
@@ -417,7 +418,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p>Edentia?</p>",
+                "label_en": "Edentia?",
                 "name": "edentia",
                 "optional": true,
                 "options": [

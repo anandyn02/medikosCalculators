@@ -58,7 +58,7 @@
             },
             {
                 "conditionality": "location == 0",
-                "label_en": "Tumor confined to ovaries",
+                "label_en": "solely an ovarian tumor. ",
                 "name": "ovaries",
                 "optional": false,
                 "options": [
@@ -80,7 +80,7 @@
             },
             {
                 "conditionality": "ovaries == 2",
-                "label_en": "Tumor limited to 1 or both ovaries",
+                "label_en": "ratio (E/e') of early mitral inflow velocity to early diastolic velocity of the mitral annular complex. ",
                 "name": "limited",
                 "optional": false,
                 "options": [
@@ -102,7 +102,7 @@
             },
             {
                 "conditionality": "location == 1",
-                "label_en": "Tumor involves 1 or both ovaries with pelvic extension (below the pelvic brim) or primary peritoneal cancer",
+                "label_en": "Systolic pressure of arteries in the heart. ",
                 "name": "extension",
                 "optional": false,
                 "options": [
@@ -142,7 +142,7 @@
             },
             {
                 "conditionality": "spread == 0",
-                "label_en": "Positive retroperitoneal lymph nodes and/or microscopic metastasis beyond the pelvis",
+                "label_en": "Both positive retroperitoneal lymph nodes and microscopic metastases outside of the pelvis are possible. ",
                 "name": "lymph",
                 "optional": false,
                 "options": [
@@ -178,7 +178,7 @@
             },
             {
                 "conditionality": "location == 3",
-                "label_en": "Distant metastasis excluding peritoneal metastasis",
+                "label_en": "Terlepas dari metastasis peritoneal, metastasis di seluruh tubuh dianggap sebagai distant. ",
                 "name": "distant",
                 "optional": false,
                 "options": [

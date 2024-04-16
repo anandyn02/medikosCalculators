@@ -158,7 +158,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Patient global assessment of disease activity",
+                "label_en": "worldwide evaluation of the disease state by the patient. ",
                 "name": "global",
                 "optional": false,
                 "options": [
@@ -269,7 +269,7 @@
             },
             {
                 "conditionality": "",
-                "label_en": "<abbr title='Erythrocyte sedimentation rate'>ESR</abbr>",
+                "label_en": "ESR",
                 "name": "esr",
                 "optional": false,
                 "type": "textbox",

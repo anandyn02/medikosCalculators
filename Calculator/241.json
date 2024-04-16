@@ -73,7 +73,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Chronic respiratory disease",
+                "label_en": "In breaths per minute, the respiratory rate. ",
                 "name": "resp",
                 "optional": false,
                 "options": [
@@ -133,7 +133,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Current estrogen use",
+                "label_en": "utilisation actuelle de l'estrogène. ",
                 "name": "estrogen",
                 "optional": false,
                 "options": [
@@ -193,7 +193,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Immobility within the last four weeks",
+                "label_en": "absence of movement during the previous four weeks. ",
                 "name": "imm",
                 "optional": false,
                 "options": [
@@ -233,7 +233,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Calf pain and/or unilateral lower limb edema",
+                "label_en": "Single-sided lower limb edema and/or calf pain. ",
                 "name": "calf",
                 "optional": false,
                 "options": [
@@ -253,7 +253,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<abbr title=\"Pulmonary embolism\">PE</abbr> is the most likely diagnosis",
+                "label_en": "Your best bet is to go with PE. ",
                 "name": "pediag",
                 "optional": false,
                 "options": [

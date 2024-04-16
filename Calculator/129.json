@@ -70,7 +70,8 @@
             {
                 "subheading": "Assess patient based on interactions over one nursing shift:",
                 "subheading_instructions": "",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Have you had any bad moods, depressions, or hopelessness in the last fortnight? "
             },
             {
                 "conditionality": "age == 1",
@@ -107,7 +108,7 @@
             {
                 "conditionality": "age == 1",
                 "default": 0,
-                "label_en": "Actions are purposeful",
+                "label_en": "Have you attempted suicide at any point in your lifetime? ",
                 "name": "purpose1",
                 "optional": false,
                 "options": [
@@ -139,7 +140,7 @@
             {
                 "conditionality": "age == 1",
                 "default": 0,
-                "label_en": "Aware of surroundings",
+                "label_en": "How recently did you try this? ",
                 "name": "aware1",
                 "optional": false,
                 "options": [
@@ -171,7 +172,7 @@
             {
                 "conditionality": "age == 1",
                 "default": 0,
-                "label_en": "Communicates needs and wants",
+                "label_en": "expresses wants and requirements. ",
                 "name": "communication1",
                 "optional": false,
                 "options": [
@@ -267,7 +268,7 @@
             {
                 "conditionality": "age == 1",
                 "default": 0,
-                "label_en": "Underactive (very little movement while awake)",
+                "label_en": "Underactive: hardly moving at all while conscious. ",
                 "name": "under1",
                 "optional": false,
                 "options": [
@@ -299,7 +300,7 @@
             {
                 "conditionality": "age == 1",
                 "default": 0,
-                "label_en": "Takes long time to respond to interactions",
+                "label_en": "responses to interactions slowly. ",
                 "name": "time1",
                 "optional": false,
                 "options": [
@@ -331,7 +332,7 @@
             {
                 "conditionality": "age == 2",
                 "default": 0,
-                "label_en": "Makes eye contact with caregiver",
+                "label_en": "looks the caregiver in the eye. ",
                 "name": "eye2",
                 "optional": false,
                 "options": [
@@ -363,7 +364,7 @@
             {
                 "conditionality": "age == 2",
                 "default": 0,
-                "label_en": "Actions are purposeful",
+                "label_en": "There is a purpose behind actions. ",
                 "name": "purpose2",
                 "optional": false,
                 "options": [
@@ -395,7 +396,7 @@
             {
                 "conditionality": "age == 2",
                 "default": 0,
-                "label_en": "Aware of surroundings",
+                "label_en": "aware of the environment. ",
                 "name": "aware2",
                 "optional": false,
                 "options": [
@@ -427,7 +428,7 @@
             {
                 "conditionality": "age == 2",
                 "default": 0,
-                "label_en": "Communicates needs and wants",
+                "label_en": "expresses wants and requirements. ",
                 "name": "communication2",
                 "optional": false,
                 "options": [
@@ -523,7 +524,7 @@
             {
                 "conditionality": "age == 2",
                 "default": 0,
-                "label_en": "Underactive (very little movement while awake)",
+                "label_en": "Underactive: hardly moving at all while conscious. ",
                 "name": "under2",
                 "optional": false,
                 "options": [
@@ -555,7 +556,7 @@
             {
                 "conditionality": "age == 2",
                 "default": 0,
-                "label_en": "Takes long time to respond to interactions",
+                "label_en": "responses to interactions slowly. ",
                 "name": "time2",
                 "optional": false,
                 "options": [
@@ -587,7 +588,7 @@
             {
                 "conditionality": "age == 3",
                 "default": 0,
-                "label_en": "Makes eye contact with caregiver",
+                "label_en": "looks the caregiver in the eye. ",
                 "name": "eye3",
                 "optional": false,
                 "options": [
@@ -619,7 +620,7 @@
             {
                 "conditionality": "age == 3",
                 "default": 0,
-                "label_en": "Actions are purposeful",
+                "label_en": "There is a purpose behind actions. ",
                 "name": "purpose3",
                 "optional": false,
                 "options": [
@@ -683,7 +684,7 @@
             {
                 "conditionality": "age == 3",
                 "default": 0,
-                "label_en": "Communicates needs and wants",
+                "label_en": "expresses wants and requirements. ",
                 "name": "communication3",
                 "optional": false,
                 "options": [
@@ -779,7 +780,7 @@
             {
                 "conditionality": "age == 3",
                 "default": 0,
-                "label_en": "Underactive (very little movement while awake)",
+                "label_en": "Underactive: hardly moving at all while conscious. ",
                 "name": "under3",
                 "optional": false,
                 "options": [
@@ -811,7 +812,7 @@
             {
                 "conditionality": "age == 3",
                 "default": 0,
-                "label_en": "Takes long time to respond to interactions",
+                "label_en": "responses to interactions slowly. ",
                 "name": "time3",
                 "optional": false,
                 "options": [
@@ -843,7 +844,7 @@
             {
                 "conditionality": "age == 4",
                 "default": 0,
-                "label_en": "Makes eye contact with caregiver",
+                "label_en": "looks the caregiver in the eye. ",
                 "name": "eye4",
                 "optional": false,
                 "options": [
@@ -875,7 +876,7 @@
             {
                 "conditionality": "age == 4",
                 "default": 0,
-                "label_en": "Actions are purposeful",
+                "label_en": "There is a purpose behind actions. ",
                 "name": "purpose4",
                 "optional": false,
                 "options": [
@@ -907,7 +908,7 @@
             {
                 "conditionality": "age == 4",
                 "default": 0,
-                "label_en": "Aware of surroundings",
+                "label_en": "aware of the environment. ",
                 "name": "aware4",
                 "optional": false,
                 "options": [
@@ -939,7 +940,7 @@
             {
                 "conditionality": "age == 4",
                 "default": 0,
-                "label_en": "Communicates needs and wants",
+                "label_en": "expresses wants and requirements. ",
                 "name": "communication4",
                 "optional": false,
                 "options": [
@@ -1067,7 +1068,7 @@
             {
                 "conditionality": "age == 4",
                 "default": 0,
-                "label_en": "Takes long time to respond to interactions",
+                "label_en": "responses to interactions slowly. ",
                 "name": "time4",
                 "optional": false,
                 "options": [
@@ -1099,7 +1100,7 @@
             {
                 "conditionality": "age == 5",
                 "default": 0,
-                "label_en": "Makes eye contact with caregiver",
+                "label_en": "looks the caregiver in the eye. ",
                 "name": "eye5",
                 "optional": false,
                 "options": [
@@ -1131,7 +1132,7 @@
             {
                 "conditionality": "age == 5",
                 "default": 0,
-                "label_en": "Actions are purposeful",
+                "label_en": "There is a purpose behind actions. ",
                 "name": "purpose5",
                 "optional": false,
                 "options": [
@@ -1163,7 +1164,7 @@
             {
                 "conditionality": "age == 5",
                 "default": 0,
-                "label_en": "Aware of surroundings",
+                "label_en": "aware of the environment. ",
                 "name": "aware5",
                 "optional": false,
                 "options": [
@@ -1195,7 +1196,7 @@
             {
                 "conditionality": "age == 5",
                 "default": 0,
-                "label_en": "Communicates needs and wants",
+                "label_en": "expresses wants and requirements. ",
                 "name": "communication5",
                 "optional": false,
                 "options": [
@@ -1291,7 +1292,7 @@
             {
                 "conditionality": "age == 5",
                 "default": 0,
-                "label_en": "Underactive (very little movement while awake)",
+                "label_en": "Underactive: hardly moving at all while conscious. ",
                 "name": "under5",
                 "optional": false,
                 "options": [
@@ -1323,7 +1324,7 @@
             {
                 "conditionality": "age == 5",
                 "default": 0,
-                "label_en": "Takes long time to respond to interactions",
+                "label_en": "responses to interactions slowly. ",
                 "name": "time5",
                 "optional": false,
                 "options": [
@@ -1355,7 +1356,7 @@
             {
                 "conditionality": "age == 6",
                 "default": 0,
-                "label_en": "Makes eye contact with caregiver",
+                "label_en": "looks the caregiver in the eye. ",
                 "name": "eye6",
                 "optional": false,
                 "options": [
@@ -1387,7 +1388,7 @@
             {
                 "conditionality": "age == 6",
                 "default": 0,
-                "label_en": "Actions are purposeful",
+                "label_en": "There is a purpose behind actions. ",
                 "name": "purpose6",
                 "optional": false,
                 "options": [
@@ -1419,7 +1420,7 @@
             {
                 "conditionality": "age == 6",
                 "default": 0,
-                "label_en": "Aware of surroundings",
+                "label_en": "aware of the environment. ",
                 "name": "aware6",
                 "optional": false,
                 "options": [
@@ -1451,7 +1452,7 @@
             {
                 "conditionality": "age == 6",
                 "default": 0,
-                "label_en": "Communicates needs and wants",
+                "label_en": "expresses wants and requirements. ",
                 "name": "communication6",
                 "optional": false,
                 "options": [
@@ -1547,7 +1548,7 @@
             {
                 "conditionality": "age == 6",
                 "default": 0,
-                "label_en": "Underactive (very little movement while awake)",
+                "label_en": "Underactive: hardly moving at all while conscious. ",
                 "name": "under6",
                 "optional": false,
                 "options": [
@@ -1579,7 +1580,7 @@
             {
                 "conditionality": "age == 6",
                 "default": 0,
-                "label_en": "Takes long time to respond to interactions",
+                "label_en": "responses to interactions slowly. ",
                 "name": "time6",
                 "optional": false,
                 "options": [
@@ -1611,7 +1612,7 @@
             {
                 "conditionality": "age == 7",
                 "default": 0,
-                "label_en": "Makes eye contact with caregiver",
+                "label_en": "looks the caregiver in the eye. ",
                 "name": "eye7",
                 "optional": false,
                 "options": [
@@ -1643,7 +1644,7 @@
             {
                 "conditionality": "age == 7",
                 "default": 0,
-                "label_en": "Actions are purposeful",
+                "label_en": "There is a purpose behind actions. ",
                 "name": "purpose7",
                 "optional": false,
                 "options": [
@@ -1675,7 +1676,7 @@
             {
                 "conditionality": "age == 7",
                 "default": 0,
-                "label_en": "Aware of surroundings",
+                "label_en": "aware of the environment. ",
                 "name": "aware7",
                 "optional": false,
                 "options": [
@@ -1803,7 +1804,7 @@
             {
                 "conditionality": "age == 7",
                 "default": 0,
-                "label_en": "Underactive (very little movement while awake)",
+                "label_en": "Underactive: hardly moving at all while conscious. ",
                 "name": "under7",
                 "optional": false,
                 "options": [

@@ -45,7 +45,6 @@
         "logic": "var calc_output = [];\n\n//user inputs\nvar classm = parseFloat(classm);\nvar classRN, diff;\n\nif(classm === 1){\n\tclassRN = 'Class I';\n    diff = ''\n}\nif(classm === 2){\n\tclassRN = 'Class II';\n    diff = ''\n}\nif(classm === 3){\n\tclassRN = 'Class III';\n    diff = '<br/><br/>Predicted difficult airway by Mallampati. Consider supportive strategies (see Next Steps for details).'\n}\nif(classm === 4){\n\tclassRN = 'Class IV';\n    diff = '<br/><br/>Predicted difficult airway by Mallampati. Consider supportive strategies (see Next Steps for details).'\n}\n//results\ncalc_output.push({\n    name: 'mini',\n    value: classRN,\n    value_text: '',\n    message: 'Modified Mallampati Classification'\n});\ncalc_output.push({\n    name: '3989_Modified Mallampati Classification_result',\n    value: classRN,\n    value_text: '',\n    message: 'Modified Mallampati Classification' + diff\n});",
         "inputs": [
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/mallampati.png\" alt=\"\"></p>"
@@ -54,7 +53,6 @@
                 "conditionality": "",
                 "default": null,
                 "label_en": "Visualization:",
-                "mdcalc_info_concept": null,
                 "name": "classm",
                 "option_fhir_rules": null,
                 "optional": false,

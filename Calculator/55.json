@@ -49,7 +49,7 @@
             },
             {
                 "conditionality": "hn == 0",
-                "label_en": "Race",
+                "label_en": "Nodule count. ",
                 "name": "race",
                 "optional": false,
                 "options": [
@@ -107,7 +107,7 @@
             {
                 "conditionality": "hn == 0",
                 "default": 1,
-                "label_en": "History of congestive heart failure",
+                "label_en": "cardiovascular failure in the past. ",
                 "name": "chf",
                 "optional": false,
                 "options": [
@@ -126,7 +126,7 @@
             {
                 "conditionality": "hn == 0",
                 "default": 1,
-                "label_en": "History of sepsis or prerenal acute kidney injury, use of pressors, or hypotension",
+                "label_en": "Previous instances of sepsis or prerenal acute kidney injury, pressor use, or hypotension. ",
                 "name": "aki",
                 "optional": false,
                 "options": [
@@ -145,7 +145,7 @@
             {
                 "conditionality": "hn == 0",
                 "default": 1,
-                "label_en": "Exposure to nephrotoxic medications prior to acute kidney injury",
+                "label_en": "exposure to drugs that induce renal damage before a sudden acute injury. ",
                 "name": "exposure",
                 "optional": false,
                 "options": [

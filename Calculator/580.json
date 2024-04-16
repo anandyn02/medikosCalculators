@@ -152,7 +152,7 @@
             },
             {
                 "default": 0,
-                "label_en": "<calculator id='64'><abbr title='Glasgow Coma Scale'>GCS</abbr></calculator> <14 (or GCS <15 if <1 year old)",
+                "label_en": "GCS <14, or <15 if the child is younger than one year old. ",
                 "name": "gcs",
                 "optional": false,
                 "options": [
@@ -188,7 +188,7 @@
             },
             {
                 "default": 0,
-                "label_en": "Signs of basal skull fracture",
+                "label_en": "indicates of a fractured basal skull. ",
                 "name": "sign",
                 "optional": false,
                 "options": [
@@ -207,7 +207,7 @@
             },
             {
                 "default": 0,
-                "label_en": "Positive focal neurologic sign",
+                "label_en": "Un segno neurologico focale positivo. ",
                 "name": "pos",
                 "optional": false,
                 "options": [
@@ -226,7 +226,7 @@
             },
             {
                 "default": 0,
-                "label_en": "Bruise, swelling or laceration >5 cm (if <1 year old)",
+                "label_en": "Severity, edema, or cut deeper than 5 cm (if younger than 1 year old). ",
                 "name": "pres",
                 "optional": false,
                 "options": [
@@ -268,7 +268,7 @@
             },
             {
                 "default": 0,
-                "label_en": "Fall of >3 m in height",
+                "label_en": "Fall of more than three meters. ",
                 "name": "fall",
                 "optional": false,
                 "options": [

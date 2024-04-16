@@ -42,8 +42,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Congestive heart failure history",
-                "md_calc_info_concept": null,
+                "label_en": "ancienne crise cardiaque avec congestion. ",
                 "name": "heart_failure",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -65,7 +64,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Hematocrit <30%",
-                "md_calc_info_concept": null,
                 "name": "hematocrit_30",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -86,8 +84,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "EKG abnormal (EKG changed, or any non-sinus rhythm on EKG or monitoring)",
-                "md_calc_info_concept": null,
+                "label_en": "ECG anomalous (e.g., non-sinus rhythm on the ECG or monitoring, or altered EKG). ",
                 "name": "ekg_abnormal",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -108,8 +105,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Shortness of breath symptoms",
-                "md_calc_info_concept": null,
+                "label_en": "la quantità di alcohol nel sangue. ",
                 "name": "shortness_of_breath",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -130,8 +126,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Systolic BP <90 mmHg at triage",
-                "md_calc_info_concept": null,
+                "label_en": "Measured serum osm. ",
                 "name": "systolic_bp_90",
                 "option_fhir_rules": null,
                 "optional": false,

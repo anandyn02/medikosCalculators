@@ -26,8 +26,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p>Age &ge;65 years</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "65 years or older. ",
                 "name": "age",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -48,8 +47,7 @@
             {
                 "conditionality": "age == 0",
                 "default": null,
-                "label_en": "<p>Prior stroke or TIA, hypertension, heart failure, or diabetes mellitus</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "hypertension, heart failure, diabetes mellitus, or history of stroke or TIA. ",
                 "name": "prior",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -71,7 +69,6 @@
                 "conditionality": "prior == 0",
                 "default": null,
                 "label_en": "<p>Coronary or peripheral artery disease</p>",
-                "mdcalc_info_concept": null,
                 "name": "disease",
                 "option_fhir_rules": null,
                 "optional": false,

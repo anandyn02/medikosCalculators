@@ -33,8 +33,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p><calculator id=\"340\">Child-Pugh grade</calculator></p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Child-Pugh grade",
                 "name": "cp",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -59,8 +58,7 @@
             {
                 "conditionality": "cp <= 2",
                 "default": null,
-                "label_en": "<p>Cancer stage</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Cancer stage",
                 "name": "stage",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -90,7 +88,6 @@
                 "conditionality": "cp <=2 && stage == 1",
                 "default": null,
                 "label_en": "<p>Number of nodules</p>",
-                "mdcalc_info_concept": null,
                 "name": "numnodes",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -111,8 +108,7 @@
             {
                 "conditionality": "(cp <=2 && stage == 0) || (cp <=2 && stage == 1 && numnodes == 1)",
                 "default": null,
-                "label_en": "<p>Portal pressure/bilirubin</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Portal pressure/bilirubin",
                 "name": "portalpressure",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -133,8 +129,7 @@
             {
                 "conditionality": "(cp <=2 && stage == 0 && portalpressure == 2) || (stage <= 1 && numnodes == 2) || (cp <=2 && stage == 1 && numnodes == 1 && portalpressure == 2) ",
                 "default": null,
-                "label_en": "<p>Associated diseases</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Associated diseases",
                 "name": "assocdis",
                 "option_fhir_rules": null,
                 "optional": false,

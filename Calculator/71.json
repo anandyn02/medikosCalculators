@@ -37,12 +37,13 @@
             {
                 "subheading": "Clinical features of an episode",
                 "subheading_instructions": "Sore throat plus ≥1 feature qualifies as an episode:",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "QT interval with Bazett adjustment. "
             },
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Temperature > 38.3°C (100.9°F)",
+                "label_en": "presently taking a daily dosage. ",
                 "name": "temp",
                 "optional": true,
                 "options": [
@@ -82,7 +83,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Tonsillar or pharyngeal exudate",
+                "label_en": "60 ms after the J point in lead V3, the ST segment elevation follows. ",
                 "name": "exudate",
                 "optional": true,
                 "options": [

@@ -86,7 +86,7 @@
             {
                 "conditionality": "a9 == 0",
                 "default": 0,
-                "label_en": "A2: Causal link uncertain",
+                "label_en": "danger to one's health from chemicals. ",
                 "name": "a2",
                 "optional": false,
                 "options": [
@@ -126,7 +126,7 @@
             {
                 "conditionality": "a9 == 0",
                 "default": 0,
-                "label_en": "A0: Atherosclerosis not detected and ruled out",
+                "label_en": "A0: Atherosclerosis is excluded after being found not to exist. ",
                 "name": "a0",
                 "optional": false,
                 "options": [
@@ -151,7 +151,7 @@
             {
                 "conditionality": "",
                 "default": 1,
-                "label_en": "S9: Incomplete workup",
+                "label_en": "S9: Inadequate investigation. ",
                 "name": "s9",
                 "optional": false,
                 "options": [
@@ -171,7 +171,7 @@
             {
                 "conditionality": "s9 == 0",
                 "default": 0,
-                "label_en": "S1: Potentially causal",
+                "label_en": "Possibly causative (S1). ",
                 "name": "s1",
                 "optional": false,
                 "options": [
@@ -191,7 +191,7 @@
             {
                 "conditionality": "s9 == 0",
                 "default": 0,
-                "label_en": "S2: Causal link uncertain",
+                "label_en": "S2: Link sebab tidak jelas. ",
                 "name": "s2",
                 "optional": false,
                 "options": [
@@ -211,7 +211,7 @@
             {
                 "conditionality": "s9 == 0",
                 "default": 0,
-                "label_en": "S3: Causal link unlikely, but disease is present",
+                "label_en": "S3: Disease exists, but a causal relationship is unlikely. ",
                 "name": "s3",
                 "optional": false,
                 "options": [
@@ -231,7 +231,7 @@
             {
                 "conditionality": "s9 == 0",
                 "default": 0,
-                "label_en": "S0: Small-vessel disease not detected",
+                "label_en": "S0: There is no evidence of small-vessel illness. ",
                 "name": "s0",
                 "optional": false,
                 "options": [
@@ -256,7 +256,7 @@
             {
                 "conditionality": "",
                 "default": 1,
-                "label_en": "C9: Incomplete workup",
+                "label_en": "Workup is not finished (C9). ",
                 "name": "c9",
                 "optional": false,
                 "options": [
@@ -276,7 +276,7 @@
             {
                 "conditionality": "c9 == 0",
                 "default": 0,
-                "label_en": "C1: Potentially causal",
+                "label_en": "",
                 "name": "c1",
                 "optional": false,
                 "options": [
@@ -296,7 +296,7 @@
             {
                 "conditionality": "c9 == 0",
                 "default": 0,
-                "label_en": "C2: Causal link is uncertain (one of the following, regardless of stroke pattern)",
+                "label_en": "C2: Regardless of stroke pattern, there is uncertainty about the causal relationship. ",
                 "name": "c2",
                 "optional": false,
                 "options": [
@@ -336,7 +336,7 @@
             {
                 "conditionality": "c9 == 0",
                 "default": 0,
-                "label_en": "C0: Cardiac pathology not detected or not suspected",
+                "label_en": "",
                 "name": "c0",
                 "optional": false,
                 "options": [
@@ -361,7 +361,7 @@
             {
                 "conditionality": "",
                 "default": 1,
-                "label_en": "O9: Incomplete workup",
+                "label_en": "O9: Workup is not finished. ",
                 "name": "o9",
                 "optional": false,
                 "options": [
@@ -401,7 +401,7 @@
             {
                 "conditionality": "o9 == 0",
                 "default": 0,
-                "label_en": "O2: Causal link is uncertain",
+                "label_en": "O2: There is no proof of a causal link. ",
                 "name": "o2",
                 "optional": false,
                 "options": [
@@ -421,7 +421,7 @@
             {
                 "conditionality": "o9 == 0",
                 "default": 0,
-                "label_en": "O3: Causal link is unlikely but disease is present",
+                "label_en": "O3: The presence of disease does not imply a causal relationship. ",
                 "name": "o3",
                 "optional": false,
                 "options": [
@@ -441,7 +441,7 @@
             {
                 "conditionality": "o9 == 0",
                 "default": 0,
-                "label_en": "O0: Cardiac pathology not detected or not suspected",
+                "label_en": "",
                 "name": "o0",
                 "optional": false,
                 "options": [
@@ -466,7 +466,7 @@
             {
                 "conditionality": "",
                 "default": 1,
-                "label_en": "D9: Incomplete workup",
+                "label_en": "D9: Unfinished work-up. ",
                 "name": "d9",
                 "optional": false,
                 "options": [
@@ -486,7 +486,7 @@
             {
                 "conditionality": "d9 == 0",
                 "default": 0,
-                "label_en": "D1: Potentially causal ",
+                "label_en": "Possible causation (D1). ",
                 "name": "d1",
                 "optional": false,
                 "options": [
@@ -506,7 +506,7 @@
             {
                 "conditionality": "d9 == 0",
                 "default": 0,
-                "label_en": "D2: Causal link uncertain",
+                "label_en": "D2: Link alasan tidak jelas. ",
                 "name": "d2",
                 "optional": false,
                 "options": [
@@ -546,7 +546,7 @@
             {
                 "conditionality": "d9 == 0",
                 "default": 0,
-                "label_en": "D0: No dissection detected or suspected",
+                "label_en": "D0: Dissection was not observed or suspected. ",
                 "name": "d0",
                 "optional": false,
                 "options": [

@@ -25,7 +25,6 @@
                 "conditionality": "",
                 "default": null,
                 "label_en": "Does the patient have more than 12 years of education?",
-                "md_calc_info_concept": null,
                 "name": "age",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -51,7 +50,6 @@
                 "type": "subheading"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<p><br><br><img src=\"https://cdn-web-img.mdcalc.com/content/montrealcognitiveassessment (2).png\" width=\"45%\"></p>"
@@ -60,7 +58,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Ask patient to trace the diagram in order",
-                "mdcalc_info_concept": null,
                 "name": "one",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -79,7 +76,6 @@
                 "type": "radio"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<p><br><br><img src=\"https://cdn-web-img.mdcalc.com/content/Cube (6).png\" width=\"45%\"></p>"
@@ -87,8 +83,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Ask patient to copy cube",
-                "mdcalc_info_concept": null,
+                "label_en": "Request that the patient copy the cube. ",
                 "name": "two",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -109,8 +104,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Ask patient to draw a clock (ten past eleven)",
-                "mdcalc_info_concept": null,
+                "label_en": "Jobs and hobbies. ",
                 "name": "three",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -152,7 +146,6 @@
                 "type": "subheading"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<p><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/content/animals2.png\" alt=\"\"></p>"
@@ -160,8 +153,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Ask patient to name the first animal",
-                "mdcalc_info_concept": null,
+                "label_en": "Request the patient's name of the first creature. ",
                 "name": "four",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -183,7 +175,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Ask patient to name the second animal",
-                "mdcalc_info_concept": null,
                 "name": "five",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -204,8 +195,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Ask patient to name the third animal",
-                "mdcalc_info_concept": null,
+                "label_en": "The third animal should be named by the patient. ",
                 "name": "six",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -228,13 +218,13 @@
                 "option_fhir_rules": null,
                 "subheading": "Memory",
                 "subheading_instructions": "",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "broad physical signs. "
             },
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Read \"Face\", \"Velvet\", \"Church\", \"Daisy\", \"Red\", and ask patient to repeat (do two trials and a recall later in exam)",
-                "mdcalc_info_concept": null,
+                "label_en": "Give the patient two trials and a recall later in the exam after reading \"Face,\" \"Velvet,\" \"Church,\" \"Daisy,\" and \"Red.\". ",
                 "name": "seven",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -263,7 +253,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Read list of digits (2, 1, 8, 5, 4) at 1 digit/sec and ask patient to repeat them in the forward order ",
-                "mdcalc_info_concept": null,
                 "name": "eight",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -285,7 +274,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Read list of digits (7, 4, 2) at 1 digit/sec and ask patient to repeat them in the backward order",
-                "mdcalc_info_concept": null,
                 "name": "nine",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -306,8 +294,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Read list of letters and ask patient to tap with their hand at each letter A: FBAC MNAA JKLB AFAK DEAA AJAM OFAAB",
-                "mdcalc_info_concept": null,
+                "label_en": "The patient should be asked to tap at each letter A on the list, which is: FBAC MNAA JKLB AFAK DEAA AJAM OFAAB. ",
                 "name": "ten",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -328,8 +315,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Ask patient to do five serial 7 subtractions starting at 100; patient should say 93, 86, 79, 72, 65",
-                "mdcalc_info_concept": null,
+                "label_en": "Patients should state 93, 86, 79, 72, and 65 after performing five consecutive 7-subtractions starting at 100. ",
                 "name": "eleven",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -365,8 +351,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Read and ask patient to repeat: \"I only know that John is the one to help today\"",
-                "mdcalc_info_concept": null,
+                "label_en": "The patient should repeat, \"I only know that John is the one to help today,\" after you have read it to them. ",
                 "name": "twelve",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -388,7 +373,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Read and ask patient to repeat: \"The cat always hid under the couch when dogs were in the room\"",
-                "mdcalc_info_concept": null,
                 "name": "thirteen",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -409,8 +393,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Ask patient to name maximum number of words in 1 minute that begin with the letter F",
-                "mdcalc_info_concept": null,
+                "label_en": "One minute is allotted to the patient to list as many words that start with the letter F as possible. ",
                 "name": "fourteen",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -438,8 +421,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Ask patient similarity between train and bicycle (e.g. both are modes of transportation)",
-                "mdcalc_info_concept": null,
+                "label_en": "Find out if the patient thinks a train and a bicycle are similar. G. These are two different ways to travel. ",
                 "name": "fifteen",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -460,8 +442,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Ask patient similarity between watch and ruler (e.g. both are measuring tools)",
-                "mdcalc_info_concept": null,
+                "label_en": "Inquire about the patient's likeness to a watch or ruler. G. both are instruments for measurement. ",
                 "name": "sixteen",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -489,8 +470,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Ask patient to recall the words with no cue from the memory test previously conducted (\"Face\", \"Velvet\", \"Church\", \"Daisy\", \"Red\")",
-                "mdcalc_info_concept": null,
+                "label_en": "\"Face,\" \"Velvet,\" \"Church,\" \"Daisy,\" and \"Red\" are among the words from the prior memory test that you want the patient to remember without aid. ",
                 "name": "seventeen",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -534,8 +514,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Ask patient the date, month, year, day, place, and city",
-                "mdcalc_info_concept": null,
+                "label_en": "Find out the day, time, location, city, month, and day of the patient. ",
                 "name": "eighteen",
                 "option_fhir_rules": null,
                 "optional": false,

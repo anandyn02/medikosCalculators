@@ -52,7 +52,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Infant appears generally well",
+                "label_en": "Do envenomation symptoms exist? ",
                 "name": "general",
                 "optional": false,
                 "options": [
@@ -72,7 +72,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "No evidence of focal infection",
+                "label_en": "Does antivenom have any indications? ",
                 "name": "infection",
                 "optional": false,
                 "options": [
@@ -117,7 +117,7 @@
             {
                 "conditionality": "general == 1 && infection == 1",
                 "default": 0,
-                "label_en": "No perinatal antibiotics",
+                "label_en": "Non assumere antibiotici durante il parto. ",
                 "name": "antibiotics",
                 "optional": false,
                 "options": [
@@ -177,7 +177,7 @@
             {
                 "conditionality": "general == 1 && infection == 1",
                 "default": 0,
-                "label_en": "No chronic or underlying illness",
+                "label_en": "No underlying illness, neither chronic. ",
                 "name": "illness",
                 "optional": false,
                 "options": [
@@ -222,7 +222,7 @@
             {
                 "conditionality": "general == 1 && infection == 1",
                 "default": 0,
-                "label_en": "WBC 5,000-15,000/mm³ (5-15 × 10⁹/L)",
+                "label_en": "WBC 5,000-15,000/mm3 (5-15 × 109/L). ",
                 "name": "wbc",
                 "optional": false,
                 "options": [
@@ -242,7 +242,7 @@
             {
                 "conditionality": "general == 1 && infection == 1",
                 "default": 0,
-                "label_en": "Band neutrophils ≤1,500/mm³ (≤1.5 × 10⁹/L)",
+                "label_en": "La bande neutrophile est inférieure à 1,500/mm3 (inférieure à 1 point 5 × 109/L). ",
                 "name": "neutrophils",
                 "optional": false,
                 "options": [
@@ -262,7 +262,7 @@
             {
                 "conditionality": "general == 1 && infection == 1",
                 "default": 0,
-                "label_en": "Urine WBC <10 WBC/hpf",
+                "label_en": "WBC der Urine < 10 WBC/hpf. ",
                 "name": "urinewbc",
                 "optional": false,
                 "options": [
@@ -282,7 +282,7 @@
             {
                 "conditionality": "general == 1 && infection == 1",
                 "default": 0,
-                "label_en": "No diarrhea; or, if diarrhea present, fecal leukocytes <5 WBC/hpf",
+                "label_en": "Fecal leukocyte count <5 WBC/hpf, or no diarrhea, if diarrhea is present. ",
                 "name": "diarrhea",
                 "optional": false,
                 "options": [

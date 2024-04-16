@@ -93,7 +93,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Amniotic fluid volume (AFV)",
+                "label_en": "volumul de fluid amniotic (AFV). ",
                 "name": "volume",
                 "optional": false,
                 "options": [
@@ -113,7 +113,7 @@
             {
                 "conditionality": "breathing + movement + tone + volume < 8",
                 "default": null,
-                "label_en": "Nonstress test (NST)",
+                "label_en": "Test devoid of stress (NST). ",
                 "name": "test",
                 "optional": false,
                 "options": [

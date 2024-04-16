@@ -26,7 +26,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Age, years",
+                "label_en": "breaths per minute as the respiratory rate. ",
                 "name": "age",
                 "optional": false,
                 "options": [
@@ -46,7 +46,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "Gender",
+                "label_en": "heart rate in beats per minute. ",
                 "name": "gender",
                 "optional": false,
                 "options": [
@@ -66,7 +66,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Indication",
+                "label_en": "mmHg is the diastolic blood pressure. ",
                 "name": "indication",
                 "optional": false,
                 "options": [
@@ -94,7 +94,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<calculator id=\"29\">BMI</calculator>",
+                "label_en": "BMI",
                 "name": "bmi",
                 "optional": false,
                 "options": [
@@ -222,7 +222,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<calculator id=\"10024\">ASA Class</calculator>",
+                "label_en": "ASA Class",
                 "name": "asa",
                 "optional": false,
                 "options": [

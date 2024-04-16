@@ -49,7 +49,7 @@
             {
                 "conditionality": "avail==1",
                 "default": null,
-                "label_en": "<p>Age, years</p>",
+                "label_en": "Age, years",
                 "name": "age",
                 "optional": false,
                 "options": [
@@ -77,7 +77,7 @@
             {
                 "conditionality": "avail==1",
                 "default": null,
-                "label_en": "<p>SpO<sub>2</sub></p>",
+                "label_en": "The amplitude of the ST at the J-point is at least 25% of the previous S-wave, and it is at least 1 mm higher than the QRS onset. ",
                 "name": "spo2",
                 "optional": false,
                 "options": [
@@ -105,7 +105,7 @@
             {
                 "conditionality": "avail==1",
                 "default": null,
-                "label_en": "<p>Albumin level</p>",
+                "label_en": "Albumin level",
                 "name": "albumin",
                 "optional": false,
                 "options": [
@@ -133,7 +133,7 @@
             {
                 "conditionality": "avail==0",
                 "default": null,
-                "label_en": "<p>Age, years</p>",
+                "label_en": "Age, years",
                 "name": "age2",
                 "optional": false,
                 "options": [
@@ -189,7 +189,7 @@
             {
                 "conditionality": "avail==0",
                 "default": null,
-                "label_en": "<p>SpO<sub>2</sub></p>",
+                "label_en": "SpO2",
                 "name": "oxysat",
                 "optional": false,
                 "options": [

@@ -24,8 +24,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Urine leakage relate to the feeling of urgency",
-                "mdcalc_info_concept": null,
+                "label_en": "There's a connection between urgency and urine leakage. ",
                 "name": "urgency",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -54,8 +53,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Urine leakage related to physical activity, coughing or sneezing",
-                "mdcalc_info_concept": null,
+                "label_en": "bodily fluid leakage caused by sneezing, coughing, or exercising. ",
                 "name": "activity",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -84,8 +82,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "Small amounts of urine leakage (drops)",
-                "mdcalc_info_concept": null,
+                "label_en": "Urine leaking in tiny amounts, like drops. ",
                 "name": "drops",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -115,7 +112,6 @@
                 "conditionality": null,
                 "default": 0,
                 "label_en": "How often do you experience urine leakage?",
-                "mdcalc_info_concept": null,
                 "name": "leakfreq",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -148,8 +144,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "How much urine do you lose each time?",
-                "mdcalc_info_concept": null,
+                "label_en": "percentage of biopsies that show cancer. ",
                 "name": "lose",
                 "option_fhir_rules": null,
                 "optional": false,

@@ -175,7 +175,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<abbr title = \"International normalized ratio\">INR</abbr>",
+                "label_en": "INR",
                 "name": "inr",
                 "optional": false,
                 "options": [
@@ -204,7 +204,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<abbr title =\"Mean arterial pressure\">MAP</abbr>, mmHg",
+                "label_en": "MAP, mmHg",
                 "name": "map",
                 "optional": false,
                 "options": [
@@ -253,7 +253,7 @@
             {
                 "conditionality": "resp == 0",
                 "default": 0,
-                "label_en": "<abbr title=\"Partial pressure of oxygen\">PaO<sub>2</sub></abbr>/<abbr title=\"Fraction of inspired oxygen\">FiO<sub>2</sub></abbr> ratio",
+                "label_en": "PaO2/FiO2 ratio",
                 "name": "resp1",
                 "optional": false,
                 "options": [
@@ -277,7 +277,7 @@
             {
                 "conditionality": "resp == 1",
                 "default": 0,
-                "label_en": "<abbr title=\"Oxygen saturation\">SpO<sub>2</sub></abbr>/<abbr title=\"Fraction of inspired oxygen\">FiO<sub>2</sub></abbr> ratio",
+                "label_en": "SpO2/FiO2 ratio",
                 "name": "resp2",
                 "optional": false,
                 "options": [

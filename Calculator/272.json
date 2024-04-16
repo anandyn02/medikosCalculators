@@ -51,7 +51,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p>Sex</p>",
+                "label_en": "Sex",
                 "name": "sex",
                 "optional": false,
                 "options": [
@@ -71,7 +71,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p>Age, years</p>",
+                "label_en": "Age, years",
                 "name": "age",
                 "optional": false,
                 "options": [
@@ -91,7 +91,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Cancer type</p>",
+                "label_en": "Cancer type",
                 "name": "cancer",
                 "optional": false,
                 "options": [
@@ -111,7 +111,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Dosage</p>",
+                "label_en": "Dosage",
                 "name": "dose",
                 "optional": false,
                 "options": [
@@ -151,7 +151,7 @@
             {
                 "conditionality": "sex == 0",
                 "default": 0,
-                "label_en": "<p>Hemoglobin, g/dL</p>",
+                "label_en": "Hemoglobin, g/dL",
                 "name": "hg",
                 "optional": false,
                 "options": [
@@ -171,7 +171,7 @@
             {
                 "conditionality": "sex == 1",
                 "default": 0,
-                "label_en": "<p>Hemoglobin, g/dL</p>",
+                "label_en": "Hemoglobin, g/dL",
                 "name": "hg2",
                 "optional": false,
                 "options": [
@@ -211,7 +211,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Hearing</p>",
+                "label_en": "Hearing",
                 "name": "hearing",
                 "optional": false,
                 "options": [
@@ -271,7 +271,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Walking ability</p>",
+                "label_en": "Walking ability",
                 "name": "walking",
                 "optional": false,
                 "options": [
@@ -291,7 +291,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Social activity</p>",
+                "label_en": "Social activity",
                 "name": "social",
                 "optional": false,
                 "options": [

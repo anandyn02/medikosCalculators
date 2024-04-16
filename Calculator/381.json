@@ -44,8 +44,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<calculator id='1872'>RASS</calculator> ≥ -3",
-                "md_calc_info_concept": null,
+                "label_en": "RASS > -3. ",
                 "name": "rass_3",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -73,8 +72,7 @@
             {
                 "conditionality": "rass_3 == 1",
                 "default": 0,
-                "label_en": "Patient different than baseline, pre-hospital mental status",
-                "md_calc_info_concept": null,
+                "label_en": "Patient's mental state prior to admission differed from the baseline. ",
                 "name": "baseline_status",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -96,7 +94,6 @@
                 "conditionality": "rass_3 == 1",
                 "default": 0,
                 "label_en": "Patient with fluctuating mental status in past 24 hours by fluctuation of level of consciousness/sedation",
-                "md_calc_info_concept": null,
                 "name": "mental_status",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -124,8 +121,7 @@
             {
                 "conditionality": "rass_3 == 1 && (baseline_status == 1 || mental_status ==1)",
                 "default": 0,
-                "label_en": "Letters attention test with >2 errors",
-                "md_calc_info_concept": null,
+                "label_en": "more than two errors in the letters attention test. ",
                 "name": "attention_test",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -153,8 +149,7 @@
             {
                 "conditionality": "rass_3 == 1 && (baseline_status == 1 || mental_status ==1) && attention_test == 1",
                 "default": 0,
-                "label_en": "<calculator id='1872'>RASS</calculator> is not 0 (alert and calm)",
-                "md_calc_info_concept": null,
+                "label_en": "Alert and composed, or RASS, is not 0. ",
                 "name": "rass_score",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -182,8 +177,7 @@
             {
                 "conditionality": "rass_3 == 1 && (baseline_status == 1 || mental_status ==1) && attention_test == 1",
                 "default": 0,
-                "label_en": "Combined number of errors to questions and commands >1 ",
-                "md_calc_info_concept": null,
+                "label_en": "The sum of all questions and commands with errors is greater than 1. ",
                 "name": "error_questions",
                 "option_fhir_rules": null,
                 "optional": false,

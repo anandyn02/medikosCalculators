@@ -58,7 +58,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Cardiac disease</p>",
+                "label_en": "Cardiac disease",
                 "name": "cardiac",
                 "optional": false,
                 "options": [
@@ -102,7 +102,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Diabetes</p>",
+                "label_en": "Diabetes",
                 "name": "diabetes",
                 "optional": false,
                 "options": [
@@ -122,7 +122,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Cerebrovascular disease</p>",
+                "label_en": "Cerebrovascular disease",
                 "name": "cd",
                 "optional": false,
                 "options": [
@@ -142,7 +142,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Psychiatric disturbance</p>",
+                "label_en": "Psychiatric disturbance",
                 "name": "psych",
                 "optional": false,
                 "options": [
@@ -162,7 +162,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Hepatic dysfunction</p>",
+                "label_en": "Hepatic dysfunction",
                 "name": "hepatic",
                 "optional": false,
                 "options": [
@@ -206,7 +206,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Infection</p>",
+                "label_en": "Infection",
                 "name": "infection",
                 "optional": false,
                 "options": [
@@ -226,7 +226,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Rheumatologic disease</p>",
+                "label_en": "Rheumatologic disease",
                 "name": "rheu",
                 "optional": false,
                 "options": [
@@ -246,7 +246,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Peptic ulcer</p>",
+                "label_en": "Peptic ulcer",
                 "name": "peptic",
                 "optional": false,
                 "options": [
@@ -266,7 +266,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Renal dysfunction</p>",
+                "label_en": "Renal dysfunction",
                 "name": "renal",
                 "optional": false,
                 "options": [
@@ -286,7 +286,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Pulmonary dysfunction</p>",
+                "label_en": "Pulmonary dysfunction",
                 "name": "pulm",
                 "optional": false,
                 "options": [
@@ -350,7 +350,7 @@
             {
                 "conditionality": "trans==0",
                 "default": null,
-                "label_en": "<p>Age</p>",
+                "label_en": "Age",
                 "name": "age",
                 "optional": true,
                 "options": [
@@ -370,7 +370,7 @@
             {
                 "conditionality": "age==0 || age==1",
                 "default": null,
-                "label_en": "<p>Intensity</p>",
+                "label_en": "Intensity",
                 "name": "intensity",
                 "optional": false,
                 "options": [

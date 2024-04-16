@@ -27,13 +27,13 @@
                 "option_fhir_rules": null,
                 "subheading": "Ask the patient the following:",
                 "subheading_instructions": null,
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Time spent exercising. "
             },
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Do you snore loudly?</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Do you snore loudly? ",
                 "name": "snore",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -55,7 +55,6 @@
                 "conditionality": null,
                 "default": 0,
                 "label_en": "<p>Do you often feel tired, fatigued, or sleepy during the daytime?</p>",
-                "md_calc_info_concept": null,
                 "name": "tired",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -77,7 +76,6 @@
                 "conditionality": null,
                 "default": 0,
                 "label_en": "<p>Has anyone observed you stop breathing during sleep?</p>",
-                "md_calc_info_concept": null,
                 "name": "observed",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -98,8 +96,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Do you have (or are you being treated for) high blood pressure?</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Is your blood pressure elevated, or are you receiving treatment for it? ",
                 "name": "pressure",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -127,8 +124,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p><calculator id=\"29\">BMI</calculator></p>",
-                "md_calc_info_concept": null,
+                "label_en": "BMI",
                 "name": "bmi",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -149,8 +145,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Age</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Age",
                 "name": "age",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -171,8 +166,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Neck circumference</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Neck circumference",
                 "name": "neck",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -193,8 +187,7 @@
             {
                 "conditionality": null,
                 "default": 0,
-                "label_en": "<p>Gender</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Gender",
                 "name": "gender",
                 "option_fhir_rules": null,
                 "optional": false,

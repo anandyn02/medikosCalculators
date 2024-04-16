@@ -65,7 +65,7 @@
             },
             {
                 "conditionality": "sit1==2",
-                "label_en": "Item 3: <b>Patient</b> crosses unaffected leg over the hemiplegic leg",
+                "label_en": "III. Patient crosses over the hemiplegic leg with the unaffected leg. ",
                 "name": "sit3",
                 "optional": false,
                 "options": [
@@ -96,7 +96,7 @@
             },
             {
                 "conditionality": "sit1==2",
-                "label_en": "Item 1: Patient touches bed or table with <b>hemiplegic</b> elbow (shortens hemiplegic side and lengthens unaffected side) and returns to starting position",
+                "label_en": "Point 1: The patient touches the bed or table with his or her hemiplegic elbow, extending the unaffected side and shortening the hemiplegic side, then returns to the starting position. ",
                 "name": "dy1",
                 "optional": false,
                 "options": [
@@ -114,7 +114,7 @@
             },
             {
                 "conditionality": "dy1==1 && sit1==2",
-                "label_en": "Item 2: Repeat item 1",
+                "label_en": "2. Reiterate the first item. ",
                 "name": "dy2",
                 "optional": false,
                 "options": [
@@ -132,7 +132,7 @@
             },
             {
                 "conditionality": "dy1==1 && dy2==1 && sit1==2",
-                "label_en": "Item 3: Repeat item 1",
+                "label_en": "3. Reiterate the first item. ",
                 "name": "dy3",
                 "optional": false,
                 "options": [
@@ -150,7 +150,7 @@
             },
             {
                 "conditionality": "sit1==2",
-                "label_en": "Item 4: Patient touches the bed or table with <b>unaffected</b> elbow (shortens unaffected side and lengthens hemiplegic side) and returns to starting position",
+                "label_en": "Item 4: The patient extends his or her hemiplegic side and shortens their unaffected elbow to touch the bed or table before going back to where they were before. ",
                 "name": "dy4",
                 "optional": false,
                 "options": [
@@ -168,7 +168,7 @@
             },
             {
                 "conditionality": "dy4==1 && sit1==2",
-                "label_en": "Item 5: Repeat item 4",
+                "label_en": "5. Reiterate the fourth item. ",
                 "name": "dy5",
                 "optional": false,
                 "options": [
@@ -186,7 +186,7 @@
             },
             {
                 "conditionality": "dy5==1 && sit1==2",
-                "label_en": "Item 6: Repeat item 4",
+                "label_en": "Repeat item 4 for item 6. ",
                 "name": "dy6",
                 "optional": false,
                 "options": [
@@ -204,7 +204,7 @@
             },
             {
                 "conditionality": "sit1==2",
-                "label_en": "Item 7: Lifts pelvis from bed or table at <b>hemiplegic</b> side (shortens hemiplegic side and lengthens unaffected side) and returns to starting position",
+                "label_en": "The seventh item involves lifting the pelvis off the bed or table at the hemiplegic side, extending the unaffected side, and then returning to the starting position. ",
                 "name": "dy7",
                 "optional": false,
                 "options": [
@@ -222,7 +222,7 @@
             },
             {
                 "conditionality": "dy7==1 && sit1==2",
-                "label_en": "Item 8: Repeat item 7",
+                "label_en": "Go back to item 7 in item 8. ",
                 "name": "dy8",
                 "optional": false,
                 "options": [
@@ -240,7 +240,7 @@
             },
             {
                 "conditionality": "sit1==2",
-                "label_en": "Item 9: Lifts pelvis from bed or table at <b>unaffected</b> side (shortens unaffected side and lengthens hemiplegic side) and returns to starting position",
+                "label_en": "The ninth item involves lifting the pelvis off the bed or table on the unaffected side, extending the hemiplegic side and shortening the unaffected side, and then returning to the starting position. ",
                 "name": "dy9",
                 "optional": false,
                 "options": [
@@ -281,7 +281,7 @@
             },
             {
                 "conditionality": "sit1==2",
-                "label_en": "Item 1: Rotates upper trunk 6x (each shoulder moved forward 3x), hemiplegic side must move first, head fixated in starting position",
+                "label_en": "Item 1: Rotates upper trunk six times (each shoulder moving forward three times); hemiplegic side must move first, with head fixed in placement. ",
                 "name": "co1",
                 "optional": false,
                 "options": [
@@ -321,7 +321,7 @@
             },
             {
                 "conditionality": "sit1==2",
-                "label_en": "Item 3: Rotate lower trunk 6x (each knee moved forward 3x), hemiplegic side must move first, upper trunk fixated in starting position",
+                "label_en": "Third item: Rotate lower trunk six times (forward three times for each knee); hemiplegic side must move first, with the upper trunk fixed in place. ",
                 "name": "co3",
                 "optional": false,
                 "options": [
@@ -343,7 +343,7 @@
             },
             {
                 "conditionality": "co3!=0 && sit1==2",
-                "label_en": "Item 4: Repeat item 3 within 6 seconds",
+                "label_en": "Repeat item 3 in six seconds for item 4. ",
                 "name": "co4",
                 "optional": false,
                 "options": [

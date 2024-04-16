@@ -31,7 +31,6 @@
                 "conditionality": null,
                 "default": 1,
                 "label_en": "<p><b id=\"docs-internal-guid-37beb28e-7fff-8d16-4386-6fa64858117b\"><span>Eat:</span><span> </span></b>Can infant eat &ge;1 ounce per feed or breastfeed well?</p>",
-                "mdcalc_info_concept": null,
                 "name": "eat",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -52,8 +51,7 @@
             {
                 "conditionality": null,
                 "default": 1,
-                "label_en": "<p><b id=\"docs-internal-guid-538cd555-7fff-e482-5a80-6bdb4bfc88fe\"><span>Sleep:</span><span> </span></b>Can infant sleep &ge;1 hour?</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Sleep: Kan een kind minimaal een uur slapen? ",
                 "name": "sleep",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -74,8 +72,7 @@
             {
                 "conditionality": null,
                 "default": 1,
-                "label_en": "<p><strong>Console:</strong> Can infant be consoled within 10 minutes?</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Console: Is there a 10-minute window in which to console an infant? ",
                 "name": "console",
                 "option_fhir_rules": null,
                 "optional": false,

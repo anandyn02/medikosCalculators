@@ -110,12 +110,13 @@
             {
                 "subheading": "Intrusion symptoms",
                 "subheading_instructions": "≥1 of the following associated with the traumatic event, beginning after the traumatic event occurred:",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "A ratio of neutrophils to lymphocytes less than 2.5. "
             },
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Recurrent, involuntary, and intrusive distressing memories of the traumatic event; in children, repetitive play may occur where themes/aspects of the traumatic event are expressed",
+                "label_en": "Lower limit of normal for LDH. ",
                 "name": "int1",
                 "optional": false,
                 "options": [
@@ -155,7 +156,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Dissociative reactions, e.g. flashbacks, where individual feels or acts as if the traumatic event were recurring; may occur on a continuum, with the most extreme expression being complete loss of awareness of present surroundings; in children, trauma-specific reenactment may occur in play",
+                "label_en": "Responses that are dissociative, e. G. In children, trauma-specific reenactment may happen during play. Flashbacks, in which the person feels or behaves as though the traumatic event were reoccurring, can manifest in a range of ways, the most extreme of which is total absorption of the present environment. ",
                 "name": "int3",
                 "optional": false,
                 "options": [
@@ -175,7 +176,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Intense or prolonged psychological distress at exposure to internal or external cues that symbolize or resemble an aspect of the traumatic event",
+                "label_en": "psychological distress that is severe or persistent when exposed to cues, either internal or external, that represent or bear similarities to a traumatic event. ",
                 "name": "int4",
                 "optional": false,
                 "options": [
@@ -195,7 +196,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Marked physiological reactions to internal or external cues that symbolize or resemble an aspect of the traumatic event",
+                "label_en": "marked physical responses to stimuli from the outside or inside that represent or mimic a part of the traumatic event. ",
                 "name": "int5",
                 "optional": false,
                 "options": [
@@ -240,7 +241,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Avoidance of (or efforts to avoid) external reminders (e.g. people, places, conversations, activities, objects, situations) that arouse distressing memories, thoughts, or feelings about or closely associated with the traumatic event",
+                "label_en": "the avoidance of external reminders, or the attempt to avoid them (e.g. G. items, settings, conversations, people, or things that stir up painful memories, emotions, or ideas related to the traumatic incident. ",
                 "name": "av2",
                 "optional": false,
                 "options": [
@@ -265,7 +266,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Inability to remember an important aspect of the traumatic event",
+                "label_en": "forgetting a significant detail of the traumatic experience. ",
                 "name": "mo1",
                 "optional": false,
                 "options": [
@@ -285,7 +286,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Persistent and exaggerated negative beliefs or expectations about oneself, others, or the world",
+                "label_en": "negative expectations or beliefs about oneself, other people, or the world that are excessively persistent. ",
                 "name": "mo2",
                 "optional": false,
                 "options": [
@@ -305,7 +306,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Persistent, distorted cognitions about the cause or consequences of the traumatic event that lead the individual to blame themselves or others",
+                "label_en": "persistently skewed beliefs that cause the person to blame others or themselves for the traumatizing incident, or for its cause. ",
                 "name": "mo3",
                 "optional": false,
                 "options": [
@@ -345,7 +346,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Markedly diminished interest or participation in significant activities",
+                "label_en": "significantly less involvement in or interest in important activities. ",
                 "name": "mo5",
                 "optional": false,
                 "options": [
@@ -365,7 +366,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Feelings of detachment or estrangement from others",
+                "label_en": "thoughts or feelings of alienation from other people. ",
                 "name": "mo6",
                 "optional": false,
                 "options": [
@@ -385,7 +386,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Persistent inability to experience positive emotions",
+                "label_en": "continuous lack of ability to feel good. ",
                 "name": "mo7",
                 "optional": false,
                 "options": [
@@ -410,7 +411,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Irritable behavior and angry outbursts (with little or no provocation) typically expressed as verbal or physical aggression toward people or objects",
+                "label_en": "Anger and agitated conduct, often manifested as aggressive actions or words directed at individuals or things, even in the absence of any provocation. ",
                 "name": "alt1",
                 "optional": false,
                 "options": [
@@ -430,7 +431,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Reckless or self-destructive behavior",
+                "label_en": "careless or damaging actions to oneself. ",
                 "name": "alt2",
                 "optional": false,
                 "options": [
@@ -470,7 +471,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Exaggerated startle response",
+                "label_en": "akselerert startlerespons. ",
                 "name": "alt4",
                 "optional": false,
                 "options": [
@@ -490,7 +491,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Problems with concentration",
+                "label_en": "issues with focus. ",
                 "name": "alt5",
                 "optional": false,
                 "options": [
@@ -535,7 +536,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Duration of the disturbance is >1 month",
+                "label_en": "The interruption lasts longer than one month. ",
                 "name": "req1",
                 "optional": false,
                 "options": [
@@ -555,7 +556,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "The disturbance causes clinically significant distress or impairment in social, occupational, or other important areas of functioning",
+                "label_en": "In social, vocational, or other critical domains of functioning, the disturbance results in distress that is clinically significant. ",
                 "name": "req2",
                 "optional": false,
                 "options": [

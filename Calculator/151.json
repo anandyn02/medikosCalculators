@@ -25,8 +25,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Urinalysis positive</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Urinalysis positive",
                 "name": "urine",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -47,8 +46,7 @@
             {
                 "conditionality": "urine == 0",
                 "default": null,
-                "label_en": "<p><abbr title=\"Absolute neutrophil count\"><calculator id=\"19\">ANC</calculator></abbr> &gt;4,000/&mu;L</p>",
-                "md_calc_info_concept": null,
+                "label_en": "ANC >4,000/μL",
                 "name": "anc",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -70,7 +68,6 @@
                 "conditionality": "anc == 0",
                 "default": null,
                 "label_en": "<p>Serum procalcitonin &gt;0.5 ng/mL</p>",
-                "md_calc_info_concept": null,
                 "name": "pct",
                 "option_fhir_rules": null,
                 "optional": false,

@@ -36,7 +36,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "High altitude (>4000 ft)",
+                "label_en": "high elevation—above 4,000 feet. ",
                 "name": "altitude",
                 "optional": false,
                 "options": [
@@ -56,7 +56,7 @@
             {
                 "conditionality": "altitude==0",
                 "default": null,
-                "label_en": "O₂ sat on room air <strong><95%</strong>",
+                "label_en": "Sexual orientation from birth. ",
                 "name": "lowo2",
                 "optional": false,
                 "options": [
@@ -176,7 +176,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Recent surgery or trauma",
+                "label_en": "recently had trauma or surgery. ",
                 "name": "trauma",
                 "optional": false,
                 "options": [

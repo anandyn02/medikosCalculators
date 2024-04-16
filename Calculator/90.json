@@ -296,7 +296,7 @@
             {
                 "conditionality": "bruits == 2",
                 "default": 0,
-                "label_en": "Carotid bruit (right)",
+                "label_en": "Breathless carotid (right). ",
                 "name": "carotidright",
                 "optional": true,
                 "options": [
@@ -315,7 +315,7 @@
             {
                 "conditionality": "bruits == 2",
                 "default": 0,
-                "label_en": "Carotid bruit (left)",
+                "label_en": "Carotid bruit aan de linkerkant. ",
                 "name": "carotidleft",
                 "optional": true,
                 "options": [
@@ -334,7 +334,7 @@
             {
                 "conditionality": "bruits == 2",
                 "default": 0,
-                "label_en": "Subclavian bruit (right)",
+                "label_en": "Rounded shoulder blade (right). ",
                 "name": "subright",
                 "optional": true,
                 "options": [
@@ -353,7 +353,7 @@
             {
                 "conditionality": "bruits == 2",
                 "default": 0,
-                "label_en": "Subclavian bruit (left)",
+                "label_en": "bruit subclavian la stânga. ",
                 "name": "subleft",
                 "optional": true,
                 "options": [
@@ -372,7 +372,7 @@
             {
                 "conditionality": "bruits == 2",
                 "default": 0,
-                "label_en": "Renal bruit (right)",
+                "label_en": "bruid in die baarmoeder (regs). ",
                 "name": "renalright",
                 "optional": true,
                 "options": [
@@ -391,7 +391,7 @@
             {
                 "conditionality": "bruits == 2",
                 "default": 0,
-                "label_en": "Renal bruit (left)",
+                "label_en": "Renale bruit aan de linkerkant. ",
                 "name": "renalleft",
                 "optional": true,
                 "options": [
@@ -430,7 +430,7 @@
             {
                 "conditionality": "pulse == 2",
                 "default": 0,
-                "label_en": "Pulse and BP inequality",
+                "label_en": "Heart rate and blood pressure disparities. ",
                 "name": "ineq",
                 "optional": true,
                 "options": [
@@ -450,7 +450,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "New loss of pulses",
+                "label_en": "fresh decline in pulses. ",
                 "name": "nlop",
                 "optional": true,
                 "options": [
@@ -470,7 +470,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Carotid pulse loss (right)",
+                "label_en": "Decrease in carotid pulse (right). ",
                 "name": "cpr",
                 "optional": true,
                 "options": [
@@ -508,7 +508,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Subclavian pulse loss (right)",
+                "label_en": "Failure of the subclavian pulse (right). ",
                 "name": "spr",
                 "optional": true,
                 "options": [
@@ -527,7 +527,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Subclavian pulse loss (left)",
+                "label_en": "Failure of the subclavian pulse (left). ",
                 "name": "spl",
                 "optional": true,
                 "options": [
@@ -546,7 +546,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Brachial pulse loss (right)",
+                "label_en": "reduction in brachial pulse (right). ",
                 "name": "bpr",
                 "optional": true,
                 "options": [
@@ -565,7 +565,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Brachial pulse loss (left)",
+                "label_en": "Decrease in brachial pulse (left). ",
                 "name": "bpl",
                 "optional": true,
                 "options": [
@@ -584,7 +584,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Radial pulse loss (right)",
+                "label_en": "(Right) Radial pulse loss. ",
                 "name": "rpr",
                 "optional": true,
                 "options": [
@@ -603,7 +603,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Radial pulse loss (left)",
+                "label_en": "Radial pulse loss (left). ",
                 "name": "rpl",
                 "optional": true,
                 "options": [
@@ -622,7 +622,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Femoral pulse loss (right)",
+                "label_en": "Loss of the femur pulse (right). ",
                 "name": "fpr",
                 "optional": true,
                 "options": [
@@ -641,7 +641,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Femoral pulse loss (left)",
+                "label_en": "Decrease in femoral pulse (left). ",
                 "name": "fpl",
                 "optional": true,
                 "options": [
@@ -660,7 +660,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Popliteal pulse loss (right)",
+                "label_en": "decline in the popliteal pulse (right). ",
                 "name": "ppr",
                 "optional": true,
                 "options": [
@@ -679,7 +679,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Popliteal pulse loss (left)",
+                "label_en": "reduction in popliteal pulse (left). ",
                 "name": "ppl",
                 "optional": true,
                 "options": [
@@ -698,7 +698,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Posterior tibial pulse loss (right)",
+                "label_en": "Lost pulse in the posterior tibia (right). ",
                 "name": "ptpr",
                 "optional": true,
                 "options": [
@@ -717,7 +717,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Posterior tibial pulse loss (left)",
+                "label_en": "La dreapta, pierderea pulsului post-tibial. ",
                 "name": "ptpl",
                 "optional": true,
                 "options": [
@@ -736,7 +736,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Dorsalis pedis pulse loss (right)",
+                "label_en": "decrease in the dorsalis pedis pulse (right). ",
                 "name": "dppr",
                 "optional": true,
                 "options": [
@@ -755,7 +755,7 @@
             {
                 "conditionality": "nlop == 2",
                 "default": 0,
-                "label_en": "Dorsalis pedis pulse loss (left)",
+                "label_en": "Reduced pulse in the dorsalis pedis (left). ",
                 "name": "dppl",
                 "optional": true,
                 "options": [

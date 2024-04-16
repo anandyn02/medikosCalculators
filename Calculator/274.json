@@ -62,7 +62,7 @@
             {
                 "conditionality": null,
                 "default": 3,
-                "label_en": "<p>Weight loss during the last 3 months, kg</p>",
+                "label_en": "Kg of weight lost over the previous three months. ",
                 "name": "weight",
                 "optional": false,
                 "options": [
@@ -90,7 +90,7 @@
             {
                 "conditionality": null,
                 "default": 2,
-                "label_en": "<p>Mobility</p>",
+                "label_en": "Mobility",
                 "name": "mobility",
                 "optional": false,
                 "options": [
@@ -114,7 +114,7 @@
             {
                 "conditionality": null,
                 "default": 2,
-                "label_en": "<p>Neuropsychological conditions</p>",
+                "label_en": "Neuropsychological conditions",
                 "name": "neuro",
                 "optional": false,
                 "options": [
@@ -166,7 +166,7 @@
             {
                 "conditionality": null,
                 "default": 1,
-                "label_en": "<p>Takes more than three prescription drugs per day</p>",
+                "label_en": "uses over three prescription medications a day. ",
                 "name": "drugs",
                 "optional": false,
                 "options": [
@@ -186,7 +186,7 @@
             {
                 "conditionality": null,
                 "default": 3,
-                "label_en": "<p>In comparison with other people of the&nbsp;same age, how does the patient consider their health status?</p>",
+                "label_en": "Results for the Eastern Cooperative Oncology Group (ECOG). ",
                 "name": "health",
                 "optional": false,
                 "options": [
@@ -214,7 +214,7 @@
             {
                 "conditionality": null,
                 "default": null,
-                "label_en": "<p>Age, years</p>",
+                "label_en": "Age, years",
                 "name": "age",
                 "optional": false,
                 "options": [

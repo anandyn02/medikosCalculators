@@ -31,7 +31,6 @@
                 "conditionality": "",
                 "default": null,
                 "label_en": "<p>Limb ischemia for &gt;6 hours</p>",
-                "md_calc_info_concept": null,
                 "name": "ischemia_6_hours",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -52,8 +51,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Limb ischemia</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Limb ischemia",
                 "name": "limb_ischemia",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -78,8 +76,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Patient age</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Patient age",
                 "name": "age",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -104,8 +101,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Shock</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Shock",
                 "name": "shock",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -130,8 +126,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Injury mechanism</p>",
-                "mdcalc_info_concept": null,
+                "label_en": "Injury mechanism",
                 "name": "injury",
                 "option_fhir_rules": null,
                 "optional": false,

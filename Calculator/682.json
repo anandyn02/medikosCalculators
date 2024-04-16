@@ -46,8 +46,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Age</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Age",
                 "name": "age",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -68,8 +67,7 @@
             {
                 "conditionality": "age == 0",
                 "default": null,
-                "label_en": "<p>GCS &le;14, palpable skull fracture or signs of AMS</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Palpable skull fracture or signs of AMS with a GCS of at least 14. ",
                 "name": "gcs_palpable_fracture_ams",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -90,8 +88,7 @@
             {
                 "conditionality": "age == 1",
                 "default": null,
-                "label_en": "<p>GCS &le;14 or signs of basilar skull fracture or signs of AMS</p>",
-                "md_calc_info_concept": null,
+                "label_en": "AMS symptoms or a basilar skull fracture sign (GCS ≤14). ",
                 "name": "gcs_basilar_fracture_ams",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -112,8 +109,7 @@
             {
                 "conditionality": "age == 0 && gcs_palpable_fracture_ams == 0",
                 "default": null,
-                "label_en": "<p>Occipital, parietal or temporal scalp hematoma; history of LOC &ge;5 sec; not acting normally per parent or severe mechanism of injury?</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Occipital, parietal, or temporal scalp hematoma; history of LOC ≥5 sec; deviation from the parent's normal behavior or severe mechanism of injury? ",
                 "name": "hematoma_loc_injury",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -135,7 +131,6 @@
                 "conditionality": "age == 1 && gcs_basilar_fracture_ams == 0",
                 "default": null,
                 "label_en": "<p>History of LOC or history of vomiting or severe headache or severe mechanism of injury</p>",
-                "md_calc_info_concept": null,
                 "name": "loc_vomiting_headache_injury",
                 "option_fhir_rules": null,
                 "optional": false,

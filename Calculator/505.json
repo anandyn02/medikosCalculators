@@ -57,7 +57,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Age ≥55",
-                "md_calc_info_concept": null,
                 "name": "age_55",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -79,7 +78,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Isolated tenderness of the patella (no other bony tenderness)",
-                "md_calc_info_concept": null,
                 "name": "patella_tenderness",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -100,8 +98,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Tenderness at the fibular head",
-                "md_calc_info_concept": null,
+                "label_en": "l'aminotransferase dell'aspartato (AST). ",
                 "name": "fibular_tenderness",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -123,7 +120,6 @@
                 "conditionality": "",
                 "default": 0,
                 "label_en": "Unable to flex knee to 90°",
-                "md_calc_info_concept": null,
                 "name": "knee_flex_unable",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -144,8 +140,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Unable to bear weight both immediately and in ED (4 steps, limping is okay)</p>",
-                "md_calc_info_concept": null,
+                "label_en": "Both instantly and in the ED, unable to support oneself (4 steps, limping is acceptable). ",
                 "name": "bear_weight_unable",
                 "option_fhir_rules": null,
                 "optional": false,
@@ -164,7 +159,6 @@
                 "type": "toggle"
             },
             {
-                "md_calc_info_concept": null,
                 "option_fhir_rules": null,
                 "type": "visual",
                 "visual": "<div class=\"authorimage\"><img style=\"max-width: 100%;\" src=\"https://cdn-web-img.mdcalc.com/ottawa-knee-rule.png\" class=\"alignnone size-full wp-image-1839\" alt=\"\"></div>"

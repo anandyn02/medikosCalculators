@@ -29,12 +29,13 @@
             {
                 "subheading": "Ask the patient to choose an answer that best describes how they have felt and conducted themselves over the past 2 weeks:",
                 "subheading_instructions": "",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Total ou pourcentage de nombre de neutrophiles. "
             },
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>I felt dizzy, lightheaded, or faint when I read or listened to news about the coronavirus</p>",
+                "label_en": "Hearing or reading about the coronavirus in the news made me feel faint, lightheaded, or dizzy. ",
                 "name": "one",
                 "optional": false,
                 "options": [
@@ -66,7 +67,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>I had trouble falling or staying asleep because I was thinking about the coronavirus</p>",
+                "label_en": "The coronavirus was on my mind, which made it difficult for me to fall asleep or stay asleep. ",
                 "name": "two",
                 "optional": false,
                 "options": [

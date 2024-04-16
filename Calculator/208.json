@@ -25,7 +25,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "The child is toilet-trained",
+                "label_en": "The kid is trained to use the toilet. ",
                 "name": "trained",
                 "optional": false,
                 "options": [
@@ -45,12 +45,13 @@
             {
                 "subheading": "Must have 1 month of ≥2 of the following:",
                 "subheading_instructions": "For infants <4 years of age",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "uncontrollably passing feces on multiple occasions in a person who is at least four years old. "
             },
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "≤2 defecations per week",
+                "label_en": "Not experiencing retching, hematemesis, aspiration, apnea, stunted growth, difficulties with feeding or swallowing, or unusual posture. ",
                 "name": "one",
                 "optional": false,
                 "options": [
@@ -110,7 +111,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "History of large-diameter stools",
+                "label_en": "Other functional or structural gastrointestinal disorders, or any other medical condition, do not account for pain. ",
                 "name": "four",
                 "optional": false,
                 "options": [

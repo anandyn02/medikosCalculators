@@ -37,7 +37,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Age &ge;68 years</p>",
+                "label_en": "68 years old or older. ",
                 "name": "age",
                 "optional": false,
                 "options": [
@@ -57,7 +57,7 @@
             {
                 "conditionality": "",
                 "default": null,
-                "label_en": "<p>Sex</p>",
+                "label_en": "eating something that has just been consumed and then spitting, remasticating, and swallowing it again. This can happen repeatedly or persistently. ",
                 "name": "sex",
                 "optional": false,
                 "options": [
@@ -77,7 +77,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Patient on loop diuretic</p>",
+                "label_en": "Het slachtoffer gebruikt een diureticum. ",
                 "name": "loop",
                 "optional": false,
                 "options": [
@@ -117,7 +117,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Admission <calculator id=\"48\">QTc</calculator> &ge;450 msec</p>",
+                "label_en": "Entrance QTc ≥450 ms. ",
                 "name": "qtc",
                 "optional": false,
                 "options": [
@@ -137,7 +137,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Being admitted for acute myocardial infarction</p>",
+                "label_en": "having a myocardial infarction that is acute. ",
                 "name": "mi",
                 "optional": false,
                 "options": [
@@ -197,7 +197,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<p>Number of QTc-prolonging drugs given</p>",
+                "label_en": "Count of QTc-prolonging medications administered. ",
                 "name": "drugs",
                 "optional": false,
                 "options": [

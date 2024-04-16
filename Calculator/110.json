@@ -128,7 +128,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "Post heart or lung transplantation",
+                "label_en": "nonpulmonary infection that is associated acutely. ",
                 "name": "post",
                 "optional": false,
                 "options": [
@@ -213,7 +213,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "HCO₃ before ECMO ≤15 mmol/L (91.5 mg/dL)",
+                "label_en": "PaCO2 na hindi bababa sa 75 mmHg o 10 kPa. ",
                 "name": "hco",
                 "optional": false,
                 "options": [
@@ -233,7 +233,8 @@
             {
                 "subheading": "Respiratory",
                 "subheading_instructions": "",
-                "type": "subheading"
+                "type": "subheading",
+                "label_en": "Peak inspiratory pressure: ≥42 cm H₂O (≥4p1 kPa). "
             },
             {
                 "conditionality": "",
@@ -372,7 +373,7 @@
             {
                 "conditionality": "",
                 "default": 0,
-                "label_en": "<abbr title = \"Central nervous system\">CNS</abbr> dysfunction",
+                "label_en": "CNS dysfunction",
                 "name": "cns",
                 "optional": false,
                 "options": [
